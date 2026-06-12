@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industry-Specific Technology Solutions for GCC, USA & UK | Big Binary Tech</title>
+  <meta name="description" content="Industry-specific technology solutions for retail, manufacturing, healthcare, and more. Built for GCC, USA & UK markets.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+    :root {
+      --bbt-bg: #ffffff;
+      --bbt-bg-soft: #f8fafc;
+      --bbt-navy: #0f172a;
+      --bbt-hero-blue: #1B3A6B; /* Specific from PDF */
+      --bbt-orange: #f59e0b;
+      --bbt-orange-600: #d97706;
+      --bbt-teal: #14b8a6;
+      --bbt-white: #ffffff;
+      --bbt-text: #334155;
+      --bbt-muted: #64748b;
+      --bbt-border: rgba(15, 23, 42, 0.1);
+      --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--bbt-text); line-height: 1.6; background: var(--bbt-bg); }
+
+    .container { width: 90%; max-width: 1300px; margin: auto; }
+    section { padding: 96px 0; }
+    .breadcrumb { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.7); margin-bottom: 20px; }
+    .breadcrumb a { color: inherit; text-decoration: none; }
+
+    /* UTILITY BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; }
+    .btn-primary { background: var(--bbt-orange); color: #fff; box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3); }
+    .btn-primary:hover { background: var(--bbt-orange-600); transform: translateY(-2px); }
+    .btn-outline { border: 2px solid #fff; color: #fff; }
+    .btn-outline:hover { background: #fff; color: var(--bbt-navy); }
+
+    /* HEADER */
+    .header { position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; padding: 20px 0; }
+    .header-wrapper { display: flex; align-items: center; justify-content: space-between; }
+    .logo img { height: 60px; filter: brightness(0) invert(1); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: #fff !important; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--bbt-orange) !important; }
+
+    /* SECTION 01 — HERO */
+    .hero { background: var(--bbt-hero-blue); min-height: 75vh; padding-top: 140px; color: #fff; position: relative; overflow: hidden; display: flex; align-items: center; }
+    .hero-split { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; max-width: 700px; }
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 25px; font-size: 13px; font-weight: 600; }
+    .hero-visual svg { width: 100%; height: auto; }
+
+    /* SECTION 02 — WHY INDUSTRY-SPECIFIC */
+    .value-prop { background: var(--bbt-bg-soft); text-align: center; }
+    .value-prop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+    .prop-card { background: #fff; padding: 40px; border-radius: 20px; text-align: left; border: 1px solid var(--bbt-border); }
+    .prop-card i { font-size: 32px; color: var(--bbt-teal); margin-bottom: 20px; }
+    .prop-card h3 { font-size: 1.2rem; color: var(--bbt-navy); margin-bottom: 15px; }
+
+    /* SECTION 03 — INDUSTRIES GRID */
+    .industry-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 50px; }
+    .industry-card { 
+        background: #fff; padding: 30px; border-radius: 16px; border: 1px solid var(--bbt-border); 
+        text-decoration: none; color: inherit; display: flex; align-items: center; gap: 20px;
+        transition: 0.3s;
+    }
+    .industry-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-color: var(--bbt-orange); }
+    .ind-icon { width: 60px; height: 60px; border-radius: 12px; display: grid; place-items: center; font-size: 24px; flex-shrink: 0; }
+    .industry-card h4 { color: var(--bbt-navy); margin-bottom: 4px; }
+    .industry-card p { font-size: 14px; color: var(--bbt-muted); }
+
+    /* SECTIONS 04-13 — DETAIL BLOCKS */
+    .detail-block { border-bottom: 1px solid var(--bbt-border); }
+    .detail-block:nth-child(even) { background: var(--bbt-bg-soft); }
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .detail-content h2 { font-size: 2.2rem; color: var(--bbt-navy); margin-bottom: 24px; }
+    .challenge-box { background: rgba(245, 158, 11, 0.05); padding: 25px; border-left: 4px solid var(--bbt-orange); margin-bottom: 30px; border-radius: 0 12px 12px 0; }
+    .key-features { list-style: none; margin: 30px 0; }
+    .key-features li { display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start; }
+    .key-features li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--bbt-teal); font-size: 14px; margin-top: 4px; }
+    .tech-stack { font-size: 13px; font-weight: 700; color: var(--bbt-navy); border-top: 1px solid var(--bbt-border); padding-top: 20px; }
+    .tech-stack span { color: var(--bbt-teal); }
+    .detail-visual img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+
+    /* SECTION 14 — DELIVERY PROCESS */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 50px; background: var(--bbt-navy); border-radius: 20px; overflow: hidden; }
+    .process-step { padding: 40px; color: #fff; border-right: 1px solid rgba(255,255,255,0.1); }
+    .process-step:last-child { border: none; }
+    .step-num { font-size: 40px; font-weight: 800; color: var(--bbt-orange); margin-bottom: 20px; display: block; }
+    .process-step h4 { margin-bottom: 15px; font-size: 18px; }
+    .process-step p { font-size: 14px; opacity: 0.8; }
+
+    /* SECTION 15 — COMPLIANCE */
+    .compliance-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+    .compliance-table th { text-align: left; padding: 20px; background: var(--bbt-navy); color: #fff; }
+    .compliance-table td { padding: 20px; border-bottom: 1px solid var(--bbt-border); vertical-align: top; }
+    .compliance-table tr:hover { background: var(--bbt-bg-soft); }
+
+    /* SECTION 16 — FAQ & CTA */
+    .faq-accordion { max-width: 900px; margin: 40px auto; }
+    details { border: 1px solid var(--bbt-border); border-radius: 12px; margin-bottom: 12px; background: #fff; }
+    summary { padding: 20px; cursor: pointer; font-weight: 700; color: var(--bbt-navy); list-style: none; position: relative; }
+    summary::after { content: "+"; position: absolute; right: 20px; color: var(--bbt-orange); font-size: 24px; }
+    details[open] summary::after { content: "−"; }
+    details p { padding: 0 20px 20px; color: var(--bbt-muted); }
+
+    .bottom-banner { background: var(--bbt-navy); color: #fff; text-align: center; border-radius: 30px; padding: 80px 40px; }
+    .bottom-banner h2 { font-size: 2.5rem; margin-bottom: 20px; }
+
+    @media (max-width: 1024px) {
+        .hero-split, .detail-grid, .process-grid, .value-prop-grid, .industry-grid { grid-template-columns: 1fr; }
+        .hero { text-align: center; padding-top: 120px; }
+        .hero-trust { justify-content: center; }
+        .detail-visual { order: -1; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-wrapper">
+      <a href="index.html" class="logo"><img src="../assests/images/bbt-logo.png" alt="Big Binary Tech"></a>
+      <nav><ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="industries.html" class="active">Industries</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></nav>
+      <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px;">Free Consultation</a>
+    </div>
+  </header>
+
+  <!-- SECTION 01 — HERO -->
+  <section class="hero">
+    <div class="container hero-split">
+      <div class="hero-content">
+        <div class="breadcrumb"><a href="index.html">Home</a> > Industries</div>
+        <h1>Industry-Specific Technology Solutions for GCC, USA & UK</h1>
+        <p>We build software, ERP systems, and digital platforms tailored to how your industry actually works — from retail floors to factory floors, clinics to classrooms.</p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary">Get a Free Industry Consultation</a>
+          <a href="#industries-grid" class="btn btn-outline">Explore Solutions by Industry</a>
+        </div>
+        <div class="hero-trust">
+          <span>15+ Industries Served</span>
+          <span>200+ Specific Projects</span>
+          <span>GCC · USA · UK</span>
+          <span>PSEB Registered</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- Animated Hub Placeholder SVG -->
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="80" stroke="var(--bbt-orange)" stroke-width="2" stroke-dasharray="10 5" />
+            <circle cx="200" cy="200" r="40" fill="var(--bbt-teal)" />
+            <path d="M200 50 V120 M200 280 V350 M50 200 H120 M280 200 H350" stroke="white" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02 — VALUE PROP -->
+  <section class="value-prop">
+    <div class="container">
+      <h2>Generic Software Fails. Industry-Tailored Technology Wins.</h2>
+      <p style="max-width: 800px; margin: 20px auto;">We study your industry's workflows and pain points to build technology that fits how you already work.</p>
+      <div class="value-prop-grid">
+        <div class="prop-card">
+          <i class="fa-solid fa-shield-check"></i>
+          <h3>Built for Your Compliance</h3>
+          <p>HIPAA, retail VAT, or ISO standards — we build compliance into the foundation.</p>
+        </div>
+        <div class="prop-card">
+          <i class="fa-solid fa-comments"></i>
+          <h3>Speaks Your Team's Language</h3>
+          <p>We use terminology your staff understands. No confusion, no training resistance.</p>
+        </div>
+        <div class="prop-card">
+          <i class="fa-solid fa-network-wired"></i>
+          <h3>Integrates With Your Ecosystem</h3>
+          <p>We connect with the medical devices, supply chain tools, and gateways you already use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — INDUSTRIES GRID -->
+  <section id="industries-grid" class="container">
+    <div style="text-align: center; margin-bottom: 50px;">
+        <span style="color: var(--bbt-orange); font-weight: 700; text-transform: uppercase;">10 Verticals</span>
+        <h2 style="font-size: 2.5rem; color: var(--bbt-navy);">Explore Solutions by Industry</h2>
+    </div>
+    <div class="industry-grid">
+      <a href="#retail-ecommerce" class="industry-card">
+        <div class="ind-icon" style="background: #e0f2fe; color: #0369a1;"><i class="fa-solid fa-bag-shopping"></i></div>
+        <div><h4>Retail & E-commerce</h4><p>POS, inventory, omnichannel retail</p></div>
+      </a>
+      <a href="#manufacturing" class="industry-card">
+        <div class="ind-icon" style="background: #fef2f2; color: #b91c1c;"><i class="fa-solid fa-industry"></i></div>
+        <div><h4>Manufacturing</h4><p>ERP, production planning, quality control</p></div>
+      </a>
+      <a href="#healthcare" class="industry-card">
+        <div class="ind-icon" style="background: #f0fdf4; color: #15803d;"><i class="fa-solid fa-hospital"></i></div>
+        <div><h4>Healthcare & Medical</h4><p>Patient management, compliance systems</p></div>
+      </a>
+      <a href="#education" class="industry-card">
+        <div class="ind-icon" style="background: #fffbeb; color: #b45309;"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div><h4>Education & E-learning</h4><p>LMS, student portals, admin systems</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — RETAIL DETAIL -->
+  <section id="retail-ecommerce" class="detail-block">
+    <div class="container detail-grid">
+      <div class="detail-content">
+        <h2>Retail & E-commerce</h2>
+        <div class="challenge-box">
+          <strong>Challenge:</strong> Disconnected online/offline sales, manual inventory, and limited payment options in GCC.
+        </div>
+        <p><strong>BBT Solution:</strong> Unified omnichannel retail systems connecting in-store POS and e-commerce. Arabic-ready and VAT-compliant.</p>
+        <ul class="key-features">
+          <li>Omnichannel POS with real-time inventory sync</li>
+          <li>Arabic RTL support and bilingual product pages</li>
+          <li>Local payment gateways (Telr, PayFort, Noon)</li>
+          <li>Customer loyalty and membership management</li>
+        </ul>
+        <div class="tech-stack">Tech Stack: <span>Odoo POS · Shopify · Telr · PayFort · AWS</span></div>
+        <a href="contact.html?industry=retail" class="btn btn-primary" style="margin-top: 30px;">Get Retail Technology Solutions</a>
+      </div>
+      <div class="detail-visual">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800" alt="Retail Dashboard">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 — MANUFACTURING DETAIL -->
+  <section id="manufacturing" class="detail-block">
+    <div class="container detail-grid">
+      <div class="detail-visual">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800" alt="Factory Floor">
+      </div>
+      <div class="detail-content">
+        <h2>Manufacturing</h2>
+        <div class="challenge-box">
+          <strong>Challenge:</strong> Production delays, quality control gaps, and no real-time visibility into shop floor efficiency.
+        </div>
+        <p><strong>BBT Solution:</strong> Smart factory ERP with production planning, MRP, and IoT-ready monitoring.</p>
+        <ul class="key-features">
+          <li>Production planning and scheduling (MRP/MPP)</li>
+          <li>Shop floor data collection and OEE dashboards</li>
+          <li>Inventory and warehouse management</li>
+          <li>Maintenance scheduling and asset tracking</li>
+        </ul>
+        <div class="tech-stack">Tech Stack: <span>Odoo MRP · SAP Integration · IoT Sensors · Power BI</span></div>
+        <a href="contact.html?industry=manufacturing" class="btn btn-primary" style="margin-top: 30px;">Get Manufacturing Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 14 — DELIVERY PROCESS -->
+  <section class="container">
+    <h2 style="text-align: center; margin-bottom: 50px; color: var(--bbt-navy);">Our Industry Solution Delivery Process</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <span class="step-num">01</span>
+        <h4>Industry Discovery</h4>
+        <p>We study your workflows, regulations, and map your exact pain points.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">02</span>
+        <h4>Solution Design</h4>
+        <p>We design a tailored architecture specific to your industry needs.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">03</span>
+        <h4>Build & Integrate</h4>
+        <p>We develop and integrate with your existing industry-specific tools.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">04</span>
+        <h4>Launch & Optimize</h4>
+        <p>We train your team and optimize based on real usage patterns.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="contact.html" style="color: var(--bbt-orange); font-weight: 700; text-decoration: none;">Start With a Free Industry Assessment →</a>
+    </div>
+  </section>
+
+  <!-- SECTION 15 — COMPLIANCE GRID -->
+  <section class="container">
+    <h2 style="color: var(--bbt-navy);">Built to Meet Your Industry's Standards</h2>
+    <table class="compliance-table">
+      <thead>
+        <tr>
+          <th>Industry</th>
+          <th>Compliance & Standards</th>
+          <th>Our Approach</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Healthcare</td>
+          <td>HIPAA, DHA, MOHAP, HL7/FHIR</td>
+          <td>Encrypted data, access controls, audit trails.</td>
+        </tr>
+        <tr>
+          <td>Retail</td>
+          <td>VAT/GST, ZATCA, Consumer Protection</td>
+          <td>VAT-ready invoicing, local payment compliance.</td>
+        </tr>
+        <tr>
+          <td>Government</td>
+          <td>ISO 27001, NESA, Data Residency</td>
+          <td>Local hosting, inter-department security.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 16 — FAQ & BOTTOM CTA -->
+  <section class="container">
+    <h2 style="text-align: center; color: var(--bbt-navy);">Frequently Asked Questions</h2>
+    <div class="faq-accordion">
+      <details>
+        <summary>Do you have experience in my specific industry?</summary>
+        <p>Yes. We've delivered solutions across 15+ industries including retail, manufacturing, and healthcare. Every project starts with deep industry discovery.</p>
+      </details>
+      <details>
+        <summary>How do you ensure compliance with industry regulations?</summary>
+        <p>Compliance is built into the foundation. We research your specific regulatory requirements during the discovery phase.</p>
+      </details>
+      <details>
+        <summary>Can you integrate with industry-specific tools we already use?</summary>
+        <p>Absolutely. We integrate with medical devices, ERP systems, accounting software, and government portals.</p>
+      </details>
+    </div>
+
+    <div class="bottom-banner">
+      <h2>Ready for Technology That Understands Your Industry?</h2>
+      <p style="margin-bottom: 30px; opacity: 0.8;">Book a free 30-minute assessment to map your workflows.</p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-primary">Book Your Free Industry Assessment</a>
+        <a href="#" class="btn btn-outline">Download Our Industry Solutions Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding: 40px 0; border-top: 1px solid var(--bbt-border); text-align: center;">
+    <p style="color: var(--bbt-muted); font-size: 14px;">&copy; 2026 Big Binary Tech. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>

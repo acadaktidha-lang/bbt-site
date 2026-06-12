@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Big Binary Tech — Free Consultation for GCC, USA & UK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+    :root {
+      --bbt-bg: #ffffff;
+      --bbt-bg-soft: #f8fafc;
+      --bbt-navy: #0f172a;
+      --bbt-hero-blue: #1B3A6B; /* Specific background from PDF */
+      --bbt-orange: #f59e0b;
+      --bbt-orange-600: #d97706;
+      --bbt-orange-glow: rgba(245, 158, 11, 0.25);
+      --bbt-white: #ffffff;
+      --bbt-heading: #0f172a;
+      --bbt-text: #334155;
+      --bbt-muted: #64748b;
+      --bbt-surface: #f1f5f9;
+      --bbt-ring: rgba(245, 158, 11, 0.4);
+      --bbt-border: rgba(15, 23, 42, 0.1);
+      --bbt-glass: rgba(255, 255, 255, 0.85);
+      --bbt-teal: #14b8a6; /* Secondary accent for icons */
+      --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bbt-bg);
+      color: var(--bbt-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { width: 90%; max-width: 1300px; margin: auto; }
+
+    /* HEADER (MATCHING INDEX) */
+    .header { position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; padding: 20px 0; background: transparent; }
+    .header-wrapper { display: flex; align-items: center; justify-content: space-between; }
+    .logo img { height: 80px; filter: brightness(0) invert(1); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: #ffffff !important; font-size: 14px; font-weight: 500; transition: color 0.3s ease; }
+    .nav-links a:hover, .nav-links a.active { color: var(--bbt-orange) !important; }
+    
+    /* BUTTONS (MATCHING INDEX) */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s ease; border: none; cursor: pointer; }
+    .btn-primary { background: var(--bbt-orange); color: var(--bbt-white); box-shadow: 0 4px 24px var(--bbt-orange-glow); }
+    .btn-primary:hover { background: var(--bbt-orange-600); transform: translateY(-2px); box-shadow: 0 8px 32px var(--bbt-orange-glow); }
+    .btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--bbt-orange); }
+
+    /* SECTION 01 — HERO (MATCHING INDEX STYLE) */
+    .hero {
+      position: relative;
+      height: 70vh;
+      background: var(--bbt-hero-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      color: #fff;
+    }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.8), rgba(27,58,107,0.9)); z-index: 1; }
+    .hero-content { position: relative; z-index: 5; max-width: 850px; }
+    .hero-tag { display: inline-block; padding: 8px 16px; margin-bottom: 24px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bbt-orange); border: 1px solid var(--bbt-ring); border-radius: 999px; background: rgba(245, 158, 11, 0.06); }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
+    .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; }
+    .hero-trust-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 13px; font-weight: 600; opacity: 0.8; }
+
+    /* SECTION 02 — FORM + INFO SPLIT */
+    .contact-main { padding: 100px 0; background: #fff; }
+    .split-wrapper { display: grid; grid-template-columns: 1.6fr 1fr; gap: 50px; align-items: start; }
+    
+    .form-column { 
+        background: #fff; padding: 50px; border-radius: 30px; 
+        box-shadow: 0 20px 50px rgba(15,23,42,0.05); 
+        border: 1px solid var(--bbt-border); 
+    }
+    .form-column h2 { font-size: 32px; font-weight: 800; color: var(--bbt-navy); margin-bottom: 10px; }
+    
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+    .form-group.full { grid-column: span 2; }
+    .form-group label { display: block; font-weight: 700; font-size: 13px; margin-bottom: 8px; color: var(--bbt-navy); }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 14px 18px; border-radius: 12px; border: 1px solid #e2e8f0; font-family: inherit; font-size: 15px; transition: 0.3s;
+    }
+    .form-group input:focus { border-color: var(--bbt-orange); outline: none; box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1); }
+    .submit-btn { 
+        grid-column: span 2; margin-top: 10px; 
+        background: var(--bbt-navy); color: #fff; padding: 18px; border-radius: 12px; 
+        font-weight: 700; border: none; cursor: pointer; transition: 0.3s;
+    }
+    .submit-btn:hover { background: var(--bbt-orange); transform: translateY(-2px); }
+
+    .info-column { background: var(--bbt-bg-soft); padding: 50px; border-radius: 30px; }
+    .info-item { display: flex; gap: 20px; margin-bottom: 30px; }
+    .info-item i { color: var(--bbt-teal); font-size: 22px; margin-top: 5px; }
+    .info-item h4 { color: var(--bbt-navy); margin-bottom: 5px; }
+    .map-placeholder { height: 200px; background: #e2e8f0; border-radius: 20px; margin: 20px 0; display: grid; place-items: center; color: var(--bbt-muted); }
+
+    /* SECTION 03 — WHY CONTACT (CARDS MATCHING INDEX) */
+    .why-section { padding: 100px 0; background: var(--bbt-bg-soft); }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 50px; }
+    .why-card { 
+        background: #fff; padding: 40px 30px; border-radius: 24px; 
+        border: 1px solid var(--bbt-orange); text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); transition: 0.3s;
+    }
+    .why-card:hover { transform: translateY(-10px); box-shadow: 0 15px 45px var(--bbt-orange-glow); }
+    .card-num { width: 50px; height: 50px; background: #fff; border: 2px solid var(--bbt-teal); color: var(--bbt-teal); border-radius: 50%; display: grid; place-items: center; margin: 0 auto 20px; font-weight: 800; }
+
+    /* SECTION 04 — SERVICE PILLS (MATCHING INDEX CAPABILITIES) */
+    .pill-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 40px; }
+    .pill { padding: 12px 24px; background: #fff; border: 1px solid var(--bbt-border); border-radius: 999px; text-decoration: none; color: var(--bbt-navy); font-weight: 600; font-size: 14px; transition: 0.3s; }
+    .pill:hover { background: var(--bbt-navy); color: #fff; border-color: var(--bbt-navy); }
+
+    /* SECTION 05 — FAQ (MATCHING INDEX FAQ) */
+    .faq-grid { max-width: 800px; margin: 40px auto 0; }
+    details { background: #fff; border: 1px solid var(--bbt-border); border-radius: 20px; padding: 20px 25px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; }
+    details:hover { border-color: var(--bbt-orange); background: var(--bbt-surface); }
+    summary { font-weight: 700; color: var(--bbt-navy); list-style: none; position: relative; padding-right: 35px; }
+    summary::after { content: "+"; position: absolute; right: 0; color: var(--bbt-orange); font-size: 24px; top: -5px; }
+    details[open] summary::after { content: "−"; }
+    details p { margin-top: 15px; color: var(--bbt-muted); font-size: 14px; }
+
+    /* SECTION 09 — PARTNERS (MATCHING INDEX) */
+    .logo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; align-items: center; margin-top: 50px; }
+    .logo-grid img { width: 100%; filter: grayscale(1); opacity: 0.6; transition: 0.4s ease; }
+    .logo-grid img:hover { filter: grayscale(0); opacity: 1; transform: scale(1.05); }
+
+    /* FOOTER (MATCHING INDEX) */
+    .site-footer { padding: 80px 0 40px; background: var(--bbt-bg-soft); border-top: 1px solid var(--bbt-border); text-align: center; }
+
+    @media (max-width: 1024px) {
+        .split-wrapper, .why-grid, .logo-grid { grid-template-columns: 1fr; }
+        .contact-form { grid-template-columns: 1fr; }
+        .form-group.full, .submit-btn { grid-column: span 1; }
+        .header .navbar { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-wrapper">
+      <a href="index.html" class="logo">
+        <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+      </a>
+      <nav class="navbar">
+        <ul class="nav-links">
+         <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 13px;">Free Consultation</a>
+    </div>
+  </header>
+
+  <!-- SECTION 01 — HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="hero-tag">Contact Us</p>
+      <h1>Let's Build Something <span style="color: var(--bbt-orange);">Great Together</span></h1>
+      <p>Whether you need a custom POS system, an Odoo ERP implementation, or a complete digital transformation — our experts are here to turn your vision into reality.</p>
+      <div class="hero-trust-bar">
+        <span><i class="fa-solid fa-bolt" style="color: var(--bbt-orange);"></i> 24-hour Response Guarantee</span>
+        <span><i class="fa-solid fa-video" style="color: var(--bbt-orange);"></i> Free 30-min Consultation</span>
+        <span><i class="fa-solid fa-globe" style="color: var(--bbt-orange);"></i> GCC · USA · UK Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02 — CONTACT FORM + INFO SPLIT -->
+  <section class="contact-main">
+    <div class="container split-wrapper">
+      <!-- Left: The Form (conversion point) -->
+      <div class="form-column" id="project-form">
+        <h2>Start Your Project</h2>
+        <p>Fill out the form below and we'll reach out to schedule your free strategy session.</p>
+        
+        <form class="contact-form">
+          <div class="form-group">
+            <label>Full Name*</label>
+            <input type="text" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Business Email*</label>
+            <input type="email" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number*</label>
+            <input type="tel" placeholder="+971 50 123 4567" required>
+          </div>
+          <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" placeholder="Your company name (optional)">
+          </div>
+          <div class="form-group full">
+            <label>What do you need help with?*</label>
+            <select required>
+              <option value="">Select a solution</option>
+              <option>Odoo ERP Implementation</option>
+              <option>POS Systems</option>
+              <option>AI & Automation</option>
+              <option>Custom Software</option>
+              <option>Digital Transformation</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Tell us about your project*</label>
+            <textarea rows="5" placeholder="Briefly describe your goals and timeline..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Budget Range</label>
+            <select>
+              <option>Under $5,000</option>
+              <option>$5,000 – $15,000</option>
+              <option>$15,000 – $50,000</option>
+              <option>$100,000+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>How did you hear about us?</label>
+            <select>
+              <option>Google Search</option>
+              <option>Social Media</option>
+              <option>Referral</option>
+              <option>LinkedIn</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Send My Project Details <i class="fa-solid fa-paper-plane"></i></button>
+          <p style="grid-column: span 2; text-align: center; font-size: 12px; margin-top: 15px; color: var(--bbt-muted);">We respect your privacy. No spam, ever.</p>
+        </form>
+      </div>
+
+      <!-- Right: Contact Information -->
+      <div class="info-column">
+        <div class="info-item">
+            <i class="fa-solid fa-building-user"></i>
+            <div>
+                <h4>Headquarters — Pakistan</h4>
+                <p>Big Binary Tech, [Street Address], Lahore</p>
+                <p>+92 [Phone Number]</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <i class="fa-solid fa-earth-americas"></i>
+            <div>
+                <h4>GCC Office — UAE</h4>
+                <p>Dubai Silicon Oasis, Dubai, UAE</p>
+                <p>gcc@bigbinarytech.com</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+                <h4>Business Hours</h4>
+                <p>Mon–Fri: 9:00 AM – 6:00 PM PKT/GST</p>
+                <p>24/7 Async Support for USA/UK</p>
+            </div>
+        </div>
+        <div class="map-placeholder">
+            [Interactive Google Map - Lahore HQ]
+        </div>
+        <a href="#" class="btn btn-outline" style="color: var(--bbt-navy); border-color: var(--bbt-navy); width: 100%; justify-content: center;">Get Directions <i class="fa-solid fa-location-arrow"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — WHY CONTACT -->
+  <section class="why-section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <p style="color: var(--bbt-orange); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 12px;">The BBT Process</p>
+        <h2 style="font-size: 36px; font-weight: 800; color: var(--bbt-navy);">What Happens After You Reach Out</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="card-num">01</div>
+          <h4 style="margin-bottom: 10px;">Human Response</h4>
+          <p style="font-size: 14px; color: var(--bbt-muted);">A real expert reviews your inquiry within 24 hours.</p>
+        </div>
+        <div class="why-card">
+          <div class="card-num">02</div>
+          <h4 style="margin-bottom: 10px;">Discovery Call</h4>
+          <p style="font-size: 14px; color: var(--bbt-muted);">A free 30-min session to understand your requirements.</p>
+        </div>
+        <div class="why-card">
+          <div class="card-num">03</div>
+          <h4 style="margin-bottom: 10px;">Clear Proposal</h4>
+          <p style="font-size: 14px; color: var(--bbt-muted);">Receive a detailed scope, timeline, and fixed pricing.</p>
+        </div>
+        <div class="why-card">
+          <div class="card-num">04</div>
+          <h4 style="margin-bottom: 10px;">Project Kickoff</h4>
+          <p style="font-size: 14px; color: var(--bbt-muted);">Start when you're ready. No pressure or hidden fees.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — WHAT WE HELP WITH -->
+  <section style="padding: 100px 0; text-align: center;">
+    <div class="container">
+        <h2>Not Sure What You Need?</h2>
+        <p>Explore our core services or describe your challenge in the form above.</p>
+        <div class="pill-container">
+            <a href="#" class="pill">Odoo ERP</a>
+            <a href="#" class="pill">Custom POS</a>
+            <a href="#" class="pill">AI Automations</a>
+            <a href="#" class="pill">Web Portals</a>
+            <a href="#" class="pill">Cloud Migration</a>
+            <a href="#" class="pill">Mobile Apps</a>
+        </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 — FAQ -->
+  <section style="padding: 100px 0; background: #fff;">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 40px;">Common Inquiries</h2>
+      <div class="faq-grid">
+        <details>
+            <summary>How quickly will you respond to my inquiry?</summary>
+            <p>We pride ourselves on speed. A solutions architect will review your message and respond within 24 business hours.</p>
+        </details>
+        <details>
+            <summary>Is the initial consultation really free?</summary>
+            <p>Yes, absolutely. It is a 30-minute strategy call with zero obligation to buy. We focus on providing value first.</p>
+        </details>
+        <details>
+            <summary>Do you work with startups and small businesses?</summary>
+            <p>Yes. We have flexible engagement models designed to help startups scale efficiently without technical debt.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech" style="filter: grayscale(1); opacity: 0.5; margin-bottom: 20px;">
+      </a>
+      <p style="font-size: 14px; color: var(--bbt-muted);">&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Technical SEO Specifications from PDF -->
+  <title>Business Solutions | AI, ERP, Automation & Digital Transformation | Big Binary Tech</title>
+  <meta name="description" content="Discover end-to-end enterprise solutions—from Odoo ERP and AI automation to custom POS systems and digital transformation. Built for scale and delivered with clarity.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+    :root {
+      --bbt-bg: #ffffff;
+      --bbt-bg-soft: #f8fafc;
+      --bbt-navy: #0f172a;
+      --bbt-orange: #f59e0b;
+      --bbt-orange-600: #d97706;
+      --bbt-orange-glow: rgba(245, 158, 11, 0.25);
+      --bbt-white: #ffffff;
+      --bbt-heading: #0f172a;
+      --bbt-text: #334155;
+      --bbt-muted: #64748b;
+      --bbt-surface: #f1f5f9;
+      --bbt-border: rgba(15, 23, 42, 0.1);
+      --bbt-glass: rgba(255, 255, 255, 0.85);
+      --section-pad: 96px;
+      --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: var(--bbt-bg);
+      color: var(--bbt-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container { width: 90%; max-width: 1300px; margin: auto; }
+
+    /* Reusable Components from Index */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--bbt-orange); color: var(--bbt-white); border: none; box-shadow: 0 8px 32px var(--bbt-orange-glow); }
+    .btn-primary:hover { background: var(--bbt-orange-600); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--bbt-white); border: 1px solid rgba(255,255,255,0.3); }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--bbt-orange); }
+
+   /* HEADER STYLES (Identical to Index) */
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: transparent; 
+      padding: 20px 0;
+    }
+
+    .header .nav-links a {
+      color: #ffffff !important;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .header .logo {
+      filter: brightness(0) invert(1); 
+    }
+
+    .header .logo img {
+      height: 100px;
+      width: auto;
+      display: block;
+    }
+
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--bbt-orange) !important;
+    }
+
+    .cta-btn-nav {
+      background: var(--bbt-orange);
+      color: var(--bbt-white);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 24px var(--bbt-orange-glow);
+    }
+
+    .cta-btn-nav:hover {
+      transform: translateY(-2px);
+      background: var(--bbt-orange-600);
+      box-shadow: 0 8px 32px var(--bbt-orange-glow);
+    }
+
+    /* SECTION 01 — HERO BANNER */
+    .solutions-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding-top: 120px;
+      position: relative;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .solutions-hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 24px; font-weight: 800; }
+    .solutions-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin-bottom: 32px; }
+    
+    .trust-bar { display: flex; gap: 40px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .trust-item strong { display: block; font-size: 1.5rem; color: var(--bbt-orange); }
+    .trust-item span { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
+
+    /* SECTION 02 — SOLUTIONS ECOSYSTEM */
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 { font-size: 2.5rem; color: var(--bbt-navy); font-weight: 800; }
+    .ecosystem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: var(--section-pad) 0; }
+    .eco-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid var(--bbt-border);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .eco-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--bbt-orange); }
+    .eco-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--bbt-navy); }
+    .eco-card ul { padding: 0; list-style: none; margin: 20px 0; flex-grow: 1; }
+    .eco-card li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+    .eco-card li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--bbt-orange); font-size: 12px; }
+
+    /* SECTION 03 — BUSINESS CHALLENGES (Accordion) */
+    .challenges-section { background: var(--bbt-bg-soft); padding: var(--section-pad) 0; }
+    .accordion-container { max-width: 800px; margin: 40px auto 0; }
+    details { background: #fff; margin-bottom: 15px; border-radius: 12px; border: 1px solid var(--bbt-border); }
+    summary { padding: 24px; cursor: pointer; font-weight: 700; color: var(--bbt-navy); list-style: none; position: relative; }
+    summary::after { content: "+"; position: absolute; right: 24px; color: var(--bbt-orange); font-size: 24px; }
+    details[open] summary::after { content: "-"; }
+    .acc-content { padding: 0 24px 24px; }
+    .acc-content p { color: var(--bbt-orange-600); font-weight: 600; margin-bottom: 10px; }
+
+    /* SECTION 05 — DELIVERY FRAMEWORK */
+    .framework-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 50px; }
+    .step-card { text-align: center; padding: 30px; position: relative; }
+    .step-num { font-size: 4rem; font-weight: 800; color: var(--bbt-surface); position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: -1; }
+    .step-card h4 { margin-top: 40px; color: var(--bbt-navy); font-size: 1.25rem; }
+
+    /* Footer - Matching Index */
+    .site-footer { padding: 72px 0 40px; background: var(--bbt-bg-soft); border-top: 1px solid var(--bbt-border); }
+
+    @media (max-width: 1024px) {
+      .hero-grid, .ecosystem-grid, .framework-grid { grid-template-columns: 1fr; }
+      .solutions-hero { text-align: center; }
+      .hero-grid { justify-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+ <header class="header">
+    <div class="container header-wrapper">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+      </a>
+
+      <!-- Navigation -->
+      <nav class="navbar">
+        <ul class="nav-links">
+           <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="solutions.html" class="active">Solutions</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <a href="contact.html" class="cta-btn-nav">
+        Get Free Consultation
+      </a>
+
+    </div>
+  </header>
+
+  <!-- SECTION 01 — HERO BANNER -->
+  <section class="solutions-hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Solutions That Power Modern Business Operations</h1>
+        <p>From AI-driven automation to enterprise ERP implementations, we build integrated technology solutions that streamline operations, reduce costs, and accelerate growth.</p>
+        <div style="display: flex; gap: 15px;">
+          <a href="#ecosystem" class="btn btn-primary">Explore Our Solutions</a>
+          <a href="contact.html" class="btn btn-outline">Talk to an Expert</a>
+        </div>
+        <div class="trust-bar">
+          <div class="trust-item"><strong>50+</strong><span>Solutions Delivered</span></div>
+          <div class="trust-item"><strong>15+</strong><span>Industries Served</span></div>
+          <div class="trust-item"><strong>98%</strong><span>Client Retention</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- Visualizing the Animated Ecosystem as per PDF -->
+        <img src="../assests/images/company-illustration.png" alt="Ecosystem" style="width: 100%; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.3));">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02 — SOLUTIONS ECOSYSTEM -->
+  <section id="ecosystem" class="container" style="padding: var(--section-pad) 0;">
+    <div class="section-header">
+      <p style="color: var(--bbt-orange); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Our Pillars</p>
+      <h2>Our Solutions Ecosystem</h2>
+      <p>Three interconnected solution pillars designed to transform how your business operates.</p>
+    </div>
+    
+    <div class="ecosystem-grid">
+      <!-- Card 1 -->
+      <div class="eco-card reveal">
+        <h3>Enterprise & Odoo Solutions</h3>
+        <p>End-to-end ERP implementation, Odoo customization, and system integration for operational excellence.</p>
+        <ul>
+          <li>Odoo ERP</li>
+          <li>HR & Payroll</li>
+          <li>Finance & Inventory</li>
+          <li>CRM Systems</li>
+        </ul>
+        <a href="enterprise-odoo.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Explore Enterprise</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="eco-card reveal">
+        <h3>Retail & POS Solutions</h3>
+        <p>Custom POS systems, inventory management, and retail automation built for multi-branch operations.</p>
+        <ul>
+          <li>Retail & Restaurant POS</li>
+          <li>Inventory Management</li>
+          <li>Billing Systems</li>
+          <li>Multi-Branch Sync</li>
+        </ul>
+        <a href="retail-pos.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Explore Retail</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="eco-card reveal">
+        <h3>Digital Transformation</h3>
+        <p>AI automation, workflow optimization, and legacy modernization designed for future-ready businesses.</p>
+        <ul>
+          <li>AI Automation</li>
+          <li>Business Process Automation</li>
+          <li>Integrations</li>
+          <li>Custom Development</li>
+        </ul>
+        <a href="digital-transformation.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Explore Digital</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — SOLUTIONS BY BUSINESS CHALLENGE -->
+  <section class="challenges-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Solutions by Business Challenge</h2>
+        <p>Find solutions based on your specific business problems rather than technologies.</p>
+      </div>
+
+      <div class="accordion-container">
+        <details>
+          <summary>Manual Processes Slowing You Down?</summary>
+          <div class="acc-content">
+            <p>Recommended: AI Automations & Integrations</p>
+            <small>Capabilities: Workflow Automation, AI Assistants, CRM Integrations, API Connections.</small>
+          </div>
+        </details>
+        <details>
+          <summary>Disconnected Systems Creating Data Silos?</summary>
+          <div class="acc-content">
+            <p>Recommended: ERP Integration & Odoo Solutions</p>
+            <small>Capabilities: ERP Implementation, System Integration, Data Synchronization.</small>
+          </div>
+        </details>
+        <details>
+          <summary>Outdated Website Losing Customers?</summary>
+          <div class="acc-content">
+            <p>Recommended: Website Development & CMS</p>
+            <small>Capabilities: Corporate Websites, E-Commerce, Landing Pages, Redesign.</small>
+          </div>
+        </details>
+        <details>
+            <summary>Retail Operations Difficult to Manage?</summary>
+            <div class="acc-content">
+              <p>Recommended: POS Systems</p>
+              <small>Capabilities: Retail POS, Restaurant POS, Inventory Tracking.</small>
+            </div>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 — DELIVERY FRAMEWORK -->
+  <section class="container" style="padding: var(--section-pad) 0;">
+    <div class="section-header">
+      <h2>Our Solutions Delivery Framework</h2>
+    </div>
+    <div class="framework-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h4>Discover</h4>
+        <p>Business analysis and requirements gathering.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h4>Design</h4>
+        <p>Technology architecture and user journeys.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h4>Develop</h4>
+        <p>Agile implementation with regular milestones.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h4>Deploy & Optimize</h4>
+        <p>Launch, training, and continuous support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 09 — FINAL CTA -->
+  <section style="background: var(--bbt-navy); padding: 80px 0; color: #fff; text-align: center;">
+    <div class="container">
+      <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Not Sure Which Solution Fits Your Business?</h2>
+      <p style="max-width: 700px; margin: 0 auto 30px; opacity: 0.8;">Our solutions architects will analyze your business needs and recommend the right technology roadmap with complete clarity and no obligation.</p>
+      <div style="display: flex; gap: 15px; justify-content: center;">
+        <a href="contact.html" class="btn btn-primary">Get a Free Solutions Assessment</a>
+        <a href="services.html" class="btn btn-outline">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <img src="../assests/images/bbt-logo.png" alt="Logo" style="height: 50px; margin-bottom: 20px; filter: contrast(0.5);">
+      <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Fade in reveal for cards
+    gsap.utils.toArray(".reveal").forEach(card => {
+      gsap.from(card, {
+        scrollTrigger: card,
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+    });
+
+    // Step cards stagger
+    gsap.from(".step-card", {
+      scrollTrigger: ".framework-grid",
+      y: 30,
+      opacity: 0,
+      stagger: 0.2,
+      duration: 0.8
+    });
+  </script>
+</body>
+</html>
