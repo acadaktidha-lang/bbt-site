@@ -41,14 +41,16 @@
 
     .container { width: 90%; max-width: 1300px; margin: auto; }
 
-    /* HEADER (Light Theme Consistent) */
-    .header {
-      position: fixed;
-      top: 0; width: 100%;
-      z-index: 1000;
-      padding: 24px 0;
-      transition: all 0.4s ease;
-    }
+       .header {
+  position: absolute; /* Changed from fixed to absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent; 
+  padding: 20px 0;
+  /* Optional: Remove transition since it won't "stick" anymore */
+}
     .header.scrolled {
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(15px);
@@ -56,21 +58,293 @@
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
       border-bottom: 1px solid var(--bbt-border);
     }
-    .header-wrapper { display: flex; align-items: center; justify-content: space-between; }
-    .logo img { height: 90px; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { color: var(--bbt-navy); text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.3s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--bbt-orange); }
-    .cta-btn { 
-      background: var(--bbt-orange); 
-      color: white; 
-      padding: 10px 24px; 
-      border-radius: 999px; 
-      text-decoration: none; 
-      font-weight: 600; 
-      font-size: 14px;
-      box-shadow: 0 4px 20px var(--bbt-orange-glow);
+
+/* Ensure the logo and links are white since they sit over the video */
+.header .nav-links a {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.header .logo {
+  filter: brightness(0) invert(1); 
+}
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: auto;
     }
+
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 100px;
+      width: auto;
+      display: block;
+    }
+
+    .navbar {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--bbt-navy);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--bbt-orange);
+    }
+
+    .cta-btn {
+      background: var(--bbt-orange);
+      color: var(--bbt-white);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 24px var(--bbt-orange-glow);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      background: var(--bbt-orange-600);
+      box-shadow: 0 8px 32px var(--bbt-orange-glow);
+    }
+
+    .nav-links a.active {
+      color: var(--bbt-orange);
+      position: relative;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--bbt-orange);
+      border-radius: 2px;
+    }
+    /* Parent item alignment */
+.nav-item-dropdown {
+    position: static; /* Required for the fixed full-width child */
+}
+
+/* The Full-Width Menu Container */
+.mega-menu-wrapper {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    top: 100px; /* Aligns exactly at bottom of header */
+    background: var(--bbt-navy); /* Dark Theme */
+    border-top: 2px solid var(--bbt-orange);
+    border-bottom: 5px solid var(--bbt-orange);
+    padding: 50px 0;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    
+    /* Animation States */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 9999;
+}
+
+/* Hover Trigger */
+.nav-item-dropdown:hover .mega-menu-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Visual ratio matching your SS */
+    gap: 100px;
+    align-items: start;
+}
+
+/* Left Section: Featured */
+.mega-heading {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mega-card {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.mega-card-img {
+    width: 320px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mega-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mega-card-text h4 {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.mega-cta {
+    color: var(--bbt-orange);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Right Section: Link List */
+.mega-links-section {
+    padding-top: 55px;
+}
+
+.mega-links-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 22px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link i {
+    font-size: 18px;
+    color: var(--bbt-orange);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+/* Hover States */
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+    padding-left: 15px;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+/* Header Padding adjustment to stop menu from disappearing */
+.nav-item-dropdown {
+    padding-bottom: 40px;
+    margin-bottom: -40px;
+}
+/* Ensure the Mega Menu Heading is prominent */
+.mega-heading {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Featured Card Image Styling to match your design */
+.mega-card-img {
+    width: 320px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0; /* Aligning with text side-by-side */
+}
+
+/* Link List Styling with the arrows and dividers seen in your screenshot */
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link:last-child {
+    border-bottom: none;
+}
+
+.mega-list-link i {
+    font-size: 14px;
+    color: var(--bbt-orange);
+    opacity: 0.6;
+}
+
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* Layout alignment */
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr; /* Exact ratio from your image */
+    gap: 80px;
+}
 
     /* DARK HERO (Homepage Style) */
     .hero {
@@ -176,6 +450,9 @@
       padding: 48px;
       position: relative;
       overflow: hidden;
+  text-decoration: none; 
+  color: inherit;        
+  cursor: pointer;
       display: flex;
       flex-direction: column;
       transition: border-color 0.4s ease, transform 0.4s ease;
@@ -350,35 +627,119 @@
 </head>
 <body>
 
-   <header class="header" id="header">
-    <div class="container header-wrapper">
+    <header class="header" id="header">
+  <div class="container header-wrapper">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+    </a>
 
-      <!-- Logo -->
-      <a href="index.html" class="logo">
-        <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
-      </a>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+      <li class="nav-item-dropdown">
+  <a href="solutions.html" class="nav-link-anchor" class="active">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+  
+  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+      
+      <!-- Left side: Large Title and Featured Card -->
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">SOLUTIONS</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <!-- Featured Image for Solutions -->
+            <img src="../assests/images/solutions.avif" alt="Enterprise Solutions">
+          </div>
+          <div class="mega-card-text">
+            <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
+            <a href="digital-transformation.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
 
-      <!-- Navigation -->
-      <nav class="navbar">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="solutions.html" class="active">Solutions</a></li>
-          <li><a href="industries.html">Industries</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="insights.html">Insights</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- CTA -->
-      <a href="contact.html" class="cta-btn">
-        Get Free Consultation
-      </a>
+      <!-- Right side: Vertical Link List -->
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="social-media-marketing.html" class="mega-list-link">
+            <span>Social Media Marketing</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="enterprise-odo.html" class="mega-list-link">
+            <span>Enterprise Odoo ERP</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="digital-transformation.html" class="mega-list-link">
+            <span>Digital Transformation</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="retil-pos.html" class="mega-list-link">
+            <span>Retail & POS Solutions</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
 
     </div>
-  </header>
+  </div>
+</li>
+        <li><a href="industries.html">Industries</a></li>
+        
+ <li class="nav-item-dropdown">
+  <a href="resources.html" class="nav-link-anchor">Resources <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+  
+  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+      
+      <!-- Left side: Featured Insight -->
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">Resources</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <img src="../assests/images/resources.avif" alt="AI Innovations">
+          </div>
+          <div class="mega-card-text">
+            <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
+            <a href="insights.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Links -->
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="case-studies.html" class="mega-list-link">
+            <span>Case Studies</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="blogs.html" class="mega-list-link">
+            <span>Blogs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="e-books.html" class="mega-list-link">
+            <span>E-Books</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+  </div>
+</header>
  <main>
     <!-- HERO SECTION -->
     <section class="hero">
@@ -414,42 +775,43 @@
             <h2 style="font-size: 3rem; color: var(--bbt-navy); font-weight: 900;">Integrated Solution Pillars</h2>
         </div>
 
-        <div class="bento-grid">
-          <!-- PILLAR 1 -->
-          <div class="bento-item item-lg">
-            <div class="spotlight"></div>
-            <i class="fa-solid fa-layer-group" style="font-size: 48px; color: var(--bbt-orange); margin-bottom: 24px;"></i>
-            <h3>Odoo ERP & Enterprise</h3>
-            <p>Full-scale implementation and bespoke customization. We don't just deploy software; we architect your operation's central nervous system to sync finance, inventory, and sales in real-time.</p>
-            <div style="display: flex; gap: 20px; color: var(--bbt-orange); font-weight: 700; font-size: 14px;">
-                <span>#EnterpriseScale</span> <span>#OdooCertified</span>
-            </div>
-          </div>
+      <div class="bento-grid">
+  <!-- PILLAR 1: Odoo ERP (CLICKABLE) -->
+  <a href="enterprise-odoo.html" class="bento-item item-lg">
+    <div class="spotlight"></div>
+    <i class="fa-solid fa-layer-group" style="font-size: 48px; color: var(--bbt-orange); margin-bottom: 24px;"></i>
+    <h3>Odoo ERP & Enterprise</h3>
+    <p>Full-scale implementation and bespoke customization. We don't just deploy software; we architect your operation's central nervous system to sync finance, inventory, and sales in real-time.</p>
+    <div style="display: flex; gap: 20px; color: var(--bbt-orange); font-weight: 700; font-size: 14px;">
+        <span>#EnterpriseScale</span> <span>#OdooCertified</span>
+    </div>
+  </a>
 
-          <!-- PILLAR 2 -->
-          <div class="bento-item item-sm">
-            <div class="spotlight"></div>
-            <i class="fa-solid fa-shop" style="font-size: 48px; color: var(--bbt-orange); margin-bottom: 24px;"></i>
-            <h3>Retail & POS</h3>
-            <p>Modern POS systems integrated with cloud inventory for seamless multi-location management.</p>
-          </div>
+  <!-- PILLAR 2: Retail & POS -->
+  <a href="retail-pos.html" class="bento-item item-sm">
+    <div class="spotlight"></div>
+    <i class="fa-solid fa-shop" style="font-size: 48px; color: var(--bbt-orange); margin-bottom: 24px;"></i>
+    <h3>Retail & POS</h3>
+    <p>Modern POS systems integrated with cloud inventory for seamless multi-location management.</p>
+  </a>
 
-          <!-- PILLAR 3 -->
-          <div class="bento-item item-sm">
-            <div class="spotlight"></div>
-            <i class="fa-solid fa-robot" style="font-size: 48px; color: var(--bbt-orange); margin-bottom: 24px;"></i>
-            <h3>AI & Automation</h3>
-            <p>Infusing machine learning and robotic process automation into legacy workflows.</p>
-          </div>
+  <!-- PILLAR 3: AI & Automation -->
+  <a href="social-media-marketing.html"  class="bento-item item-sm">
+    <div class="spotlight"></div>
+    <i class="fa-solid fa-robot" style="font-size: 48px; color: var(--bbt-orange); margin-bottom: 24px;"></i>
+    <h3>Social Media Marketing & AI Automation
+    </h3>
+    <p>Infusing machine learning and robotic process automation into legacy workflows.</p>
+  </a>
 
-          <!-- PILLAR 4 -->
-          <div class="bento-item item-lg">
-            <div class="spotlight"></div>
-            <i class="fa-solid fa-arrows-spin" style="font-size: 48px; color: var(--bbt-orange); margin-bottom: 24px;"></i>
-            <h3>Digital Transformation</h3>
-            <p>Leapfrog the competition. We help traditional firms transition into tech-driven powerhouses by modernizing legacy systems and building scalable custom software architectures.</p>
-          </div>
-        </div>
+  <!-- PILLAR 4: Digital Transformation (CLICKABLE) -->
+  <a href="digital-transformation.html" class="bento-item item-lg">
+    <div class="spotlight"></div>
+    <i class="fa-solid fa-arrows-spin" style="font-size: 48px; color: var(--bbt-orange); margin-bottom: 24px;"></i>
+    <h3>Digital Transformation</h3>
+    <p>Leapfrog the competition. We help traditional firms transition into tech-driven powerhouses by modernizing legacy systems and building scalable custom software architectures.</p>
+  </a>
+</div>
       </div>
     </section>
 

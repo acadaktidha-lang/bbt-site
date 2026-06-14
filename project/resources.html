@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources Hub | Big Binary Tech</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+    /* EXACT CSS VARIABLES FROM YOUR INDEX.HTML */
+    :root {
+      --bbt-bg: #ffffff;
+      --bbt-bg-soft: #f8fafc;
+      --bbt-navy: #0f172a;
+      --bbt-orange: #f59e0b;
+      --bbt-orange-600: #d97706;
+      --bbt-orange-glow: rgba(245, 158, 11, 0.25);
+      --bbt-white: #ffffff;
+      --bbt-heading: #0f172a;
+      --bbt-text: #334155;
+      --bbt-muted: #64748b;
+      --bbt-surface: #f1f5f9;
+      --bbt-border: rgba(15, 23, 42, 0.1);
+      --bbt-glass: rgba(255, 255, 255, 0.85);
+      --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: var(--bbt-bg); color: var(--bbt-text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden;}
+    html { scroll-behavior: smooth; }
+
+    .container { width: 90%; max-width: 1300px; margin: auto; }
+
+    /* --- HEADER (EXACT REPLICATION) --- */
+    .header { position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; background: transparent; padding: 20px 0; }
+    .header .nav-links a { color: #ffffff !important; text-shadow: 0 2px 10px rgba(0,0,0,0.5); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .header-wrapper { display: flex; align-items: center; justify-content: space-between; }
+    .logo img { height: 100px; width: auto; filter: brightness(0) invert(1); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+      /* Parent item alignment */
+.nav-item-dropdown {
+    position: static; /* Required for the fixed full-width child */
+}
+/* Ensure the Mega Menu Heading is prominent */
+.mega-heading {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Featured Card Image Styling to match your design */
+.mega-card-img {
+    width: 320px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0; /* Aligning with text side-by-side */
+}
+
+/* Link List Styling with the arrows and dividers seen in your screenshot */
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link:last-child {
+    border-bottom: none;
+}
+
+.mega-list-link i {
+    font-size: 14px;
+    color: var(--bbt-orange);
+    opacity: 0.6;
+}
+
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* Layout alignment */
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr; /* Exact ratio from your image */
+    gap: 80px;
+}
+
+/* The Full-Width Menu Container */
+.mega-menu-wrapper {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    top: 100px; /* Aligns exactly at bottom of header */
+    background: var(--bbt-navy); /* Dark Theme */
+    border-top: 2px solid var(--bbt-orange);
+    border-bottom: 5px solid var(--bbt-orange);
+    padding: 50px 0;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    
+    /* Animation States */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 9999;
+}
+
+/* Hover Trigger */
+.nav-item-dropdown:hover .mega-menu-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Visual ratio matching your SS */
+    gap: 100px;
+    align-items: start;
+}
+
+/* Left Section: Featured */
+.mega-heading {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mega-card {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.mega-card-img {
+    width: 320px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mega-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mega-card-text h4 {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.mega-cta {
+    color: var(--bbt-orange);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Right Section: Link List */
+.mega-links-section {
+    padding-top: 55px;
+}
+
+.mega-links-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 22px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link i {
+    font-size: 18px;
+    color: var(--bbt-orange);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+/* Hover States */
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+    padding-left: 15px;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+/* Header Padding adjustment to stop menu from disappearing */
+.nav-item-dropdown {
+    padding-bottom: 40px;
+    margin-bottom: -40px;
+}
+/* Ensure the Mega Menu Heading is prominent */
+.mega-heading {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Featured Card Image Styling to match your design */
+.mega-card-img {
+    width: 320px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0; /* Aligning with text side-by-side */
+}
+
+/* Link List Styling with the arrows and dividers seen in your screenshot */
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link:last-child {
+    border-bottom: none;
+}
+
+.mega-list-link i {
+    font-size: 14px;
+    color: var(--bbt-orange);
+    opacity: 0.6;
+}
+
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* Layout alignment */
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr; /* Exact ratio from your image */
+    gap: 80px;
+}
+    .cta-btn { background: var(--bbt-orange); color: var(--bbt-white); padding: 10px 20px; border-radius: 999px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 24px var(--bbt-orange-glow); }
+
+    /* --- HERO (EXACT REPLICATION) --- */
+    .hero { position: relative; width: 100%; height: 85vh; background: #000; overflow: hidden; display: flex; align-items: center; }
+    .hero-video-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+    .hero-video-bg video { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+    .hero-video-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4)); z-index: 1; }
+    
+    .hero-content { position: relative; z-index: 5; color: white; max-width: 800px; }
+    .hero-tag { display: inline-block; padding: 8px 16px; margin-bottom: 24px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bbt-orange); border: 1px solid var(--bbt-ring); border-radius: 999px; background: rgba(245, 158, 11, 0.06); }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+    
+    /* --- SECTION 02: CATEGORY CARDS (GLASS STYLE) --- */
+    .resources-grid-section { padding: 100px 0; background: var(--bbt-bg-soft); }
+    .res-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    
+    .res-card {
+      position: relative;
+      padding: 40px 30px;
+      background: white;
+      border: 1px solid var(--bbt-orange);
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+    }
+    .res-card:hover { transform: translateY(-10px); background: var(--bbt-navy); border-color: var(--bbt-navy); }
+    .res-card i { font-size: 40px; color: var(--bbt-orange); margin-bottom: 20px; transition: 0.4s; }
+    .res-card:hover i, .res-card:hover h3, .res-card:hover p { color: white; }
+    .res-card h3 { font-size: 1.4rem; font-weight: 700; color: var(--bbt-navy); margin-bottom: 12px; }
+    .res-card p { font-size: 0.95rem; color: var(--bbt-text); }
+
+    /* --- SECTION 03: FEATURED (LEAD MAGNET) --- */
+    .featured-resource { padding: 100px 0; background: var(--bbt-navy); color: white; position: relative; overflow: hidden; }
+    .featured-flex { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
+    .feat-tag { color: var(--bbt-orange); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; }
+    .feat-results { display: flex; gap: 30px; margin-top: 30px; }
+    .feat-stat h4 { font-size: 2.5rem; color: var(--bbt-orange); font-weight: 800; }
+    .feat-stat p { font-size: 12px; opacity: 0.7; text-transform: uppercase; }
+    
+    /* 3D Book Mockup */
+    .book-mockup {
+      width: 100%;
+      height: 450px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border-radius: 10px 30px 30px 10px;
+      box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
+      border-left: 8px solid #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    /* --- SECTION: LATEST UPDATES (BLOG & EBOOKS) --- */
+    .updates-section { padding: 100px 0; background: white; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 { font-size: 2.5rem; font-weight: 800; color: var(--bbt-navy); }
+    
+    .update-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .update-card {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--bbt-border);
+      transition: 0.3s;
+    }
+    .update-card:hover { border-color: var(--bbt-orange); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+    .update-img { height: 220px; background: #cbd5e1; position: relative; }
+    .update-img img { width:100%; height:100%; object-fit: cover; }
+    .update-content { padding: 25px; }
+    .update-content span { color: var(--bbt-orange); font-weight: 700; font-size: 12px; text-transform: uppercase; }
+    .update-content h4 { margin: 10px 0; font-size: 1.25rem; color: var(--bbt-navy); }
+
+    /* FOOTER (REPLICATED) */
+    .site-footer { padding: 72px 0 40px; background: var(--bbt-bg-soft); border-top: 1px solid var(--bbt-border); text-align: center;}
+
+    @media (max-width: 1024px) {
+      .res-grid, .update-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-flex { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .res-grid, .update-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+   <header class="header" id="header">
+  <div class="container header-wrapper">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+       <li class="nav-item-dropdown">
+  <a href="solutions.html" class="nav-link-anchor">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+  
+  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+      
+      <!-- Left side: Large Title and Featured Card -->
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">SOLUTIONS</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <!-- Featured Image for Solutions -->
+            <img src="../assests/images/solutions.avif" alt="Enterprise Solutions">
+          </div>
+          <div class="mega-card-text">
+            <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
+            <a href="digital-transformation.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Vertical Link List -->
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="social-media-marketing.html" class="mega-list-link">
+            <span>Social Media Marketing</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="enterprise-odo.html" class="mega-list-link">
+            <span>Enterprise Odoo ERP</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="digital-transformation.html" class="mega-list-link">
+            <span>Digital Transformation</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="retil-pos.html" class="mega-list-link">
+            <span>Retail & POS Solutions</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</li>
+        <li><a href="industries.html">Industries</a></li>
+        
+ <li class="nav-item-dropdown">
+  <a href="resources.html" class="nav-link-anchor" class="active">Resources <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+  
+  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+      
+      <!-- Left side: Featured Insight -->
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">Resources</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <img src="../assests/images/resources.avif" alt="AI Innovations">
+          </div>
+          <div class="mega-card-text">
+            <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
+            <a href="insights.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Links -->
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="case-studies.html" class="mega-list-link">
+            <span>Case Studies</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="blogs.html" class="mega-list-link">
+            <span>Blogs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="e-books.html" class="mega-list-link">
+            <span> E-Books</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+  </div>
+</header>
+
+  <section class="hero">
+    <div class="hero-video-bg">
+      <video autoplay loop muted playsinline><source src="../assests/images/website-illustration.mp4" type="video/mp4"></video>
+      <div class="hero-video-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-tag">Knowledge Hub &bull; Expert Insights</p>
+        <h1>Resources, Insights & Guides for Digital Leaders</h1>
+        <p>Explore real-world case studies, expert-written playbooks, and actionable frameworks for AI, Odoo ERP, and Cloud migration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02: VISIBLE CATEGORIES -->
+  <section class="resources-grid-section">
+    <div class="container">
+      <div class="res-grid">
+        <a href="case-studies.html" class="res-card reveal">
+          <i class="fa-solid fa-briefcase"></i>
+          <h3>Case Studies</h3>
+          <p>Real-world transformation stories from GCC, USA and UK businesses.</p>
+        </a>
+        <a href="ebooks.html" class="res-card reveal">
+          <i class="fa-solid fa-book-open"></i>
+          <h3>E-Books & Guides</h3>
+          <p>Downloadable playbooks and implementation frameworks.</p>
+        </a>
+        <a href="blogs.html" class="res-card reveal">
+          <i class="fa-solid fa-pen-nib"></i>
+          <h3>Blog</h3>
+          <p>Weekly insights on AI, Odoo, cloud, and technology trends.</p>
+        </a>
+        <a href="#faqs" class="res-card reveal">
+          <i class="fa-solid fa-circle-question"></i>
+          <h3>FAQs</h3>
+          <p>Answers to common questions about services and support.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03: FEATURED CASE STUDY -->
+  <section class="featured-resource">
+    <div class="container featured-flex">
+      <div class="feat-content reveal">
+        <p class="feat-tag">Featured Case Study</p>
+        <h2 style="font-size: 2.2rem; margin: 20px 0; font-weight: 800;">How a Dubai Trading Company Cut Reporting Time by 92%</h2>
+        <p>Transforming a 12-year-old legacy inventory system into a cloud-native ecosystem with AI demand forecasting.</p>
+        <div class="feat-results">
+          <div class="feat-stat"><h4>15m</h4><p>Reporting Time</p></div>
+          <div class="feat-stat"><h4>40%</h4><p>Inventory Savings</p></div>
+        </div>
+        <a href="case-studies.html" class="cta-btn" style="display:inline-block; margin-top:40px;">Read Full Story</a>
+      </div>
+      <div class="book-mockup reveal">
+         <h3 style="color:var(--bbt-orange)">THE ODOO PLAYBOOK</h3>
+         <p style="margin-top:20px;">Comprehensive Guide to ERP Implementation in the GCC Region.</p>
+         <span style="margin-top:auto; font-weight:800;">48 PAGES &bull; PDF</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04: BLOGS & EBOOKS VISIBILITY -->
+  <section class="updates-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Latest from E-Books & Blog</h2>
+      </div>
+      <div class="update-grid">
+        <!-- E-book 1 -->
+        <article class="update-card reveal">
+          <div class="update-img"><img src="../assests/images/resoruces-ai.avif" alt="ERP"></div>
+          <div class="update-content">
+            <span>Guide / E-Book</span>
+            <h4>AI Automation Starter Kit for 2026</h4>
+            <a href="ebooks.html" style="color:var(--bbt-navy); font-weight:800;">Download Now →</a>
+          </div>
+        </article>
+        <!-- Blog 1 -->
+        <article class="update-card reveal">
+          <div class="update-img"><img src="../assests/images/businesses.webp" alt="Data"></div>
+          <div class="update-content">
+            <span>Blog / Insights</span>
+            <h4>Why GCC Businesses are moving to Cloud</h4>
+            <a href="blogs.html" style="color:var(--bbt-navy); font-weight:800;">Read Article →</a>
+          </div>
+        </article>
+        <!-- E-book 2 -->
+        <article class="update-card reveal">
+          <div class="update-img"><img src="../assests/images/solutions.avif" alt="Strategy"></div>
+          <div class="update-content">
+            <span>Guide / E-Book</span>
+            <h4>Cloud Migration Checklist for SMEs</h4>
+            <a href="ebooks.html" style="color:var(--bbt-navy); font-weight:800;">Download Now →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <img src="../assests/images/bbt-logo.png" style="height:60px; filter:grayscale(1); opacity:0.5; margin-bottom:20px;">
+    <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+  </footer>
+
+  <!-- GSAP ANIMATION (EXACT REPLICATION FROM INDEX) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initial Hero Animation
+    gsap.from(".hero-content", { opacity: 0, y: 50, duration: 1.2, ease: "power3.out" });
+
+    // Staggered reveal for grid items
+    gsap.utils.toArray(".reveal").forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        ease: "power2.out"
+      });
+    });
+  </script>
+</body>
+</html>

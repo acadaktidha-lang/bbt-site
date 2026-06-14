@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Odoo ERP Solutions | Big Binary Tech</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        :root {
+            --bbt-navy: #0f172a;    
+            --bbt-orange: #f59e0b;     
+            --bbt-orange-600: #d97706;
+            --bbt-orange-glow: rgba(245, 158, 11, 0.3);
+            --bbt-white: #ffffff;
+            --bbt-bg-soft: #f8fafc;
+            --bbt-text: #1e293b;
+            --bbt-muted: #64748b;
+            --bbt-border: rgba(15, 23, 42, 0.1);
+            --font-sans: "Inter", sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-sans); color: var(--bbt-text); line-height: 1.6; overflow-x: hidden; background: var(--bbt-white); scroll-behavior: smooth; }
+        
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+        .reveal { opacity: 0; transform: translateY(40px); }
+
+        /* --- HEADER & NAVIGATION --- */
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            padding: 20px 0;
+            background: transparent;
+        }
+
+        .header.scrolled {
+            position: fixed;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            animation: slideDown 0.4s ease;
+        }
+
+        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+
+        .header-wrapper { display: flex; align-items: center; justify-content: space-between; }
+        
+        .logo img { height: 70px; width: auto; filter: brightness(0) invert(1); transition: 0.3s; }
+
+        .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--bbt-white); font-size: 14px; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--bbt-orange); }
+
+        /* MEGA MENU LOGIC */
+        .nav-item-dropdown { position: static; padding-bottom: 30px; margin-bottom: -30px; }
+        .mega-menu-wrapper {
+            position: fixed; left: 0; width: 100vw; top: 90px;
+            background: var(--bbt-navy); border-top: 2px solid var(--bbt-orange); border-bottom: 5px solid var(--bbt-orange);
+            padding: 50px 0; visibility: hidden; opacity: 0; transform: translateY(15px);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); z-index: 9999;
+        }
+        .nav-item-dropdown:hover .mega-menu-wrapper { visibility: visible; opacity: 1; transform: translateY(0); }
+
+        .mega-menu-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; }
+        .mega-heading { font-size: 22px; font-weight: 900; color: white; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; }
+        .mega-card { display: flex; gap: 20px; align-items: center; }
+        .mega-card-img { width: 280px; height: 160px; border-radius: 10px; overflow: hidden; }
+        .mega-card-img img { width: 100%; height: 100%; object-fit: cover; }
+        .mega-card-text h4 { color: white; margin-bottom: 10px; }
+        .mega-cta { color: var(--bbt-orange); text-decoration: none; font-weight: 800; font-size: 12px; display: flex; align-items: center; gap: 5px; }
+
+        .mega-links-grid { display: flex; flex-direction: column; }
+        .mega-list-link { 
+            display: flex; justify-content: space-between; padding: 15px 0; 
+            border-bottom: 1px solid rgba(255,255,255,0.05); color: white !important; 
+            text-decoration: none; font-weight: 600; 
+        }
+        .mega-list-link:hover { color: var(--bbt-orange) !important; padding-left: 10px; transition: 0.3s; }
+
+        .cta-btn { background: var(--bbt-orange); color: white !important; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 4px 15px var(--bbt-orange-glow); }
+
+        /* --- HERO SECTION --- */
+        .hero { 
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url(../assests/images/odoo-background.avif);
+            background-size: cover; background-position: center;
+            padding: 220px 0 120px; color: var(--bbt-white); position: relative; overflow: hidden;
+        }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
+        .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .breadcrumb span { color: var(--bbt-orange); font-weight: 700; }
+        .section-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
+        .pill-box { display: flex; flex-wrap: wrap; gap: 10px; margin: 30px 0; }
+        .pill { background: rgba(255,255,255,0.1); padding: 8px 18px; border-radius: 100px; font-size: 12px; font-weight: 600; border: 1px solid rgba(255,255,255,0.1); }
+
+        .trust-indicator { display: flex; gap: 40px; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .trust-item b { display: block; font-size: 22px; color: var(--bbt-orange); }
+        .trust-item span { font-size: 12px; text-transform: uppercase; opacity: 0.6; font-weight: 700; }
+
+        /* --- STATS SECTION --- */
+        .stats-section { padding: 100px 0; background: var(--bbt-bg-soft); }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 50px; }
+        .stat-card { background: white; padding: 40px; border-radius: 24px; text-align: center; border: 1px solid var(--bbt-border); transition: 0.3s; }
+        .stat-card:hover { transform: translateY(-10px); border-color: var(--bbt-orange); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .stat-card h2 { font-size: 45px; font-weight: 900; color: var(--bbt-navy); margin-bottom: 5px; }
+        .stat-card p { font-size: 14px; color: var(--bbt-muted); font-weight: 700; text-transform: uppercase; }
+
+        /* --- PILLARS SECTION --- */
+        .pillars { padding: 120px 0; }
+        .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px; }
+        .pillar-card { 
+            padding: 50px 40px; border-radius: 32px; border: 1px solid var(--bbt-border); 
+            background: var(--bbt-white); transition: 0.4s; position: relative; overflow: hidden;
+        }
+        .pillar-card:hover { background: var(--bbt-navy); color: white; transform: translateY(-10px); }
+        .pillar-card i { font-size: 45px; color: var(--bbt-orange); margin-bottom: 30px; display: block; }
+        .pillar-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 20px; }
+        .pillar-card ul { list-style: none; margin-bottom: 30px; }
+        .pillar-card li { font-size: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; opacity: 0.8; }
+        .pillar-card li::before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--bbt-orange); }
+        .benefit-badge { background: rgba(245, 158, 11, 0.1); color: var(--bbt-orange); padding: 8px 15px; border-radius: 8px; font-size: 13px; font-weight: 800; }
+
+        /* --- JOURNEY SECTION --- */
+        .journey { background: var(--bbt-navy); color: white; padding: 120px 0; position: relative; }
+        .timeline { display: flex; justify-content: space-between; margin-top: 80px; position: relative; }
+        .timeline::after { content: ''; position: absolute; top: 40px; left: 0; width: 100%; height: 2px; background: rgba(255,255,255,0.1); }
+        .step { flex: 1; text-align: center; position: relative; z-index: 2; padding: 0 15px; }
+        .step-num { 
+            width: 80px; height: 80px; background: var(--bbt-navy); border: 3px solid var(--bbt-orange); 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+            margin: 0 auto 30px; font-size: 24px; font-weight: 900; color: var(--bbt-orange);
+            box-shadow: 0 0 30px var(--bbt-orange-glow);
+        }
+
+        /* --- CASE STUDIES --- */
+        .case-studies { padding: 120px 0; background: var(--bbt-bg-soft); }
+        .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+        .case-card { background: white; border-radius: 24px; padding: 40px; border: 1px solid var(--bbt-border); transition: 0.3s; }
+        .case-card:hover { border-color: var(--bbt-orange); transform: translateY(-5px); }
+        .case-stat { font-size: 32px; font-weight: 900; color: var(--bbt-orange); display: block; margin-bottom: 10px; }
+
+        /* --- PRICING --- */
+        .pricing { padding: 120px 0; }
+        .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+        .price-card { padding: 60px 40px; border-radius: 40px; border: 1px solid var(--bbt-border); text-align: center; transition: 0.4s; }
+        .price-card.featured { border: 3px solid var(--bbt-orange); background: var(--bbt-navy); color: white; transform: scale(1.05); position: relative; }
+        .popular-label { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--bbt-orange); color: white; padding: 8px 25px; border-radius: 50px; font-size: 12px; font-weight: 900; }
+
+        /* --- FAQ --- */
+        .faq { padding: 120px 0; background: white; }
+        .faq-item { border-bottom: 1px solid var(--bbt-border); padding: 25px 0; cursor: pointer; max-width: 800px; margin: 0 auto; }
+        .faq-question { display: flex; justify-content: space-between; font-weight: 800; font-size: 18px; color: var(--bbt-navy); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s ease-out; color: var(--bbt-muted); padding-top: 0; }
+        .faq-item.active .faq-answer { max-height: 200px; padding-top: 15px; }
+
+        /* --- FINAL CTA --- */
+        .final-cta { 
+            margin: 100px 0; background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('../assests/images/odoo-cta.avif');
+            background-size: cover; padding: 120px 0; border-radius: 40px; text-align: center; color: white;
+        }
+
+        /* --- FOOTER --- */
+        .footer { padding: 80px 0; background: var(--bbt-bg-soft); text-align: center; border-top: 1px solid var(--bbt-border); }
+
+        @media (max-width: 1024px) {
+            .hero-grid, .stats-grid, .pillar-grid, .price-grid, .case-grid, .timeline { grid-template-columns: 1fr; }
+            .timeline::after { display: none; }
+            .step { margin-bottom: 40px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY HEADER -->
+    <header class="header" id="mainHeader">
+        <div class="container header-wrapper">
+            <a href="index.html" class="logo">
+                <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                      <li><a href="services.html">Services</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="solutions.html">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+                        <div class="mega-menu-wrapper">
+                            <div class="container mega-menu-container">
+                                <div class="mega-featured-section">
+                                    <h3 class="mega-heading">Solutions</h3>
+                                    <div class="mega-card">
+                                        <div class="mega-card-img">
+                                            <img src="../assests/images/solutions.avif" alt="ERP">
+                                        </div>
+                                        <div class="mega-card-text">
+                                            <h4>Enterprise-grade architecture for modern business</h4>
+                                            <a href="digital-transformation.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mega-links-section">
+                                    <div class="mega-links-grid">
+                                        <a href="enterprise-odoo.html" class="mega-list-link"><span>Enterprise Odoo ERP</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="retail-pos.html" class="mega-list-link"><span>Retail & POS Solutions</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="digital-transformation.html" class="mega-list-link"><span>Digital Transformation</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="social-media-marketing.html" class="mega-list-link"><span>Social Media Marketing</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="industries.html">Industries</a></li>
+
+                    <li class="nav-item-dropdown">
+                        <a href="resources.html">Resources <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+                        <div class="mega-menu-wrapper">
+                            <div class="container mega-menu-container">
+                                <div class="mega-featured-section">
+                                    <h3 class="mega-heading">Resources</h3>
+                                    <div class="mega-card">
+                                        <div class="mega-card-img">
+                                            <img src="../assests/images/resources.avif" alt="Blogs">
+                                        </div>
+                                        <div class="mega-card-text">
+                                            <h4>Latest Insights: AI and ERP in MENA 2025</h4>
+                                            <a href="insights.html" class="mega-cta">EXPLORE <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mega-links-section">
+                                    <div class="mega-links-grid">
+                                        <a href="case-studies.html" class="mega-list-link"><span>Case Studies</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="blogs.html" class="mega-list-link"><span>Blogs</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="e-books.html" class="mega-list-link"><span>E-Books</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                      <li><a href="insights.html">Insights</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="contact.html" class="cta-btn">Free Consultation</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text reveal">
+                    <div class="breadcrumb">Home / Solutions / <span>Enterprise Odoo</span></div>
+                    <h1 class="section-title">Odoo ERP Solutions Built for <span style="color:var(--bbt-orange)">Operational Excellence.</span></h1>
+                    <p style="font-size: 18px; opacity: 0.8; margin-bottom: 30px;">Streamline HR, finance, inventory, and customer relationships with a fully integrated Odoo ERP system customized to your unique workflows.</p>
+                    
+                    <div class="pill-box">
+                        <span class="pill">Odoo Implementation & Customization</span>
+                        <span class="pill">HR • Finance • Inventory • CRM</span>
+                        <span class="pill">Cloud Hosted & On-Premise</span>
+                    </div>
+
+                    <div style="display: flex; gap: 20px;">
+                        <a href="contact.html" class="cta-btn" style="padding: 18px 40px;">Get a Free ERP Assessment <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="trust-indicator">
+                        <div class="trust-item"><b>Odoo</b><span>Official Partner</span></div>
+                        <div class="trust-item"><b>50+</b><span>ERP Projects</span></div>
+                        <div class="trust-item"><b>MENA</b><span>Market Experts</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY ODOO -->
+    <section class="stats-section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div class="reveal">
+                    <span style="color:var(--bbt-orange); font-weight:800; text-transform:uppercase; letter-spacing:2px;">Why Odoo ERP?</span>
+                    <h2 style="font-size: 40px; font-weight: 900; margin: 20px 0; color: var(--bbt-navy);">The World's Most Flexible Business Platform</h2>
+                    <p style="color: var(--bbt-muted);">Odoo provides open-source advantages with a modular architecture that ensures maximum scalability. Whether you're a startup or a multinational, Odoo evolves with you.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card reveal"><h2>40+</h2><p>Integrated Apps</p></div>
+                    <div class="stat-card reveal"><h2>12M+</h2><p>Global Users</p></div>
+                    <div class="stat-card reveal"><h2>98%</h2><p>Satisfaction</p></div>
+                    <div class="stat-card reveal"><h2>30%</h2><p>Cost Saved</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILLARS -->
+    <section class="pillars">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2 style="font-size: 38px; font-weight: 900; color: var(--bbt-navy);">The Four Pillars of Enterprise Automation</h2>
+            </div>
+            <div class="pillar-grid">
+                <div class="pillar-card reveal">
+                    <i class="fas fa-users-gear"></i>
+                    <h3>HR & Payroll</h3>
+                    <ul>
+                        <li>Employee Self-Service</li>
+                        <li>Attendance Integration</li>
+                        <li>Payroll Automation</li>
+                    </ul>
+                    <div class="benefit-badge">Reduce Admin by 60%</div>
+                </div>
+                <div class="pillar-card reveal">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Finance & Accounting</h3>
+                    <ul>
+                        <li>Automated Invoicing</li>
+                        <li>Multi-Currency Support</li>
+                        <li>Bank Reconciliation</li>
+                    </ul>
+                    <div class="benefit-badge">Close books 3x faster</div>
+                </div>
+                <div class="pillar-card reveal">
+                    <i class="fas fa-boxes-stacked"></i>
+                    <h3>Supply Chain</h3>
+                    <ul>
+                        <li>Real-Time Tracking</li>
+                        <li>Barcode & RFID Support</li>
+                        <li>Automated Reordering</li>
+                    </ul>
+                    <div class="benefit-badge">Reduce stockouts by 45%</div>
+                </div>
+                <div class="pillar-card reveal">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Odoo CRM</h3>
+                    <ul>
+                        <li>Lead Scoring</li>
+                        <li>Pipeline Management</li>
+                        <li>Sales Forecasting</li>
+                    </ul>
+                    <div class="benefit-badge">+35% Sales Conversion</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section class="journey">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 38px; font-weight: 900;">Your Odoo Implementation Journey</h2>
+            <div class="timeline">
+                <div class="step reveal"><div class="step-num">01</div><h4>Discovery</h4><p>Deep process audit.</p></div>
+                <div class="step reveal"><div class="step-num">02</div><h4>Design</h4><p>System architecture.</p></div>
+                <div class="step reveal"><div class="step-num">03</div><h4>Development</h4><p>Customization.</p></div>
+                <div class="step reveal"><div class="step-num">04</div><h4>Testing</h4><p>QA & Migration.</p></div>
+                <div class="step reveal"><div class="step-num">05</div><h4>Go-Live</h4><p>Rollout & Support.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section class="case-studies">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 38px; font-weight: 900; color: var(--bbt-navy); margin-bottom: 20px;">Enterprise & Odoo Success Stories</h2>
+            <div class="case-grid">
+                <div class="case-card reveal">
+                    <span class="case-stat">40% Reduction</span>
+                    <h4 style="font-weight:800; margin-bottom:10px;">Manufacturing Co.</h4>
+                    <p>Optimized production cycles and removed stock discrepancies.</p>
+                </div>
+                <div class="case-card reveal">
+                    <span class="case-stat">50% Faster</span>
+                    <h4 style="font-weight:800; margin-bottom:10px;">Retail Group</h4>
+                    <p>Unified POS and inventory for month-end closing speed.</p>
+                </div>
+                <div class="case-card reveal">
+                    <span class="case-stat">30% Accuracy</span>
+                    <h4 style="font-weight:800; margin-bottom:10px;">Healthcare Org.</h4>
+                    <p>Eliminated billing errors through automated insurance claims.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 38px; font-weight: 900; color: var(--bbt-navy);">Flexible Engagement Models</h2>
+            <div class="price-grid">
+                <div class="price-card reveal">
+                    <h3>Odoo Starter</h3>
+                    <p style="margin: 20px 0; color: var(--bbt-muted);">Best for small businesses</p>
+                    <a href="contact.html" class="cta-btn" style="background:var(--bbt-navy); display:block;">Get Custom Quote</a>
+                </div>
+                <div class="price-card featured reveal">
+                    <div class="popular-label">MOST POPULAR</div>
+                    <h3>Odoo Professional</h3>
+                    <p style="margin: 20px 0; opacity: 0.8;">Complete customization</p>
+                    <a href="contact.html" class="cta-btn" style="display:block;">Get Custom Quote</a>
+                </div>
+                <div class="price-card reveal">
+                    <h3>Odoo Enterprise</h3>
+                    <p style="margin: 20px 0; color: var(--bbt-muted);">Large-scale operations</p>
+                    <a href="contact.html" class="cta-btn" style="background:var(--bbt-navy); display:block;">Get Custom Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 38px; font-weight: 900; color: var(--bbt-navy); margin-bottom: 50px;">Frequently Asked Questions</h2>
+            <div class="faq-item reveal">
+                <div class="faq-question">How long does Odoo implementation take? <i class="fas fa-plus"></i></div>
+                <div class="faq-answer">Generally between 8 to 24 weeks depending on customization depth and data volume.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">Can Odoo support multiple companies and currencies? <i class="fas fa-plus"></i></div>
+                <div class="faq-answer">Yes, Odoo is designed for multi-company environments with automated consolidated reporting.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">What support do you provide after implementation? <i class="fas fa-plus"></i></div>
+                <div class="faq-answer">We offer 24/7 maintenance, cloud management, and continuous feature training.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="container">
+        <section class="final-cta reveal">
+            <h2 style="font-size: 45px; font-weight: 900; margin-bottom: 20px;">Ready to Transform Your Business?</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; font-size: 18px; opacity: 0.8;">Our experts are ready to guide you from legacy systems to a unified Odoo environment.</p>
+            <div style="display: flex; gap: 20px; justify-content: center;">
+                <a href="contact.html" class="cta-btn" style="padding: 18px 45px;">Schedule Free Consultation</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img src="../assests/images/bbt-logo.png" style="height:50px; opacity: 0.4; filter: grayscale(1); margin-bottom: 20px;">
+        <p>&copy; 2025 Big Binary Tech. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // HEADER SCROLL EFFECT
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // GSAP ANIMATIONS
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray(".reveal").forEach((el) => {
+            gsap.to(el, {
+                scrollTrigger: { trigger: el, start: "top 85%" },
+                opacity: 1, y: 0, duration: 1, ease: "power3.out"
+            });
+        });
+
+        // FAQ TOGGLE
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+                const icon = item.querySelector('i');
+                icon.classList.toggle('fa-plus');
+                icon.classList.toggle('fa-minus');
+            });
+        });
+    </script>
+</body>
+</html>

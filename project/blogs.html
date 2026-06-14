@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights | Big Binary Tech — AI, Odoo, Cloud & Digital Transformation</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+        :root {
+            --bbt-navy: #0f172a;
+            --bbt-orange: #f59e0b;
+            --bbt-orange-600: #d97706;
+            --bbt-teal: #2A9D8F;
+            --bbt-teal-light: #D4EFE4;
+            --bbt-white: #ffffff;
+            --bbt-bg-soft: #f8fafc;
+            --bbt-text: #334155;
+            --bbt-border: rgba(15, 23, 42, 0.08);
+            --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-sans); background: var(--bbt-white); color: var(--bbt-text); overflow-x: hidden; scroll-behavior: smooth; }
+        .container { width: 90%; max-width: 1300px; margin: auto; }
+        a { text-decoration: none; transition: 0.3s; }
+
+        /* --- NAV REPLICATION --- */
+   .header {
+  position: absolute; /* Changed from fixed to absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent; 
+  padding: 20px 0;
+  /* Optional: Remove transition since it won't "stick" anymore */
+}
+
+/* Ensure the logo and links are white since they sit over the video */
+.header .nav-links a {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.header .logo {
+  filter: brightness(0) invert(1); 
+}
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 100px;
+      width: auto;
+      display: block;
+    }
+
+    .navbar {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--bbt-navy);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--bbt-orange);
+    }
+
+    .cta-btn {
+      background: var(--bbt-orange);
+      color: var(--bbt-white);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 24px var(--bbt-orange-glow);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      background: var(--bbt-orange-600);
+      box-shadow: 0 8px 32px var(--bbt-orange-glow);
+    }
+
+    .nav-links a.active {
+      color: var(--bbt-orange);
+      position: relative;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--bbt-orange);
+      border-radius: 2px;
+    }
+
+/* Parent item alignment */
+.nav-item-dropdown {
+    position: static; /* Required for the fixed full-width child */
+}
+
+/* The Full-Width Menu Container */
+.mega-menu-wrapper {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    top: 100px; /* Aligns exactly at bottom of header */
+    background: var(--bbt-navy); /* Dark Theme */
+    border-top: 2px solid var(--bbt-orange);
+    border-bottom: 5px solid var(--bbt-orange);
+    padding: 50px 0;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    
+    /* Animation States */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 9999;
+}
+
+/* Hover Trigger */
+.nav-item-dropdown:hover .mega-menu-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Visual ratio matching your SS */
+    gap: 100px;
+    align-items: start;
+}
+
+/* Left Section: Featured */
+.mega-heading {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mega-card {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.mega-card-img {
+    width: 320px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mega-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mega-card-text h4 {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.mega-cta {
+    color: var(--bbt-orange);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Right Section: Link List */
+.mega-links-section {
+    padding-top: 55px;
+}
+
+.mega-links-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 22px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link i {
+    font-size: 18px;
+    color: var(--bbt-orange);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+/* Hover States */
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+    padding-left: 15px;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+/* Header Padding adjustment to stop menu from disappearing */
+.nav-item-dropdown {
+    padding-bottom: 40px;
+    margin-bottom: -40px;
+}
+/* Ensure the Mega Menu Heading is prominent */
+.mega-heading {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Featured Card Image Styling to match your design */
+.mega-card-img {
+    width: 320px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0; /* Aligning with text side-by-side */
+}
+
+/* Link List Styling with the arrows and dividers seen in your screenshot */
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link:last-child {
+    border-bottom: none;
+}
+
+.mega-list-link i {
+    font-size: 14px;
+    color: var(--bbt-orange);
+    opacity: 0.6;
+}
+
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* Layout alignment */
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr; /* Exact ratio from your image */
+    gap: 80px;
+}
+        /* --- SECTION 01: HERO --- */
+        .hero { position: relative; min-height: 70vh; background: var(--bbt-navy); display: flex; align-items: center; overflow: hidden; padding-top: 80px; }
+        .hero-video { position: absolute; inset: 0; z-index: 0; }
+        .hero-video video { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--bbt-navy) 40%, transparent 100%); z-index: 1; }
+        
+        .hero-wrapper { position: relative; z-index: 5; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+        .breadcrumb { font-size: 12px; color: var(--bbt-orange); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: white; line-height: 1.1; margin-bottom: 20px; }
+        .hero p { color: white; font-size: 1.1rem; opacity: 0.8; margin-bottom: 30px; }
+        
+        .hero-trust-bar { display: flex; gap: 20px; color: #94a3b8; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+        .hero-trust-bar i { color: var(--bbt-orange); }
+
+        .hero-visual { position: relative; }
+        .hero-visual svg { width: 100%; filter: drop-shadow(0 0 20px rgba(245,158,11,0.2)); }
+
+        /* --- SECTION 02: FEATURED POST (SPLIT SCREEN) --- */
+        .featured-section { background: var(--bbt-teal-light); padding: 80px 0; }
+        .featured-post { display: grid; grid-template-columns: 1fr 1fr; border-radius: 32px; overflow: hidden; background: white; box-shadow: 0 40px 80px rgba(0,0,0,0.1); }
+        .featured-img { position: relative; min-height: 400px; }
+        .featured-img img { width: 100%; height: 100%; object-fit: cover; }
+        .featured-badge { position: absolute; top: 20px; left: 20px; background: var(--bbt-orange); padding: 6px 15px; border-radius: 100px; font-weight: 800; font-size: 11px; }
+        .featured-content { padding: 60px; }
+        .featured-content h2 { font-size: 2.2rem; font-weight: 900; color: var(--bbt-navy); margin: 15px 0; line-height: 1.2; }
+        .meta { display: flex; gap: 15px; font-size: 12px; font-weight: 700; color: var(--bbt-muted); text-transform: uppercase; }
+
+        /* --- SECTION 03: LATEST POSTS GRID --- */
+        .blog-section { padding: 100px 0; }
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .post-card { border-radius: 24px; background: white; border: 1px solid var(--bbt-border); overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .post-card:hover { transform: translateY(-12px); border-color: var(--bbt-orange); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .post-thumb { height: 200px; overflow: hidden; }
+        .post-thumb img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .post-card:hover .post-thumb img { transform: scale(1.1); }
+        .post-info { padding: 25px; }
+        .post-info h3 { font-size: 1.3rem; font-weight: 800; color: var(--bbt-navy); margin: 12px 0; line-height: 1.4; height: 3.2em; overflow: hidden; }
+        .post-excerpt { font-size: 14px; color: var(--bbt-text); margin-bottom: 20px; opacity: 0.8; }
+
+        /* --- SECTION 04: BROWSE BY CATEGORY --- */
+        .category-section { background: var(--bbt-bg-soft); padding: 100px 0; }
+        .category-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-top: 40px; }
+        .cat-card { background: white; padding: 25px; border-radius: 20px; border: 1px solid var(--bbt-border); text-align: center; transition: 0.3s; }
+        .cat-card:hover { border-color: var(--bbt-orange); background: var(--bbt-navy); color: white; }
+        .cat-card h4 { font-size: 14px; font-weight: 800; margin-bottom: 5px; }
+        .cat-card span { font-size: 11px; font-weight: 700; opacity: 0.6; }
+
+        /* --- SECTION 07: STATS & TRUST BAR --- */
+        .stats-bar { background: var(--bbt-navy); color: white; padding: 80px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .stats-row { display: grid; grid-template-columns: repeat(6, 1fr); text-align: center; gap: 20px; }
+        .stat-item h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 5px; }
+        .stat-item p { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #94a3b8; }
+
+        /* --- SECTION 08: VIDEO BLOG --- */
+        .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .video-card { border-radius: 24px; overflow: hidden; background: white; border: 1px solid var(--bbt-border); }
+        .video-thumb { height: 180px; background: #000; position: relative; display: flex; align-items: center; justify-content: center; }
+        .video-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .play-btn { position: absolute; width: 50px; height: 50px; background: #E76F51; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; box-shadow: 0 0 20px rgba(231,111,81,0.5); }
+
+        /* --- SECTION 09: TESTIMONIALS --- */
+        .testimonial-section { background: var(--bbt-teal-light); padding: 100px 0; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .testi-card { background: white; padding: 40px; border-radius: 24px; position: relative; }
+        .testi-card i { position: absolute; top: 30px; right: 30px; font-size: 40px; color: #E76F51; opacity: 0.2; }
+        .client-info { display: flex; align-items: center; gap: 15px; margin-top: 25px; }
+        .client-info img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+        .client-info h5 { font-size: 14px; font-weight: 800; color: var(--bbt-navy); }
+
+        /* --- BUTTONS --- */
+        .btn { display: inline-block; padding: 14px 28px; border-radius: 999px; font-weight: 800; font-size: 14px; cursor: pointer; }
+        .btn-primary { background: var(--bbt-orange); color: var(--bbt-navy); }
+        .btn-outline { border: 2px solid var(--bbt-orange); color: var(--bbt-orange); }
+        .btn-white { background: white; color: var(--bbt-navy); }
+
+        @media (max-width: 1024px) {
+            .hero-wrapper, .featured-post, .blog-grid, .category-grid, .video-grid, .testimonial-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: repeat(3, 1fr); }
+            .header .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header" id="header">
+  <div class="container header-wrapper">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html"class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="nav-item-dropdown">
+  <a href="solutions.html" class="nav-link-anchor">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+  
+  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+      
+      <!-- Left side: Large Title and Featured Card -->
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">SOLUTIONS</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <!-- Featured Image for Solutions -->
+            <img src="../assests/images/solutions.avif" alt="Enterprise Solutions">
+          </div>
+          <div class="mega-card-text">
+            <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
+            <a href="digital-transformation.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Vertical Link List -->
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="social-media-marketing.html" class="mega-list-link">
+            <span>Social Media Marketing</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="enterprise-odoo.html" class="mega-list-link">
+            <span>Enterprise Odoo ERP</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="digital-transformation.html" class="mega-list-link">
+            <span>Digital Transformation</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="retail-pos.html" class="mega-list-link">
+            <span>Retail & POS Solutions</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</li>
+        <li><a href="industries.html">Industries</a></li>
+        
+ <li class="nav-item-dropdown">
+  <a href="resources.html" class="nav-link-anchor">Resources <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+  
+  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+      
+      <!-- Left side: Featured Insight -->
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">Resources</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <img src="../assests/images/resources.avif" alt="AI Innovations">
+          </div>
+          <div class="mega-card-text">
+            <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
+            <a href="insights.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Links -->
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="case-studies.html" class="mega-list-link">
+            <span>Case Studies</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="blogs.html" class="mega-list-link">
+            <span>Blogs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="e-books.html" class="mega-list-link">
+            <span>E-Books</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+  </div>
+</header>
+
+
+    <!-- SECTION 01: HERO -->
+    <section class="hero">
+        <div class="hero-video">
+            <video autoplay loop muted playsinline><source src="../assests/images/website-illustration.mp4" type="video/mp4"></video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-text">
+                    <nav class="breadcrumb">Home &bull; Resources &bull; Blog</nav>
+                    <h1>AI, Odoo & Digital Transformation Insights</h1>
+                    <p>Weekly articles for business leaders and tech teams in GCC, USA & UK. Clear advice. No fluff. Written by engineers who deliver.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#latest" class="btn btn-primary">Browse Latest Posts</a>
+                        <a href="#categories" class="btn btn-outline" style="color: white; border-color: white;">Explore Topics</a>
+                    </div>
+                    <div class="hero-trust-bar">
+                        <span><i class="fas fa-calendar-alt"></i> Weekly Updates</span>
+                        <span><i class="fas fa-file-alt"></i> 100+ Articles</span>
+                        <span><i class="fas fa-code"></i> Engineering Led</span>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- Placeholder for the Animated SVG/Code visual -->
+                    <img src="../assests/images/blogs-hero.avif" style="border-radius: 24px; border: 1px solid rgba(255,255,255,0.1);" alt="Code Visual">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 02: FEATURED POST -->
+    <section class="featured-section">
+        <div class="container">
+            <h4 style="text-transform: uppercase; font-weight: 800; color: var(--bbt-navy); letter-spacing: 2px; margin-bottom: 30px;">Featured This Week</h4>
+            <div class="featured-post">
+                <div class="featured-img">
+                    <span class="featured-badge">LEGACY MODERNIZATION</span>
+                    <img src="../assests/images/solutions.avif" alt="Legacy Systems">
+                </div>
+                <div class="featured-content">
+                    <div class="meta"><span>June 10, 2026</span><span>6 Min Read</span></div>
+                    <h2>7 Signs Your Legacy System Is Costing You More Than a Replacement</h2>
+                    <p>If your team spends more time fixing bugs than building features, your legacy system isn't an asset — it's a liability. Here are the 7 warning signs plus a free checklist.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 30px;">
+                        <a href="#" class="btn btn-primary">Read Full Article</a>
+                        <a href="#" class="btn btn-outline">Download Checklist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 03: LATEST POSTS -->
+    <section class="blog-section" id="latest">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--bbt-navy); margin-bottom: 50px;">Latest Posts</h2>
+            <div class="blog-grid">
+                <!-- Card 1 -->
+                <article class="post-card">
+                    <div class="post-thumb"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600" alt="Cloud"></div>
+                    <div class="post-info">
+                        <div class="meta"><span>Cloud Strategy</span><span>8 min</span></div>
+                        <h3>How to Choose Between AWS, Azure, and GCP in 2026</h3>
+                        <p class="post-excerpt">With AI workloads and data residency requirements, the cloud platform you choose matters more than ever...</p>
+                        <a href="#" style="font-weight: 800; color: var(--bbt-navy);">Read More →</a>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article class="post-card">
+                    <div class="post-thumb"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600" alt="Compliance"></div>
+                    <div class="post-info">
+                        <div class="meta"><span>GCC Compliance</span><span>5 min</span></div>
+                        <h3>ZATCA Phase 2 Compliance: What Saudi Businesses Need to Know</h3>
+                        <p class="post-excerpt">Saudi Arabia's ZATCA e-invoicing Phase 2 is now mandatory. Here's what it means for your ERP...</p>
+                        <a href="#" style="font-weight: 800; color: var(--bbt-navy);">Read More →</a>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="post-card">
+                    <div class="post-thumb"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600" alt="AI"></div>
+                    <div class="post-info">
+                        <div class="meta"><span>AI Automation</span><span>7 min</span></div>
+                        <h3>Building an AI Chatbot for Customer Service: ROI & Best Practices</h3>
+                        <p class="post-excerpt">AI chatbots can cut support costs by 60% — or frustrate customers. Here's how to build one that works...</p>
+                        <a href="#" style="font-weight: 800; color: var(--bbt-navy);">Read More →</a>
+                    </div>
+                </article>
+            </div>
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#" class="btn btn-outline">View All Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 04: BROWSE BY CATEGORY -->
+    <section class="category-section" id="categories">
+        <div class="container">
+            <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--bbt-navy); text-align: center;">Browse by Topic</h2>
+            <div class="category-grid">
+                <div class="cat-card"><h4>AI & Automation</h4><span>15 Posts</span></div>
+                <div class="cat-card"><h4>Odoo ERP</h4><span>18 Posts</span></div>
+                <div class="cat-card"><h4>Cloud & DevOps</h4><span>12 Posts</span></div>
+                <div class="cat-card"><h4>Legacy Modernization</h4><span>10 Posts</span></div>
+                <div class="cat-card"><h4>GCC Compliance</h4><span>11 Posts</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 07: STATS BAR -->
+    <section class="stats-bar">
+        <div class="container stats-row">
+            <div class="stat-item"><h2>100+</h2><p>Blog Articles</p></div>
+            <div class="stat-item"><h2>15+</h2><p>Expert Writers</p></div>
+            <div class="stat-item"><h2>25k+</h2><p>Monthly Readers</p></div>
+            <div class="stat-item"><h2>4.7/5</h2><p>Avg Rating</p></div>
+            <div class="stat-item"><h2>Weekly</h2><p>Published</p></div>
+            <div class="stat-item"><h2>Global</h2><p>Coverage</p></div>
+        </div>
+    </section>
+
+    <!-- SECTION 08: VIDEO BLOG -->
+    <section class="blog-section">
+        <div class="container">
+            <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--bbt-navy);">Watch Our Video Blog</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbbda546697c?auto=format&fit=crop&w=600" alt="Video">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="post-info">
+                        <h3>Odoo 18 New Features Walkthrough</h3>
+                        <div class="meta"><span>8:45</span><a href="#" style="color: var(--bbt-orange)">Watch Now →</a></div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://images.unsplash.com/photo-1535303311164-664fc9ec6532?auto=format&fit=crop&w=600" alt="Video">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="post-info">
+                        <h3>Cloud Cost Optimization Live Demo</h3>
+                        <div class="meta"><span>6:30</span><a href="#" style="color: var(--bbt-orange)">Watch Now →</a></div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600" alt="Video">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="post-info">
+                        <h3>ZATCA E-Invoicing Setup Tutorial</h3>
+                        <div class="meta"><span>10:15</span><a href="#" style="color: var(--bbt-orange)">Watch Now →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 09: TESTIMONIALS -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--bbt-navy); text-align: center; margin-bottom: 50px;">What Our Readers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testi-card">
+                    <i class="fas fa-quote-right"></i>
+                    <p>"The ZATCA compliance series was the clearest explanation I found anywhere. It gave us the exact steps to pass our audit."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="Rashid">
+                        <div><h5>Abdullah Al-Saud</h5><span>Finance Director, Saudi Retail</span></div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <i class="fas fa-quote-right"></i>
+                    <p>"Most tech blogs are written by marketers. BBT's is different — you can tell the authors have actually built the systems."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="Priya">
+                        <div><h5>Priya Sharma</h5><span>CTO, TechStart London</span></div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <i class="fas fa-quote-right"></i>
+                    <p>"Found BBT's blog while researching Odoo for our warehouse. The implementation timeline post saved us weeks of planning."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="Rashid">
+                        <div><h5>Rashid Al-Mutairi</h5><span>Operations Manager, Dubai</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: BOTTOM CTA -->
+    <section class="stats-bar" style="background: var(--bbt-teal); border: none;">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">Want Content Written Just for You?</h2>
+            <p style="margin-bottom: 35px; opacity: 0.9;">Book a free consultation and get advice tailored to your systems, your industry, and your goals.</p>
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <a href="#" class="btn btn-white">Book Free Consultation</a>
+                <a href="#" class="btn btn-outline" style="color: white; border-color: white;">Download Best Articles PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="blog-section" style="background: var(--bbt-bg-soft); text-align: center; border-top: 1px solid var(--bbt-border);">
+        <img src="../assests/images/bbt-logo.png" style="height: 50px; margin-bottom: 20px;" alt="Logo">
+        <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Intro Animations
+        gsap.from(".hero-text h1", {opacity: 0, y: 50, duration: 1, ease: "power4.out"});
+        gsap.from(".post-card", {opacity: 0, y: 40, stagger: 0.15, scrollTrigger: ".blog-grid"});
+        gsap.from(".featured-post", {opacity: 0, scale: 0.95, duration: 1, scrollTrigger: ".featured-section"});
+    </script>
+</body>
+</html>
