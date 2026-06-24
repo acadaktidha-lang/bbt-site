@@ -428,20 +428,84 @@
       align-items: center;
     }
 
-    .hero-tag {
-      display: inline-block;
-      padding: 8px 16px;
-      margin-bottom: 24px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--bbt-orange);
-      border: 1px solid var(--bbt-ring);
-      border-radius: 999px;
-      background: rgba(245, 158, 11, 0.06);
-    }
+   /* --- HERO REFINEMENTS --- */
+.hero-tag {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--bbt-orange);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
 
+.hero-heading-wrapper {
+  min-height: 120px; /* Prevents layout jump during cycle */
+}
+
+.hero-main-para {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+/* Premium Feature List */
+.hero-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hero-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  color: #fff;
+  font-size: 1rem;
+  animation: fadeIn 1s ease forwards;
+}
+
+.hero-feature-list li .icon-box {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--bbt-orange);
+  font-size: 0.9rem;
+}
+
+.hero-feature-list li span strong {
+  color: var(--bbt-orange);
+  font-weight: 600;
+}
+
+.hero-feature-list li span {
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hero-heading-wrapper {
+    min-height: 160px;
+  }
+  .hero-feature-list li {
+    font-size: 0.95rem;
+  }
+}
     .hero h1 {
       font-size: clamp(2rem, 4.2vw, 3.25rem);
       line-height: 1.12;
@@ -479,6 +543,63 @@
       color: #ffffff;
       text-transform: uppercase;
     }
+    /* --- HERO RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+  /* 1. Fix the Status Container (Bulb line) */
+  .hero-status-container {
+    padding: 6px 12px !important;
+    gap: 8px !important;
+    margin-bottom: 15px !important;
+    max-width: 100%; /* Prevents horizontal scroll */
+  }
+
+  .hero-tag {
+    font-size: 11px !important; /* Scale down the text */
+    line-height: 1.3;
+    white-space: normal; /* Allows text to wrap on very small phones */
+  }
+
+  /* 2. Fix the Main Headings */
+  .hero-heading-wrapper {
+    min-height: 180px !important; /* Give more vertical space for wrapped text */
+    margin-bottom: 10px !important;
+  }
+
+  .hero-state-intro h1, 
+  .service-slide h1 {
+    font-size: clamp(1.5rem, 8vw, 2.2rem) !important; /* Significantly smaller on mobile */
+    line-height: 1.2 !important;
+    width: 100%;
+  }
+
+  /* 3. Fix the Premium Bullets */
+  .hero-feature-list {
+    gap: 12px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .hero-feature-list li {
+    font-size: 14px !important; /* Standard mobile reading size */
+  }
+
+  .hero-feature-list li .icon-box {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  /* 4. Fix the Main Paragraph */
+  .hero-main-para {
+    font-size: 0.95rem !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* Extra fix for very small devices (iPhone SE / Fold) */
+@media (max-width: 380px) {
+  .hero-heading-wrapper {
+    min-height: 220px !important;
+  }
+}
 
     /* Multi-color Gradient for the 4 Service Slider headings */
     .service-slide h1 {
@@ -1037,7 +1158,10 @@
       font-weight: 600;
     }
 
+
   /* ===== WIDE & CENTERED INTRO SECTION ===== */
+
+  
 .intro-section {
   position: relative;
   padding: 140px 0;
@@ -1119,17 +1243,54 @@
   font-weight: 600;
   font-size: 15px;
 }
-@media (max-width: 992px) {
-    .intro-highlights { grid-template-columns: 1fr; } /* Stack on small screens */
-    .intro-copy { padding: 40px 20px; }
-}
-    .highlight-card:hover {
-       background: var(--bbt-orange-600);
-      box-shadow: 0 8px 32px var(--bbt-orange-glow);
-      border-color: var(--bbt-ring);
-      color: var(--bbt-white);
-    }
+/* --- INTRO SECTION MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 60px 0 !important; /* Reduce huge padding */
+    min-height: auto !important; /* Allow section to shrink to content */
+  }
 
+  .intro-bg-container img {
+    height: 100% !important; /* Ensure image covers the smaller area */
+  }
+
+  .intro-content-wrapper {
+    width: 95% !important;
+  }
+
+  .intro-copy {
+    padding: 40px 20px !important; /* Less internal padding */
+    border-radius: 24px !important; /* Smaller corners for small screens */
+  }
+
+  .intro-copy .eyebrow {
+    font-size: 13px !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  .intro-copy h2 {
+    font-size: 1.8rem !important; /* Resized for mobile */
+    line-height: 1.2 !important;
+    margin-bottom: 15px !important;
+  }
+
+  .intro-copy p {
+    font-size: 15px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .intro-highlights {
+    grid-template-columns: 1fr !important; /* Stack items vertically */
+    gap: 12px !important;
+  }
+
+  .highlight-card {
+    padding: 15px !important;
+    border-radius: 12px !important;
+    font-size: 14px !important;
+    justify-content: flex-start !important; /* Align left for better reading on mobile */
+  }
+}
   /* ===== CLEAN CAPABILITIES SECTION ===== */
     .capabilities {
       position: relative;
@@ -1310,7 +1471,6 @@
       transform: translateX(6px);
     }
 /* ===== INDUSTRIES V9 (WITH WAVES BACKGROUND) ===== */
-/* Update these styles in your existing CSS */
 
 .industries {
   position: relative;
@@ -1523,24 +1683,96 @@ color: var(--bbt-orange-600);
 }
 
 @media (max-width: 1024px) {
-  .ind-slider-container { flex-direction: column; }
-  .ind-left-card { width: 95%; margin-right: 0; margin-bottom: -50px; }
-  .ind-right-display { width: 100%; height: 500px; }
-  .industries::after { display: none; }
-}
-    .section-header--center {
-      text-align: center;
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  .industries {
+    padding: 60px 0 !important;
+    background: var(--bbt-navy) !important;
+  }
 
-    .section-sub {
-      margin: 14px 0 0;
-      color: var(--bbt-muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
+  .ind-slider-container {
+    flex-direction: column !important; /* Forces vertical stack */
+    align-items: center !important;
+    gap: 0 !important;
+  }
+
+  /* 1. Simplify the Heading Card (White Box) */
+  .ind-left-card {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    margin: 0 0 20px 0 !important; 
+    padding: 40px 20px !important;
+    border-radius: 20px !important; 
+    background: #ffffff !important;
+    text-align: center !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+    z-index: 5 !important;
+  }
+
+  .ind-left-card h2 {
+    font-size: 2.2rem !important;
+    margin: 10px 0 !important;
+  }
+
+  /* 2. Fix the Image Slider Box */
+  .ind-right-display {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: 450px !important; /* Good height for mobile */
+    border-radius: 20px !important;
+    margin: 0 !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+  }
+
+  .ind-slide {
+    padding: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* 3. Manage Text inside the slider so it doesn't hide the picture */
+  .ind-slide-content {
+    background: rgba(15, 23, 42, 0.7); /* Darker background for text readability */
+    padding: 25px 15px !important;
+    border-radius: 15px;
+    width: 100%;
+  }
+
+  .ind-slide-content h3 {
+    font-size: 1.8rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .ind-slide-content p {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* 4. Reposition Navigation Dots */
+  .ind-dots {
+    position: relative !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    margin-top: 20px !important;
+    justify-content: center !important;
+    transform: none !important;
+  }
+
+  .ind-dot {
+    background: rgba(255, 255, 255, 0.3) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ind-right-display {
+    height: 400px !important; /* Slightly shorter for small phones */
+  }
+  
+  .ind-left-card h2 {
+    font-size: 1.8rem !important;
+  }
+}
 /* ===== UPDATED PROCESS SECTION STYLES ===== */
 .process {
   position: relative;
@@ -1563,6 +1795,51 @@ color: var(--bbt-orange-600);
   position: relative;
   height: 100%;
   padding-top: 5vh;
+}
+
+/* --- HOW WE WORK MOBILE FIX --- */
+@media (max-width: 1024px) {
+  .process {
+    height: auto !important;      /* Remove 100vh pinning */
+    padding: 60px 0 !important;   /* Normal padding */
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  .process-big-title {
+    position: relative !important; /* Remove absolute centering */
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    font-size: 2.8rem !important;  /* Normal heading size */
+    white-space: normal !important;/* Allow text to wrap */
+    text-align: center !important;
+    margin-bottom: 40px !important;
+    width: 100% !important;
+    /* Solid color for readability */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .process-steps-container {
+    opacity: 1 !important;        /* Make cards visible immediately */
+    visibility: visible !important;
+    transform: none !important;
+    margin-top: 0 !important;
+    display: block !important;
+  }
+
+  .process-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* Stack cards in 1 column */
+    gap: 20px !important;
+  }
+
+  .step-card {
+    flex: none !important;
+    width: 100% !important;
+    min-height: auto !important;
+  }
 }
 
 .process-big-title {
@@ -2472,38 +2749,78 @@ color: var(--bbt-orange-600);
       transform: translateY(-2px);
       background: rgba(255, 255, 255, 0.18);
     }
+    /* --- TECH STACK MOBILE RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+  .tech-stack {
+    padding: 80px 0 !important;
+  }
 
-    @media (max-width: 1024px) {
-      .tech-stack-wrapper {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
+  .tech-stack-wrapper {
+    grid-template-columns: 1fr !important; /* Stack the Info text and the Cards */
+    gap: 50px !important;
+    text-align: center;
+  }
 
-      .tech-stack-info {
-        max-width: 100%;
-        text-align: center;
-      }
+  .tech-stack-info {
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-      .tech-stack-action {
-        justify-content: center;
-      }
-    }
+  .tech-stack-action {
+    justify-content: center !important;
+  }
 
-    @media (max-width: 640px) {
-      .tech-stack-visual {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
+  .tech-stack-visual {
+    width: 100% !important;
+    /* Keep 2 columns on tablets for better use of space */
+    grid-template-columns: 1fr 1fr !important; 
+  }
+}
 
-      .tech-column--offset {
-        padding-top: 0;
-      }
+@media (max-width: 768px) {
+  .tech-stack-visual {
+    grid-template-columns: 1fr !important; /* Stack cards in 1 column on phones */
+    gap: 15px !important;
+  }
 
-      .tech-card {
-        min-height: 160px;
-        padding: 24px;
-      }
-    }
+  .tech-column--offset {
+    padding-top: 0 !important; /* Remove the desktop staggered offset */
+  }
+
+  .tech-card {
+    min-height: 180px !important; /* Slightly smaller for mobile screens */
+    padding: 25px !important;
+  }
+
+  .tech-card--large, 
+  .tech-card--medium, 
+  .tech-card--small {
+    min-height: 200px !important; /* Normalize heights for consistency on mobile */
+  }
+
+  .tech-stack-info h2 {
+    font-size: 2rem !important; /* Scale down the heading */
+    line-height: 1.2;
+  }
+
+  .tech-stack-desc {
+    font-size: 1rem !important;
+    margin-bottom: 25px !important;
+  }
+
+  .tech-logos-inline {
+    flex-wrap: wrap !important; /* Ensure logo tags don't overflow */
+    gap: 8px !important;
+  }
+
+  .tech-mini-text {
+    font-size: 0.85rem !important;
+    padding: 8px 12px !important;
+  }
+}
+
 
     .why-bbt {
       padding: 100px 0;
@@ -2553,6 +2870,46 @@ color: var(--bbt-orange-600);
        color: var(--bbt-navy, #0f172a);;
       line-height: 1.8;
     }
+    /* --- WHY BBT MOBILE RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 Columns for Tablets */
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-bbt {
+    padding: 60px 0 !important; /* Reduce section padding */
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr !important; /* 1 Column for Phones */
+    gap: 16px !important;
+  }
+
+  .why-card {
+    padding: 24px !important;
+    text-align: center !important; /* Center text for better mobile UI */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .why-icon {
+    margin-bottom: 15px !important;
+  }
+
+  .why-card h3 {
+    font-size: 1.25rem !important;
+    margin: 10px 0 !important;
+  }
+
+  .why-card p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+}
 /* --- INSIGHTS MESH BACKGROUND (BLUE TECH EDITION) --- */
 .insights {
   position: relative;
@@ -2904,7 +3261,66 @@ color: var(--bbt-orange-600);
         width: 100%;
       }
     }
+@media (max-width: 768px) {
+  .final-cta {
+    padding: 60px 0 !important; /* Reduce massive top/bottom padding */
+  }
 
+  .final-cta-grid {
+    grid-template-columns: 1fr !important; /* Force single column */
+    gap: 40px !important;
+  }
+
+  .final-cta-copy {
+    text-align: center; /* Center text for mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .final-cta-copy h2 {
+    font-size: 1.8rem !important; /* Scale down heading */
+    line-height: 1.3;
+  }
+
+  .final-cta-copy p {
+    font-size: 15px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .final-cta-buttons {
+    justify-content: center !important; /* Center the buttons */
+    width: 100%;
+    gap: 10px !important;
+  }
+
+  .final-cta-buttons .btn {
+    width: 100%; /* Make buttons full width on small phones */
+    justify-content: center;
+  }
+
+  .contact-panel {
+    padding: 25px 20px !important; /* Reduce internal padding of the form box */
+    border-radius: 20px !important;
+  }
+
+  .contact-form label {
+    font-size: 14px;
+    margin-bottom: 15px !important;
+  }
+
+  .contact-form input, 
+  .contact-form textarea {
+    padding: 12px !important;
+    font-size: 16px; /* Prevents iOS from zooming in on inputs */
+  }
+
+  .contact-form button {
+    padding: 16px !important;
+    font-size: 16px !important;
+  }
+}
     @media (max-width: 640px) {
 
       .case-grid,
@@ -3410,7 +3826,7 @@ color: var(--bbt-orange-600);
   <div class="container header-wrapper">
     <!-- Logo -->
     <a href="index.html" class="logo">
-      <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+      <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
     </a>
 
     <!-- Navigation -->
@@ -3432,7 +3848,7 @@ color: var(--bbt-orange-600);
         <div class="mega-card">
           <div class="mega-card-img">
             <!-- Featured Image for Solutions -->
-            <img src="../assests/images/solutions.avif" alt="Enterprise Solutions">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/solutions.avif" alt="Enterprise Solutions">
           </div>
           <div class="mega-card-text">
             <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
@@ -3480,7 +3896,7 @@ color: var(--bbt-orange-600);
         <h3 class="mega-heading">Resources</h3>
         <div class="mega-card">
           <div class="mega-card-img">
-            <img src="../assests/images/resources.avif" alt="AI Innovations">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="AI Innovations">
           </div>
           <div class="mega-card-text">
             <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
@@ -3521,46 +3937,58 @@ color: var(--bbt-orange-600);
 </header>
 
   <section class="hero">
-
-    <div class="hero-video-bg" aria-hidden="true">
+  <div class="hero-video-bg" aria-hidden="true">
     <video autoplay loop muted playsinline class="video-element">
-      <source src="../assests/images/website-illustration.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      <source src="https://bbt.mza-t.com/wp-content/uploads/2026/06/website-illustration.mp4" type="video/mp4">
     </video>
     <div class="hero-video-overlay"></div>
   </div>
-    <div class="container hero-wrapper">
-      <div class="hero-content">
-        <p class="hero-tag">Software Development &bull; Digital Transformation</p>
+  
+  <div class="container hero-wrapper">
+    <div class="hero-content">
+      <p class="hero-tag">Big Binary Tech - Custom Software Development Company  </p>
 
-        <!-- Shifting Content Container -->
-        <div class="hero-heading-wrapper">
-          
-          <!-- State 1: Intro -->
-          <div class="hero-state-intro">
-            <h1>TRANSFORMING BUSINESSES THROUGH <span class="highlight">→</span></h1>
-          </div>
-
-          <!-- State 2: Service Slider -->
-          <div class="hero-state-slider">
-            <div class="service-slide"><h1>AI AND AUTOMATION</h1></div>
-            <div class="service-slide"><h1>ODOO & ERP DEVELOPMENT</h1></div>
-            <div class="service-slide"><h1>SOFTWARE DEVELOPMENT</h1></div>
-            <div class="service-slide"><h1>DIGITAL TRANSFORMATION</h1></div>
-          </div>
-
+      <!-- Fixed Heading Shifter Container -->
+      <div class="hero-heading-wrapper">
+        <!-- State 1: Intro Message -->
+        <div class="hero-state-intro">
+          <h1>Global Tech Solutions Built for <span class="highlight">Impact.</span></h1>
         </div>
 
-        <p class="hero-sub">We help organizations accelerate growth with AI automation, Odoo ERP integration, custom
-          software development, and end-to-end digital transformation.</p>
-
-        <div class="hero-ctas">
-          <a href="contact.html" class="btn btn-primary">Get Free Consultation</a>
-          <a href="solutions.html" class="btn btn-outline">Explore Solutions</a>
+        <!-- State 2: Cycling Services -->
+        <div class="hero-state-slider">
+          <div class="service-slide"><h1>AI & Cloud Automation</h1></div>
+          <div class="service-slide"><h1>Software Development</h1></div>
+          <div class="service-slide"><h1>Digital Transformation</h1></div>
         </div>
       </div>
+
+      <!-- Redesigned Premium Bullets -->
+      <div class="hero-description-area">
+        <p class="hero-main-para">We engineering future-ready ecosystems for businesses in <strong>Dubai, London, and New York</strong>. We don't just build apps; we solve bottlenecks.</p>
+        
+        <ul class="hero-feature-list">
+          <li>
+            <div class="icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <span><strong>AI Automation:</strong> Handles repetitive work so your team can focus on growth </span>
+          </li>
+          <li>
+            <div class="icon-box"><i class="fa-solid fa-diagram-project"></i></div>
+            <span><strong>Odoo ERP:</strong> Implementation that connects your sales, inventory, and finance in one place </span>
+          </li>
+          <li>
+            <div class="icon-box"><i class="fa-solid fa-code-branch"></i></div>
+            <span><strong>Custom Software:</strong> Development built exactly for your business, not a template </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="contact.html" class="btn btn-primary">Book Your Free Strategy Call <i class="fa-solid fa-arrow-right" style="margin-left:8px;"></i></a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
    <section class="process" id="pin-section">
     <div class="container process-wrapper">
@@ -3572,37 +4000,37 @@ color: var(--bbt-orange-600);
           <div class="step-card work-step">
             <span class="step-num">01 / Discovery</span>
             <h3>Deep Dive</h3>
-            <p>Understanding goals and mapping requirements.</p>
+            <p>We learn your goals, map your current processes, and spot where workflow automation can save you time and money.</p>
           </div>
           <div class="step-card work-step">
             <span class="step-num">02 / Strategy</span>
             <h3>Roadmap</h3>
-            <p>Setting the technical and design milestones.</p>
+            <p>We create a technical roadmap with clear milestones, API integration plans, and scalable architecture.</p>
           </div>
           <div class="step-card work-step">
             <span class="step-num">03 / Design</span>
             <h3>Visuals</h3>
-            <p>Crafting intuitive UI/UX for all platforms.</p>
+            <p>Clean, intuitive interfaces for your web applications, dashboards, and mobile platforms.  </p>
           </div>
           <div class="step-card work-step">
             <span class="step-num">04 / Dev</span>
             <h3>Build</h3>
-            <p>Clean code and robust system integration.</p>
+            <p>Secure, clean code for your custom software, Odoo ERP modules, and AI automation pipelines. </p>
           </div>
           <div class="step-card work-step">
-            <span class="step-num">05 / Quality</span>
-            <h3>Testing</h3>
-            <p>Rigorous QA for bugs and performance.</p>
+            <span class="step-num">05 / Testing</span>
+            <h3>Quality</h3>
+            <p>Rigorous QA for bugs, performance, security, and real-world usage. </p>
           </div>
           <div class="step-card work-step">
             <span class="step-num">06 / Launch</span>
             <h3>Deployment</h3>
-            <p>Live rollout and system handover.</p>
+            <p>Smooth deployment with cloud hosting, system integration, and minimal disruption.</p>
           </div>
           <div class="step-card work-step">
             <span class="step-num">07 / Growth</span>
             <h3>Support</h3>
-            <p>Scaling your product for long-term success.</p>
+            <p>Smooth deployment with cloud hosting, system integration, and minimal disruption.</p>
           </div>
         </div>
       </div>
@@ -3613,14 +4041,14 @@ color: var(--bbt-orange-600);
 
   <section class="intro-section">
   <div class="intro-bg-container">
-    <img src="../assests/images/company-illustration.png" alt="Company Illustration">
+    <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/company-illustration.png" alt="Company Illustration">
     <div class="intro-bg-overlay"></div>
   </div>
 
   <div class="intro-content-wrapper">
     <div class="intro-copy">
       <p class="eyebrow" style="color: var(--bbt-orange); font-weight: bolder; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; font-size: 16px;">Strategic Partnership</p>
-      <h2>Your technology partner for business growth</h2>
+      <h2> More Than a Vendor — Your Technology Partner </h2>
       <p>Big Binary Tech empowers businesses with AI automation, Odoo ERP, custom software development, and digital transformation that delivers measurable results.</p>
 
       <!-- THREE ITEMS IN ONE ROW -->
@@ -3648,7 +4076,7 @@ color: var(--bbt-orange-600);
       <div class="capabilities-header-wrapper">
         <div class="capabilities-header-content">
           <p class="eyebrow">Core Capabilities</p>
-          <h2 class="capabilities-main-heading">Core capabilities overview</h2>
+          <h2 class="capabilities-main-heading">What We Build — Core Capabilities Overview </h2>
         </div>
       </div>
       
@@ -3659,8 +4087,8 @@ color: var(--bbt-orange-600);
             <i class="fa-solid fa-robot"></i>
           </div>
           <h3>AI Automation & Integration</h3>
-          <p>Build smart systems that connect workflows, data, and customer interactions through customized AI agent pipelines.</p>
-          <a href="services.html" class="link-more">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+          <p>We build AI automation systems that connect your CRM and ERP to eliminate manual work and free your team for growth. </p>
+  
         </article>
 
         <article class="capability-card">
@@ -3668,8 +4096,7 @@ color: var(--bbt-orange-600);
             <i class="fa-solid fa-sitemap"></i>
           </div>
           <h3>Odoo ERP Solutions</h3>
-          <p>Deploy highly scalable Odoo ERP implementations tailored to unified sales, operations, operations, and finance.</p>
-          <a href="services.html" class="link-more">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+          <p>We deploy and customize Odoo ERP to unify your sales, inventory, and accounting in one platform built around your workflows. </p>
         </article>
 
         <article class="capability-card">
@@ -3677,8 +4104,7 @@ color: var(--bbt-orange-600);
             <i class="fa-solid fa-code"></i>
           </div>
           <h3>Custom Software Development</h3>
-          <p>Deliver intuitive software products that improve internal efficiency, customer engagement, and system synchronization.</p>
-          <a href="services.html" class="link-more">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+          <p>We engineer custom software and web applications from scratch using modern technologies tailored to your exact needs. </p>
         </article>
 
         <article class="capability-card">
@@ -3686,8 +4112,7 @@ color: var(--bbt-orange-600);
             <i class="fa-solid fa-globe"></i>
           </div>
           <h3>Website Development</h3>
-          <p>Create beautiful, highly responsive portals and landing sites that reflect your brand and convert global visitors.</p>
-          <a href="services.html" class="link-more">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+          <p>We design fast, responsive websites and ecommerce platforms that rank well and convert visitors into customers. </p>
         </article>
 
         <article class="capability-card">
@@ -3695,8 +4120,7 @@ color: var(--bbt-orange-600);
             <i class="fa-solid fa-cash-register"></i>
           </div>
           <h3>POS Solutions</h3>
-          <p>Implement fully integrated POS systems to manage commercial checkout, real-time inventory, cards, and reports.</p>
-          <a href="services.html" class="link-more">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+          <p>We build integrated POS systems that sync real-time sales, inventory, and accounting across every location. </p>
         </article>
 
         <article class="capability-card">
@@ -3704,8 +4128,7 @@ color: var(--bbt-orange-600);
             <i class="fa-solid fa-arrows-spin"></i>
           </div>
           <h3>Digital Transformations</h3>
-          <p>Transform operational models with expert cloud migration, workflow automation, and process modernization.</p>
-          <a href="services.html" class="link-more">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+          <p>We guide businesses through cloud migration, workflow automation, and process modernization to scale without chaos.</p>
         </article>
       </div>
     </div>
@@ -3713,18 +4136,14 @@ color: var(--bbt-orange-600);
 <section class="industries" id="industries">
   <!-- Video Background -->
   <video class="industries-video-bg" autoplay loop muted playsinline>
-    <source src="../assests/images/wavy.mp4" type="video/mp4">
+    <source src="https://bbt.mza-t.com/wp-content/uploads/2026/06/wavy.mp4" type="video/mp4">
   </video>
   <div class="container ind-slider-container">
     
     <!-- LEFT CARD -->
     <div class="ind-left-card">
-      <p class="eyebrow" style="color: var(--bbt-orange); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Our Impact</p>
-      <h2>Industries We Serve</h2>
-      
-      <button class="ind-nav-cta" id="nextInd">
-        SEE MORE<i class="fa-solid fa-arrow-right-long"></i>
-      </button>
+      <p class="eyebrow" style="color: var(--bbt-orange); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Industries We Serve</p>
+      <h2>We Understand Your Industry  </h2>
 
       <div class="ind-dots" id="indDots">
         <div class="ind-dot active"></div>
@@ -3742,81 +4161,81 @@ color: var(--bbt-orange-600);
     <div class="ind-right-display" id="industrySlider">
       
       <div class="ind-slide active">
-        <div class="ind-slide-bg" style="background-image: url('../assests/images/education.jpg');"></div>
+        <div class="ind-slide-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/education.jpg');"></div>
         <div class="ind-slide-overlay"></div>
         <div class="ind-slide-content">
           <h3>Education</h3>
-          <p>Modern learning platforms and student ERP systems tailored for next-gen institutions.</p>
+          <p>Learning management systems, student ERP systems, and EdTech software development for schools and universities worldwide.</p>
           <a href="contact.html" class="learn-more-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
       <div class="ind-slide">
-        <div class="ind-slide-bg" style="background-image: url('../assests/images/healthcare.jpeg');"></div>
+        <div class="ind-slide-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/healthcare.jpeg');"></div>
         <div class="ind-slide-overlay"></div>
         <div class="ind-slide-content">
           <h3>Healthcare</h3>
-          <p>Patient management systems and telehealth automation to enhance modern care delivery.</p>
+          <p>Patient management systems, telehealth automation, and hospital management systems that help doctors focus on patients, not paperwork. </p>
           <a href="contact.html" class="learn-more-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
       <div class="ind-slide">
-        <div class="ind-slide-bg" style="background-image: url('../assests/images/retail.jpg');"></div>
+        <div class="ind-slide-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/retail.jpg');"></div>
         <div class="ind-slide-overlay"></div>
         <div class="ind-slide-content">
           <h3>Retail</h3>
-          <p>Omni-channel commerce and inventory automation for modern shopping experiences.</p>
+          <p>Omni-channel commerce, retail POS systems, and retail inventory management software for modern shopping experiences. </p>
           <a href="contact.html" class="learn-more-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
       <div class="ind-slide">
-        <div class="ind-slide-bg" style="background-image: url('../assests/images/manufacturing.jpg');"></div>
+        <div class="ind-slide-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/manufacturing.jpg');"></div>
         <div class="ind-slide-overlay"></div>
         <div class="ind-slide-content">
           <h3>Manufacturing</h3>
-          <p>Smart production workflows and ERP-driven operations for Industry 4.0 efficiency.</p>
+          <p>Smart production workflows, manufacturing ERP software, and manufacturing inventory management for Industry 4.0 efficiency.</p>
           <a href="contact.html" class="learn-more-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
       <div class="ind-slide">
-        <div class="ind-slide-bg" style="background-image: url('../assests/images/hospital.png');"></div>
+        <div class="ind-slide-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/hospital.png');"></div>
         <div class="ind-slide-overlay"></div>
         <div class="ind-slide-content">
           <h3>Hospitality</h3>
-          <p>Guest experience systems and booking automation for hotels and smart service operations.</p>
+          <p>Guest experience systems and booking automation for hotels and restaurants. </p>
           <a href="contact.html" class="learn-more-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
       <div class="ind-slide">
-        <div class="ind-slide-bg" style="background-image: url('../assests/images/logistics.jpeg');"></div>
+        <div class="ind-slide-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/logistics.jpeg');"></div>
         <div class="ind-slide-overlay"></div>
         <div class="ind-slide-content">
           <h3>Logistics</h3>
-          <p>Supply chain visibility and fleet automation tools for global trade and shipment tracking.</p>
+          <p>Supply chain management software, warehouse management software, and fleet management software with full visibility. </p>
           <a href="contact.html" class="learn-more-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
       <div class="ind-slide">
-        <div class="ind-slide-bg" style="background-image: url('../assests/images/ecommerce.jpg');"></div>
+        <div class="ind-slide-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/ecommerce-scaled.jpg');"></div>
         <div class="ind-slide-overlay"></div>
         <div class="ind-slide-content">
           <h3>eCommerce</h3>
-          <p>Digital storefronts and payment automation designed for conversion and global scale.</p>
+          <p>Digital storefronts, payment automation, and multi-vendor marketplaces built to convert. </p>
           <a href="contact.html" class="learn-more-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
       <div class="ind-slide">
-        <div class="ind-slide-bg" style="background-image: url('../assests/images/professional-services.jpg');"></div>
+        <div class="ind-slide-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/professional-services.jpg');"></div>
         <div class="ind-slide-overlay"></div>
         <div class="ind-slide-content">
           <h3>Professional Services</h3>
-          <p>Consulting and office automation tools designed for modern service-based firms.</p>
+          <p>Project management software, consulting automation, and CRM automation for service firms.</p>
           <a href="contact.html" class="learn-more-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
@@ -3842,11 +4261,8 @@ color: var(--bbt-orange-600);
         <div class="solution-icon">
           <i class="fas fa-robot"></i>
         </div>
-        <h3>Business Automation Solutions</h3>
-        <p>Automate workflows, approvals, and customer experiences for faster growth.</p>
-        <span class="card-cta">
-          Learn More <i class="fa-solid fa-arrow-right-long"></i>
-        </span>
+        <h3>Business Process Solutions</h3>
+        <p>We design business process solutions and retail technology solutions that eliminate waste, automate repetitive tasks, and accelerate operational delivery from end to end.</p>
       </a>
 
       <!-- Card 2: ERP & Odoo -->
@@ -3854,11 +4270,8 @@ color: var(--bbt-orange-600);
         <div class="solution-icon">
           <i class="fas fa-puzzle-piece"></i>
         </div>
-        <h3>ERP And Odoo Solutions</h3>
-        <p>Deploy integrated ERP systems that unify finance, inventory, and operations.</p>
-        <span class="card-cta">
-          Learn More <i class="fa-solid fa-arrow-right-long"></i>
-        </span>
+        <h3> Enterprise & Odoo Solutions </h3>
+        <p>We deliver scalable enterprise software solutions and Odoo ERP implementations that unify your finance, operations, and supply chain in one integrated platform built for growth across the USA, UK, and GCC.</p>
       </a>
 
       <!-- Card 3: Retail & POS -->
@@ -3867,10 +4280,7 @@ color: var(--bbt-orange-600);
           <i class="fas fa-bag-shopping"></i>
         </div>
         <h3>Retail And POS Solutions</h3>
-        <p>Modern retail systems, POS integrations, and commerce automation built for scale.</p>
-        <span class="card-cta">
-          Learn More <i class="fa-solid fa-arrow-right-long"></i>
-        </span>
+        <p>We build retail POS solutions and point of sale systems that sync real-time inventory, sales, and customer data across every store, warehouse, and channel you operate. </p>
       </a>
 
       <!-- Card 4: Digital Transformation -->
@@ -3879,10 +4289,7 @@ color: var(--bbt-orange-600);
           <i class="fas fa-globe"></i>
         </div>
         <h3>Digital Transformation Solutions</h3>
-        <p>Reimagine operations with cloud, mobile, and data-driven digital experiences.</p>
-        <span class="card-cta">
-          Learn More <i class="fa-solid fa-arrow-right-long"></i>
-        </span>
+        <p>We provide digital transformation solutions and digital transformation consulting that modernize your workflows, migrate your infrastructure to the cloud, and future-proof your business for long-term competitive advantage. </p>
       </a>
 
     </div>
@@ -3891,31 +4298,27 @@ color: var(--bbt-orange-600);
 
 
 
- <section class="trusted-by">
+<section class="trusted-by">
   <div class="container">
     <div class="trusted-header-row">
       <div class="section-header">
-        <p class="eyebrow">Trusted BY</p>
-        <h2>Awards & Partnerships</h2>
-      </div>
-      <div class="trusted-nav">
-        <button class="trust-arrow" id="prevTrust"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="trust-arrow" id="nextTrust"><i class="fa-solid fa-chevron-right"></i></button>
+        <p class="eyebrow">TRUSTED BY — AWARDS & PARTNERSHIPS </p>
+        <h2>Recognized by Industry Leaders</h2>
       </div>
     </div>
 
     <div class="trusted-slider-wrapper">
-    <div class="trusted-logos" id="trustTrack">
-  <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/cisco.png" alt="Cisco"></div><p class="card-desc">Cisco Certified Regional Partner 2024</p></div>
-  <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/navttc.png" alt="NAVTTC"></div><p class="card-desc">National Vocational & Technical Training Partner</p></div>
-  <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/pseb.png" alt="PSEB"></div><p class="card-desc">Top 10 IT & ITeS Exporter of the Year</p></div>
-  <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/psda.png" alt="PSDA"></div><p class="card-desc">Punjab Skill Development Authority Member</p></div>
-  <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/fast-nuces.png" alt="FAST"></div><p class="card-desc">Academic Strategic Research Collaborator</p></div>
-  <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/umt.png" alt="UMT"></div><p class="card-desc">Strategic Partner for Digital Excellence</p></div>
-  <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/hackthebox.png" alt="Hack The Box"></div><p class="card-desc">Cybersecurity Awareness & Integration Partner</p></div>
-  <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/list.png" alt="LIST"></div><p class="card-desc">Leading Innovation in Systems & Technology</p></div>
-  <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/wac.jpg" alt="WAC"></div><p class="card-desc">Global Workforce & Career Consultant</p></div>
-</div>
+      <div class="trusted-logos" id="trustTrack">
+        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/cisco-1.png" alt="Cisco"></div><p class="card-desc">Cisco Certified Regional Partner 2024</p></div>
+        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/navttc-1.png" alt="NAVTTC"></div><p class="card-desc">National Vocational & Technical Training Partner</p></div>
+        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/pseb-1.png" alt="PSEB"></div><p class="card-desc">Top 10 IT & ITeS Exporter of the Year</p></div>
+        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/psda.png" alt="PSDA"></div><p class="card-desc">Punjab Skill Development Authority Member</p></div>
+        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/fast-nuces-1.png" alt="FAST"></div><p class="card-desc">Academic Strategic Research Collaborator</p></div>
+        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/umt-1.png" alt="UMT"></div><p class="card-desc">Strategic Partner for Digital Excellence</p></div>
+        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/hackthebox-1.png" alt="Hack The Box"></div><p class="card-desc">Cybersecurity Awareness & Integration Partner</p></div>
+        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/list-1.png" alt="LIST"></div><p class="card-desc">Leading Innovation in Systems & Technology</p></div>
+        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/wac-1.jpg" alt="WAC"></div><p class="card-desc">Global Workforce & Career Consultant</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -3936,7 +4339,7 @@ color: var(--bbt-orange-600);
         <div class="tech-column tech-column--offset">
           <!-- Column 1 (Offset / Staggered Down) -->
           <article class="tech-card tech-card--large" data-tech="frontend">
-            <div class="tech-card-bg" style="background-image: url('../assests/images/frontend.jpg');"></div>
+            <div class="tech-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/frontend.jpg');"></div>
             <div class="tech-card-overlay"></div>
             <div class="tech-card-glow"></div>
             <div class="tech-icon"><i class="fa-brands fa-react tech-main-icon pulse" title="React"></i></div>
@@ -3949,7 +4352,7 @@ color: var(--bbt-orange-600);
 
           </article>
           <article class="tech-card tech-card--medium" data-tech="database">
-            <div class="tech-card-bg" style="background-image: url('../assests/images/database.jpg');"></div>
+            <div class="tech-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/database.jpg');"></div>
             <div class="tech-card-overlay"></div>
             <div class="tech-card-glow"></div>
             <div class="tech-icon"><i class="fa-solid fa-database tech-main-icon pulse" title="Database"></i></div>
@@ -3965,7 +4368,7 @@ color: var(--bbt-orange-600);
         <div class="tech-column">
           <!-- Column 2 -->
           <article class="tech-card tech-card--medium" data-tech="backend">
-            <div class="tech-card-bg" style="background-image: url('../assests/images/backened.jpg');"></div>
+            <div class="tech-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/backened.jpg');"></div>
             <div class="tech-card-overlay"></div>
             <div class="tech-card-glow"></div>
             <div class="tech-icon"><i class="fa-brands fa-node-js tech-main-icon pulse" title="Node.js"></i></div>
@@ -3979,7 +4382,7 @@ color: var(--bbt-orange-600);
 
           </article>
           <article class="tech-card tech-card--large" data-tech="erp">
-            <div class="tech-card-bg" style="background-image: url('../assests/images/ERP.jpg');"></div>
+            <div class="tech-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/ERP.jpg');"></div>
             <div class="tech-card-overlay"></div>
             <div class="tech-card-glow"></div>
             <div class="tech-icon"><i class="fa-solid fa-sitemap tech-main-icon pulse" title="ERP & CRM"></i></div>
@@ -3992,7 +4395,7 @@ color: var(--bbt-orange-600);
 
           </article>
           <article class="tech-card tech-card--small" data-tech="cloud">
-            <div class="tech-card-bg" style="background-image: url('../assests/images/cloud.jpg');"></div>
+            <div class="tech-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/cloud.jpg');"></div>
             <div class="tech-card-overlay"></div>
             <div class="tech-card-glow"></div>
             <div class="tech-icon"><i class="fa-solid fa-cloud-arrow-up tech-main-icon pulse" title="Cloud & DevOps"></i></div>
@@ -4020,23 +4423,23 @@ color: var(--bbt-orange-600);
       <div class="why-grid">
         <article class="why-card">
           <div class="why-icon"><i class="fas fa-lightbulb"></i></div>
-          <h3>Business-first approach</h3>
-          <p>We align every solution with your business goals and growth metrics.</p>
+          <h3>Business-First Approach </h3>
+          <p>We build technology that serves your business goals, not the other way around. </p>
         </article>
         <article class="why-card">
           <div class="why-icon"><i class="fas fa-gears"></i></div>
           <h3>Scalable solutions</h3>
-          <p>Built to grow with your business and adapt to shifting priorities.</p>
+          <p>We architect systems that grow with you, from your first customer to your millionth. </p>
         </article>
         <article class="why-card">
           <div class="why-icon"><i class="fas fa-handshake"></i></div>
           <h3>Transparent communication</h3>
-          <p>Clear planning, regular updates, and collaboration at every stage.</p>
+          <p>No jargon & no surprises,  just honest updates and clear timelines at every stage. </p>
         </article>
         <article class="why-card">
           <div class="why-icon"><i class="fas fa-lock"></i></div>
           <h3>Long-term partnerships</h3>
-          <p>We stay invested in your success beyond launch and implementation.</p>
+          <p>We stay after launch, optimize what we built, and scale it as your business evolves. </p>
         </article>
       </div>
     </div>
@@ -4052,7 +4455,7 @@ color: var(--bbt-orange-600);
     <div class="insights-grid">
       <!-- Card 1 -->
       <article class="insight-card">
-        <div class="insight-card-bg" style="background-image: url('../assests/images/AI-Automation.png');"></div>
+        <div class="insight-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/AI-Automation.png');"></div>
         <div class="insight-card-overlay"></div>
         <div class="insight-card-content">
           <span class="insight-tag">AI Automation</span>
@@ -4066,7 +4469,7 @@ color: var(--bbt-orange-600);
 
       <!-- Card 2 -->
       <article class="insight-card">
-        <div class="insight-card-bg" style="background-image: url('../assests/images/odo.png');"></div>
+        <div class="insight-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/odo.png');"></div>
         <div class="insight-card-overlay"></div>
         <div class="insight-card-content">
           <span class="insight-tag">Odoo ERP</span>
@@ -4080,7 +4483,7 @@ color: var(--bbt-orange-600);
 
       <!-- Card 3 (Fixed Structure) -->
       <article class="insight-card">
-        <div class="insight-card-bg" style="background-image: url('../assests/images/digital-transformation.png');"></div>
+        <div class="insight-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/digital-transformation.png');"></div>
         <div class="insight-card-overlay"></div>
         <div class="insight-card-content">
           <span class="insight-tag">Digital Transformation</span>
@@ -4104,69 +4507,46 @@ color: var(--bbt-orange-600);
     </div>
     <div class="faq-grid">
       <details>
-        <summary>How long does an ERP implementation take?</summary>
-        <p>Implementation time varies based on scope, but most projects launch within 12-20 weeks.</p>
+        <summary>How long does an Odoo ERP implementation typically take for a mid-size business? </summary>
+        <p>Eight to sixteen weeks, depending on your modules, workflows, and data volume. We phase it into; discovery, customization, migration, testing, and training. So your business never stops running. </p>
       </details>
       <details>
-        <summary>Can you integrate AI with our existing systems?</summary>
-        <p>Yes, we connect AI workflows to legacy systems, ERP platforms, and customer tools safely.</p>
+        <summary>Can you integrate AI automation with our existing CRM, ERP, or POS systems?</summary>
+        <p>Yes. We use APIs and middleware to connect our AI automation to your current CRM, ERP, or POS without rebuilding anything. Your existing tools get smarter, not replaced. </p>
       </details>
       <details>
-        <summary>What industries do you support?</summary>
-        <p>We support education, healthcare, retail, manufacturing, hospitality, logistics, eCommerce, and professional services.</p>
+        <summary>Which industries benefit most from your AI and Odoo ERP solutions?</summary>
+        <p>Retail, manufacturing, healthcare, logistics, education, hospitality, eCommerce, and professional services. These sectors run on repetitive workflows and multi-department data, exactly where our AI automation and Odoo ERP cut costs and speed up growth. </p>
       </details>
       <details>
-        <summary>Do you offer ongoing support after launch?</summary>
-        <p>Yes, we provide maintenance, updates, and long-term support packages for every project.</p>
+        <summary>What does your post-launch support and maintenance include? </summary>
+        <p>24/7 monitoring, bug fixes, security updates, performance tuning, and quarterly reviews. We also upgrade your AI models, ERP modules, and workflows as your business evolves. </p>
       </details>
       <details>
-        <summary>How do you ensure data security?</summary>
-        <p>Our solutions follow best practices for access control, encryption, and secure cloud deployment.</p>
+        <summary>How do you protect our data during cloud migration and ERP integration? </summary>
+        <p>End-to-end encryption, role-based access, secure APIs, and encrypted backups. We run parallel systems during transition and align with compliance standards in the USA, UK, and GCC. </p>
+      </details>
+      <details>
+        <summary>What makes Big Binary Tech different from other software development companies?  </summary>
+        <p>We combine AI automation, Odoo ERP, and custom software development under one roof, so you get one partner who understands your full technology stack instead of three vendors who blame each other when things break. Our PSEB registration, Cisco partnership, and government affiliations give you enterprise credibility at better value than typical US or UK agency rates. </p>
+      </details>
+      <details>
+        <summary>Do you work with clients in different time zones?  </summary>
+        <p>Yes. We serve clients across the USA, UK, and GCC with overlapping work hours, async updates, and dedicated project managers who ensure you never wait a full day for a response. Our software development company has delivered Odoo ERP implementations and AI automation projects for businesses in New York, London, Dubai, and Riyadh without missing a deadline </p>
+      </details>
+       <details>
+        <summary>How do you price your projects, fixed cost or hourly?  </summary>
+        <p>We offer both. Fixed cost for well-defined Odoo ERP implementations and custom software projects with clear scopes. Hourly for ongoing AI automation, digital transformation consulting, and evolving workflows where flexibility matters. Every proposal includes a detailed breakdown so you know exactly what you are paying for before we start.</p>
       </details>
     </div>
   </div>
 </section>
 
-  <section class="final-cta">
-    <div class="container final-cta-grid">
-      <div class="final-cta-copy">
-        <h2>Ready to transform your business?</h2>
-        <p>Book a free consultation or talk to an expert to explore how BBT can deliver automation, ERP, and digital
-          transformation for your organization.</p>
-        <div class="final-cta-buttons">
-          <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
-          <a href="contact.html" class="btn btn-outline">Talk to an Expert</a>
-        </div>
-      </div>
-      <div class="contact-panel">
-        <form class="contact-form" action="#" method="post">
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" placeholder="Your name" required>
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" placeholder="you@example.com" required>
-          </label>
-          <label>
-            <span>Company</span>
-            <input type="text" name="company" placeholder="Company name">
-          </label>
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="5" placeholder="Tell us about your project"></textarea>
-          </label>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-col footer-brand">
         <a href="index.html" class="logo">
-          <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+          <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
         </a>
         <p>Big Binary Tech delivers AI, ERP, and software solutions that power business growth with modern automation
           and digital transformation.</p>
@@ -4327,30 +4707,34 @@ document.addEventListener("DOMContentLoaded", () => {
   // Run autoplay system
   startAutoplay();
 });
+// FIND THIS BLOCK AND REPLACE IT ENTIRELY
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll('.ind-slide');
   const dots = document.querySelectorAll('.ind-dot');
-  const nextBtn = document.getElementById('nextInd');
+  const nextBtn = document.getElementById('nextInd'); // This line was causing the error
   let currentIdx = 0;
 
   function updateIndustry(newIndex) {
-    // Smooth Transition: Remove active before setting new
+    if (!slides.length) return; // Safety check
+
     slides[currentIdx].classList.remove('active');
-    dots[currentIdx].classList.remove('active');
+    if(dots.length > 0) dots[currentIdx].classList.remove('active');
 
     if (newIndex >= slides.length) currentIdx = 0;
     else if (newIndex < 0) currentIdx = slides.length - 1;
     else currentIdx = newIndex;
 
     slides[currentIdx].classList.add('active');
-    dots[currentIdx].classList.add('active');
+    if(dots.length > 0) dots[currentIdx].classList.add('active');
   }
 
-  // Click the "Next Industry" button to advance
-  nextBtn.addEventListener('click', () => updateIndustry(currentIdx + 1));
+  // Only add listener if button actually exists
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => updateIndustry(currentIdx + 1));
+  }
 
-  // Auto-play (optional)
-  setInterval(() => updateIndustry(currentIdx + 1), 2000);
+  // Auto-play continues even if button is missing
+  setInterval(() => updateIndustry(currentIdx + 1), 3000); 
 });
     // ============================================
     // CONSOLIDATED GSAP INITIALIZATION (FIXED)
@@ -4359,50 +4743,58 @@ document.addEventListener("DOMContentLoaded", () => {
     function initAllAnimations() {
       // Register plugins ONCE
       gsap.registerPlugin(ScrollTrigger, TextPlugin);
+        initHeroShifter(); 
       
-      // ========== CINEMATIC HERO SHIFTER (Fixed Overlap & Centering) ==========
-      const introState = document.querySelector('.hero-state-intro');
-      const sliderState = document.querySelector('.hero-state-slider');
-      const slides = document.querySelectorAll('.service-slide');
+      // --- UPDATED HERO SHIFTER LOGIC ---
+function initHeroShifter() {
+  const introState = document.querySelector('.hero-state-intro');
+  const sliderState = document.querySelector('.hero-state-slider');
+  const slides = document.querySelectorAll('.service-slide');
 
-      if (introState && sliderState && slides.length > 0) {
-        const masterTL = gsap.timeline({ repeat: -1 });
+  if (introState && sliderState && slides.length > 0) {
+    const masterTL = gsap.timeline({ repeat: -1 });
 
-        // Phase 1: Intro Heading
-        masterTL
-          .fromTo(introState, 
-            { opacity: 0, y: 30 }, 
-            { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
-          )
-          .to({}, { duration: 2.5 }) // Hold for reading
-          .to(introState, { 
-            opacity: 0, 
-            y: -30, 
-            duration: 0.8, 
-            ease: "power3.in" 
-          });
+    // Ensure initial visibility
+    gsap.set(sliderState, { autoAlpha: 0 });
 
-        // Phase 2: Service Slider
-        masterTL.set(sliderState, { autoAlpha: 1 }, "-=0.2");
+    // Phase 1: Intro Heading (Show for 3 seconds)
+    masterTL
+      .fromTo(introState, 
+        { opacity: 0, y: 20 }, 
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+      )
+      .to({}, { duration: 3 }) // Pause on main title
+      .to(introState, { 
+        opacity: 0, 
+        y: -20, 
+        duration: 0.6, 
+        ease: "power3.in" 
+      });
 
-        slides.forEach((slide, index) => {
-          masterTL
-            .fromTo(slide, 
-              { opacity: 0, x: 40, visibility: "visible" }, 
-              { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
-            )
-            .to({}, { duration: 2 }) // Hold each service
-            .to(slide, { 
-              opacity: 0, 
-              x: -40, 
-              duration: 0.6, 
-              ease: "power2.in" 
-            });
+    // Phase 2: Service Slider
+    masterTL.set(sliderState, { autoAlpha: 1 });
+
+    slides.forEach((slide) => {
+      masterTL
+        .fromTo(slide, 
+          { opacity: 0, x: 30, visibility: "visible" }, 
+          { opacity: 1, x: 0, duration: 0.8, ease: "expo.out" }
+        )
+        .to({}, { duration: 2.5 }) // Hold each service
+        .to(slide, { 
+          opacity: 0, 
+          x: -30, 
+          duration: 0.5, 
+          ease: "expo.in" 
         });
+    });
 
-        // Loop pause
-        masterTL.to(sliderState, { autoAlpha: 0, duration: 0.5 });
-      }
+    // Fade out slider before looping back to intro
+    masterTL.to(sliderState, { autoAlpha: 0, duration: 0.5 });
+  }
+}
+
+// Ensure this is called inside your initAllAnimations() function
       // ========== 2. BACKGROUND ORBS ==========
       const orbsContainer = document.createElement("div");
       orbsContainer.className = "bg-glow-orbs";
@@ -4475,17 +4867,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- TRUSTED BY SLIDER LOGIC (CENTER-TO-CENTER) ---
 function initTrustSlider() {
   const trustTrack = document.getElementById("trustTrack");
-  const nextTrust = document.getElementById("nextTrust");
-  const prevTrust = document.getElementById("prevTrust");
-
   if (!trustTrack) return;
 
-  // 1. Setup - Use fixed values to match CSS
   const cardWidth = 300; 
   const gap = 24; 
   const step = cardWidth + gap;
 
-  // 2. Clone the original set twice (Set 1, Set 2[orig], Set 3)
+  // 1. Clone cards for infinite feel
   const originalCards = Array.from(trustTrack.children);
   const totalOriginals = originalCards.length;
 
@@ -4496,40 +4884,35 @@ function initTrustSlider() {
     trustTrack.insertBefore(clone2, trustTrack.firstChild);
   });
 
-  // 3. New state
   const allCards = Array.from(trustTrack.children);
-  let currentIndex = totalOriginals; // Start at the beginning of the original set
+  let currentIndex = totalOriginals; 
   let isAnimating = false;
+  let autoTimer;
 
   function updateSlider(immediate = false) {
     const containerWidth = trustTrack.parentElement.offsetWidth;
-    
-    // Math to center the card
     const trackOffset = (containerWidth / 2) - (cardWidth / 2) - (currentIndex * step);
     
     isAnimating = true;
     gsap.to(trustTrack, { 
       x: trackOffset, 
-      duration: immediate ? 0 : 0.8, 
+      duration: immediate ? 0 : 0.4, 
       ease: "power2.inOut",
       onComplete: () => {
         isAnimating = false;
         
-        // TELEPORT logic
-        // If we reach Set 3 (index 18+), snap back to Set 2 (index 9+)
+        // Loop teleportation
         if (currentIndex >= totalOriginals * 2) {
           currentIndex -= totalOriginals;
           updateSlider(true);
-        } 
-        // If we reach Set 1 (index <9), snap forward to Set 2 (index 17)
-        else if (currentIndex < totalOriginals) {
+        } else if (currentIndex < totalOriginals) {
           currentIndex += totalOriginals;
           updateSlider(true);
         }
       }
     });
 
-    // Handle active visual state
+    // Update the "Active" design state (Scale/Glow)
     allCards.forEach((card, i) => {
       card.classList.toggle("active", i === currentIndex);
     });
@@ -4541,27 +4924,19 @@ function initTrustSlider() {
     updateSlider();
   }
 
-  function goPrev() {
-    if (isAnimating) return;
-    currentIndex--;
-    updateSlider();
+  // Start the automated loop
+  function startAuto() {
+    autoTimer = setInterval(goNext, 3000); // Moves every 3 seconds
   }
 
-  // Event Listeners
-  nextTrust.onclick = () => { resetAutoPlay(); goNext(); };
-  prevTrust.onclick = () => { resetAutoPlay(); goPrev(); };
-
-  // Autoplay
-  let autoTimer = setInterval(goNext, 3000);
-  function resetAutoPlay() {
-    clearInterval(autoTimer);
-    autoTimer = setInterval(goNext, 3000);
-  }
+  // Stop on hover so users can read
+  trustTrack.addEventListener("mouseenter", () => clearInterval(autoTimer));
+  trustTrack.addEventListener("mouseleave", () => startAuto());
 
   window.addEventListener("resize", () => updateSlider(true));
   
-  // Start the engine
   updateSlider(true);
+  startAuto();
 }
 initTrustSlider();
       // ========== 6B. CORE CAPABILITIES SCROLL REVEAL (Clean & Minimal) ==========
@@ -4598,49 +4973,30 @@ const mainHeading = document.querySelector('#main-heading');
 const gridArea = document.querySelector('#steps-grid-area');
 const steps = document.querySelectorAll('.work-step');
 
-if (pinSection && mainHeading && window.innerWidth > 1024) {
+if (pinSection && window.innerWidth > 1024) { 
+  // ONLY runs if screen is wider than 1024px (Desktop)
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: pinSection,
       start: "top top",
-      end: "+=2000", // Length of the scroll
+      end: "+=2000",
       scrub: 1,
-      pin: true,
-      markers: false
+      pin: true
     }
   });
 
-  // 1. Animate Heading from Center to Top-Left
-tl.to(mainHeading, {
-  top: "5%",                 // sit near the top of the section
-  left: "0%",                // flush to the left edge
-  xPercent: 0,               // cancel the -50% horizontal centering
-  yPercent: 0,               // cancel the -50% vertical centering
-  scale: 0.35,
-  transformOrigin: "left top", // <-- KEY: scale anchors to the top-left corner
-  duration: 3,
-  ease: "power2.inOut"
-});
-
-  // 2. Reveal the Grid directly BELOW the heading
-  tl.to(gridArea, {
-    autoAlpha: 1,
-    y: 0,               // Slide up into place
-    duration: 2,
-    ease: "power2.out"
-  }, "-=1.5");          // Start revealing while heading is still moving
-
-  // 3. Staggered reveal of the individual cards
-  tl.from(steps, {
-    y: 30,
-    opacity: 0,
-    stagger: 0.2,
-    duration: 1.5,
-    ease: "power3.out"
-  }, "-=1");
+  tl.to("#main-heading", {
+    top: "5%",
+    left: "0%",
+    xPercent: 0,
+    yPercent: 0,
+    scale: 0.35,
+    transformOrigin: "left top",
+    duration: 3
+  });
   
-  // Padding at the end of the scroll
-  tl.to({}, { duration: 1 });
+  tl.to("#steps-grid-area", { autoAlpha: 1, y: 0, duration: 2 }, "-=1.5");
+  tl.from(".work-step", { y: 30, opacity: 0, stagger: 0.2, duration: 1.5 }, "-=1");
 }
       // ========== 8. FAQ ACCORDION ==========
       const detailsElements = document.querySelectorAll(".faq-grid details");

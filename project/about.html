@@ -246,6 +246,42 @@
     grid-template-columns: 1.4fr 0.6fr; /* Exact ratio from your image */
     gap: 80px;
 }
+.btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--bbt-orange);
+      color: var(--bbt-white);
+      border: none;
+      box-shadow: 0 8px 32px var(--bbt-orange-glow);
+    }
+
+    .btn-primary:hover {
+      background: var(--bbt-orange-600);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px var(--bbt-orange-glow);
+    }
+
+    .btn-outline {
+      background: var(--bbt-white);
+      color: var(--bbt-navy);
+      border: 1px solid var(--bbt-border);
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(245, 158, 11, 0.4);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
     .cta-btn { background: var(--bbt-orange); color: var(--bbt-white); padding: 10px 20px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 24px var(--bbt-orange-glow); }
 
     /* HERO SECTION UPDATED FOR IMAGE BACKGROUND */
@@ -302,6 +338,121 @@
     }
     .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
 
+    /* --- FIXED ABOUT HERO BACKGROUND FOR MOBILE --- */
+@media (max-width: 768px) {
+  .hero {
+    height: auto !important; /* Allow section to grow with long text */
+    min-height: 100vh;
+    padding: 150px 0 100px 0 !important; /* Extra padding for header and bottom */
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image-bg {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% !important; /* Forces image container to stretch to full content height */
+    z-index: 0;
+  }
+
+  .hero-img-element {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    /* This ensures the "handshake" or team is visible even when the image is narrow */
+    object-position: center center !important; 
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    /* Adjusting the gradient so the middle of the text is clear */
+    background: linear-gradient(to bottom, 
+      rgba(15, 23, 42, 0.8) 0%, 
+      rgba(15, 23, 42, 0.6) 50%, 
+      rgba(15, 23, 42, 0.9) 100%) !important;
+    z-index: 1;
+  }
+
+  .hero-content {
+    text-align: center !important;
+    width: 90% !important;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero p {
+    font-size: 1.05rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .hero-heading-wrapper {
+    min-height: 160px !important; /* Give more space for wrapped text */
+    margin-bottom: 10px !important;
+  }
+
+  .hero-state-intro h1, 
+  .service-slide h1 {
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+    width: 100%;
+  }
+
+  /* 3. Refine the Sub-text */
+  .hero p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    margin-top: 10px !important;
+  }
+
+  /* 4. Fix the Premium Feature List (Bullets) */
+  .hero-feature-list {
+    text-align: left; /* Keep text left-aligned inside the centered container */
+    max-width: 320px;
+    margin: 25px auto !important;
+    gap: 12px !important;
+  }
+
+  .hero-feature-list li {
+    font-size: 0.9rem !important;
+    gap: 10px !important;
+  }
+
+  .hero-feature-list li .icon-box {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* 5. Center and stack the buttons */
+  .hero-ctas {
+    justify-content: center !important;
+    width: 100%;
+  }
+
+  .hero-ctas .btn {
+    width: 100%; /* Full width buttons for easier tapping */
+    justify-content: center;
+  }
+}
+
+/* Extra tweak for very small phones */
+@media (max-width: 380px) {
+  .hero-heading-wrapper {
+    min-height: 200px !important;
+  }
+}
+
     /* STORY SECTION */
     /* NEW STORY SECTION STYLES */
     .story-section-new {
@@ -355,6 +506,45 @@
       margin-bottom: 20px;
       color: var(--bbt-text);
     }
+    /* --- OUR STORY MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .story-section-new {
+    padding: 80px 0 !important; /* Reduce massive vertical padding */
+    min-height: auto !important; /* Let height be determined by content */
+  }
+
+  .story-overlay {
+    /* Change from horizontal gradient to a semi-transparent solid for better mobile legibility */
+    background: rgba(255, 255, 255, 0.9) !important; 
+  }
+
+  .story-wrapper-new {
+    justify-content: center !important; /* Center the text box */
+  }
+
+  .story-content-right {
+    padding: 20px !important; /* Internal padding of the text box */
+    text-align: center !important; /* Center text for mobile balance */
+    max-width: 100% !important;
+  }
+
+  .story-content-right h2 {
+    font-size: 2.2rem !important; /* Scale down heading */
+    margin-bottom: 15px !important;
+  }
+
+  .story-content-right p {
+    font-size: 1rem !important; /* Standard mobile reading size */
+    line-height: 1.6 !important;
+  }
+
+  /* Adjust the "Talk to our Team" button to center */
+  .story-content-right .cta-btn {
+    width: 100% !important; /* Make button easier to tap on phone */
+    display: inline-block;
+    padding: 15px 0;
+  }
+}
 
     /* Mobile Adjustment */
     @media (max-width: 768px) {
@@ -527,6 +717,59 @@
       line-height: 1.8;
       margin: 0;
     }
+    /* --- MISSION & VISION MOBILE RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+  .mv-v3-section {
+    padding: 80px 0 !important; /* Reduce massive vertical padding */
+  }
+
+  /* Remove decorative curves and connector lines on mobile */
+  .mv-v3-section::before,
+  .mv-v3-section::after,
+  .connector-line {
+    display: none !important;
+  }
+
+  .mv-v3-wrapper {
+    flex-direction: column !important; /* Stack Mission and Vision vertically */
+    gap: 30px !important;
+    align-items: center;
+  }
+
+  .mv-v3-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 35px 25px !important; /* Balanced padding for tablets/phones */
+    border-radius: 20px !important;
+  }
+
+  .mv-title-box h3 {
+    font-size: 1.8rem !important; /* Scale down the title */
+  }
+
+  .mv-icon-box {
+    width: 55px !important;
+    height: 55px !important;
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mv-v3-section {
+    padding: 60px 0 !important;
+  }
+
+  .mv-v3-header {
+    flex-direction: column !important; /* Stack icon and title on very small phones */
+    align-items: flex-start !important;
+    gap: 15px !important;
+  }
+
+  .mv-v3-card p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+}
 
     @media (max-width: 1024px) {
       .mv-v3-card { align-self: center; max-width: 90%; width: 90%; }
@@ -536,13 +779,252 @@
       .mv-v3-section::before,
       .mv-v3-section::after { display: none; }
     }
-    /* CORE VALUES */
-   /* --- ARBISOFT STYLE RADIAL DESIGN --- */
-.values-radial-section {
-  background: #0f172a;
-  padding: 80px 0 140px;
-  color: white;
-  overflow: hidden;
+/* --- FIXED QUAD LEAF VALUES STYLES --- */
+.values-quad-section {
+  padding: 100px 0;
+  background-color: #f8fafc; 
+  overflow: visible; /* Changed from hidden to prevent shadow clipping */
+}
+
+.quad-container {
+  position: relative;
+  max-width: 1100px; /* Widened slightly to give cards more room */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px; /* Reduced gap to bring cards closer to hub safely */
+  padding: 20px;
+}
+
+.value-leaf {
+  background: white;
+  padding: 50px; /* Increased base padding */
+  position: relative;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.05);
+  transition: transform 0.3s ease;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1; /* Sits below the hub */
+}
+
+/* CRITICAL FIX: Add extra padding to the "Inner" sides so text moves away from the hub */
+.leaf-tl, .leaf-bl { padding-right: 80px; } /* Left cards push text left */
+.leaf-tr, .leaf-br { padding-left: 80px; }  /* Right cards push text right */
+
+.value-leaf:hover {
+  transform: translateY(-5px);
+  z-index: 5;
+}
+
+/* Leaf Shapes */
+.leaf-tl { border-radius: 120px 0 120px 120px; border-top: 8px solid var(--bbt-orange); border-left: 8px solid var(--bbt-orange); }
+.leaf-tr { border-radius: 0 120px 120px 120px; border-top: 8px solid var(--bbt-navy); border-right: 8px solid var(--bbt-navy); }
+.leaf-bl { border-radius: 120px 120px 120px 0; border-bottom: 8px solid var(--bbt-navy); border-left: 8px solid var(--bbt-navy); }
+.leaf-br { border-radius: 120px 120px 0 120px; border-bottom: 8px solid var(--bbt-orange); border-right: 8px solid var(--bbt-orange); }
+
+/* Content Styling */
+.leaf-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.leaf-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  opacity: 0.15;
+}
+
+.leaf-title p {
+  margin: 0;
+  font-size: 1.3rem; /* Slightly larger */
+  font-weight: 900;
+  color: var(--bbt-navy);
+  text-transform: uppercase;
+}
+
+.leaf-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--bbt-text);
+  margin: 0;
+}
+
+/* Center Hub Fix */
+/* --- ENHANCED HUB DESIGN --- */
+.quad-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 210px; /* Slightly larger for better impact */
+  height: 210px;
+  background: #ffffff;
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Symmetrical shadow and outer ring effect */
+  box-shadow: 
+    0 0 0 10px rgba(248, 250, 252, 1), /* Inner gap */
+    0 0 0 12px rgba(241, 245, 249, 0.5), /* Outer subtle border */
+    0 20px 50px rgba(15, 23, 42, 0.15); /* Soft deep shadow */
+}
+
+.hub-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hub-logo {
+  width: 55px; /* Scaled for clarity */
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.hub-text-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-top: 1px solid #e2e8f0; /* Subtle divider line */
+  padding-top: 10px;
+}
+
+.hub-number {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--bbt-orange);
+  line-height: 1;
+}
+
+.hub-label {
+  text-align: left;
+}
+
+.hub-main {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--bbt-navy);
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.hub-sub {
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--bbt-muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+/* --- CORE VALUES MOBILE RESPONSIVENESS --- */
+@media (max-width: 992px) {
+  .values-quad-section {
+    padding: 60px 0 !important;
+  }
+
+  .quad-container {
+    /* 1. Stack cards in 1 column */
+    grid-template-columns: 1fr !important; 
+    gap: 20px !important;
+    max-width: 100% !important;
+    padding: 0 15px !important;
+  }
+
+  /* 2. Hide the Absolute Hub on mobile to prevent overlap/clutter */
+  .quad-hub {
+    display: none !important;
+  }
+
+  .value-leaf {
+    /* 3. Reset the huge desktop padding */
+    padding: 30px 20px !important;
+    min-height: auto !important;
+    /* 4. Standardize the shape for vertical stacking */
+    border-radius: 20px !important; 
+    /* 5. Set consistent borders for mobile cards */
+    border-width: 4px !important; 
+    border-style: solid !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  /* Assign brand colors to borders for the "Step" feel */
+  .leaf-tl, .leaf-br { border-color: var(--bbt-orange) !important; border-top-width: 8px !important; }
+  .leaf-tr, .leaf-bl { border-color: var(--bbt-navy) !important; border-top-width: 8px !important; }
+
+  .leaf-header {
+    margin-bottom: 10px !important;
+  }
+
+  .leaf-number {
+    font-size: 2rem !important; /* Smaller numbers */
+  }
+
+  .leaf-title p {
+    font-size: 1.1rem !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .leaf-desc {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Ensure Section Heading scales down */
+  .values-quad-section h2 {
+    font-size: 2rem !important;
+    text-align: center !important;
+    margin-bottom: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .value-leaf {
+    padding: 25px 15px !important;
+  }
+}
+
+/* Ensure cards don't overlap the new larger hub */
+@media (min-width: 993px) {
+  .leaf-tl, .leaf-bl { padding-right: 100px !important; }
+  .leaf-tr, .leaf-br { padding-left: 100px !important; }
+}
+
+@media (max-width: 992px) {
+  .quad-hub {
+    display: none; /* Hub is hidden on mobile to give text room */
+  }
+}
+
+.hub-inner img {
+  width: 50px;
+  margin-bottom: 5px;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+  .quad-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+  .quad-hub { display: none; }
+  .value-leaf { 
+    padding: 30px !important; 
+    border-radius: 25px !important; 
+    min-height: auto;
+  }
 }
 
 .center-white { text-align: center; margin-bottom: 40px; }
@@ -659,95 +1141,92 @@
   .node-text { width: 100%; margin-top: 20px; }
   .arc-svg-container { display: none; }
 }
-    /* LEADERSHIP SECTION STYLES */
-    .leadership-section {
-      padding: var(--section-pad) 0;
-      background: #ffffff;
-    }
+    /* UPDATED LEADERSHIP STYLES FOR SINGLE MEMBER */
+.leadership-section {
+  padding: var(--section-pad) 0;
+  background: #ffffff;
+}
 
-    .leadership-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-    }
+.leadership-header {
+  text-align: center; /* Centered Title */
+  margin-bottom: 60px;
+}
 
-    .leadership-header h2 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--bbt-navy);
-      margin: 0;
-    }
+.leadership-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--bbt-navy);
+  margin: 0;
+}
 
-    .leadership-nav {
-      display: flex;
-      gap: 15px;
-    }
+/* Container to center the single card */
+.leadership-single-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .nav-btn {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      border: 1px solid #e2e8f0;
-      background: white;
-      color: #94a3b8;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
+.leader-card {
+  max-width: 450px; /* Constrain width so it doesn't span the whole screen */
+  width: 100%;
+  text-align: center;
+}
 
-    .nav-btn:hover {
-      border-color: var(--bbt-orange);
-      color: var(--bbt-orange);
-    }
+.leader-img {
+  width: 100%;
+  height: 500px; /* Increased height for a more prominent hero look */
+  background: #f8fafc;
+  border-radius: 24px; /* Added rounded corners for a premium feel */
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+}
 
-    /* Team Grid */
-    .leadership-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-    }
+.leader-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .leader-card {
-      transition: transform 0.3s ease;
-    }
+.leader-info h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--bbt-navy);
+  margin: 0 0 10px 0;
+}
 
-    .leader-img {
-      width: 100%;
-      height: 380px; /* Adjust based on your photo heights */
-      background: #f8fafc; /* Very light gray background for the cut-outs */
-      border-radius: 0;
-      overflow: hidden;
-      margin-bottom: 25px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
+.leader-info p {
+  font-size: 1.1rem;
+  color: var(--bbt-orange);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
 
-    .leader-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+.linkedin-link {
+  font-size: 28px;
+  color: #0077b5; /* Official LinkedIn Blue */
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
 
-    .leader-info h3 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--bbt-navy);
-      margin: 0 0 8px 0;
-      line-height: 1.2;
-    }
+.linkedin-link:hover {
+  transform: scale(1.2);
+}
 
-    .leader-info p {
-      font-size: 1rem;
-      color: var(--bbt-text);
-      margin: 0 0 15px 0;
-      font-weight: 400;
-    }
-
+@media (max-width: 768px) {
+  .leader-img {
+    height: 400px;
+  }
+  .leadership-header h2 {
+    font-size: 2.2rem;
+  }
+}
     .text-orange {
       color: var(--bbt-orange);
     }
@@ -772,12 +1251,78 @@
       .leadership-grid { grid-template-columns: 1fr; }
       .leader-img { height: 320px; }
     }
+    /* --- LEADERSHIP SECTION MOBILE RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+  .leadership-section {
+    padding: 80px 0 !important;
+  }
+
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 per row on tablets */
+    gap: 25px !important;
+  }
+
+  .leader-img {
+    height: 340px !important; /* Slightly shorter for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .leadership-header {
+    flex-direction: column !important; /* Stack title and arrows */
+    gap: 20px !important;
+    text-align: center !important;
+    margin-bottom: 40px !important;
+  }
+
+  .leadership-header h2 {
+    font-size: 2.2rem !important;
+  }
+
+  .leadership-nav {
+    justify-content: center !important;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr !important; /* 1 per row on phones */
+    gap: 40px !important;
+  }
+
+  .leader-card {
+    text-align: center !important;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .leader-img {
+    height: 380px !important; /* Return to a good height when single column */
+    border-radius: 20px !important; /* Add slight curve for mobile feel */
+  }
+
+  .leader-info h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .leader-info p {
+    font-size: 0.95rem !important;
+  }
+
+  .linkedin-link {
+    font-size: 24px !important; /* Larger touch target for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .leader-img {
+    height: 320px !important; /* Tweak for very small phones */
+  }
+}
 
     /* GLOBAL REACH */
      .reach-section { 
       padding: var(--section-pad) 0; 
       position: relative; 
-      background: url('../assests/images/global-reach.jpg') no-repeat center center;
+      background: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/global-reach.avif') no-repeat center center;
       background-size: cover;
       background-attachment: fixed; /* Optional: adds a parallax feel */
       overflow: hidden;
@@ -811,130 +1356,886 @@
     .stat-item h2 { font-size: 3.5rem; font-weight: 800; color: var(--bbt-orange) !important; margin: 0; }
     .stat-item p { color: #ffffff !important; font-weight: 700; text-transform: uppercase; margin: 0; }
 
+    /* --- GLOBAL REACH MOBILE RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+  .reach-section {
+    padding: 80px 0 !important;
+    /* Fix: Parallax background-attachment: fixed often breaks on mobile */
+    background-attachment: scroll !important; 
+  }
 
-    /* FOOTER (Identical to Index) */
-    .site-footer {
-      padding: 72px 0 40px;
-      background: var(--bbt-bg-soft);
-      color: var(--bbt-text);
-      border-top: 1px solid var(--bbt-border);
+  .reach-stats {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2x2 Grid for Tablets */
+    gap: 40px 20px !important;
+  }
+
+  .stat-item h2 {
+    font-size: 2.8rem !important; /* Scale down large numbers */
+  }
+}
+
+@media (max-width: 640px) {
+  .reach-section {
+    padding: 60px 0 !important;
+  }
+
+  .reach-section h2 {
+    font-size: 1.8rem !important; /* Scale down section heading */
+    line-height: 1.3;
+  }
+
+  .reach-stats {
+    grid-template-columns: 1fr !important; /* 1 Column for Phones */
+    gap: 30px !important;
+  }
+
+  .stat-item h2 {
+    font-size: 2.5rem !important;
+  }
+
+  .stat-item p {
+    font-size: 0.9rem !important;
+    letter-spacing: 1px !important;
+  }
+}
+
+/* --- TESTIMONIALS MOBILE RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+  .testimonials-flex {
+    flex-direction: column !important; /* Stack header on top of slider */
+    gap: 40px !important;
+    padding: 60px 0 !important;
+  }
+
+  .testimonials-left {
+    max-width: 100% !important;
+    text-align: center !important; /* Center the text for mobile balance */
+  }
+
+  .testimonials-right {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card-styled {
+    padding: 30px 20px !important; /* Reduce internal padding */
+    border-radius: 20px !important;
+  }
+
+  .testimonial-quote-mark {
+    font-size: 50px !important; /* Shrink the giant quote icon */
+    top: 5px !important;
+    left: 15px !important;
+  }
+
+  .testimonial-card-styled p {
+    font-size: 0.95rem !important; /* Standard mobile reading size */
+    margin-bottom: 20px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Author and Controls Layout */
+  .testimonial-meta-row {
+    flex-direction: column !important; /* Stack author and arrows */
+    align-items: center !important;
+    text-align: center;
+    gap: 25px !important;
+  }
+
+  .testimonial-author-box {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .testimonial-controls-wrap {
+    width: 100%;
+    justify-content: space-between; /* Spread arrows and dots apart */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-left h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  .testimonial-slide {
+    padding: 0 !important; /* Remove slide margins to maximize card width */
+  }
+}
+
+.faq-section {
+  padding: 100px 0;
+  background-color: var(--bbt-bg-soft); /* Light Grey/Blue background */
+  border-top: 1px solid var(--bbt-border);
+  position: relative;
+}
+
+/* Ensure FAQ title is centered and visible */
+.faq-section .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+    .insight-card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
-      gap: 32px;
-      align-items: start;
+    .insight-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+          rgba(15, 23, 42, 0.85) 0%,
+          rgba(15, 23, 42, 0.4) 50%,
+          transparent 100%);
+      z-index: 2;
+      transition: opacity 0.5s ease;
     }
 
-    .footer-logo img {
-      height: 100px;
-      width: auto;
-      display: block;
-      margin-bottom: 18px;
-    }
-
-    .footer-brand p {
-      max-width: 42ch;
-      line-height: 1.8;
-      margin-bottom: 22px;
-      color: var(--bbt-muted);
-    }
-
-    .footer-social {
+    .insight-card-content {
+      position: relative;
+      z-index: 3;
+      padding: 30px;
+      width: 100%;
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    .social-icon {
+    .insight-card .insight-tag {
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--bbt-orange);
+      color: var(--bbt-navy);
+      margin-bottom: 14px;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .insight-card .insight-question {
+      font-size: 20px;
+      line-height: 1.4;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0;
+      transition: color 0.4s ease;
+    }
+
+    .insight-hover-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease, margin-top 0.5s ease;
+    }
+
+    .insight-card .insight-solution {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--bbt-text);
+      margin: 12px 0 20px 0;
+    }
+
+    .insight-card .insight-cta-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1px solid var(--bbt-border);
-      background: rgba(255, 255, 255, 0.06);
+      gap: 8px;
+      align-self: flex-start;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: var(--bbt-orange);
       color: var(--bbt-navy);
+      font-size: 13px;
+      font-weight: 700;
       text-decoration: none;
-      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+      transition: all 0.3s ease;
     }
 
-    .social-icon svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
+    .insight-card .insight-cta-btn i {
+      transition: transform 0.3s ease;
     }
 
-    .social-icon:hover {
-      background: rgba(245, 158, 11, 0.15);
-      border-color: var(--bbt-ring);
-      color: var(--bbt-orange);
+    .insight-card .insight-cta-btn:hover {
+      background: var(--bbt-orange-600);
       transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
     }
 
-    .footer-col h3 {
-      margin: 0 0 20px;
-      font-size: 1.1rem;
+    .insight-card .insight-cta-btn:hover i {
+      transform: translateX(4px);
+    }
+
+    .insight-card:hover {
+       transform: translateY(-15px) !important; /* Forces all cards to lift */
+  z-index: 10;
+      border-color: var(--bbt-orange);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .insight-card:hover .insight-card-bg {
+      transform: scale(1.1);
+      opacity: 0.12;
+    }
+
+    .insight-card:hover .insight-card-overlay {
+      opacity: 0;
+    }
+
+    .insight-card:hover .insight-question {
       color: var(--bbt-navy);
     }
 
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .insight-card:hover .insight-hover-content {
+      max-height: 200px;
+      opacity: 1;
+      margin-top: 10px;
+    }
+
+    .faq-preview {
+      padding: 100px 0;
+      background: var(--bbt-bg);
+    }
+
+    .faq-grid {
       display: grid;
-      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 32px;
     }
 
-    .footer-col li a,
-    .footer-contact .contact-line a {
-      color: var(--bbt-muted);
-      text-decoration: none;
-      transition: color 0.25s ease;
-      font-size: 14px;
+    .faq-grid details {
+      background: var(--bbt-surface);
+      border: 1px solid var(--bbt-border);
+      border-radius: 20px;
+      padding: 22px 26px;
+      transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .footer-col li a:hover,
-    .footer-contact .contact-line a:hover {
+    .faq-grid details:hover {
+      border-color: rgba(245, 158, 11, 0.3);
+      background: var(--bbt-surface-hover);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .faq-grid summary {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--bbt-navy);
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      padding-right: 36px;
+      transition: color 0.3s ease;
+    }
+
+    .faq-grid summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-grid summary::after {
+      content: "+";
+      font-family: inherit;
+      font-size: 1.7rem;
+      font-weight: 300;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
       color: var(--bbt-orange);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
+      line-height: 1;
     }
 
-    .footer-contact .contact-line {
-      margin: 0 0 12px;
+    .faq-grid details[open] summary::after {
+      transform: translateY(-50%) rotate(45deg);
+      color: var(--bbt-navy);
+    }
+
+    .faq-grid p {
+      margin: 14px 0 0;
       color: var(--bbt-muted);
-      line-height: 1.6;
-      font-size: 14px;
+      line-height: 1.8;
     }
 
-    .footer-bottom {
-      margin-top: 48px;
-      padding-top: 24px;
-      text-align: center;
-      border-top: 1px solid var(--bbt-border);
-    }
+    /* --- FAQ SECTION MOBILE RESPONSIVENESS --- */
+@media (max-width: 992px) {
+  .faq-section {
+    padding: 80px 0 !important;
+  }
 
-    .footer-bottom p {
-      margin: 0;
-      font-size: 0.875rem;
-      color: var(--bbt-muted);
-    }
+  .faq-grid {
+    grid-template-columns: 1fr !important; /* Stack FAQs in 1 column */
+    gap: 15px !important;
+    max-width: 100%;
+  }
 
-    @media (max-width: 1100px) {
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+  .faq-grid details {
+    padding: 18px 20px !important; /* Slightly tighter padding */
+  }
+
+  .faq-grid summary {
+    font-size: 1rem !important; /* Standard reading size */
+    line-height: 1.4;
+  }
+
+  .faq-grid summary::after {
+    font-size: 1.4rem !important; /* Scale down the plus icon */
+  }
+
+  .faq-grid p {
+    font-size: 0.95rem !important;
+    margin-top: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-section {
+    padding: 60px 0 !important;
+  }
+
+  .faq-section .section-header h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .faq-grid details {
+    padding: 15px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+
+    
+      .faq-grid,
+      .testimonial-carousel,
+      .final-cta-grid {
+        grid-template-columns: 1fr;
       }
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-    }
 
-    @media (max-width: 640px) {
-      .footer-grid {
+      .case-stats {
         grid-template-columns: 1fr;
       }
     }
+
+    @media (max-width: 900px) {
+      .testimonial-carousel {
+        grid-template-columns: 1fr;
+      }
+
+      .final-cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form button {
+        width: 100%;
+      }
+    }
+@media (max-width: 768px) {
+  .final-cta {
+    padding: 60px 0 !important; /* Reduce massive top/bottom padding */
+  }
+
+  .final-cta-grid {
+    grid-template-columns: 1fr !important; /* Force single column */
+    gap: 40px !important;
+  }
+
+  .final-cta-copy {
+    text-align: center; /* Center text for mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .final-cta-copy h2 {
+    font-size: 1.8rem !important; /* Scale down heading */
+    line-height: 1.3;
+  }
+
+  .final-cta-copy p {
+    font-size: 15px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .final-cta-buttons {
+    justify-content: center !important; /* Center the buttons */
+    width: 100%;
+    gap: 10px !important;
+  }
+
+  .final-cta-buttons .btn {
+    width: 100%; /* Make buttons full width on small phones */
+    justify-content: center;
+  }
+
+  .contact-panel {
+    padding: 25px 20px !important; /* Reduce internal padding of the form box */
+    border-radius: 20px !important;
+  }
+
+  .contact-form label {
+    font-size: 14px;
+    margin-bottom: 15px !important;
+  }
+
+  .contact-form input, 
+  .contact-form textarea {
+    padding: 12px !important;
+    font-size: 16px; /* Prevents iOS from zooming in on inputs */
+  }
+
+  .contact-form button {
+    padding: 16px !important;
+    font-size: 16px !important;
+  }
+}
+    @media (max-width: 640px) {
+
+     
+      .insights-grid,
+      .faq-grid,
+      .testimonial-carousel,
+      .final-cta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section-header .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--bbt-orange);
+    margin-bottom: 10px;
+    }
+
+    .final-cta {
+      padding: 100px 0;
+      background: linear-gradient(180deg, rgba(7, 11, 20, 0.98), rgba(34, 43, 73, 0.98));
+    }
+
+    .final-cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .final-cta-copy h2 {
+      color: rgba(255, 255, 255, 0.78);
+      margin: 0 0 18px;
+    }
+
+    .final-cta-copy p {
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 52ch;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .final-cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .contact-panel {
+      padding: 32px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, 0.84);
+      font-weight: 600;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--bbt-navy);
+      padding: 14px 16px;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.52);
+    }
+
+    .contact-form button {
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+
+      .case-grid,
+      .tech-grid,
+      .why-grid,
+      .insights-grid,
+      .faq-grid,
+      .testimonial-carousel,
+      .final-cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .testimonial-carousel {
+        grid-template-columns: 1fr;
+      }
+
+      .final-cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form button {
+        width: 100%;
+      }
+    }
+@media (max-width: 768px) {
+  .final-cta {
+    padding: 60px 0 !important; /* Reduce massive top/bottom padding */
+  }
+
+  .final-cta-grid {
+    grid-template-columns: 1fr !important; /* Force single column */
+    gap: 40px !important;
+  }
+
+  .final-cta-copy {
+    text-align: center; /* Center text for mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .final-cta-copy h2 {
+    font-size: 1.8rem !important; /* Scale down heading */
+    line-height: 1.3;
+  }
+
+  .final-cta-copy p {
+    font-size: 15px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .final-cta-buttons {
+    justify-content: center !important; /* Center the buttons */
+    width: 100%;
+    gap: 10px !important;
+  }
+
+  .final-cta-buttons .btn {
+    width: 100%; /* Make buttons full width on small phones */
+    justify-content: center;
+  }
+
+  .contact-panel {
+    padding: 25px 20px !important; /* Reduce internal padding of the form box */
+    border-radius: 20px !important;
+  }
+
+  .contact-form label {
+    font-size: 14px;
+    margin-bottom: 15px !important;
+  }
+
+  .contact-form input, 
+  .contact-form textarea {
+    padding: 12px !important;
+    font-size: 16px; /* Prevents iOS from zooming in on inputs */
+  }
+
+  .contact-form button {
+    padding: 16px !important;
+    font-size: 16px !important;
+  }
+}
+    @media (max-width: 640px) {
+
+      .case-grid,
+      .case-stats,
+      .industry-grid,
+      .solutions-grid,
+      .tech-grid,
+      .why-grid,
+      .insights-grid,
+      .faq-grid,
+      .testimonial-carousel,
+      .final-cta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    #testimonials, .testimonials {
+  position: relative;
+  background-color: var(--bbt-navy);
+  overflow: hidden;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Base handshake background layout with premium opacity */
+#testimonials::before, .testimonials::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../assests/images/client.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.38; 
+  z-index: -2;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Fallback background helper for index.html context */
+@media (min-width: 1px) {
+  #testimonials::before, .testimonials::before {
+    background-image: url('../assests/images/client.jpg');
+    background-blend-mode: normal;
+  }
+}
+
+/* Glass-like Dark overlay gradient layer exactly like tech stack grids card style */
+#testimonials::after, .testimonials::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg, 
+    rgba(15, 23, 42, 0.92) 0%, 
+    rgba(15, 23, 42, 0.75) 50%, 
+    rgba(15, 23, 42, 0.45) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Testimonial slider grid and split styles */
+.testimonials-flex {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 0;
+}
+
+@media (max-width: 1024px) {
+  .testimonials-flex {
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+  }
+}
+
+.testimonials-left {
+  flex: 1 1 38%;
+  max-width: 460px;
+}
+
+.testimonials-left h2 {
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.22;
+  margin: 14px 0 0 0;
+}
+
+.testimonials-right {
+  flex: 1 1 62%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.testimonial-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+/* Glass card styling as seen in Technology Stack */
+.testimonial-card-styled {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important; /* Premium gloss edge */
+  border-radius: 28px;
+  padding: 42px;
+  color: #ffffff;
+  box-shadow: 
+    0 24px 60px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.testimonial-card-styled:hover {
+  border-color: rgba(245, 158, 11, 0.4) !important; /* Golden glowing edge */
+  box-shadow: 
+    0 28px 70px rgba(245, 158, 11, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.21) !important;
+  transform: translateY(-2px);
+}
+
+.testimonial-quote-mark {
+  font-family: system-ui, serif;
+  font-size: 84px;
+  line-height: 1;
+  color: rgba(245, 158, 11, 0.2);
+  position: absolute;
+  top: 10px;
+  left: 28px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.testimonial-card-styled p {
+  font-size: 1.08rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.94) !important;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fallback styling for plain paragraph on old codebases */
+.testimonial-card-styled > p {
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+.testimonial-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar-styled {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bbt-orange, #f59e0b);
+  color: #0f172a;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.testimonial-info-block h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.testimonial-info-block span {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 2px;
+}
+
+/* Symmetrical sliders control and navigation */
+.testimonial-controls-wrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.testimonial-nav-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.testimonial-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-arrow-btn:hover {
+  background: var(--bbt-orange, #f59e0b);
+  border-color: var(--bbt-orange, #f59e0b);
+  color: #0f172a;
+  transform: scale(1.06);
+}
+
+.testimonial-dot-indicators {
+  display: flex;
+  gap: 6px;
+}
+
+.testimonial-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial-dot.active {
+  background: var(--bbt-orange, #f59e0b);
+  width: 22px;
+  border-radius: 4px;
+}
 
     /* UTILITIES */
     .scroll-progress-bar { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: var(--bbt-orange); z-index: 10000; transform-origin: left; transform: scaleX(0); }
@@ -955,7 +2256,7 @@
   <div class="container header-wrapper">
     <!-- Logo -->
     <a href="index.html" class="logo">
-      <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+      <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
     </a>
 
     <!-- Navigation -->
@@ -977,7 +2278,7 @@
         <div class="mega-card">
           <div class="mega-card-img">
             <!-- Featured Image for Solutions -->
-            <img src="../assests/images/solutions.avif" alt="Enterprise Solutions">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/solutions.avif" alt="Enterprise Solutions">
           </div>
           <div class="mega-card-text">
             <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
@@ -1025,7 +2326,7 @@
         <h3 class="mega-heading">Resources</h3>
         <div class="mega-card">
           <div class="mega-card-img">
-            <img src="../assests/images/resources.avif" alt="AI Innovations">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="AI Innovations">
           </div>
           <div class="mega-card-text">
             <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
@@ -1069,13 +2370,14 @@
   <section class="hero">
     <div class="hero-image-bg">
       <!-- Ensure the path to about-us.jpg is correct -->
-      <img src="../assests/images/about-us.jpg" alt="Big Binary Tech Team" class="hero-img-element">
+      <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/about-us.jpg" alt="Big Binary Tech Team" class="hero-img-element">
       <div class="hero-overlay"></div>
     </div>
     <div class="container hero-content">
-      <p class="eyebrow" style="color:var(--bbt-orange); font-size: 1.1rem; letter-spacing: 4px;">ESTABLISHED 2016</p>
-      <h1 style="font-size: clamp(3rem, 8vw, 5rem); line-height: 1;">Architecting <span class="text-orange">Tomorrow</span></h1>
-      <p style="font-size: 1.3rem; margin-top: 20px;">We are a global team of technologists, designers, and strategists dedicated to bridging the gap between complex binary logic and human-centric business solutions.</p>
+      <p class="eyebrow" style="color:var(--bbt-orange); font-size: 1.1rem; letter-spacing: 4px;">Established 2015 </p>
+      <h1 style="font-size: clamp(3rem, 8vw, 5rem); line-height: 1;">About Us  <span class="text-orange"> | </span> Big Binary Tech</h1>
+      <h1 style="font-size: clamp(1rem, 3vw, 2rem); line-height: 1;">Where Odoo ERP, AI Automation, and Custom Software Meet </h1>
+      <p style="font-size: 1.3rem; margin-top: 20px;"> Big Binary Tech is a global Odoo ERP, AI automation, and custom software development company. We turn complex technology into simple, working solutions that help your business run better, grow faster, and stay ahead — wherever you are in the world. </p>
       
       <!-- Added a scroll indicator for full-screen impact -->
       <div style="margin-top: 40px;">
@@ -1096,17 +2398,17 @@
   </style>
   <!-- COMPANY OVERVIEW & STORY -->
   <section class="story-section-new">
-    <div class="story-bg" style="background-image: url('../assests/images/company-illustration.png');"></div>
+    <div class="story-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/company-illustration.png');"></div>
     <div class="story-overlay"></div>
     
     <div class="container story-wrapper-new">
       <div class="story-content-right">
         <span class="eyebrow" style="color: var(--bbt-orange); font-weight: bolder; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; font-size: 16px;">Our Story</span>
         <h2>The Binary Evolution</h2>
-        <p>Big Binary Tech (BBT) started with a single mission: to make high-end enterprise technology accessible to growing businesses. What began as a small boutique software firm has evolved into a full-scale digital transformation powerhouse.</p>
-        <p>We believe that "Binary" represents more than just code—it represents the choice businesses make between the status quo and the future. We help you choose the latter.</p>
+        <p>Big Binary Tech started in September,2015 with one simple goal: bring powerful enterprise technology to businesses of every size, not just big corporations. What began as a small software team has grown into a full digital transformation partner, offering Odoo ERP implementation, AI automation, custom software development, and POS solutions to clients across the world. </p>
+        <p>For us, "Binary" means a choice, between doing things the old way, or doing them the smart way. Every business we work with is choosing to move forward. Our job is to make that move easy, reliable, and worth it. </p>
         <div style="margin-top: 30px;">
-          <a href="contact.html" class="cta-btn">Join Our Journey</a>
+          <a href="contact.html" class="cta-btn">Talk To Our Team</a>
         </div>
       </div>
     </div>
@@ -1133,7 +2435,7 @@
                     <h3>Mission</h3>
                 </div>
             </div>
-            <p>To satisfy clients with efficient solutions, to set and reach our goals, anticipate trends, and identify opportunities. To contribute to the individual and collective development of all our team members.</p>
+            <p>We solve real business problems with imaginative thinking, smart technology, and disciplined engineering; delivering intelligent, scalable solutions that create real impact for our clients.</p>
             
            <div class="connector-line line-right">
     <svg viewBox="0 0 800 90" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1159,7 +2461,7 @@
                     <h3>Vision</h3>
                 </div>
             </div>
-            <p>Our vision is to be perceived as driving accomplices in all the business territories where we have a presence, through our straightforwardness and effectiveness in plans of action, subsequently making an incentive for our Clients, Employees, and Stakeholders.</p>
+            <p>To become a trusted software innovation partner that helps businesses turn bold ideas into reliable systems, transform operations through technology, and grow confidently in the digital future.</p>
             
            <div class="connector-line line-left">
     <svg viewBox="0 0 800 90" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1173,147 +2475,120 @@
     </svg>
 </div>
         </div>
-
     </div>
 </section>
 
-<section class="values-radial-section">
+<!-- --- BRANDED QUAD LEAF CORE VALUES --- -->
+<section class="values-quad-section">
   <div class="container">
-    <div class="section-header center-white">
-      <span class="eyebrow" style="color: #f59e0b; letter-spacing: 4px;">THE BBT DNA</span>
-      <h2>Values that drive us</h2>
+    <div class="section-header center-dark">
+      <span class="eyebrow" style="color: var(--bbt-orange); letter-spacing: 4px; display: block;">THE BBT DNA</span>
+      <h2 style="color: var(--bbt-navy); font-size: 3rem; font-weight: 800;">Core Values</h2>
     </div>
 
-    <div class="radial-viewport">
-      
-     <div class="arc-svg-container">
-    <svg viewBox="0 0 1100 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- The Main Arc -->
-      <!-- <path d="M 160 100 Q 550 550 940 100" 
-            stroke="#0ea5e9" 
-            stroke-width="2" 
-            stroke-dasharray="0" 
-            opacity="0.6"/> -->
-    </svg>
-  </div>
-
-  <!-- CENTER HUB -->
-  <div class="hub-top">
-    <span style="font-size: 14px; letter-spacing: 3px; font-weight: 500;">CORE</span>
-    <strong style="font-size: 32px; font-weight: 900;">VALUES</strong>
-  </div>
-
-  <!-- NODE 1: Trust -->
-  <div class="value-node node-1">
-    <div class="icon-box-tapered"><i class="fa-solid fa-handshake-simple"></i></div>
-    <div class="node-text">
-      <h4>Trust over<br>process</h4>
-      <p>If a process increases trust, choose the process.</p>
+    <div class="quad-container">
+      <!-- Center Hub -->
+     <div class="quad-hub">
+  <div class="hub-inner">
+    <div class="hub-logo-wrap">
+      <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="BBT" class="hub-logo">
+    </div>
+    <div class="hub-text-wrap">
+      <span class="hub-number">4</span>
+      <div class="hub-label">
+        <p class="hub-main">STEPS</p>
+        <p class="hub-sub">OF EXCELLENCE</p>
+      </div>
     </div>
   </div>
+</div>
 
-  <!-- NODE 5: Excellence -->
-  <div class="value-node node-5">
-    <div class="icon-box-tapered"><i class="fa-solid fa-star-half-stroke"></i></div>
-    <div class="node-text">
-      <h4>Excellence<br>over success</h4>
-      <p>Pursuit of excellence is about pushing boundaries.</p>
-    </div>
-  </div>
+      <!-- Value 01 - Top Left -->
+      <div class="value-leaf leaf-tl">
+        <div class="leaf-content">
+          <div class="leaf-header">
+            <span class="leaf-number">01</span>
+            <div class="leaf-title">
+                <h5>TRUST OVER</h5>
+                <p>PROCESS</p>
+            </div>
+          </div>
+          <p class="leaf-desc">If a rule gets in the way of trust, we change the rule. We talk to you like a partner, not a ticket number.  </p>
+        </div>
+      </div>
 
-  <!-- NODE 2: Value -->
-  <div class="value-node node-2">
-    <div class="icon-box-tapered"><i class="fa-solid fa-shield-heart"></i></div>
-    <div class="node-text">
-      <h4>Value over<br>profit</h4>
-      <p>Always ask: "Is my work creating value?"</p>
-    </div>
-  </div>
+      <!-- Value 02 - Top Right -->
+      <div class="value-leaf leaf-tr">
+        <div class="leaf-content">
+          <div class="leaf-header">
+            <span class="leaf-number">02</span>
+            <div class="leaf-title">
+                <h5>EXCELLENCE OVER</h5>
+                <p>SUCCESS</p>
+            </div>
+          </div>
+          <p class="leaf-desc">We don't settle for "good enough." We push for better, every single project. </p>
+        </div>
+      </div>
 
-  <!-- NODE 4: Effort -->
-  <div class="value-node node-4">
-    <div class="icon-box-tapered"><i class="fa-solid fa-bullseye"></i></div>
-    <div class="node-text">
-      <h4>Effort over<br>outcome</h4>
-      <p>We reward action. Your best effort matters.</p>
-    </div>
-  </div>
+      <!-- Value 03 - Bottom Left -->
+      <div class="value-leaf leaf-bl">
+        <div class="leaf-content">
+          <div class="leaf-header">
+            <span class="leaf-number">03</span>
+            <div class="leaf-title">
+                <h5>VALUE OVER</h5>
+                <p>PROFIT</p>
+            </div>
+          </div>
+          <p class="leaf-desc">Before anything else, we ask: is this actually helping our client? Profit is the result, not the goal. </p>
+        </div>
+      </div>
 
-  <!-- NODE 3: Collaboration -->
-  <div class="value-node node-3">
-    <div class="icon-box-tapered"><i class="fa-solid fa-people-group"></i></div>
-    <div class="node-text">
-      <h4>Collaboration over competition</h4>
-      <p>We focus on collective progress rather than individual glory.</p>
+      <!-- Value 04 - Bottom Right -->
+      <div class="value-leaf leaf-br">
+        <div class="leaf-content">
+          <div class="leaf-header">
+            <span class="leaf-number">04</span>
+            <div class="leaf-title">
+                <h5>EFFORT OVER</h5>
+                <p>OUTCOME</p>
+            </div>
+          </div>
+          <p class="leaf-desc"> Technology projects don't always go perfectly. What we control is how hard we work to get it right — and we reward that effort.</p>
+        </div>
+      </div>
     </div>
-  </div>
   </div>
 </section>
  <!-- LEADERSHIP SECTION -->
+
 <section class="leadership-section">
   <div class="container">
     
-    <!-- Top Header with Nav Arrows -->
+    <!-- Centered Header -->
     <div class="leadership-header">
+      <p class="eyebrow" style="color: var(--bbt-orange); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px;">Our Visionary</p>
       <h2>Our Leadership</h2>
-      <div class="leadership-nav">
-        <button class="nav-btn prev"><i class="fa-solid fa-arrow-left"></i></button>
-        <button class="nav-btn next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <!-- Centered Single Member -->
+    <div class="leadership-single-container">
+      <div class="leader-card">
+        <div class="leader-img">
+          <!-- CEO Image -->
+          <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/ceo.jpeg" alt="CEO Abdur Rehman Shahid">
+        </div>
+        <div class="leader-info">
+          <h3>Abdur Rehman <span class="text-orange">Shahid</span></h3>
+          <p>Chief Executive Officer</p>
+          <a href="https://linkedin.com" target="_blank" class="linkedin-link">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- Team Grid -->
-    <div class="leadership-grid">
-      
-      <!-- Member 1 -->
-      <div class="leader-card">
-        <div class="leader-img">
-          <img src="../assests/images/ceo.jpg" alt="Sadaf">
-        </div>
-        <div class="leader-info">
-          <h3><span class="text-orange">Sadaf</span></h3>
-          <p>Chief Operating Officer</p>
-          <a href="#" class="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-      </div>
-
-      <!-- Member 2 -->
-      <div class="leader-card">
-        <div class="leader-img">
-          <img src="../assests/images/cto.jpg" alt="Badar Shafiq">
-        </div>
-        <div class="leader-info">
-          <h3>Badar <span class="text-orange">Shafiq</span></h3>
-          <p>Chief Delivery Officer</p>
-          <a href="#" class="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-      </div>
-
-      <!-- Member 3 -->
-      <div class="leader-card">
-        <div class="leader-img">
-          <img src="../assests/images/atta.png" alt="Atta Ur Rahman">
-        </div>
-        <div class="leader-info">
-          <h3>Atta Ur <span class="text-orange">Rahman</span></h3>
-          <p>Chief Business Officer</p>
-          <a href="#" class="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-      </div>
-
-      <!-- Member 4 -->
-      <div class="leader-card">
-        <div class="leader-img">
-          <img src="../assests/images/moiz.png" alt="Moiz Saleem">
-        </div>
-        <div class="leader-info">
-          <h3>Moiz Saleem <span class="text-orange">Varin</span></h3>
-          <p>Head of Global Marketing</p>
-          <a href="#" class="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-      </div>
-
-    </div>
   </div>
 </section>
 
@@ -1322,96 +2597,201 @@
         <div style="text-align: center; max-width: 700px; margin: 0 auto;">
             <span class="eyebrow" style="color: var(--bbt-orange)">Global Reach</span>
             <h2>A Presence Without Borders</h2>
-            <p>Big Binary Tech operates as a truly global entity, serving clients across four continents.</p>
+            <p>Big Binary Tech serves clients across the GCC, USA, UK, and 50+ countries worldwide. Whether you're a growing startup or an established enterprise, our team delivers</p>
         </div>
       <div class="reach-stats">
-        <div class="stat-item"><h2 class="counter">50</h2><p>Countries Served</p></div>
-        <div class="stat-item"><h2 class="counter">200</h2><p>Expert Developers</p></div>
-        <div class="stat-item"><h2 class="counter">500</h2><p>Successful Launches</p></div>
-        <div class="stat-item"><h2 class="counter">98</h2><p>Client Retention %</p></div>
+        <div class="stat-item"><h2 class="counter">50+</h2><p>Countries Served</p></div>
+        <div class="stat-item"><h2 class="counter">20+</h2><p>Expert Developers</p></div>
+        <div class="stat-item"><h2 class="counter">100+</h2><p>Successful Launches</p></div>
+        <div class="stat-item"><h2 class="counter">95</h2><p>Client Retention %</p></div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
- <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col footer-brand">
-        <a href="index.html" class="logo">
-          <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
-        </a>
-        <p>Big Binary Tech delivers AI, ERP, and software solutions that power business growth with modern automation
-          and digital transformation.</p>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/" class="social-icon" target="_blank" rel="noopener noreferrer"
-            aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-          <a href="https://twitter.com/" class="social-icon" target="_blank" rel="noopener noreferrer"
-            aria-label="Twitter">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener noreferrer"
-            aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-          </a>
+  <section class="testimonials" id="testimonials">
+  <div class="container testimonials-flex">
+    
+    <!-- Left Hand Side Header (Remains completely still) -->
+    <div class="testimonials-left">
+      <p class="eyebrow" style="color: #f59e0b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;">What Our Clients Say</p>
+      <h2>Client successes & community reviews</h2>
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin-top: 16px;">
+        Continuous collaborations that prove efficiency and operational scalability on every technical sprint cycle.
+      </p>
+    </div>
+
+    <!-- Right Hand Side sliding dynamic card stack -->
+    <div class="testimonials-right">
+      <div class="testimonial-track" id="testimonialTrack">
+        
+        <!-- Slide 1 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-card-styled">
+            <div class="testimonial-quote-mark">“</div>
+            <p>BBT delivered a seamless ERP rollout that transformed our operations and improved reporting across departments.</p>
+            <div class="testimonial-meta-row">
+              <div class="testimonial-author-box">
+                <div class="testimonial-avatar-styled">JD</div>
+                <div class="testimonial-info-block">
+                  <h4>Jane Doe</h4>
+                  <span>COO, Retail Group</span>
+                </div>
+              </div>
+              
+              <!-- Control elements (Injected inside card structure for symmetry) -->
+              <div class="testimonial-controls-wrap">
+                <div class="testimonial-nav-arrows">
+                  <span class="testimonial-arrow-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></span>
+                  <span class="testimonial-arrow-btn next-btn"><i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+                <div class="testimonial-dot-indicators">
+                  <span class="testimonial-dot active" data-index="0"></span>
+                  <span class="testimonial-dot" data-index="1"></span>
+                  <span class="testimonial-dot" data-index="2"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-card-styled">
+            <div class="testimonial-quote-mark">“</div>
+            <p>The team built a scalable automation platform that reduced manual tasks and gave us better visibility over customer data.</p>
+            <div class="testimonial-meta-row">
+              <div class="testimonial-author-box">
+                <div class="testimonial-avatar-styled">MS</div>
+                <div class="testimonial-info-block">
+                  <h4>Mark Singh</h4>
+                  <span>CTO, Healthcare Services</span>
+                </div>
+              </div>
+              <div class="testimonial-controls-wrap">
+                <div class="testimonial-nav-arrows">
+                  <span class="testimonial-arrow-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></span>
+                  <span class="testimonial-arrow-btn next-btn"><i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+                <div class="testimonial-dot-indicators">
+                  <span class="testimonial-dot" data-index="0"></span>
+                  <span class="testimonial-dot active" data-index="1"></span>
+                  <span class="testimonial-dot" data-index="2"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-card-styled">
+            <div class="testimonial-quote-mark">“</div>
+            <p>Their Odoo experts delivered a tailored solution fast, and our teams now operate with confidence and speed.</p>
+            <div class="testimonial-meta-row">
+              <div class="testimonial-author-box">
+                <div class="testimonial-avatar-styled">AL</div>
+                <div class="testimonial-info-block">
+                  <h4>Ayesha Latif</h4>
+                  <span>Finance Director, Manufacturing Co.</span>
+                </div>
+              </div>
+              <div class="testimonial-controls-wrap">
+                <div class="testimonial-nav-arrows">
+                  <span class="testimonial-arrow-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></span>
+                  <span class="testimonial-arrow-btn next-btn"><i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+                <div class="testimonial-dot-indicators">
+                  <span class="testimonial-dot" data-index="0"></span>
+                  <span class="testimonial-dot" data-index="1"></span>
+                  <span class="testimonial-dot active" data-index="2"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <section class="final-cta">
+    <div class="container final-cta-grid">
+      <div class="final-cta-copy">
+        <h2>Ready to Move Your Business Forward? </h2>
+        <p>Whether it's Odoo ERP, AI automation, custom software, or POS — let's talk about what your business actually needs. </p>
+        <div class="final-cta-buttons">
+          <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+          <a href="contact.html" class="btn btn-outline">Talk to an Expert</a>
         </div>
       </div>
-
-      <div class="footer-col footer-services">
-        <h3>Services</h3>
-        <ul>
-          <li><a href="services.html">AI &amp; Automation</a></li>
-          <li><a href="services.html">Odoo ERP</a></li>
-          <li><a href="services.html">Custom Software</a></li>
-          <li><a href="services.html">Website Development</a></li>
-          <li><a href="services.html">POS Solutions</a></li>
-          <li><a href="services.html">Digital Transformation</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-solutions">
-        <h3>Solutions</h3>
-        <ul>
-          <li><a href="solutions.html">Business Automation</a></li>
-          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
-          <li><a href="solutions.html">Retail &amp; POS</a></li>
-          <li><a href="solutions.html">Digital Transformation</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-industries">
-        <h3>Industries</h3>
-        <ul>
-          <li><a href="industries.html">Education</a></li>
-          <li><a href="industries.html">Healthcare</a></li>
-          <li><a href="industries.html">Retail</a></li>
-          <li><a href="industries.html">Manufacturing</a></li>
-          <li><a href="industries.html">Hospitality</a></li>
-          <li><a href="industries.html">Logistics</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-contact">
-        <h3>Contact</h3>
-        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
-        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
-        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+      <div class="contact-panel">
+        <form class="contact-form" action="#" method="post">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Company</span>
+            <input type="text" name="company" placeholder="Company name">
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Tell us about your project"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+  </section>
+
+  <section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Expert Answers to Common Inquiries</h2>
     </div>
-  </footer>
+    <div class="faq-grid">
+      <details>
+        <summary>How long does an Odoo ERP implementation typically take for a mid-size business? </summary>
+        <p>Eight to sixteen weeks, depending on your modules, workflows, and data volume. We phase it into; discovery, customization, migration, testing, and training. So your business never stops running. </p>
+      </details>
+      <details>
+        <summary>Can you integrate AI automation with our existing CRM, ERP, or POS systems?</summary>
+        <p>Yes. We use APIs and middleware to connect our AI automation to your current CRM, ERP, or POS without rebuilding anything. Your existing tools get smarter, not replaced. </p>
+      </details>
+      <details>
+        <summary>Which industries benefit most from your AI and Odoo ERP solutions?</summary>
+        <p>Retail, manufacturing, healthcare, logistics, education, hospitality, eCommerce, and professional services. These sectors run on repetitive workflows and multi-department data, exactly where our AI automation and Odoo ERP cut costs and speed up growth. </p>
+      </details>
+      <details>
+        <summary>What does your post-launch support and maintenance include? </summary>
+        <p>24/7 monitoring, bug fixes, security updates, performance tuning, and quarterly reviews. We also upgrade your AI models, ERP modules, and workflows as your business evolves. </p>
+      </details>
+      <details>
+        <summary>How do you protect our data during cloud migration and ERP integration? </summary>
+        <p>End-to-end encryption, role-based access, secure APIs, and encrypted backups. We run parallel systems during transition and align with compliance standards in the USA, UK, and GCC. </p>
+      </details>
+      <details>
+        <summary>What makes Big Binary Tech different from other software development companies?  </summary>
+        <p>We combine AI automation, Odoo ERP, and custom software development under one roof, so you get one partner who understands your full technology stack instead of three vendors who blame each other when things break. Our PSEB registration, Cisco partnership, and government affiliations give you enterprise credibility at better value than typical US or UK agency rates. </p>
+      </details>
+      <details>
+        <summary>Do you work with clients in different time zones?  </summary>
+        <p>Yes. We serve clients across the USA, UK, and GCC with overlapping work hours, async updates, and dedicated project managers who ensure you never wait a full day for a response. Our software development company has delivered Odoo ERP implementations and AI automation projects for businesses in New York, London, Dubai, and Riyadh without missing a deadline </p>
+      </details>
+       <details>
+        <summary>How do you price your projects, fixed cost or hourly?  </summary>
+        <p>We offer both. Fixed cost for well-defined Odoo ERP implementations and custom software projects with clear scopes. Hourly for ongoing AI automation, digital transformation consulting, and evolving workflows where flexibility matters. Every proposal includes a detailed breakdown so you know exactly what you are paying for before we start.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
   <!-- GSAP SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1426,6 +2806,83 @@
       ease: "none",
       scrollTrigger: { scrub: 0.3 }
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("testimonialTrack");
+  if (!track) return;
+
+  const slides = Array.from(track.children);
+  let currentIdx = 0;
+  let autoplayTimer;
+
+  // Render and update sliding position
+  function updateSlider(index) {
+    currentIdx = index;
+    // Shift track
+    track.style.transform = `translateX(-${currentIdx * 100}%)`;
+
+    // Sync dots on all slides
+    slides.forEach((slide) => {
+      const dots = Array.from(slide.querySelectorAll(".testimonial-dot"));
+      dots.forEach((dot, dIdx) => {
+        if (dIdx === currentIdx) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    });
+
+    // Reset autoplay timer when a user interacts
+    startAutoplay();
+  }
+
+  function nextSlide() {
+    let nextIdx = (currentIdx + 1) % slides.length;
+    updateSlider(nextIdx);
+  }
+
+  function prevSlide() {
+    let prevIdx = (currentIdx - 1 + slides.length) % slides.length;
+    updateSlider(prevIdx);
+  }
+
+  function startAutoplay() {
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(nextSlide, 7000); // 7 seconds slide intervals
+  }
+
+  // Hook event delegation listeners for slider control groups
+  slides.forEach((slide) => {
+    // Next check buttons
+    slide.querySelectorAll(".next-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        nextSlide();
+      });
+    });
+
+    // Previous check buttons
+    slide.querySelectorAll(".prev-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        prevSlide();
+      });
+    });
+
+    // Bullet indicators click
+    slide.querySelectorAll(".testimonial-dot").forEach((dot) => {
+      dot.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const targetIdx = parseInt(dot.getAttribute("data-index"), 10);
+        updateSlider(targetIdx);
+      });
+    });
+  });
+
+  // Run autoplay system
+  startAutoplay();
+});
 
     // Reveal animations for sections
     const sections = gsap.utils.toArray('section');
