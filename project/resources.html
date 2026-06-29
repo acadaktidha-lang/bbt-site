@@ -34,10 +34,10 @@
     .container { width: 90%; max-width: 1300px; margin: auto; }
 
     /* --- HEADER (EXACT REPLICATION) --- */
-    .header { position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; background: transparent; padding: 20px 0; }
+    .header { position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; background: transparent; padding: 20px 0; --header-h: 100px; }
     .header .nav-links a { color: #ffffff !important; text-shadow: 0 2px 10px rgba(0,0,0,0.5); text-decoration: none; font-size: 14px; font-weight: 500; }
-    .header-wrapper { display: flex; align-items: center; justify-content: space-between; }
-    .logo img { height: 100px; width: auto; filter: brightness(0) invert(1); }
+    .header-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .logo img { height: 100px; width: auto; max-width: 100%; filter: brightness(0) invert(1); }
     .nav-links { display: flex; gap: 28px; list-style: none; }
       /* Parent item alignment */
 .nav-item-dropdown {
@@ -107,12 +107,14 @@
     position: fixed;
     left: 0;
     width: 100vw;
-    top: 100px; /* Aligns exactly at bottom of header */
+    top: var(--header-h, 100px); /* Aligns exactly at bottom of header */
     background: var(--bbt-navy); /* Dark Theme */
     border-top: 2px solid var(--bbt-orange);
     border-bottom: 5px solid var(--bbt-orange);
     padding: 50px 0;
     box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    max-height: calc(100vh - var(--header-h, 100px));
+    overflow-y: auto;
     
     /* Animation States */
     opacity: 0;
@@ -289,7 +291,34 @@
     grid-template-columns: 1.4fr 0.6fr; /* Exact ratio from your image */
     gap: 80px;
 }
-    .cta-btn { background: var(--bbt-orange); color: var(--bbt-white); padding: 10px 20px; border-radius: 999px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 24px var(--bbt-orange-glow); }
+    .cta-btn { background: var(--bbt-orange); color: var(--bbt-white); padding: 10px 20px; border-radius: 999px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 24px var(--bbt-orange-glow); white-space: nowrap; }
+
+    /* --- MOBILE NAV TOGGLE (HAMBURGER) --- */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1100;
+      flex-shrink: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* --- HERO (EXACT REPLICATION) --- */
     .hero { position: relative; width: 100%; height: 85vh; background: #000; overflow: hidden; display: flex; align-items: center; }
@@ -366,12 +395,105 @@
     /* FOOTER (REPLICATED) */
     .site-footer { padding: 72px 0 40px; background: var(--bbt-bg-soft); border-top: 1px solid var(--bbt-border); text-align: center;}
 
+    /* ============================= */
+    /* RESPONSIVE BREAKPOINTS        */
+    /* ============================= */
+
+    /* --- TABLET / SMALL LAPTOP (≤1024px) --- */
     @media (max-width: 1024px) {
       .res-grid, .update-grid { grid-template-columns: repeat(2, 1fr); }
       .featured-flex { grid-template-columns: 1fr; }
+      .book-mockup { height: 350px; }
+
+      .mega-menu-container { grid-template-columns: 1fr; gap: 40px; }
+      .mega-links-section { padding-top: 0; }
+      .mega-card { flex-direction: column; }
+      .mega-card-img { width: 100%; height: auto; max-height: 220px; }
     }
+
+    /* --- TABLET / MOBILE NAV COLLAPSE (≤900px) --- */
+    @media (max-width: 900px) {
+      .header { padding: 16px 0; --header-h: 76px; }
+      .logo img { height: 56px; }
+
+      .nav-toggle { display: flex; }
+
+      .navbar {
+        position: fixed;
+        top: var(--header-h, 76px);
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - var(--header-h, 76px));
+        overflow-y: auto;
+        background: var(--bbt-navy);
+        padding: 10px 0 20px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1050;
+      }
+      .navbar.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+
+      .nav-links { flex-direction: column; gap: 0; width: 100%; padding: 0 24px; }
+      .nav-links > li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .header .nav-links a { display: block; padding: 16px 4px; text-shadow: none; font-size: 16px; }
+
+      /* Mega menus become inline accordions instead of fixed full-screen overlays */
+      .nav-item-dropdown { padding-bottom: 0; margin-bottom: 0; }
+      .mega-menu-wrapper {
+        position: static;
+        width: 100%;
+        top: auto;
+        max-height: none;
+        overflow-y: visible;
+        border-bottom: none;
+        box-shadow: none;
+        padding: 20px 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+      }
+      .nav-item-dropdown.is-open .mega-menu-wrapper { display: block; }
+      .mega-menu-container { padding: 0 16px; }
+      .mega-list-link { font-size: 17px; padding: 16px 0; }
+
+      .cta-btn { display: none; }
+    }
+
+    /* --- SMALL TABLET / LARGE PHONE (≤768px) --- */
+    @media (max-width: 768px) {
+      .hero { height: auto; min-height: 70vh; padding: 140px 0 60px; }
+      .hero-content { max-width: 100%; }
+
+      .featured-resource, .updates-section, .resources-grid-section { padding: 70px 0; }
+      .section-header h2 { font-size: 2rem; }
+      .feat-results { flex-wrap: wrap; gap: 20px; }
+    }
+
+    /* --- MOBILE (≤640px) --- */
     @media (max-width: 640px) {
       .res-grid, .update-grid { grid-template-columns: 1fr; }
+      .res-card { padding: 32px 24px; }
+
+      .hero h1 { font-size: clamp(2rem, 8vw, 2.75rem); }
+      .hero-tag { font-size: 10px; padding: 6px 14px; }
+
+      .book-mockup { height: 280px; padding: 28px; }
+      .feat-content h2 { font-size: 1.6rem !important; }
+
+      .mega-card-img { height: 160px; }
+      .mega-heading { font-size: 20px; letter-spacing: 2px; margin-bottom: 20px; }
+    }
+
+    /* --- SMALL PHONE (≤420px) --- */
+    @media (max-width: 420px) {
+      .container { width: 92%; }
+      .logo img { height: 46px; }
+      .hero { padding-top: 120px; }
+      .section-header h2 { font-size: 1.6rem; }
+      .feat-stat h4 { font-size: 2rem; }
     }
   </style>
 </head>
@@ -489,6 +611,13 @@
 
     <!-- CTA -->
     <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
 
@@ -619,6 +748,63 @@
         y: 40,
         duration: 0.8,
         ease: "power2.out"
+      });
+    });
+
+    // --- RESPONSIVE NAV BEHAVIOR ---
+    const headerEl = document.getElementById("header");
+    const navToggle = document.getElementById("navToggle");
+    const navbar = document.querySelector(".navbar");
+    const dropdownItems = document.querySelectorAll(".nav-item-dropdown");
+
+    // Keep --header-h synced to the real header height so the mobile menu
+    // and mega-menu never overlap or leave a gap on any screen size.
+    function syncHeaderHeight() {
+      if (headerEl) {
+        headerEl.style.setProperty("--header-h", headerEl.offsetHeight + "px");
+      }
+    }
+    syncHeaderHeight();
+    window.addEventListener("resize", syncHeaderHeight);
+    window.addEventListener("load", syncHeaderHeight);
+
+    // Hamburger open/close
+    if (navToggle && navbar) {
+      navToggle.addEventListener("click", () => {
+        const isOpen = navbar.classList.toggle("is-open");
+        navToggle.classList.toggle("is-open", isOpen);
+        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (!isOpen) {
+          dropdownItems.forEach((item) => item.classList.remove("is-open"));
+        }
+      });
+    }
+
+    // On mobile, tapping a dropdown parent link toggles its mega-menu accordion
+    // instead of relying on :hover (which doesn't exist on touch devices).
+    dropdownItems.forEach((item) => {
+      const trigger = item.querySelector(".nav-link-anchor");
+      if (!trigger) return;
+      trigger.addEventListener("click", (e) => {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          const isOpen = item.classList.toggle("is-open");
+          dropdownItems.forEach((other) => {
+            if (other !== item) other.classList.remove("is-open");
+          });
+        }
+      });
+    });
+
+    // Close mobile nav when a real link inside it is tapped
+    document.querySelectorAll(".nav-links a:not(.nav-link-anchor), .mega-list-link, .mega-cta").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 900) {
+          navbar.classList.remove("is-open");
+          navToggle.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+          dropdownItems.forEach((item) => item.classList.remove("is-open"));
+        }
       });
     });
   </script>

@@ -41,6 +41,7 @@
   z-index: 1000;
   background: transparent; 
   padding: 20px 0;
+  --header-h: 100px;
   /* Optional: Remove transition since it won't "stick" anymore */
 }
 
@@ -64,6 +65,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
     }
 
     .logo {
@@ -76,6 +78,7 @@
     .logo img {
       height: 100px;
       width: auto;
+      max-width: 100%;
       display: block;
     }
 
@@ -123,6 +126,33 @@
       box-shadow: 0 8px 32px var(--bbt-orange-glow);
     }
 
+    /* --- MOBILE NAV TOGGLE (HAMBURGER) --- */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1100;
+      flex-shrink: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     .nav-links a.active {
       color: var(--bbt-orange);
       position: relative;
@@ -149,12 +179,14 @@
     position: fixed;
     left: 0;
     width: 100vw;
-    top: 100px; /* Aligns exactly at bottom of header */
+    top: var(--header-h, 100px); /* Aligns exactly at bottom of header */
     background: var(--bbt-navy); /* Dark Theme */
     border-top: 2px solid var(--bbt-orange);
     border-bottom: 5px solid var(--bbt-orange);
     padding: 50px 0;
     box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    max-height: calc(100vh - var(--header-h, 100px));
+    overflow-y: auto;
     
     /* Animation States */
     opacity: 0;
@@ -394,10 +426,106 @@
     .btn-orange:hover { background: var(--bbt-orange-600); color: white; transform: translateY(-3px); box-shadow: 0 10px 25px var(--bbt-orange-glow); }
     .btn-outline-white { border: 2px solid white; color: white; }
 
+    /* ============================= */
+    /* RESPONSIVE BREAKPOINTS        */
+    /* ============================= */
+
+    /* --- TABLET / SMALL LAPTOP (≤1024px) --- */
     @media (max-width: 1024px) {
       .hero-grid, .problem-grid, .gcc-grid, .service-flex, .eco-grid, .pricing-grid { grid-template-columns: 1fr; }
       .service-flex.reverse { direction: ltr; }
-      .nav-links { display: none; }
+      .price-card.popular { transform: scale(1); }
+      .mega-menu-container { grid-template-columns: 1fr; gap: 40px; }
+      .mega-links-section { padding-top: 0; }
+      .mega-card { flex-direction: column; }
+      .mega-card-img { width: 100%; height: auto; max-height: 220px; }
+    }
+
+    /* --- TABLET / MOBILE NAV COLLAPSE (≤900px) --- */
+    @media (max-width: 900px) {
+      .header { padding: 16px 0; --header-h: 76px; }
+      .logo img { height: 56px; }
+
+      .nav-toggle { display: flex; }
+
+      .navbar {
+        position: fixed;
+        top: var(--header-h, 76px);
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - var(--header-h, 76px));
+        overflow-y: auto;
+        background: var(--bbt-navy);
+        padding: 10px 0 20px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1050;
+        flex: none;
+        justify-content: flex-start;
+      }
+      .navbar.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+
+      .nav-links { display: flex; flex-direction: column; gap: 0; width: 100%; padding: 0 24px; }
+      .nav-links > li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .header .nav-links a { display: block; padding: 16px 4px; text-shadow: none; font-size: 16px; }
+      .nav-links a.active::after { display: none; }
+
+      /* Mega menus become inline accordions instead of fixed full-screen overlays */
+      .nav-item-dropdown { padding-bottom: 0; margin-bottom: 0; }
+      .mega-menu-wrapper {
+        position: static;
+        width: 100%;
+        top: auto;
+        max-height: none;
+        overflow-y: visible;
+        border-bottom: none;
+        box-shadow: none;
+        padding: 20px 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+      }
+      .nav-item-dropdown.is-open .mega-menu-wrapper { display: block; }
+      .mega-menu-container { padding: 0 16px; }
+      .mega-list-link { font-size: 17px; padding: 16px 0; }
+
+      .cta-btn { display: none; }
+    }
+
+    /* --- SMALL TABLET / LARGE PHONE (≤768px) --- */
+    @media (max-width: 768px) {
+      .hero { height: auto; min-height: 70vh; padding: 140px 0 60px; }
+      .hero.reveal, section.hero[style*="60vh"] { padding: 70px 0; min-height: auto; }
+      .hero-grid { margin-top: 30px; }
+
+      .problem-section, .gcc-spotlight, .service-block, .ecosystem-section { padding: 70px 0; }
+      .service-text h2 { font-size: 2rem; }
+      .trust-bar { gap: 14px; }
+      .hero-btns { flex-wrap: wrap; }
+    }
+
+    /* --- MOBILE (≤640px) --- */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+      .problem-card, .gcc-box { padding: 28px; }
+      .eco-grid { grid-template-columns: 1fr 1fr; }
+      .price-card { padding: 40px 24px; }
+      .price-card.popular { transform: scale(1); }
+      section.hero[style*="60vh"] h2 { font-size: 2rem !important; }
+      section.hero[style*="60vh"] .hero-btns { flex-direction: column; align-items: center; }
+    }
+
+    /* --- SMALL PHONE (≤420px) --- */
+    @media (max-width: 420px) {
+      .container { width: 92%; }
+      .logo img { height: 46px; }
+      .hero { padding-top: 120px; }
+      .eco-grid { grid-template-columns: 1fr; }
+      .hero-btns .btn, .btn { width: 100%; text-align: center; }
+      .hero-btns { flex-direction: column; }
     }
   </style>
 </head>
@@ -514,6 +642,13 @@
 
     <!-- CTA -->
     <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
   <!-- SECTION 01: HERO -->
@@ -651,22 +786,61 @@
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // Navbar Accordion JS
-    const resBtn = document.getElementById("resources-btn");
-    const megaPanel = document.getElementById("mega-menu-panel");
-    const toggleIcon = resBtn.querySelector(".toggle-icon");
+    // --- RESPONSIVE NAV BEHAVIOR ---
+    const headerEl = document.getElementById("header");
+    const navToggle = document.getElementById("navToggle");
+    const navbar = document.querySelector(".navbar");
+    const dropdownItems = document.querySelectorAll(".nav-item-dropdown");
 
-    resBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        megaPanel.classList.toggle("is-open");
-        toggleIcon.classList.toggle("rotate-icon");
+    // Keep --header-h synced to the real header height so the mobile menu
+    // and mega-menu never overlap or leave a gap on any screen size.
+    function syncHeaderHeight() {
+      if (headerEl) {
+        headerEl.style.setProperty("--header-h", headerEl.offsetHeight + "px");
+      }
+    }
+    syncHeaderHeight();
+    window.addEventListener("resize", syncHeaderHeight);
+    window.addEventListener("load", syncHeaderHeight);
+
+    // Hamburger open/close
+    if (navToggle && navbar) {
+      navToggle.addEventListener("click", () => {
+        const isOpen = navbar.classList.toggle("is-open");
+        navToggle.classList.toggle("is-open", isOpen);
+        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (!isOpen) {
+          dropdownItems.forEach((item) => item.classList.remove("is-open"));
+        }
+      });
+    }
+
+    // On mobile, tapping a dropdown parent link toggles its mega-menu accordion
+    // instead of relying on :hover (which doesn't exist on touch devices).
+    dropdownItems.forEach((item) => {
+      const trigger = item.querySelector(".nav-link-anchor");
+      if (!trigger) return;
+      trigger.addEventListener("click", (e) => {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          const isOpen = item.classList.toggle("is-open");
+          dropdownItems.forEach((other) => {
+            if (other !== item) other.classList.remove("is-open");
+          });
+        }
+      });
     });
 
-    document.addEventListener("click", (e) => {
-        if (!megaPanel.contains(e.target) && e.target !== resBtn) {
-            megaPanel.classList.remove("is-open");
-            toggleIcon.classList.remove("rotate-icon");
+    // Close mobile nav when a real link inside it is tapped
+    document.querySelectorAll(".nav-links a:not(.nav-link-anchor), .mega-list-link, .mega-cta").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 900) {
+          navbar.classList.remove("is-open");
+          navToggle.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+          dropdownItems.forEach((item) => item.classList.remove("is-open"));
         }
+      });
     });
 
     // Reveal Animations
