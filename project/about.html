@@ -2243,7 +2243,196 @@
 
     @media (max-width: 1024px) {
       .story-grid, .mv-grid, .values-grid, .team-grid, .reach-stats, .footer-grid { grid-template-columns: 1fr; }
-      .navbar { display: none; }
+    }
+
+    /* ============================================= */
+    /* --- RESPONSIVE NAVIGATION / MOBILE MENU --- */
+    /* ============================================= */
+
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1100;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .mobile-menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .header.scrolled .mobile-menu-toggle span {
+      background: var(--bbt-navy);
+      box-shadow: none;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-menu-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* When mobile nav is open, force links dark since menu has a light bg */
+    .navbar.mobile-active .nav-links a {
+      color: var(--bbt-navy) !important;
+      text-shadow: none;
+    }
+    
+
+    @media (max-width: 1024px) {
+      .header .logo img { height: 70px; }
+
+      .header-wrapper { flex-wrap: wrap; }
+
+      .mobile-menu-toggle { display: flex; }
+
+      /* Hide desktop CTA in header bar on mobile, show inside menu instead */
+      .header-wrapper > .cta-btn { display: none; }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #ffffff;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 110px 24px 40px;
+        overflow-y: auto;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1050;
+      }
+
+      .navbar.mobile-active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+      }
+
+      .nav-links > li {
+        width: 100%;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 18px 4px;
+        font-size: 17px;
+        color: var(--bbt-navy);
+      }
+
+      /* Mobile CTA shown inside the slide-out menu */
+      .mobile-only-cta {
+        display: block;
+        margin-top: 24px;
+        text-align: center;
+      }
+
+      /* --- Mega menu becomes a normal accordion-style block on mobile --- */
+      .nav-item-dropdown {
+        position: static;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      .mega-menu-wrapper {
+        position: static;
+        width: 100%;
+        top: auto;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: none;
+        display: none;
+        padding: 20px 0;
+        border-top: none;
+        border-bottom: none;
+        box-shadow: none;
+        background: rgba(15, 23, 42, 0.03);
+        border-radius: 16px;
+        margin: 10px 0;
+      }
+
+      .nav-item-dropdown.mobile-open .mega-menu-wrapper {
+        display: block;
+      }
+
+      .mega-menu-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 4px;
+      }
+
+      .mega-heading {
+        font-size: 18px;
+        color: var(--bbt-navy);
+        margin-bottom: 16px;
+      }
+
+      .mega-card {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .mega-card-img {
+        width: 100%;
+        height: 160px;
+      }
+
+      .mega-card-text h4 {
+        color: var(--bbt-navy);
+        font-size: 15px;
+      }
+
+      .mega-links-section { padding-top: 0; }
+
+      .mega-list-link {
+        color: var(--bbt-navy) !important;
+        font-size: 15px;
+        padding: 14px 0;
+      }
+
+      /* Chevron rotates to indicate open dropdown state */
+      .nav-link-anchor .fa-chevron-down {
+        transition: transform 0.3s ease;
+      }
+      .nav-item-dropdown.mobile-open .nav-link-anchor .fa-chevron-down {
+        transform: rotate(180deg);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header .logo img { height: 56px; }
+      .navbar { padding: 100px 18px 40px; }
+      .nav-links a { font-size: 16px; padding: 16px 4px; }
     }
   </style>
 </head>
@@ -2359,10 +2548,18 @@
         <li><a href="insights.html">Insights</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <a href="contact.html" class="cta-btn mobile-only-cta" style="display:none;">Get Free Consultation</a>
     </nav>
 
     <!-- CTA -->
     <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
 
@@ -2805,6 +3002,60 @@
       scaleX: 1,
       ease: "none",
       scrollTrigger: { scrub: 0.3 }
+    });
+
+    // --- Mobile Navigation Toggle ---
+    document.addEventListener("DOMContentLoaded", () => {
+      const mobileToggle = document.getElementById('mobileMenuToggle');
+      const navbar = document.querySelector('.navbar');
+
+      if (mobileToggle && navbar) {
+        mobileToggle.addEventListener('click', () => {
+          const isOpen = navbar.classList.toggle('mobile-active');
+          mobileToggle.classList.toggle('active');
+          mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // Close mobile menu when a plain nav link (not a dropdown toggle) is clicked
+        navbar.querySelectorAll('.nav-links > li > a:not(.nav-link-anchor)').forEach(link => {
+          link.addEventListener('click', () => {
+            navbar.classList.remove('mobile-active');
+            mobileToggle.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          });
+        });
+
+        // On mobile, tapping a dropdown label (Solutions/Resources) toggles the mega-menu accordion
+        // instead of navigating away, since hover doesn't exist on touch devices.
+        document.querySelectorAll('.nav-item-dropdown > .nav-link-anchor').forEach(anchor => {
+          anchor.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+              e.preventDefault();
+              const parentItem = anchor.closest('.nav-item-dropdown');
+              const wasOpen = parentItem.classList.contains('mobile-open');
+
+              document.querySelectorAll('.nav-item-dropdown.mobile-open').forEach(el => {
+                if (el !== parentItem) el.classList.remove('mobile-open');
+              });
+
+              parentItem.classList.toggle('mobile-open', !wasOpen);
+            }
+          });
+        });
+
+        // Reset mobile menu state on resize back to desktop
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 1024) {
+            navbar.classList.remove('mobile-active');
+            mobileToggle.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            document.querySelectorAll('.nav-item-dropdown.mobile-open').forEach(el => el.classList.remove('mobile-open'));
+          }
+        });
+      }
     });
 
     document.addEventListener("DOMContentLoaded", () => {
