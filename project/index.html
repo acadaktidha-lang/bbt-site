@@ -3779,6 +3779,83 @@ color: var(--bbt-orange-600);
 
   <script>document.documentElement.className += ' js';</script>
 
+<style id="responsive-nav-patch">
+/* ===== Universal Responsive Mobile-Nav Patch (additive — desktop unchanged) ===== */
+.mobile-nav-toggle{
+  display:none; background:transparent; border:0; font-size:26px; line-height:1;
+  color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
+}
+.mobile-nav-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.5);
+  opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:1000;
+}
+@media (max-width:1024px){
+  .mobile-nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  .header .navbar, .header .nav-links{ display:flex !important; }
+  .header .navbar{
+    position:fixed; top:0; right:-100%; width:min(330px,86vw); height:100vh; height:100dvh;
+    background:#0b1020; flex-direction:column; justify-content:flex-start;
+    padding:96px 26px 40px; box-shadow:-8px 0 40px rgba(0,0,0,.45);
+    transition:right .35s ease; overflow-y:auto; z-index:1001;
+  }
+  .header.mobile-open .navbar{ right:0; }
+  .header .nav-links{ flex-direction:column; align-items:flex-start; gap:0; width:100%; }
+  .header .nav-links li{ width:100%; }
+  .header .nav-links a, .header .nav-links .nav-link-anchor{
+    color:#fff !important; text-shadow:none !important; display:block; width:100%;
+    padding:15px 0; font-size:17px; border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .header .mega-menu-wrapper{ display:none !important; }
+  .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
+  body.mobile-nav-open{ overflow:hidden; }
+  body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
+}
+    </style>
+
+<style id="responsive-content-patch">
+/* ===== Page-specific content responsiveness (additive — desktop unchanged) ===== */
+/* Global horizontal-overflow safety on tablet/mobile. The page has decorative
+   fixed/absolute SVG shapes, blur orbs and a 100vw mega-menu that can push the
+   viewport wide once the layout starts wrapping. */
+@media (max-width:1024px){
+  html, body{ max-width:100%; overflow-x:hidden; }
+  img, video, iframe{ max-width:100%; }
+
+  /* Capabilities heading is a fixed 50px — give it room before it wraps awkwardly */
+  .capabilities-main-heading{ font-size:40px; }
+
+  /* Capabilities grid is 3-col on desktop and only collapses at <=640.
+     Add a 2-col tablet intermediate so cards aren't cramped at 641-1024. */
+  .capability-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px; }
+
+  /* Tame heavy decorative blur orbs on smaller screens (perf + stray overflow) */
+  .orb-2{ right:-30%; }
+}
+
+@media (max-width:768px){
+  /* Reduce big section side/vertical paddings so content isn't cramped */
+  .capabilities{ padding:70px 0; }
+  .capabilities-header-wrapper{ margin-bottom:48px; }
+  .capabilities-main-heading{ font-size:30px; }
+  .trusted-by{ padding:60px 0; }
+
+  /* Decorative floating SVG shapes can sit under/over content on small screens */
+  .global-shapes{ display:none; }
+  .hero-spotlight{ display:none; }
+}
+
+@media (max-width:480px){
+  /* Single column capabilities on the smallest phones (matches the page's other
+     1-col collapses) and slightly tighter container gutters */
+  .capability-grid{ grid-template-columns:1fr; }
+  .capability-card{ padding:32px 22px; min-height:auto; }
+  .capabilities-main-heading{ font-size:26px; }
+  .container{ width:92%; }
+  /* Trusted award cards are fixed 300px wide; cap them so they fit narrow phones */
+  .trusted-card{ width:84vw; flex:0 0 84vw; min-height:auto; }
+}
+    </style>
+
 </head>
 
 <body>
@@ -3900,7 +3977,7 @@ color: var(--bbt-orange-600);
           </div>
           <div class="mega-card-text">
             <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
-            <a href="insights.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="blogs.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -3926,15 +4003,18 @@ color: var(--bbt-orange-600);
     </div>
   </div>
 </li>
-        <li><a href="insights.html">Insights</a></li>
+        <li><a href="blogs.html">Insights</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <!-- CTA -->
     <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
   </div>
 </header>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <section class="hero">
   <div class="hero-video-bg" aria-hidden="true">
@@ -4462,7 +4542,7 @@ color: var(--bbt-orange-600);
           <h3 class="insight-question">How automation changes business operations?</h3>
           <div class="insight-hover-content">
             <p class="insight-solution">Discover how AI-driven automation cuts costs and improves productivity.</p>
-            <a href="insights.html" class="insight-cta-btn">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+            <a href="blogs.html" class="insight-cta-btn">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
           </div>
         </div>
       </article>
@@ -4476,7 +4556,7 @@ color: var(--bbt-orange-600);
           <h3 class="insight-question">ERP best practices for growing enterprises?</h3>
           <div class="insight-hover-content">
             <p class="insight-solution">Learn the key considerations for implementing Odoo ERP and optimizing workflows.</p>
-            <a href="insights.html" class="insight-cta-btn">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+            <a href="blogs.html" class="insight-cta-btn">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
           </div>
         </div>
       </article>
@@ -4490,7 +4570,7 @@ color: var(--bbt-orange-600);
           <h3 class="insight-question">Building resilient digital systems that scale?</h3>
           <div class="insight-hover-content">
             <p class="insight-solution">Strategies for modernizing systems and creating a future-ready technology stack.</p>
-            <a href="insights.html" class="insight-cta-btn">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+            <a href="blogs.html" class="insight-cta-btn">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
           </div>
         </div>
       </article>
@@ -4617,6 +4697,7 @@ color: var(--bbt-orange-600);
       </div>
     </div>
     <div class="container footer-bottom">
+      <nav class="footer-nav" style="display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:14px;"><a href="about.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">About</a><a href="services.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Services</a><a href="pricing.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Pricing</a><a href="careers.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Careers</a><a href="contact.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Contact</a></nav>
       <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
     </div>
   </footer>
@@ -5105,6 +5186,20 @@ if (pinSection && window.innerWidth > 1024) {
     }
 
   </script>
+    <script>
+    (function(){
+      var t=document.getElementById('mobileNavToggle'),
+          h=document.getElementById('header'),
+          o=document.getElementById('mobileNavOverlay');
+      if(!t||!h)return;
+      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
+      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      t.addEventListener('click',toggle);
+      if(o)o.addEventListener('click',close);
+      h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
+      window.addEventListener('resize',function(){if(window.innerWidth>1024)close();});
+    })();
+    </script>
 </body>
 
 </html>

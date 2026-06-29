@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Transformation | Big Binary Tech — GCC, USA, UK</title>
-  
+  <title>Digital Transformation Solutions for GCC, USA &amp; UK | Big Binary Tech</title>
+  <meta name="description" content="Legacy system modernization, cloud migration, and end-to-end business digitization for GCC, USA & UK. ZATCA, FTA & SEDD ready. AI-first digital transformation by Big Binary Tech.">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -19,9 +20,6 @@
       --bbt-orange: #f59e0b;
       --bbt-orange-600: #d97706;
       --bbt-orange-glow: rgba(245, 158, 11, 0.25);
-      --bbt-teal: #2A9D8F;
-      --bbt-teal-light: #D4EFE4;
-      --bbt-coral: #E76F51;
       --bbt-white: #ffffff;
       --bbt-text: #334155;
       --bbt-muted: #64748b;
@@ -34,26 +32,25 @@
 
     .container { width: 90%; max-width: 1300px; margin: auto; }
     .reveal { opacity: 0; transform: translateY(30px); }
+    .eyebrow { display:inline-block; color: var(--bbt-orange); letter-spacing: 2px; font-weight: 800; font-size: 13px; text-transform: uppercase; margin-bottom: 14px; }
 
       .header {
-  position: absolute; /* Changed from fixed to absolute */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: transparent; 
+  background: transparent;
   padding: 20px 0;
-  /* Optional: Remove transition since it won't "stick" anymore */
 }
 
-/* Ensure the logo and links are white since they sit over the video */
 .header .nav-links a {
   color: #ffffff !important;
   text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .header .logo {
-  filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
 }
 
     .container {
@@ -141,24 +138,20 @@
       border-radius: 2px;
     }
 
-/* Parent item alignment */
 .nav-item-dropdown {
-    position: static; /* Required for the fixed full-width child */
+    position: static;
 }
 
-/* The Full-Width Menu Container */
 .mega-menu-wrapper {
     position: fixed;
     left: 0;
     width: 100vw;
-    top: 100px; /* Aligns exactly at bottom of header */
-    background: var(--bbt-navy); /* Dark Theme */
+    top: 100px;
+    background: var(--bbt-navy);
     border-top: 2px solid var(--bbt-orange);
     border-bottom: 5px solid var(--bbt-orange);
     padding: 50px 0;
     box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
-    
-    /* Animation States */
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -166,7 +159,6 @@
     z-index: 9999;
 }
 
-/* Hover Trigger */
 .nav-item-dropdown:hover .mega-menu-wrapper {
     opacity: 1;
     visibility: visible;
@@ -175,19 +167,18 @@
 
 .mega-menu-container {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Visual ratio matching your SS */
-    gap: 100px;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 80px;
     align-items: start;
 }
 
-/* Left Section: Featured */
 .mega-heading {
-    font-size: 24px;
-    font-weight: 800;
+    font-size: 28px;
+    font-weight: 900;
     color: #ffffff;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 .mega-card {
@@ -198,7 +189,7 @@
 
 .mega-card-img {
     width: 320px;
-    height: 200px;
+    height: 220px;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.1);
@@ -229,7 +220,6 @@
     gap: 8px;
 }
 
-/* Right Section: Link List */
 .mega-links-section {
     padding-top: 55px;
 }
@@ -239,62 +229,6 @@
     flex-direction: column;
 }
 
-.mega-list-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 22px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    text-decoration: none;
-    color: #ffffff !important;
-    font-size: 22px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.mega-list-link i {
-    font-size: 18px;
-    color: var(--bbt-orange);
-    opacity: 0.5;
-    transition: 0.3s;
-}
-
-/* Hover States */
-.mega-list-link:hover {
-    color: var(--bbt-orange) !important;
-    padding-left: 15px;
-}
-
-.mega-list-link:hover i {
-    opacity: 1;
-    transform: translateX(10px);
-}
-
-/* Header Padding adjustment to stop menu from disappearing */
-.nav-item-dropdown {
-    padding-bottom: 40px;
-    margin-bottom: -40px;
-}
-/* Ensure the Mega Menu Heading is prominent */
-.mega-heading {
-    font-size: 28px;
-    font-weight: 900;
-    color: #ffffff;
-    margin-bottom: 35px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-/* Featured Card Image Styling to match your design */
-.mega-card-img {
-    width: 320px;
-    height: 220px;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 0; /* Aligning with text side-by-side */
-}
-
-/* Link List Styling with the arrows and dividers seen in your screenshot */
 .mega-list-link {
     display: flex;
     justify-content: space-between;
@@ -320,6 +254,7 @@
 
 .mega-list-link:hover {
     color: var(--bbt-orange) !important;
+    padding-left: 15px;
 }
 
 .mega-list-link:hover i {
@@ -327,96 +262,339 @@
     transform: translateX(5px);
 }
 
-/* Layout alignment */
-.mega-menu-container {
-    display: grid;
-    grid-template-columns: 1.4fr 0.6fr; /* Exact ratio from your image */
-    gap: 80px;
+.nav-item-dropdown {
+    padding-bottom: 40px;
+    margin-bottom: -40px;
 }
+
     /* --- SECTION 01: HERO --- */
-    .hero { 
-      position: relative; height: 95vh; background: var(--bbt-navy); 
+    .hero {
+      position: relative; min-height: 95vh; background: var(--bbt-navy);
       display: flex; align-items: center; overflow: hidden; color: white;
     }
     .hero-mesh {
       position: absolute; inset: 0;
-      background: radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.15) 0%, transparent 40%),
-                  radial-gradient(circle at 80% 70%, rgba(42, 157, 143, 0.15) 0%, transparent 40%);
+      background: radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.18) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.08) 0%, transparent 40%);
     }
-    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; position: relative; z-index: 5; margin-top: 80px; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; position: relative; z-index: 5; margin-top: 80px; align-items: center; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 22px; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--bbt-orange); }
     .hero-tag { color: var(--bbt-orange); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 13px; margin-bottom: 20px; display: block; }
-    .hero h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
-    .trust-bar { display: flex; flex-wrap: wrap; gap: 20px; font-size: 12px; font-weight: 700; color: #94a3b8; margin-bottom: 40px; }
-    .hero-btns { display: flex; gap: 20px; }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
+    .hero p { color: rgba(255,255,255,0.8); max-width: 560px; line-height: 1.7; margin-bottom: 30px; }
+    .trust-bar { display: flex; flex-wrap: wrap; gap: 12px 22px; font-size: 12px; font-weight: 700; color: #cbd5e1; margin-bottom: 40px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 26px; }
+    .trust-bar span { display:flex; align-items:center; gap:8px; }
+    .trust-bar i { color: var(--bbt-orange); }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 16px; }
 
     /* --- SECTION 02: PROBLEM STATEMENT --- */
     .problem-section { padding: 100px 0; background: var(--bbt-bg-soft); }
     .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 50px; }
-    .problem-card { background: white; padding: 40px; border-radius: 24px; border: 1px solid var(--bbt-border); transition: 0.4s; }
-    .problem-card:hover { transform: translateY(-10px); border-color: var(--bbt-coral); }
-    .problem-card i { font-size: 32px; color: var(--bbt-coral); margin-bottom: 20px; }
-    .problem-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--bbt-navy); font-weight: 800; }
+    .problem-card { background: white; padding: 38px; border-radius: 24px; border: 1px solid var(--bbt-border); transition: 0.4s; box-shadow: 0 8px 24px rgba(15,23,42,0.03); }
+    .problem-card:hover { transform: translateY(-10px); border-color: var(--bbt-orange); box-shadow: 0 24px 50px rgba(15,23,42,0.08); }
+    .problem-card i { font-size: 30px; color: var(--bbt-orange); margin-bottom: 20px; }
+    .problem-card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--bbt-navy); font-weight: 800; }
+    .problem-card p { color: var(--bbt-muted); font-size: .95rem; }
 
-    /* --- SERVICE BLOCKS --- */
-    .service-block { padding: 120px 0; border-bottom: 1px solid var(--bbt-border); }
-    .service-block:nth-child(even) { background: var(--bbt-bg-soft); }
-    .service-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    /* --- SECTION 03: WHAT WE OFFER --- */
+    .offer-section { padding: 120px 0; background: #fff; }
+    .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .offer-text h2 { font-size: 2.6rem; font-weight: 900; color: var(--bbt-navy); margin-bottom: 22px; line-height: 1.15; }
+    .offer-text p { color: var(--bbt-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 32px; }
+    .offer-pills { display: flex; flex-wrap: wrap; gap: 14px; }
+    .offer-pill {
+      display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px;
+      border: 1px solid var(--bbt-border); background: var(--bbt-bg-soft); color: var(--bbt-navy);
+      font-weight: 700; font-size: .95rem; text-decoration: none; transition: .3s;
+    }
+    .offer-pill:hover, .offer-pill.is-active { background: var(--bbt-navy); color: #fff; border-color: var(--bbt-navy); }
+    .offer-pill:hover i, .offer-pill.is-active i { color: var(--bbt-orange); }
+    .offer-pill i { color: var(--bbt-orange); }
+    .journey { background: var(--bbt-navy); border-radius: 32px; padding: 50px 40px; color: #fff; }
+    .journey-stage { display: flex; gap: 20px; align-items: flex-start; position: relative; padding-bottom: 34px; }
+    .journey-stage:last-child { padding-bottom: 0; }
+    .journey-stage:not(:last-child)::before { content:""; position:absolute; left: 23px; top: 48px; bottom: 0; width: 2px; background: rgba(245,158,11,0.4); }
+    .journey-dot { width: 48px; height: 48px; border-radius: 50%; flex-shrink:0; display:grid; place-items:center; background: rgba(245,158,11,0.15); color: var(--bbt-orange); font-size: 20px; border: 2px solid var(--bbt-orange); }
+    .journey-stage h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; }
+    .journey-stage p { color: rgba(255,255,255,0.7); font-size: .92rem; }
+
+    /* --- SECTION 04: GCC SPOTLIGHT --- */
+    .gcc-section { padding: 120px 0; background: var(--bbt-navy); color: #fff; position: relative; overflow: hidden; }
+    .gcc-section::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 85% 15%, rgba(245,158,11,0.12) 0%, transparent 45%); }
+    .gcc-inner { position: relative; z-index: 2; max-width: 920px; }
+    .gcc-section h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 24px; line-height: 1.2; }
+    .gcc-section > .container > .gcc-inner > p { color: rgba(255,255,255,0.78); font-size: 1.05rem; line-height: 1.85; max-width: 820px; }
+    .gcc-feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 48px 0; position: relative; z-index: 2; }
+    .gcc-feature { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 22px; padding: 32px; transition: .3s; }
+    .gcc-feature:hover { border-color: var(--bbt-orange); background: rgba(245,158,11,0.06); }
+    .gcc-feature h3 { font-size: 1.4rem; font-weight: 900; color: var(--bbt-orange); margin-bottom: 12px; }
+    .gcc-feature p { color: rgba(255,255,255,0.72); font-size: .95rem; }
+
+    /* --- SERVICE BLOCKS (05-07) --- */
+    .service-block { padding: 100px 0; border-bottom: 1px solid var(--bbt-border); }
+    .service-block:nth-of-type(even) { background: var(--bbt-bg-soft); }
+    .service-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
     .service-flex.reverse { direction: rtl; }
     .service-flex.reverse .service-text { direction: ltr; }
-    .service-text h2 { font-size: 2.8rem; font-weight: 900; color: var(--bbt-navy); margin-bottom: 20px; }
-    .deliverables { list-style: none; margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-    .deliverables li { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; }
-    .deliverables li i { color: var(--bbt-orange); }
+    .service-text h2 { font-size: 2.4rem; font-weight: 900; color: var(--bbt-navy); margin-bottom: 16px; line-height: 1.2; }
+    .service-outcome { font-size: 1.1rem; font-weight: 700; color: var(--bbt-orange-600); margin-bottom: 18px; }
+    .service-text > p { color: var(--bbt-muted); line-height: 1.8; margin-bottom: 24px; }
+    .deliverables-label, .techstack-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--bbt-navy); margin-bottom: 14px; }
+    .deliverables { list-style: none; margin: 0 0 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .deliverables li { display: flex; align-items: flex-start; gap: 10px; font-weight: 600; font-size: .9rem; color: var(--bbt-text); }
+    .deliverables li i { color: var(--bbt-orange); margin-top: 4px; }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 30px; }
+    .tech-stack span { font-size: .78rem; font-weight: 600; color: var(--bbt-text); background: rgba(245,158,11,0.08); border: 1px solid var(--bbt-border); padding: 6px 13px; border-radius: 999px; }
+    .service-visual img { width: 100%; border-radius: 24px; box-shadow: 0 30px 60px rgba(15,23,42,0.1); }
+    .service-cta { display: inline-flex; align-items: center; gap: 10px; }
 
-    /* --- PRICING --- */
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
-    .price-card { background: white; padding: 50px 40px; border-radius: 32px; border: 1px solid var(--bbt-border); text-align: center; position: relative; transition: 0.4s; }
-    .price-card.popular { border: 3px solid var(--bbt-orange); transform: scale(1.05); z-index: 10; }
-    .popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--bbt-orange); color: white; padding: 5px 20px; border-radius: 100px; font-size: 11px; font-weight: 900; }
-    .price-amount { font-size: 2.5rem; font-weight: 900; color: var(--bbt-navy); margin: 20px 0; }
+    /* --- SECTION 08: AI & AUTOMATION --- */
+    .ai-section { padding: 120px 0; background: var(--bbt-navy); color: #fff; position: relative; overflow: hidden; }
+    .ai-section::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 20% 80%, rgba(245,158,11,0.12) 0%, transparent 45%); }
+    .ai-head { position: relative; z-index: 2; max-width: 820px; }
+    .ai-section h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 22px; line-height: 1.2; }
+    .ai-head p { color: rgba(255,255,255,0.78); font-size: 1.05rem; line-height: 1.8; }
+    .ai-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; position: relative; z-index: 2; }
+    .ai-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 22px; padding: 34px; transition: .35s; }
+    .ai-card:hover { transform: translateY(-8px); border-color: var(--bbt-orange); background: rgba(245,158,11,0.06); }
+    .ai-card .ai-icon { width: 56px; height: 56px; border-radius: 15px; display: grid; place-items: center; background: rgba(245,158,11,0.14); color: var(--bbt-orange); font-size: 22px; margin-bottom: 22px; }
+    .ai-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; }
+    .ai-card p { color: rgba(255,255,255,0.7); font-size: .92rem; }
+    .ai-cta-wrap { text-align: center; margin-top: 50px; position: relative; z-index: 2; }
+
+    /* --- SECTION 09: HOW WE WORK --- */
+    .process-section { padding: 120px 0; background: var(--bbt-bg-soft); }
+    .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 60px; }
+    .process-step { background: #fff; border: 1px solid var(--bbt-border); border-radius: 22px; padding: 32px 26px; position: relative; transition: .35s; }
+    .process-step:hover { transform: translateY(-8px); border-color: var(--bbt-orange); box-shadow: 0 24px 50px rgba(15,23,42,0.08); }
+    .process-num { font-size: 2.4rem; font-weight: 900; color: var(--bbt-orange); line-height: 1; margin-bottom: 16px; }
+    .process-step h3 { font-size: 1.15rem; font-weight: 800; color: var(--bbt-navy); margin-bottom: 12px; }
+    .process-step p { color: var(--bbt-muted); font-size: .9rem; }
+    .process-cta-wrap { text-align: center; margin-top: 56px; }
+
+    /* --- SECTION 10: INDUSTRIES --- */
+    .industries-section { padding: 120px 0; background: #fff; }
+    .ind-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 56px; }
+    .ind-card { background: #fff; border: 1px solid var(--bbt-border); border-radius: 24px; padding: 36px; transition: .4s; display: flex; flex-direction: column; }
+    .ind-card:hover { transform: translateY(-8px); border-color: var(--bbt-orange); box-shadow: 0 30px 60px rgba(15,23,42,0.08); }
+    .ind-icon { width: 56px; height: 56px; border-radius: 15px; display: grid; place-items: center; background: rgba(245,158,11,0.1); color: var(--bbt-orange); font-size: 22px; margin-bottom: 22px; }
+    .ind-card h3 { font-size: 1.25rem; color: var(--bbt-navy); font-weight: 800; margin-bottom: 12px; }
+    .ind-card p { color: var(--bbt-muted); font-size: .95rem; margin-bottom: 22px; }
+    .ind-link { margin-top: auto; font-weight: 800; color: var(--bbt-orange); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: gap .3s ease; }
+    .ind-link:hover { gap: 14px; }
+
+    /* --- SECTION 11: PRICING --- */
+    .pricing-section { padding: 120px 0; background: var(--bbt-bg-soft); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; align-items: stretch; }
+    .price-card { background: white; padding: 46px 36px; border-radius: 28px; border: 1px solid var(--bbt-border); text-align: center; position: relative; transition: 0.4s; display: flex; flex-direction: column; }
+    .price-card.popular { border: 2px solid var(--bbt-orange); box-shadow: 0 30px 60px rgba(245,158,11,0.15); }
+    .popular-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--bbt-orange); color: white; padding: 6px 22px; border-radius: 100px; font-size: 11px; font-weight: 900; letter-spacing: .5px; }
+    .price-card h3 { font-size: 1.3rem; font-weight: 800; color: var(--bbt-navy); margin-bottom: 8px; }
+    .price-for { color: var(--bbt-muted); font-size: .9rem; margin-bottom: 18px; }
+    .price-amount { font-size: 2.2rem; font-weight: 900; color: var(--bbt-navy); margin: 12px 0 22px; }
+    .price-features { list-style: none; padding: 0; margin: 0 0 28px; text-align: left; display: grid; gap: 10px; }
+    .price-features li { display: flex; gap: 10px; align-items: flex-start; font-size: .9rem; color: var(--bbt-text); font-weight: 500; }
+    .price-features li i { color: var(--bbt-orange); margin-top: 4px; }
+    .price-card .cta-btn { margin-top: auto; }
+    .pricing-note { text-align: center; max-width: 760px; margin: 40px auto 0; color: var(--bbt-muted); font-size: .9rem; }
+
+    /* --- SECTION 12: SOCIAL PROOF + FAQ + CTA --- */
+    .proof-section { padding: 120px 0; background: var(--bbt-navy); color: #fff; }
+    .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 56px; }
+    .stat-item { text-align: center; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px 20px; }
+    .stat-num { font-size: 2.2rem; font-weight: 900; color: var(--bbt-orange); line-height: 1; }
+    .stat-label { font-size: .85rem; color: rgba(255,255,255,0.7); margin-top: 8px; }
+    .t-slider { overflow: hidden; position: relative; margin-top: 56px; }
+    .t-track { display: flex; gap: 24px; width: max-content; will-change: transform; }
+    .t-card { flex: 0 0 440px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 28px; padding: 38px; display: flex; flex-direction: column; white-space: normal; }
+    .t-card .t-pill { display: inline-block; align-self: flex-start; padding: 8px 18px; background: rgba(245,158,11,0.18); color: var(--bbt-orange); border-radius: 999px; font-weight: 800; font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 22px; }
+    .t-card .t-quote { font-style: italic; font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 24px; }
+    .t-card .t-meta { margin-top: auto; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); font-weight: 700; color: #fff; }
+    .t-card .t-meta span { display: block; font-weight: 500; color: rgba(255,255,255,0.6); font-size: .85rem; margin-top: 4px; }
+
+    .faq-section { padding: 120px 0; background: var(--bbt-bg-soft); }
+    .faq-container { max-width: 900px; margin: 50px auto 0; }
+    .faq-item { border-bottom: 1px solid #e2e8f0; padding: 25px 0; cursor: pointer; }
+    .faq-question { display: flex; justify-content: space-between; align-items: center; gap: 20px; font-weight: 700; color: var(--bbt-navy); font-size: 1.15rem; }
+    .faq-question i { transition: transform .3s ease; font-size: .9rem; flex-shrink: 0; color: var(--bbt-orange); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: all .4s cubic-bezier(0.4,0,0.2,1); color: #64748b; line-height: 1.7; margin-top: 0; }
+    .faq-item.active .faq-answer { max-height: 600px; margin-top: 15px; }
+    .faq-item.active i { transform: rotate(180deg); }
+
+    .bottom-cta { padding: 100px 0; background: var(--bbt-navy); border-radius: 60px 60px 0 0; text-align: center; color: #fff; }
+    .bottom-cta h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; margin-bottom: 22px; line-height: 1.15; }
+    .bottom-cta p { max-width: 640px; margin: 0 auto 36px; color: rgba(255,255,255,0.7); }
+    .bottom-cta-btns { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+
+    /* --- SECTION 13: RELATED SOLUTIONS --- */
+    .related-section { padding: 120px 0; background: var(--bbt-bg-soft); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 56px; }
+    .related-card { position: relative; padding: 40px 34px; background: #fff; border: 1px solid var(--bbt-orange); border-radius: 24px; text-decoration: none; transition: all .4s ease; box-shadow: 0 8px 32px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+    .related-card:hover { transform: translateY(-10px); background: var(--bbt-navy); border-color: var(--bbt-navy); }
+    .related-card i { font-size: 32px; color: var(--bbt-orange); margin-bottom: 22px; transition: .4s; }
+    .related-card h3 { font-size: 1.2rem; font-weight: 800; color: var(--bbt-navy); margin-bottom: 14px; transition: .4s; }
+    .related-card p { color: var(--bbt-muted); font-size: .92rem; margin-bottom: 22px; transition: .4s; }
+    .related-go { margin-top: auto; font-weight: 800; color: var(--bbt-orange); font-size: .9rem; transition: .4s; }
+    .related-card:hover h3, .related-card:hover p, .related-card:hover .related-go, .related-card:hover i { color: #fff; }
 
     /* --- BUTTONS --- */
-    .btn { padding: 18px 35px; border-radius: 100px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.3s; cursor: pointer; border: none; font-size: 14px; }
-    .btn-orange { background: var(--bbt-orange); color: var(--bbt-navy); }
-    .btn-outline-white { border: 2px solid white; color: white; }
+    .btn { padding: 16px 34px; border-radius: 100px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.3s; cursor: pointer; border: none; font-size: 14px; }
+    .btn-orange { background: var(--bbt-orange); color: #fff; box-shadow: 0 8px 28px var(--bbt-orange-glow); }
+    .btn-orange:hover { background: var(--bbt-orange-600); transform: translateY(-2px); }
+    .btn-outline-white { border: 2px solid rgba(255,255,255,0.4); color: white; background: rgba(255,255,255,0.04); }
+    .btn-outline-white:hover { border-color: var(--bbt-orange); color: var(--bbt-orange); }
 
-    @media (max-width: 1024px) {
-      .hero-grid, .problem-grid, .service-flex, .pricing-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .service-flex.reverse { direction: ltr; }
-    }
+    .section-head { text-align: center; max-width: 760px; margin: 0 auto; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: var(--bbt-navy); line-height: 1.15; }
+    .section-head p { color: var(--bbt-muted); margin-top: 16px; font-size: 1.05rem; }
+
+    /* Sticky mobile CTA */
+    .sticky-expert { display:none; position:fixed; left:16px; right:16px; bottom:16px; z-index:1500; text-align:center; padding:15px; border-radius:999px; background:var(--bbt-orange); color:#fff; font-weight:700; text-decoration:none; box-shadow:0 12px 30px rgba(245,158,11,0.4); }
   </style>
+
+<style id="responsive-nav-patch">
+/* ===== Universal Responsive Mobile-Nav Patch (additive — desktop unchanged) ===== */
+.mobile-nav-toggle{
+  display:none; background:transparent; border:0; font-size:26px; line-height:1;
+  color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
+}
+.mobile-nav-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.5);
+  opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:1000;
+}
+@media (max-width:1024px){
+  .mobile-nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  .header .navbar, .header .nav-links{ display:flex !important; }
+  .header .navbar{
+    position:fixed; top:0; right:-100%; width:min(330px,86vw); height:100vh; height:100dvh;
+    background:#0b1020; flex-direction:column; justify-content:flex-start;
+    padding:96px 26px 40px; box-shadow:-8px 0 40px rgba(0,0,0,.45);
+    transition:right .35s ease; overflow-y:auto; z-index:1001;
+  }
+  .header.mobile-open .navbar{ right:0; }
+  .header .nav-links{ flex-direction:column; align-items:flex-start; gap:0; width:100%; }
+  .header .nav-links li{ width:100%; }
+  .header .nav-links a, .header .nav-links .nav-link-anchor{
+    color:#fff !important; text-shadow:none !important; display:block; width:100%;
+    padding:15px 0; font-size:17px; border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .header .mega-menu-wrapper{ display:none !important; }
+  .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
+  body.mobile-nav-open{ overflow:hidden; }
+  body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
+}
+    </style>
+
+<style id="responsive-content-patch">
+/* ===== Page-specific content responsiveness (additive — desktop unchanged) ===== */
+@media (max-width:1024px){
+  .container { width: 92%; }
+  .hero { min-height: auto; padding: 130px 0 70px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; margin-top: 0; }
+  .hero-visual img { max-width: 100%; height: auto; }
+  .problem-grid { grid-template-columns: repeat(2, 1fr); }
+  .offer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .gcc-feature-grid { grid-template-columns: repeat(3, 1fr); }
+  .service-block { padding: 80px 0; }
+  .service-flex { grid-template-columns: 1fr; gap: 40px; }
+  .service-flex.reverse { direction: ltr; }
+  .ai-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .ind-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 520px; margin-left:auto; margin-right:auto; }
+  .related-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .offer-section, .gcc-section, .ai-section, .process-section, .industries-section, .pricing-section, .proof-section, .faq-section, .related-section { padding: 90px 0; }
+}
+
+@media (max-width:768px){
+  .problem-section { padding: 70px 0; }
+  .hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .hero-tag { font-size: 12px; }
+  .problem-grid, .gcc-feature-grid, .ai-grid, .process-grid, .ind-grid, .related-grid { grid-template-columns: 1fr; }
+  .deliverables { grid-template-columns: 1fr; }
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+  .section-head h2 { font-size: 2rem; }
+  .service-text h2 { font-size: 2rem; }
+  .offer-text h2 { font-size: 2rem; }
+  .price-amount { font-size: 2rem; }
+  .hero-btns, .bottom-cta-btns { flex-direction: column; }
+  .hero-btns .btn, .bottom-cta-btns .btn { width: 100%; text-align: center; }
+  .problem-card { padding: 30px; }
+  .price-card { padding: 40px 28px; }
+  .t-card { flex: 0 0 85vw; padding: 30px; }
+  .journey { padding: 38px 28px; }
+  .sticky-expert { display: block; }
+  .offer-section, .gcc-section, .ai-section, .process-section, .industries-section, .pricing-section, .proof-section, .faq-section, .related-section { padding: 70px 0; }
+}
+
+@media (max-width:480px){
+  .container { width: 90%; }
+  .hero { padding: 120px 0 50px; }
+  .hero h1 { font-size: clamp(1.7rem, 9vw, 2.2rem); }
+  .hero p { font-size: 15px; }
+  .trust-bar { gap: 10px 16px; }
+  .service-block { padding: 60px 0; }
+  .service-text h2 { font-size: 1.7rem; }
+  .section-head h2 { font-size: 1.7rem; }
+  .offer-text h2 { font-size: 1.7rem; }
+  .gcc-section h2, .ai-section h2 { font-size: 1.7rem; }
+  .btn { padding: 15px 28px; }
+  .problem-card { padding: 24px; }
+  .price-card { padding: 32px 22px; }
+  .t-card { flex: 0 0 88vw; padding: 26px; }
+  .ai-card, .gcc-feature, .ind-card, .process-step { padding: 26px; }
+  .stats-bar { grid-template-columns: 1fr; }
+}
+    </style>
+
+<style id="shared-footer-patch">
+/* ===== Canonical Site Footer (identical across all pages) ===== */
+.site-footer{ padding:72px 0 40px; background:#f8fafc; color:#334155; font-family:"Inter",system-ui,-apple-system,sans-serif; }
+.site-footer .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:32px; align-items:start; }
+.site-footer .footer-brand .logo{ display:inline-block; margin-bottom:18px; filter:none; }
+.site-footer .footer-brand .logo img{ height:100px; width:auto; display:block; filter:none; }
+.site-footer .footer-brand p{ max-width:42ch; line-height:1.8; margin-bottom:22px; color:#64748b; font-size:1rem; }
+.site-footer .footer-social{ display:flex; gap:12px; flex-wrap:wrap; }
+.site-footer .social-icon{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(15,23,42,0.1); background:rgba(255,255,255,0.06); color:#0f172a; text-decoration:none; transition:background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease; }
+.site-footer .social-icon svg{ width:18px; height:18px; fill:currentColor; }
+.site-footer .social-icon:hover{ background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.4); color:#f59e0b; transform:translateY(-2px); }
+.site-footer .footer-col h3{ margin:0 0 20px; font-size:1.1rem; color:#0f172a; font-weight:700; }
+.site-footer .footer-col ul{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.site-footer .footer-col li a, .site-footer .footer-contact .contact-line a{ color:#64748b; text-decoration:none; transition:color .25s ease; font-size:1rem; }
+.site-footer .footer-col li a:hover, .site-footer .footer-contact .contact-line a:hover{ color:#f59e0b; }
+.site-footer .footer-contact .contact-line{ margin:0 0 12px; color:#64748b; line-height:1.6; font-size:1rem; }
+.site-footer .footer-bottom{ margin-top:48px; padding-top:24px; text-align:center; }
+.site-footer .footer-bottom p{ margin:0; font-size:.875rem; color:#64748b; }
+@media (max-width:1100px){ .site-footer .footer-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } .site-footer .footer-brand{ grid-column:1 / -1; } }
+@media (max-width:640px){ .site-footer .footer-grid{ grid-template-columns:1fr; } .site-footer{ padding:56px 0 32px; } .site-footer .footer-brand .logo img{ height:80px; } }
+</style>
 </head>
 <body>
 
   <!-- HEADER -->
 <header class="header" id="header">
   <div class="container header-wrapper">
-    <!-- Logo -->
     <a href="index.html" class="logo">
-      <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+      <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
     </a>
 
-    <!-- Navigation -->
     <nav class="navbar">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li class="nav-item-dropdown">
-  <a href="solutions.html" class="nav-link-anchor" class="active">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
-  
-  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <a href="solutions.html" class="nav-link-anchor active">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
   <div class="mega-menu-wrapper">
     <div class="container mega-menu-container">
-      
-      <!-- Left side: Large Title and Featured Card -->
       <div class="mega-featured-section">
         <h3 class="mega-heading">SOLUTIONS</h3>
         <div class="mega-card">
           <div class="mega-card-img">
-            <!-- Featured Image for Solutions -->
-            <img src="../assests/images/solutions.avif" alt="Enterprise Solutions">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/solutions.avif" alt="Enterprise Solutions">
           </div>
           <div class="mega-card-text">
             <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
@@ -424,8 +602,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Right side: Vertical Link List -->
       <div class="mega-links-section">
         <div class="mega-links-grid">
           <a href="social-media-marketing.html" class="mega-list-link">
@@ -436,7 +612,7 @@
             <span>Enterprise Odoo ERP</span>
             <i class="fa-solid fa-arrow-right-long"></i>
           </a>
-          <a href="digital-transformation.html" class="mega-list-link" class="active">
+          <a href="digital-transformation.html" class="mega-list-link">
             <span>Digital Transformation</span>
             <i class="fa-solid fa-arrow-right-long"></i>
           </a>
@@ -446,34 +622,26 @@
           </a>
         </div>
       </div>
-
     </div>
   </div>
 </li>
         <li><a href="industries.html">Industries</a></li>
-        
  <li class="nav-item-dropdown">
   <a href="resources.html" class="nav-link-anchor">Resources <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
-  
-  <!-- DARK THEME FULL SCREEN MEGA MENU -->
   <div class="mega-menu-wrapper">
     <div class="container mega-menu-container">
-      
-      <!-- Left side: Featured Insight -->
       <div class="mega-featured-section">
         <h3 class="mega-heading">Resources</h3>
         <div class="mega-card">
           <div class="mega-card-img">
-            <img src="../assests/images/resources.avif" alt="AI Innovations">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="AI Innovations">
           </div>
           <div class="mega-card-text">
             <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
-            <a href="insights.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="blogs.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
-
-      <!-- Right side: Links -->
       <div class="mega-links-section">
         <div class="mega-links-grid">
           <a href="case-studies.html" class="mega-list-link">
@@ -490,141 +658,607 @@
           </a>
         </div>
       </div>
-
     </div>
   </div>
 </li>
-        <li><a href="insights.html">Insights</a></li>
+        <li><a href="blogs.html">Insights</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- CTA -->
     <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
   </div>
 </header>
 
-  <!-- HERO -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+  <!-- SECTION 01 — HERO -->
   <section class="hero">
     <div class="hero-mesh"></div>
     <div class="container">
       <div class="hero-grid">
         <div class="hero-text">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="solutions.html">Solutions</a> &gt; <span>Digital Transformation Solutions</span>
+          </nav>
           <span class="hero-tag">Enterprise Transformation</span>
-          <h1>Modernize. Migrate. <span style="color:var(--bbt-orange)">Digitize.</span></h1>
-          <p>We transform legacy chaos into digital clarity. Modernizing businesses across UAE, Saudi Arabia, and the UK with high-performance technology.</p>
+          <h1>Digital Transformation Solutions for <span style="color:var(--bbt-orange)">GCC, USA &amp; UK</span></h1>
+          <p>We modernize legacy systems, migrate operations to the cloud, and digitize end-to-end business processes — so your technology works as fast as your ambitions. From outdated spreadsheets to AI-driven automation, we transform how your business operates, competes, and grows.</p>
           <div class="trust-bar">
-            <span><i class="fas fa-check-circle"></i> 60+ Projects</span>
-            <span><i class="fas fa-shield-alt"></i> ZATCA Ready</span>
-            <span><i class="fas fa-microchip"></i> AI Integrated</span>
+            <span><i class="fas fa-check-circle"></i> 60+ Transformation Projects</span>
+            <span><i class="fas fa-globe"></i> GCC · USA · UK</span>
+            <span><i class="fas fa-shield-alt"></i> PSEB Registered</span>
+            <span><i class="fas fa-microchip"></i> AI-First Approach</span>
           </div>
           <div class="hero-btns">
-            <a href="#contact" class="btn btn-orange">Start Assessment</a>
-            <a href="#modernize" class="btn btn-outline-white">How It Works</a>
+            <a href="contact.html?service=digital-transformation" class="btn btn-orange">Get a Free Digital Transformation Assessment</a>
+            <a href="#how-we-work" class="btn btn-outline-white">See How It Works</a>
           </div>
         </div>
         <div class="hero-visual">
-            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/odoo-background.avif" style="width:100%; border-radius:30px; box-shadow: 0 0 50px rgba(245,158,11,0.2);" alt="Transformation">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/odoo-background.avif" style="width:100%; border-radius:30px; box-shadow: 0 0 50px rgba(245,158,11,0.2);" alt="Digital transformation solutions with legacy modernization, cloud migration, and AI automation">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROBLEM STATEMENT -->
+  <!-- SECTION 02 — PROBLEM STATEMENT -->
   <section class="problem-section">
     <div class="container">
-      <div style="text-align:center;">
-        <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--bbt-navy);">Is Legacy Tech Stalling Your Growth?</h2>
+      <div class="section-head">
+        <span class="eyebrow">02. Does This Sound Familiar?</span>
+        <h2>Is Legacy Tech Stalling Your Growth?</h2>
       </div>
       <div class="problem-grid">
-        <div class="problem-card"><i class="fas fa-hourglass-start"></i><h3>Siloed Data</h3><p>Information trapped in 10 different spreadsheets. Nothing talks to anything.</p></div>
-        <div class="problem-card"><i class="fas fa-file-excel"></i><h3>Manual Errors</h3><p>Your team spends half their time on manual data entry and reconciliation.</p></div>
-        <div class="problem-card"><i class="fas fa-shield-virus"></i><h3>Scaling Fear</h3><p>Afraid to change because one small update could collapse the legacy system.</p></div>
+        <div class="problem-card reveal"><i class="fas fa-hourglass-half"></i><h3>Your software is so old it slows down every task</h3><p>Your team waits 30 seconds for screens to load. Reports run overnight. Customers get frustrated. Your systems are holding your business hostage.</p></div>
+        <div class="problem-card reveal"><i class="fas fa-table-cells"></i><h3>Your data lives in 10 different spreadsheets</h3><p>Sales in one file, inventory in another, finance in a third. Nothing talks to anything. You spend hours reconciling what should be automatic.</p></div>
+        <div class="problem-card reveal"><i class="fas fa-triangle-exclamation"></i><h3>You're afraid to change anything because it might break</h3><p>Your legacy system is held together with patches and workarounds. One update could collapse everything. So you stay stuck — and fall further behind.</p></div>
+        <div class="problem-card reveal"><i class="fas fa-gauge-high"></i><h3>Your competitors are faster because they're digital-first</h3><p>They launch products in weeks. You take months. They respond to market changes instantly. You're still waiting for reports from last quarter.</p></div>
+        <div class="problem-card reveal"><i class="fas fa-hand-holding-hand"></i><h3>Your team spends half their time on manual work</h3><p>Copying data between systems, filling forms by hand, chasing approvals through email. Your people are expensive data entry clerks.</p></div>
+        <div class="problem-card reveal"><i class="fas fa-robot"></i><h3>You have no idea what AI and automation could do for you</h3><p>You hear about AI everywhere but have no roadmap. You don't know where to start, what to automate, or what ROI to expect.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICE: LEGACY MODERNIZATION -->
-  <section class="service-block" id="modernize">
+  <!-- SECTION 03 — WHAT WE OFFER -->
+  <section class="offer-section">
+    <div class="container">
+      <div class="offer-grid">
+        <div class="offer-text reveal">
+          <span class="eyebrow">03. What We Offer</span>
+          <h2>Transform Your Business From the Ground Up — Not Just the Surface</h2>
+          <p>Digital transformation isn't about buying new software — it's about rethinking how your business operates. We audit your current systems, identify automation opportunities, and build a roadmap that takes you from legacy chaos to digital clarity. Every solution is designed for your workflows, your compliance needs, and your growth goals.</p>
+          <div class="offer-pills">
+            <a href="#legacy-modernization" class="offer-pill"><i class="fas fa-arrows-rotate"></i> Legacy System Modernization</a>
+            <a href="#cloud-transformation" class="offer-pill"><i class="fas fa-cloud-arrow-up"></i> Cloud Transformation &amp; Migration</a>
+            <a href="#business-digitization" class="offer-pill"><i class="fas fa-diagram-project"></i> End-to-End Business Digitization</a>
+          </div>
+        </div>
+        <div class="journey reveal">
+          <div class="journey-stage">
+            <div class="journey-dot"><i class="fas fa-server"></i></div>
+            <div><h4>Current State</h4><p>Legacy systems, manual processes, and data trapped in silos slowing your business down.</p></div>
+          </div>
+          <div class="journey-stage">
+            <div class="journey-dot"><i class="fas fa-arrows-turn-right"></i></div>
+            <div><h4>Transition</h4><p>Migration, integration, and automation — moving you from legacy chaos to a connected platform.</p></div>
+          </div>
+          <div class="journey-stage">
+            <div class="journey-dot"><i class="fas fa-rocket"></i></div>
+            <div><h4>Future State</h4><p>Cloud-native, AI-driven, and fully connected — technology that moves as fast as your ambitions.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — GCC SPOTLIGHT -->
+  <section class="gcc-section">
+    <div class="container">
+      <div class="gcc-inner">
+        <span class="eyebrow">04. GCC Spotlight</span>
+        <h2>Digital Transformation Built for GCC Regulations, Culture, and Business Pace</h2>
+        <p>Digital transformation in UAE and Saudi Arabia means more than technology — it means compliance with local data residency laws, Arabic-language interfaces, VAT-ready reporting, and integration with government portals like ZATCA (Saudi), FTA (UAE), and SEDD. BBT delivers transformation programs that respect GCC business culture, operate within local regulatory frameworks, and integrate with regional payment, logistics, and government systems.</p>
+      </div>
+      <div class="gcc-feature-grid">
+        <div class="gcc-feature reveal"><h3>100% Local</h3><p>Data residency compliance for UAE &amp; KSA.</p></div>
+        <div class="gcc-feature reveal"><h3>Arabic + English</h3><p>Bilingual interfaces and documentation.</p></div>
+        <div class="gcc-feature reveal"><h3>Govt Integrated</h3><p>ZATCA, FTA, SEDD portal integrations.</p></div>
+      </div>
+      <div style="position:relative; z-index:2;">
+        <a href="contact.html?service=digital-transformation&offer=gcc" class="btn btn-orange">Get a GCC Digital Transformation Roadmap</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 — LEGACY MODERNIZATION -->
+  <section class="service-block" id="legacy-modernization">
     <div class="container service-flex">
       <div class="service-text reveal">
-        <span class="hero-tag">Step 01</span>
+        <span class="hero-tag">05. Sub-Service</span>
         <h2>Legacy System Modernization</h2>
-        <p>Your old system rebuilt for the modern era. We refactor critical code, move to cloud-native architectures, and ensure zero downtime during the transition.</p>
+        <p class="service-outcome">Your old system rebuilt, re-platformed, or replaced — without losing data, downtime, or your team's sanity.</p>
+        <p>We modernize legacy software, databases, and infrastructure that are slowing your business down. Whether it's a 15-year-old ERP, a custom-built application no one understands, or a spreadsheet empire that can't scale — we assess, plan, and execute a modernization strategy that fits your risk tolerance, budget, and timeline. We re-platform to cloud-native architectures, refactor critical code, integrate modern APIs, and ensure zero data loss.</p>
+        <div class="deliverables-label">Deliverables</div>
         <ul class="deliverables">
-          <li><i class="fas fa-check"></i> Technical Debt Audit</li>
-          <li><i class="fas fa-check"></i> UI/UX Modernization</li>
-          <li><i class="fas fa-check"></i> Microservices Sync</li>
-          <li><i class="fas fa-check"></i> API Layering</li>
+          <li><i class="fas fa-check"></i> Legacy system audit &amp; technical debt assessment</li>
+          <li><i class="fas fa-check"></i> Modernization roadmap (rehost, replatform, refactor, rebuild)</li>
+          <li><i class="fas fa-check"></i> Database migration &amp; schema modernization</li>
+          <li><i class="fas fa-check"></i> API layer development for legacy connectivity</li>
+          <li><i class="fas fa-check"></i> Cloud-native re-architecture (microservices, containers)</li>
+          <li><i class="fas fa-check"></i> UI modernization (responsive, accessible)</li>
+          <li><i class="fas fa-check"></i> Data migration with full validation &amp; rollback plans</li>
+          <li><i class="fas fa-check"></i> Parallel running &amp; phased cutover strategy</li>
         </ul>
+        <div class="techstack-label">Tech Stack</div>
+        <div class="tech-stack">
+          <span>.NET Modernization</span><span>Java Spring Boot</span><span>Node.js</span><span>Python</span><span>React/Angular</span><span>Docker</span><span>Kubernetes</span><span>AWS/Azure</span><span>PostgreSQL</span><span>MongoDB</span>
+        </div>
+        <a href="contact.html?service=legacy-modernization" class="btn btn-orange service-cta">Modernize My Legacy System <i class="fas fa-arrow-right"></i></a>
       </div>
-      <div class="service-visual">
-        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/service-visuals.avif" style="width:100%; border-radius:24px;" alt="Legacy">
+      <div class="service-visual reveal">
+        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/service-visuals.avif" alt="Before and after legacy system modernization to a modern cloud dashboard">
       </div>
     </div>
   </section>
 
-  <!-- SERVICE: CLOUD TRANSFORMATION -->
-  <section class="service-block">
+  <!-- SECTION 06 — CLOUD TRANSFORMATION -->
+  <section class="service-block" id="cloud-transformation">
     <div class="container service-flex reverse">
       <div class="service-text reveal">
-        <span class="hero-tag">Step 02</span>
-        <h2>Cloud Transformation & Migration</h2>
-        <p>Secure, scalable, and AI-ready infrastructure. We move your on-premise operations to AWS or Azure with full data validation and rollback security.</p>
+        <span class="hero-tag">06. Sub-Service</span>
+        <h2>Cloud Transformation &amp; Migration</h2>
+        <p class="service-outcome">Your infrastructure in the cloud — scalable, secure, cost-optimized, and ready for AI.</p>
+        <p>We move your on-premise servers, applications, and data to the cloud with minimal disruption. Our cloud transformation covers assessment, migration planning, execution, and post-migration optimization. We help you choose the right cloud strategy — public, private, or hybrid — and ensure your architecture is built for auto-scaling, disaster recovery, and cost efficiency. We also modernize applications during migration so you don't just lift-and-shift — you improve.</p>
+        <div class="deliverables-label">Deliverables</div>
         <ul class="deliverables">
-          <li><i class="fas fa-check"></i> AWS/Azure Design</li>
-          <li><i class="fas fa-check"></i> TCO Analysis</li>
-          <li><i class="fas fa-check"></i> Zero-Downtime Migration</li>
-          <li><i class="fas fa-check"></i> Security Hardening</li>
+          <li><i class="fas fa-check"></i> Cloud readiness assessment &amp; TCO analysis</li>
+          <li><i class="fas fa-check"></i> Migration strategy (rehost, replatform, refactor, repurchase)</li>
+          <li><i class="fas fa-check"></i> AWS, Azure, or GCP architecture design</li>
+          <li><i class="fas fa-check"></i> Data migration with zero-downtime cutover</li>
+          <li><i class="fas fa-check"></i> Containerization &amp; Kubernetes orchestration</li>
+          <li><i class="fas fa-check"></i> CI/CD pipeline setup for cloud deployments</li>
+          <li><i class="fas fa-check"></i> Security hardening &amp; compliance configuration</li>
+          <li><i class="fas fa-check"></i> Cost optimization &amp; auto-scaling policies</li>
+          <li><i class="fas fa-check"></i> Disaster recovery &amp; backup automation</li>
         </ul>
+        <div class="techstack-label">Tech Stack</div>
+        <div class="tech-stack">
+          <span>AWS</span><span>Microsoft Azure</span><span>Google Cloud</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>Ansible</span><span>Jenkins</span><span>GitHub Actions</span><span>CloudFront</span><span>Lambda</span><span>Serverless</span>
+        </div>
+        <a href="contact.html?service=cloud-transformation" class="btn btn-orange service-cta">Migrate to the Cloud <i class="fas fa-arrow-right"></i></a>
       </div>
-      <div class="service-visual">
-        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/solutions.avif" style="width:100%; border-radius:24px;" alt="Cloud">
+      <div class="service-visual reveal">
+        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/solutions.avif" alt="On-premise server room transformed into a scalable multi-region cloud architecture">
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="service-block">
-    <div class="container">
-      <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900; color:var(--bbt-navy); margin-bottom: 50px;">Transformation Packages</h2>
-      <div class="pricing-grid">
-        <div class="price-card"><h3>Assessment</h3><div class="price-amount">Starting $3,500</div><p>Full technical debt audit and roadmap design.</p></div>
-        <div class="price-card popular"><div class="popular-tag">RECOMMENDED</div><h3>Transformation</h3><div class="price-amount">Starting $15,000</div><p>Legacy to Cloud-Native rebuild with AI integration.</p></div>
-        <div class="price-card"><h3>Enterprise</h3><div class="price-amount">Custom Quote</div><p>Full-scale ecosystem digitization for global firms.</p></div>
+  <!-- SECTION 07 — BUSINESS DIGITIZATION -->
+  <section class="service-block" id="business-digitization">
+    <div class="container service-flex">
+      <div class="service-text reveal">
+        <span class="hero-tag">07. Sub-Service</span>
+        <h2>End-to-End Business Digitization</h2>
+        <p class="service-outcome">Every process digitized, every department connected, every decision backed by data.</p>
+        <p>We digitize your entire business operation — from customer-facing processes to back-office workflows. This isn't about adding software to existing processes — it's about reimagining how work gets done. We map your current state, identify digitization opportunities, build integrated digital workflows, and connect every department through a unified platform. The result: faster operations, fewer errors, real-time visibility, and a foundation for AI-driven automation.</p>
+        <div class="deliverables-label">Deliverables</div>
+        <ul class="deliverables">
+          <li><i class="fas fa-check"></i> Business process mapping &amp; digitization audit</li>
+          <li><i class="fas fa-check"></i> Digital workflow design &amp; automation</li>
+          <li><i class="fas fa-check"></i> Document management &amp; e-signature integration</li>
+          <li><i class="fas fa-check"></i> ERP + CRM + HR + Finance system integration</li>
+          <li><i class="fas fa-check"></i> Customer portal &amp; self-service platforms</li>
+          <li><i class="fas fa-check"></i> Supplier &amp; vendor digitization portals</li>
+          <li><i class="fas fa-check"></i> Real-time analytics &amp; executive dashboards</li>
+          <li><i class="fas fa-check"></i> Mobile apps for field staff &amp; remote teams</li>
+          <li><i class="fas fa-check"></i> AI-powered process optimization recommendations</li>
+        </ul>
+        <div class="techstack-label">Tech Stack</div>
+        <div class="tech-stack">
+          <span>Odoo</span><span>Salesforce</span><span>Microsoft Dynamics</span><span>Power Platform</span><span>SharePoint</span><span>Power BI</span><span>Custom Web Apps</span><span>React Native/Flutter</span><span>AI/ML APIs</span><span>RPA (UiPath)</span>
+        </div>
+        <a href="contact.html?service=business-digitization" class="btn btn-orange service-cta">Digitize My Business <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual reveal">
+        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/odoo-background.avif" alt="Siloed departments transformed into a connected digital ecosystem with automated workflows">
       </div>
     </div>
   </section>
+
+  <!-- SECTION 08 — AI & AUTOMATION -->
+  <section class="ai-section">
+    <div class="container">
+      <div class="ai-head">
+        <span class="eyebrow">08. AI &amp; Automation Integration</span>
+        <h2>AI Isn't the Future — It's Your Next Competitive Advantage</h2>
+        <p>Digital transformation creates the data foundation. AI turns that data into decisions. We integrate AI and automation into every transformation program — from intelligent document processing and predictive analytics to chatbots and automated decision systems. You don't need a separate AI project. We build it into your transformation roadmap from day one.</p>
+      </div>
+      <div class="ai-grid">
+        <div class="ai-card reveal"><div class="ai-icon"><i class="fas fa-file-invoice"></i></div><h3>Intelligent Document Processing</h3><p>Extract data from invoices, forms, and contracts automatically — no more manual data entry.</p></div>
+        <div class="ai-card reveal"><div class="ai-icon"><i class="fas fa-chart-line"></i></div><h3>Predictive Analytics</h3><p>Forecast demand, identify risks, and optimize inventory before problems arise.</p></div>
+        <div class="ai-card reveal"><div class="ai-icon"><i class="fas fa-robot"></i></div><h3>Process Automation (RPA)</h3><p>Bots handle repetitive tasks 24/7 — data entry, reconciliation, report generation.</p></div>
+        <div class="ai-card reveal"><div class="ai-icon"><i class="fas fa-comments"></i></div><h3>AI Chatbots &amp; Virtual Agents</h3><p>Customer service, internal helpdesk, and sales qualification — automated and scalable.</p></div>
+        <div class="ai-card reveal"><div class="ai-icon"><i class="fas fa-lightbulb"></i></div><h3>Smart Decision Support</h3><p>AI-generated recommendations for pricing, procurement, and resource allocation.</p></div>
+        <div class="ai-card reveal"><div class="ai-icon"><i class="fas fa-magnifying-glass-chart"></i></div><h3>Anomaly Detection</h3><p>Catch fraud, errors, and operational issues before they cost you money.</p></div>
+      </div>
+      <div class="ai-cta-wrap">
+        <a href="contact.html?service=ai-transformation" class="btn btn-orange">Explore AI-Powered Transformation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 09 — HOW WE WORK -->
+  <section class="process-section" id="how-we-work">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">09. How We Work</span>
+        <h2>How We Transform Your Business — Start to Finish</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal"><div class="process-num">01</div><h3>Discovery &amp; Audit</h3><p>Deep audit of current systems, processes, and technical debt. We identify what's broken, what's slow, and what's possible.</p></div>
+        <div class="process-step reveal"><div class="process-num">02</div><h3>Roadmap &amp; Design</h3><p>We design your target architecture, migration plan, and digitization roadmap — with clear milestones, budgets, and ROI projections.</p></div>
+        <div class="process-step reveal"><div class="process-num">03</div><h3>Build &amp; Migrate</h3><p>We build new systems, migrate data, and modernize applications — with parallel running to ensure zero business disruption.</p></div>
+        <div class="process-step reveal"><div class="process-num">04</div><h3>Integrate &amp; Test</h3><p>We integrate all systems, test every workflow, validate data accuracy, and train your team before go-live.</p></div>
+        <div class="process-step reveal"><div class="process-num">05</div><h3>Optimize &amp; Scale</h3><p>We monitor performance, optimize costs, add automation, and scale as your business grows. Continuous improvement, guaranteed.</p></div>
+      </div>
+      <div class="process-cta-wrap">
+        <a href="contact.html?service=digital-transformation&offer=process" class="btn btn-orange">Start With a Free Transformation Assessment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10 — INDUSTRIES WE TRANSFORM -->
+  <section class="industries-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">10. Industries We Transform</span>
+        <h2>Digital Transformation by Industry</h2>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-card reveal"><div class="ind-icon"><i class="fas fa-cart-shopping"></i></div><h3>Retail &amp; E-commerce</h3><p>Unified POS, inventory, e-commerce, and customer data — omnichannel ready.</p><a href="industries.html" class="ind-link">Explore <i class="fas fa-arrow-right"></i></a></div>
+        <div class="ind-card reveal"><div class="ind-icon"><i class="fas fa-industry"></i></div><h3>Manufacturing</h3><p>Smart factory systems, production planning, IoT integration, and supply chain digitization.</p><a href="industries.html" class="ind-link">Explore <i class="fas fa-arrow-right"></i></a></div>
+        <div class="ind-card reveal"><div class="ind-icon"><i class="fas fa-heart-pulse"></i></div><h3>Healthcare</h3><p>Patient management digitization, appointment automation, compliance-ready records.</p><a href="industries.html" class="ind-link">Explore <i class="fas fa-arrow-right"></i></a></div>
+        <div class="ind-card reveal"><div class="ind-icon"><i class="fas fa-coins"></i></div><h3>Financial Services</h3><p>Legacy core banking modernization, digital onboarding, regulatory reporting automation.</p><a href="industries.html" class="ind-link">Explore <i class="fas fa-arrow-right"></i></a></div>
+        <div class="ind-card reveal"><div class="ind-icon"><i class="fas fa-building"></i></div><h3>Real Estate</h3><p>Property management digitization, CRM automation, document workflows, tenant portals.</p><a href="industries.html" class="ind-link">Explore <i class="fas fa-arrow-right"></i></a></div>
+        <div class="ind-card reveal"><div class="ind-icon"><i class="fas fa-landmark"></i></div><h3>Government &amp; Public Sector</h3><p>Citizen service portals, document digitization, compliance automation, secure cloud migration.</p><a href="industries.html" class="ind-link">Explore <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11 — PRICING & PACKAGES -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">11. Pricing &amp; Packages</span>
+        <h2>Transformation Packages</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <h3>Assessment &amp; Roadmap</h3>
+          <div class="price-for">For businesses exploring transformation</div>
+          <div class="price-amount">Starting at $3,500</div>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> System audit</li>
+            <li><i class="fas fa-check"></i> Digitization roadmap</li>
+            <li><i class="fas fa-check"></i> ROI projection</li>
+            <li><i class="fas fa-check"></i> Vendor recommendations</li>
+          </ul>
+          <a href="contact.html?service=digital-transformation&package=assessment" class="cta-btn" style="padding:14px 28px;">Get Started</a>
+        </div>
+        <div class="price-card popular reveal">
+          <div class="popular-tag">★ MOST POPULAR</div>
+          <h3>Transformation Program</h3>
+          <div class="price-for">For businesses ready to transform</div>
+          <div class="price-amount">Starting at $15,000</div>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> Legacy modernization</li>
+            <li><i class="fas fa-check"></i> Cloud migration</li>
+            <li><i class="fas fa-check"></i> System integration</li>
+            <li><i class="fas fa-check"></i> Workflow automation</li>
+            <li><i class="fas fa-check"></i> Training</li>
+            <li><i class="fas fa-check"></i> 6-month support</li>
+          </ul>
+          <a href="contact.html?service=digital-transformation&package=program" class="cta-btn" style="padding:14px 28px;">Get Started</a>
+        </div>
+        <div class="price-card reveal">
+          <h3>Enterprise Transformation</h3>
+          <div class="price-for">For large organizations with complex ecosystems</div>
+          <div class="price-amount">Custom Quote</div>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> Full-scale transformation</li>
+            <li><i class="fas fa-check"></i> Multi-system integration</li>
+            <li><i class="fas fa-check"></i> Custom development</li>
+            <li><i class="fas fa-check"></i> Dedicated team &amp; SLA</li>
+            <li><i class="fas fa-check"></i> Ongoing optimization</li>
+          </ul>
+          <a href="contact.html?service=digital-transformation&package=enterprise" class="cta-btn" style="padding:14px 28px;">Talk to Us</a>
+        </div>
+      </div>
+      <p class="pricing-note">All packages include discovery, documentation, and knowledge transfer. Pricing depends on system complexity, data volume, and customization scope. Hardware and cloud infrastructure costs quoted separately.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 12A — SOCIAL PROOF + STATS + TESTIMONIALS -->
+  <section class="proof-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" style="color:var(--bbt-orange);">12. Social Proof</span>
+        <h2 style="color:#fff;">Results That Speak for Themselves</h2>
+      </div>
+      <div class="stats-bar">
+        <div class="stat-item"><div class="stat-num">60+</div><div class="stat-label">Transformation Projects</div></div>
+        <div class="stat-item"><div class="stat-num">40%</div><div class="stat-label">Avg. Infrastructure Cost Reduction</div></div>
+        <div class="stat-item"><div class="stat-num">70%</div><div class="stat-label">Avg. Process Time Reduction</div></div>
+        <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">Support Available</div></div>
+      </div>
+      <div class="t-slider" id="tSlider">
+        <div class="t-track" id="tTrack">
+          <div class="t-card">
+            <span class="t-pill">Legacy Modernization</span>
+            <p class="t-quote">"BBT modernized our 12-year-old inventory system into a cloud-based platform with real-time analytics. We cut reporting time from 3 days to 15 minutes and finally have visibility across all 6 warehouses."</p>
+            <div class="t-meta">COO<span>Trading Company, Dubai, UAE</span></div>
+          </div>
+          <div class="t-card">
+            <span class="t-pill">Cloud Migration</span>
+            <p class="t-quote">"Our cloud migration was seamless — zero downtime, zero data loss. BBT handled everything from AWS architecture to staff training. We now auto-scale during peak seasons and save 40% on infrastructure costs."</p>
+            <div class="t-meta">CTO<span>E-commerce Platform, London, UK</span></div>
+          </div>
+          <div class="t-card">
+            <span class="t-pill">Business Digitization</span>
+            <p class="t-quote">"The end-to-end digitization transformed how we work. Document processing that took 2 weeks now takes 2 hours. Our team focuses on strategy instead of paperwork."</p>
+            <div class="t-meta">Managing Director<span>Professional Services Firm, Karachi, Pakistan</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12B — FAQ -->
+  <section class="faq-section" id="faqs">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Digital Transformation — Your Questions Answered</h2>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">How much does digital transformation cost? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Assessment &amp; Roadmap: $3,500–7,000. Transformation Program: $15,000–50,000+. Enterprise: custom quote. Cost depends on system count, data volume, and complexity. Free assessment comes first.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How long does digital transformation take? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Assessment: 2–3 weeks. Single system modernization: 6–10 weeks. Full business digitization: 3–6 months. Enterprise transformation: 6–12 months. Phased delivery means you see value every month.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Will we lose data during migration? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">No. We use validated migration scripts, parallel running, and rollback plans. Every data point is verified before cutover. Zero-loss guarantee in our SLA.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can you work with our existing systems? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes. We integrate with legacy ERPs, custom databases, and third-party tools. We build API layers and middleware when direct integration isn't possible.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do we need to stop operations during transformation? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">No. We use parallel running, phased cutover, and weekend deployments to ensure zero business disruption. Your team keeps working while we transform behind the scenes.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What cloud platform do you recommend? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">We recommend based on your needs: AWS for flexibility and scale, Azure for Microsoft ecosystem integration, GCP for AI/ML workloads. Multi-cloud strategies available for resilience.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do you measure transformation success? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">We define KPIs upfront: process time reduction, cost savings, error rate reduction, user adoption, system uptime, and ROI. Monthly dashboards track every metric.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What happens after transformation is complete? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">We provide 6-month post-launch support, optimization, and training. After that, monthly care plans or managed services. We don't disappear — we scale with you.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12C — BOTTOM CTA -->
+  <section class="bottom-cta">
+    <div class="container">
+      <h2>Ready to Stop Managing Legacy and Start Leading Digital?</h2>
+      <p>Book a free 30-minute digital transformation assessment. We audit your current systems, identify quick wins, and give you a clear modernization roadmap — before you commit to anything.</p>
+      <div class="bottom-cta-btns">
+        <a href="contact.html?service=digital-transformation&offer=audit" class="btn btn-orange">Book Your Free Transformation Assessment</a>
+        <a href="resources.html" class="btn btn-outline-white">Download Our Digital Transformation Playbook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 13 — RELATED SOLUTIONS -->
+  <section class="related-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">13. Related Solutions</span>
+        <h2>Explore More Ways We Help You Grow</h2>
+      </div>
+      <div class="related-grid">
+        <a href="enterprise-odoo.html" class="related-card reveal">
+          <i class="fas fa-layer-group"></i>
+          <h3>Enterprise &amp; Odoo Solutions</h3>
+          <p>End-to-end ERP implementation, HR automation, finance management, and CRM — all unified under Odoo.</p>
+          <span class="related-go">Explore Solution →</span>
+        </a>
+        <a href="retail-pos.html" class="related-card reveal">
+          <i class="fas fa-shop"></i>
+          <h3>Retail &amp; POS Solutions</h3>
+          <p>Custom POS systems, inventory management, and multi-branch retail solutions for GCC, USA &amp; UK.</p>
+          <span class="related-go">Explore Solution →</span>
+        </a>
+        <a href="services.html" class="related-card reveal">
+          <i class="fas fa-robot"></i>
+          <h3>AI Automations &amp; Integrations</h3>
+          <p>Workflow automation, AI integrations, CRM connections, and chatbot deployment for operational efficiency.</p>
+          <span class="related-go">Explore Service →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky mobile CTA -->
+  <a href="contact.html?service=digital-transformation" class="sticky-expert">Get a Free Assessment</a>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // Navbar Accordion JS
-    const resBtn = document.getElementById("resources-btn");
-    const megaPanel = document.getElementById("mega-menu-panel");
-    const toggleIcon = resBtn.querySelector(".toggle-icon");
-
-    resBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        megaPanel.classList.toggle("is-open");
-        toggleIcon.classList.toggle("rotate-icon");
-    });
-
-    document.addEventListener("click", (e) => {
-        if (!megaPanel.contains(e.target) && e.target !== resBtn) {
-            megaPanel.classList.remove("is-open");
-            toggleIcon.classList.remove("rotate-icon");
-        }
-    });
-
     // Reveal Animations
     gsap.utils.toArray(".reveal").forEach((el) => {
       gsap.to(el, {
-        scrollTrigger: { trigger: el, start: "top 85%" },
+        scrollTrigger: { trigger: el, start: "top 88%" },
         opacity: 1, y: 0, duration: 0.8, ease: "power2.out"
       });
     });
+
+    // FAQ accordion (one open at a time)
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+
+    // Testimonial infinite slider
+    (function(){
+      const track = document.getElementById('tTrack');
+      if (!track) return;
+      track.innerHTML += track.innerHTML;
+      let half = track.scrollWidth / 2;
+      const loop = gsap.to(track, {
+        x: () => -half,
+        duration: 30,
+        ease: 'none',
+        repeat: -1,
+        modifiers: { x: gsap.utils.unitize(x => parseFloat(x) % half) }
+      });
+      track.addEventListener('mouseenter', () => gsap.to(loop, { timeScale: 0, duration: 0.4 }));
+      track.addEventListener('mouseleave', () => gsap.to(loop, { timeScale: 1, duration: 0.4 }));
+      window.addEventListener('resize', () => { half = track.scrollWidth / 2; });
+    })();
+
+    // Sub-service pills: IntersectionObserver for active highlighting
+    (function(){
+      const pills = document.querySelectorAll('.offer-pill');
+      const map = {};
+      pills.forEach(p => { const id = p.getAttribute('href').replace('#',''); map[id] = p; });
+      const sections = ['legacy-modernization','cloud-transformation','business-digitization']
+        .map(id => document.getElementById(id)).filter(Boolean);
+      if (!sections.length) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            pills.forEach(p => p.classList.remove('is-active'));
+            const pill = map[entry.target.id];
+            if (pill) pill.classList.add('is-active');
+          }
+        });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+      sections.forEach(s => obs.observe(s));
+    })();
   </script>
+
+  <script>
+    (function(){
+      var t=document.getElementById('mobileNavToggle'),
+          h=document.getElementById('header'),
+          o=document.getElementById('mobileNavOverlay');
+      if(!t||!h)return;
+      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
+      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      t.addEventListener('click',toggle);
+      if(o)o.addEventListener('click',close);
+      h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
+      window.addEventListener('resize',function(){if(window.innerWidth>1024)close();});
+    })();
+  </script>
+
+  <!-- FAQPage Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much does digital transformation cost?", "acceptedAnswer": { "@type": "Answer", "text": "Assessment & Roadmap: $3,500–7,000. Transformation Program: $15,000–50,000+. Enterprise: custom quote. Cost depends on system count, data volume, and complexity. Free assessment comes first." } },
+      { "@type": "Question", "name": "How long does digital transformation take?", "acceptedAnswer": { "@type": "Answer", "text": "Assessment: 2–3 weeks. Single system modernization: 6–10 weeks. Full business digitization: 3–6 months. Enterprise transformation: 6–12 months. Phased delivery means you see value every month." } },
+      { "@type": "Question", "name": "Will we lose data during migration?", "acceptedAnswer": { "@type": "Answer", "text": "No. We use validated migration scripts, parallel running, and rollback plans. Every data point is verified before cutover. Zero-loss guarantee in our SLA." } },
+      { "@type": "Question", "name": "Can you work with our existing systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We integrate with legacy ERPs, custom databases, and third-party tools. We build API layers and middleware when direct integration isn't possible." } },
+      { "@type": "Question", "name": "Do we need to stop operations during transformation?", "acceptedAnswer": { "@type": "Answer", "text": "No. We use parallel running, phased cutover, and weekend deployments to ensure zero business disruption. Your team keeps working while we transform behind the scenes." } },
+      { "@type": "Question", "name": "What cloud platform do you recommend?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend based on your needs: AWS for flexibility and scale, Azure for Microsoft ecosystem integration, GCP for AI/ML workloads. Multi-cloud strategies available for resilience." } },
+      { "@type": "Question", "name": "How do you measure transformation success?", "acceptedAnswer": { "@type": "Answer", "text": "We define KPIs upfront: process time reduction, cost savings, error rate reduction, user adoption, system uptime, and ROI. Monthly dashboards track every metric." } },
+      { "@type": "Question", "name": "What happens after transformation is complete?", "acceptedAnswer": { "@type": "Answer", "text": "We provide 6-month post-launch support, optimization, and training. After that, monthly care plans or managed services. We don't disappear — we scale with you." } }
+    ]
+  }
+  </script>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo">
+          <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
+        </a>
+        <p>Big Binary Tech delivers AI, ERP, and software solutions that power business growth with modern automation
+          and digital transformation.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+          </a>
+          <a href="https://twitter.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          </a>
+          <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-services">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="services.html">AI &amp; Automation</a></li>
+          <li><a href="services.html">Odoo ERP</a></li>
+          <li><a href="services.html">Custom Software</a></li>
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">POS Solutions</a></li>
+          <li><a href="services.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-solutions">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="solutions.html">Business Automation</a></li>
+          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
+          <li><a href="solutions.html">Retail &amp; POS</a></li>
+          <li><a href="solutions.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-industries">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="industries.html">Education</a></li>
+          <li><a href="industries.html">Healthcare</a></li>
+          <li><a href="industries.html">Retail</a></li>
+          <li><a href="industries.html">Manufacturing</a></li>
+          <li><a href="industries.html">Hospitality</a></li>
+          <li><a href="industries.html">Logistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Contact</h3>
+        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
+        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
+        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav class="footer-nav" style="display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:14px;"><a href="about.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">About</a><a href="services.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Services</a><a href="pricing.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Pricing</a><a href="careers.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Careers</a><a href="contact.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Contact</a></nav>
+      <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

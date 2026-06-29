@@ -180,17 +180,236 @@
             .nav-links { display: none; }
         }
     </style>
+<style id="odoo-spec-patch">
+/* ===== Enterprise & Odoo spec sections (navy/orange design language) ===== */
+
+/* HERO dual CTA + right-column dashboard visual */
+.hero-actions{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+.cta-ghost{
+  display:inline-block; padding:18px 36px; border-radius:50px; font-size:16px; font-weight:600;
+  text-decoration:none; color:#fff; border:1px solid rgba(255,255,255,0.35);
+  background:rgba(255,255,255,0.04); transition:all .3s ease;
+}
+.cta-ghost:hover{ border-color:var(--bbt-orange); color:var(--bbt-orange); transform:translateY(-2px); }
+.hero-visual{ width:100%; }
+.hero-dash{ background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:24px; padding:18px; backdrop-filter:blur(14px); box-shadow:0 30px 70px rgba(0,0,0,0.4); }
+.hero-dash-bar{ display:flex; align-items:center; gap:8px; padding:8px 6px 16px; border-bottom:1px solid rgba(255,255,255,0.08); }
+.hero-dash-bar span{ width:11px; height:11px; border-radius:50%; background:rgba(255,255,255,0.25); }
+.hero-dash-bar span:first-child{ background:var(--bbt-orange); }
+.hero-dash-bar em{ margin-left:auto; font-style:normal; font-size:12px; font-weight:700; letter-spacing:.5px; color:rgba(255,255,255,0.6); text-transform:uppercase; }
+.hero-dash-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
+.hero-dash-tile{ background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:22px 18px; transition:.3s; }
+.hero-dash-tile:hover{ border-color:var(--bbt-orange); background:rgba(245,158,11,0.08); transform:translateY(-4px); }
+.hero-dash-tile i{ font-size:24px; color:var(--bbt-orange); display:block; margin-bottom:12px; }
+.hero-dash-tile b{ display:block; font-size:16px; color:#fff; }
+.hero-dash-tile span{ font-size:12px; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:.5px; }
+
+/* Per-module CTA */
+.pillar-card .module-tag{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--bbt-orange); display:block; margin-bottom:14px; }
+.pillar-card p.module-overview{ font-size:14px; color:var(--bbt-muted); margin-bottom:20px; line-height:1.6; }
+.pillar-card:hover p.module-overview, .pillar-card:hover li{ opacity:.9; }
+.module-cta{ display:inline-flex; align-items:center; gap:8px; margin-top:22px; font-weight:800; color:var(--bbt-orange); text-decoration:none; font-size:14px; transition:gap .3s ease; }
+.module-cta:hover{ gap:14px; }
+.pillar-card:hover .benefit-badge{ background:rgba(245,158,11,0.2); }
+
+/* Generic section heading helper */
+.spec-head{ text-align:center; max-width:760px; margin:0 auto; }
+.spec-eyebrow{ color:var(--bbt-orange); font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:13px; display:block; margin-bottom:14px; }
+
+/* SECTION — Integration Ecosystem (logo grid) */
+.integration{ padding:120px 0; background:#fff; }
+.eco-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:60px; }
+.eco-cat{ background:var(--bbt-bg-soft); border:1px solid var(--bbt-border); border-radius:24px; padding:30px 26px; transition:.4s; }
+.eco-cat:hover{ border-color:var(--bbt-orange); transform:translateY(-6px); box-shadow:0 24px 50px rgba(15,23,42,0.07); }
+.eco-cat h4{ font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--bbt-navy); margin-bottom:18px; }
+.eco-logos{ display:flex; flex-wrap:wrap; gap:10px; }
+.eco-logo{ font-size:13px; font-weight:700; color:var(--bbt-text); background:#fff; border:1px solid var(--bbt-border); padding:8px 14px; border-radius:10px; }
+.integration-cta-wrap{ text-align:center; margin-top:56px; }
+
+/* SECTION — Why Choose BBT (differentiators + testimonial + badges) */
+.whychoose{ padding:120px 0; background:var(--bbt-navy); color:#fff; }
+.wc-layout{ display:grid; grid-template-columns:1fr 1.05fr; gap:60px; align-items:start; margin-top:56px; }
+.wc-diff{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.wc-diff-card{ background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:18px; padding:24px; transition:.3s; }
+.wc-diff-card:hover{ border-color:var(--bbt-orange); background:rgba(245,158,11,0.07); transform:translateY(-4px); }
+.wc-diff-card i{ font-size:22px; color:var(--bbt-orange); margin-bottom:14px; display:block; }
+.wc-diff-card h4{ font-size:16px; font-weight:700; color:#fff; }
+.wc-testimonial{ background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(20px); border-radius:28px; padding:38px; }
+.wc-testimonial .wc-pill{ display:inline-block; padding:8px 18px; background:rgba(245,158,11,0.18); color:var(--bbt-orange); border-radius:999px; font-weight:800; font-size:.8rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:22px; }
+.wc-testimonial .wc-quote{ font-style:italic; font-size:1.1rem; line-height:1.7; color:rgba(255,255,255,0.88); margin-bottom:24px; }
+.wc-testimonial .wc-meta{ padding-top:22px; border-top:1px solid rgba(255,255,255,0.08); font-weight:700; }
+.wc-testimonial .wc-meta span{ display:block; font-weight:500; color:rgba(255,255,255,0.6); font-size:.85rem; margin-top:4px; }
+.wc-badges-label{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:var(--bbt-orange); margin:40px 0 18px; }
+.wc-badges{ display:flex; flex-wrap:wrap; gap:14px; }
+.wc-badge{ display:grid; place-items:center; text-align:center; min-width:110px; padding:18px 16px; border-radius:14px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); font-weight:800; font-size:.9rem; transition:.3s; }
+.wc-badge:hover{ border-color:var(--bbt-orange); color:var(--bbt-orange); }
+.wc-metrics{ display:flex; flex-wrap:wrap; gap:24px 44px; margin-top:40px; padding-top:30px; border-top:1px solid rgba(255,255,255,0.1); }
+.wc-metric b{ display:block; font-size:2rem; font-weight:900; color:var(--bbt-orange); line-height:1; }
+.wc-metric span{ font-size:.85rem; color:rgba(255,255,255,0.7); }
+
+/* SECTION — Industries We Serve */
+.industries-sec{ padding:120px 0; background:var(--bbt-bg-soft); background-image:radial-gradient(at 100% 0%, rgba(245,158,11,0.05) 0px, transparent 50%); }
+.ind-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:60px; }
+.ind-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:24px; padding:38px; text-decoration:none; display:block; transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease; }
+.ind-card:hover{ transform:translateY(-8px); border-color:var(--bbt-orange); box-shadow:0 30px 60px rgba(15,23,42,0.08); }
+.ind-card .ind-icon{ width:58px; height:58px; border-radius:15px; display:grid; place-items:center; background:rgba(245,158,11,0.1); color:var(--bbt-orange); font-size:24px; margin-bottom:22px; }
+.ind-card h3{ font-size:1.25rem; color:var(--bbt-navy); font-weight:800; margin-bottom:12px; }
+.ind-card p{ color:var(--bbt-muted); font-size:.95rem; margin-bottom:18px; }
+.ind-card .ind-go{ font-weight:800; color:var(--bbt-orange); font-size:.9rem; }
+
+/* SECTION — Related Solutions */
+.related-section{ padding:120px 0; background:#fff; }
+.related-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:60px; max-width:980px; margin-left:auto; margin-right:auto; }
+.related-card{ background:var(--bbt-bg-soft); border:1px solid var(--bbt-border); border-radius:28px; padding:42px; text-decoration:none; display:flex; flex-direction:column; transition:.4s; }
+.related-card:hover{ transform:translateY(-10px); background:var(--bbt-navy); border-color:var(--bbt-navy); }
+.related-type{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--bbt-orange); margin-bottom:16px; }
+.related-card i{ font-size:34px; color:var(--bbt-orange); margin-bottom:22px; }
+.related-card h3{ font-size:1.4rem; font-weight:800; color:var(--bbt-navy); margin-bottom:12px; transition:.4s; }
+.related-card p{ color:var(--bbt-muted); font-size:.95rem; margin-bottom:auto; transition:.4s; }
+.related-card .related-go{ margin-top:24px; font-weight:800; color:var(--bbt-orange); font-size:.9rem; }
+.related-card:hover h3, .related-card:hover p{ color:#fff; }
+
+/* Responsive for new spec sections */
+@media (max-width:1024px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero-visual{ margin-top:20px; }
+  .wc-layout{ grid-template-columns:1fr; }
+  .eco-grid{ grid-template-columns:repeat(2,1fr); }
+  .ind-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:768px){
+  .integration, .whychoose, .industries-sec, .related-section{ padding:80px 0; }
+  .eco-grid{ grid-template-columns:1fr; }
+  .ind-grid{ grid-template-columns:1fr; }
+  .wc-diff{ grid-template-columns:1fr; }
+  .related-grid{ grid-template-columns:1fr; }
+  .integration h2, .whychoose h2, .industries-sec h2, .related-section h2{ font-size:30px !important; }
+  .hero-dash-grid{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:480px){
+  .hero-actions .cta-btn, .hero-actions .cta-ghost{ width:100%; text-align:center; box-sizing:border-box; }
+  .wc-badge{ min-width:calc(50% - 7px); }
+  .related-card{ padding:32px 26px; }
+}
+</style>
+<style id="responsive-nav-patch">
+/* ===== Universal Responsive Mobile-Nav Patch (additive — desktop unchanged) ===== */
+.mobile-nav-toggle{
+  display:none; background:transparent; border:0; font-size:26px; line-height:1;
+  color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
+}
+.mobile-nav-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.5);
+  opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:1000;
+}
+@media (max-width:1024px){
+  .mobile-nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  .header .navbar, .header .nav-links{ display:flex !important; }
+  .header .navbar{
+    position:fixed; top:0; right:-100%; width:min(330px,86vw); height:100vh; height:100dvh;
+    background:#0b1020; flex-direction:column; justify-content:flex-start;
+    padding:96px 26px 40px; box-shadow:-8px 0 40px rgba(0,0,0,.45);
+    transition:right .35s ease; overflow-y:auto; z-index:1001;
+  }
+  .header.mobile-open .navbar{ right:0; }
+  .header .nav-links{ flex-direction:column; align-items:flex-start; gap:0; width:100%; }
+  .header .nav-links li{ width:100%; }
+  .header .nav-links a, .header .nav-links .nav-link-anchor{
+    color:#fff !important; text-shadow:none !important; display:block; width:100%;
+    padding:15px 0; font-size:17px; border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .header .mega-menu-wrapper{ display:none !important; }
+  .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
+  body.mobile-nav-open{ overflow:hidden; }
+  body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
+}
+    </style>
+<style id="responsive-content-patch">
+/* ===== Page-specific Content Responsiveness (additive — desktop unchanged) ===== */
+@media (max-width:1024px){
+  .hero{ padding:170px 0 90px; }
+  .hero-grid{ gap:40px; }
+  .stats-section > .container > div{ grid-template-columns:1fr !important; gap:40px !important; }
+  .stats-grid{ grid-template-columns:repeat(2,1fr); }
+  .timeline{ flex-wrap:wrap; gap:30px; }
+  .timeline::after{ display:none; }
+  .step{ flex:0 0 calc(50% - 20px); margin-bottom:20px; }
+}
+@media (max-width:768px){
+  .hero{ padding:140px 0 70px; }
+  .hero-text p{ font-size:16px !important; }
+  .section-title{ font-size:clamp(2rem,8vw,2.75rem); }
+  .trust-indicator{ flex-wrap:wrap; gap:24px; }
+  .stats-grid{ grid-template-columns:repeat(2,1fr); }
+  .stat-card{ padding:30px; }
+  .stat-card h2{ font-size:36px; }
+  .pillars{ padding:80px 0; }
+  .pillar-grid{ grid-template-columns:1fr; }
+  .pillar-card{ padding:40px 30px; }
+  .journey{ padding:80px 0; }
+  .step{ flex:0 0 100%; }
+  .case-studies{ padding:80px 0; }
+  .case-grid{ grid-template-columns:1fr; }
+  .pricing{ padding:80px 0; }
+  .price-grid{ grid-template-columns:1fr; }
+  .price-card.featured{ transform:none; }
+  .faq{ padding:80px 0; }
+  .final-cta{ margin:60px 0; padding:80px 0; }
+  .pricing h2, .case-studies h2, .faq h2, .journey h2{ font-size:30px !important; }
+  .stats-section > .container > div h2{ font-size:30px !important; }
+  .pillars > .container > div h2{ font-size:30px !important; }
+}
+@media (max-width:480px){
+  .container{ padding:0 20px; }
+  .hero{ padding:120px 0 60px; }
+  .section-title{ font-size:clamp(1.75rem,9vw,2.25rem); }
+  .pill-box{ gap:8px; }
+  .hero-text > div[style*="display: flex"]{ flex-wrap:wrap; }
+  .hero-text .cta-btn{ width:100%; text-align:center; padding:16px 24px !important; box-sizing:border-box; }
+  .trust-indicator{ gap:18px; }
+  .trust-item b{ font-size:20px; }
+  .stats-grid{ grid-template-columns:1fr; }
+  .stat-card h2{ font-size:32px; }
+  .step-num{ width:64px; height:64px; font-size:20px; margin-bottom:20px; }
+  .final-cta h2{ font-size:30px !important; }
+  .final-cta > div[style*="display: flex"]{ flex-wrap:wrap; }
+  .final-cta .cta-btn{ width:100%; text-align:center; box-sizing:border-box; }
+  .faq-question{ font-size:16px; }
+  img{ max-width:100%; height:auto; }
+}
+    </style>
+<style id="shared-footer-patch">
+/* ===== Canonical Site Footer (identical across all pages) ===== */
+.site-footer{ padding:72px 0 40px; background:#f8fafc; color:#334155; font-family:"Inter",system-ui,-apple-system,sans-serif; }
+.site-footer .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:32px; align-items:start; }
+.site-footer .footer-brand .logo{ display:inline-block; margin-bottom:18px; filter:none; }
+.site-footer .footer-brand .logo img{ height:100px; width:auto; display:block; filter:none; }
+.site-footer .footer-brand p{ max-width:42ch; line-height:1.8; margin-bottom:22px; color:#64748b; font-size:1rem; }
+.site-footer .footer-social{ display:flex; gap:12px; flex-wrap:wrap; }
+.site-footer .social-icon{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(15,23,42,0.1); background:rgba(255,255,255,0.06); color:#0f172a; text-decoration:none; transition:background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease; }
+.site-footer .social-icon svg{ width:18px; height:18px; fill:currentColor; }
+.site-footer .social-icon:hover{ background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.4); color:#f59e0b; transform:translateY(-2px); }
+.site-footer .footer-col h3{ margin:0 0 20px; font-size:1.1rem; color:#0f172a; font-weight:700; }
+.site-footer .footer-col ul{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.site-footer .footer-col li a, .site-footer .footer-contact .contact-line a{ color:#64748b; text-decoration:none; transition:color .25s ease; font-size:1rem; }
+.site-footer .footer-col li a:hover, .site-footer .footer-contact .contact-line a:hover{ color:#f59e0b; }
+.site-footer .footer-contact .contact-line{ margin:0 0 12px; color:#64748b; line-height:1.6; font-size:1rem; }
+.site-footer .footer-bottom{ margin-top:48px; padding-top:24px; text-align:center; }
+.site-footer .footer-bottom p{ margin:0; font-size:.875rem; color:#64748b; }
+@media (max-width:1100px){ .site-footer .footer-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } .site-footer .footer-brand{ grid-column:1 / -1; } }
+@media (max-width:640px){ .site-footer .footer-grid{ grid-template-columns:1fr; } .site-footer{ padding:56px 0 32px; } .site-footer .footer-brand .logo img{ height:80px; } }
+</style>
 </head>
 <body>
 
     <!-- STICKY HEADER -->
-    <header class="header" id="mainHeader">
+    <header class="header" id="mainHeader" data-mobile-header>
         <div class="container header-wrapper">
             <a href="index.html" class="logo">
                 <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech">
             </a>
 
-            <nav>
+            <nav class="navbar">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -237,7 +456,7 @@
                                         </div>
                                         <div class="mega-card-text">
                                             <h4>Latest Insights: AI and ERP in MENA 2025</h4>
-                                            <a href="insights.html" class="mega-cta">EXPLORE <i class="fa-solid fa-arrow-right"></i></a>
+                                            <a href="blogs.html" class="mega-cta">EXPLORE <i class="fa-solid fa-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -251,38 +470,56 @@
                             </div>
                         </div>
                     </li>
-                      <li><a href="insights.html">Insights</a></li>
+                      <li><a href="blogs.html">Insights</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
 
             <a href="contact.html" class="cta-btn">Free Consultation</a>
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
         </div>
     </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
     <!-- HERO -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-text reveal">
-                    <div class="breadcrumb">Home / Solutions / <span>Enterprise Odoo</span></div>
-                    <h1 class="section-title">Odoo ERP Solutions Built for <span style="color:var(--bbt-orange)">Operational Excellence.</span></h1>
-                    <p style="font-size: 18px; opacity: 0.8; margin-bottom: 30px;">Streamline HR, finance, inventory, and customer relationships with a fully integrated Odoo ERP system customized to your unique workflows.</p>
-                    
+                    <div class="breadcrumb">Home / Solutions / <span>Enterprise & Odoo Solutions</span></div>
+                    <h1 class="section-title">Enterprise & Odoo ERP Solutions Built for <span style="color:var(--bbt-orange)">Operational Excellence</span></h1>
+                    <p style="font-size: 18px; opacity: 0.8; margin-bottom: 30px;">Streamline HR, finance, inventory, and customer relationships with a fully integrated Odoo ERP system customized to your workflows and scalable as your business grows.</p>
+
                     <div class="pill-box">
                         <span class="pill">Odoo Implementation & Customization</span>
                         <span class="pill">HR • Finance • Inventory • CRM</span>
                         <span class="pill">Cloud Hosted & On-Premise</span>
                     </div>
 
-                    <div style="display: flex; gap: 20px;">
+                    <div class="hero-actions">
                         <a href="contact.html" class="cta-btn" style="padding: 18px 40px;">Get a Free ERP Assessment <i class="fas fa-arrow-right"></i></a>
+                        <a href="services.html" class="cta-ghost">Explore Our Odoo Services</a>
                     </div>
 
                     <div class="trust-indicator">
-                        <div class="trust-item"><b>Odoo</b><span>Official Partner</span></div>
-                        <div class="trust-item"><b>50+</b><span>ERP Projects</span></div>
+                        <div class="trust-item"><b>Odoo</b><span>Implementation Partner</span></div>
+                        <div class="trust-item"><b>50+</b><span>ERP Projects Delivered</span></div>
                         <div class="trust-item"><b>MENA</b><span>Market Experts</span></div>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal">
+                    <div class="hero-dash">
+                        <div class="hero-dash-bar">
+                            <span></span><span></span><span></span>
+                            <em>Odoo Unified Dashboard</em>
+                        </div>
+                        <div class="hero-dash-grid">
+                            <div class="hero-dash-tile"><i class="fas fa-users-gear"></i><b>HR</b><span>Workforce</span></div>
+                            <div class="hero-dash-tile"><i class="fas fa-file-invoice-dollar"></i><b>Accounting</b><span>Finance</span></div>
+                            <div class="hero-dash-tile"><i class="fas fa-boxes-stacked"></i><b>Inventory</b><span>Supply Chain</span></div>
+                            <div class="hero-dash-tile"><i class="fas fa-chart-pie"></i><b>CRM</b><span>Sales</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -316,44 +553,68 @@
             </div>
             <div class="pillar-grid">
                 <div class="pillar-card reveal">
+                    <span class="module-tag">Module 01</span>
                     <i class="fas fa-users-gear"></i>
-                    <h3>HR & Payroll</h3>
+                    <h3>HR & Payroll Automation</h3>
+                    <p class="module-overview">Automate workforce management, attendance, payroll processing, recruitment, and employee performance.</p>
                     <ul>
                         <li>Employee Self-Service</li>
                         <li>Attendance Integration</li>
                         <li>Payroll Automation</li>
+                        <li>Leave Management</li>
+                        <li>Recruitment Workflows</li>
+                        <li>Performance Tracking</li>
                     </ul>
-                    <div class="benefit-badge">Reduce Admin by 60%</div>
+                    <div class="benefit-badge">Reduce HR admin time by 60%</div>
+                    <a href="contact.html" class="module-cta">Explore HR Solutions <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="pillar-card reveal">
+                    <span class="module-tag">Module 02</span>
                     <i class="fas fa-file-invoice-dollar"></i>
                     <h3>Finance & Accounting</h3>
+                    <p class="module-overview">Gain real-time visibility into company finances through automated accounting and reporting.</p>
                     <ul>
                         <li>Automated Invoicing</li>
                         <li>Multi-Currency Support</li>
                         <li>Bank Reconciliation</li>
+                        <li>Tax Reporting</li>
+                        <li>Budget Forecasting</li>
+                        <li>Banking Integrations</li>
                     </ul>
                     <div class="benefit-badge">Close books 3x faster</div>
+                    <a href="contact.html" class="module-cta">Explore Finance Solutions <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="pillar-card reveal">
+                    <span class="module-tag">Module 03</span>
                     <i class="fas fa-boxes-stacked"></i>
-                    <h3>Supply Chain</h3>
+                    <h3>Supply Chain & Inventory</h3>
+                    <p class="module-overview">Optimize procurement, warehousing, inventory control, and demand forecasting.</p>
                     <ul>
-                        <li>Real-Time Tracking</li>
+                        <li>Real-Time Inventory Tracking</li>
                         <li>Barcode & RFID Support</li>
                         <li>Automated Reordering</li>
+                        <li>Multi-Warehouse Management</li>
+                        <li>Batch Tracking</li>
+                        <li>Inventory Analytics</li>
                     </ul>
                     <div class="benefit-badge">Reduce stockouts by 45%</div>
+                    <a href="contact.html" class="module-cta">Explore Inventory Solutions <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="pillar-card reveal">
+                    <span class="module-tag">Module 04</span>
                     <i class="fas fa-chart-pie"></i>
-                    <h3>Odoo CRM</h3>
+                    <h3>Odoo CRM Solutions</h3>
+                    <p class="module-overview">Manage leads, opportunities, customers, and sales pipelines from a single platform.</p>
                     <ul>
                         <li>Lead Scoring</li>
                         <li>Pipeline Management</li>
+                        <li>Marketing Automation</li>
+                        <li>Customer Portal</li>
                         <li>Sales Forecasting</li>
+                        <li>Activity Tracking</li>
                     </ul>
                     <div class="benefit-badge">+35% Sales Conversion</div>
+                    <a href="contact.html" class="module-cta">Explore CRM Solutions <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -364,11 +625,150 @@
         <div class="container">
             <h2 style="text-align: center; font-size: 38px; font-weight: 900;">Your Odoo Implementation Journey</h2>
             <div class="timeline">
-                <div class="step reveal"><div class="step-num">01</div><h4>Discovery</h4><p>Deep process audit.</p></div>
-                <div class="step reveal"><div class="step-num">02</div><h4>Design</h4><p>System architecture.</p></div>
-                <div class="step reveal"><div class="step-num">03</div><h4>Development</h4><p>Customization.</p></div>
-                <div class="step reveal"><div class="step-num">04</div><h4>Testing</h4><p>QA & Migration.</p></div>
-                <div class="step reveal"><div class="step-num">05</div><h4>Go-Live</h4><p>Rollout & Support.</p></div>
+                <div class="step reveal"><div class="step-num">01</div><h4>Discovery & Analysis</h4><p>Deep process audit.</p></div>
+                <div class="step reveal"><div class="step-num">02</div><h4>Solution Design</h4><p>System architecture.</p></div>
+                <div class="step reveal"><div class="step-num">03</div><h4>Development & Customization</h4><p>Tailored configuration.</p></div>
+                <div class="step reveal"><div class="step-num">04</div><h4>Data Migration & Testing</h4><p>QA & migration.</p></div>
+                <div class="step reveal"><div class="step-num">05</div><h4>Go-Live & Support</h4><p>Rollout & support.</p></div>
+            </div>
+            <div style="text-align:center; margin-top:70px;">
+                <a href="services.html" class="cta-btn" style="padding:16px 40px;">See Our Full Implementation Process <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTEGRATION ECOSYSTEM -->
+    <section class="integration">
+        <div class="container">
+            <div class="spec-head">
+                <span class="spec-eyebrow">Integration Ecosystem</span>
+                <h2 style="font-size: clamp(2rem,4vw,2.6rem); font-weight: 900; color: var(--bbt-navy);">Connect Odoo With Your Existing Tools</h2>
+                <p style="color: var(--bbt-muted); margin-top:16px;">Odoo integrates seamlessly with the platforms your business already relies on — payments, logistics, communications, analytics and more.</p>
+            </div>
+            <div class="eco-grid">
+                <div class="eco-cat reveal">
+                    <h4>Payment Gateways</h4>
+                    <div class="eco-logos"><span class="eco-logo">Stripe</span><span class="eco-logo">PayPal</span><span class="eco-logo">Paymob</span><span class="eco-logo">Mastercard</span></div>
+                </div>
+                <div class="eco-cat reveal">
+                    <h4>Logistics</h4>
+                    <div class="eco-logos"><span class="eco-logo">DHL</span><span class="eco-logo">Aramex</span><span class="eco-logo">FedEx</span><span class="eco-logo">TCS</span></div>
+                </div>
+                <div class="eco-cat reveal">
+                    <h4>Communications</h4>
+                    <div class="eco-logos"><span class="eco-logo">WhatsApp Business</span><span class="eco-logo">Teams</span><span class="eco-logo">Slack</span><span class="eco-logo">Zoom</span></div>
+                </div>
+                <div class="eco-cat reveal">
+                    <h4>Marketing Platforms</h4>
+                    <div class="eco-logos"><span class="eco-logo">LinkedIn</span><span class="eco-logo">Facebook</span><span class="eco-logo">Google Ads</span><span class="eco-logo">Mailchimp</span></div>
+                </div>
+                <div class="eco-cat reveal">
+                    <h4>Analytics</h4>
+                    <div class="eco-logos"><span class="eco-logo">Power BI</span><span class="eco-logo">Tableau</span><span class="eco-logo">Google Data Studio</span></div>
+                </div>
+                <div class="eco-cat reveal">
+                    <h4>Accounting Systems</h4>
+                    <div class="eco-logos"><span class="eco-logo">QuickBooks</span><span class="eco-logo">Xero</span><span class="eco-logo">Banking APIs</span></div>
+                </div>
+                <div class="eco-cat reveal">
+                    <h4>Hardware</h4>
+                    <div class="eco-logos"><span class="eco-logo">Barcode Scanners</span><span class="eco-logo">POS Devices</span><span class="eco-logo">Biometric Systems</span></div>
+                </div>
+                <div class="eco-cat reveal">
+                    <h4>E-Commerce</h4>
+                    <div class="eco-logos"><span class="eco-logo">Shopify</span><span class="eco-logo">WooCommerce</span><span class="eco-logo">Magento</span></div>
+                </div>
+            </div>
+            <div class="integration-cta-wrap">
+                <a href="contact.html" class="cta-btn" style="padding:16px 40px;">Need a Custom Integration? <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE BBT -->
+    <section class="whychoose">
+        <div class="container">
+            <div class="spec-head">
+                <span class="spec-eyebrow">Why Choose Big Binary Tech</span>
+                <h2 style="font-size: clamp(2rem,4vw,3rem); color:#fff; font-weight: 900;">Why Businesses Trust Us With Their ERP</h2>
+            </div>
+            <div class="wc-layout">
+                <div>
+                    <div class="wc-diff">
+                        <div class="wc-diff-card"><i class="fas fa-cube"></i><h4>Odoo-Focused Expertise</h4></div>
+                        <div class="wc-diff-card"><i class="fas fa-earth-asia"></i><h4>Pakistan & MENA Market Knowledge</h4></div>
+                        <div class="wc-diff-card"><i class="fas fa-diagram-project"></i><h4>End-to-End ERP Delivery</h4></div>
+                        <div class="wc-diff-card"><i class="fas fa-code"></i><h4>Custom Development Capabilities</h4></div>
+                        <div class="wc-diff-card"><i class="fas fa-eye"></i><h4>Transparent Implementation Process</h4></div>
+                        <div class="wc-diff-card"><i class="fas fa-headset"></i><h4>Long-Term Support & Maintenance</h4></div>
+                    </div>
+                    <div class="wc-badges-label">Partners &amp; Certifications</div>
+                    <div class="wc-badges">
+                        <div class="wc-badge">PSEB</div>
+                        <div class="wc-badge">FAST SOFTEC</div>
+                        <div class="wc-badge">Cisco Networking Academy</div>
+                        <div class="wc-badge">NAVTTC</div>
+                        <div class="wc-badge">Odoo Partner</div>
+                    </div>
+                    <div class="wc-metrics">
+                        <div class="wc-metric"><b>50+</b><span>ERP Projects</span></div>
+                        <div class="wc-metric"><b>15+</b><span>Industries Served</span></div>
+                        <div class="wc-metric"><b>98%</b><span>On-Time Delivery</span></div>
+                    </div>
+                </div>
+                <div class="wc-testimonial reveal">
+                    <span class="wc-pill">ERP Success Story</span>
+                    <p class="wc-quote">"Big Binary Tech migrated our entire manufacturing operation onto Odoo — finance, inventory and HR now run on one platform. We cut stock discrepancies by 40% within the first quarter and finally have real-time visibility across all branches."</p>
+                    <div class="wc-meta">Operations Director<span>Multi-Branch Manufacturing Group</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIES WE SERVE -->
+    <section class="industries-sec">
+        <div class="container">
+            <div class="spec-head">
+                <span class="spec-eyebrow">Industries We Serve</span>
+                <h2 style="font-size: clamp(2rem,4vw,2.8rem); color: var(--bbt-navy); font-weight: 900;">Odoo Solutions by Industry</h2>
+            </div>
+            <div class="ind-grid">
+                <a href="industries.html" class="ind-card reveal">
+                    <div class="ind-icon"><i class="fas fa-cart-shopping"></i></div>
+                    <h3>Retail & E-Commerce</h3>
+                    <p>Unified POS, inventory, and online storefronts that stay in sync across every channel.</p>
+                    <span class="ind-go">View Industry →</span>
+                </a>
+                <a href="industries.html" class="ind-card reveal">
+                    <div class="ind-icon"><i class="fas fa-industry"></i></div>
+                    <h3>Manufacturing</h3>
+                    <p>Production planning, MRP, and quality control for efficient, traceable operations.</p>
+                    <span class="ind-go">View Industry →</span>
+                </a>
+                <a href="industries.html" class="ind-card reveal">
+                    <div class="ind-icon"><i class="fas fa-truck-fast"></i></div>
+                    <h3>Trading & Distribution</h3>
+                    <p>Multi-warehouse logistics, procurement, and demand forecasting at scale.</p>
+                    <span class="ind-go">View Industry →</span>
+                </a>
+                <a href="industries.html" class="ind-card reveal">
+                    <div class="ind-icon"><i class="fas fa-heart-pulse"></i></div>
+                    <h3>Healthcare</h3>
+                    <p>Patient records, billing, and insurance claims automated for accuracy and compliance.</p>
+                    <span class="ind-go">View Industry →</span>
+                </a>
+                <a href="industries.html" class="ind-card reveal">
+                    <div class="ind-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Education</h3>
+                    <p>Admissions, student management, and finance unified on a single platform.</p>
+                    <span class="ind-go">View Industry →</span>
+                </a>
+                <a href="industries.html" class="ind-card reveal">
+                    <div class="ind-icon"><i class="fas fa-building"></i></div>
+                    <h3>Real Estate</h3>
+                    <p>Property, lease, and project management with integrated accounting and CRM.</p>
+                    <span class="ind-go">View Industry →</span>
+                </a>
             </div>
         </div>
     </section>
@@ -389,10 +789,13 @@
                     <p>Unified POS and inventory for month-end closing speed.</p>
                 </div>
                 <div class="case-card reveal">
-                    <span class="case-stat">30% Accuracy</span>
-                    <h4 style="font-weight:800; margin-bottom:10px;">Healthcare Org.</h4>
+                    <span class="case-stat">30% Reduction</span>
+                    <h4 style="font-weight:800; margin-bottom:10px;">Healthcare Organization</h4>
                     <p>Eliminated billing errors through automated insurance claims.</p>
                 </div>
+            </div>
+            <div style="text-align:center; margin-top:56px;">
+                <a href="case-studies.html" class="cta-btn" style="padding:16px 40px; background:var(--bbt-navy);">View All Case Studies <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -428,15 +831,31 @@
             <h2 style="text-align: center; font-size: 38px; font-weight: 900; color: var(--bbt-navy); margin-bottom: 50px;">Frequently Asked Questions</h2>
             <div class="faq-item reveal">
                 <div class="faq-question">How long does Odoo implementation take? <i class="fas fa-plus"></i></div>
-                <div class="faq-answer">Generally between 8 to 24 weeks depending on customization depth and data volume.</div>
+                <div class="faq-answer">A focused configuration typically takes 8 to 12 weeks, while a fully customized enterprise ERP with integrations runs 12 to 24 weeks. We deliver in phases so you see value early instead of waiting for one big launch.</div>
             </div>
             <div class="faq-item reveal">
                 <div class="faq-question">Can Odoo support multiple companies and currencies? <i class="fas fa-plus"></i></div>
-                <div class="faq-answer">Yes, Odoo is designed for multi-company environments with automated consolidated reporting.</div>
+                <div class="faq-answer">Yes. Odoo is built for multi-company, multi-currency environments with automated consolidated reporting across all entities.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">What's the difference between Odoo Community and Enterprise Edition? <i class="fas fa-plus"></i></div>
+                <div class="faq-answer">Community is the free, open-source core. Enterprise adds advanced features (accounting, studio, mobile apps), official support, and hosting options. We help you choose the right edition based on your needs and budget.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">Can you migrate our existing ERP to Odoo? <i class="fas fa-plus"></i></div>
+                <div class="faq-answer">Absolutely. We handle data extraction, cleansing, mapping, and validation from legacy ERPs, spreadsheets, and accounting systems, with parallel testing to ensure a safe cutover.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">Is Odoo suitable for businesses in Pakistan and MENA? <i class="fas fa-plus"></i></div>
+                <div class="faq-answer">Yes. We configure Odoo for local tax structures, multi-currency operations, Arabic/RTL support, and regional payment and logistics providers — backed by deep Pakistan and MENA market knowledge.</div>
             </div>
             <div class="faq-item reveal">
                 <div class="faq-question">What support do you provide after implementation? <i class="fas fa-plus"></i></div>
-                <div class="faq-answer">We offer 24/7 maintenance, cloud management, and continuous feature training.</div>
+                <div class="faq-answer">We offer ongoing maintenance, cloud and server management, version upgrades, and continuous feature training through long-term support packages.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">Can Odoo integrate with our existing software? <i class="fas fa-plus"></i></div>
+                <div class="faq-answer">Yes. Odoo connects with payment gateways, logistics providers, e-commerce platforms, analytics tools, and accounting systems. When native integration isn't available, we build custom APIs to connect your stack.</div>
             </div>
         </div>
     </section>
@@ -444,19 +863,40 @@
     <!-- CTA -->
     <div class="container">
         <section class="final-cta reveal">
-            <h2 style="font-size: 45px; font-weight: 900; margin-bottom: 20px;">Ready to Transform Your Business?</h2>
-            <p style="max-width: 700px; margin: 0 auto 40px; font-size: 18px; opacity: 0.8;">Our experts are ready to guide you from legacy systems to a unified Odoo environment.</p>
-            <div style="display: flex; gap: 20px; justify-content: center;">
-                <a href="contact.html" class="cta-btn" style="padding: 18px 45px;">Schedule Free Consultation</a>
+            <h2 style="font-size: 45px; font-weight: 900; margin-bottom: 20px;">Ready to Transform Your Business Operations?</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; font-size: 18px; opacity: 0.8;">Whether you're starting your ERP journey or upgrading an existing system, our Odoo experts will guide you every step of the way.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="cta-btn" style="padding: 18px 45px;">Schedule a Free ERP Consultation</a>
+                <a href="e-books.html" class="cta-ghost">Download Our Odoo Implementation Guide</a>
             </div>
         </section>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <img src="../assests/images/bbt-logo.png" style="height:50px; opacity: 0.4; filter: grayscale(1); margin-bottom: 20px;">
-        <p>&copy; 2025 Big Binary Tech. All Rights Reserved.</p>
-    </footer>
+    <!-- RELATED SOLUTIONS -->
+    <section class="related-section">
+        <div class="container">
+            <div class="spec-head">
+                <span class="spec-eyebrow">Related Solutions</span>
+                <h2 style="font-size: clamp(2rem,4vw,2.6rem); color: var(--bbt-navy); font-weight: 900;">Explore More Solutions</h2>
+            </div>
+            <div class="related-grid">
+                <a href="retail-pos.html" class="related-card reveal">
+                    <div class="related-type">Solution</div>
+                    <i class="fas fa-cash-register"></i>
+                    <h3>Retail & POS Solutions</h3>
+                    <p>Custom POS systems, inventory management, and multi-branch operations.</p>
+                    <span class="related-go">Explore Solution →</span>
+                </a>
+                <a href="digital-transformation.html" class="related-card reveal">
+                    <div class="related-type">Solution</div>
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                    <h3>Digital Transformation Solutions</h3>
+                    <p>AI automation, workflow optimization, and legacy modernization.</p>
+                    <span class="related-go">Explore Solution →</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <script>
         // HEADER SCROLL EFFECT
@@ -488,5 +928,128 @@
             });
         });
     </script>
+    <script>
+    (function(){
+      var t=document.getElementById('mobileNavToggle'),
+          h=document.getElementById('header')||document.querySelector('[data-mobile-header]'),
+          o=document.getElementById('mobileNavOverlay');
+      if(!t||!h)return;
+      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
+      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      t.addEventListener('click',toggle);
+      if(o)o.addEventListener('click',close);
+      h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
+      window.addEventListener('resize',function(){if(window.innerWidth>1024)close();});
+    })();
+    </script>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo">
+          <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
+        </a>
+        <p>Big Binary Tech delivers AI, ERP, and software solutions that power business growth with modern automation
+          and digital transformation.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+          </a>
+          <a href="https://twitter.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          </a>
+          <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-services">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="services.html">AI &amp; Automation</a></li>
+          <li><a href="services.html">Odoo ERP</a></li>
+          <li><a href="services.html">Custom Software</a></li>
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">POS Solutions</a></li>
+          <li><a href="services.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-solutions">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="solutions.html">Business Automation</a></li>
+          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
+          <li><a href="solutions.html">Retail &amp; POS</a></li>
+          <li><a href="solutions.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-industries">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="industries.html">Education</a></li>
+          <li><a href="industries.html">Healthcare</a></li>
+          <li><a href="industries.html">Retail</a></li>
+          <li><a href="industries.html">Manufacturing</a></li>
+          <li><a href="industries.html">Hospitality</a></li>
+          <li><a href="industries.html">Logistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Contact</h3>
+        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
+        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
+        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav class="footer-nav" style="display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:14px;"><a href="about.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">About</a><a href="services.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Services</a><a href="pricing.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Pricing</a><a href="careers.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Careers</a><a href="contact.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Contact</a></nav>
+      <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FAQPage Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does Odoo implementation take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A focused configuration typically takes 8 to 12 weeks, while a fully customized enterprise ERP with integrations runs 12 to 24 weeks. We deliver in phases so you see value early instead of waiting for one big launch." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Odoo support multiple companies and currencies?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Odoo is built for multi-company, multi-currency environments with automated consolidated reporting across all entities." }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between Odoo Community and Enterprise Edition?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Community is the free, open-source core. Enterprise adds advanced features (accounting, studio, mobile apps), official support, and hosting options. We help you choose the right edition based on your needs and budget." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you migrate our existing ERP to Odoo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We handle data extraction, cleansing, mapping, and validation from legacy ERPs, spreadsheets, and accounting systems, with parallel testing to ensure a safe cutover." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Odoo suitable for businesses in Pakistan and MENA?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. We configure Odoo for local tax structures, multi-currency operations, Arabic/RTL support, and regional payment and logistics providers, backed by deep Pakistan and MENA market knowledge." }
+      },
+      {
+        "@type": "Question",
+        "name": "What support do you provide after implementation?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We offer ongoing maintenance, cloud and server management, version upgrades, and continuous feature training through long-term support packages." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Odoo integrate with our existing software?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Odoo connects with payment gateways, logistics providers, e-commerce platforms, analytics tools, and accounting systems. When native integration isn't available, we build custom APIs to connect your stack." }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>

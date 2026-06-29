@@ -27,6 +27,7 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { overflow-x: hidden; }
         body { font-family: var(--font-sans); background: var(--bbt-white); color: var(--bbt-text); overflow-x: hidden; scroll-behavior: smooth; }
         .container { width: 90%; max-width: 1300px; margin: auto; }
 
@@ -349,11 +350,11 @@
         .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 50px; }
         .problem-card { background: white; padding: 40px; border-radius: 24px; border: 1px solid var(--bbt-border); transition: 0.4s; }
         .problem-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
-        .problem-card i { font-size: 32px; color: #E76F51; margin-bottom: 20px; }
+        .problem-card i { font-size: 32px; color: var(--bbt-orange); margin-bottom: 20px; }
         .problem-card h3 { font-size: 1.3rem; color: var(--bbt-navy); margin-bottom: 15px; font-weight: 800; }
 
         /* --- SECTION 03: FEATURED GUIDE (THE LEAD MAGNET) --- */
-        .featured-section { background: var(--bbt-teal-light); padding: 100px 0; }
+        .featured-section { background: var(--bbt-bg-soft); padding: 100px 0; }
         .featured-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         
         /* 3D Book Mockup CSS */
@@ -364,7 +365,7 @@
         .featured-info h2 { font-size: 2.8rem; color: var(--bbt-navy); line-height: 1.2; margin-bottom: 25px; font-weight: 900; }
         .inside-list { list-style: none; margin: 30px 0; }
         .inside-list li { margin-bottom: 12px; display: flex; gap: 10px; font-weight: 600; }
-        .inside-list i { color: var(--bbt-teal); margin-top: 4px; }
+        .inside-list i { color: var(--bbt-orange); margin-top: 4px; }
         
         .gated-form { background: white; padding: 40px; border-radius: 24px; box-shadow: 0 40px 80px rgba(0,0,0,0.1); }
         .gated-form input, .gated-form select { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 12px; border: 1px solid #e2e8f0; font-family: inherit; }
@@ -375,7 +376,7 @@
         .grid-header { text-align: center; padding: 100px 0 50px; }
         .filter-tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 50px; }
         .tab { padding: 10px 24px; border-radius: 100px; border: 1px solid var(--bbt-navy); background: transparent; color: var(--bbt-navy); font-weight: 700; cursor: pointer; transition: 0.3s; }
-        .tab.active { background: var(--bbt-teal); color: white; border-color: var(--bbt-teal); }
+        .tab.active { background: var(--bbt-navy); color: white; border-color: var(--bbt-navy); }
         
         .ebook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding-bottom: 100px; }
         .ebook-card { border-radius: 24px; border: 1px solid var(--bbt-border); overflow: hidden; background: white; transition: 0.4s; }
@@ -402,9 +403,88 @@
         .stat-item h2 { color: white; font-size: 2.5rem; font-weight: 900; margin-bottom: 5px; }
         .stat-item p { color: #94a3b8; font-size: 12px; font-weight: 700; text-transform: uppercase; }
 
-        /* --- FOOTER --- */
-        .footer { padding: 80px 0 40px; background: var(--bbt-bg-soft); border-top: 1px solid var(--bbt-border); }
-        
+        /* --- SHARED HELPERS --- */
+        .eyebrow { display:inline-block; font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:var(--bbt-orange); margin-bottom:16px; }
+        .cta-ghost { display:inline-flex; align-items:center; justify-content:center; padding:14px 30px; border-radius:999px; border:2px solid rgba(255,255,255,0.4); color:#fff; font-weight:700; text-decoration:none; transition:all .3s ease; }
+        .preview-diff .cta-ghost, .hero-actions .cta-ghost { border-color:var(--bbt-navy); color:var(--bbt-navy); }
+        .cta-ghost:hover { border-color:var(--bbt-orange); color:var(--bbt-orange); transform:translateY(-2px); }
+        .final-cta .cta-ghost { border-color:rgba(255,255,255,0.5); color:#fff; }
+        .final-cta .cta-ghost:hover { border-color:var(--bbt-orange); color:var(--bbt-orange); }
+
+        /* recolor problem icons + featured bg to navy/orange (no coral/teal) */
+        .problem-card i { color: var(--bbt-orange) !important; }
+        .featured-section { background: var(--bbt-bg-soft) !important; }
+        .inside-list i { color: var(--bbt-orange) !important; }
+        .tab.active { background: var(--bbt-navy) !important; color:#fff !important; border-color: var(--bbt-navy) !important; }
+        .ebook-preview { font-size:.9rem; color:#64748b; line-height:1.6; margin-bottom:18px; }
+        .ebook-cta { font-weight:800; color:var(--bbt-navy); text-decoration:none; transition:color .3s ease; }
+        .ebook-cta:hover { color:var(--bbt-orange); }
+
+        /* --- SECTION 05: PREVIEW --- */
+        .preview-section { padding:100px 0; background:var(--bbt-bg-soft); }
+        .preview-wrapper { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; margin-top:60px; }
+        .preview-pages { display:flex; flex-direction:column; gap:16px; }
+        .preview-page { background:#fff; border:1px solid var(--bbt-border); border-left:4px solid var(--bbt-orange); border-radius:14px; padding:22px 26px; box-shadow:0 14px 30px rgba(15,23,42,0.05); transition:.3s; }
+        .preview-page:nth-child(odd) { transform:rotate(-0.6deg); }
+        .preview-page:nth-child(even) { transform:rotate(0.6deg); }
+        .preview-page:hover { transform:rotate(0) translateX(6px); border-left-color:var(--bbt-navy); }
+        .preview-page .pp-num { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--bbt-orange); margin-bottom:6px; }
+        .preview-page p { color:var(--bbt-navy); font-weight:600; font-size:.98rem; }
+        .diff-list { list-style:none; display:flex; flex-direction:column; gap:18px; }
+        .diff-list li { display:flex; gap:12px; align-items:flex-start; line-height:1.6; color:var(--bbt-text); }
+        .diff-list i { color:var(--bbt-orange); margin-top:4px; }
+        .diff-list strong { color:var(--bbt-navy); }
+
+        /* --- SECTION 07: TESTIMONIALS --- */
+        .testimonials-section { padding:100px 0; background:var(--bbt-navy); color:#fff; }
+        .testimonials-section .t-slider { overflow:hidden; position:relative; margin-top:50px; }
+        .testimonials-section .t-track { display:flex; gap:24px; width:max-content; will-change:transform; }
+        .testimonials-section .t-card { flex:0 0 440px; max-width:440px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:24px; padding:40px; display:flex; flex-direction:column; }
+        .testimonials-section .t-pill { display:inline-block; align-self:flex-start; padding:8px 18px; background:rgba(245,158,11,0.18); color:var(--bbt-orange); border-radius:999px; font-weight:800; font-size:.78rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:22px; }
+        .testimonials-section .t-quote { font-style:italic; font-size:1.05rem; line-height:1.7; color:rgba(255,255,255,0.86); margin-bottom:24px; }
+        .testimonials-section .t-meta { margin-top:auto; padding-top:22px; border-top:1px solid rgba(255,255,255,0.1); font-weight:700; color:#fff; }
+        .testimonials-section .t-meta span { display:block; font-weight:500; color:rgba(255,255,255,0.6); font-size:.82rem; margin-top:4px; }
+
+        /* --- SECTION 09: NEWSLETTER --- */
+        .newsletter-section { padding:100px 0; background:var(--bbt-white); }
+        .newsletter-card { background:var(--bbt-bg-soft); border:1px solid var(--bbt-border); border-radius:32px; padding:60px; max-width:980px; margin:0 auto; box-shadow:0 30px 60px rgba(15,23,42,0.05); }
+        .newsletter-icon { width:72px; height:72px; margin:0 auto 24px; border-radius:50%; background:rgba(245,158,11,0.12); color:var(--bbt-orange); display:flex; align-items:center; justify-content:center; font-size:28px; }
+        .newsletter-form { max-width:760px; margin:0 auto; }
+        .nl-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-bottom:14px; }
+        .nl-row:nth-of-type(2) { grid-template-columns:1fr 1fr; }
+        .newsletter-form input[type=email], .newsletter-form input[type=text], .newsletter-form select { width:100%; padding:14px; border-radius:12px; border:1px solid #e2e8f0; font-family:inherit; background:#fff; }
+        .nl-interests { display:flex; flex-wrap:wrap; gap:10px 18px; margin:6px 0 18px; align-items:center; }
+        .nl-interests-label { font-weight:700; color:var(--bbt-navy); font-size:.9rem; }
+        .nl-interests label, .nl-consent { font-size:.88rem; color:var(--bbt-text); display:flex; align-items:center; gap:6px; cursor:pointer; }
+        .nl-consent { margin-bottom:22px; }
+        .nl-interests input, .nl-consent input { accent-color:var(--bbt-orange); }
+
+        /* --- SECTION 10: FAQ --- */
+        .faq-section { padding:100px 0; background:var(--bbt-bg-soft); }
+        .faq-container { max-width:900px; margin:50px auto 0; }
+        .faq-item { border-bottom:1px solid #e2e8f0; padding:25px 0; cursor:pointer; }
+        .faq-question { display:flex; justify-content:space-between; align-items:center; gap:20px; font-weight:700; color:var(--bbt-navy); font-size:1.18rem; margin:0; }
+        .faq-question i { transition:transform .3s ease; font-size:.9rem; flex-shrink:0; }
+        .faq-answer { max-height:0; overflow:hidden; transition:all .4s cubic-bezier(0.4,0,0.2,1); color:#64748b; line-height:1.7; margin-top:0; }
+        .faq-item.active .faq-answer { max-height:600px; margin-top:15px; }
+        .faq-item.active i { transform:rotate(180deg); color:var(--bbt-orange); }
+
+        /* --- SECTION 11: RELATED --- */
+        .related-section { padding:100px 0; background:var(--bbt-white); }
+        .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+        .related-card { display:flex; flex-direction:column; background:#fff; border:1px solid var(--bbt-border); border-radius:24px; padding:40px 34px; text-decoration:none; transition:.4s; }
+        .related-card:hover { transform:translateY(-10px); background:var(--bbt-navy); border-color:var(--bbt-navy); box-shadow:0 30px 60px rgba(15,23,42,0.12); }
+        .related-type { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--bbt-orange); margin-bottom:16px; }
+        .related-card i { font-size:34px; color:var(--bbt-orange); margin-bottom:22px; transition:.4s; }
+        .related-card h3 { font-size:1.02rem; font-weight:600; color:var(--bbt-text); margin-bottom:auto; transition:.4s; line-height:1.6; }
+        .related-card .related-go { margin-top:24px; font-weight:800; color:var(--bbt-orange); font-size:.9rem; transition:.4s; }
+        .related-card:hover h3, .related-card:hover .related-type, .related-card:hover .related-go, .related-card:hover i { color:#fff; }
+        .related-card:hover .related-go { color:var(--bbt-orange); }
+
+        /* --- SECTION 12: FINAL CTA --- */
+        .final-cta { padding:110px 0; background:var(--bbt-navy); color:#fff; text-align:center; }
+        .hero-actions { display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+
         @media (max-width: 1024px) {
             .problem-grid, .ebook-grid, .featured-wrapper { grid-template-columns: 1fr; }
             .timeline { flex-direction: column; gap: 40px; }
@@ -413,6 +493,167 @@
             .header .nav-links { display: none; }
         }
     </style>
+<style id="responsive-nav-patch">
+/* ===== Universal Responsive Mobile-Nav Patch (additive — desktop unchanged) ===== */
+.mobile-nav-toggle{
+  display:none; background:transparent; border:0; font-size:26px; line-height:1;
+  color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
+}
+.mobile-nav-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.5);
+  opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:1000;
+}
+@media (max-width:1024px){
+  .mobile-nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  .header .navbar, .header .nav-links{ display:flex !important; }
+  .header .navbar{
+    position:fixed; top:0; right:-100%; width:min(330px,86vw); height:100vh; height:100dvh;
+    background:#0b1020; flex-direction:column; justify-content:flex-start;
+    padding:96px 26px 40px; box-shadow:-8px 0 40px rgba(0,0,0,.45);
+    transition:right .35s ease; overflow-y:auto; z-index:1001;
+  }
+  .header.mobile-open .navbar{ right:0; }
+  .header .nav-links{ flex-direction:column; align-items:flex-start; gap:0; width:100%; }
+  .header .nav-links li{ width:100%; }
+  .header .nav-links a, .header .nav-links .nav-link-anchor{
+    color:#fff !important; text-shadow:none !important; display:block; width:100%;
+    padding:15px 0; font-size:17px; border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .header .mega-menu-wrapper{ display:none !important; }
+  .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
+  body.mobile-nav-open{ overflow:hidden; }
+  body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
+}
+    </style>
+<style id="responsive-content-patch">
+/* ===== Page-specific Responsive Content Patch (additive — desktop unchanged) ===== */
+@media (max-width:1024px){
+  /* Featured guide: stack book mockup + form/info */
+  .featured-wrapper{ grid-template-columns:1fr !important; gap:50px; }
+  .book-mockup{ margin-bottom:20px; }
+  /* Ebook grid drops from 3 to 2 columns */
+  .ebook-grid{ grid-template-columns:repeat(2,1fr); }
+  /* Problem grid drops from 3 to 2 columns */
+  .problem-grid{ grid-template-columns:repeat(2,1fr); }
+  /* Stats: 6 -> 3 columns */
+  .stats-row{ grid-template-columns:repeat(3,1fr); gap:30px 20px; }
+  /* Timeline stacks (in case 1024 nav rule sequencing) */
+  .timeline{ flex-direction:column; gap:40px; }
+  .timeline::before{ display:none; }
+  /* Reduce section vertical paddings a touch */
+  .problem-section, .featured-section, .how-section{ padding:80px 0; }
+}
+
+@media (max-width:1024px){
+  .preview-wrapper{ grid-template-columns:1fr !important; gap:40px; }
+  .related-grid{ grid-template-columns:repeat(2,1fr); }
+  .ebook-grid{ grid-template-columns:repeat(2,1fr); }
+  .testimonials-section .t-card{ flex:0 0 380px; max-width:380px; }
+  .nl-row{ grid-template-columns:1fr 1fr !important; }
+  .newsletter-card{ padding:44px; }
+  .preview-section, .testimonials-section, .newsletter-section, .faq-section, .related-section, .final-cta{ padding:80px 0; }
+}
+
+@media (max-width:768px){
+  .preview-wrapper{ grid-template-columns:1fr !important; }
+  .related-grid{ grid-template-columns:1fr !important; }
+  .nl-row, .nl-row:nth-of-type(2){ grid-template-columns:1fr !important; }
+  .newsletter-card{ padding:34px 24px; }
+  .testimonials-section .t-card{ flex:0 0 86vw; max-width:86vw; padding:30px; }
+  .preview-section h2, .testimonials-section h2, .newsletter-section h2, .faq-section h2, .related-section h2{ font-size:2rem !important; }
+  .preview-section, .testimonials-section, .newsletter-section, .faq-section, .related-section, .final-cta{ padding:64px 0; }
+  .faq-question{ font-size:1.05rem; align-items:flex-start; }
+  .faq-question i{ margin-top:5px; }
+}
+
+@media (max-width:768px){
+  /* Hero: reduce padding + scale */
+  .hero{ min-height:auto; padding:140px 0 70px; }
+  .hero h1{ font-size:clamp(2rem,8vw,2.8rem); }
+  .hero p{ font-size:1.05rem; }
+  .hero-trust-bar{ gap:14px 18px; padding-top:24px; }
+
+  /* Collapse all multi-col grids to 1 column */
+  .problem-grid, .ebook-grid, .featured-wrapper{ grid-template-columns:1fr !important; }
+  .stats-row{ grid-template-columns:repeat(2,1fr); gap:34px 20px; }
+
+  /* Reduce big inline headings */
+  .problem-section h2, .how-section h2{ font-size:2rem !important; }
+  .featured-info h2{ font-size:2.1rem; }
+
+  /* Cards / spacing */
+  .problem-card{ padding:32px; }
+  .gated-form{ padding:30px; }
+  .ebook-details h3{ height:auto; }
+
+  /* Book mockup safety: fit inside narrow viewport */
+  .book-inner{ width:300px; height:420px; padding:32px; }
+
+  /* Section padding trims */
+  .problem-section, .featured-section, .how-section, .stats-bar{ padding:70px 0; }
+  .grid-header{ padding:70px 0 40px; }
+}
+
+@media (max-width:480px){
+  .hero h1{ font-size:clamp(1.7rem,9vw,2.2rem); }
+  .hero p{ font-size:0.98rem; }
+  .hero-trust-bar{ font-size:12px; gap:10px 14px; }
+
+  /* Single column everything */
+  .stats-row{ grid-template-columns:1fr 1fr; }
+  .problem-section h2, .how-section h2{ font-size:1.7rem !important; }
+  .featured-info h2{ font-size:1.8rem; }
+
+  /* Filter tabs wrap / shrink */
+  .filter-tabs{ gap:8px; }
+  .tab{ padding:9px 16px; font-size:13px; }
+
+  /* Book mockup scales down so it never overflows */
+  .book-inner{ width:88vw; max-width:320px; height:auto; min-height:380px; padding:28px; transform:none; border-left-width:8px; }
+  .book-mockup{ perspective:none; }
+
+  /* Card internals */
+  .problem-card{ padding:26px; }
+  .ebook-thumb{ height:220px; }
+  .ebook-details{ padding:24px; }
+  .gated-form{ padding:24px; }
+  .gated-form input, .gated-form select{ padding:13px; }
+  .stat-item h2{ font-size:2rem; }
+
+  /* Stats bottom border step icon stays centered already */
+  .step-icon{ width:70px; height:70px; font-size:20px; }
+
+  /* New sections at very small widths */
+  .testimonials-section .t-card{ flex:0 0 88vw; max-width:88vw; padding:26px; }
+  .testimonials-section .t-quote{ font-size:.98rem; }
+  .preview-page{ padding:18px 20px; }
+  .newsletter-card{ padding:28px 18px; border-radius:24px; }
+  .related-card{ padding:30px 24px; }
+  .final-cta{ padding:56px 0; }
+  .faq-question{ font-size:1rem; }
+}
+    </style>
+<style id="shared-footer-patch">
+/* ===== Canonical Site Footer (identical across all pages) ===== */
+.site-footer{ padding:72px 0 40px; background:#f8fafc; color:#334155; font-family:"Inter",system-ui,-apple-system,sans-serif; }
+.site-footer .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:32px; align-items:start; }
+.site-footer .footer-brand .logo{ display:inline-block; margin-bottom:18px; filter:none; }
+.site-footer .footer-brand .logo img{ height:100px; width:auto; display:block; filter:none; }
+.site-footer .footer-brand p{ max-width:42ch; line-height:1.8; margin-bottom:22px; color:#64748b; font-size:1rem; }
+.site-footer .footer-social{ display:flex; gap:12px; flex-wrap:wrap; }
+.site-footer .social-icon{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(15,23,42,0.1); background:rgba(255,255,255,0.06); color:#0f172a; text-decoration:none; transition:background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease; }
+.site-footer .social-icon svg{ width:18px; height:18px; fill:currentColor; }
+.site-footer .social-icon:hover{ background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.4); color:#f59e0b; transform:translateY(-2px); }
+.site-footer .footer-col h3{ margin:0 0 20px; font-size:1.1rem; color:#0f172a; font-weight:700; }
+.site-footer .footer-col ul{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.site-footer .footer-col li a, .site-footer .footer-contact .contact-line a{ color:#64748b; text-decoration:none; transition:color .25s ease; font-size:1rem; }
+.site-footer .footer-col li a:hover, .site-footer .footer-contact .contact-line a:hover{ color:#f59e0b; }
+.site-footer .footer-contact .contact-line{ margin:0 0 12px; color:#64748b; line-height:1.6; font-size:1rem; }
+.site-footer .footer-bottom{ margin-top:48px; padding-top:24px; text-align:center; }
+.site-footer .footer-bottom p{ margin:0; font-size:.875rem; color:#64748b; }
+@media (max-width:1100px){ .site-footer .footer-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } .site-footer .footer-brand{ grid-column:1 / -1; } }
+@media (max-width:640px){ .site-footer .footer-grid{ grid-template-columns:1fr; } .site-footer{ padding:56px 0 32px; } .site-footer .footer-brand .logo img{ height:80px; } }
+</style>
 </head>
 <body>
 
@@ -494,7 +735,7 @@
           </div>
           <div class="mega-card-text">
             <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
-            <a href="insights.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="blogs.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -520,15 +761,17 @@
     </div>
   </div>
 </li>
-        <li><a href="insights.html">Insights</a></li>
+        <li><a href="blogs.html">Insights</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <!-- CTA -->
     <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
   </div>
 </header>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
 
     <!-- SECTION 01: HERO -->
@@ -539,12 +782,18 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <nav class="breadcrumb">Home &bull; Resources &bull; E-Books & Guides</nav>
-            <h1>E-Books & Playbooks for Digital Leaders</h1>
-            <p>Download expert-written frameworks on Odoo ERP, AI automation, and cloud strategy — built from 60+ real-world projects across GCC, USA & UK.</p>
+            <h1>Free E-Books, Playbooks & Guides for <span style="color:var(--bbt-orange)">Digital Transformation</span> Leaders</h1>
+            <p>Download expert-written resources on Odoo ERP implementation, AI automation, cloud migration, and digital transformation strategy — built from 60+ real-world projects across GCC, USA & UK. No fluff. Just actionable frameworks you can use today.</p>
+            <div class="hero-actions" style="justify-content:center; margin-bottom:40px;">
+                <a href="#all-guides" class="cta-btn" style="padding:16px 36px; font-size:16px;">Browse All Downloads <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i></a>
+                <a href="#preview" class="cta-ghost">See What's Inside</a>
+            </div>
             <div class="hero-trust-bar">
                 <span><i class="fas fa-file-pdf"></i> 25+ Free Guides</span>
                 <span><i class="fas fa-check-circle"></i> 60+ Projects Delivered</span>
-                <span><i class="fas fa-globe"></i> GCC Compliance Built-in</span>
+                <span><i class="fas fa-certificate"></i> PSEB Registered</span>
+                <span><i class="fas fa-globe"></i> GCC &middot; USA &middot; UK</span>
+                <span><i class="fas fa-rotate"></i> Updated Monthly</span>
             </div>
         </div>
     </section>
@@ -556,20 +805,35 @@
                 <h2 style="font-size: 2.5rem; color: var(--bbt-navy); font-weight: 900;">Most Free Resources Waste Time.<br><span style="color:var(--bbt-orange)">Ours Don't.</span></h2>
             </div>
             <div class="problem-grid">
-                <div class="problem-card">
+                <div class="problem-card fade-up">
                     <i class="fas fa-ban"></i>
-                    <h3>No Generic Fluff</h3>
-                    <p>We skip the "Go Digital" cliches and give you the actual configuration steps for GCC compliance.</p>
+                    <h3>Generic advice that doesn't fit your business</h3>
+                    <p>Most e-books recycle the same high-level advice. "Go digital." "Embrace AI." But they never tell you how to actually do it in a GCC compliance environment or with a legacy ERP that predates the iPhone.</p>
                 </div>
-                <div class="problem-card">
-                    <i class="fas fa-balance-scale"></i>
-                    <h3>Vendor-Objective</h3>
-                    <p>Unlike vendor brochures, we compare AWS, Azure, and Odoo NetSuite objectively based on ROI.</p>
+                <div class="problem-card fade-up">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Vendor-biased content pushing their product</h3>
+                    <p>Download a "guide" and discover it's a 40-page sales brochure for a specific platform. No objectivity. No comparison. No help if that platform doesn't fit your stack.</p>
                 </div>
-                <div class="problem-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>2026-Ready</h3>
-                    <p>Frameworks written for the world of AI Copilots and ZATCA Phase 2, not outdated 2019 tech.</p>
+                <div class="problem-card fade-up">
+                    <i class="fas fa-calendar-xmark"></i>
+                    <h3>Outdated frameworks from 2019</h3>
+                    <p>Technology moves fast. A cloud migration guide written before serverless, before AI copilots, before ZATCA Phase 2 — it's not just useless, it's dangerous. You need 2026-ready strategies.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <i class="fas fa-list-check"></i>
+                    <h3>No actionable next steps</h3>
+                    <p>You finish reading inspired but confused. "That was interesting." But what do you actually do on Monday morning? Our guides include checklists, templates, and step-by-step action items.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <i class="fas fa-globe"></i>
+                    <h3>Missing GCC-specific compliance context</h3>
+                    <p>A generic digital transformation playbook won't mention ZATCA, FTA, SEDD, or Arabic localization. Our guides are written for businesses operating in UAE, Saudi Arabia, and the broader GCC.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>No real-world proof</h3>
+                    <p>Theory without proof is opinion. Every guide we publish is backed by projects we've delivered. The frameworks work because we've tested them on real systems with real data and real deadlines.</p>
                 </div>
             </div>
         </div>
@@ -587,83 +851,187 @@
                 </div>
             </div>
             <div class="featured-info">
-                <h2>Odoo Implementation Playbook for GCC</h2>
-                <p>Planning an Odoo rollout in UAE or Saudi? This 48-page playbook combines best practices with GCC-specific ZATCA & VAT requirements.</p>
+                <span class="eyebrow" style="color:var(--bbt-orange); font-weight:800;">Featured Download</span>
+                <h2>The Complete Odoo Implementation Playbook for GCC Businesses</h2>
+                <p>Planning an Odoo rollout in the UAE or Saudi Arabia? This 48-page playbook is the only guide that combines Odoo best practices with GCC-specific compliance requirements. Written after implementing Odoo for 15+ businesses across Dubai, Riyadh, and Doha.</p>
+                <h4 style="color:var(--bbt-navy); margin:6px 0 4px; font-size:1.05rem;">What's Inside:</h4>
                 <ul class="inside-list">
-                    <li><i class="fas fa-check"></i> Chapter 1: Odoo Module Selection Matrix</li>
-                    <li><i class="fas fa-check"></i> Chapter 2: ZATCA & FTA Compliance Deep-Dive</li>
-                    <li><i class="fas fa-check"></i> Chapter 3: Data Migration with Zero Loss</li>
+                    <li><i class="fas fa-check"></i> <strong>Chapter 1: Odoo Module Selection Matrix</strong> — Which modules you need (and which you don't) based on your industry and company size</li>
+                    <li><i class="fas fa-check"></i> <strong>Chapter 2: GCC Compliance Deep-Dive</strong> — ZATCA e-invoicing, FTA VAT, SEDD integration, data residency, and Arabic localization</li>
+                    <li><i class="fas fa-check"></i> <strong>Chapter 3: Data Migration Roadmap</strong> — How to extract, clean, transform, and load data from legacy systems with zero loss</li>
+                    <li><i class="fas fa-check"></i> <strong>Chapter 4: Go-Live Checklist</strong> — 47-point checklist covering technical, operational, and training readiness</li>
+                    <li><i class="fas fa-check"></i> <strong>Chapter 5: Post-Launch Optimization</strong> — Performance tuning, user adoption strategies, and continuous improvement</li>
+                    <li><i class="fas fa-star"></i> <strong>Bonus:</strong> Arabic-English Bilingual Interface Design Guide</li>
+                    <li><i class="fas fa-star"></i> <strong>Bonus:</strong> Vendor Comparison Matrix (Odoo vs SAP vs Oracle NetSuite for GCC)</li>
                 </ul>
+                <p style="font-size:13px; font-weight:700; color:var(--bbt-navy); margin-bottom:8px;">Format: PDF &nbsp;|&nbsp; 48 Pages &nbsp;|&nbsp; 8.5 MB &nbsp;&middot;&nbsp; Last Updated: June 2026</p>
                 <div class="gated-form">
                     <h4 style="margin-bottom: 20px;">Download Free PDF (48 Pages)</h4>
                     <form action="#">
                         <input type="email" placeholder="Business Email Address*" required>
-                        <input type="text" placeholder="Full Name*">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Company">
                         <select>
-                            <option>Industry</option>
+                            <option value="">Industry</option>
                             <option>Retail</option>
                             <option>Manufacturing</option>
+                            <option>Healthcare</option>
+                            <option>Finance</option>
+                            <option>Real Estate</option>
+                            <option>Government</option>
+                            <option>Technology</option>
+                            <option>Other</option>
                         </select>
-                        <button class="download-btn">DOWNLOAD NOW</button>
+                        <select>
+                            <option value="">Location</option>
+                            <option>UAE</option>
+                            <option>Saudi Arabia</option>
+                            <option>Other GCC</option>
+                            <option>UK</option>
+                            <option>USA</option>
+                            <option>Other</option>
+                        </select>
+                        <button class="download-btn">DOWNLOAD FREE PDF</button>
                     </form>
-                    <p style="font-size: 11px; text-align: center; margin-top: 15px; opacity: 0.6;">Rated 4.8/5 by 1,200+ GCC Business Leaders</p>
+                    <p style="font-size: 11px; text-align: center; margin-top: 15px; opacity: 0.7;">Downloaded by 1,200+ GCC business leaders &middot; Rated 4.8/5 by readers</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SECTION 04: FILTERABLE GRID -->
-    <section class="grid-section">
+    <section class="grid-section" id="all-guides">
         <div class="container">
             <div class="grid-header">
-                <h2>Browse Guides by Topic</h2>
+                <h2 style="font-size:2.8rem; color:var(--bbt-navy); font-weight:900;">Browse Guides by Topic</h2>
+                <p style="max-width:680px; margin:18px auto 0; color:var(--bbt-text);">Whether you're planning an ERP rollout, exploring AI automation, or preparing for cloud migration, find the guide that matches your current priority.</p>
                 <div class="filter-tabs" id="filterTabs">
                     <button class="tab active" data-cat="all">All Guides</button>
                     <button class="tab" data-cat="erp">Odoo ERP</button>
                     <button class="tab" data-cat="ai">AI & Automation</button>
                     <button class="tab" data-cat="cloud">Cloud & DevOps</button>
+                    <button class="tab" data-cat="legacy">Legacy Modernization</button>
+                    <button class="tab" data-cat="dt">Digital Transformation</button>
+                    <button class="tab" data-cat="outsourcing">Outsourcing</button>
                     <button class="tab" data-cat="gcc">GCC Compliance</button>
                 </div>
             </div>
 
             <div class="ebook-grid" id="ebookGrid">
                 <!-- Card 1 -->
-                <div class="ebook-card" data-cat="ai">
+                <div class="ebook-card fade-up" data-cat="ai">
                     <div class="ebook-thumb">
                         <span class="cat-badge">AI & Automation</span>
-                        <img src=".https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="AI Guide">
+                        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="AI Automation Starter Kit cover">
                     </div>
                     <div class="ebook-details">
-                        <div class="ebook-meta"><span>32 Pages</span><span>Difficulty: Intermediate</span></div>
-                        <h3>AI Automation Starter Kit: Manual to Intelligent</h3>
-                        <a href="#" style="font-weight: 800; color: var(--bbt-navy);">Download Free PDF →</a>
+                        <div class="ebook-meta"><span>32 Pages</span><span>PDF</span><span>Beginner–Intermediate</span></div>
+                        <h3>AI Automation Starter Kit: From Manual Processes to Intelligent Workflows</h3>
+                        <p class="ebook-preview">Identifying automation opportunities, RPA vs AI vs traditional integration, ROI framework, implementation roadmap, change management, vendor selection.</p>
+                        <a href="contact.html" class="ebook-cta">Download Free PDF →</a>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="ebook-card" data-cat="cloud">
+                <div class="ebook-card fade-up" data-cat="cloud">
                     <div class="ebook-thumb">
                         <span class="cat-badge">Cloud & DevOps</span>
-                        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/odoo-background.avif" alt="Cloud Guide">
+                        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/odoo-background.avif" alt="Cloud Migration Checklist cover">
                     </div>
                     <div class="ebook-details">
-                        <div class="ebook-meta"><span>24 Pages</span><span>Difficulty: Intermediate</span></div>
-                        <h3>Cloud Migration Checklist: Zero-Downtime Guide</h3>
-                        <a href="#" style="font-weight: 800; color: var(--bbt-navy);">Download Free PDF →</a>
+                        <div class="ebook-meta"><span>24 Pages</span><span>PDF + Checklist</span><span>Intermediate</span></div>
+                        <h3>Cloud Migration Checklist: Zero-Downtime Migration for SMEs</h3>
+                        <p class="ebook-preview">Pre-migration audit, platform selection (AWS vs Azure vs GCP), data migration strategy, parallel running, cutover planning, cost management.</p>
+                        <a href="contact.html" class="ebook-cta">Download Free PDF →</a>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="ebook-card" data-cat="gcc">
+                <div class="ebook-card fade-up" data-cat="legacy">
                     <div class="ebook-thumb">
-                        <span class="cat-badge">GCC Compliance</span>
-                        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/e-book.avif" alt="Compliance Guide">
+                        <span class="cat-badge">Legacy Modernization</span>
+                        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/e-book.avif" alt="Legacy Modernization Roadmap cover">
                     </div>
                     <div class="ebook-details">
-                        <div class="ebook-meta"><span>30 Pages</span><span>Difficulty: Advanced</span></div>
-                        <h3>ZATCA & FTA Compliance Guide for Saudi/UAE</h3>
-                        <a href="#" style="font-weight: 800; color: var(--bbt-navy);">Download Free PDF →</a>
+                        <div class="ebook-meta"><span>36 Pages</span><span>PDF</span><span>Intermediate–Advanced</span></div>
+                        <h3>Legacy System Modernization Roadmap: From Assessment to Go-Live</h3>
+                        <p class="ebook-preview">Technical debt assessment, modernization strategies (rehost, replatform, refactor, rebuild), database migration, API layer development, phased cutover.</p>
+                        <a href="contact.html" class="ebook-cta">Download Free PDF →</a>
                     </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="ebook-card fade-up" data-cat="dt">
+                    <div class="ebook-thumb">
+                        <span class="cat-badge">Digital Transformation</span>
+                        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="Digital Transformation Strategy Framework cover">
+                    </div>
+                    <div class="ebook-details">
+                        <div class="ebook-meta"><span>42 Pages</span><span>PDF</span><span>Executive / Strategic</span></div>
+                        <h3>Digital Transformation Strategy Framework for GCC Enterprises</h3>
+                        <p class="ebook-preview">Transformation maturity assessment, stakeholder alignment, budget planning, vendor selection, change management, KPI definition, ROI measurement.</p>
+                        <a href="contact.html" class="ebook-cta">Download Free PDF →</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="ebook-card fade-up" data-cat="outsourcing">
+                    <div class="ebook-thumb">
+                        <span class="cat-badge">Outsourcing</span>
+                        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/odoo-background.avif" alt="Outsourcing Decision Matrix cover">
+                    </div>
+                    <div class="ebook-details">
+                        <div class="ebook-meta"><span>28 Pages</span><span>PDF + Matrix</span><span>Beginner–Intermediate</span></div>
+                        <h3>The Outsourcing Decision Matrix: Staff Augmentation vs Dedicated Teams vs ODC</h3>
+                        <p class="ebook-preview">Engagement model comparison, cost analysis, risk assessment, vendor evaluation criteria, contract structures, IP protection, GCC considerations.</p>
+                        <a href="contact.html" class="ebook-cta">Download Free PDF →</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="ebook-card fade-up" data-cat="gcc">
+                    <div class="ebook-thumb">
+                        <span class="cat-badge">GCC Compliance</span>
+                        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/e-book.avif" alt="ZATCA & FTA Compliance Guide cover">
+                    </div>
+                    <div class="ebook-details">
+                        <div class="ebook-meta"><span>30 Pages</span><span>PDF</span><span>Intermediate</span></div>
+                        <h3>ZATCA & FTA Compliance Guide for Saudi and UAE Businesses</h3>
+                        <p class="ebook-preview">ZATCA Phase 2 e-invoicing, FTA VAT reporting, SEDD integration, data residency laws, Arabic-language documentation, penalty avoidance strategies.</p>
+                        <a href="contact.html" class="ebook-cta">Download Free PDF →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 05: GUIDE PREVIEW & SNEAK PEEK -->
+    <section class="preview-section" id="preview">
+        <div class="container">
+            <div style="text-align:center; max-width:760px; margin:0 auto;">
+                <span class="eyebrow" style="color:var(--bbt-orange); font-weight:800;">05. Sneak Peek</span>
+                <h2 style="font-size:2.8rem; color:var(--bbt-navy); font-weight:900; line-height:1.2;">See What's Inside Before You Download</h2>
+                <p style="margin-top:18px; color:var(--bbt-text);">We believe in transparency. Here's a preview of the actual content you'll receive — real pages, real frameworks, real value. No generic fluff. No hidden sales pitches.</p>
+            </div>
+            <div class="preview-wrapper">
+                <div class="preview-pages">
+                    <div class="preview-page"><span class="pp-num">Page 1</span><p>Cover + Table of Contents (showing actual chapter structure)</p></div>
+                    <div class="preview-page"><span class="pp-num">Page 2</span><p>Framework Diagram (e.g., Odoo Implementation Timeline with milestones)</p></div>
+                    <div class="preview-page"><span class="pp-num">Page 3</span><p>Checklist Excerpt (e.g., 10-point Go-Live readiness checklist)</p></div>
+                    <div class="preview-page"><span class="pp-num">Page 4</span><p>Comparison Matrix (e.g., AWS vs Azure vs GCP feature comparison)</p></div>
+                    <div class="preview-page"><span class="pp-num">Page 5</span><p>Real Project Screenshot (e.g., dashboard, workflow, or system interface)</p></div>
+                </div>
+                <div class="preview-diff">
+                    <h3 style="font-size:1.5rem; color:var(--bbt-navy); font-weight:800; margin-bottom:24px;">What Makes Our Guides Different</h3>
+                    <ul class="diff-list">
+                        <li><i class="fas fa-check"></i> <span><strong>Written by practitioners, not marketers</strong> — Every guide is authored by engineers and consultants who've delivered the projects.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Backed by real project data</strong> — Frameworks tested on 60+ projects across GCC, USA, and UK.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Includes actionable templates</strong> — Checklists, matrices, and worksheets you can use immediately.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>GCC compliance built-in</strong> — Every guide addresses UAE, Saudi, and broader GCC regulatory requirements.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Regularly updated</strong> — We revise guides quarterly as technology and regulations evolve.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Free forever</strong> — No paywalls, no upsells, no hidden costs. Just value.</span></li>
+                    </ul>
+                    <a href="#all-guides" class="cta-ghost" style="margin-top:30px; display:inline-block;">Browse All Guides →</a>
                 </div>
             </div>
         </div>
@@ -673,28 +1041,58 @@
     <section class="how-section">
         <div class="container">
             <div style="text-align:center;">
-                <h2 style="font-size: 2.5rem; font-weight: 900;">How to Turn Guides Into Results</h2>
+                <span class="eyebrow" style="color:var(--bbt-orange); font-weight:800;">06. Value in Action</span>
+                <h2 style="font-size: 2.8rem; font-weight: 900;">How to Turn These Guides Into Results</h2>
             </div>
             <div class="timeline">
                 <div class="time-step">
                     <div class="step-icon">01</div>
                     <h4>Download</h4>
-                    <p>Enter your email to receive the PDF instantly in your inbox.</p>
+                    <p>Choose the guide that matches your current challenge. Enter your email — we send the PDF instantly and add you to our weekly insights (unsubscribe anytime).</p>
                 </div>
                 <div class="time-step">
                     <div class="step-icon">02</div>
                     <h4>Read & Apply</h4>
-                    <p>Spend 45 mins highlighting the frameworks relevant to your stack.</p>
+                    <p>Each guide is designed for a single sitting (30–60 minutes). Highlight the frameworks. Fill in the templates. Identify your quick wins.</p>
                 </div>
                 <div class="time-step">
                     <div class="step-icon">03</div>
                     <h4>Assess & Plan</h4>
-                    <p>Use the included checklists to identify gaps in your current system.</p>
+                    <p>Use the included checklists and matrices to assess your current state, identify gaps, and build a 90-day action plan with clear milestones.</p>
                 </div>
                 <div class="time-step">
                     <div class="step-icon">04</div>
-                    <h4>Execute</h4>
-                    <p>Run the strategy internally or book a consultation with BBT to scale.</p>
+                    <h4>Execute or Engage</h4>
+                    <p>Execute the plan with your internal team — or book a free consultation with BBT to accelerate implementation. We're here when you need us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 07: READER TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div style="text-align:center; max-width:720px; margin:0 auto 10px;">
+                <span class="eyebrow" style="color:var(--bbt-orange); font-weight:800;">07. Social Proof</span>
+                <h2 style="font-size:2.8rem; color:var(--bbt-navy); font-weight:900;">What Readers Say About Our Guides</h2>
+            </div>
+            <div class="t-slider" id="tSlider">
+                <div class="t-track" id="tTrack">
+                    <div class="t-card">
+                        <span class="t-pill">Odoo Playbook</span>
+                        <p class="t-quote">"The Odoo Implementation Playbook saved us at least $15,000 in consulting fees. We used the module selection matrix and compliance checklist to self-assess before engaging BBT — and when we did hire them, we knew exactly what we needed."</p>
+                        <div class="t-meta">Khalid Al-Mansoori — IT Director<span>Gulf Retail Holdings &middot; Dubai, UAE &middot; Retail</span></div>
+                    </div>
+                    <div class="t-card">
+                        <span class="t-pill">Cloud Migration</span>
+                        <p class="t-quote">"I download a lot of B2B guides. Most are 80% fluff. BBT's Cloud Migration Checklist was different — every page had something I could act on. We used the cutover planning template for our AWS migration and had zero issues."</p>
+                        <div class="t-meta">Emily Carter — Head of Infrastructure<span>FinServe UK &middot; London, UK &middot; Financial Services</span></div>
+                    </div>
+                    <div class="t-card">
+                        <span class="t-pill">ZATCA Compliance</span>
+                        <p class="t-quote">"The ZATCA compliance guide arrived the week before our audit. We had been scrambling for clear information in Arabic and English. This guide gave us the exact steps, the right forms, and the confidence to pass with no penalties."</p>
+                        <div class="t-meta">Faisal Al-Harbi — Compliance Manager<span>Saudi Logistics Co. &middot; Riyadh, Saudi Arabia &middot; Logistics</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -703,22 +1101,155 @@
     <!-- SECTION 08: STATS -->
     <section class="stats-bar">
         <div class="container stats-row">
-            <div class="stat-item"><h2>25+</h2><p>Free Guides</p></div>
-            <div class="stat-item"><h2>60+</h2><p>Real Projects</p></div>
-            <div class="stat-item"><h2>5k+</h2><p>Downloads</p></div>
-            <div class="stat-item"><h2>4.7</h2><p>Avg Rating</p></div>
-            <div class="stat-item"><h2>2026</h2><p>Tech Ready</p></div>
-            <div class="stat-item"><h2>GCC</h2><p>Coverage</p></div>
+            <div class="stat-item"><h2>25+</h2><p>Free Guides & E-Books</p></div>
+            <div class="stat-item"><h2>60+</h2><p>Real Projects Referenced</p></div>
+            <div class="stat-item"><h2>5,000+</h2><p>Downloads</p></div>
+            <div class="stat-item"><h2>4.7/5</h2><p>Avg Reader Rating</p></div>
+            <div class="stat-item"><h2>Quarterly</h2><p>Updated</p></div>
+            <div class="stat-item"><h2>GCC·USA·UK</h2><p>Coverage</p></div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container" style="text-align:center;">
-            <img src="../assests/images/bbt-logo.png" alt="BBT" style="height:50px; margin-bottom: 20px;">
-            <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    <!-- SECTION 09: NEWSLETTER + NEW GUIDE ALERTS -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-card">
+                <div style="text-align:center; max-width:680px; margin:0 auto 36px;">
+                    <div class="newsletter-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <span class="eyebrow" style="color:var(--bbt-orange); font-weight:800;">09. Stay Ahead</span>
+                    <h2 style="font-size:2.6rem; color:var(--bbt-navy); font-weight:900;">Get New Guides Before Everyone Else</h2>
+                    <p style="margin-top:16px; color:var(--bbt-text);">Join 2,500+ business leaders who get notified when we publish new e-books, playbooks, and guides — plus weekly insights on AI, Odoo, cloud, and GCC compliance.</p>
+                </div>
+                <form class="newsletter-form" action="#">
+                    <div class="nl-row">
+                        <input type="email" placeholder="Email address*" required>
+                        <input type="text" placeholder="First name">
+                        <input type="text" placeholder="Company name">
+                    </div>
+                    <div class="nl-row">
+                        <select>
+                            <option value="">Industry</option>
+                            <option>Retail</option><option>Manufacturing</option><option>Healthcare</option>
+                            <option>Finance</option><option>Real Estate</option><option>Government</option>
+                            <option>Technology</option><option>Other</option>
+                        </select>
+                        <select>
+                            <option value="">Location</option>
+                            <option>UAE</option><option>Saudi Arabia</option><option>Other GCC</option>
+                            <option>UK</option><option>USA</option><option>Other</option>
+                        </select>
+                    </div>
+                    <div class="nl-interests">
+                        <span class="nl-interests-label">Interests:</span>
+                        <label><input type="checkbox"> Odoo ERP</label>
+                        <label><input type="checkbox"> AI & Automation</label>
+                        <label><input type="checkbox"> Cloud & DevOps</label>
+                        <label><input type="checkbox"> Legacy Modernization</label>
+                        <label><input type="checkbox"> Digital Transformation</label>
+                        <label><input type="checkbox"> Outsourcing</label>
+                        <label><input type="checkbox"> GCC Compliance</label>
+                    </div>
+                    <label class="nl-consent"><input type="checkbox" required> I agree to receive emails from Big Binary Tech. Unsubscribe anytime.</label>
+                    <button type="submit" class="download-btn" style="max-width:320px; margin:0 auto; display:block;">Notify Me of New Guides</button>
+                    <p style="font-size:11px; text-align:center; margin-top:14px; color:var(--bbt-muted);">We respect your privacy. No spam. Unsubscribe anytime.</p>
+                </form>
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- SECTION 10: FAQ -->
+    <section class="faq-section" id="faqs">
+        <div class="container">
+            <div style="text-align:center; max-width:720px; margin:0 auto;">
+                <span class="eyebrow" style="color:var(--bbt-orange); font-weight:800;">10. FAQ</span>
+                <h2 style="font-size:2.8rem; color:var(--bbt-navy); font-weight:900;">Questions About Our E-Books & Guides</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">Are these guides really free? What's the catch? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">Yes, 100% free. No credit card required. No hidden fees. We ask for your email so we can send you the PDF and occasionally share relevant insights. You can unsubscribe anytime. We create these guides because we believe valuable knowledge should be accessible — and because they demonstrate the depth of expertise we bring to every client engagement.</div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How often are the guides updated? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">We review and update our guides quarterly — or immediately when major regulatory changes occur (like ZATCA Phase 2 updates or new FTA requirements). Each guide shows its "Last Updated" date, and subscribers receive notifications when significant revisions are published.</div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I share these guides with my team? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">Absolutely. We encourage you to share them with colleagues, stakeholders, and partners. However, we ask that you don't republish them on external websites or claim authorship. If you'd like to reference our work publicly, please link back to the original download page.</div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you offer guides in Arabic? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">Several of our GCC-focused guides (particularly the Odoo Implementation Playbook and ZATCA Compliance Guide) include Arabic-language sections, bilingual interface design guidance, and Arabic terminology glossaries. We're expanding our Arabic content library based on reader demand — let us know what you need.</div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What format are the guides in? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">Most guides are PDFs optimized for screen reading and printing. Some include interactive elements like checklists, comparison matrices, and fillable worksheets. We also offer select guides in PowerPoint format for executive presentations. File sizes range from 2MB to 10MB.</div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How long does it take to read a guide? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">Our guides are designed for a single focused session — typically 30 to 60 minutes. We use visual frameworks, bullet points, and scannable sections so busy professionals can extract value quickly. Each guide includes an executive summary for C-level readers who need the highlights in 5 minutes.</div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I request a guide on a specific topic? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">Yes! We love reader suggestions. If there's a topic you'd like us to cover — whether it's a specific Odoo module, an AI use case for your industry, or a GCC compliance challenge — email us at resources@bigbinarytech.com. Popular requests get prioritized in our content calendar.</div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Do the guides recommend specific vendors or products? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">We strive for objectivity. When we compare platforms (e.g., AWS vs Azure vs GCP), we provide balanced analysis based on real project experience. We're transparent about our partnerships, but our primary goal is to help you make the right decision for your business — even if that means choosing a platform we don't specialize in.</div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What's the difference between a guide and a case study? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">Guides are instructional — they teach you how to do something (implement Odoo, migrate to cloud, automate a process). Case studies are proof — they show you what we actually did for a specific client, including challenges, solutions, and measurable results. Both are valuable, but serve different purposes. Browse case studies at <a href="case-studies.html" style="color:var(--bbt-orange);">our case studies page</a>.</div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">I downloaded a guide but didn't receive it. What should I do? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">Check your spam/junk folder first — sometimes our emails land there. If you still don't see it within 10 minutes, email us at resources@bigbinarytech.com with the guide title, and we'll resend it immediately. You can also try downloading again from the same page — our system recognizes returning visitors.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: RELATED RESOURCES -->
+    <section class="related-section">
+        <div class="container">
+            <div style="text-align:center; max-width:720px; margin:0 auto;">
+                <span class="eyebrow" style="color:var(--bbt-orange); font-weight:800;">11. Related Resources</span>
+                <h2 style="font-size:2.8rem; color:var(--bbt-navy); font-weight:900;">Keep Exploring</h2>
+            </div>
+            <div class="related-grid">
+                <a href="case-studies.html" class="related-card fade-up">
+                    <div class="related-type">Case Studies</div>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>See real-world results from businesses that used the frameworks in our guides — from legacy modernization to AI automation. Proof that these strategies work.</h3>
+                    <span class="related-go">View Case Studies →</span>
+                </a>
+                <a href="blogs.html" class="related-card fade-up">
+                    <div class="related-type">Blog</div>
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <h3>Weekly insights, trend analysis, and actionable tips from our team of engineers, consultants, and AI specialists.</h3>
+                    <span class="related-go">Read the Blog →</span>
+                </a>
+                <a href="resources.html" class="related-card fade-up">
+                    <div class="related-type">Video Tutorials</div>
+                    <i class="fa-solid fa-circle-play"></i>
+                    <h3>Watch step-by-step walkthroughs of Odoo implementations, cloud migrations, and AI automation setups — visual learning for complex topics.</h3>
+                    <span class="related-go">Watch Tutorials →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: BOTTOM CTA BANNER -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; line-height: 1.1;">Ready to Go Beyond Reading?</h2>
+            <p style="max-width: 680px; margin: 0 auto 40px; color: rgba(255,255,255,0.75);">Downloaded the guides. Read the frameworks. Now let's talk about applying them to your business. Book a free 30-minute consultation — we'll assess your current state, identify quick wins, and build a 90-day action plan together.</p>
+            <div class="hero-actions" style="justify-content: center;">
+                <a href="contact.html" class="cta-btn" style="background: white; color: var(--bbt-navy); padding: 18px 44px; font-size: 17px;">Book a Free Strategy Call</a>
+                <a href="resources.html" class="cta-ghost">Browse All Resources</a>
+            </div>
+        </div>
+    </section>
 
     <script>
         // Filter Logic
@@ -743,9 +1274,137 @@
         });
 
         // Intro Animations
+        gsap.registerPlugin(ScrollTrigger);
         gsap.from(".hero-content h1", {opacity: 0, y: 50, duration: 1, ease: "power4.out"});
-        gsap.from(".problem-card", {opacity: 0, y: 30, stagger: 0.2, scrollTrigger: ".problem-section"});
+
+        // Fade-up reveal for cards across new + existing sections
+        document.querySelectorAll('.fade-up').forEach(item => {
+            gsap.from(item, { scrollTrigger: { trigger: item, start: "top 90%" }, y: 40, opacity: 0, duration: 0.9 });
+        });
+
+        // FAQ accordion (one open at a time)
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Testimonial infinite slider
+        (function(){
+            const track = document.getElementById('tTrack');
+            if (!track) return;
+            track.innerHTML += track.innerHTML;
+            let half = track.scrollWidth / 2;
+            const loop = gsap.to(track, {
+                x: () => -half, duration: 30, ease: 'none', repeat: -1,
+                modifiers: { x: gsap.utils.unitize(x => parseFloat(x) % half) }
+            });
+            track.addEventListener('mouseenter', () => gsap.to(loop, { timeScale: 0, duration: 0.4 }));
+            track.addEventListener('mouseleave', () => gsap.to(loop, { timeScale: 1, duration: 0.4 }));
+            window.addEventListener('resize', () => { half = track.scrollWidth / 2; });
+        })();
     </script>
+
+    <script>
+    (function(){
+      var t=document.getElementById('mobileNavToggle'),
+          h=document.getElementById('header'),
+          o=document.getElementById('mobileNavOverlay');
+      if(!t||!h)return;
+      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
+      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      t.addEventListener('click',toggle);
+      if(o)o.addEventListener('click',close);
+      h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
+      window.addEventListener('resize',function(){if(window.innerWidth>1024)close();});
+    })();
+    </script>
+
+  <!-- SECTION 10 — FAQPage Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Are these guides really free? What's the catch?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, 100% free. No credit card required. No hidden fees. We ask for your email so we can send you the PDF and occasionally share relevant insights. You can unsubscribe anytime. We create these guides because we believe valuable knowledge should be accessible — and because they demonstrate the depth of expertise we bring to every client engagement." } },
+      { "@type": "Question", "name": "How often are the guides updated?", "acceptedAnswer": { "@type": "Answer", "text": "We review and update our guides quarterly — or immediately when major regulatory changes occur (like ZATCA Phase 2 updates or new FTA requirements). Each guide shows its Last Updated date, and subscribers receive notifications when significant revisions are published." } },
+      { "@type": "Question", "name": "Can I share these guides with my team?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We encourage you to share them with colleagues, stakeholders, and partners. However, we ask that you don't republish them on external websites or claim authorship. If you'd like to reference our work publicly, please link back to the original download page." } },
+      { "@type": "Question", "name": "Do you offer guides in Arabic?", "acceptedAnswer": { "@type": "Answer", "text": "Several of our GCC-focused guides (particularly the Odoo Implementation Playbook and ZATCA Compliance Guide) include Arabic-language sections, bilingual interface design guidance, and Arabic terminology glossaries. We're expanding our Arabic content library based on reader demand — let us know what you need." } },
+      { "@type": "Question", "name": "What format are the guides in?", "acceptedAnswer": { "@type": "Answer", "text": "Most guides are PDFs optimized for screen reading and printing. Some include interactive elements like checklists, comparison matrices, and fillable worksheets. We also offer select guides in PowerPoint format for executive presentations. File sizes range from 2MB to 10MB." } },
+      { "@type": "Question", "name": "How long does it take to read a guide?", "acceptedAnswer": { "@type": "Answer", "text": "Our guides are designed for a single focused session — typically 30 to 60 minutes. We use visual frameworks, bullet points, and scannable sections so busy professionals can extract value quickly. Each guide includes an executive summary for C-level readers who need the highlights in 5 minutes." } },
+      { "@type": "Question", "name": "Can I request a guide on a specific topic?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We love reader suggestions. If there's a topic you'd like us to cover — whether it's a specific Odoo module, an AI use case for your industry, or a GCC compliance challenge — email us at resources@bigbinarytech.com. Popular requests get prioritized in our content calendar." } },
+      { "@type": "Question", "name": "Do the guides recommend specific vendors or products?", "acceptedAnswer": { "@type": "Answer", "text": "We strive for objectivity. When we compare platforms (e.g., AWS vs Azure vs GCP), we provide balanced analysis based on real project experience. We're transparent about our partnerships, but our primary goal is to help you make the right decision for your business — even if that means choosing a platform we don't specialize in." } },
+      { "@type": "Question", "name": "What's the difference between a guide and a case study?", "acceptedAnswer": { "@type": "Answer", "text": "Guides are instructional — they teach you how to do something (implement Odoo, migrate to cloud, automate a process). Case studies are proof — they show you what we actually did for a specific client, including challenges, solutions, and measurable results. Both are valuable, but serve different purposes." } },
+      { "@type": "Question", "name": "I downloaded a guide but didn't receive it. What should I do?", "acceptedAnswer": { "@type": "Answer", "text": "Check your spam/junk folder first — sometimes our emails land there. If you still don't see it within 10 minutes, email us at resources@bigbinarytech.com with the guide title, and we'll resend it immediately. You can also try downloading again from the same page — our system recognizes returning visitors." } }
+    ]
+  }
+  </script>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo">
+          <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
+        </a>
+        <p>Big Binary Tech delivers AI, ERP, and software solutions that power business growth with modern automation
+          and digital transformation.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+          </a>
+          <a href="https://twitter.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          </a>
+          <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-services">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="services.html">AI &amp; Automation</a></li>
+          <li><a href="services.html">Odoo ERP</a></li>
+          <li><a href="services.html">Custom Software</a></li>
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">POS Solutions</a></li>
+          <li><a href="services.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-solutions">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="solutions.html">Business Automation</a></li>
+          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
+          <li><a href="solutions.html">Retail &amp; POS</a></li>
+          <li><a href="solutions.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-industries">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="industries.html">Education</a></li>
+          <li><a href="industries.html">Healthcare</a></li>
+          <li><a href="industries.html">Retail</a></li>
+          <li><a href="industries.html">Manufacturing</a></li>
+          <li><a href="industries.html">Hospitality</a></li>
+          <li><a href="industries.html">Logistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Contact</h3>
+        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
+        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
+        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav class="footer-nav" style="display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:14px;"><a href="about.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">About</a><a href="services.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Services</a><a href="pricing.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Pricing</a><a href="careers.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Careers</a><a href="contact.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Contact</a></nav>
+      <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
