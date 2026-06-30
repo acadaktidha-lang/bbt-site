@@ -375,7 +375,7 @@
   </style>
 
 <style id="responsive-nav-patch">
-/* ===== Universal Responsive Mobile-Nav Patch (additive — desktop unchanged) ===== */
+/* ===== Universal Responsive Mobile-Nav Patch (additive; desktop unchanged) ===== */
 .mobile-nav-toggle{
   display:none; background:transparent; border:0; font-size:26px; line-height:1;
   color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
@@ -408,7 +408,7 @@
     </style>
 
 <style id="responsive-content-patch">
-/* ===== Page-specific responsive content patch (additive — desktop unchanged) ===== */
+/* ===== Page-specific responsive content patch (additive; desktop unchanged) ===== */
 @media (max-width:1024px){
   /* Resource category grid: 4 -> 2 cols */
   .res-grid{ grid-template-columns:repeat(2,1fr); }
@@ -503,7 +503,7 @@
 .hero-trust .ht-item{ display:flex; align-items:center; gap:9px; font-size:.9rem; font-weight:600; color:rgba(255,255,255,0.85); }
 .hero-trust .ht-item i{ color:var(--bbt-orange); font-size:.8rem; }
 
-/* SECTION 03 — Featured case study expanded */
+/* SECTION 03: Featured case study expanded */
 .feat-block{ margin-top:30px; }
 .feat-sub-label{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:var(--bbt-orange); margin-bottom:8px; }
 .feat-list{ list-style:none; padding:0; margin:0 0 8px; display:grid; gap:9px; }
@@ -522,7 +522,7 @@
 .spec-section.bg-white{ background:#fff; }
 .spec-section.bg-navy{ background:var(--bbt-navy); color:#fff; }
 
-/* SECTION 04 — Transformation stories grid */
+/* SECTION 04: Transformation stories grid */
 .stories-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
 .story-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:24px; overflow:hidden; transition:.45s cubic-bezier(0.165,0.84,0.44,1); display:flex; flex-direction:column; }
 .story-card:hover{ transform:translateY(-10px); box-shadow:0 30px 60px rgba(15,23,42,0.1); border-color:var(--bbt-orange); }
@@ -537,7 +537,7 @@
 .story-link:hover{ gap:14px; color:var(--bbt-orange); }
 .sec-cta-wrap{ text-align:center; margin-top:52px; }
 
-/* SECTION 05 — E-Books grid (3D book mockups) */
+/* SECTION 05: E-Books grid (3D book mockups) */
 .ebooks-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
 .ebook-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:24px; padding:34px; text-align:center; transition:.4s ease; display:flex; flex-direction:column; align-items:center; }
 .ebook-card:hover{ transform:translateY(-8px); border-color:var(--bbt-orange); box-shadow:0 26px 50px rgba(15,23,42,0.08); }
@@ -548,7 +548,7 @@
 .ebook-card .eb-fmt{ font-size:12px; color:var(--bbt-muted); font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:20px; }
 .ebook-card .eb-dl{ margin-top:auto; }
 
-/* SECTION 06 — Blog grid (6) */
+/* SECTION 06: Blog grid (6) */
 .blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
 .blog-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:22px; padding:32px; transition:.4s ease; display:flex; flex-direction:column; text-decoration:none; }
 .blog-card:hover{ transform:translateY(-8px); border-color:var(--bbt-orange); box-shadow:0 26px 50px rgba(15,23,42,0.08); }
@@ -557,14 +557,14 @@
 .blog-card .blog-go{ margin-top:22px; font-weight:800; color:var(--bbt-navy); font-size:.9rem; display:inline-flex; align-items:center; gap:8px; transition:gap .3s ease; }
 .blog-card:hover .blog-go{ gap:14px; color:var(--bbt-orange); }
 
-/* SECTION 07 — Topics we cover (8 cards) */
+/* SECTION 07: Topics we cover (8 cards) */
 .topics-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
 .topic-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:18px; padding:30px 24px; text-align:center; transition:.35s ease; }
 .topic-card:hover{ transform:translateY(-6px); border-color:var(--bbt-orange); box-shadow:0 20px 40px rgba(15,23,42,0.07); }
 .topic-card i{ font-size:30px; color:var(--bbt-orange); margin-bottom:16px; }
 .topic-card h3{ font-size:1.02rem; color:var(--bbt-navy); font-weight:700; }
 
-/* SECTION 08 — Video resources (3) */
+/* SECTION 08: Video resources (3) */
 .video-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
 .video-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:22px; overflow:hidden; transition:.4s ease; }
 .video-card:hover{ transform:translateY(-8px); border-color:var(--bbt-orange); box-shadow:0 26px 50px rgba(15,23,42,0.08); }
@@ -575,7 +575,7 @@
 .video-body{ padding:24px 26px; }
 .video-body h3{ font-size:1.12rem; color:var(--bbt-navy); font-weight:800; }
 
-/* SECTION 09 — Testimonials slider */
+/* SECTION 09: Testimonials slider */
 .t-slider{ overflow:hidden; position:relative; margin-top:50px; }
 .t-track{ display:flex; gap:24px; width:max-content; will-change:transform; }
 .t-card{
@@ -591,7 +591,7 @@
 .t-card .t-meta{ font-weight:700; color:#fff; font-size:.95rem; }
 .t-card .t-meta span{ display:block; font-weight:500; color:rgba(255,255,255,0.6); font-size:.82rem; margin-top:3px; }
 
-/* SECTION 10 — FAQ accordion */
+/* SECTION 10: FAQ accordion */
 .faq-container{ max-width:900px; margin:50px auto 0; }
 .faq-item{ border-bottom:1px solid #e2e8f0; padding:25px 0; cursor:pointer; }
 .faq-question{ display:flex; justify-content:space-between; align-items:center; gap:20px; font-weight:700; color:var(--bbt-navy); font-size:1.15rem; }
@@ -600,7 +600,7 @@
 .faq-item.active .faq-answer{ max-height:600px; margin-top:15px; }
 .faq-item.active i{ transform:rotate(180deg); }
 
-/* SECTION 11 — Industry resources (6) */
+/* SECTION 11: Industry resources (6) */
 .indres-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 .indres-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:20px; padding:32px; text-decoration:none; transition:.4s ease; display:flex; flex-direction:column; }
 .indres-card:hover{ transform:translateY(-8px); border-color:var(--bbt-orange); box-shadow:0 24px 48px rgba(15,23,42,0.08); }
@@ -609,7 +609,7 @@
 .indres-card p{ color:var(--bbt-muted); font-size:.93rem; margin-bottom:auto; }
 .indres-card .indres-go{ margin-top:20px; font-weight:800; color:var(--bbt-orange); font-size:.9rem; }
 
-/* SECTION 12 — Newsletter */
+/* SECTION 12: Newsletter */
 .newsletter-wrap{ max-width:880px; margin:0 auto; text-align:center; }
 .newsletter-wrap h2{ font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#fff; }
 .newsletter-wrap p{ color:rgba(255,255,255,0.75); margin-top:14px; font-size:1.05rem; }
@@ -630,12 +630,12 @@
 .newsletter-form button:hover{ transform:translateY(-2px); }
 .newsletter-note{ font-size:.8rem; color:rgba(255,255,255,0.5); margin-top:16px; }
 
-/* SECTION 13 — Resource stats bar */
+/* SECTION 13: Resource stats bar */
 .stats-bar{ display:grid; grid-template-columns:repeat(6,1fr); gap:24px; text-align:center; }
 .stat-item .stat-num{ font-size:clamp(2rem,4vw,3rem); font-weight:900; color:var(--bbt-orange); line-height:1; }
 .stat-item .stat-label{ font-size:.85rem; color:rgba(255,255,255,0.7); margin-top:10px; font-weight:600; }
 
-/* SECTION 14 — Partners & certifications */
+/* SECTION 14: Partners & certifications */
 .partners-block .partners-label{ text-align:center; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:var(--bbt-orange); margin-bottom:24px; }
 .partners-grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:16px; margin-bottom:48px; }
 .partner-logo{
@@ -645,7 +645,7 @@
 }
 .partner-logo:hover{ filter:grayscale(0); color:var(--bbt-orange); border-color:var(--bbt-orange); transform:translateY(-4px); }
 
-/* SECTION 15 — Bottom CTA */
+/* SECTION 15: Bottom CTA */
 .final-cta{ padding:100px 0; background:var(--bbt-navy); border-radius:60px 60px 0 0; text-align:center; color:#fff; }
 .final-cta h2{ font-size:clamp(2rem,4vw,2.8rem); font-weight:900; }
 .final-cta p{ color:rgba(255,255,255,0.75); margin-top:16px; max-width:620px; margin-left:auto; margin-right:auto; font-size:1.05rem; }
@@ -994,7 +994,7 @@
     <div class="container">
       <div class="sec-head">
         <span class="eyebrow">05. E-Books &amp; Guides</span>
-        <h2>Free E-Books &amp; Guides — Expert Knowledge, Zero Cost</h2>
+        <h2>Free E-Books &amp; Guides: Expert Knowledge at Zero Cost</h2>
         <p>Downloadable playbooks delivered straight to your inbox. Email-gated, GA4-tracked, always free.</p>
       </div>
       <div class="ebooks-grid">
@@ -1131,7 +1131,7 @@
       <div class="faq-container">
         <div class="faq-item"><div class="faq-question">What services does Big Binary Tech offer? <i class="fa-solid fa-chevron-down"></i></div><div class="faq-answer">We deliver AI automation, Odoo ERP implementation, custom software, cloud migration, POS solutions, and end-to-end digital transformation for businesses across the GCC, USA, and UK.</div></div>
         <div class="faq-item"><div class="faq-question">How is your pricing structured? <i class="fa-solid fa-chevron-down"></i></div><div class="faq-answer">Pricing is tailored to scope. We offer fixed-price packages for well-defined projects and flexible retainer or time-and-materials models for ongoing work. Every engagement starts with a free consultation and a transparent estimate.</div></div>
-        <div class="faq-item"><div class="faq-question">How long does a typical implementation take? <i class="fa-solid fa-chevron-down"></i></div><div class="faq-answer">A focused Odoo configuration typically takes 4–8 weeks, while a customized enterprise ERP with integrations runs 8–16 weeks. We deliver in phases so you see value every month rather than waiting for one big launch.</div></div>
+        <div class="faq-item"><div class="faq-question">How long does a typical implementation take? <i class="fa-solid fa-chevron-down"></i></div><div class="faq-answer">A focused Odoo configuration typically takes 4 to 8 weeks, while a customized enterprise ERP with integrations runs 8 to 16 weeks. We deliver in phases so you see value every month rather than waiting for one big launch.</div></div>
         <div class="faq-item"><div class="faq-question">How do you handle data migration? <i class="fa-solid fa-chevron-down"></i></div><div class="faq-answer">We run structured, validated migrations with full backups and reconciliation checks. Wherever possible we use a zero-downtime approach, migrating in parallel and cutting over only once data integrity is confirmed.</div></div>
         <div class="faq-item"><div class="faq-question">Can you modernize our legacy systems? <i class="fa-solid fa-chevron-down"></i></div><div class="faq-answer">Yes. Legacy modernization is a core specialty. We re-platform aging systems into cloud-native, API-driven architectures while preserving your business logic and minimizing disruption.</div></div>
         <div class="faq-item"><div class="faq-question">Which cloud platforms do you support? <i class="fa-solid fa-chevron-down"></i></div><div class="faq-answer">We're platform-agnostic and work across AWS, Microsoft Azure, and Google Cloud, recommending the right fit based on your workloads, compliance needs, and budget.</div></div>
@@ -1238,7 +1238,7 @@
     <div class="container">
       <span class="eyebrow">Let's Talk</span>
       <h2>Need Help Finding the Right Resource?</h2>
-      <p>Our team can point you to the exact guide, case study, or solution for your goals — or just talk through your transformation roadmap.</p>
+      <p>Our team can point you to the exact guide, case study, or solution for your goals, or simply talk through your transformation roadmap.</p>
       <div class="cta-actions">
         <a href="contact.html" class="cta-btn" style="padding:16px 40px; font-size:16px;">Book a Free Consultation</a>
         <a href="case-studies.html" class="cta-ghost">Browse Case Studies</a>
@@ -1316,7 +1316,7 @@
     })();
     </script>
 
-  <!-- SECTION 10 — FAQPage Schema (SEO) -->
+  <!-- SECTION 10: FAQPage Schema (SEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

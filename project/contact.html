@@ -430,7 +430,7 @@
   </style>
 
 <style id="responsive-nav-patch">
-/* ===== Universal Responsive Mobile-Nav Patch (additive — desktop unchanged) ===== */
+/* ===== Universal Responsive Mobile-Nav Patch (additive; desktop unchanged) ===== */
 .mobile-nav-toggle{
   display:none; background:transparent; border:0; font-size:26px; line-height:1;
   color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
@@ -463,7 +463,7 @@
     </style>
 
 <style id="responsive-content-patch">
-/* ===== Contact page content responsiveness (additive — desktop unchanged) ===== */
+/* ===== Contact page content responsiveness (additive; desktop unchanged) ===== */
 @media (max-width:1024px){
   .hero{ height:auto; min-height:90vh; padding-top:140px; padding-bottom:80px; }
   .hero::after{ width:100%; opacity:0.25;
@@ -538,7 +538,7 @@
 .form-success p{ color:#64748b; line-height:1.6; margin-bottom:26px; }
 .form-success .wa-btn{ display:inline-flex; align-items:center; gap:10px; padding:14px 28px; border-radius:999px; background:#25D366; color:#fff; font-weight:700; text-decoration:none; }
 
-/* Contact info sidebar — light grey panel */
+/* Contact info sidebar: light grey panel */
 .contact-info-panel{ background:#f8fafc; border:1px solid var(--bbt-border); border-radius:32px; padding:40px; }
 .contact-info-panel .ci-block{ margin-bottom:30px; }
 .contact-info-panel .ci-block:last-child{ margin-bottom:0; }
@@ -566,7 +566,7 @@
 .section-head h2{ font-size:clamp(2rem,4vw,2.8rem); font-weight:900; color:var(--bbt-navy); line-height:1.15; }
 .section-head p{ color:#64748b; font-size:1.05rem; line-height:1.7; margin-top:16px; }
 
-/* SECTION 03 — Why contact (4 cards) */
+/* SECTION 03: Why contact (4 cards) */
 .why-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
 .why-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:26px; padding:36px 30px; transition:transform .3s ease, box-shadow .3s ease; }
 .why-card:hover{ transform:translateY(-6px); box-shadow:0 24px 50px rgba(15,23,42,0.08); }
@@ -574,7 +574,7 @@
 .why-card h3{ font-size:1.2rem; font-weight:800; color:var(--bbt-navy); margin-bottom:12px; }
 .why-card p{ color:#64748b; font-size:.95rem; line-height:1.6; }
 
-/* SECTION 04 — Service pills */
+/* SECTION 04: Service pills */
 .service-pills{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; max-width:1000px; margin:0 auto; }
 .service-pill{
   display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:999px;
@@ -588,7 +588,7 @@
 .service-pill:hover small{ color:rgba(255,255,255,0.85); }
 .pills-note{ text-align:center; color:#94a3b8; font-size:.95rem; margin-top:36px; }
 
-/* SECTION 05 — FAQ (lifted from solutions) */
+/* SECTION 05: FAQ (lifted from solutions) */
 .faq-container{ max-width:900px; margin:0 auto; }
 .faq-item{ border-bottom:1px solid #e2e8f0; padding:25px 0; cursor:pointer; }
 .faq-question{ display:flex; justify-content:space-between; align-items:center; gap:20px; font-weight:700; color:var(--bbt-navy); font-size:1.15rem; }
@@ -597,7 +597,7 @@
 .faq-item.active .faq-answer{ max-height:600px; margin-top:15px; }
 .faq-item.active .faq-question i{ transform:rotate(180deg); }
 
-/* SECTION 06 — Testimonials */
+/* SECTION 06: Testimonials */
 .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
 .testi-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:26px; padding:34px; box-shadow:0 14px 36px rgba(15,23,42,0.05); display:flex; flex-direction:column; }
 .testi-card .stars{ color:var(--bbt-orange); font-size:.95rem; margin-bottom:18px; letter-spacing:2px; }
@@ -605,7 +605,7 @@
 .testi-card .attrib{ margin-top:auto; padding-top:18px; border-top:1px solid var(--bbt-border); font-weight:800; color:var(--bbt-navy); font-size:.95rem; }
 .testi-card .attrib span{ display:block; font-weight:500; color:#94a3b8; font-size:.85rem; margin-top:4px; }
 
-/* SECTION 07 — Alternative contact methods */
+/* SECTION 07: Alternative contact methods */
 .alt-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
 .alt-card{ background:#fff; border:1px solid var(--bbt-border); border-top:3px solid var(--bbt-orange); border-radius:22px; padding:36px 30px; text-align:center; transition:transform .3s ease, box-shadow .3s ease; }
 .alt-card.wa{ border-top-color:#25D366; }
@@ -622,7 +622,7 @@
 .alt-card .alt-cta{ display:inline-block; padding:11px 24px; border-radius:999px; background:var(--bbt-navy); color:#fff; font-weight:700; font-size:.9rem; text-decoration:none; transition:all .3s ease; }
 .alt-card .alt-cta:hover{ background:var(--bbt-orange); transform:translateY(-2px); }
 
-/* SECTION 08 — Office locations */
+/* SECTION 08: Office locations */
 .office-grid{ display:grid; grid-template-columns:1fr 1fr; gap:30px; }
 .office-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:26px; overflow:hidden; }
 .office-card .office-map{
@@ -638,7 +638,7 @@
 .office-card .ci-line a{ color:#64748b; text-decoration:none; }
 .office-card .ci-line a:hover{ color:var(--bbt-orange); }
 
-/* SECTION 09 — Partners & certifications */
+/* SECTION 09: Partners & certifications */
 .partner-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; max-width:1000px; margin:0 auto; }
 .partner-logo{
   background:#f8fafc; border:1px solid var(--bbt-border); border-radius:18px; padding:30px 18px;
@@ -652,7 +652,7 @@
 .partner-cta-wrap a{ color:var(--bbt-navy); font-weight:700; text-decoration:none; border-bottom:2px solid var(--bbt-orange); padding-bottom:2px; }
 .partner-cta-wrap a:hover{ color:var(--bbt-orange); }
 
-/* SECTION 10 — Bottom CTA banner */
+/* SECTION 10: Bottom CTA banner */
 .final-cta{ padding:100px 0; background:var(--bbt-navy); border-radius:60px 60px 0 0; text-align:center; color:#fff; position:relative; overflow:hidden; }
 .final-cta .mesh-bg{ position:absolute; inset:0; background:radial-gradient(circle at 100% 0%, rgba(245,158,11,0.15) 0%, transparent 50%); pointer-events:none; }
 .final-cta h2{ font-size:clamp(2rem,5vw,3.2rem); font-weight:900; margin-bottom:22px; line-height:1.1; position:relative; z-index:2; }
@@ -671,7 +671,7 @@
   font-weight:800; text-decoration:none; box-shadow:0 12px 30px var(--bbt-orange-glow);
 }
 
-/* Responsive — spec sections */
+/* Responsive: spec sections */
 @media (max-width:1024px){
   .spec-section{ padding:80px 0; }
   .why-grid{ grid-template-columns:1fr 1fr; }
@@ -841,7 +841,7 @@
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <main>
-    <!-- SECTION 01 — HERO -->
+    <!-- SECTION 01: HERO -->
     <section class="hero">
       <div class="container hero-content">
         <nav class="breadcrumb fade-in" aria-label="Breadcrumb">
@@ -849,7 +849,7 @@
         </nav>
         <span class="eyebrow fade-in">Let's Connect</span>
         <h1 class="fade-up">Let's Build Something <span style="color: var(--bbt-orange);">Great Together.</span></h1>
-        <p class="fade-in">Whether you need a custom POS system, an Odoo ERP implementation, a complete digital transformation, or just want to explore what's possible — we're here to help. Tell us about your project and we'll get back to you within 24 hours.</p>
+        <p class="fade-in">Whether you need a custom POS system, an Odoo ERP implementation, a complete digital transformation, or simply want to explore what's possible, we're here to help. Tell us about your project and we'll get back to you within 24 hours.</p>
         <div class="hero-trust-bar fade-in">
           <span class="trust-chip"><i class="fa-solid fa-bolt"></i> 24-hour response guarantee</span>
           <span class="trust-chip"><i class="fa-solid fa-comments"></i> Free consultation</span>
@@ -859,7 +859,7 @@
       </div>
     </section>
 
-    <!-- SECTION 02 — CONTACT FORM + INFO SPLIT -->
+    <!-- SECTION 02: CONTACT FORM + INFO SPLIT -->
     <section class="contact-main" id="contact-form">
       <div class="container contact-grid">
 
@@ -867,7 +867,7 @@
         <div class="contact-card reveal">
           <div id="formWrap">
             <h2>Start Your Project</h2>
-            <p class="form-subtext">Fill out the form below and we'll schedule a free 30-minute consultation. No sales pressure — just honest advice about what's possible.</p>
+            <p class="form-subtext">Fill out the form below and we'll schedule a free 30-minute consultation. No sales pressure, just honest advice about what's possible.</p>
             <form id="contactForm" novalidate>
               <!-- Hidden tracking fields -->
               <input type="hidden" name="utm_source" id="utm_source">
@@ -935,9 +935,9 @@
                   <select id="budget" name="budget">
                     <option value="">Select a range (optional)</option>
                     <option>Under $5,000</option>
-                    <option>$5,000–$15,000</option>
-                    <option>$15,000–$50,000</option>
-                    <option>$50,000–$100,000</option>
+                    <option>$5,000 to $15,000</option>
+                    <option>$15,000 to $50,000</option>
+                    <option>$50,000 to $100,000</option>
                     <option>$100,000+</option>
                   </select>
                 </div>
@@ -963,7 +963,7 @@
           <!-- Success state -->
           <div class="form-success" id="formSuccess">
             <div class="ok-icon"><i class="fa-solid fa-check"></i></div>
-            <h3>Thank you — your details are in.</h3>
+            <h3>Thank you. Your details are in.</h3>
             <p>We'll be in touch within 24 hours. Prefer to chat right now? Reach us on WhatsApp.</p>
             <a href="https://wa.me/923268880101" class="wa-btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
           </div>
@@ -972,26 +972,26 @@
         <!-- CONTACT INFO PANEL (Right 40%) -->
         <div class="contact-info-panel reveal">
           <div class="ci-block">
-            <h4><i class="fa-solid fa-building"></i> Headquarters — Pakistan</h4>
+            <h4><i class="fa-solid fa-building"></i> Headquarters in Pakistan</h4>
             <p class="ci-line"><i class="fa-solid fa-location-dot"></i> Big Binary Tech, Tech Park, Lahore, Pakistan</p>
             <p class="ci-line"><i class="fa-solid fa-phone"></i> <a href="tel:+923268880101">+92 326 8880101</a></p>
             <p class="ci-line"><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@bigbinarytech.com">hello@bigbinarytech.com</a></p>
           </div>
           <div class="ci-block">
-            <h4><i class="fa-solid fa-building"></i> GCC Office — UAE</h4>
+            <h4><i class="fa-solid fa-building"></i> GCC Office in the UAE</h4>
             <p class="ci-line"><i class="fa-solid fa-location-dot"></i> Big Binary Tech, Business Bay, Dubai, UAE</p>
             <p class="ci-line"><i class="fa-solid fa-phone"></i> <a href="tel:+97140000000">+971 4 000 0000</a></p>
             <p class="ci-line"><i class="fa-solid fa-envelope"></i> <a href="mailto:gcc@bigbinarytech.com">gcc@bigbinarytech.com</a></p>
           </div>
           <div class="ci-block">
             <h4><i class="fa-solid fa-clock"></i> Business Hours</h4>
-            <p class="ci-line"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Pakistan: Mon–Fri, 9:00 AM – 6:00 PM PKT</p>
-            <p class="ci-line"><i class="fa-solid fa-circle" style="font-size:6px;"></i> UAE: Mon–Fri, 9:00 AM – 6:00 PM GST</p>
+            <p class="ci-line"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Pakistan: Monday to Friday, 9:00 AM to 6:00 PM PKT</p>
+            <p class="ci-line"><i class="fa-solid fa-circle" style="font-size:6px;"></i> UAE: Monday to Friday, 9:00 AM to 6:00 PM GST</p>
             <p class="ci-line"><i class="fa-solid fa-circle" style="font-size:6px;"></i> USA/UK: Async support with 24h response</p>
           </div>
           <div class="ci-block">
             <h4><i class="fa-solid fa-bolt"></i> Quick Contact Options</h4>
-            <p class="ci-line"><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/923268880101" target="_blank" rel="noopener noreferrer">WhatsApp Business — Click to chat</a></p>
+            <p class="ci-line"><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/923268880101" target="_blank" rel="noopener noreferrer">WhatsApp Business: Click to chat</a></p>
             <p class="ci-line"><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@bigbinarytech.com">hello@bigbinarytech.com</a></p>
             <p class="ci-line"><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/company/bigbinarytech" target="_blank" rel="noopener noreferrer">linkedin.com/company/bigbinarytech</a></p>
           </div>
@@ -1000,7 +1000,7 @@
             <div class="map-placeholder">
               <div>
                 <i class="fa-solid fa-location-dot"></i>
-                <span>Lahore, Pakistan — Map placeholder</span>
+                <span>Lahore, Pakistan: Map placeholder</span>
               </div>
             </div>
             <a href="https://maps.google.com/?q=Lahore,Pakistan" class="get-directions" target="_blank" rel="noopener noreferrer">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
@@ -1010,7 +1010,7 @@
       </div>
     </section>
 
-    <!-- SECTION 03 — WHY CONTACT BIG BINARY TECH -->
+    <!-- SECTION 03: WHY CONTACT BIG BINARY TECH -->
     <section class="spec-section soft">
       <div class="container">
         <div class="section-head">
@@ -1021,12 +1021,12 @@
           <div class="why-card fade-up">
             <div class="why-num">01</div>
             <h3>We Respond in 24 Hours</h3>
-            <p>No automated bots. A real person reviews your project and replies with specific next steps — not a generic template.</p>
+            <p>No automated bots. A real person reviews your project and replies with specific next steps, not a generic template.</p>
           </div>
           <div class="why-card fade-up">
             <div class="why-num">02</div>
             <h3>Free 30-Minute Consultation</h3>
-            <p>We learn about your business, identify quick wins, and give you an honest assessment — even if we're not the right fit.</p>
+            <p>We learn about your business, identify quick wins, and give you an honest assessment, even if we're not the right fit.</p>
           </div>
           <div class="why-card fade-up">
             <div class="why-num">03</div>
@@ -1042,13 +1042,13 @@
       </div>
     </section>
 
-    <!-- SECTION 04 — WHAT WE CAN HELP WITH -->
+    <!-- SECTION 04: WHAT WE CAN HELP WITH -->
     <section class="spec-section white">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Quick Reference</span>
           <h2>Not Sure What You Need? Here's What We Do</h2>
-          <p>If you're not sure which service fits your project, here's a quick guide. Click any service to learn more — or just tell us your problem and we'll recommend the right solution.</p>
+          <p>If you're not sure which service fits your project, here's a quick guide. Click any service to learn more, or simply tell us your problem and we'll recommend the right solution.</p>
         </div>
         <div class="service-pills">
           <a href="enterprise-odoo.html" class="service-pill"><i class="fa-solid fa-cubes"></i> Odoo ERP Implementation <small>HR, finance, inventory &amp; CRM</small></a>
@@ -1064,7 +1064,7 @@
       </div>
     </section>
 
-    <!-- SECTION 05 — FAQ -->
+    <!-- SECTION 05: FAQ -->
     <section class="spec-section soft" id="faqs">
       <div class="container">
         <div class="section-head">
@@ -1078,15 +1078,15 @@
           </div>
           <div class="faq-item">
             <div class="faq-question">Is the initial consultation really free? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">Yes — completely free, no obligation. It's a 30-minute video call where we understand your project and give you an honest assessment. No sales pitch.</div>
+            <div class="faq-answer">Yes, it's completely free with no obligation. It's a 30-minute video call where we understand your project and give you an honest assessment. No sales pitch.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question">What information should I include in my message? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">The more context, the better: your industry, current challenges, goals, timeline, and budget range. But don't worry — even a brief description is enough to start the conversation.</div>
+            <div class="faq-answer">The more context, the better: your industry, current challenges, goals, timeline, and budget range. But don't worry, even a brief description is enough to start the conversation.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question">Do you work with startups and small businesses? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">Absolutely. We have packages and engagement models for businesses of all sizes — from single-location startups to enterprise chains.</div>
+            <div class="faq-answer">Absolutely. We have packages and engagement models for businesses of all sizes, from single-location startups to enterprise chains.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question">Can we meet in person if we're in Lahore or Dubai? <i class="fa-solid fa-chevron-down"></i></div>
@@ -1094,13 +1094,13 @@
           </div>
           <div class="faq-item">
             <div class="faq-question">What if I'm not ready to start yet? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">No problem. We're happy to answer questions, provide advice, and stay in touch. Many clients contact us 2–3 months before they're ready to begin.</div>
+            <div class="faq-answer">No problem. We're happy to answer questions, provide advice, and stay in touch. Many clients contact us 2 to 3 months before they're ready to begin.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 06 — CLIENT TESTIMONIALS -->
+    <!-- SECTION 06: CLIENT TESTIMONIALS -->
     <section class="spec-section white">
       <div class="container">
         <div class="section-head">
@@ -1110,7 +1110,7 @@
         <div class="testi-grid">
           <div class="testi-card fade-up">
             <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="quote">"I filled out the form on Sunday evening and had a detailed response on Monday morning. The consultation was incredibly helpful — they identified problems we didn't even know we had."</p>
+            <p class="quote">"I filled out the form on Sunday evening and had a detailed response on Monday morning. The consultation was incredibly helpful, and they identified problems we didn't even know we had."</p>
             <div class="attrib">CEO<span>Retail Chain · Dubai, UAE</span></div>
           </div>
           <div class="testi-card fade-up">
@@ -1120,14 +1120,14 @@
           </div>
           <div class="testi-card fade-up">
             <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="quote">"The team made the whole process feel easy. From first contact to project kickoff took 10 days — and that included a full discovery session and detailed proposal."</p>
+            <p class="quote">"The team made the whole process feel easy. From first contact to project kickoff took 10 days, and that included a full discovery session and detailed proposal."</p>
             <div class="attrib">IT Manager<span>Healthcare Group · Lahore, Pakistan</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 07 — ALTERNATIVE CONTACT METHODS -->
+    <!-- SECTION 07: ALTERNATIVE CONTACT METHODS -->
     <section class="spec-section soft">
       <div class="container">
         <div class="section-head">
@@ -1161,7 +1161,7 @@
       </div>
     </section>
 
-    <!-- SECTION 08 — OFFICE LOCATIONS -->
+    <!-- SECTION 08: OFFICE LOCATIONS -->
     <section class="spec-section white">
       <div class="container">
         <div class="section-head">
@@ -1170,24 +1170,24 @@
         </div>
         <div class="office-grid">
           <div class="office-card fade-up">
-            <div class="office-map"><div><i class="fa-solid fa-location-dot"></i><span>Lahore, Pakistan — Map placeholder</span></div></div>
+            <div class="office-map"><div><i class="fa-solid fa-location-dot"></i><span>Lahore, Pakistan: Map placeholder</span></div></div>
             <div class="office-body">
-              <h3>Lahore, Pakistan — Headquarters</h3>
+              <h3>Lahore, Pakistan: Headquarters</h3>
               <p class="ci-line"><i class="fa-solid fa-location-dot"></i> Tech Park, Lahore, Punjab, Pakistan</p>
               <p class="ci-line"><i class="fa-solid fa-phone"></i> <a href="tel:+923268880101">+92 326 8880101</a></p>
               <p class="ci-line"><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@bigbinarytech.com">hello@bigbinarytech.com</a></p>
-              <p class="ci-line"><i class="fa-solid fa-clock"></i> Mon–Fri, 9:00 AM – 6:00 PM PKT</p>
+              <p class="ci-line"><i class="fa-solid fa-clock"></i> Monday to Friday, 9:00 AM to 6:00 PM PKT</p>
               <a href="https://maps.google.com/?q=Lahore,Pakistan" class="get-directions" target="_blank" rel="noopener noreferrer">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="office-card fade-up">
-            <div class="office-map"><div><i class="fa-solid fa-location-dot"></i><span>Dubai, UAE — Map placeholder</span></div></div>
+            <div class="office-map"><div><i class="fa-solid fa-location-dot"></i><span>Dubai, UAE: Map placeholder</span></div></div>
             <div class="office-body">
-              <h3>Dubai, UAE — GCC Office</h3>
+              <h3>Dubai, UAE: GCC Office</h3>
               <p class="ci-line"><i class="fa-solid fa-location-dot"></i> Business Bay, Dubai, United Arab Emirates</p>
               <p class="ci-line"><i class="fa-solid fa-phone"></i> <a href="tel:+97140000000">+971 4 000 0000</a></p>
               <p class="ci-line"><i class="fa-solid fa-envelope"></i> <a href="mailto:gcc@bigbinarytech.com">gcc@bigbinarytech.com</a></p>
-              <p class="ci-line"><i class="fa-solid fa-clock"></i> Mon–Fri, 9:00 AM – 6:00 PM GST</p>
+              <p class="ci-line"><i class="fa-solid fa-clock"></i> Monday to Friday, 9:00 AM to 6:00 PM GST</p>
               <a href="https://maps.google.com/?q=Dubai,UAE" class="get-directions" target="_blank" rel="noopener noreferrer">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
@@ -1195,7 +1195,7 @@
       </div>
     </section>
 
-    <!-- SECTION 09 — PARTNERS & CERTIFICATIONS -->
+    <!-- SECTION 09: PARTNERS & CERTIFICATIONS -->
     <section class="spec-section soft">
       <div class="container">
         <div class="section-head">
@@ -1219,12 +1219,12 @@
       </div>
     </section>
 
-    <!-- SECTION 10 — BOTTOM CTA BANNER -->
+    <!-- SECTION 10: BOTTOM CTA BANNER -->
     <section class="final-cta">
       <div class="mesh-bg"></div>
       <div class="container">
         <h2>Still Have Questions?</h2>
-        <p>We're here to help — whether you're ready to start or just exploring. Send us a message and we'll get back to you within 24 hours.</p>
+        <p>We're here to help, whether you're ready to start or just exploring. Send us a message and we'll get back to you within 24 hours.</p>
         <div class="cta-actions">
           <a href="#contact-form" class="cta-btn" style="background:#fff; color:var(--bbt-navy); padding:18px 44px; font-size:17px;">Fill Out the Form Above</a>
           <a href="https://wa.me/923268880101" class="cta-ghost" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
@@ -1375,7 +1375,7 @@
     })();
     </script>
 
-  <!-- SECTION 05 — FAQPage Schema (SEO) -->
+  <!-- SECTION 05: FAQPage Schema (SEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1389,17 +1389,17 @@
       {
         "@type": "Question",
         "name": "Is the initial consultation really free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no obligation. It's a 30-minute video call where we understand your project and give you an honest assessment. No sales pitch." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, it's completely free with no obligation. It's a 30-minute video call where we understand your project and give you an honest assessment. No sales pitch." }
       },
       {
         "@type": "Question",
         "name": "What information should I include in my message?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The more context, the better: your industry, current challenges, goals, timeline, and budget range. But don't worry — even a brief description is enough to start the conversation." }
+        "acceptedAnswer": { "@type": "Answer", "text": "The more context, the better: your industry, current challenges, goals, timeline, and budget range. But don't worry, even a brief description is enough to start the conversation." }
       },
       {
         "@type": "Question",
         "name": "Do you work with startups and small businesses?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We have packages and engagement models for businesses of all sizes — from single-location startups to enterprise chains." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We have packages and engagement models for businesses of all sizes, from single-location startups to enterprise chains." }
       },
       {
         "@type": "Question",
@@ -1409,7 +1409,7 @@
       {
         "@type": "Question",
         "name": "What if I'm not ready to start yet?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No problem. We're happy to answer questions, provide advice, and stay in touch. Many clients contact us 2–3 months before they're ready to begin." }
+        "acceptedAnswer": { "@type": "Answer", "text": "No problem. We're happy to answer questions, provide advice, and stay in touch. Many clients contact us 2 to 3 months before they're ready to begin." }
       }
     ]
   }

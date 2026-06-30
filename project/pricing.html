@@ -588,7 +588,7 @@
     }
   </style>
 <style id="responsive-nav-patch">
-/* ===== Universal Responsive Mobile-Nav Patch (additive — desktop unchanged) ===== */
+/* ===== Universal Responsive Mobile-Nav Patch (additive, desktop unchanged) ===== */
 .mobile-nav-toggle{
   display:none; background:transparent; border:0; font-size:26px; line-height:1;
   color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
@@ -620,14 +620,14 @@
 }
     </style>
 <style id="responsive-content-patch">
-/* ===== Page-specific responsive content patch (additive — desktop unchanged) ===== */
+/* ===== Page-specific responsive content patch (additive, desktop unchanged) ===== */
 @media (max-width:1024px){
   /* Hero: dim/cover image fully so text stays readable, reduce vertical padding */
   .hero{ padding-top:120px; height:auto; min-height:auto; padding-bottom:80px; }
   .hero-content{ max-width:100%; }
   .hero p{ max-width:100%; }
 
-  /* Bento: stack already flexes to column at 1024 (existing rule) — ensure full width */
+  /* Bento: stack already flexes to column at 1024 (existing rule), ensure full width */
   .bento-grid{ margin-top:40px; }
   .bento-item{ width:100%; padding:40px; }
 
@@ -720,7 +720,7 @@
 .hero-trust .trust-num{ font-size:1.7rem; font-weight:900; color:var(--bbt-orange); line-height:1; }
 .hero-trust .trust-label{ font-size:.85rem; color:rgba(255,255,255,0.7); margin-top:6px; font-weight:500; }
 
-/* SECTION 02 — Ecosystem pillar cards (3-col, navy/orange) */
+/* SECTION 02: Ecosystem pillar cards (3-col, navy/orange) */
 .eco-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:60px; }
 .eco-card{
   background:#fdfdfd; border:1px solid var(--bbt-border); border-radius:28px; padding:42px 38px;
@@ -746,7 +746,7 @@
 }
 .eco-link:hover{ gap:14px; }
 
-/* SECTION 03 — Challenge accordion */
+/* SECTION 03: Challenge accordion */
 .chl-accordion-section{ padding:120px 0; background:#fff; }
 .chl-accordion{ max-width:980px; margin:60px auto 0; }
 .chl-item{ border:1px solid var(--bbt-border); border-radius:20px; margin-bottom:18px; overflow:hidden; background:#fff; transition:border-color .3s ease, box-shadow .3s ease; }
@@ -767,7 +767,7 @@
 .chl-learn{ font-weight:800; color:var(--bbt-orange); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap .3s ease; }
 .chl-learn:hover{ gap:14px; }
 
-/* SECTION 04 — Industry cards */
+/* SECTION 04: Industry cards */
 .industry-section{ padding:120px 0; background:var(--bbt-bg-soft); background-image:radial-gradient(at 100% 0%, rgba(245,158,11,0.05) 0px, transparent 50%); }
 .ind-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:60px; }
 .ind-card{
@@ -782,7 +782,7 @@
 .ind-card li i{ color:var(--bbt-orange); font-size:.8rem; }
 .ind-cta-wrap{ text-align:center; margin-top:56px; }
 
-/* SECTION 06 — Trust & Proof */
+/* SECTION 06: Trust & Proof */
 .trust-section{ padding:120px 0; background:var(--bbt-navy); color:#fff; }
 .trust-layout{ display:grid; grid-template-columns:1fr 1.1fr; gap:60px; align-items:start; margin-top:50px; }
 .trust-logos-label{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:var(--bbt-orange); margin-bottom:28px; }
@@ -811,7 +811,7 @@
 .t-card .t-meta span{ display:block; font-weight:500; color:rgba(255,255,255,0.6); font-size:.85rem; margin-top:4px; }
 .t-track:hover{ animation-play-state:paused; }
 
-/* SECTION 07 — Success stories (lifted .case-card from case-studies.html) */
+/* SECTION 07: Success stories (lifted .case-card from case-studies.html) */
 .stories-section{ padding:120px 0; background:#fff; }
 .stories-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:60px; }
 .story-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:28px; overflow:hidden; transition:.5s cubic-bezier(0.165,0.84,0.44,1); display:flex; flex-direction:column; }
@@ -826,7 +826,7 @@
 .story-link{ margin-top:auto; font-weight:800; color:var(--bbt-navy); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap .3s ease; }
 .story-link:hover{ gap:14px; color:var(--bbt-orange); }
 
-/* SECTION 08 — FAQ (lifted from industries.html) */
+/* SECTION 08: FAQ (lifted from industries.html) */
 .faq-section{ padding:120px 0; background:var(--bbt-bg-soft); }
 .faq-container{ max-width:900px; margin:50px auto 0; }
 .faq-item{ border-bottom:1px solid #e2e8f0; padding:25px 0; cursor:pointer; }
@@ -836,7 +836,7 @@
 .faq-item.active .faq-answer{ max-height:600px; margin-top:15px; }
 .faq-item.active i{ transform:rotate(180deg); color:var(--bbt-orange); }
 
-/* SECTION 10 — Related resources (lifted .res-card) */
+/* SECTION 10: Related resources (lifted .res-card) */
 .related-section{ padding:120px 0; background:#fff; }
 .related-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
 .related-card{
@@ -942,7 +942,7 @@
 .sec-head h2{ font-size:clamp(2rem,4vw,2.9rem); color:var(--bbt-navy); font-weight:900; margin:14px 0 0; line-height:1.15; }
 .sec-head p{ color:var(--bbt-muted); font-size:1.05rem; margin-top:18px; line-height:1.7; }
 
-/* SECTION 02 — Pricing Philosophy 4-card */
+/* SECTION 02: Pricing Philosophy 4-card */
 .philosophy-section{ padding:110px 0; background:var(--bbt-bg-soft); }
 .phil-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; margin-top:60px; }
 .phil-card{
@@ -954,7 +954,7 @@
 .phil-card h3{ font-size:1.2rem; color:var(--bbt-navy); font-weight:800; margin-bottom:12px; line-height:1.3; }
 .phil-card p{ color:var(--bbt-muted); font-size:.95rem; line-height:1.7; }
 
-/* SECTIONS 03/04/05 — Pricing package cards (matches enterprise-odoo/retail-pos .price-card) */
+/* SECTIONS 03/04/05: Pricing package cards (matches enterprise-odoo/retail-pos .price-card) */
 .pricing-section{ padding:110px 0; }
 .pricing-section.alt{ background:var(--bbt-bg-soft); }
 .pkg-grid{ display:grid; gap:28px; margin-top:60px; align-items:stretch; }
@@ -986,7 +986,7 @@
 .pkg-cta.filled{ background:var(--bbt-orange); color:#fff; border-color:var(--bbt-orange); box-shadow:0 8px 24px var(--bbt-orange-glow); }
 .pkg-cta.filled:hover{ background:var(--bbt-orange-600); }
 
-/* SECTION 06 — What's Included 6-card (navy band) */
+/* SECTION 06: What's Included 6-card (navy band) */
 .included-section{ padding:110px 0; background:var(--bbt-navy); color:#fff; }
 .included-section .sec-head h2{ color:#fff; }
 .included-section .sec-head .eyebrow{ color:var(--bbt-orange); }
@@ -1000,7 +1000,7 @@
 .inc-card h3{ font-size:1.15rem; font-weight:800; color:#fff; margin-bottom:10px; }
 .inc-card p{ color:rgba(255,255,255,0.72); font-size:.92rem; line-height:1.7; }
 
-/* SECTION 07 — Comparison table (responsive horizontal scroll) */
+/* SECTION 07: Comparison table (responsive horizontal scroll) */
 .compare-section{ padding:110px 0; background:#fff; }
 .compare-scroll{ margin-top:56px; overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--bbt-border); border-radius:24px; }
 .compare-table{ width:100%; border-collapse:collapse; min-width:760px; }
@@ -1016,7 +1016,7 @@
 .compare-hint{ display:none; text-align:center; color:var(--bbt-muted); font-size:.85rem; margin-top:14px; }
 .compare-cta-wrap{ text-align:center; margin-top:44px; }
 
-/* SECTION 08 — Client Results (reuse story/testimonial card on light bg) */
+/* SECTION 08: Client Results (reuse story/testimonial card on light bg) */
 .results-section{ padding:110px 0; background:var(--bbt-bg-soft); }
 .results-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:60px; }
 .result-card{
@@ -1032,7 +1032,7 @@
 .result-author{ font-weight:800; color:var(--bbt-navy); font-size:.95rem; }
 .result-author span{ display:block; font-weight:500; color:var(--bbt-muted); font-size:.85rem; margin-top:3px; }
 
-/* SECTION 09 — FAQ (reused from solutions) */
+/* SECTION 09: FAQ (reused from solutions) */
 .faq-section{ padding:110px 0; background:#fff; }
 .faq-container{ max-width:900px; margin:50px auto 0; }
 .faq-item{ border-bottom:1px solid #e2e8f0; padding:25px 0; cursor:pointer; }
@@ -1042,10 +1042,10 @@
 .faq-item.active .faq-answer{ max-height:800px; margin-top:15px; }
 .faq-item.active i{ transform:rotate(180deg); color:var(--bbt-orange); }
 
-/* SECTION 10 — Bottom CTA (reused .final-cta) */
+/* SECTION 10: Bottom CTA (reused .final-cta) */
 .final-cta{ padding:100px 0; background:var(--bbt-navy); border-radius:60px 60px 0 0; text-align:center; color:#fff; }
 
-/* SECTION 11 — Related pages (reused .related-card) */
+/* SECTION 11: Related pages (reused .related-card) */
 .related-section{ padding:110px 0; background:var(--bbt-bg-soft); }
 .related-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
 .related-card{
@@ -1223,7 +1223,7 @@
 </header>
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
  <main>
-    <!-- SECTION 01 — HERO -->
+    <!-- SECTION 01: HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
@@ -1243,7 +1243,7 @@
           </h1>
 
           <p class="fade-up">
-            No hidden fees. No surprises. Just clear pricing for every service — from a single website to a full enterprise transformation. Serving businesses in GCC, USA &amp; UK.
+            No hidden fees. No surprises. Just clear pricing for every service, from a single website to a full enterprise transformation. Serving businesses in GCC, USA &amp; UK.
           </p>
 
           <div class="fade-up hero-actions">
@@ -1265,7 +1265,7 @@
       </div>
     </section>
 
-    <!-- SECTION 02 — PRICING PHILOSOPHY -->
+    <!-- SECTION 02: PRICING PHILOSOPHY -->
     <section class="philosophy-section">
       <div class="container">
         <div class="sec-head fade-up">
@@ -1291,13 +1291,13 @@
           <div class="phil-card fade-up">
             <div class="phil-icon"><i class="fa-solid fa-clipboard-check"></i></div>
             <h3>Free Assessment Included</h3>
-            <p>Every project starts with a free 30-minute assessment. We audit your needs, identify quick wins, and give you a clear quote — before you commit.</p>
+            <p>Every project starts with a free 30-minute assessment. We audit your needs, identify quick wins, and give you a clear quote before you commit.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 03 — SERVICE PRICING PACKAGES -->
+    <!-- SECTION 03: SERVICE PRICING PACKAGES -->
     <section class="pricing-section" id="packages">
       <div class="container">
         <div class="sec-head fade-up">
@@ -1355,7 +1355,7 @@
       </div>
     </section>
 
-    <!-- SECTION 04 — OUTSOURCING PRICING PACKAGES -->
+    <!-- SECTION 04: OUTSOURCING PRICING PACKAGES -->
     <section class="pricing-section alt">
       <div class="container">
         <div class="sec-head fade-up">
@@ -1417,7 +1417,7 @@
       </div>
     </section>
 
-    <!-- SECTION 05 — SOLUTION PRICING PACKAGES -->
+    <!-- SECTION 05: SOLUTION PRICING PACKAGES -->
     <section class="pricing-section">
       <div class="container">
         <div class="sec-head fade-up">
@@ -1470,7 +1470,7 @@
       </div>
     </section>
 
-    <!-- SECTION 06 — WHAT'S INCLUDED IN EVERY PACKAGE -->
+    <!-- SECTION 06: WHAT'S INCLUDED IN EVERY PACKAGE -->
     <section class="included-section">
       <div class="container">
         <div class="sec-head fade-up">
@@ -1481,7 +1481,7 @@
           <div class="inc-card fade-up">
             <div class="inc-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
             <h3>Free Discovery &amp; Assessment</h3>
-            <p>We audit your current systems, identify opportunities, and build a roadmap — at no cost.</p>
+            <p>We audit your current systems, identify opportunities, and build a roadmap, all at no cost.</p>
           </div>
           <div class="inc-card fade-up">
             <div class="inc-icon"><i class="fa-solid fa-user-tie"></i></div>
@@ -1512,7 +1512,7 @@
       </div>
     </section>
 
-    <!-- SECTION 07 — PRICING COMPARISON TABLE -->
+    <!-- SECTION 07: PRICING COMPARISON TABLE -->
     <section class="compare-section">
       <div class="container">
         <div class="sec-head fade-up">
@@ -1601,7 +1601,7 @@
       </div>
     </section>
 
-    <!-- SECTION 08 — CLIENT RESULTS -->
+    <!-- SECTION 08: CLIENT RESULTS -->
     <section class="results-section">
       <div class="container">
         <div class="sec-head fade-up">
@@ -1619,7 +1619,7 @@
           </div>
           <div class="result-card fade-up">
             <div class="result-quote-mark">&ldquo;</div>
-            <p class="result-quote">We started with staff augmentation at $2,500/month. Six months later, we scaled to a dedicated team. The pricing scaled with us — no penalties, no renegotiation.</p>
+            <p class="result-quote">We started with staff augmentation at $2,500/month. Six months later, we scaled to a dedicated team. The pricing scaled with us, with no penalties and no renegotiation.</p>
             <div class="result-meta">
               <div class="result-avatar">SC</div>
               <div class="result-author">VP Engineering<span>SaaS Company &middot; London, UK</span></div>
@@ -1637,7 +1637,7 @@
       </div>
     </section>
 
-    <!-- SECTION 09 — PRICING FAQ -->
+    <!-- SECTION 09: PRICING FAQ -->
     <section class="faq-section" id="faqs">
       <div class="container">
         <div class="sec-head fade-up">
@@ -1659,15 +1659,15 @@
           </div>
           <div class="faq-item">
             <div class="faq-question">Can I change my package after signing? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">Yes. You can upgrade or downgrade your outsourcing engagement with 30 days' notice. For project-based work, scope changes are managed through our formal change order process — quoted and approved before implementation.</div>
+            <div class="faq-answer">Yes. You can upgrade or downgrade your outsourcing engagement with 30 days' notice. For project-based work, scope changes are managed through our formal change order process, with every change quoted and approved before implementation.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question">Do you offer discounts for multiple services? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">Yes. Bundle 2+ services and save 10-15%. Commit to a 12-month outsourcing engagement and get 1 month free. Non-profits and startups get additional consideration — ask during your assessment.</div>
+            <div class="faq-answer">Yes. Bundle 2+ services and save 10-15%. Commit to a 12-month outsourcing engagement and get 1 month free. Non-profits and startups get additional consideration, so ask during your assessment.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question">What happens if the project goes over budget? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">Fixed-price projects don't go over budget — that's the point. If scope changes, we quote the change separately. For T&amp;M engagements, we provide weekly burn reports so you always know where you stand.</div>
+            <div class="faq-answer">Fixed-price projects don't go over budget. That's the point. If scope changes, we quote the change separately. For T&amp;M engagements, we provide weekly burn reports so you always know where you stand.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question">Is post-launch support included in the price? <i class="fa-solid fa-chevron-down"></i></div>
@@ -1675,17 +1675,17 @@
           </div>
           <div class="faq-item">
             <div class="faq-question">How do I get an exact quote for my project? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">Book a free 30-minute assessment via our contact form. We'll audit your current systems, understand your goals, and send you a detailed proposal within 48 hours — with a fixed price, clear timeline, and no obligation.</div>
+            <div class="faq-answer">Book a free 30-minute assessment via our contact form. We'll audit your current systems, understand your goals, and send you a detailed proposal within 48 hours, complete with a fixed price, clear timeline, and no obligation.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 10 — BOTTOM CTA BANNER -->
+    <!-- SECTION 10: BOTTOM CTA BANNER -->
     <section class="final-cta">
       <div class="container">
         <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; line-height: 1.1;">Ready to Get a Clear, <br> Fixed Quote?</h2>
-        <p style="max-width: 660px; margin: 0 auto 40px; color: rgba(255,255,255,0.75);">Book a free 30-minute assessment. We'll audit your needs, identify quick wins, and give you a detailed proposal with transparent pricing — before you spend a dollar.</p>
+        <p style="max-width: 660px; margin: 0 auto 40px; color: rgba(255,255,255,0.75);">Book a free 30-minute assessment. We'll audit your needs, identify quick wins, and give you a detailed proposal with transparent pricing before you spend a dollar.</p>
         <div class="hero-actions" style="justify-content: center;">
           <a href="contact.html?service=pricing&amp;offer=quote" class="cta-btn" style="background: white; color: var(--bbt-navy); padding: 18px 44px; font-size: 17px;">Book My Free Assessment</a>
           <a href="e-books.html" class="cta-ghost">Download Our Pricing Guide</a>
@@ -1693,7 +1693,7 @@
       </div>
     </section>
 
-    <!-- SECTION 11 — RELATED PAGES -->
+    <!-- SECTION 11: RELATED PAGES -->
     <section class="related-section">
       <div class="container">
         <div class="sec-head fade-up">
@@ -1777,7 +1777,7 @@
       });
     });
 
-    // SECTION 09 — FAQ accordion (one open at a time)
+    // SECTION 09: FAQ accordion (one open at a time)
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
@@ -1801,7 +1801,7 @@
     })();
     </script>
 
-  <!-- SECTION 09 — FAQPage Schema (SEO) -->
+  <!-- SECTION 09: FAQPage Schema (SEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1836,7 +1836,7 @@
         "name": "Can I change my package after signing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. You can upgrade or downgrade your outsourcing engagement with 30 days' notice. For project-based work, scope changes are managed through our formal change order process — quoted and approved before implementation."
+          "text": "Yes. You can upgrade or downgrade your outsourcing engagement with 30 days' notice. For project-based work, scope changes are managed through our formal change order process, with every change quoted and approved before implementation."
         }
       },
       {
@@ -1844,7 +1844,7 @@
         "name": "Do you offer discounts for multiple services?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Bundle 2+ services and save 10-15%. Commit to a 12-month outsourcing engagement and get 1 month free. Non-profits and startups get additional consideration — ask during your assessment."
+          "text": "Yes. Bundle 2+ services and save 10-15%. Commit to a 12-month outsourcing engagement and get 1 month free. Non-profits and startups get additional consideration, so ask during your assessment."
         }
       },
       {
@@ -1852,7 +1852,7 @@
         "name": "What happens if the project goes over budget?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Fixed-price projects don't go over budget — that's the point. If scope changes, we quote the change separately. For T&M engagements, we provide weekly burn reports so you always know where you stand."
+          "text": "Fixed-price projects don't go over budget. That's the point. If scope changes, we quote the change separately. For T&M engagements, we provide weekly burn reports so you always know where you stand."
         }
       },
       {
@@ -1868,7 +1868,7 @@
         "name": "How do I get an exact quote for my project?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Book a free 30-minute assessment via our contact form. We'll audit your current systems, understand your goals, and send you a detailed proposal within 48 hours — with a fixed price, clear timeline, and no obligation."
+          "text": "Book a free 30-minute assessment via our contact form. We'll audit your current systems, understand your goals, and send you a detailed proposal within 48 hours, complete with a fixed price, clear timeline, and no obligation."
         }
       }
     ]
