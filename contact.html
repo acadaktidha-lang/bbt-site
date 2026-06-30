@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Big Binary Tech</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Lenis for smooth scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+    :root {
+      --bbt-navy: #0f172a;
+      --bbt-orange: #f59e0b;
+      --bbt-orange-glow: rgba(245, 158, 11, 0.25);
+      --bbt-border: rgba(0, 0, 0, 0.08);
+      --bbt-dark-border: rgba(255, 255, 255, 0.1);
+      --font-sans: "Inter", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #ffffff;
+      font-family: var(--font-sans);
+      color: #334155;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { width: 90%; max-width: 1300px; margin: auto; }
+
+    /* --- HEADER --- */
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: transparent;
+      padding: 20px 0;
+    }
+
+    .header .nav-links a {
+      color: #ffffff !important;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .header .logo {
+      filter: brightness(0) invert(1);
+    }
+
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 100px;
+      width: auto;
+      display: block;
+    }
+
+    .navbar {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--bbt-navy);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--bbt-orange);
+    }
+
+    .cta-btn {
+      background: var(--bbt-orange);
+      color: var(--bbt-white);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 24px var(--bbt-orange-glow);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      background: var(--bbt-orange-600);
+      box-shadow: 0 8px 32px var(--bbt-orange-glow);
+    }
+
+    .nav-links a.active {
+      color: var(--bbt-orange);
+      position: relative;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--bbt-orange);
+      border-radius: 2px;
+    }
+
+    .nav-item-dropdown {
+      position: static;
+      padding-bottom: 40px;
+      margin-bottom: -40px;
+    }
+
+    .mega-menu-wrapper {
+      position: fixed;
+      left: 0;
+      width: 100vw;
+      top: 100px;
+      background: var(--bbt-navy);
+      border-top: 2px solid var(--bbt-orange);
+      border-bottom: 5px solid var(--bbt-orange);
+      padding: 50px 0;
+      box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      z-index: 9999;
+    }
+
+    .nav-item-dropdown:hover .mega-menu-wrapper {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .mega-menu-container {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .mega-heading {
+      font-size: 28px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 35px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .mega-card {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .mega-card-img {
+      width: 320px;
+      height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mega-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mega-card-text h4 {
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .mega-cta {
+      color: var(--bbt-orange);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mega-links-section { padding-top: 55px; }
+    .mega-links-grid { display: flex; flex-direction: column; }
+
+    .mega-list-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+      color: #ffffff !important;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .mega-list-link:last-child { border-bottom: none; }
+    .mega-list-link i { font-size: 14px; color: var(--bbt-orange); opacity: 0.6; transition: 0.3s; }
+    .mega-list-link:hover { color: var(--bbt-orange) !important; }
+    .mega-list-link:hover i { opacity: 1; transform: translateX(5px); }
+
+    .header:not(.scrolled) .logo img { filter: brightness(0) invert(1); }
+    .header.scrolled .nav-links a { color: var(--bbt-navy); }
+
+    /* --- DARK HERO --- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background-color: #000;
+      padding-top: 80px;
+      overflow: hidden;
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; right: 0; width: 60%; height: 100%;
+      background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/contact-hero.avif');
+      background-size: cover; background-position: center;
+      mask-image: linear-gradient(to right, transparent 0%, black 60%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%);
+      opacity: 0.4; z-index: 1;
+    }
+
+    .hero-content { position: relative; z-index: 5; max-width: 750px; }
+    .eyebrow { color: var(--bbt-orange); font-weight: 800; letter-spacing: 4px; text-transform: uppercase; font-size: 12px; margin-bottom: 16px; display: block; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .hero p { font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 600px; line-height: 1.6; }
+
+    /* --- CONTACT SECTION GRID --- */
+    .contact-main { padding: 120px 0; background-color: #fafafa; }
+    .contact-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: start; }
+
+    .contact-card {
+      background: #ffffff;
+      padding: 60px;
+      border-radius: 40px;
+      border: 1px solid var(--bbt-border);
+      box-shadow: 0 40px 100px rgba(15, 23, 42, 0.05);
+    }
+    .contact-card h2 { font-size: 2.5rem; font-weight: 900; color: var(--bbt-navy); margin-bottom: 40px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+    .input-group { position: relative; }
+    .input-group label { display: block; font-size: 13px; font-weight: 700; color: var(--bbt-navy); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    .input-group input, .input-group select, .input-group textarea {
+      width: 100%; padding: 16px 20px; border-radius: 16px; background: #f8fafc; border: 1px solid #e2e8f0; font-family: inherit; font-size: 15px; transition: 0.3s;
+    }
+    .input-group input:focus, .input-group textarea:focus {
+      outline: none; border-color: var(--bbt-orange); background: #fff; box-shadow: 0 0 0 4px var(--bbt-orange-glow);
+    }
+    .submit-button {
+      width: 100%; padding: 20px; border-radius: 16px; background: var(--bbt-navy); color: white; font-weight: 800; border: none; cursor: pointer; transition: 0.4s; font-size: 16px; letter-spacing: 1px;
+    }
+    .submit-button:hover { background: var(--bbt-orange); transform: translateY(-3px); box-shadow: 0 20px 40px var(--bbt-orange-glow); }
+
+    .info-item { margin-bottom: 40px; }
+    .info-item .icon-box { width: 60px; height: 60px; background: white; border: 1px solid var(--bbt-border); border-radius: 20px; display: grid; place-items: center; margin-bottom: 20px; color: var(--bbt-orange); font-size: 24px; box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
+    .info-item h4 { font-size: 1.2rem; font-weight: 800; color: var(--bbt-navy); margin-bottom: 10px; }
+    .info-item p { font-size: 1rem; color: #64748b; line-height: 1.6; }
+
+    /* --- MESH / PROCESS SECTION --- */
+    .mesh-section {
+      padding: 120px 0;
+      background: var(--bbt-navy);
+      color: white;
+      border-radius: 60px 60px 0 0;
+      position: relative; overflow: hidden;
+    }
+    .mesh-bg { position: absolute; inset: 0; background: radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.15) 0%, transparent 50%); pointer-events: none; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 60px; position: relative; z-index: 2; }
+    .process-card { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--bbt-dark-border); padding: 40px; border-radius: 32px; backdrop-filter: blur(10px); }
+    .process-card .num { font-size: 3rem; font-weight: 900; color: var(--bbt-orange); opacity: 0.3; margin-bottom: 10px; display: block; }
+    .process-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; }
+    .process-card p { color: rgba(255,255,255,0.6); font-size: 0.95rem; }
+
+    .reveal { opacity: 0; transform: translateY(40px); }
+
+    /* ============================================================
+       HAMBURGER BUTTON (hidden on desktop)
+    ============================================================ */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      z-index: 1100;
+      flex-shrink: 0;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ============================================================
+       MOBILE NAV OVERLAY (hidden on desktop)
+    ============================================================ */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--bbt-navy);
+      z-index: 1050;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      padding: 40px 20px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    .mobile-nav a:hover { color: var(--bbt-orange); }
+    .mobile-nav .mobile-cta {
+      background: var(--bbt-orange);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    /* ============================================================
+       RESPONSIVE — TABLET (≤ 1024px)
+    ============================================================ */
+    @media (max-width: 1024px) {
+      /* Hide desktop nav + CTA, show hamburger */
+      .navbar { display: none; }
+      .cta-btn { display: none; }
+      .hamburger { display: flex; }
+
+      /* Hide mega menus (no hover on touch) */
+      .mega-menu-wrapper { display: none !important; }
+
+      /* Logo shrink */
+      .logo img { height: 70px; }
+
+      /* Contact grid → single column */
+      .contact-grid { grid-template-columns: 1fr; }
+
+      /* Contact card */
+      .contact-card { padding: 40px; }
+
+      /* Process grid → 2 columns */
+      .process-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ============================================================
+       RESPONSIVE — MOBILE (≤ 640px)
+    ============================================================ */
+    @media (max-width: 640px) {
+      /* Hero: keep full-height, shift overlay */
+      .hero::after {
+        width: 100%;
+        mask-image: linear-gradient(to bottom, transparent 0%, black 50%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 50%);
+        opacity: 0.2;
+      }
+      .hero p { font-size: 1rem; }
+
+      /* Contact section padding */
+      .contact-main { padding: 70px 0; }
+
+      /* Form card */
+      .contact-card {
+        padding: 28px 20px;
+        border-radius: 24px;
+      }
+
+      /* Form rows → single column */
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      /* Mesh / process section */
+      .mesh-section {
+        padding: 70px 0;
+        border-radius: 32px 32px 0 0;
+      }
+
+      /* Process grid → single column */
+      .process-grid { grid-template-columns: 1fr; }
+
+      .process-card { padding: 28px 24px; border-radius: 20px; }
+
+      /* Logo */
+      .logo img { height: 56px; }
+    }
+
+    /* ============================================================
+       RESPONSIVE — SMALL MOBILE (≤ 400px)
+    ============================================================ */
+    @media (max-width: 400px) {
+      .contact-card { padding: 20px 14px; }
+      .process-card { padding: 20px 16px; }
+      .mobile-nav a { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container header-wrapper">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li class="nav-item-dropdown">
+            <a href="solutions.html" class="nav-link-anchor">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+            <div class="mega-menu-wrapper">
+              <div class="container mega-menu-container">
+                <div class="mega-featured-section">
+                  <h3 class="mega-heading">SOLUTIONS</h3>
+                  <div class="mega-card">
+                    <div class="mega-card-img">
+                      <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/solutions.avif" alt="Enterprise Solutions">
+                    </div>
+                    <div class="mega-card-text">
+                      <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
+                      <a href="digital-transformation.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mega-links-section">
+                  <div class="mega-links-grid">
+                    <a href="social-media-marketing.html" class="mega-list-link"><span>Social Media Marketing</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="enterprise-odo.html" class="mega-list-link"><span>Enterprise Odoo ERP</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="digital-transformation.html" class="mega-list-link"><span>Digital Transformation</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="retil-pos.html" class="mega-list-link"><span>Retail & POS Solutions</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="industries.html">Industries</a></li>
+          <li class="nav-item-dropdown">
+            <a href="resources.html" class="nav-link-anchor">Resources <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+            <div class="mega-menu-wrapper">
+              <div class="container mega-menu-container">
+                <div class="mega-featured-section">
+                  <h3 class="mega-heading">Resources</h3>
+                  <div class="mega-card">
+                    <div class="mega-card-img">
+                      <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="AI Innovations">
+                    </div>
+                    <div class="mega-card-text">
+                      <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
+                      <a href="insights.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mega-links-section">
+                  <div class="mega-links-grid">
+                    <a href="case-studies.html" class="mega-list-link"><span>Case Studies</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="blogs.html" class="mega-list-link"><span>Blogs</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="e-books.html" class="mega-list-link"><span> E-Books</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="industries.html">Industries</a>
+    <a href="resources.html">Resources</a>
+    <a href="insights.html">Insights</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="mobile-cta">Get Free Consultation</a>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-content">
+        <span class="eyebrow fade-in">Let's Connect</span>
+        <h1 class="fade-up">Architecting Your <br> <span style="color: var(--bbt-orange);">Digital Future.</span></h1>
+        <p class="fade-in">Connect with our solutions architects to discuss your technology roadmap, custom software needs, or Odoo ERP implementation.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT AREA -->
+    <section class="contact-main">
+      <div class="container contact-grid">
+        
+        <!-- FORM CARD -->
+        <div class="contact-card reveal">
+          <h2>Start a Conversation</h2>
+          <form>
+            <div class="form-row">
+              <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="John Doe">
+              </div>
+              <div class="input-group">
+                <label>Work Email</label>
+                <input type="email" placeholder="john@company.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="input-group">
+                <label>Industry</label>
+                <select>
+                  <option>Retail & E-Commerce</option>
+                  <option>Healthcare</option>
+                  <option>Manufacturing</option>
+                  <option>Logistics</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label>Project Type</label>
+                <select>
+                  <option>Odoo ERP</option>
+                  <option>Custom Software</option>
+                  <option>AI & Automation</option>
+                  <option>Digital Transformation</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group" style="margin-bottom: 30px;">
+              <label>Message</label>
+              <textarea rows="6" placeholder="Tell us about your project goals and timeline..."></textarea>
+            </div>
+            <button type="submit" class="submit-button">SEND MESSAGE <i class="fa-solid fa-paper-plane" style="margin-left: 10px;"></i></button>
+          </form>
+        </div>
+
+        <!-- INFO SIDEBAR -->
+        <div class="contact-sidebar">
+          <div class="info-item reveal">
+            <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+            <h4>Response Guarantee</h4>
+            <p>We value your time. A dedicated solutions architect will review your inquiry and respond within 24 business hours.</p>
+          </div>
+          <div class="info-item reveal">
+            <div class="icon-box"><i class="fa-solid fa-video"></i></div>
+            <h4>Strategy Session</h4>
+            <p>Looking for deep technical advice? Book a free 30-minute discovery call to map out your architecture.</p>
+          </div>
+          <div class="info-item reveal">
+            <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
+            <h4>Global Presence</h4>
+            <p>Supporting high-growth businesses across the GCC, USA, and UK from our technology hubs.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION (The Journey) -->
+    <section class="mesh-section">
+      <div class="mesh-bg"></div>
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 60px;">
+          <span class="eyebrow">The Journey</span>
+          <h2 style="font-size: 3rem; font-weight: 900;">What Happens Next?</h2>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card reveal">
+            <span class="num">01</span>
+            <h3>Deep Discovery</h3>
+            <p>We review your business needs and existing technical ecosystem.</p>
+          </div>
+          <div class="process-card reveal">
+            <span class="num">02</span>
+            <h3>Strategic Proposal</h3>
+            <p>You receive a detailed technical roadmap and fixed-price quote.</p>
+          </div>
+          <div class="process-card reveal">
+            <span class="num">03</span>
+            <h3>Kickoff</h3>
+            <p>Our agile engineering team begins the sprint-based development.</p>
+          </div>
+          <div class="process-card reveal">
+            <span class="num">04</span>
+            <h3>Scale & Support</h3>
+            <p>Launch with 24/7 maintenance and post-deployment scaling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <script>
+    // Initialize Lenis
+    const lenis = new Lenis();
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Header scroll logic
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // Close mobile nav when a link is tapped
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Hero Animations
+    gsap.from(".hero h1", { y: 60, opacity: 0, duration: 1.2, ease: "power4.out" });
+    gsap.from(".hero p", { y: 30, opacity: 0, duration: 1, delay: 0.3 });
+
+    // Scroll Reveals
+    document.querySelectorAll('.reveal').forEach((el) => {
+      gsap.to(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 88%",
+          toggleActions: "play none none none"
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+    });
+
+    // Form Field Subtle Focus Animation
+    const inputs = document.querySelectorAll('.input-group input, .input-group select, .input-group textarea');
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        gsap.to(input, { scale: 1.01, duration: 0.3 });
+      });
+      input.addEventListener('blur', () => {
+        gsap.to(input, { scale: 1, duration: 0.3 });
+      });
+    });
+  </script>
+</body>
+</html>
