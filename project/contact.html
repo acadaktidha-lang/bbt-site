@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Big Binary Tech</title>
+  <title>Contact Us | Big Binary Tech</title>
+  <link rel="icon" type="image/png" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
+  <link rel="apple-touch-icon" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
+  <meta name="description" content="Get a free consultation for custom POS, Odoo ERP, software development, and digital transformation. Serving GCC, USA & UK with a 24-hour response guarantee.">
+  <link rel="canonical" href="https://bigbinarytech.com/contact/">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -424,6 +428,299 @@
       .form-row { grid-template-columns: 1fr; }
     }
   </style>
+
+<style id="responsive-nav-patch">
+/* ===== Universal Responsive Mobile-Nav Patch (additive; desktop unchanged) ===== */
+.mobile-nav-toggle{
+  display:none; background:transparent; border:0; font-size:26px; line-height:1;
+  color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
+}
+.mobile-nav-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.5);
+  opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:1000;
+}
+@media (max-width:1024px){
+  .mobile-nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  .header .navbar, .header .nav-links{ display:flex !important; }
+  .header .navbar{
+    position:fixed; top:0; right:-100%; width:min(330px,86vw); height:100vh; height:100dvh;
+    background:#0b1020; flex-direction:column; justify-content:flex-start;
+    padding:96px 26px 40px; box-shadow:-8px 0 40px rgba(0,0,0,.45);
+    transition:right .35s ease; overflow-y:auto; z-index:1001;
+  }
+  .header.mobile-open .navbar{ right:0; }
+  .header .nav-links{ flex-direction:column; align-items:flex-start; gap:0; width:100%; }
+  .header .nav-links li{ width:100%; }
+  .header .nav-links a, .header .nav-links .nav-link-anchor{
+    color:#fff !important; text-shadow:none !important; display:block; width:100%;
+    padding:15px 0; font-size:17px; border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .header .mega-menu-wrapper{ display:none !important; }
+  .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
+  body.mobile-nav-open{ overflow:hidden; }
+  body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
+}
+    </style>
+
+<style id="responsive-content-patch">
+/* ===== Contact page content responsiveness (additive; desktop unchanged) ===== */
+@media (max-width:1024px){
+  .hero{ height:auto; min-height:90vh; padding-top:140px; padding-bottom:80px; }
+  .hero::after{ width:100%; opacity:0.25;
+    mask-image:linear-gradient(to bottom, transparent 0%, black 70%);
+    -webkit-mask-image:linear-gradient(to bottom, transparent 0%, black 70%); }
+  .contact-main{ padding:80px 0; }
+  .mesh-section{ padding:90px 0; }
+  .contact-card h2{ font-size:2.1rem; }
+}
+@media (max-width:768px){
+  .hero{ min-height:auto; padding-top:130px; padding-bottom:70px; }
+  .hero-content{ max-width:100%; }
+  .hero h1{ font-size:clamp(2rem, 9vw, 3rem); }
+  .hero p{ font-size:1.05rem; }
+  .contact-main{ padding:60px 0; }
+  .contact-card{ padding:28px; border-radius:28px; }
+  .contact-card h2{ font-size:1.9rem; margin-bottom:30px; }
+  .process-grid{ grid-template-columns:1fr; gap:20px; margin-top:40px; }
+  .process-card{ padding:30px; }
+  .mesh-section{ padding:70px 0; border-radius:40px 40px 0 0; }
+  .mesh-section h2{ font-size:2.2rem !important; }
+  .info-item{ margin-bottom:30px; }
+}
+@media (max-width:480px){
+  .container{ width:92%; }
+  .hero h1{ font-size:clamp(1.8rem, 9vw, 2.4rem); }
+  .hero p{ font-size:0.98rem; }
+  .eyebrow{ letter-spacing:3px; }
+  .contact-card{ padding:22px; border-radius:22px; }
+  .contact-card h2{ font-size:1.6rem; }
+  .input-group input, .input-group select, .input-group textarea{ padding:14px 16px; font-size:14px; }
+  .submit-button{ padding:18px; font-size:15px; }
+  .process-card{ padding:24px; border-radius:24px; }
+  .process-card .num{ font-size:2.4rem; }
+  .process-card h3{ font-size:1.2rem; }
+  .mesh-section h2{ font-size:1.8rem !important; }
+}
+    </style>
+
+<style id="contact-spec-patch">
+/* ===== Contact page spec sections (navy/orange design language) ===== */
+
+/* Breadcrumb */
+.breadcrumb{ position:relative; z-index:5; font-size:.85rem; color:rgba(255,255,255,0.7); margin-bottom:18px; }
+.breadcrumb a{ color:rgba(255,255,255,0.7); text-decoration:none; transition:color .25s ease; }
+.breadcrumb a:hover{ color:var(--bbt-orange); }
+.breadcrumb span{ color:var(--bbt-orange); }
+
+/* Hero trust bar (pill chips) */
+.hero-trust-bar{ display:flex; flex-wrap:wrap; gap:12px; margin-top:40px; position:relative; z-index:5; }
+.hero-trust-bar .trust-chip{
+  display:inline-flex; align-items:center; gap:8px; padding:9px 18px; border-radius:999px;
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.16);
+  font-size:.82rem; font-weight:600; color:rgba(255,255,255,0.92);
+}
+.hero-trust-bar .trust-chip i{ color:var(--bbt-orange); font-size:.85rem; }
+
+/* Form intro + field details */
+.contact-card .form-subtext{ font-size:1rem; color:#64748b; line-height:1.65; margin:-22px 0 36px; }
+.input-group .field-error{ display:none; color:#dc2626; font-size:12px; font-weight:600; margin-top:7px; }
+.input-group.invalid input, .input-group.invalid textarea, .input-group.invalid select{ border-color:#dc2626; background:#fff; }
+.input-group.invalid .field-error{ display:block; }
+.tel-wrap{ display:grid; grid-template-columns:110px 1fr; gap:10px; }
+.tel-wrap select{ padding:16px 10px; }
+.form-privacy{ font-size:12px; color:#94a3b8; margin-top:16px; text-align:center; }
+.form-success{
+  display:none; text-align:center; padding:50px 20px;
+}
+.form-success.show{ display:block; }
+.form-success .ok-icon{ width:72px; height:72px; border-radius:50%; background:rgba(245,158,11,0.14); color:var(--bbt-orange); display:grid; place-items:center; font-size:32px; margin:0 auto 22px; }
+.form-success h3{ font-size:1.7rem; font-weight:900; color:var(--bbt-navy); margin-bottom:12px; }
+.form-success p{ color:#64748b; line-height:1.6; margin-bottom:26px; }
+.form-success .wa-btn{ display:inline-flex; align-items:center; gap:10px; padding:14px 28px; border-radius:999px; background:#25D366; color:#fff; font-weight:700; text-decoration:none; }
+
+/* Contact info sidebar: light grey panel */
+.contact-info-panel{ background:#f8fafc; border:1px solid var(--bbt-border); border-radius:32px; padding:40px; }
+.contact-info-panel .ci-block{ margin-bottom:30px; }
+.contact-info-panel .ci-block:last-child{ margin-bottom:0; }
+.contact-info-panel h4{ font-size:1.05rem; font-weight:800; color:var(--bbt-navy); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+.contact-info-panel h4 i{ color:var(--bbt-orange); }
+.contact-info-panel .ci-line{ display:flex; align-items:flex-start; gap:12px; font-size:.95rem; color:#64748b; line-height:1.55; margin-bottom:9px; }
+.contact-info-panel .ci-line i{ color:var(--bbt-orange); margin-top:3px; width:16px; text-align:center; flex-shrink:0; }
+.contact-info-panel .ci-line a{ color:#64748b; text-decoration:none; transition:color .25s ease; }
+.contact-info-panel .ci-line a:hover{ color:var(--bbt-orange); }
+.contact-info-panel .map-placeholder{
+  height:200px; border-radius:18px; margin-top:8px; overflow:hidden;
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+  display:grid; place-items:center; text-align:center; color:rgba(255,255,255,0.85); position:relative;
+}
+.contact-info-panel .map-placeholder i{ font-size:30px; color:var(--bbt-orange); margin-bottom:8px; }
+.contact-info-panel .map-placeholder span{ display:block; font-size:.85rem; }
+.get-directions{ display:inline-flex; align-items:center; gap:8px; margin-top:12px; font-size:.85rem; font-weight:700; color:var(--bbt-navy); text-decoration:none; }
+.get-directions:hover{ color:var(--bbt-orange); }
+
+/* Section shells */
+.spec-section{ padding:110px 0; }
+.spec-section.soft{ background:#f8fafc; }
+.spec-section.white{ background:#fff; }
+.section-head{ text-align:center; max-width:760px; margin:0 auto 56px; }
+.section-head h2{ font-size:clamp(2rem,4vw,2.8rem); font-weight:900; color:var(--bbt-navy); line-height:1.15; }
+.section-head p{ color:#64748b; font-size:1.05rem; line-height:1.7; margin-top:16px; }
+
+/* SECTION 03: Why contact (4 cards) */
+.why-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
+.why-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:26px; padding:36px 30px; transition:transform .3s ease, box-shadow .3s ease; }
+.why-card:hover{ transform:translateY(-6px); box-shadow:0 24px 50px rgba(15,23,42,0.08); }
+.why-card .why-num{ width:54px; height:54px; border-radius:50%; background:rgba(245,158,11,0.12); color:var(--bbt-orange); display:grid; place-items:center; font-weight:900; font-size:1.15rem; margin-bottom:22px; }
+.why-card h3{ font-size:1.2rem; font-weight:800; color:var(--bbt-navy); margin-bottom:12px; }
+.why-card p{ color:#64748b; font-size:.95rem; line-height:1.6; }
+
+/* SECTION 04: Service pills */
+.service-pills{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; max-width:1000px; margin:0 auto; }
+.service-pill{
+  display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:999px;
+  background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.28); color:var(--bbt-navy);
+  font-weight:700; font-size:.95rem; text-decoration:none; transition:all .3s ease;
+}
+.service-pill i{ color:var(--bbt-orange); transition:color .3s ease; }
+.service-pill:hover{ background:var(--bbt-orange); border-color:var(--bbt-orange); color:#fff; transform:translateY(-3px); }
+.service-pill:hover i{ color:#fff; }
+.service-pill small{ display:block; font-weight:500; font-size:.78rem; color:#94a3b8; }
+.service-pill:hover small{ color:rgba(255,255,255,0.85); }
+.pills-note{ text-align:center; color:#94a3b8; font-size:.95rem; margin-top:36px; }
+
+/* SECTION 05: FAQ (lifted from solutions) */
+.faq-container{ max-width:900px; margin:0 auto; }
+.faq-item{ border-bottom:1px solid #e2e8f0; padding:25px 0; cursor:pointer; }
+.faq-question{ display:flex; justify-content:space-between; align-items:center; gap:20px; font-weight:700; color:var(--bbt-navy); font-size:1.15rem; }
+.faq-question i{ transition:transform .3s ease; font-size:.9rem; flex-shrink:0; color:var(--bbt-orange); }
+.faq-answer{ max-height:0; overflow:hidden; transition:all .4s cubic-bezier(0.4,0,0.2,1); color:#64748b; line-height:1.7; margin-top:0; }
+.faq-item.active .faq-answer{ max-height:600px; margin-top:15px; }
+.faq-item.active .faq-question i{ transform:rotate(180deg); }
+
+/* SECTION 06: Testimonials */
+.testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+.testi-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:26px; padding:34px; box-shadow:0 14px 36px rgba(15,23,42,0.05); display:flex; flex-direction:column; }
+.testi-card .stars{ color:var(--bbt-orange); font-size:.95rem; margin-bottom:18px; letter-spacing:2px; }
+.testi-card .quote{ font-style:italic; color:#334155; line-height:1.7; font-size:1rem; margin-bottom:22px; }
+.testi-card .attrib{ margin-top:auto; padding-top:18px; border-top:1px solid var(--bbt-border); font-weight:800; color:var(--bbt-navy); font-size:.95rem; }
+.testi-card .attrib span{ display:block; font-weight:500; color:#94a3b8; font-size:.85rem; margin-top:4px; }
+
+/* SECTION 07: Alternative contact methods */
+.alt-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+.alt-card{ background:#fff; border:1px solid var(--bbt-border); border-top:3px solid var(--bbt-orange); border-radius:22px; padding:36px 30px; text-align:center; transition:transform .3s ease, box-shadow .3s ease; }
+.alt-card.wa{ border-top-color:#25D366; }
+.alt-card.email{ border-top-color:#3b82f6; }
+.alt-card.call{ border-top-color:var(--bbt-orange); }
+.alt-card:hover{ transform:translateY(-6px); box-shadow:0 24px 50px rgba(15,23,42,0.08); }
+.alt-card .alt-icon{ width:62px; height:62px; border-radius:18px; display:grid; place-items:center; margin:0 auto 20px; font-size:24px; }
+.alt-card.wa .alt-icon{ background:rgba(37,211,102,0.12); color:#25D366; }
+.alt-card.email .alt-icon{ background:rgba(59,130,246,0.12); color:#3b82f6; }
+.alt-card.call .alt-icon{ background:rgba(245,158,11,0.12); color:var(--bbt-orange); }
+.alt-card h3{ font-size:1.2rem; font-weight:800; color:var(--bbt-navy); margin-bottom:10px; }
+.alt-card p{ color:#64748b; font-size:.92rem; line-height:1.6; margin-bottom:14px; }
+.alt-card .alt-detail{ font-weight:700; color:var(--bbt-navy); display:block; margin-bottom:18px; word-break:break-word; }
+.alt-card .alt-cta{ display:inline-block; padding:11px 24px; border-radius:999px; background:var(--bbt-navy); color:#fff; font-weight:700; font-size:.9rem; text-decoration:none; transition:all .3s ease; }
+.alt-card .alt-cta:hover{ background:var(--bbt-orange); transform:translateY(-2px); }
+
+/* SECTION 08: Office locations */
+.office-grid{ display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+.office-card{ background:#fff; border:1px solid var(--bbt-border); border-radius:26px; overflow:hidden; }
+.office-card .office-map{
+  height:200px; background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+  display:grid; place-items:center; text-align:center; color:rgba(255,255,255,0.85);
+}
+.office-card .office-map i{ font-size:30px; color:var(--bbt-orange); margin-bottom:8px; }
+.office-card .office-map span{ display:block; font-size:.85rem; }
+.office-card .office-body{ padding:30px; }
+.office-card h3{ font-size:1.25rem; font-weight:800; color:var(--bbt-navy); margin-bottom:16px; }
+.office-card .ci-line{ display:flex; align-items:flex-start; gap:12px; font-size:.95rem; color:#64748b; line-height:1.55; margin-bottom:10px; }
+.office-card .ci-line i{ color:var(--bbt-orange); margin-top:3px; width:16px; text-align:center; flex-shrink:0; }
+.office-card .ci-line a{ color:#64748b; text-decoration:none; }
+.office-card .ci-line a:hover{ color:var(--bbt-orange); }
+
+/* SECTION 09: Partners & certifications */
+.partner-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; max-width:1000px; margin:0 auto; }
+.partner-logo{
+  background:#f8fafc; border:1px solid var(--bbt-border); border-radius:18px; padding:30px 18px;
+  text-align:center; font-weight:800; color:#94a3b8; font-size:1rem; filter:grayscale(1); opacity:.8;
+  transition:all .3s ease; min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+}
+.partner-logo i{ font-size:26px; }
+.partner-logo:hover{ filter:grayscale(0); opacity:1; color:var(--bbt-navy); border-color:rgba(245,158,11,0.4); transform:translateY(-4px); }
+.partner-logo:hover i{ color:var(--bbt-orange); }
+.partner-cta-wrap{ text-align:center; margin-top:40px; }
+.partner-cta-wrap a{ color:var(--bbt-navy); font-weight:700; text-decoration:none; border-bottom:2px solid var(--bbt-orange); padding-bottom:2px; }
+.partner-cta-wrap a:hover{ color:var(--bbt-orange); }
+
+/* SECTION 10: Bottom CTA banner */
+.final-cta{ padding:100px 0; background:var(--bbt-navy); border-radius:60px 60px 0 0; text-align:center; color:#fff; position:relative; overflow:hidden; }
+.final-cta .mesh-bg{ position:absolute; inset:0; background:radial-gradient(circle at 100% 0%, rgba(245,158,11,0.15) 0%, transparent 50%); pointer-events:none; }
+.final-cta h2{ font-size:clamp(2rem,5vw,3.2rem); font-weight:900; margin-bottom:22px; line-height:1.1; position:relative; z-index:2; }
+.final-cta p{ max-width:640px; margin:0 auto 36px; color:rgba(255,255,255,0.72); position:relative; z-index:2; }
+.final-cta .cta-actions{ display:flex; flex-wrap:wrap; gap:16px; justify-content:center; position:relative; z-index:2; }
+.cta-ghost{
+  display:inline-block; padding:16px 36px; border-radius:999px; font-size:16px; font-weight:600;
+  text-decoration:none; color:#fff; border:1px solid rgba(255,255,255,0.4); background:rgba(255,255,255,0.04); transition:all .3s ease;
+}
+.cta-ghost:hover{ border-color:var(--bbt-orange); color:var(--bbt-orange); transform:translateY(-2px); }
+
+/* Sticky mobile CTA */
+.sticky-expert{
+  display:none; position:fixed; left:16px; right:16px; bottom:16px; z-index:900;
+  text-align:center; padding:15px; border-radius:999px; background:var(--bbt-orange); color:#fff;
+  font-weight:800; text-decoration:none; box-shadow:0 12px 30px var(--bbt-orange-glow);
+}
+
+/* Responsive: spec sections */
+@media (max-width:1024px){
+  .spec-section{ padding:80px 0; }
+  .why-grid{ grid-template-columns:1fr 1fr; }
+  .partner-grid{ grid-template-columns:repeat(3,1fr); }
+}
+@media (max-width:768px){
+  .spec-section{ padding:64px 0; }
+  .section-head{ margin-bottom:40px; }
+  .section-head h2{ font-size:2rem; }
+  .why-grid{ grid-template-columns:1fr; }
+  .testi-grid{ grid-template-columns:1fr; }
+  .alt-grid{ grid-template-columns:1fr; }
+  .office-grid{ grid-template-columns:1fr; }
+  .partner-grid{ grid-template-columns:repeat(2,1fr); }
+  .tel-wrap{ grid-template-columns:96px 1fr; }
+  .contact-info-panel{ padding:30px; }
+  .final-cta{ padding:70px 0; border-radius:40px 40px 0 0; }
+  .final-cta .cta-actions a{ width:100%; }
+  .sticky-expert{ display:block; }
+}
+@media (max-width:480px){
+  .container{ width:92%; }
+  .service-pill{ padding:12px 18px; font-size:.88rem; }
+  .partner-grid{ grid-template-columns:1fr; }
+  .final-cta{ padding:56px 0; border-radius:28px 28px 0 0; }
+}
+</style>
+
+<style id="shared-footer-patch">
+/* ===== Canonical Site Footer (identical across all pages) ===== */
+.site-footer{ padding:72px 0 40px; background:#f8fafc; color:#334155; font-family:"Inter",system-ui,-apple-system,sans-serif; }
+.site-footer .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:32px; align-items:start; }
+.site-footer .footer-brand .logo{ display:inline-block; margin-bottom:18px; filter:none; }
+.site-footer .footer-brand .logo img{ height:100px; width:auto; display:block; filter:none; }
+.site-footer .footer-brand p{ max-width:42ch; line-height:1.8; margin-bottom:22px; color:#64748b; font-size:1rem; }
+.site-footer .footer-social{ display:flex; gap:12px; flex-wrap:wrap; }
+.site-footer .social-icon{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(15,23,42,0.1); background:rgba(255,255,255,0.06); color:#0f172a; text-decoration:none; transition:background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease; }
+.site-footer .social-icon svg{ width:18px; height:18px; fill:currentColor; }
+.site-footer .social-icon:hover{ background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.4); color:#f59e0b; transform:translateY(-2px); }
+.site-footer .footer-col h3{ margin:0 0 20px; font-size:1.1rem; color:#0f172a; font-weight:700; }
+.site-footer .footer-col ul{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.site-footer .footer-col li a, .site-footer .footer-contact .contact-line a{ color:#64748b; text-decoration:none; transition:color .25s ease; font-size:1rem; }
+.site-footer .footer-col li a:hover, .site-footer .footer-contact .contact-line a:hover{ color:#f59e0b; }
+.site-footer .footer-contact .contact-line{ margin:0 0 12px; color:#64748b; line-height:1.6; font-size:1rem; }
+.site-footer .footer-bottom{ margin-top:48px; padding-top:24px; text-align:center; }
+.site-footer .footer-bottom p{ margin:0; font-size:.875rem; color:#64748b; }
+@media (max-width:1100px){ .site-footer .footer-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } .site-footer .footer-brand{ grid-column:1 / -1; } }
+@media (max-width:640px){ .site-footer .footer-grid{ grid-template-columns:1fr; } .site-footer{ padding:56px 0 32px; } .site-footer .footer-brand .logo img{ height:80px; } }
+</style>
 </head>
 <body>
 
@@ -469,7 +766,7 @@
             <span>Social Media Marketing</span>
             <i class="fa-solid fa-arrow-right-long"></i>
           </a>
-          <a href="enterprise-odo.html" class="mega-list-link">
+          <a href="enterprise-odoo.html" class="mega-list-link">
             <span>Enterprise Odoo ERP</span>
             <i class="fa-solid fa-arrow-right-long"></i>
           </a>
@@ -477,7 +774,7 @@
             <span>Digital Transformation</span>
             <i class="fa-solid fa-arrow-right-long"></i>
           </a>
-          <a href="retil-pos.html" class="mega-list-link">
+          <a href="retail-pos.html" class="mega-list-link">
             <span>Retail & POS Solutions</span>
             <i class="fa-solid fa-arrow-right-long"></i>
           </a>
@@ -505,7 +802,7 @@
           </div>
           <div class="mega-card-text">
             <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
-            <a href="insights.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="blogs.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -531,129 +828,413 @@
     </div>
   </div>
 </li>
-        <li><a href="insights.html">Insights</a></li>
+        <li><a href="blogs.html">Insights</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <!-- CTA -->
     <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
   </div>
 </header>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <main>
-    <!-- HERO -->
+    <!-- SECTION 01: HERO -->
     <section class="hero">
       <div class="container hero-content">
+        <nav class="breadcrumb fade-in" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> <span>&rsaquo;</span> Contact Us
+        </nav>
         <span class="eyebrow fade-in">Let's Connect</span>
-        <h1 class="fade-up">Architecting Your <br> <span style="color: var(--bbt-orange);">Digital Future.</span></h1>
-        <p class="fade-in">Connect with our solutions architects to discuss your technology roadmap, custom software needs, or Odoo ERP implementation.</p>
+        <h1 class="fade-up">Let's Build Something <span style="color: var(--bbt-orange);">Great Together.</span></h1>
+        <p class="fade-in">Whether you need a custom POS system, an Odoo ERP implementation, a complete digital transformation, or simply want to explore what's possible, we're here to help. Tell us about your project and we'll get back to you within 24 hours.</p>
+        <div class="hero-trust-bar fade-in">
+          <span class="trust-chip"><i class="fa-solid fa-bolt"></i> 24-hour response guarantee</span>
+          <span class="trust-chip"><i class="fa-solid fa-comments"></i> Free consultation</span>
+          <span class="trust-chip"><i class="fa-solid fa-handshake"></i> No obligation</span>
+          <span class="trust-chip"><i class="fa-solid fa-earth-americas"></i> GCC · USA · UK</span>
+        </div>
       </div>
     </section>
 
-    <!-- CONTACT AREA -->
-    <section class="contact-main">
+    <!-- SECTION 02: CONTACT FORM + INFO SPLIT -->
+    <section class="contact-main" id="contact-form">
       <div class="container contact-grid">
-        
-        <!-- FORM CARD -->
+
+        <!-- FORM CARD (Left 60%) -->
         <div class="contact-card reveal">
-          <h2>Start a Conversation</h2>
-          <form>
-            <div class="form-row">
-              <div class="input-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="John Doe">
+          <div id="formWrap">
+            <h2>Start Your Project</h2>
+            <p class="form-subtext">Fill out the form below and we'll schedule a free 30-minute consultation. No sales pressure, just honest advice about what's possible.</p>
+            <form id="contactForm" novalidate>
+              <!-- Hidden tracking fields -->
+              <input type="hidden" name="utm_source" id="utm_source">
+              <input type="hidden" name="utm_campaign" id="utm_campaign">
+
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="fullName">Full Name *</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+                  <span class="field-error">Please enter your full name.</span>
+                </div>
+                <div class="input-group">
+                  <label for="email">Business Email *</label>
+                  <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                  <span class="field-error">Please enter a valid email address.</span>
+                </div>
               </div>
-              <div class="input-group">
-                <label>Work Email</label>
-                <input type="email" placeholder="john@company.com">
+
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="phone">Phone Number *</label>
+                  <div class="tel-wrap">
+                    <select id="countryCode" name="countryCode" aria-label="Country code">
+                      <option value="+92">+92</option>
+                      <option value="+971">+971</option>
+                      <option value="+966">+966</option>
+                      <option value="+1">+1</option>
+                      <option value="+44">+44</option>
+                    </select>
+                    <input type="tel" id="phone" name="phone" placeholder="50 123 4567" required>
+                  </div>
+                  <span class="field-error">Please enter a valid phone number with country code.</span>
+                </div>
+                <div class="input-group">
+                  <label for="company">Company Name</label>
+                  <input type="text" id="company" name="company" placeholder="Your company name (optional)">
+                </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <label>Industry</label>
-                <select>
-                  <option>Retail & E-Commerce</option>
-                  <option>Healthcare</option>
-                  <option>Manufacturing</option>
-                  <option>Logistics</option>
+
+              <div class="input-group" style="margin-bottom:24px;">
+                <label for="needHelp">What do you need help with? *</label>
+                <select id="needHelp" name="needHelp" required>
+                  <option value="">Select a service</option>
+                  <option>Odoo ERP</option>
+                  <option>POS Systems</option>
+                  <option>Website Development</option>
+                  <option>AI &amp; Automation</option>
+                  <option>Custom Software</option>
+                  <option>Digital Transformation</option>
+                  <option>Social Media Marketing</option>
                   <option>Other</option>
                 </select>
+                <span class="field-error">Please choose what you need help with.</span>
               </div>
-              <div class="input-group">
-                <label>Project Type</label>
-                <select>
-                  <option>Odoo ERP</option>
-                  <option>Custom Software</option>
-                  <option>AI & Automation</option>
-                  <option>Digital Transformation</option>
-                </select>
+
+              <div class="input-group" style="margin-bottom:24px;">
+                <label for="message">Tell us about your project *</label>
+                <textarea id="message" name="message" rows="5" placeholder="Briefly describe your project, goals, and timeline..." required></textarea>
+                <span class="field-error">Please give us at least 50 characters about your project.</span>
               </div>
-            </div>
-            <div class="input-group" style="margin-bottom: 30px;">
-              <label>Message</label>
-              <textarea rows="6" placeholder="Tell us about your project goals and timeline..."></textarea>
-            </div>
-            <button type="submit" class="submit-button">SEND MESSAGE <i class="fa-solid fa-paper-plane" style="margin-left: 10px;"></i></button>
-          </form>
+
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="budget">Budget Range</label>
+                  <select id="budget" name="budget">
+                    <option value="">Select a range (optional)</option>
+                    <option>Under $5,000</option>
+                    <option>$5,000 to $15,000</option>
+                    <option>$15,000 to $50,000</option>
+                    <option>$50,000 to $100,000</option>
+                    <option>$100,000+</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label for="hearAbout">How did you hear about us?</label>
+                  <select id="hearAbout" name="hearAbout">
+                    <option value="">Select an option (optional)</option>
+                    <option>Google Search</option>
+                    <option>Social Media</option>
+                    <option>Referral</option>
+                    <option>LinkedIn</option>
+                    <option>Event</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="submit-button" style="margin-top:8px;">Send My Project Details <i class="fa-solid fa-paper-plane" style="margin-left:10px;"></i></button>
+              <p class="form-privacy">We respect your privacy. No spam, ever.</p>
+            </form>
+          </div>
+
+          <!-- Success state -->
+          <div class="form-success" id="formSuccess">
+            <div class="ok-icon"><i class="fa-solid fa-check"></i></div>
+            <h3>Thank you. Your details are in.</h3>
+            <p>We'll be in touch within 24 hours. Prefer to chat right now? Reach us on WhatsApp.</p>
+            <a href="https://wa.me/923268880101" class="wa-btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+          </div>
         </div>
 
-        <!-- INFO SIDEBAR -->
-        <div class="contact-sidebar">
-          <div class="info-item reveal">
-            <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
-            <h4>Response Guarantee</h4>
-            <p>We value your time. A dedicated solutions architect will review your inquiry and respond within 24 business hours.</p>
+        <!-- CONTACT INFO PANEL (Right 40%) -->
+        <div class="contact-info-panel reveal">
+          <div class="ci-block">
+            <h4><i class="fa-solid fa-building"></i> Headquarters in Pakistan</h4>
+            <p class="ci-line"><i class="fa-solid fa-location-dot"></i> Big Binary Tech, Tech Park, Lahore, Pakistan</p>
+            <p class="ci-line"><i class="fa-solid fa-phone"></i> <a href="tel:+923268880101">+92 326 8880101</a></p>
+            <p class="ci-line"><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@bigbinarytech.com">hello@bigbinarytech.com</a></p>
           </div>
-          <div class="info-item reveal">
-            <div class="icon-box"><i class="fa-solid fa-video"></i></div>
-            <h4>Strategy Session</h4>
-            <p>Looking for deep technical advice? Book a free 30-minute discovery call to map out your architecture.</p>
+          <div class="ci-block">
+            <h4><i class="fa-solid fa-building"></i> GCC Office in the UAE</h4>
+            <p class="ci-line"><i class="fa-solid fa-location-dot"></i> Big Binary Tech, Business Bay, Dubai, UAE</p>
+            <p class="ci-line"><i class="fa-solid fa-phone"></i> <a href="tel:+97140000000">+971 4 000 0000</a></p>
+            <p class="ci-line"><i class="fa-solid fa-envelope"></i> <a href="mailto:gcc@bigbinarytech.com">gcc@bigbinarytech.com</a></p>
           </div>
-          <div class="info-item reveal">
-            <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
-            <h4>Global Presence</h4>
-            <p>Supporting high-growth businesses across the GCC, USA, and UK from our technology hubs.</p>
+          <div class="ci-block">
+            <h4><i class="fa-solid fa-clock"></i> Business Hours</h4>
+            <p class="ci-line"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Pakistan: Monday to Friday, 9:00 AM to 6:00 PM PKT</p>
+            <p class="ci-line"><i class="fa-solid fa-circle" style="font-size:6px;"></i> UAE: Monday to Friday, 9:00 AM to 6:00 PM GST</p>
+            <p class="ci-line"><i class="fa-solid fa-circle" style="font-size:6px;"></i> USA/UK: Async support with 24h response</p>
+          </div>
+          <div class="ci-block">
+            <h4><i class="fa-solid fa-bolt"></i> Quick Contact Options</h4>
+            <p class="ci-line"><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/923268880101" target="_blank" rel="noopener noreferrer">WhatsApp Business: Click to chat</a></p>
+            <p class="ci-line"><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@bigbinarytech.com">hello@bigbinarytech.com</a></p>
+            <p class="ci-line"><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/company/bigbinarytech" target="_blank" rel="noopener noreferrer">linkedin.com/company/bigbinarytech</a></p>
+          </div>
+          <div class="ci-block">
+            <h4><i class="fa-solid fa-map-location-dot"></i> Find Our Lahore HQ</h4>
+            <div class="map-placeholder">
+              <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Lahore, Pakistan: Map placeholder</span>
+              </div>
+            </div>
+            <a href="https://maps.google.com/?q=Lahore,Pakistan" class="get-directions" target="_blank" rel="noopener noreferrer">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- PROCESS SECTION (The Journey) -->
-    <section class="mesh-section">
+    <!-- SECTION 03: WHY CONTACT BIG BINARY TECH -->
+    <section class="spec-section soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Why Contact Us</span>
+          <h2>What Happens After You Reach Out</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card fade-up">
+            <div class="why-num">01</div>
+            <h3>We Respond in 24 Hours</h3>
+            <p>No automated bots. A real person reviews your project and replies with specific next steps, not a generic template.</p>
+          </div>
+          <div class="why-card fade-up">
+            <div class="why-num">02</div>
+            <h3>Free 30-Minute Consultation</h3>
+            <p>We learn about your business, identify quick wins, and give you an honest assessment, even if we're not the right fit.</p>
+          </div>
+          <div class="why-card fade-up">
+            <div class="why-num">03</div>
+            <h3>Clear Proposal &amp; Timeline</h3>
+            <p>You get a detailed proposal with scope, timeline, cost, and deliverables. No hidden fees. No vague promises.</p>
+          </div>
+          <div class="why-card fade-up">
+            <div class="why-num">04</div>
+            <h3>Start When You're Ready</h3>
+            <p>No pressure to commit immediately. Review the proposal, ask questions, and start when you're comfortable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04: WHAT WE CAN HELP WITH -->
+    <section class="spec-section white">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Quick Reference</span>
+          <h2>Not Sure What You Need? Here's What We Do</h2>
+          <p>If you're not sure which service fits your project, here's a quick guide. Click any service to learn more, or simply tell us your problem and we'll recommend the right solution.</p>
+        </div>
+        <div class="service-pills">
+          <a href="enterprise-odoo.html" class="service-pill"><i class="fa-solid fa-cubes"></i> Odoo ERP Implementation <small>HR, finance, inventory &amp; CRM</small></a>
+          <a href="retail-pos.html" class="service-pill"><i class="fa-solid fa-cash-register"></i> Custom POS Systems <small>Retail &amp; multi-branch with cloud sync</small></a>
+          <a href="services.html" class="service-pill"><i class="fa-solid fa-code"></i> Website Development <small>Corporate, e-commerce &amp; CMS</small></a>
+          <a href="services.html" class="service-pill"><i class="fa-solid fa-robot"></i> AI &amp; Automation <small>Workflow automation &amp; chatbots</small></a>
+          <a href="services.html" class="service-pill"><i class="fa-solid fa-laptop-code"></i> Custom Software <small>Web apps, SaaS &amp; APIs</small></a>
+          <a href="digital-transformation.html" class="service-pill"><i class="fa-solid fa-arrows-rotate"></i> Digital Transformation <small>Legacy modernization &amp; cloud</small></a>
+          <a href="social-media-marketing.html" class="service-pill"><i class="fa-solid fa-bullhorn"></i> Social Media Marketing <small>Content, paid ads &amp; lead gen</small></a>
+          <a href="services.html" class="service-pill"><i class="fa-solid fa-cloud"></i> Cloud &amp; DevOps <small>AWS/Azure, CI/CD &amp; infrastructure</small></a>
+        </div>
+        <p class="pills-note">Still not sure? Just describe your problem in the form above and we'll point you in the right direction.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 05: FAQ -->
+    <section class="spec-section soft" id="faqs">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Common Questions About Working With Us</h2>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">How quickly will you respond to my inquiry? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Within 24 hours during business days. For urgent projects, mention 'urgent' in your message and we'll prioritize. GCC clients get responses aligned with GST business hours.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Is the initial consultation really free? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes, it's completely free with no obligation. It's a 30-minute video call where we understand your project and give you an honest assessment. No sales pitch.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What information should I include in my message? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">The more context, the better: your industry, current challenges, goals, timeline, and budget range. But don't worry, even a brief description is enough to start the conversation.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Do you work with startups and small businesses? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Absolutely. We have packages and engagement models for businesses of all sizes, from single-location startups to enterprise chains.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Can we meet in person if we're in Lahore or Dubai? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes. We welcome in-person meetings at our Lahore headquarters and Dubai office. Just mention it in your message and we'll schedule accordingly.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What if I'm not ready to start yet? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">No problem. We're happy to answer questions, provide advice, and stay in touch. Many clients contact us 2 to 3 months before they're ready to begin.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06: CLIENT TESTIMONIALS -->
+    <section class="spec-section white">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Social Proof</span>
+          <h2>What Our Clients Say About Working With Us</h2>
+        </div>
+        <div class="testi-grid">
+          <div class="testi-card fade-up">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="quote">"I filled out the form on Sunday evening and had a detailed response on Monday morning. The consultation was incredibly helpful, and they identified problems we didn't even know we had."</p>
+            <div class="attrib">CEO<span>Retail Chain · Dubai, UAE</span></div>
+          </div>
+          <div class="testi-card fade-up">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="quote">"We weren't sure if our budget was enough for a custom ERP. BBT was honest about what was possible and proposed a phased approach that worked perfectly."</p>
+            <div class="attrib">Operations Director<span>Manufacturing Firm · Jeddah, KSA</span></div>
+          </div>
+          <div class="testi-card fade-up">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="quote">"The team made the whole process feel easy. From first contact to project kickoff took 10 days, and that included a full discovery session and detailed proposal."</p>
+            <div class="attrib">IT Manager<span>Healthcare Group · Lahore, Pakistan</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 07: ALTERNATIVE CONTACT METHODS -->
+    <section class="spec-section soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Multi-Channel</span>
+          <h2>Other Ways to Reach Us</h2>
+          <p>Prefer to reach out another way? Here are all your options.</p>
+        </div>
+        <div class="alt-grid">
+          <div class="alt-card wa fade-up">
+            <div class="alt-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3>WhatsApp Business</h3>
+            <p>Fastest way to get answers. Click to start a chat.</p>
+            <span class="alt-detail">+92 326 8880101</span>
+            <a href="https://wa.me/923268880101" class="alt-cta" target="_blank" rel="noopener noreferrer">Click to Chat on WhatsApp</a>
+          </div>
+          <div class="alt-card email fade-up">
+            <div class="alt-icon"><i class="fa-solid fa-envelope"></i></div>
+            <h3>Email Us Directly</h3>
+            <p>For detailed project briefs and document sharing.</p>
+            <span class="alt-detail">hello@bigbinarytech.com</span>
+            <a href="mailto:hello@bigbinarytech.com" class="alt-cta">Send Email</a>
+          </div>
+          <div class="alt-card call fade-up">
+            <div class="alt-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <h3>Book a Call</h3>
+            <p>Schedule a video call at a time that works for you.</p>
+            <span class="alt-detail">30-minute consultation</span>
+            <a href="#contact-form" class="alt-cta">Book a Video Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 08: OFFICE LOCATIONS -->
+    <section class="spec-section white">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Visit Us</span>
+          <h2>Our Offices</h2>
+        </div>
+        <div class="office-grid">
+          <div class="office-card fade-up">
+            <div class="office-map"><div><i class="fa-solid fa-location-dot"></i><span>Lahore, Pakistan: Map placeholder</span></div></div>
+            <div class="office-body">
+              <h3>Lahore, Pakistan: Headquarters</h3>
+              <p class="ci-line"><i class="fa-solid fa-location-dot"></i> Tech Park, Lahore, Punjab, Pakistan</p>
+              <p class="ci-line"><i class="fa-solid fa-phone"></i> <a href="tel:+923268880101">+92 326 8880101</a></p>
+              <p class="ci-line"><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@bigbinarytech.com">hello@bigbinarytech.com</a></p>
+              <p class="ci-line"><i class="fa-solid fa-clock"></i> Monday to Friday, 9:00 AM to 6:00 PM PKT</p>
+              <a href="https://maps.google.com/?q=Lahore,Pakistan" class="get-directions" target="_blank" rel="noopener noreferrer">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="office-card fade-up">
+            <div class="office-map"><div><i class="fa-solid fa-location-dot"></i><span>Dubai, UAE: Map placeholder</span></div></div>
+            <div class="office-body">
+              <h3>Dubai, UAE: GCC Office</h3>
+              <p class="ci-line"><i class="fa-solid fa-location-dot"></i> Business Bay, Dubai, United Arab Emirates</p>
+              <p class="ci-line"><i class="fa-solid fa-phone"></i> <a href="tel:+97140000000">+971 4 000 0000</a></p>
+              <p class="ci-line"><i class="fa-solid fa-envelope"></i> <a href="mailto:gcc@bigbinarytech.com">gcc@bigbinarytech.com</a></p>
+              <p class="ci-line"><i class="fa-solid fa-clock"></i> Monday to Friday, 9:00 AM to 6:00 PM GST</p>
+              <a href="https://maps.google.com/?q=Dubai,UAE" class="get-directions" target="_blank" rel="noopener noreferrer">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 09: PARTNERS & CERTIFICATIONS -->
+    <section class="spec-section soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Trust Signals</span>
+          <h2>Trusted By and Registered With</h2>
+          <p>We're proud to be recognized by industry bodies and partnered with leading technology providers.</p>
+        </div>
+        <div class="partner-grid">
+          <div class="partner-logo" title="PSEB Registered"><i class="fa-solid fa-certificate"></i> PSEB Registered</div>
+          <div class="partner-logo" title="Cisco Networking Academy Partner"><i class="fa-solid fa-network-wired"></i> Cisco Academy</div>
+          <div class="partner-logo" title="FAST-NUCES SOFTEC Alumni"><i class="fa-solid fa-graduation-cap"></i> FAST-NUCES</div>
+          <div class="partner-logo" title="NAVTTC Certified Training Partner"><i class="fa-solid fa-award"></i> NAVTTC Certified</div>
+          <div class="partner-logo" title="Odoo Implementation Partner"><i class="fa-solid fa-cubes"></i> Odoo Partner</div>
+          <div class="partner-logo" title="AWS Partner Network"><i class="fa-brands fa-aws"></i> AWS Partner</div>
+          <div class="partner-logo" title="Microsoft Partner"><i class="fa-brands fa-microsoft"></i> Microsoft Partner</div>
+          <div class="partner-logo" title="Cloud &amp; Security Certified"><i class="fa-solid fa-shield-halved"></i> Security Certified</div>
+        </div>
+        <div class="partner-cta-wrap">
+          <a href="about.html#certifications">View all certifications &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: BOTTOM CTA BANNER -->
+    <section class="final-cta">
       <div class="mesh-bg"></div>
       <div class="container">
-        <div style="text-align: center; max-width: 700px; margin: 0 auto 60px;">
-          <span class="eyebrow">The Journey</span>
-          <h2 style="font-size: 3rem; font-weight: 900;">What Happens Next?</h2>
-        </div>
-
-        <div class="process-grid">
-          <div class="process-card reveal">
-            <span class="num">01</span>
-            <h3>Deep Discovery</h3>
-            <p>We review your business needs and existing technical ecosystem.</p>
-          </div>
-          <div class="process-card reveal">
-            <span class="num">02</span>
-            <h3>Strategic Proposal</h3>
-            <p>You receive a detailed technical roadmap and fixed-price quote.</p>
-          </div>
-          <div class="process-card reveal">
-            <span class="num">03</span>
-            <h3>Kickoff</h3>
-            <p>Our agile engineering team begins the sprint-based development.</p>
-          </div>
-          <div class="process-card reveal">
-            <span class="num">04</span>
-            <h3>Scale & Support</h3>
-            <p>Launch with 24/7 maintenance and post-deployment scaling.</p>
-          </div>
+        <h2>Still Have Questions?</h2>
+        <p>We're here to help, whether you're ready to start or just exploring. Send us a message and we'll get back to you within 24 hours.</p>
+        <div class="cta-actions">
+          <a href="#contact-form" class="cta-btn" style="background:#fff; color:var(--bbt-navy); padding:18px 44px; font-size:17px;">Fill Out the Form Above</a>
+          <a href="https://wa.me/923268880101" class="cta-ghost" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Sticky mobile CTA -->
+  <a href="#contact-form" class="sticky-expert">Start Your Free Consultation</a>
 
   <!-- SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -679,31 +1260,223 @@
     gsap.from(".hero h1", { y: 60, opacity: 0, duration: 1.2, ease: "power4.out" });
     gsap.from(".hero p", { y: 30, opacity: 0, duration: 1, delay: 0.3 });
 
-    // Scroll Reveals
+    // Scroll Reveals (.reveal)
     document.querySelectorAll('.reveal').forEach((el) => {
       gsap.to(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: "top 88%",
-          toggleActions: "play none none none"
-        },
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out"
+        scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none none" },
+        opacity: 1, y: 0, duration: 1, ease: "power3.out"
       });
     });
 
-    // Form Field Subtle Focus Animation
-    const inputs = document.querySelectorAll('.input-group input, .input-group select, .input-group textarea');
-    inputs.forEach(input => {
-      input.addEventListener('focus', () => {
-        gsap.to(input, { scale: 1.01, duration: 0.3 });
-      });
-      input.addEventListener('blur', () => {
-        gsap.to(input, { scale: 1, duration: 0.3 });
+    // Fade-up reveals (cards / pills / testimonials)
+    document.querySelectorAll('.fade-up').forEach(item => {
+      gsap.from(item, {
+        scrollTrigger: { trigger: item, start: "top 90%" },
+        y: 40, opacity: 0, duration: 1
       });
     });
+
+    // FAQ accordion (one open at a time)
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+
+    // Smooth scroll for in-page anchors (works with Lenis)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (id.length < 2) return;
+        const target = document.querySelector(id);
+        if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -90 }); }
+      });
+    });
+
+    // Capture UTM parameters into hidden fields
+    (function(){
+      const params = new URLSearchParams(window.location.search);
+      const s = document.getElementById('utm_source');
+      const c = document.getElementById('utm_campaign');
+      if (s) s.value = params.get('utm_source') || '';
+      if (c) c.value = params.get('utm_campaign') || '';
+    })();
+
+    // Form Field Subtle Focus Animation
+    document.querySelectorAll('.input-group input, .input-group select, .input-group textarea').forEach(input => {
+      input.addEventListener('focus', () => gsap.to(input, { scale: 1.01, duration: 0.3 }));
+      input.addEventListener('blur', () => gsap.to(input, { scale: 1, duration: 0.3 }));
+    });
+
+    // Form validation + success state
+    (function(){
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function setInvalid(el, bad){
+        const group = el.closest('.input-group');
+        if (group) group.classList.toggle('invalid', bad);
+      }
+
+      function validate(){
+        let ok = true;
+        const name = form.fullName, email = form.email, phone = form.phone,
+              need = form.needHelp, msg = form.message;
+
+        const nameBad = !name.value.trim(); setInvalid(name, nameBad); if (nameBad) ok = false;
+        const emailBad = !emailRe.test(email.value.trim()); setInvalid(email, emailBad); if (emailBad) ok = false;
+        const phoneBad = phone.value.replace(/\D/g,'').length < 6; setInvalid(phone, phoneBad); if (phoneBad) ok = false;
+        const needBad = !need.value; setInvalid(need, needBad); if (needBad) ok = false;
+        const msgBad = msg.value.trim().length < 50; setInvalid(msg, msgBad); if (msgBad) ok = false;
+        return ok;
+      }
+
+      // Live re-validate touched fields
+      ['fullName','email','phone','needHelp','message'].forEach(id => {
+        const el = form[id];
+        el.addEventListener('input', () => {
+          if (el.closest('.input-group').classList.contains('invalid')) validate();
+        });
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!validate()) {
+          const firstBad = form.querySelector('.input-group.invalid');
+          if (firstBad) lenis.scrollTo(firstBad, { offset: -120 });
+          return;
+        }
+        const wrap = document.getElementById('formWrap');
+        const success = document.getElementById('formSuccess');
+        gsap.to(wrap, { opacity: 0, duration: 0.35, onComplete: () => {
+          wrap.style.display = 'none';
+          success.classList.add('show');
+          gsap.from(success, { opacity: 0, y: 20, duration: 0.5 });
+        }});
+      });
+    })();
   </script>
+
+    <script>
+    (function(){
+      var t=document.getElementById('mobileNavToggle'),
+          h=document.getElementById('header'),
+          o=document.getElementById('mobileNavOverlay');
+      if(!t||!h)return;
+      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
+      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      t.addEventListener('click',toggle);
+      if(o)o.addEventListener('click',close);
+      h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
+      window.addEventListener('resize',function(){if(window.innerWidth>1024)close();});
+    })();
+    </script>
+
+  <!-- SECTION 05: FAQPage Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly will you respond to my inquiry?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Within 24 hours during business days. For urgent projects, mention 'urgent' in your message and we'll prioritize. GCC clients get responses aligned with GST business hours." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the initial consultation really free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, it's completely free with no obligation. It's a 30-minute video call where we understand your project and give you an honest assessment. No sales pitch." }
+      },
+      {
+        "@type": "Question",
+        "name": "What information should I include in my message?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The more context, the better: your industry, current challenges, goals, timeline, and budget range. But don't worry, even a brief description is enough to start the conversation." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with startups and small businesses?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We have packages and engagement models for businesses of all sizes, from single-location startups to enterprise chains." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we meet in person if we're in Lahore or Dubai?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. We welcome in-person meetings at our Lahore headquarters and Dubai office. Just mention it in your message and we'll schedule accordingly." }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I'm not ready to start yet?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No problem. We're happy to answer questions, provide advice, and stay in touch. Many clients contact us 2 to 3 months before they're ready to begin." }
+      }
+    ]
+  }
+  </script>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo">
+          <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
+        </a>
+        <p>Big Binary Tech delivers AI, ERP, and software solutions that power business growth with modern automation
+          and digital transformation.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+          </a>
+          <a href="https://twitter.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          </a>
+          <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-services">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="services.html">AI &amp; Automation</a></li>
+          <li><a href="services.html">Odoo ERP</a></li>
+          <li><a href="services.html">Custom Software</a></li>
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">POS Solutions</a></li>
+          <li><a href="services.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-solutions">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="solutions.html">Business Automation</a></li>
+          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
+          <li><a href="solutions.html">Retail &amp; POS</a></li>
+          <li><a href="solutions.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-industries">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="industries.html">Education</a></li>
+          <li><a href="industries.html">Healthcare</a></li>
+          <li><a href="industries.html">Retail</a></li>
+          <li><a href="industries.html">Manufacturing</a></li>
+          <li><a href="industries.html">Hospitality</a></li>
+          <li><a href="industries.html">Logistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Contact</h3>
+        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
+        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
+        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav class="footer-nav" style="display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:14px;"><a href="about.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">About</a><a href="services.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Services</a><a href="pricing.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Pricing</a><a href="careers.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Careers</a><a href="contact.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Contact</a></nav>
+      <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

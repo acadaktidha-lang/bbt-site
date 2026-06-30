@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | Big Binary Tech</title>
+  <link rel="icon" type="image/png" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
+  <link rel="apple-touch-icon" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
+  <meta name="description" content="Join Big Binary Tech to build AI, Cloud, and Odoo solutions for GCC, USA &amp; UK clients. PSEB-registered, government-backed, remote-first. See open engineering, AI, design, and marketing roles.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Lenis for smooth scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+    :root {
+      --bbt-bg: #ffffff;
+      --bbt-bg-soft: #f8fafc;
+      --bbt-navy: #0f172a;
+      --bbt-orange: #f59e0b;
+      --bbt-orange-600: #d97706;
+      --bbt-orange-glow: rgba(245, 158, 11, 0.25);
+      --bbt-white: #ffffff;
+      --bbt-text: #334155;
+      --bbt-muted: #64748b;
+      --bbt-border: rgba(15, 23, 42, 0.1);
+      --font-sans: "Inter", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: initial; } /* Let Lenis handle scroll */
+    body {
+      background-color: var(--bbt-bg);
+      font-family: var(--font-sans);
+      color: var(--bbt-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { width: 90%; max-width: 1300px; margin: auto; }
+
+       .header {
+  position: absolute; /* Changed from fixed to absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  padding: 20px 0;
+}
+    .header.scrolled {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(15px);
+      padding: 12px 0;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid var(--bbt-border);
+    }
+
+/* Ensure the logo and links are white since they sit over the video */
+.header .nav-links a {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.header .logo {
+  filter: brightness(0) invert(1);
+}
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 100px;
+      width: auto;
+      display: block;
+    }
+
+    .navbar {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--bbt-navy);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--bbt-orange);
+    }
+
+    .cta-btn {
+      background: var(--bbt-orange);
+      color: var(--bbt-white);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 24px var(--bbt-orange-glow);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      background: var(--bbt-orange-600);
+      box-shadow: 0 8px 32px var(--bbt-orange-glow);
+    }
+
+    .nav-links a.active {
+      color: var(--bbt-orange);
+      position: relative;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--bbt-orange);
+      border-radius: 2px;
+    }
+    /* Parent item alignment */
+.nav-item-dropdown {
+    position: static; /* Required for the fixed full-width child */
+}
+
+/* The Full-Width Menu Container */
+.mega-menu-wrapper {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    top: 100px; /* Aligns exactly at bottom of header */
+    background: var(--bbt-navy); /* Dark Theme */
+    border-top: 2px solid var(--bbt-orange);
+    border-bottom: 5px solid var(--bbt-orange);
+    padding: 50px 0;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+
+    /* Animation States */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 9999;
+}
+
+/* Hover Trigger */
+.nav-item-dropdown:hover .mega-menu-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Visual ratio matching your SS */
+    gap: 100px;
+    align-items: start;
+}
+
+/* Left Section: Featured */
+.mega-heading {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mega-card {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.mega-card-img {
+    width: 320px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mega-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mega-card-text h4 {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.mega-cta {
+    color: var(--bbt-orange);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Right Section: Link List */
+.mega-links-section {
+    padding-top: 55px;
+}
+
+.mega-links-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 22px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link i {
+    font-size: 18px;
+    color: var(--bbt-orange);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+/* Hover States */
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+    padding-left: 15px;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+/* Header Padding adjustment to stop menu from disappearing */
+.nav-item-dropdown {
+    padding-bottom: 40px;
+    margin-bottom: -40px;
+}
+/* Ensure the Mega Menu Heading is prominent */
+.mega-heading {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Featured Card Image Styling to match your design */
+.mega-card-img {
+    width: 320px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0; /* Aligning with text side-by-side */
+}
+
+/* Link List Styling with the arrows and dividers seen in your screenshot */
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link:last-child {
+    border-bottom: none;
+}
+
+.mega-list-link i {
+    font-size: 14px;
+    color: var(--bbt-orange);
+    opacity: 0.6;
+}
+
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* Layout alignment */
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr; /* Exact ratio from your image */
+    gap: 80px;
+}
+
+    /* DARK HERO (Homepage Style) */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background-color: #000000; /* Dark background like index */
+      padding-top: 80px;
+      overflow: hidden;
+    }
+
+    /* The Image Side with Dark Overlay */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%; /* Slightly wider image area */
+      height: 100%;
+      background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/solutions.avif');
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      /* Fades image into the BLACK background instead of white */
+      mask-image: linear-gradient(to right, transparent, black 40%);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 40%);
+      opacity: 0.6; /* Dimmed for that cinematic feel */
+    }
+
+    /* Subtle glow behind the text to match index.html aesthetic */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: -10%;
+      width: 40%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      text-align: left;
+    }
+
+    /* White text to match index.html */
+    .hero h1 {
+      font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+      color: #ffffff;
+      line-height: 1.1;
+      font-weight: 900;
+      margin-bottom: 24px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    /* Bright Subtext */
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+      margin-bottom: 40px;
+      max-width: 550px;
+      line-height: 1.7;
+    }
+
+    /* Update Header Nav to be white for the Dark Hero */
+    .header:not(.scrolled) .nav-links a {
+      color: #ffffff !important;
+    }
+    .header:not(.scrolled) .logo img {
+      filter: brightness(0) invert(1);
+    }
+
+    /* Mobile Adjustment */
+    @media (max-width: 900px) {
+      .hero::after {
+        width: 100%;
+        opacity: 0.3;
+        mask-image: none;
+        -webkit-mask-image: none;
+      }
+    }
+
+    /* CTA FOOTER */
+    .final-cta {
+      padding: 100px 0;
+      background: var(--bbt-navy);
+      border-radius: 60px 60px 0 0;
+      text-align: center;
+      color: white;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--bbt-orange);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+  </style>
+<style id="responsive-nav-patch">
+/* ===== Universal Responsive Mobile-Nav Patch (additive, desktop unchanged) ===== */
+.mobile-nav-toggle{
+  display:none; background:transparent; border:0; font-size:26px; line-height:1;
+  color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
+}
+.mobile-nav-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.5);
+  opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:1000;
+}
+@media (max-width:1024px){
+  .mobile-nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  .header .navbar, .header .nav-links{ display:flex !important; }
+  .header .navbar{
+    position:fixed; top:0; right:-100%; width:min(330px,86vw); height:100vh; height:100dvh;
+    background:#0b1020; flex-direction:column; justify-content:flex-start;
+    padding:96px 26px 40px; box-shadow:-8px 0 40px rgba(0,0,0,.45);
+    transition:right .35s ease; overflow-y:auto; z-index:1001;
+  }
+  .header.mobile-open .navbar{ right:0; }
+  .header .nav-links{ flex-direction:column; align-items:flex-start; gap:0; width:100%; }
+  .header .nav-links li{ width:100%; }
+  .header .nav-links a, .header .nav-links .nav-link-anchor{
+    color:#fff !important; text-shadow:none !important; display:block; width:100%;
+    padding:15px 0; font-size:17px; border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .header .mega-menu-wrapper{ display:none !important; }
+  .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
+  body.mobile-nav-open{ overflow:hidden; }
+  body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
+}
+    </style>
+<style id="careers-spec-patch">
+/* ===== Careers page spec sections (navy/orange design language) ===== */
+
+/* HERO trust bar + dual CTA */
+.hero-actions{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+.cta-ghost{
+  display:inline-block; padding:16px 36px; border-radius:999px; font-size:16px; font-weight:600;
+  text-decoration:none; color:#fff; border:1px solid rgba(255,255,255,0.35);
+  background:rgba(255,255,255,0.04); transition:all .3s ease;
+}
+.cta-ghost:hover{ border-color:var(--bbt-orange); color:var(--bbt-orange); transform:translateY(-2px); }
+.breadcrumb{ display:flex; gap:8px; align-items:center; font-size:.85rem; color:rgba(255,255,255,0.7); margin-bottom:22px; flex-wrap:wrap; }
+.breadcrumb a{ color:rgba(255,255,255,0.8); text-decoration:none; }
+.breadcrumb a:hover{ color:var(--bbt-orange); }
+.breadcrumb span{ color:var(--bbt-orange); }
+.hero-trust{
+  display:flex; flex-wrap:wrap; gap:12px 14px; margin-top:44px;
+  border-top:1px solid rgba(255,255,255,0.12); padding-top:28px;
+}
+.hero-trust .trust-chip{
+  font-size:.82rem; font-weight:700; color:#fff; background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.14); padding:8px 16px; border-radius:999px;
+}
+
+/* Generic section heading block */
+.sec-head{ text-align:center; max-width:760px; margin:0 auto; }
+.sec-head h2{ font-size:2.8rem; color:var(--bbt-navy); font-weight:900; line-height:1.15; }
+.sec-head p{ font-size:1.1rem; color:var(--bbt-muted); margin-top:16px; }
+
+/* SECTION 02 & 07: EVP / Perks card grid (6 cards) */
+.evp-section{ padding:120px 0; background:var(--bbt-bg-soft); background-image:radial-gradient(at 0% 0%, rgba(245,158,11,0.05) 0px, transparent 50%); }
+.perks-section{ padding:120px 0; background:#fff; }
+.card-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:60px; }
+.feature-card{
+  background:#fff; border:1px solid var(--bbt-border); border-radius:24px; padding:38px 34px;
+  display:flex; flex-direction:column; transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+.feature-card:hover{ transform:translateY(-6px); border-color:var(--bbt-orange); box-shadow:0 30px 60px rgba(15,23,42,0.07); }
+.feature-icon{
+  width:60px; height:60px; border-radius:16px; display:grid; place-items:center;
+  background:rgba(245,158,11,0.1); color:var(--bbt-orange); font-size:24px; margin-bottom:24px;
+}
+.feature-card h3{ font-size:1.3rem; color:var(--bbt-navy); font-weight:800; margin-bottom:12px; }
+.feature-card p{ color:var(--bbt-muted); font-size:.98rem; line-height:1.7; }
+/* perks get an orange top accent */
+.perks-section .feature-card{ border-top:3px solid var(--bbt-orange); }
+
+/* SECTION 03: Current Openings job grid + filter tabs */
+.openings-section{ padding:120px 0; background:#fff; }
+.job-filters{ display:flex; gap:12px; flex-wrap:nowrap; overflow-x:auto; margin:48px 0 8px; padding-bottom:10px; -webkit-overflow-scrolling:touch; }
+.job-filter{
+  flex:0 0 auto; cursor:pointer; padding:11px 22px; border-radius:999px; font-size:.9rem; font-weight:700;
+  background:#fff; color:var(--bbt-navy); border:1px solid var(--bbt-border); transition:all .25s ease; white-space:nowrap;
+}
+.job-filter:hover{ border-color:var(--bbt-orange); color:var(--bbt-orange); }
+.job-filter.active{ background:var(--bbt-navy); color:#fff; border-color:var(--bbt-navy); }
+.jobs-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:32px; }
+.job-card{
+  background:#fff; border:1px solid var(--bbt-border); border-radius:24px; padding:34px;
+  display:flex; flex-direction:column; transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+.job-card:hover{ transform:translateY(-6px); border-color:var(--bbt-orange); box-shadow:0 30px 60px rgba(15,23,42,0.08); }
+.job-dept{ display:inline-block; align-self:flex-start; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--bbt-orange); background:rgba(245,158,11,0.1); padding:6px 14px; border-radius:999px; margin-bottom:18px; }
+.job-card h3{ font-size:1.3rem; color:var(--bbt-navy); font-weight:800; margin-bottom:16px; line-height:1.3; }
+.job-meta{ list-style:none; padding:0; margin:0 0 18px; display:grid; gap:8px; }
+.job-meta li{ font-size:.9rem; color:var(--bbt-muted); display:flex; align-items:center; gap:10px; }
+.job-meta li i{ color:var(--bbt-orange); width:16px; text-align:center; }
+.job-salary{ font-size:1.05rem; font-weight:800; color:var(--bbt-navy); margin-bottom:18px; }
+.job-tags{ list-style:none; padding:0; margin:0 0 20px; display:flex; flex-wrap:wrap; gap:8px; }
+.job-tags li{ font-size:.78rem; font-weight:600; color:var(--bbt-text); background:var(--bbt-bg-soft); border:1px solid var(--bbt-border); padding:6px 12px; border-radius:999px; }
+.job-desc{ color:var(--bbt-muted); font-size:.94rem; line-height:1.7; margin-bottom:24px; }
+.job-apply{
+  margin-top:auto; align-self:flex-start; background:var(--bbt-navy); color:#fff; text-decoration:none;
+  padding:12px 26px; border-radius:999px; font-size:.9rem; font-weight:700; transition:all .3s ease;
+}
+.job-apply:hover{ background:var(--bbt-orange); transform:translateY(-2px); }
+.jobs-empty{ display:none; text-align:center; color:var(--bbt-muted); padding:40px 0; font-weight:600; }
+
+/* SECTION 04: Digital Marketing Packages (3-col pricing) */
+.pkg-section{ padding:120px 0; background:var(--bbt-navy); color:#fff; }
+.pkg-section .sec-head h2{ color:#fff; }
+.pkg-section .sec-head p{ color:rgba(255,255,255,0.7); }
+.pkg-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:60px; align-items:stretch; }
+.pkg-card{
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); border-radius:28px; padding:42px 36px;
+  display:flex; flex-direction:column; position:relative; transition:transform .4s ease, border-color .4s ease;
+}
+.pkg-card:hover{ transform:translateY(-8px); border-color:var(--bbt-orange); }
+.pkg-card.featured{ border-color:var(--bbt-orange); background:rgba(245,158,11,0.06); }
+.pkg-badge{ position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--bbt-orange); color:#fff; font-size:.72rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:7px 18px; border-radius:999px; white-space:nowrap; }
+.pkg-card h3{ font-size:1.5rem; color:#fff; font-weight:800; margin-bottom:18px; }
+.pkg-card ul{ list-style:none; padding:0; margin:0 0 26px; display:grid; gap:12px; flex:1; }
+.pkg-card li{ color:rgba(255,255,255,0.82); font-size:.95rem; display:flex; align-items:flex-start; gap:12px; line-height:1.5; }
+.pkg-card li i{ color:var(--bbt-orange); margin-top:5px; font-size:.8rem; }
+.pkg-price{ font-size:1.05rem; color:rgba(255,255,255,0.7); margin-bottom:22px; }
+.pkg-price strong{ display:block; font-size:1.9rem; color:var(--bbt-orange); font-weight:900; }
+.pkg-card .cta-btn, .pkg-card .cta-ghost{ text-align:center; width:100%; }
+
+/* SECTION 05: Custom software / CV form (2-col) */
+.cs-section{ padding:120px 0; background:#fff; }
+.cs-layout{ display:grid; grid-template-columns:1fr 1.1fr; gap:48px; margin-top:56px; align-items:start; }
+.cs-left{ background:var(--bbt-bg-soft); border:1px solid var(--bbt-border); border-radius:28px; padding:44px; }
+.cs-left h3, .cs-form h3{ font-size:1.4rem; color:var(--bbt-navy); font-weight:800; margin-bottom:22px; }
+.cs-list{ list-style:none; padding:0; margin:0 0 30px; display:grid; gap:14px; }
+.cs-list li{ color:var(--bbt-text); font-size:1rem; display:flex; align-items:flex-start; gap:12px; }
+.cs-list li i{ color:var(--bbt-orange); margin-top:5px; }
+.cs-form{ background:var(--bbt-navy); border-radius:28px; padding:44px; color:#fff; }
+.cs-form h3{ color:#fff; }
+.cs-form p.cs-form-sub{ color:rgba(255,255,255,0.7); font-size:.95rem; margin-bottom:24px; }
+.cs-field{ margin-bottom:18px; }
+.cs-field label{ display:block; font-size:.85rem; font-weight:600; color:rgba(255,255,255,0.85); margin-bottom:8px; }
+.cs-field input, .cs-field select, .cs-field textarea{
+  width:100%; padding:13px 16px; border-radius:12px; border:1px solid rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.05); color:#fff; font-family:var(--font-sans); font-size:.95rem;
+}
+.cs-field input::placeholder, .cs-field textarea::placeholder{ color:rgba(255,255,255,0.45); }
+.cs-field select option{ color:#0f172a; }
+.cs-field input:focus, .cs-field select:focus, .cs-field textarea:focus{ outline:none; border-color:var(--bbt-orange); }
+.cs-field input[type="file"]{ padding:10px; }
+.cs-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.cs-submit{ width:100%; border:0; cursor:pointer; background:var(--bbt-orange); color:#fff; padding:15px; border-radius:999px; font-size:1rem; font-weight:700; font-family:var(--font-sans); transition:all .3s ease; box-shadow:0 4px 24px var(--bbt-orange-glow); }
+.cs-submit:hover{ background:var(--bbt-orange-600); transform:translateY(-2px); }
+
+/* SECTION 06: Hiring process timeline (4 steps) */
+.process-section{ padding:120px 0; background:var(--bbt-bg-soft); }
+.process-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:60px; position:relative; }
+.process-step{ background:#fff; border:1px solid var(--bbt-border); border-radius:24px; padding:36px 28px; position:relative; transition:transform .4s ease, border-color .4s ease; }
+.process-step:hover{ transform:translateY(-6px); border-color:var(--bbt-orange); }
+.process-num{ width:54px; height:54px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #1e293b, var(--bbt-navy)); border:3px solid var(--bbt-orange); color:#fff; font-weight:900; font-size:1.2rem; display:grid; place-items:center; margin-bottom:22px; }
+.process-step h3{ font-size:1.2rem; color:var(--bbt-navy); font-weight:800; margin-bottom:8px; }
+.process-step .step-time{ font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--bbt-orange); margin-bottom:14px; }
+.process-step p{ color:var(--bbt-muted); font-size:.94rem; line-height:1.7; }
+
+/* SECTION 08: Team testimonials (3 cards on navy) */
+.team-t-section{ padding:120px 0; background:var(--bbt-navy); color:#fff; }
+.team-t-section .sec-head h2{ color:#fff; }
+.team-t-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:60px; }
+.team-t-card{
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-radius:28px; padding:38px;
+  display:flex; flex-direction:column;
+}
+.team-t-quote-mark{ font-size:3rem; line-height:1; color:var(--bbt-orange); font-weight:900; margin-bottom:6px; }
+.team-t-card .quote{ font-style:italic; font-size:1.04rem; line-height:1.7; color:rgba(255,255,255,0.85); margin-bottom:24px; }
+.team-t-meta{ margin-top:auto; padding-top:22px; border-top:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; gap:14px; }
+.team-t-avatar{ width:52px; height:52px; border-radius:50%; flex-shrink:0; background:radial-gradient(circle at 30% 30%, #1e293b, var(--bbt-navy)); border:2px solid var(--bbt-orange); color:var(--bbt-orange); display:grid; place-items:center; font-weight:900; font-size:1.1rem; }
+.team-t-meta .who{ font-weight:700; color:#fff; }
+.team-t-meta .who span{ display:block; font-weight:500; color:rgba(255,255,255,0.6); font-size:.85rem; margin-top:3px; }
+
+/* SECTION 09: Stats bar (navy) */
+.stats-section{ padding:90px 0; background:var(--bbt-navy); border-top:1px solid rgba(255,255,255,0.08); color:#fff; }
+.stats-grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:24px; text-align:center; }
+.stat-item .stat-num{ font-size:2.4rem; font-weight:900; color:var(--bbt-orange); line-height:1; }
+.stat-item .stat-label{ font-size:.88rem; color:rgba(255,255,255,0.7); margin-top:10px; }
+
+/* SECTION 10: FAQ accordion */
+.faq-section{ padding:120px 0; background:#fff; }
+.faq-container{ max-width:900px; margin:50px auto 0; }
+.faq-item{ border-bottom:1px solid #e2e8f0; padding:25px 0; cursor:pointer; }
+.faq-question{ display:flex; justify-content:space-between; align-items:center; gap:20px; font-weight:700; color:var(--bbt-navy); font-size:1.2rem; }
+.faq-question i{ transition:transform .3s ease; font-size:.9rem; flex-shrink:0; color:var(--bbt-orange); }
+.faq-answer{ max-height:0; overflow:hidden; transition:all .4s cubic-bezier(0.4,0,0.2,1); color:#64748b; line-height:1.7; margin-top:0; }
+.faq-item.active .faq-answer{ max-height:600px; margin-top:15px; }
+.faq-item.active i{ transform:rotate(180deg); }
+
+/* SECTION 12: Related pages */
+.related-section{ padding:120px 0; background:var(--bbt-bg-soft); }
+.related-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+.related-card{
+  position:relative; padding:40px 34px; background:#fff; border:1px solid var(--bbt-orange);
+  border-radius:24px; text-decoration:none; transition:all .4s ease; box-shadow:0 8px 32px rgba(0,0,0,0.05);
+  display:flex; flex-direction:column;
+}
+.related-card:hover{ transform:translateY(-10px); background:var(--bbt-navy); border-color:var(--bbt-navy); }
+.related-card i{ font-size:34px; color:var(--bbt-orange); margin-bottom:22px; transition:.4s; }
+.related-card h3{ font-size:1.25rem; font-weight:700; color:var(--bbt-navy); margin-bottom:12px; transition:.4s; line-height:1.4; }
+.related-card p{ color:var(--bbt-muted); font-size:.95rem; margin-bottom:auto; transition:.4s; }
+.related-card .related-go{ margin-top:24px; font-weight:800; color:var(--bbt-orange); font-size:.9rem; transition:.4s; }
+.related-card:hover h3, .related-card:hover p, .related-card:hover .related-go, .related-card:hover i{ color:#fff; }
+
+/* Final CTA dual buttons */
+.final-cta .cta-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:36px; }
+
+/* Sticky mobile CTA */
+.sticky-expert{
+  display:none; position:fixed; left:16px; right:16px; bottom:16px; z-index:1500;
+  text-align:center; padding:15px; border-radius:999px; background:var(--bbt-orange); color:#fff;
+  font-weight:700; text-decoration:none; box-shadow:0 12px 30px rgba(245,158,11,0.4);
+}
+
+/* ===== Responsive for new sections ===== */
+@media (max-width:1024px){
+  .card-grid, .jobs-grid, .pkg-grid, .team-t-grid, .related-grid{ grid-template-columns:repeat(2,1fr); }
+  .process-grid{ grid-template-columns:repeat(2,1fr); }
+  .stats-grid{ grid-template-columns:repeat(3,1fr); gap:30px 24px; }
+  .cs-layout{ grid-template-columns:1fr; }
+  .sec-head h2{ font-size:2.4rem; }
+  .evp-section, .perks-section, .openings-section, .pkg-section, .cs-section, .process-section, .team-t-section, .faq-section, .related-section{ padding:90px 0; }
+  .final-cta{ padding:90px 0; }
+}
+@media (max-width:768px){
+  .card-grid, .jobs-grid, .pkg-grid, .team-t-grid, .related-grid, .process-grid{ grid-template-columns:1fr; }
+  .stats-grid{ grid-template-columns:repeat(2,1fr); }
+  .sec-head h2{ font-size:2rem; }
+  .hero-actions{ width:100%; }
+  .hero-actions .cta-btn, .hero-actions .cta-ghost{ flex:1; text-align:center; }
+  .cs-left, .cs-form{ padding:32px; }
+  .cs-row{ grid-template-columns:1fr; }
+  .pkg-card.featured{ order:-1; }
+  .faq-question{ font-size:1.05rem; align-items:flex-start; }
+  .faq-question i{ margin-top:5px; }
+  .sticky-expert{ display:block; }
+  .evp-section, .perks-section, .openings-section, .pkg-section, .cs-section, .process-section, .team-t-section, .faq-section, .related-section{ padding:70px 0; }
+  .final-cta{ padding:70px 0; border-radius:40px 40px 0 0; }
+}
+@media (max-width:480px){
+  .container{ width:92%; }
+  .sec-head h2{ font-size:1.7rem; }
+  .feature-card, .job-card, .pkg-card, .team-t-card, .related-card{ padding:26px 22px; }
+  .stat-item .stat-num{ font-size:1.9rem; }
+  .evp-section, .perks-section, .openings-section, .pkg-section, .cs-section, .process-section, .team-t-section, .faq-section, .related-section{ padding:56px 0; }
+}
+</style>
+<style id="shared-footer-patch">
+/* ===== Canonical Site Footer (identical across all pages) ===== */
+.site-footer{ padding:72px 0 40px; background:#f8fafc; color:#334155; font-family:"Inter",system-ui,-apple-system,sans-serif; }
+.site-footer .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:32px; align-items:start; }
+.site-footer .footer-brand .logo{ display:inline-block; margin-bottom:18px; filter:none; }
+.site-footer .footer-brand .logo img{ height:100px; width:auto; display:block; filter:none; }
+.site-footer .footer-brand p{ max-width:42ch; line-height:1.8; margin-bottom:22px; color:#64748b; font-size:1rem; }
+.site-footer .footer-social{ display:flex; gap:12px; flex-wrap:wrap; }
+.site-footer .social-icon{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(15,23,42,0.1); background:rgba(255,255,255,0.06); color:#0f172a; text-decoration:none; transition:background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease; }
+.site-footer .social-icon svg{ width:18px; height:18px; fill:currentColor; }
+.site-footer .social-icon:hover{ background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.4); color:#f59e0b; transform:translateY(-2px); }
+.site-footer .footer-col h3{ margin:0 0 20px; font-size:1.1rem; color:#0f172a; font-weight:700; }
+.site-footer .footer-col ul{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.site-footer .footer-col li a, .site-footer .footer-contact .contact-line a{ color:#64748b; text-decoration:none; transition:color .25s ease; font-size:1rem; }
+.site-footer .footer-col li a:hover, .site-footer .footer-contact .contact-line a:hover{ color:#f59e0b; }
+.site-footer .footer-contact .contact-line{ margin:0 0 12px; color:#64748b; line-height:1.6; font-size:1rem; }
+.site-footer .footer-bottom{ margin-top:48px; padding-top:24px; text-align:center; }
+.site-footer .footer-bottom p{ margin:0; font-size:.875rem; color:#64748b; }
+@media (max-width:1100px){ .site-footer .footer-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } .site-footer .footer-brand{ grid-column:1 / -1; } }
+@media (max-width:640px){ .site-footer .footer-grid{ grid-template-columns:1fr; } .site-footer{ padding:56px 0 32px; } .site-footer .footer-brand .logo img{ height:80px; } }
+</style>
+</head>
+<body>
+
+    <header class="header" id="header">
+  <div class="container header-wrapper">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+      <li class="nav-item-dropdown">
+  <a href="solutions.html" class="nav-link-anchor">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+
+  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+
+      <!-- Left side: Large Title and Featured Card -->
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">SOLUTIONS</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <!-- Featured Image for Solutions -->
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/solutions.avif" alt="Enterprise Solutions">
+          </div>
+          <div class="mega-card-text">
+            <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
+            <a href="digital-transformation.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Vertical Link List -->
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="social-media-marketing.html" class="mega-list-link">
+            <span>Social Media Marketing</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="enterprise-odoo.html" class="mega-list-link">
+            <span>Enterprise Odoo ERP</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="digital-transformation.html" class="mega-list-link">
+            <span>Digital Transformation</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="retail-pos.html" class="mega-list-link">
+            <span>Retail & POS Solutions</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</li>
+        <li><a href="industries.html">Industries</a></li>
+
+ <li class="nav-item-dropdown">
+  <a href="resources.html" class="nav-link-anchor">Resources <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+
+  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+
+      <!-- Left side: Featured Insight -->
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">Resources</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="AI Innovations">
+          </div>
+          <div class="mega-card-text">
+            <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
+            <a href="blogs.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Links -->
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="case-studies.html" class="mega-list-link">
+            <span>Case Studies</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="blogs.html" class="mega-list-link">
+            <span>Blogs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="e-books.html" class="mega-list-link">
+            <span>E-Books</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</li>
+
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <a href="#openings" class="cta-btn">See Open Positions</a>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+ <main>
+    <!-- SECTION 01: HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <nav class="breadcrumb fade-up" aria-label="Breadcrumb">
+            <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> <span>Careers</span>
+          </nav>
+
+          <span class="eyebrow fade-up" style="color: var(--bbt-orange); letter-spacing: 3px; font-weight: 700;">
+            JOIN BIG BINARY TECH
+          </span>
+
+          <h1 class="fade-up">
+            Build Your Career With Us in AI, Cloud, <span style="color: var(--bbt-orange)">Odoo</span> &amp; Beyond
+          </h1>
+
+          <p class="fade-up">
+            Join a team of engineers, designers, and AI specialists who deliver real impact for businesses across GCC, USA &amp; UK. PSEB-registered. Government-backed. Remote-friendly.
+          </p>
+
+          <div class="fade-up hero-actions">
+              <a href="#openings" class="cta-btn" style="padding: 16px 40px; font-size: 16px;">
+                See Open Positions <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
+              </a>
+              <a href="#culture" class="cta-ghost">
+                Why Work Here
+              </a>
+          </div>
+
+          <div class="fade-up hero-trust">
+            <span class="trust-chip">PSEB Registered</span>
+            <span class="trust-chip">Government Partnerships</span>
+            <span class="trust-chip">60+ Projects</span>
+            <span class="trust-chip">GCC · USA · UK</span>
+            <span class="trust-chip">Remote-First</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: WHY WORK WITH US (Culture / EVP) -->
+    <section id="culture" class="evp-section">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">02. Culture &amp; EVP</span>
+          <h2>Why Work With Big Binary Tech</h2>
+          <p>Real projects, global exposure, and a culture built on trust, autonomy, and growth.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Real Projects, Real Impact</h3>
+            <p>You won't maintain legacy code for a bank that hasn't changed in 10 years. You'll build AI automation for Dubai trading firms, migrate ERPs for Saudi manufacturers, and launch cloud platforms for UK startups. Every project matters.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+            <h3>GCC Market Exposure</h3>
+            <p>Work on projects for clients in Dubai, Riyadh, Doha, London, and New York. Understand GCC compliance (ZATCA, FTA), Arabic localization, and cross-border data regulations. Build skills that few developers in Pakistan have.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>AI-First Culture</h3>
+            <p>We don't just talk about AI. We build it. From intelligent document processing to predictive analytics to LLM-powered chatbots, you'll work with cutting-edge tools (OpenAI, LangChain, TensorFlow) on production systems.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-house-laptop"></i></div>
+            <h3>Remote-First, Not Remote-Only</h3>
+            <p>Work from anywhere in Pakistan with flexible hours. We trust our team to deliver, not to sit in a chair from 9 to 5. Async communication, outcome-based reviews, and no micromanagement.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Government-Backed &amp; Verified</h3>
+            <p>PSEB registered. Partnered with NAVTTC, PSDA, UMT, Cisco NetAcademy. Your employer is verified, accountable, and invested in your growth. Not a fly-by-night agency.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+            <h3>Grow With Us</h3>
+            <p>Clear promotion paths. Quarterly skill assessments. Paid certifications (AWS, Azure, Odoo, AI/ML). Mentorship from senior engineers with 8+ years of experience. We promote from within.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: CURRENT OPENINGS -->
+    <section id="openings" class="openings-section">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">03. Current Openings</span>
+          <h2>Current Openings</h2>
+          <p>We're hiring across engineering, design, and operations. Find your fit and apply in under 5 minutes.</p>
+        </div>
+
+        <div class="job-filters" id="jobFilters" role="tablist">
+          <button class="job-filter active" data-filter="all">All Roles</button>
+          <button class="job-filter" data-filter="engineering">Engineering</button>
+          <button class="job-filter" data-filter="ai-data">AI &amp; Data</button>
+          <button class="job-filter" data-filter="odoo">Odoo</button>
+          <button class="job-filter" data-filter="cloud-devops">Cloud &amp; DevOps</button>
+          <button class="job-filter" data-filter="design">Design</button>
+          <button class="job-filter" data-filter="marketing">Marketing</button>
+          <button class="job-filter" data-filter="operations">Operations</button>
+        </div>
+
+        <div class="jobs-grid" id="jobsGrid">
+          <!-- Job 1 -->
+          <article class="job-card fade-up" data-dept="engineering">
+            <span class="job-dept">Engineering</span>
+            <h3>Senior Full-Stack Developer (React / Node.js)</h3>
+            <ul class="job-meta">
+              <li><i class="fa-solid fa-location-dot"></i> Remote (Pakistan)</li>
+              <li><i class="fa-solid fa-briefcase"></i> Full-time</li>
+              <li><i class="fa-solid fa-clock"></i> 3-5 years experience</li>
+            </ul>
+            <div class="job-salary">PKR 200,000 - 350,000/month</div>
+            <ul class="job-tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li><li>AWS</li></ul>
+            <p class="job-desc">Build scalable web applications for GCC and UK clients. Lead frontend architecture, mentor junior developers, and contribute to AI-integrated features.</p>
+            <a href="contact.html?role=senior-fullstack-developer&amp;source=careers" class="job-apply">Apply Now</a>
+          </article>
+
+          <!-- Job 2 -->
+          <article class="job-card fade-up" data-dept="ai-data">
+            <span class="job-dept">AI &amp; Data</span>
+            <h3>AI / Machine Learning Engineer</h3>
+            <ul class="job-meta">
+              <li><i class="fa-solid fa-location-dot"></i> Remote (Pakistan)</li>
+              <li><i class="fa-solid fa-briefcase"></i> Full-time</li>
+              <li><i class="fa-solid fa-clock"></i> 2-4 years experience</li>
+            </ul>
+            <div class="job-salary">PKR 250,000 - 400,000/month</div>
+            <ul class="job-tags"><li>Python</li><li>TensorFlow</li><li>OpenAI API</li><li>LangChain</li></ul>
+            <p class="job-desc">Design and deploy AI solutions across intelligent document processing, predictive analytics, and LLM-powered chatbots. Work directly with GCC clients on production AI systems.</p>
+            <a href="contact.html?role=ai-ml-engineer&amp;source=careers" class="job-apply">Apply Now</a>
+          </article>
+
+          <!-- Job 3 -->
+          <article class="job-card fade-up" data-dept="odoo">
+            <span class="job-dept">Odoo</span>
+            <h3>Odoo ERP Consultant &amp; Developer</h3>
+            <ul class="job-meta">
+              <li><i class="fa-solid fa-location-dot"></i> Remote (Pakistan)</li>
+              <li><i class="fa-solid fa-briefcase"></i> Full-time</li>
+              <li><i class="fa-solid fa-clock"></i> 2-5 years experience</li>
+            </ul>
+            <div class="job-salary">PKR 180,000 - 320,000/month</div>
+            <ul class="job-tags"><li>Odoo</li><li>Python</li><li>PostgreSQL</li><li>GCC Compliance</li></ul>
+            <p class="job-desc">Implement and customize Odoo ERP for businesses in UAE and Saudi Arabia. Configure modules, build custom apps, and ensure ZATCA/FTA compliance.</p>
+            <a href="contact.html?role=odoo-erp-consultant&amp;source=careers" class="job-apply">Apply Now</a>
+          </article>
+
+          <!-- Job 4 -->
+          <article class="job-card fade-up" data-dept="cloud-devops">
+            <span class="job-dept">Cloud &amp; DevOps</span>
+            <h3>Cloud &amp; DevOps Engineer (AWS / Azure)</h3>
+            <ul class="job-meta">
+              <li><i class="fa-solid fa-location-dot"></i> Remote (Pakistan)</li>
+              <li><i class="fa-solid fa-briefcase"></i> Full-time</li>
+              <li><i class="fa-solid fa-clock"></i> 2-4 years experience</li>
+            </ul>
+            <div class="job-salary">PKR 220,000 - 380,000/month</div>
+            <ul class="job-tags"><li>AWS</li><li>Azure</li><li>Kubernetes</li><li>Terraform</li><li>CI/CD</li></ul>
+            <p class="job-desc">Architect cloud infrastructure, manage CI/CD pipelines, and optimize costs for multi-region deployments. Work on zero-downtime migrations for enterprise clients.</p>
+            <a href="contact.html?role=cloud-devops-engineer&amp;source=careers" class="job-apply">Apply Now</a>
+          </article>
+
+          <!-- Job 5 -->
+          <article class="job-card fade-up" data-dept="design">
+            <span class="job-dept">Design</span>
+            <h3>UI/UX Designer</h3>
+            <ul class="job-meta">
+              <li><i class="fa-solid fa-location-dot"></i> Remote (Pakistan)</li>
+              <li><i class="fa-solid fa-briefcase"></i> Full-time</li>
+              <li><i class="fa-solid fa-clock"></i> 2-4 years experience</li>
+            </ul>
+            <div class="job-salary">PKR 150,000 - 280,000/month</div>
+            <ul class="job-tags"><li>Figma</li><li>Adobe XD</li><li>Design Systems</li><li>Prototyping</li></ul>
+            <p class="job-desc">Design intuitive interfaces for web apps, dashboards, and mobile platforms. Collaborate with engineers to ship pixel-perfect products for international clients.</p>
+            <a href="contact.html?role=ui-ux-designer&amp;source=careers" class="job-apply">Apply Now</a>
+          </article>
+
+          <!-- Job 6 -->
+          <article class="job-card fade-up" data-dept="marketing">
+            <span class="job-dept">Marketing</span>
+            <h3>Digital Marketing Specialist</h3>
+            <ul class="job-meta">
+              <li><i class="fa-solid fa-location-dot"></i> Remote (Pakistan)</li>
+              <li><i class="fa-solid fa-briefcase"></i> Full-time</li>
+              <li><i class="fa-solid fa-clock"></i> 1-3 years experience</li>
+            </ul>
+            <div class="job-salary">PKR 80,000 - 150,000/month</div>
+            <ul class="job-tags"><li>SEO</li><li>Content Marketing</li><li>LinkedIn</li><li>Google Ads</li></ul>
+            <p class="job-desc">Drive inbound leads through SEO, content, and paid campaigns. Manage BBT's blog, social media, and lead generation funnels for GCC, USA &amp; UK markets.</p>
+            <a href="contact.html?role=digital-marketing-specialist&amp;source=careers" class="job-apply">Apply Now</a>
+          </article>
+        </div>
+        <p class="jobs-empty" id="jobsEmpty">No open roles in this category right now, but we hire proactively. Send your CV below and we'll reach out when a role opens.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 04: DIGITAL MARKETING PACKAGES -->
+    <section class="pkg-section">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">04. For Businesses</span>
+          <h2>Digital Marketing Packages: For Businesses, Not Candidates</h2>
+          <p>While you're here, are you looking for marketing services for your business? We offer performance-driven digital marketing packages for clients in GCC, USA &amp; UK.</p>
+        </div>
+
+        <div class="pkg-grid">
+          <!-- Starter -->
+          <div class="pkg-card fade-up">
+            <h3>Starter Marketing</h3>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Social media strategy &amp; management (2 platforms)</li>
+              <li><i class="fa-solid fa-check"></i> 8 blog posts per month</li>
+              <li><i class="fa-solid fa-check"></i> Basic SEO optimization</li>
+              <li><i class="fa-solid fa-check"></i> Monthly performance report</li>
+              <li><i class="fa-solid fa-check"></i> 1 ad campaign setup (Google or LinkedIn)</li>
+            </ul>
+            <div class="pkg-price">Starting at <strong>$1,500/month</strong></div>
+            <a href="contact.html?service=digital-marketing&amp;package=starter" class="cta-ghost">Get Marketing Quote</a>
+          </div>
+
+          <!-- Growth (featured) -->
+          <div class="pkg-card featured fade-up">
+            <span class="pkg-badge">Most Popular</span>
+            <h3>Growth Marketing</h3>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Social media strategy &amp; management (4 platforms)</li>
+              <li><i class="fa-solid fa-check"></i> 16 blog posts + 2 videos per month</li>
+              <li><i class="fa-solid fa-check"></i> Advanced SEO + technical audits</li>
+              <li><i class="fa-solid fa-check"></i> 3 ad campaigns with A/B testing</li>
+              <li><i class="fa-solid fa-check"></i> Lead generation funnel design</li>
+              <li><i class="fa-solid fa-check"></i> Monthly strategy call</li>
+            </ul>
+            <div class="pkg-price">Starting at <strong>$3,500/month</strong></div>
+            <a href="contact.html?service=digital-marketing&amp;package=growth" class="cta-btn" style="padding:15px;">Get Marketing Quote</a>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="pkg-card fade-up">
+            <h3>Enterprise Marketing</h3>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Full-service digital marketing team (dedicated)</li>
+              <li><i class="fa-solid fa-check"></i> Unlimited content production</li>
+              <li><i class="fa-solid fa-check"></i> Full SEO + content strategy</li>
+              <li><i class="fa-solid fa-check"></i> Multi-channel paid advertising</li>
+              <li><i class="fa-solid fa-check"></i> Marketing automation setup</li>
+              <li><i class="fa-solid fa-check"></i> Weekly reporting + quarterly strategy reviews</li>
+            </ul>
+            <div class="pkg-price"><strong>Custom Quote</strong></div>
+            <a href="contact.html?service=digital-marketing&amp;package=enterprise" class="cta-ghost">Talk to Marketing Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05: CUSTOM SOFTWARE / CV FORM -->
+    <section class="cs-section">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">05. Get in Touch</span>
+          <h2>Need Custom Software or a Dedicated Team?</h2>
+          <p>Whether you're a candidate exploring BBT or a business leader looking for a tech partner, we can help. Tell us what you need and we'll respond within 4 hours.</p>
+        </div>
+
+        <div class="cs-layout">
+          <!-- Left: For Businesses -->
+          <div class="cs-left fade-up">
+            <h3>For Businesses</h3>
+            <ul class="cs-list">
+              <li><i class="fa-solid fa-check"></i> Custom software development (web, mobile, enterprise)</li>
+              <li><i class="fa-solid fa-check"></i> AI automation &amp; integrations</li>
+              <li><i class="fa-solid fa-check"></i> Odoo ERP implementation &amp; customization</li>
+              <li><i class="fa-solid fa-check"></i> Cloud migration &amp; DevOps</li>
+              <li><i class="fa-solid fa-check"></i> Dedicated development teams</li>
+              <li><i class="fa-solid fa-check"></i> Legacy system modernization</li>
+            </ul>
+            <a href="contact.html?service=custom-software&amp;source=careers" class="cta-btn" style="padding:14px 32px; font-size:15px;">Request a Custom Quote</a>
+          </div>
+
+          <!-- Right: For Candidates (CV form) -->
+          <form class="cs-form fade-up" onsubmit="return false;">
+            <h3>For Candidates</h3>
+            <p class="cs-form-sub">Can't find your role? Send us your CV anyway. We hire proactively for upcoming projects and will notify you when your dream role opens.</p>
+
+            <div class="cs-row">
+              <div class="cs-field">
+                <label for="cv-name">Full Name *</label>
+                <input id="cv-name" type="text" name="name" placeholder="Your name" required>
+              </div>
+              <div class="cs-field">
+                <label for="cv-email">Email *</label>
+                <input id="cv-email" type="email" name="email" placeholder="you@email.com" required>
+              </div>
+            </div>
+
+            <div class="cs-row">
+              <div class="cs-field">
+                <label for="cv-phone">Phone</label>
+                <input id="cv-phone" type="tel" name="phone" placeholder="03xx xxxxxxx">
+              </div>
+              <div class="cs-field">
+                <label for="cv-linkedin">LinkedIn Profile</label>
+                <input id="cv-linkedin" type="url" name="linkedin" placeholder="linkedin.com/in/...">
+              </div>
+            </div>
+
+            <div class="cs-field">
+              <label for="cv-file">Upload CV (PDF, max 5MB) *</label>
+              <input id="cv-file" type="file" name="cv" accept="application/pdf" required>
+            </div>
+
+            <div class="cs-row">
+              <div class="cs-field">
+                <label for="cv-role">Desired Role *</label>
+                <select id="cv-role" name="role" required>
+                  <option value="">Select a role</option>
+                  <option>Developer</option>
+                  <option>AI Engineer</option>
+                  <option>Odoo Consultant</option>
+                  <option>Cloud Engineer</option>
+                  <option>Designer</option>
+                  <option>Marketer</option>
+                  <option>Intern</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="cs-field">
+                <label for="cv-exp">Experience Level *</label>
+                <select id="cv-exp" name="experience" required>
+                  <option value="">Select level</option>
+                  <option>0-1 year</option>
+                  <option>1-3 years</option>
+                  <option>3-5 years</option>
+                  <option>5+ years</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cs-field">
+              <label for="cv-msg">Short Message</label>
+              <textarea id="cv-msg" name="message" rows="3" placeholder="Tell us why you'd be a great fit..."></textarea>
+            </div>
+
+            <button type="submit" class="cs-submit">Submit My Application</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06: HIRING PROCESS -->
+    <section class="process-section">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">06. Hiring Process</span>
+          <h2>Our Hiring Process: Simple and Fast</h2>
+          <p>Four transparent steps from application to offer, with no cover letters and no LeetCode puzzles.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step fade-up">
+            <div class="process-num">1</div>
+            <h3>Apply Online</h3>
+            <div class="step-time">5 minutes</div>
+            <p>Upload your CV, fill a short form, and tell us why you want to join. No cover letter required.</p>
+          </div>
+          <div class="process-step fade-up">
+            <div class="process-num">2</div>
+            <h3>Initial Screening</h3>
+            <div class="step-time">30-minute video call</div>
+            <p>Chat with our HR team about your experience, goals, and fit. We explain the role, the team, and what success looks like.</p>
+          </div>
+          <div class="process-step fade-up">
+            <div class="process-num">3</div>
+            <h3>Technical Assessment</h3>
+            <div class="step-time">Take-home or live</div>
+            <p>A practical task relevant to the role, not LeetCode puzzles. We want to see how you think, not how fast you type.</p>
+          </div>
+          <div class="process-step fade-up">
+            <div class="process-num">4</div>
+            <h3>Final Interview &amp; Offer</h3>
+            <div class="step-time">Offer within 48 hours</div>
+            <p>Meet the team lead, discuss the project you'd join, and get your offer within 48 hours of the final interview.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 07: PERKS & BENEFITS -->
+    <section class="perks-section">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">07. Perks &amp; Benefits</span>
+          <h2>What You Get</h2>
+          <p>Above-market pay, full benefits, and paid growth, plus a team that actually likes working together.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+            <h3>Competitive Salaries</h3>
+            <p>Above-market pay for every role. Annual raises based on performance, not tenure.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-house-laptop"></i></div>
+            <h3>Remote-First</h3>
+            <p>Work from anywhere in Pakistan. Flexible hours. No commute. No office politics.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3>Health Insurance</h3>
+            <p>Full medical coverage for you and your dependents. Because your health matters.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-certificate"></i></div>
+            <h3>Paid Certifications</h3>
+            <p>We pay for AWS, Azure, Odoo, Google, and AI/ML certifications. Plus study time.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-gift"></i></div>
+            <h3>Annual Bonus</h3>
+            <p>Performance-based bonus every year. The better the company does, the better you do.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3>Team Retreats</h3>
+            <p>Annual team meetups (Lahore, Islamabad, Karachi). Build relationships beyond Slack.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 08: TEAM TESTIMONIALS -->
+    <section class="team-t-section">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">08. Employee Voices</span>
+          <h2>What Our Team Says</h2>
+        </div>
+
+        <div class="team-t-grid">
+          <div class="team-t-card fade-up">
+            <div class="team-t-quote-mark">&ldquo;</div>
+            <p class="quote">I joined BBT as a junior developer. Within 18 months, I was leading AI integration projects for a Dubai client. The exposure to GCC markets and cutting-edge tech is unreal for a Pakistan-based engineer.</p>
+            <div class="team-t-meta">
+              <div class="team-t-avatar">AR</div>
+              <div class="who">Ahmed Raza<span>Senior AI Engineer · Lahore</span></div>
+            </div>
+          </div>
+          <div class="team-t-card fade-up">
+            <div class="team-t-quote-mark">&ldquo;</div>
+            <p class="quote">The remote-first culture actually works here. My manager trusts me to deliver. I work from home in Islamabad, collaborate with a team in Karachi, and ship code for clients in London. Best of all worlds.</p>
+            <div class="team-t-meta">
+              <div class="team-t-avatar">FK</div>
+              <div class="who">Fatima Khan<span>Full-Stack Developer · Islamabad</span></div>
+            </div>
+          </div>
+          <div class="team-t-card fade-up">
+            <div class="team-t-quote-mark">&ldquo;</div>
+            <p class="quote">I came from a corporate ERP job where I was just a ticket number. At BBT, I own the Odoo implementation end-to-end for Saudi clients. The responsibility and the learning curve are exactly what I wanted.</p>
+            <div class="team-t-meta">
+              <div class="team-t-avatar">UA</div>
+              <div class="who">Usman Ali<span>Odoo Consultant · Karachi</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 09: STATS & TRUST BAR -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item fade-up"><div class="stat-num">25+</div><div class="stat-label">Team Members</div></div>
+          <div class="stat-item fade-up"><div class="stat-num">60+</div><div class="stat-label">Projects Delivered</div></div>
+          <div class="stat-item fade-up"><div class="stat-num">4.8/5</div><div class="stat-label">Employee Satisfaction</div></div>
+          <div class="stat-item fade-up"><div class="stat-num">90%</div><div class="stat-label">Internal Promotion Rate</div></div>
+          <div class="stat-item fade-up"><div class="stat-num">PSEB</div><div class="stat-label">Registered</div></div>
+          <div class="stat-item fade-up"><div class="stat-num">GCC·USA·UK</div><div class="stat-label">Clients Served</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">10. Candidate FAQs</span>
+          <h2>Common Questions</h2>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item active">
+            <div class="faq-question">Is this a remote job or do I need to come to an office? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">All roles are remote-first. You can work from anywhere in Pakistan. We have optional co-working spaces in Lahore, Islamabad, and Karachi if you prefer an office environment. Team meetups happen quarterly.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What is the salary range for my role? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Salary ranges are listed on each job posting. We pay above market for every role. Final offer depends on your experience, skills, and interview performance. We're transparent about compensation from the first screening call.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Do you hire fresh graduates? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes, for select roles. We have a 6-month internship-to-hire program for developers and designers. You'll work on real projects with mentorship from senior team members. Apply via the "Intern" option in the Desired Role dropdown.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What technologies will I work with? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">It depends on the role and project. Our stack includes React, Node.js, Python, Odoo, AWS, Azure, TensorFlow, OpenAI API, and more. We match you to projects that align with your skills and growth goals.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How do you handle time zones with GCC/USA/UK clients? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">We have flexible hours. Core collaboration time is 2 PM - 6 PM PKT for GCC overlap. For UK/US projects, we adjust schedules or assign team members who prefer those hours. We don't expect anyone to work nights regularly.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What does the technical assessment involve? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">A practical task relevant to the role, not algorithm puzzles. For developers: build a small feature. For designers: redesign a screen. For marketers: write a campaign brief. We give you 48 to 72 hours. It's designed to reflect real work, not interview theater.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How often do you promote? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">We do quarterly performance reviews. Promotions happen when you're ready, not on a fixed schedule. 90% of our senior roles are filled internally. We publish clear skill matrices so you know exactly what it takes to level up.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">I don't see my role listed. Can I still apply? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Absolutely. Use the "Other" option in the Desired Role dropdown. Tell us what you do and why you'd be a great fit. We hire proactively and often create roles for exceptional candidates.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11: BOTTOM CTA BANNER -->
+    <section class="final-cta">
+      <div class="container">
+        <span class="eyebrow" style="color:var(--bbt-orange);">Let's Talk</span>
+        <h2 style="font-size:2.6rem; font-weight:900; line-height:1.15; margin-bottom:16px;">Ready to Build Something Meaningful?</h2>
+        <p style="font-size:1.15rem; color:rgba(255,255,255,0.8); max-width:620px; margin:0 auto;">Whether you're looking for your next role or your next tech partner, let's talk.</p>
+        <div class="cta-actions">
+          <a href="#openings" class="cta-btn" style="padding:16px 40px; font-size:16px;">See Open Positions</a>
+          <a href="contact.html?service=custom-software&amp;source=careers" class="cta-ghost">Request a Business Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 12: RELATED PAGES -->
+    <section class="related-section">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">12. Explore More</span>
+          <h2>Related Pages</h2>
+        </div>
+
+        <div class="related-grid">
+          <a href="about.html" class="related-card fade-up">
+            <i class="fa-solid fa-people-group"></i>
+            <h3>About Us</h3>
+            <p>Learn about our mission, values, and the team behind BBT.</p>
+            <span class="related-go">Learn More →</span>
+          </a>
+          <a href="services.html" class="related-card fade-up">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <h3>Our Services</h3>
+            <p>See the technologies and services we deliver for clients worldwide.</p>
+            <span class="related-go">View Services →</span>
+          </a>
+          <a href="resources.html" class="related-card fade-up">
+            <i class="fa-solid fa-book-open"></i>
+            <h3>Resources</h3>
+            <p>Explore our blog, case studies, and guides.</p>
+            <span class="related-go">Browse Resources →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky mobile CTA -->
+  <a href="#openings" class="sticky-expert">See Open Positions</a>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <script>
+    // Initialize Lenis Smooth Scroll
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Header Shrink on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+
+    // Hero Animations
+    gsap.from(".hero h1", { y: 60, opacity: 0, duration: 1, delay: 0.2, ease: "power4.out" });
+    gsap.from(".hero p", { y: 40, opacity: 0, duration: 1, delay: 0.4 });
+    gsap.from(".hero .hero-actions", { y: 30, opacity: 0, duration: 1, delay: 0.6 });
+
+    // Fade Up General
+    document.querySelectorAll('.fade-up').forEach(item => {
+        gsap.from(item, {
+            scrollTrigger: { trigger: item, start: "top 90%" },
+            y: 40,
+            opacity: 0,
+            duration: 1
+        });
+    });
+
+    // SECTION 03: Job filter tabs
+    (function(){
+      const filters = document.querySelectorAll('.job-filter');
+      const cards = document.querySelectorAll('#jobsGrid .job-card');
+      const empty = document.getElementById('jobsEmpty');
+      filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filters.forEach(f => f.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          let visible = 0;
+          cards.forEach(card => {
+            const show = (filter === 'all' || card.dataset.dept === filter);
+            card.style.display = show ? 'flex' : 'none';
+            if (show) visible++;
+          });
+          if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+        });
+      });
+    })();
+
+    // SECTION 10: FAQ accordion (one open at a time)
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  </script>
+    <script>
+    (function(){
+      var t=document.getElementById('mobileNavToggle'),
+          h=document.getElementById('header'),
+          o=document.getElementById('mobileNavOverlay');
+      if(!t||!h)return;
+      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
+      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      t.addEventListener('click',toggle);
+      if(o)o.addEventListener('click',close);
+      h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
+      window.addEventListener('resize',function(){if(window.innerWidth>1024)close();});
+    })();
+    </script>
+
+  <!-- SECTION 10: FAQPage Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this a remote job or do I need to come to an office?",
+        "acceptedAnswer": { "@type": "Answer", "text": "All roles are remote-first. You can work from anywhere in Pakistan. We have optional co-working spaces in Lahore, Islamabad, and Karachi if you prefer an office environment. Team meetups happen quarterly." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the salary range for my role?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Salary ranges are listed on each job posting. We pay above market for every role. Final offer depends on your experience, skills, and interview performance. We're transparent about compensation from the first screening call." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you hire fresh graduates?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, for select roles. We have a 6-month internship-to-hire program for developers and designers. You'll work on real projects with mentorship from senior team members. Apply via the Intern option in the Desired Role dropdown." }
+      },
+      {
+        "@type": "Question",
+        "name": "What technologies will I work with?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It depends on the role and project. Our stack includes React, Node.js, Python, Odoo, AWS, Azure, TensorFlow, OpenAI API, and more. We match you to projects that align with your skills and growth goals." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle time zones with GCC/USA/UK clients?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We have flexible hours. Core collaboration time is 2 PM - 6 PM PKT for GCC overlap. For UK/US projects, we adjust schedules or assign team members who prefer those hours. We don't expect anyone to work nights regularly." }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the technical assessment involve?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A practical task relevant to the role, not algorithm puzzles. For developers: build a small feature. For designers: redesign a screen. For marketers: write a campaign brief. We give you 48 to 72 hours. It's designed to reflect real work, not interview theater." }
+      },
+      {
+        "@type": "Question",
+        "name": "How often do you promote?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We do quarterly performance reviews. Promotions happen when you're ready, not on a fixed schedule. 90% of our senior roles are filled internally. We publish clear skill matrices so you know exactly what it takes to level up." }
+      },
+      {
+        "@type": "Question",
+        "name": "I don't see my role listed. Can I still apply?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Use the Other option in the Desired Role dropdown. Tell us what you do and why you'd be a great fit. We hire proactively and often create roles for exceptional candidates." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Careers", "item": "careers.html" }
+    ]
+  }
+  </script>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo">
+          <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
+        </a>
+        <p>Big Binary Tech delivers AI, ERP, and software solutions that power business growth with modern automation
+          and digital transformation.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+          </a>
+          <a href="https://twitter.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          </a>
+          <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-services">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="services.html">AI &amp; Automation</a></li>
+          <li><a href="services.html">Odoo ERP</a></li>
+          <li><a href="services.html">Custom Software</a></li>
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">POS Solutions</a></li>
+          <li><a href="services.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-solutions">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="solutions.html">Business Automation</a></li>
+          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
+          <li><a href="solutions.html">Retail &amp; POS</a></li>
+          <li><a href="solutions.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-industries">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="industries.html">Education</a></li>
+          <li><a href="industries.html">Healthcare</a></li>
+          <li><a href="industries.html">Retail</a></li>
+          <li><a href="industries.html">Manufacturing</a></li>
+          <li><a href="industries.html">Hospitality</a></li>
+          <li><a href="industries.html">Logistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Contact</h3>
+        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
+        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
+        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav class="footer-nav" style="display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:14px;"><a href="about.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">About</a><a href="services.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Services</a><a href="pricing.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Pricing</a><a href="careers.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Careers</a><a href="contact.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Contact</a></nav>
+      <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

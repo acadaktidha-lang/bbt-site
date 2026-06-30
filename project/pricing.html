@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solutions | Big Binary Tech</title>
+  <title>Pricing | Big Binary Tech</title>
   <link rel="icon" type="image/png" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
   <link rel="apple-touch-icon" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
-  <meta name="description" content="Discover end-to-end enterprise solutions spanning Odoo ERP, AI automation, custom POS systems, and digital transformation. Built for scale and delivered with clarity.">
+  <meta name="description" content="Transparent pricing for AI, Odoo ERP, cloud, outsourcing, and digital transformation. Fixed quotes, no hidden fees. Serving businesses in GCC, USA &amp; UK.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -627,7 +627,7 @@
   .hero-content{ max-width:100%; }
   .hero p{ max-width:100%; }
 
-  /* Bento: stack already flexes to column at 1024 (existing rule): ensure full width */
+  /* Bento: stack already flexes to column at 1024 (existing rule), ensure full width */
   .bento-grid{ margin-top:40px; }
   .bento-item{ width:100%; padding:40px; }
 
@@ -915,6 +915,195 @@
 @media (max-width:1100px){ .site-footer .footer-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } .site-footer .footer-brand{ grid-column:1 / -1; } }
 @media (max-width:640px){ .site-footer .footer-grid{ grid-template-columns:1fr; } .site-footer{ padding:56px 0 32px; } .site-footer .footer-brand .logo img{ height:80px; } }
 </style>
+<style id="pricing-spec-patch">
+/* ===== Pricing page spec sections (navy/orange design language) ===== */
+
+/* HERO trust bar + dual CTA (reused from solutions) */
+.hero-actions{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+.cta-ghost{
+  display:inline-block; padding:16px 36px; border-radius:999px; font-size:16px; font-weight:600;
+  text-decoration:none; color:#fff; border:1px solid rgba(255,255,255,0.35);
+  background:rgba(255,255,255,0.04); transition:all .3s ease;
+}
+.cta-ghost:hover{ border-color:var(--bbt-orange); color:var(--bbt-orange); transform:translateY(-2px); }
+.hero-trust{
+  display:flex; flex-wrap:wrap; gap:14px 30px; margin-top:44px;
+  border-top:1px solid rgba(255,255,255,0.12); padding-top:28px;
+}
+.hero-trust .trust-chip{
+  display:inline-flex; align-items:center; gap:8px; font-size:.85rem; font-weight:600;
+  color:rgba(255,255,255,0.82);
+}
+.hero-trust .trust-chip i{ color:var(--bbt-orange); font-size:.8rem; }
+
+/* Shared section heading helpers */
+.sec-head{ text-align:center; max-width:760px; margin:0 auto; }
+.sec-head .eyebrow{ color:var(--bbt-orange); letter-spacing:2px; font-weight:800; font-size:12px; text-transform:uppercase; }
+.sec-head h2{ font-size:clamp(2rem,4vw,2.9rem); color:var(--bbt-navy); font-weight:900; margin:14px 0 0; line-height:1.15; }
+.sec-head p{ color:var(--bbt-muted); font-size:1.05rem; margin-top:18px; line-height:1.7; }
+
+/* SECTION 02: Pricing Philosophy 4-card */
+.philosophy-section{ padding:110px 0; background:var(--bbt-bg-soft); }
+.phil-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; margin-top:60px; }
+.phil-card{
+  background:#fff; border:1px solid var(--bbt-border); border-radius:24px; padding:36px 30px;
+  box-shadow:0 8px 30px rgba(15,23,42,0.04); transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+.phil-card:hover{ transform:translateY(-6px); border-color:var(--bbt-orange); box-shadow:0 24px 50px rgba(15,23,42,0.08); }
+.phil-icon{ width:58px; height:58px; border-radius:16px; display:grid; place-items:center; background:rgba(245,158,11,0.1); color:var(--bbt-orange); font-size:24px; margin-bottom:22px; }
+.phil-card h3{ font-size:1.2rem; color:var(--bbt-navy); font-weight:800; margin-bottom:12px; line-height:1.3; }
+.phil-card p{ color:var(--bbt-muted); font-size:.95rem; line-height:1.7; }
+
+/* SECTIONS 03/04/05: Pricing package cards (matches enterprise-odoo/retail-pos .price-card) */
+.pricing-section{ padding:110px 0; }
+.pricing-section.alt{ background:var(--bbt-bg-soft); }
+.pkg-grid{ display:grid; gap:28px; margin-top:60px; align-items:stretch; }
+.pkg-grid.cols-3{ grid-template-columns:repeat(3,1fr); }
+.pkg-grid.cols-4{ grid-template-columns:repeat(4,1fr); }
+.pkg-card{
+  background:#fff; border:1px solid var(--bbt-border); border-radius:28px; padding:42px 34px;
+  position:relative; display:flex; flex-direction:column; transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+.pkg-card:hover{ transform:translateY(-6px); border-color:var(--bbt-orange); box-shadow:0 30px 60px rgba(15,23,42,0.08); }
+.pkg-card.popular{ border:3px solid var(--bbt-orange); box-shadow:0 30px 60px rgba(15,23,42,0.1); }
+.pkg-badge{
+  position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:var(--bbt-orange); color:#fff;
+  padding:6px 22px; border-radius:999px; font-size:11px; font-weight:900; letter-spacing:1px; white-space:nowrap;
+}
+.pkg-name{ font-size:1.4rem; font-weight:900; color:var(--bbt-navy); }
+.pkg-best{ color:var(--bbt-muted); font-size:.9rem; margin-top:8px; line-height:1.6; min-height:42px; }
+.pkg-price{ font-size:2.1rem; font-weight:900; color:var(--bbt-orange-600); margin:22px 0 4px; line-height:1.1; }
+.pkg-price small{ font-size:.85rem; font-weight:700; color:var(--bbt-muted); display:block; margin-top:6px; }
+.pkg-feats{ list-style:none; padding:0; margin:24px 0 30px; display:grid; gap:12px; }
+.pkg-feats li{ display:flex; gap:12px; align-items:flex-start; color:var(--bbt-text); font-size:.92rem; line-height:1.5; }
+.pkg-feats li i{ color:var(--bbt-orange); font-size:.85rem; margin-top:4px; flex-shrink:0; }
+.pkg-cta{
+  margin-top:auto; display:inline-block; text-align:center; padding:14px 24px; border-radius:999px;
+  font-weight:700; font-size:.95rem; text-decoration:none; transition:all .3s ease;
+  border:1px solid var(--bbt-orange); color:var(--bbt-orange-600); background:transparent;
+}
+.pkg-cta:hover{ background:rgba(245,158,11,0.08); transform:translateY(-2px); }
+.pkg-cta.filled{ background:var(--bbt-orange); color:#fff; border-color:var(--bbt-orange); box-shadow:0 8px 24px var(--bbt-orange-glow); }
+.pkg-cta.filled:hover{ background:var(--bbt-orange-600); }
+
+/* SECTION 06: What's Included 6-card (navy band) */
+.included-section{ padding:110px 0; background:var(--bbt-navy); color:#fff; }
+.included-section .sec-head h2{ color:#fff; }
+.included-section .sec-head .eyebrow{ color:var(--bbt-orange); }
+.inc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+.inc-card{
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-top:3px solid var(--bbt-orange);
+  border-radius:22px; padding:34px 30px; transition:background .3s ease, transform .3s ease, border-color .3s ease;
+}
+.inc-card:hover{ transform:translateY(-5px); background:rgba(245,158,11,0.07); border-color:var(--bbt-orange); }
+.inc-icon{ width:54px; height:54px; border-radius:14px; display:grid; place-items:center; background:rgba(245,158,11,0.15); color:var(--bbt-orange); font-size:22px; margin-bottom:20px; }
+.inc-card h3{ font-size:1.15rem; font-weight:800; color:#fff; margin-bottom:10px; }
+.inc-card p{ color:rgba(255,255,255,0.72); font-size:.92rem; line-height:1.7; }
+
+/* SECTION 07: Comparison table (responsive horizontal scroll) */
+.compare-section{ padding:110px 0; background:#fff; }
+.compare-scroll{ margin-top:56px; overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--bbt-border); border-radius:24px; }
+.compare-table{ width:100%; border-collapse:collapse; min-width:760px; }
+.compare-table th, .compare-table td{ padding:18px 22px; text-align:left; border-bottom:1px solid var(--bbt-border); font-size:.95rem; }
+.compare-table thead th{ background:var(--bbt-navy); color:#fff; font-weight:800; font-size:1rem; position:sticky; top:0; }
+.compare-table thead th:first-child{ border-top-left-radius:0; }
+.compare-table tbody td:first-child{ font-weight:700; color:var(--bbt-navy); }
+.compare-table tbody tr:nth-child(even){ background:var(--bbt-bg-soft); }
+.compare-table .col-rec{ background:rgba(245,158,11,0.07) !important; }
+.compare-table thead th.col-rec{ background:var(--bbt-orange) !important; color:#fff; }
+.compare-table .yes{ color:var(--bbt-orange-600); font-weight:800; }
+.compare-table .no{ color:#94a3b8; }
+.compare-hint{ display:none; text-align:center; color:var(--bbt-muted); font-size:.85rem; margin-top:14px; }
+.compare-cta-wrap{ text-align:center; margin-top:44px; }
+
+/* SECTION 08: Client Results (reuse story/testimonial card on light bg) */
+.results-section{ padding:110px 0; background:var(--bbt-bg-soft); }
+.results-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:60px; }
+.result-card{
+  background:#fff; border:1px solid var(--bbt-border); border-radius:26px; padding:40px 34px;
+  box-shadow:0 8px 30px rgba(15,23,42,0.04); display:flex; flex-direction:column;
+  transition:transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+.result-card:hover{ transform:translateY(-6px); border-color:var(--bbt-orange); box-shadow:0 24px 50px rgba(15,23,42,0.08); }
+.result-quote-mark{ font-size:3rem; line-height:.6; color:var(--bbt-orange); font-weight:900; margin-bottom:16px; font-family:Georgia,serif; }
+.result-quote{ font-style:italic; color:var(--bbt-text); font-size:1.02rem; line-height:1.7; margin-bottom:26px; }
+.result-meta{ margin-top:auto; display:flex; align-items:center; gap:16px; padding-top:22px; border-top:1px solid var(--bbt-border); }
+.result-avatar{ width:52px; height:52px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #1e293b, var(--bbt-navy)); display:grid; place-items:center; color:var(--bbt-orange); font-weight:900; font-size:1.05rem; flex-shrink:0; }
+.result-author{ font-weight:800; color:var(--bbt-navy); font-size:.95rem; }
+.result-author span{ display:block; font-weight:500; color:var(--bbt-muted); font-size:.85rem; margin-top:3px; }
+
+/* SECTION 09: FAQ (reused from solutions) */
+.faq-section{ padding:110px 0; background:#fff; }
+.faq-container{ max-width:900px; margin:50px auto 0; }
+.faq-item{ border-bottom:1px solid #e2e8f0; padding:25px 0; cursor:pointer; }
+.faq-question{ display:flex; justify-content:space-between; align-items:center; gap:20px; font-weight:700; color:var(--bbt-navy); font-size:1.2rem; }
+.faq-question i{ transition:transform .3s ease; font-size:.9rem; flex-shrink:0; }
+.faq-answer{ max-height:0; overflow:hidden; transition:all .4s cubic-bezier(0.4,0,0.2,1); color:#64748b; line-height:1.7; margin-top:0; }
+.faq-item.active .faq-answer{ max-height:800px; margin-top:15px; }
+.faq-item.active i{ transform:rotate(180deg); color:var(--bbt-orange); }
+
+/* SECTION 10: Bottom CTA (reused .final-cta) */
+.final-cta{ padding:100px 0; background:var(--bbt-navy); border-radius:60px 60px 0 0; text-align:center; color:#fff; }
+
+/* SECTION 11: Related pages (reused .related-card) */
+.related-section{ padding:110px 0; background:var(--bbt-bg-soft); }
+.related-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+.related-card{
+  position:relative; padding:40px 34px; background:#fff; border:1px solid var(--bbt-orange);
+  border-radius:24px; text-decoration:none; transition:all .4s ease; box-shadow:0 8px 32px rgba(0,0,0,0.05);
+  display:flex; flex-direction:column;
+}
+.related-card:hover{ transform:translateY(-10px); background:var(--bbt-navy); border-color:var(--bbt-navy); }
+.related-type{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--bbt-orange); margin-bottom:16px; }
+.related-card i{ font-size:34px; color:var(--bbt-orange); margin-bottom:22px; transition:.4s; }
+.related-card h3{ font-size:1.25rem; font-weight:700; color:var(--bbt-navy); margin-bottom:14px; transition:.4s; line-height:1.4; }
+.related-card p{ color:var(--bbt-muted); font-size:.92rem; line-height:1.6; margin-bottom:auto; transition:.4s; }
+.related-card .related-go{ margin-top:24px; font-weight:800; color:var(--bbt-orange); font-size:.9rem; transition:.4s; }
+.related-card:hover h3, .related-card:hover .related-type, .related-card:hover .related-go, .related-card:hover i, .related-card:hover p{ color:#fff; }
+
+/* Sticky mobile CTA */
+.sticky-expert{
+  display:none; position:fixed; left:16px; right:16px; bottom:16px; z-index:1500;
+  text-align:center; padding:15px; border-radius:999px; background:var(--bbt-orange); color:#fff;
+  font-weight:700; text-decoration:none; box-shadow:0 12px 30px rgba(245,158,11,0.4);
+}
+
+/* ===== Responsive for new sections ===== */
+@media (max-width:1100px){
+  .phil-grid{ grid-template-columns:repeat(2,1fr); }
+  .pkg-grid.cols-4{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:1024px){
+  .pkg-grid.cols-3{ grid-template-columns:1fr; }
+  .inc-grid{ grid-template-columns:repeat(2,1fr); }
+  .results-grid{ grid-template-columns:1fr; }
+  .related-grid{ grid-template-columns:repeat(2,1fr); }
+  .pkg-card.popular{ border-width:2px; }
+  .philosophy-section, .pricing-section, .included-section, .compare-section, .results-section, .faq-section, .related-section{ padding:80px 0; }
+}
+@media (max-width:768px){
+  .container{ width:92%; }
+  .phil-grid, .pkg-grid.cols-4, .inc-grid, .related-grid{ grid-template-columns:1fr; }
+  .hero-actions{ width:100%; }
+  .hero-actions .cta-btn, .hero-actions .cta-ghost{ flex:1; text-align:center; }
+  .compare-hint{ display:block; }
+  .phil-card{ padding:30px 26px; }
+  .pkg-card{ padding:36px 28px; }
+  .result-card{ padding:32px 28px; }
+  .faq-question{ font-size:1.05rem; align-items:flex-start; }
+  .faq-question i{ margin-top:5px; }
+  .sticky-expert{ display:block; }
+  .philosophy-section, .pricing-section, .included-section, .compare-section, .results-section, .faq-section, .related-section{ padding:64px 0; }
+  .final-cta{ padding:70px 0; border-radius:40px 40px 0 0; }
+}
+@media (max-width:480px){
+  .phil-card, .pkg-card, .inc-card, .result-card, .related-card{ padding:26px 22px; }
+  .pkg-price{ font-size:1.8rem; }
+  .compare-table th, .compare-table td{ padding:14px 16px; font-size:.88rem; }
+  .final-cta{ padding:56px 0; border-radius:28px 28px 0 0; }
+}
+</style>
+
 </head>
 <body>
 
@@ -1034,481 +1223,512 @@
 </header>
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
  <main>
-    <!-- HERO SECTION -->
+    <!-- SECTION 01: HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <!-- Orange eyebrow like the index tag -->
+          <nav aria-label="Breadcrumb" class="fade-up" style="margin-bottom:18px;">
+            <span style="color:rgba(255,255,255,0.7); font-size:.85rem; font-weight:600; letter-spacing:1px;">
+              <a href="index.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Home</a>
+              <span style="margin:0 8px; color:var(--bbt-orange);">&rsaquo;</span> Pricing
+            </span>
+          </nav>
+
           <span class="eyebrow fade-up" style="color: var(--bbt-orange); letter-spacing: 3px; font-weight: 700;">
-            ENTERPRISE GRADE SOLUTIONS
+            TRANSPARENT PRICING
           </span>
-          
+
           <h1 class="fade-up">
-            Solutions That Power Modern <span style="color: var(--bbt-orange)">Business</span> Operations
+            Transparent Pricing for AI, Odoo, Cloud &amp; <span style="color: var(--bbt-orange)">Digital Transformation</span>
           </h1>
 
           <p class="fade-up">
-            From AI-driven automation to enterprise ERP implementations, we build integrated technology solutions that streamline operations, reduce costs, and accelerate growth.
+            No hidden fees. No surprises. Just clear pricing for every service, from a single website to a full enterprise transformation. Serving businesses in GCC, USA &amp; UK.
           </p>
 
           <div class="fade-up hero-actions">
-              <a href="#ecosystem" class="cta-btn" style="padding: 16px 40px; font-size: 16px;">
-                Explore Our Solutions
-              </a>
-              <a href="contact.html" class="cta-ghost">
-                Talk to a Solutions Expert
-              </a>
+            <a href="contact.html?service=pricing&amp;offer=quote" class="cta-btn" style="padding: 16px 40px; font-size: 16px;">
+              Get a Free Custom Quote
+            </a>
+            <a href="#packages" class="cta-ghost">
+              See Pricing Breakdown
+            </a>
           </div>
 
           <div class="fade-up hero-trust">
-            <div class="trust-item"><span class="trust-num">50+</span><span class="trust-label">Solutions Delivered</span></div>
-            <div class="trust-item"><span class="trust-num">15+</span><span class="trust-label">Industries Served</span></div>
-            <div class="trust-item"><span class="trust-num">98%</span><span class="trust-label">Client Retention</span></div>
+            <span class="trust-chip"><i class="fa-solid fa-circle-check"></i>60+ Projects Delivered</span>
+            <span class="trust-chip"><i class="fa-solid fa-circle-check"></i>PSEB Registered</span>
+            <span class="trust-chip"><i class="fa-solid fa-earth-americas"></i>GCC &middot; USA &middot; UK</span>
+            <span class="trust-chip"><i class="fa-solid fa-gift"></i>Free Assessment Included</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 02: SOLUTIONS ECOSYSTEM -->
-    <section id="ecosystem" class="solutions-section">
+    <!-- SECTION 02: PRICING PHILOSOPHY -->
+    <section class="philosophy-section">
       <div class="container">
-        <div style="text-align: center; max-width: 720px; margin: 0 auto;">
-            <span class="eyebrow">02. Our Solutions Ecosystem</span>
-            <h2 style="font-size: 3rem; color: var(--bbt-navy); font-weight: 900;">Our Solutions Ecosystem</h2>
-            <p style="font-size: 1.1rem; color: var(--bbt-muted); margin-top: 16px;">Three interconnected solution pillars designed to transform how your business operates.</p>
+        <div class="sec-head fade-up">
+          <span class="eyebrow">02. Pricing Philosophy</span>
+          <h2>Why Our Pricing Is Different</h2>
         </div>
-
-        <div class="eco-grid">
-          <!-- PILLAR 1: Enterprise & Odoo -->
-          <div class="eco-card fade-up">
-            <div class="eco-icon"><i class="fa-solid fa-layer-group"></i></div>
-            <h3>Enterprise &amp; Odoo Solutions</h3>
-            <p>End-to-end ERP implementation, Odoo customization, and enterprise system integration for operational excellence.</p>
-            <div class="eco-keys-label">Key Areas</div>
-            <ul class="eco-keys">
-              <li>Odoo ERP</li><li>HR &amp; Payroll</li><li>Finance</li><li>Inventory</li><li>CRM</li>
-            </ul>
-            <a href="enterprise-odoo.html" class="eco-link">Explore Enterprise Solutions <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="phil-grid">
+          <div class="phil-card fade-up">
+            <div class="phil-icon"><i class="fa-solid fa-tag"></i></div>
+            <h3>Fixed Prices, Not Hourly Surprises</h3>
+            <p>You get a fixed quote before work starts. No hourly billing surprises. No scope creep without approval. What we quote is what you pay.</p>
           </div>
-
-          <!-- PILLAR 2: Retail & POS -->
-          <div class="eco-card fade-up">
-            <div class="eco-icon"><i class="fa-solid fa-shop"></i></div>
-            <h3>Retail &amp; POS Solutions</h3>
-            <p>Custom POS systems, inventory management, and retail automation built for multi-branch operations.</p>
-            <div class="eco-keys-label">Key Areas</div>
-            <ul class="eco-keys">
-              <li>Retail POS</li><li>Restaurant POS</li><li>Inventory Management</li><li>Billing Systems</li><li>Multi-Branch Operations</li>
-            </ul>
-            <a href="retail-pos.html" class="eco-link">Explore Retail Solutions <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="phil-card fade-up">
+            <div class="phil-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3>Phased Delivery, Phased Payment</h3>
+            <p>Pay as we deliver. 30% upfront, 30% at midpoint, 40% at delivery. For ongoing engagements, monthly billing with no lock-in.</p>
           </div>
-
-          <!-- PILLAR 3: Digital Transformation -->
-          <div class="eco-card fade-up">
-            <div class="eco-icon"><i class="fa-solid fa-arrows-spin"></i></div>
-            <h3>Digital Transformation Solutions</h3>
-            <p>AI automation, workflow optimization, and legacy modernization designed for future-ready businesses.</p>
-            <div class="eco-keys-label">Key Areas</div>
-            <ul class="eco-keys">
-              <li>AI Automation</li><li>Business Process Automation</li><li>Integrations</li><li>Custom Development</li><li>Digital Transformation</li>
-            </ul>
-            <a href="digital-transformation.html" class="eco-link">Explore Digital Transformation <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="phil-card fade-up">
+            <div class="phil-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+            <h3>GCC-Ready Pricing</h3>
+            <p>Prices in AED, SAR, GBP, or USD. No currency conversion headaches. GCC clients get VAT-ready invoices and ZATCA-compliant billing.</p>
+          </div>
+          <div class="phil-card fade-up">
+            <div class="phil-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+            <h3>Free Assessment Included</h3>
+            <p>Every project starts with a free 30-minute assessment. We audit your needs, identify quick wins, and give you a clear quote before you commit.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 03: SOLUTIONS BY BUSINESS CHALLENGE -->
-    <section class="chl-accordion-section">
+    <!-- SECTION 03: SERVICE PRICING PACKAGES -->
+    <section class="pricing-section" id="packages">
       <div class="container">
-        <div style="text-align: center; max-width: 720px; margin: 0 auto;">
-            <span class="eyebrow">03. By Business Challenge</span>
-            <h2 style="font-size: 2.8rem; color: var(--bbt-navy); font-weight: 900;">Solutions by Business Challenge</h2>
-            <p style="font-size: 1.1rem; color: var(--bbt-muted); margin-top: 16px;">Find the right solution based on the business problem you're trying to solve, not the technology.</p>
+        <div class="sec-head fade-up">
+          <span class="eyebrow">03. Service Pricing</span>
+          <h2>Service Pricing</h2>
+          <p>Choose the service that matches your current need. Need multiple services? We bundle them with discounts.</p>
         </div>
-
-        <div class="chl-accordion">
-          <!-- 1 -->
-          <div class="chl-item active">
-            <div class="chl-q">Manual Processes Slowing You Down? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="chl-a"><div class="chl-a-inner">
-              <div class="chl-rec">Recommended Solution</div>
-              <div class="chl-sol">AI Automations &amp; Integrations</div>
-              <ul class="chl-caps"><li>Workflow Automation</li><li>AI Assistants</li><li>CRM Integrations</li><li>API Connections</li></ul>
-              <a href="digital-transformation.html" class="chl-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-            </div></div>
+        <div class="pkg-grid cols-3">
+          <div class="pkg-card fade-up">
+            <h3 class="pkg-name">Starter</h3>
+            <p class="pkg-best">Best for small businesses and startups exploring digital transformation.</p>
+            <div class="pkg-price">$3,500<small>Starting at</small></div>
+            <ul class="pkg-feats">
+              <li><i class="fa-solid fa-check"></i>Free 30-min assessment</li>
+              <li><i class="fa-solid fa-check"></i>Basic website (5-10 pages)</li>
+              <li><i class="fa-solid fa-check"></i>Standard AI chatbot setup</li>
+              <li><i class="fa-solid fa-check"></i>Odoo CRM module (basic)</li>
+              <li><i class="fa-solid fa-check"></i>1-month post-launch support</li>
+            </ul>
+            <a href="contact.html?service=starter-package" class="pkg-cta">Get Started</a>
           </div>
-          <!-- 2 -->
-          <div class="chl-item">
-            <div class="chl-q">Disconnected Systems Creating Data Silos? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="chl-a"><div class="chl-a-inner">
-              <div class="chl-rec">Recommended Solution</div>
-              <div class="chl-sol">ERP Integration &amp; Odoo Solutions</div>
-              <ul class="chl-caps"><li>ERP Implementation</li><li>System Integration</li><li>Odoo Customization</li><li>Data Synchronization</li></ul>
-              <a href="enterprise-odoo.html" class="chl-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-            </div></div>
+          <div class="pkg-card popular fade-up">
+            <div class="pkg-badge">MOST POPULAR</div>
+            <h3 class="pkg-name">Growth</h3>
+            <p class="pkg-best">Best for mid-market businesses ready to scale operations.</p>
+            <div class="pkg-price">$15,000<small>Starting at</small></div>
+            <ul class="pkg-feats">
+              <li><i class="fa-solid fa-check"></i>Everything in Starter, plus:</li>
+              <li><i class="fa-solid fa-check"></i>Custom website (15-25 pages) with CMS</li>
+              <li><i class="fa-solid fa-check"></i>AI workflow automation (2-3 processes)</li>
+              <li><i class="fa-solid fa-check"></i>Odoo ERP (Sales, Inventory, Accounting)</li>
+              <li><i class="fa-solid fa-check"></i>Cloud migration (AWS/Azure basic)</li>
+              <li><i class="fa-solid fa-check"></i>API integrations (up to 3)</li>
+              <li><i class="fa-solid fa-check"></i>3-month post-launch support</li>
+            </ul>
+            <a href="contact.html?service=growth-package" class="pkg-cta filled">Get Started</a>
           </div>
-          <!-- 3 -->
-          <div class="chl-item">
-            <div class="chl-q">Outdated Website Losing Customers? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="chl-a"><div class="chl-a-inner">
-              <div class="chl-rec">Recommended Solution</div>
-              <div class="chl-sol">Website Development &amp; CMS</div>
-              <ul class="chl-caps"><li>Corporate Websites</li><li>E-Commerce</li><li>Landing Pages</li><li>Website Redesign</li></ul>
-              <a href="services.html" class="chl-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-            </div></div>
-          </div>
-          <!-- 4 -->
-          <div class="chl-item">
-            <div class="chl-q">Need Software Built Around Your Workflow? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="chl-a"><div class="chl-a-inner">
-              <div class="chl-rec">Recommended Solution</div>
-              <div class="chl-sol">Custom Software Development</div>
-              <ul class="chl-caps"><li>SaaS Platforms</li><li>Business Applications</li><li>Dashboards</li><li>Enterprise Systems</li></ul>
-              <a href="services.html" class="chl-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-            </div></div>
-          </div>
-          <!-- 5 -->
-          <div class="chl-item">
-            <div class="chl-q">Retail Operations Difficult to Manage? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="chl-a"><div class="chl-a-inner">
-              <div class="chl-rec">Recommended Solution</div>
-              <div class="chl-sol">POS Systems</div>
-              <ul class="chl-caps"><li>Retail POS</li><li>Restaurant POS</li><li>Billing Systems</li><li>Inventory Tracking</li></ul>
-              <a href="retail-pos.html" class="chl-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-            </div></div>
-          </div>
-          <!-- 6 -->
-          <div class="chl-item">
-            <div class="chl-q">Marketing Not Delivering Results? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="chl-a"><div class="chl-a-inner">
-              <div class="chl-rec">Recommended Solution</div>
-              <div class="chl-sol">Social Media Marketing</div>
-              <ul class="chl-caps"><li>Paid Advertising</li><li>Content Strategy</li><li>LinkedIn Marketing</li><li>Analytics &amp; Reporting</li></ul>
-              <a href="services.html" class="chl-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-            </div></div>
+          <div class="pkg-card fade-up">
+            <h3 class="pkg-name">Enterprise</h3>
+            <p class="pkg-best">Best for large organizations with complex ecosystems.</p>
+            <div class="pkg-price">Custom Quote<small>Tailored to scope</small></div>
+            <ul class="pkg-feats">
+              <li><i class="fa-solid fa-check"></i>Everything in Growth, plus:</li>
+              <li><i class="fa-solid fa-check"></i>Full custom software development</li>
+              <li><i class="fa-solid fa-check"></i>Advanced AI/ML integration</li>
+              <li><i class="fa-solid fa-check"></i>Odoo full-suite implementation</li>
+              <li><i class="fa-solid fa-check"></i>Multi-cloud architecture</li>
+              <li><i class="fa-solid fa-check"></i>Legacy system modernization</li>
+              <li><i class="fa-solid fa-check"></i>Dedicated project manager</li>
+              <li><i class="fa-solid fa-check"></i>6-month post-launch support + SLA</li>
+            </ul>
+            <a href="contact.html?service=enterprise-package" class="pkg-cta">Talk to Sales</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 04: INDUSTRY SOLUTIONS -->
-    <section class="industry-section">
+    <!-- SECTION 04: OUTSOURCING PRICING PACKAGES -->
+    <section class="pricing-section alt">
       <div class="container">
-        <div style="text-align: center; max-width: 720px; margin: 0 auto;">
-            <span class="eyebrow">04. Industry Solutions</span>
-            <h2 style="font-size: 2.8rem; color: var(--bbt-navy); font-weight: 900;">Solutions Tailored to Your Industry</h2>
+        <div class="sec-head fade-up">
+          <span class="eyebrow">04. Outsourcing &amp; Teams</span>
+          <h2>Outsourcing &amp; Dedicated Teams</h2>
+          <p>Extend your team with BBT talent. Scale up or down monthly. No long-term contracts.</p>
         </div>
-
-        <div class="ind-grid">
-          <div class="ind-card fade-up">
-            <div class="ind-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-            <h3>Retail &amp; E-Commerce</h3>
-            <ul>
-              <li><i class="fa-solid fa-check"></i>POS</li>
-              <li><i class="fa-solid fa-check"></i>Inventory</li>
-              <li><i class="fa-solid fa-check"></i>E-Commerce Integrations</li>
+        <div class="pkg-grid cols-4">
+          <div class="pkg-card fade-up">
+            <h3 class="pkg-name">Staff Augmentation</h3>
+            <div class="pkg-price">$2,500<small>/mo per specialist &middot; Starting at</small></div>
+            <ul class="pkg-feats">
+              <li><i class="fa-solid fa-check"></i>1-2 specialists</li>
+              <li><i class="fa-solid fa-check"></i>Monthly billing, no lock-in</li>
+              <li><i class="fa-solid fa-check"></i>You manage the work</li>
+              <li><i class="fa-solid fa-check"></i>Full HR and payroll handled by BBT</li>
+              <li><i class="fa-solid fa-check"></i>Direct communication with your team</li>
             </ul>
+            <a href="contact.html?service=staff-augmentation" class="pkg-cta">Augment My Team</a>
           </div>
-          <div class="ind-card fade-up">
-            <div class="ind-icon"><i class="fa-solid fa-industry"></i></div>
-            <h3>Manufacturing</h3>
-            <ul>
-              <li><i class="fa-solid fa-check"></i>ERP</li>
-              <li><i class="fa-solid fa-check"></i>Production Planning</li>
-              <li><i class="fa-solid fa-check"></i>Inventory Management</li>
+          <div class="pkg-card popular fade-up">
+            <div class="pkg-badge">MOST POPULAR</div>
+            <h3 class="pkg-name">Dedicated Team</h3>
+            <div class="pkg-price">$12,000<small>/mo for 5-person team &middot; Starting at</small></div>
+            <ul class="pkg-feats">
+              <li><i class="fa-solid fa-check"></i>3-8 person team</li>
+              <li><i class="fa-solid fa-check"></i>6-month minimum</li>
+              <li><i class="fa-solid fa-check"></i>Shared PM (BBT + your lead)</li>
+              <li><i class="fa-solid fa-check"></i>Agile ceremonies aligned to your timezone</li>
+              <li><i class="fa-solid fa-check"></i>Quarterly performance reviews</li>
             </ul>
+            <a href="contact.html?service=dedicated-team" class="pkg-cta filled">Build My Team</a>
           </div>
-          <div class="ind-card fade-up">
-            <div class="ind-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-            <h3>Healthcare</h3>
-            <ul>
-              <li><i class="fa-solid fa-check"></i>CRM</li>
-              <li><i class="fa-solid fa-check"></i>Compliance</li>
-              <li><i class="fa-solid fa-check"></i>Automation</li>
+          <div class="pkg-card fade-up">
+            <h3 class="pkg-name">Managed Project</h3>
+            <div class="pkg-price">$25,000<small>per project &middot; Starting at</small></div>
+            <ul class="pkg-feats">
+              <li><i class="fa-solid fa-check"></i>Full delivery ownership</li>
+              <li><i class="fa-solid fa-check"></i>Fixed-price or T&amp;M options</li>
+              <li><i class="fa-solid fa-check"></i>Dedicated project manager</li>
+              <li><i class="fa-solid fa-check"></i>Weekly stakeholder updates</li>
+              <li><i class="fa-solid fa-check"></i>Quality assurance at every stage</li>
             </ul>
+            <a href="contact.html?service=managed-project" class="pkg-cta">Start My Project</a>
           </div>
-          <div class="ind-card fade-up">
-            <div class="ind-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-            <h3>Education</h3>
-            <ul>
-              <li><i class="fa-solid fa-check"></i>LMS</li>
-              <li><i class="fa-solid fa-check"></i>Student Portals</li>
-              <li><i class="fa-solid fa-check"></i>Administration Systems</li>
+          <div class="pkg-card fade-up">
+            <h3 class="pkg-name">Offshore Development Center</h3>
+            <div class="pkg-price">Custom Quote<small>Build-Operate-Transfer</small></div>
+            <ul class="pkg-feats">
+              <li><i class="fa-solid fa-check"></i>10-50+ engineers</li>
+              <li><i class="fa-solid fa-check"></i>Your branded tech hub in Pakistan</li>
+              <li><i class="fa-solid fa-check"></i>Full legal and compliance support</li>
+              <li><i class="fa-solid fa-check"></i>Custom facility and infrastructure</li>
+              <li><i class="fa-solid fa-check"></i>Build-Operate-Transfer option</li>
             </ul>
+            <a href="contact.html?service=odc" class="pkg-cta">Explore ODC</a>
           </div>
-          <div class="ind-card fade-up">
-            <div class="ind-icon"><i class="fa-solid fa-building"></i></div>
-            <h3>Real Estate</h3>
-            <ul>
-              <li><i class="fa-solid fa-check"></i>CRM</li>
-              <li><i class="fa-solid fa-check"></i>Property Management</li>
-              <li><i class="fa-solid fa-check"></i>Marketing Automation</li>
-            </ul>
-          </div>
-          <div class="ind-card fade-up">
-            <div class="ind-icon"><i class="fa-solid fa-coins"></i></div>
-            <h3>Financial Services</h3>
-            <ul>
-              <li><i class="fa-solid fa-check"></i>ERP</li>
-              <li><i class="fa-solid fa-check"></i>Security</li>
-              <li><i class="fa-solid fa-check"></i>Reporting</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="ind-cta-wrap">
-          <a href="industries.html" class="cta-btn" style="padding: 16px 40px; font-size: 16px;">Explore Industry Solutions</a>
         </div>
       </div>
     </section>
 
-  <!-- METHODOLOGY (BRAND THEMED) -->
-    <section class="methodology-section">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 80px;">
-                <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 800;">05. High-Impact Delivery</span>
-                <h2 style="font-size: 3.5rem; color: var(--bbt-navy); font-weight: 900;">Our Solutions Delivery Framework</h2>
-            </div>
-
-            <div class="framework-container">
-                <!-- STEP 01 -->
-                <div class="framework-item top">
-                    <div class="step-content fade-up">
-                        <p>Business analysis, requirements gathering, and strategic planning.</p>
-                    </div>
-                    <div class="step-node fade-up">
-                        01 &middot; Discover
-                    </div>
-                    <svg class="connector-svg" viewBox="0 0 100 50">
-                        <path d="M0,25 Q50,0 100,25" fill="none"/>
-                        <circle cx="100" cy="25" r="3" fill="var(--bbt-orange)"/>
-                    </svg>
-                </div>
-
-                <!-- STEP 02 -->
-                <div class="framework-item bottom">
-                    <div class="step-content fade-up">
-                        <p>Technology architecture, workflows, integrations, and user journeys.</p>
-                    </div>
-                    <div class="step-node fade-up">
-                        02 &middot; Design
-                    </div>
-                    <svg class="connector-svg" viewBox="0 0 100 50">
-                        <path d="M0,25 Q50,50 100,25" fill="none"/>
-                        <circle cx="100" cy="25" r="3" fill="var(--bbt-orange)"/>
-                    </svg>
-                </div>
-
-                <!-- STEP 03 -->
-                <div class="framework-item top">
-                    <div class="step-content fade-up">
-                        <p>Agile implementation with milestones and regular reviews.</p>
-                    </div>
-                    <div class="step-node fade-up">
-                        03 &middot; Develop
-                    </div>
-                    <svg class="connector-svg" viewBox="0 0 100 50">
-                        <path d="M0,25 Q50,0 100,25" fill="none"/>
-                        <circle cx="100" cy="25" r="3" fill="var(--bbt-orange)"/>
-                    </svg>
-                </div>
-
-                <!-- STEP 04 -->
-                <div class="framework-item bottom">
-                    <div class="step-content fade-up">
-                        <p>Launch, training, support, and continuous improvement.</p>
-                    </div>
-                    <div class="step-node fade-up">
-                        04 &middot; Deploy &amp; Optimize
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 80px;">
-                <a href="contact.html" class="cta-btn" style="padding: 16px 40px; font-size: 16px;">See Our Process in Action</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 06: TRUST & PROOF -->
-    <section class="trust-section">
+    <!-- SECTION 05: SOLUTION PRICING PACKAGES -->
+    <section class="pricing-section">
       <div class="container">
-        <div style="text-align: center; max-width: 760px; margin: 0 auto;">
-            <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 800;">06. Trust &amp; Proof</span>
-            <h2 style="font-size: clamp(2rem,4vw,3rem); color: #fff; font-weight: 900;">Trusted by Organizations Across Sectors</h2>
+        <div class="sec-head fade-up">
+          <span class="eyebrow">05. Solution Pricing</span>
+          <h2>Solution Pricing</h2>
+          <p>Complete solutions that combine multiple services into one package with one point of accountability.</p>
         </div>
-
-        <div class="trust-layout">
-          <!-- Left: logos + metrics -->
-          <div>
-            <div class="trust-logos-label">Partners &amp; Certifications</div>
-            <div class="trust-logos">
-              <div class="trust-logo">Cisco</div>
-              <div class="trust-logo">PSEB</div>
-              <div class="trust-logo">NAVTTC</div>
-              <div class="trust-logo">FAST</div>
-              <div class="trust-logo">UMT</div>
-              <div class="trust-logo">Hack The Box</div>
-            </div>
-            <div class="trust-metrics">
-              <div class="trust-metric"><div class="tm-num">50+</div><div class="tm-label">Solutions Delivered</div></div>
-              <div class="trust-metric"><div class="tm-num">15+</div><div class="tm-label">Industries Served</div></div>
-              <div class="trust-metric"><div class="tm-num">98%</div><div class="tm-label">Client Retention</div></div>
-            </div>
+        <div class="pkg-grid cols-3">
+          <div class="pkg-card fade-up">
+            <h3 class="pkg-name">Digital Transformation Program</h3>
+            <div class="pkg-price">$50,000<small>Starting at</small></div>
+            <ul class="pkg-feats">
+              <li><i class="fa-solid fa-check"></i>Legacy system audit and roadmap</li>
+              <li><i class="fa-solid fa-check"></i>Cloud migration and modernization</li>
+              <li><i class="fa-solid fa-check"></i>End-to-end business digitization</li>
+              <li><i class="fa-solid fa-check"></i>AI automation integration</li>
+              <li><i class="fa-solid fa-check"></i>Change management and training</li>
+              <li><i class="fa-solid fa-check"></i>6-month post-launch support</li>
+            </ul>
+            <a href="contact.html?service=digital-transformation-program" class="pkg-cta">Start Transformation</a>
           </div>
-
-          <!-- Right: testimonial slider -->
-          <div class="t-slider" id="tSlider">
-            <div class="t-track" id="tTrack">
-              <div class="t-card">
-                <span class="t-pill">ERP</span>
-                <p class="t-quote">"Big Binary Tech rebuilt our entire operations stack on Odoo. Finance, inventory and sales finally talk to each other in real time."</p>
-                <div class="t-meta">Operations Director<span>Manufacturing Group</span></div>
-              </div>
-              <div class="t-card">
-                <span class="t-pill">AI Automation</span>
-                <p class="t-quote">"Their AI workflow automation cut our manual back-office work dramatically. The team understood our process before touching the tech."</p>
-                <div class="t-meta">Head of Technology<span>SaaS Company</span></div>
-              </div>
-              <div class="t-card">
-                <span class="t-pill">Retail POS</span>
-                <p class="t-quote">"We run multiple branches and the new POS gives us a single live view of inventory and sales. Rollout was smooth and well-supported."</p>
-                <div class="t-meta">Retail Operations Lead<span>Multi-Branch Retailer</span></div>
-              </div>
-            </div>
+          <div class="pkg-card popular fade-up">
+            <div class="pkg-badge">MOST POPULAR</div>
+            <h3 class="pkg-name">Enterprise &amp; Odoo Solutions</h3>
+            <div class="pkg-price">$35,000<small>Starting at</small></div>
+            <ul class="pkg-feats">
+              <li><i class="fa-solid fa-check"></i>Full Odoo ERP implementation</li>
+              <li><i class="fa-solid fa-check"></i>HR, Finance, CRM, Inventory, Manufacturing</li>
+              <li><i class="fa-solid fa-check"></i>GCC compliance (ZATCA, FTA, VAT)</li>
+              <li><i class="fa-solid fa-check"></i>Arabic localization and RTL support</li>
+              <li><i class="fa-solid fa-check"></i>Third-party integrations</li>
+              <li><i class="fa-solid fa-check"></i>Training and knowledge transfer</li>
+            </ul>
+            <a href="contact.html?service=odoo-enterprise-solution" class="pkg-cta filled">Implement Odoo</a>
+          </div>
+          <div class="pkg-card fade-up">
+            <h3 class="pkg-name">Retail &amp; POS Solutions</h3>
+            <div class="pkg-price">$20,000<small>Starting at</small></div>
+            <ul class="pkg-feats">
+              <li><i class="fa-solid fa-check"></i>Custom POS system development</li>
+              <li><i class="fa-solid fa-check"></i>Multi-branch inventory management</li>
+              <li><i class="fa-solid fa-check"></i>E-commerce integration</li>
+              <li><i class="fa-solid fa-check"></i>Real-time analytics dashboard</li>
+              <li><i class="fa-solid fa-check"></i>Mobile apps for field staff</li>
+              <li><i class="fa-solid fa-check"></i>24/7 support during launch</li>
+            </ul>
+            <a href="contact.html?service=retail-pos-solution" class="pkg-cta">Build My POS</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 07: SUCCESS STORIES -->
-    <section class="stories-section">
+    <!-- SECTION 06: WHAT'S INCLUDED IN EVERY PACKAGE -->
+    <section class="included-section">
       <div class="container">
-        <div style="text-align: center; max-width: 720px; margin: 0 auto;">
-            <span class="eyebrow">07. Success Stories</span>
-            <h2 style="font-size: 2.8rem; color: var(--bbt-navy); font-weight: 900;">Solutions That Delivered Results</h2>
+        <div class="sec-head fade-up">
+          <span class="eyebrow">06. Value Reinforcement</span>
+          <h2>Every Package Includes</h2>
         </div>
-
-        <div class="stories-grid">
-          <article class="story-card fade-up">
-            <div class="story-top"><i class="fa-solid fa-robot"></i></div>
-            <div class="story-body">
-              <span class="story-industry">Technology</span>
-              <h3>AI Workflow Automation Suite</h3>
-              <div class="story-result"><strong>70%</strong><span>Reduction in manual operations</span></div>
-              <a href="case-studies.html" class="story-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="story-card fade-up">
-            <div class="story-top"><i class="fa-solid fa-boxes-stacked"></i></div>
-            <div class="story-body">
-              <span class="story-industry">Manufacturing</span>
-              <h3>Odoo Sales &amp; Inventory Integration</h3>
-              <div class="story-result"><strong>40%</strong><span>Improvement in operational visibility</span></div>
-              <a href="case-studies.html" class="story-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
-          <article class="story-card fade-up">
-            <div class="story-top"><i class="fa-solid fa-diagram-project"></i></div>
-            <div class="story-body">
-              <span class="story-industry">Professional Services</span>
-              <h3>Custom Management System</h3>
-              <div class="story-result"><strong>5</strong><span>Departments unified on one platform</span></div>
-              <a href="case-studies.html" class="story-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </article>
+        <div class="inc-grid">
+          <div class="inc-card fade-up">
+            <div class="inc-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3>Free Discovery &amp; Assessment</h3>
+            <p>We audit your current systems, identify opportunities, and build a roadmap, all at no cost.</p>
+          </div>
+          <div class="inc-card fade-up">
+            <div class="inc-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Dedicated Project Manager</h3>
+            <p>One point of contact. One accountability. Weekly updates, clear timelines, no confusion.</p>
+          </div>
+          <div class="inc-card fade-up">
+            <div class="inc-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Quality Assurance</h3>
+            <p>Every deliverable is tested before it reaches you. Code reviews, UAT, and performance checks.</p>
+          </div>
+          <div class="inc-card fade-up">
+            <div class="inc-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Documentation &amp; Knowledge Transfer</h3>
+            <p>Full technical documentation, user manuals, and training sessions for your team.</p>
+          </div>
+          <div class="inc-card fade-up">
+            <div class="inc-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>Post-Launch Support</h3>
+            <p>Bug fixes, optimization, and guidance for 1-6 months depending on your package.</p>
+          </div>
+          <div class="inc-card fade-up">
+            <div class="inc-icon"><i class="fa-solid fa-key"></i></div>
+            <h3>IP Ownership</h3>
+            <p>You own 100% of the code, designs, and data we create. No licensing fees. No lock-in.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 08: FAQ -->
+    <!-- SECTION 07: PRICING COMPARISON TABLE -->
+    <section class="compare-section">
+      <div class="container">
+        <div class="sec-head fade-up">
+          <span class="eyebrow">07. Decision Support</span>
+          <h2>Compare All Packages</h2>
+        </div>
+        <div class="compare-scroll fade-up">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Starter</th>
+                <th scope="col" class="col-rec">Growth</th>
+                <th scope="col">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Free Assessment</td>
+                <td class="yes">&#10003;</td>
+                <td class="yes col-rec">&#10003;</td>
+                <td class="yes">&#10003;</td>
+              </tr>
+              <tr>
+                <td>Custom Website</td>
+                <td>Basic (5-10 pages)</td>
+                <td class="col-rec">Advanced (15-25 pages)</td>
+                <td>Full custom</td>
+              </tr>
+              <tr>
+                <td>AI Automation</td>
+                <td>Chatbot only</td>
+                <td class="col-rec">2-3 workflows</td>
+                <td>Full AI/ML integration</td>
+              </tr>
+              <tr>
+                <td>Odoo ERP</td>
+                <td>CRM only</td>
+                <td class="col-rec">Sales + Inventory + Accounting</td>
+                <td>Full suite</td>
+              </tr>
+              <tr>
+                <td>Cloud Migration</td>
+                <td class="no">Not included</td>
+                <td class="col-rec">Basic (AWS/Azure)</td>
+                <td>Multi-cloud architecture</td>
+              </tr>
+              <tr>
+                <td>API Integrations</td>
+                <td class="no">Not included</td>
+                <td class="col-rec">Up to 3</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>Legacy Modernization</td>
+                <td class="no">Not included</td>
+                <td class="no col-rec">Not included</td>
+                <td class="yes">&#10003;</td>
+              </tr>
+              <tr>
+                <td>Dedicated PM</td>
+                <td>Shared</td>
+                <td class="col-rec">Shared</td>
+                <td>Full-time</td>
+              </tr>
+              <tr>
+                <td>Post-Launch Support</td>
+                <td>1 month</td>
+                <td class="col-rec">3 months</td>
+                <td>6 months + SLA</td>
+              </tr>
+              <tr>
+                <td>Starting Price</td>
+                <td>$3,500</td>
+                <td class="col-rec">$15,000</td>
+                <td>Custom Quote</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="compare-hint"><i class="fa-solid fa-arrows-left-right"></i> Swipe to compare all packages</p>
+        <div class="compare-cta-wrap">
+          <p style="color:var(--bbt-muted); margin-bottom:20px; font-weight:600;">Not sure which package fits?</p>
+          <a href="contact.html?service=pricing&amp;offer=consultation" class="cta-btn" style="padding:16px 40px; font-size:16px;">Book a Free 15-min Call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 08: CLIENT RESULTS -->
+    <section class="results-section">
+      <div class="container">
+        <div class="sec-head fade-up">
+          <span class="eyebrow">08. Social Proof</span>
+          <h2>What Clients Say About Working With BBT</h2>
+        </div>
+        <div class="results-grid">
+          <div class="result-card fade-up">
+            <div class="result-quote-mark">&ldquo;</div>
+            <p class="result-quote">BBT quoted us $15,000 for a project another firm quoted $45,000 for. Same scope, same timeline, better delivery. The transparency in their pricing was refreshing.</p>
+            <div class="result-meta">
+              <div class="result-avatar">TC</div>
+              <div class="result-author">COO<span>Trading Company &middot; Dubai, UAE</span></div>
+            </div>
+          </div>
+          <div class="result-card fade-up">
+            <div class="result-quote-mark">&ldquo;</div>
+            <p class="result-quote">We started with staff augmentation at $2,500/month. Six months later, we scaled to a dedicated team. The pricing scaled with us, with no penalties and no renegotiation.</p>
+            <div class="result-meta">
+              <div class="result-avatar">SC</div>
+              <div class="result-author">VP Engineering<span>SaaS Company &middot; London, UK</span></div>
+            </div>
+          </div>
+          <div class="result-card fade-up">
+            <div class="result-quote-mark">&ldquo;</div>
+            <p class="result-quote">The fixed-price model meant we knew exactly what we were paying. No surprise invoices. No scope creep. We got what was promised, on time, on budget.</p>
+            <div class="result-meta">
+              <div class="result-avatar">PS</div>
+              <div class="result-author">Managing Director<span>Professional Services &middot; Riyadh, Saudi Arabia</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 09: PRICING FAQ -->
     <section class="faq-section" id="faqs">
       <div class="container">
-        <div style="text-align: center; max-width: 720px; margin: 0 auto;">
-            <span class="eyebrow">08. FAQ</span>
-            <h2 style="font-size: 2.8rem; color: var(--bbt-navy); font-weight: 900;">Common Questions About Our Solutions</h2>
+        <div class="sec-head fade-up">
+          <span class="eyebrow">09. Pricing FAQ</span>
+          <h2>Pricing Questions</h2>
         </div>
-
         <div class="faq-container">
           <div class="faq-item">
-            <div class="faq-question">What industries do you specialize in? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">We deliver solutions across 15+ industries including retail &amp; e-commerce, manufacturing, healthcare, education, real estate, and financial services. Every engagement starts with deep industry discovery so the solution fits how you actually operate.</div>
+            <div class="faq-question">Why do you show starting prices instead of fixed prices? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Every business is different. A 5-page website for a Dubai consultancy costs less than a 25-page e-commerce site with payment gateways. Our starting prices reflect the minimum scope for that package. After your free assessment, we give you a fixed quote with no surprises.</div>
           </div>
           <div class="faq-item">
-            <div class="faq-question">How long does an ERP implementation take? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">A focused Odoo configuration typically takes 4 to 8 weeks, while a customized enterprise ERP with integrations runs 8 to 16 weeks. We deliver in phases so you see value every month rather than waiting for one big launch.</div>
+            <div class="faq-question">Are there any hidden fees? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">No. Every proposal includes a detailed cost breakdown: development, design, testing, project management, and third-party costs (licenses, hosting, APIs). Change requests outside the original scope are quoted separately before work begins.</div>
           </div>
           <div class="faq-item">
-            <div class="faq-question">Do you offer ongoing support? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">Yes. Every project includes post-launch support, and we offer monthly care plans for dedicated support, system updates, and continuous optimization as your business grows.</div>
+            <div class="faq-question">What payment terms do you offer? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">For fixed-price projects: 30% upfront, 30% at midpoint, 40% at delivery. For outsourcing: monthly billing in advance. For enterprise: quarterly or milestone-based. We accept wire transfer, PayPal, and major credit cards. GCC clients can pay in AED, SAR, or USD.</div>
           </div>
           <div class="faq-item">
-            <div class="faq-question">Can you integrate with our existing systems? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">Absolutely. We integrate with ERP systems, accounting software, payment gateways, CRMs, and industry-specific tools. When native integration isn't available, we build custom APIs to connect your stack.</div>
+            <div class="faq-question">Can I change my package after signing? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes. You can upgrade or downgrade your outsourcing engagement with 30 days' notice. For project-based work, scope changes are managed through our formal change order process, with every change quoted and approved before implementation.</div>
           </div>
           <div class="faq-item">
-            <div class="faq-question">What makes your POS solutions different? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">Our POS systems are built for multi-branch operations with real-time inventory sync, billing, and reporting in a single live view. They're customizable for both retail and restaurant workflows rather than forced into a generic template.</div>
+            <div class="faq-question">Do you offer discounts for multiple services? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes. Bundle 2+ services and save 10-15%. Commit to a 12-month outsourcing engagement and get 1 month free. Non-profits and startups get additional consideration, so ask during your assessment.</div>
           </div>
           <div class="faq-item">
-            <div class="faq-question">How does AI automation reduce costs? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">By automating repetitive workflows, AI assistants, and integrations, your team reclaims hours spent on manual back-office work. Clients commonly see manual operations reduced by up to 70%, lowering operating costs and error rates.</div>
+            <div class="faq-question">What happens if the project goes over budget? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Fixed-price projects don't go over budget. That's the point. If scope changes, we quote the change separately. For T&amp;M engagements, we provide weekly burn reports so you always know where you stand.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Is post-launch support included in the price? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes. All packages include 1-6 months of post-launch support depending on the tier. After that, you can choose a monthly care plan or managed services. Support includes bug fixes, minor enhancements, and performance monitoring.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How do I get an exact quote for my project? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Book a free 30-minute assessment via our contact form. We'll audit your current systems, understand your goals, and send you a detailed proposal within 48 hours, complete with a fixed price, clear timeline, and no obligation.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 09: FINAL CTA -->
+    <!-- SECTION 10: BOTTOM CTA BANNER -->
     <section class="final-cta">
-        <div class="container">
-            <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 30px; line-height: 1.1;">Not Sure Which Solution <br> Fits Your Business?</h2>
-            <p style="max-width: 640px; margin: 0 auto 40px; color: rgba(255,255,255,0.7);">Our solutions architects will analyze your business needs and recommend the right technology roadmap with complete clarity and no obligation.</p>
-            <div class="hero-actions" style="justify-content: center;">
-              <a href="contact.html" class="cta-btn" style="background: white; color: var(--bbt-navy); padding: 18px 44px; font-size: 17px;">Get a Free Solutions Assessment</a>
-              <a href="services.html" class="cta-ghost">Explore Services</a>
-            </div>
+      <div class="container">
+        <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; line-height: 1.1;">Ready to Get a Clear, <br> Fixed Quote?</h2>
+        <p style="max-width: 660px; margin: 0 auto 40px; color: rgba(255,255,255,0.75);">Book a free 30-minute assessment. We'll audit your needs, identify quick wins, and give you a detailed proposal with transparent pricing before you spend a dollar.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="contact.html?service=pricing&amp;offer=quote" class="cta-btn" style="background: white; color: var(--bbt-navy); padding: 18px 44px; font-size: 17px;">Book My Free Assessment</a>
+          <a href="e-books.html" class="cta-ghost">Download Our Pricing Guide</a>
         </div>
+      </div>
     </section>
 
-    <!-- SECTION 10: RELATED RESOURCES -->
+    <!-- SECTION 11: RELATED PAGES -->
     <section class="related-section">
       <div class="container">
-        <div style="text-align: center; max-width: 720px; margin: 0 auto;">
-            <span class="eyebrow">10. Related Resources</span>
-            <h2 style="font-size: 2.8rem; color: var(--bbt-navy); font-weight: 900;">Insights on Business Solutions</h2>
+        <div class="sec-head fade-up">
+          <span class="eyebrow">11. Related Pages</span>
+          <h2>Explore More</h2>
         </div>
-
         <div class="related-grid">
-          <a href="blogs.html" class="related-card fade-up">
-            <div class="related-type">Blog</div>
-            <i class="fa-solid fa-pen-nib"></i>
-            <h3>5 Signs Your Business Needs an ERP System</h3>
-            <span class="related-go">Read Article →</span>
+          <a href="services.html" class="related-card fade-up">
+            <div class="related-type">Services</div>
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Our Full Service Range</h3>
+            <p>Explore our full range of AI, web, Odoo, custom software, POS, and marketing services.</p>
+            <span class="related-go">View Services &rarr;</span>
+          </a>
+          <a href="solutions.html" class="related-card fade-up">
+            <div class="related-type">Outsourcing</div>
+            <i class="fa-solid fa-users-gear"></i>
+            <h3>Dedicated Teams &amp; ODC</h3>
+            <p>Learn about staff augmentation, dedicated teams, and offshore development centers.</p>
+            <span class="related-go">Explore Outsourcing &rarr;</span>
           </a>
           <a href="case-studies.html" class="related-card fade-up">
-            <div class="related-type">Case Study</div>
+            <div class="related-type">Case Studies</div>
             <i class="fa-solid fa-chart-line"></i>
-            <h3>How AI Automation Cut Costs by 40% for a Retail Client</h3>
-            <span class="related-go">Read Case Study →</span>
+            <h3>Real Results &amp; ROI</h3>
+            <p>See real-world results and ROI from businesses like yours.</p>
+            <span class="related-go">View Case Studies &rarr;</span>
           </a>
-          <a href="resources.html" class="related-card fade-up">
-            <div class="related-type">Comparison Guide</div>
-            <i class="fa-solid fa-scale-balanced"></i>
-            <h3>Odoo vs Custom ERP: Which Is Right for You?</h3>
-            <span class="related-go">Read Guide →</span>
-          </a>
-        </div>
-
-        <div class="related-cta-wrap">
-          <a href="resources.html" class="cta-btn" style="padding: 16px 40px; font-size: 16px;">View All Resources</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Sticky mobile CTA (spec mobile requirement) -->
-  <a href="contact.html" class="sticky-expert">Talk to a Solutions Expert</a>
+  <!-- Sticky mobile CTA -->
+  <a href="contact.html?service=pricing&amp;offer=quote" class="sticky-expert">Get a Free Custom Quote</a>
 
   <!-- SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1538,30 +1758,26 @@
     gsap.from(".hero p", { y: 40, opacity: 0, duration: 1, delay: 0.4 });
     gsap.from(".hero .cta-btn", { y: 30, opacity: 0, duration: 1, delay: 0.6 });
 
-    // Fade Up General (covers eco-card / ind-card / story-card / related-card etc.)
+    // Fade Up General
     document.querySelectorAll('.fade-up').forEach(item => {
         gsap.from(item, {
-            scrollTrigger: {
-                trigger: item,
-                start: "top 90%"
-            },
-            y: 40,
-            opacity: 0,
-            duration: 1
+            scrollTrigger: { trigger: item, start: "top 90%" },
+            y: 40, opacity: 0, duration: 1
         });
     });
 
-    // SECTION 03: Challenge accordion (one open at a time)
-    document.querySelectorAll('.chl-item').forEach(item => {
-      const q = item.querySelector('.chl-q');
-      q.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        document.querySelectorAll('.chl-item').forEach(el => el.classList.remove('active'));
-        if (!isActive) item.classList.add('active');
+    // Smooth anchor scroll via Lenis for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          const el = document.querySelector(id);
+          if (el) { e.preventDefault(); lenis.scrollTo(el, { offset: -80 }); }
+        }
       });
     });
 
-    // SECTION 08: FAQ accordion
+    // SECTION 09: FAQ accordion (one open at a time)
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
@@ -1569,25 +1785,6 @@
         if (!isActive) item.classList.add('active');
       });
     });
-
-    // SECTION 06: Testimonial infinite slider
-    (function(){
-      const track = document.getElementById('tTrack');
-      if (!track) return;
-      // Duplicate cards for a seamless loop
-      track.innerHTML += track.innerHTML;
-      let half = track.scrollWidth / 2;
-      const loop = gsap.to(track, {
-        x: () => -half,
-        duration: 28,
-        ease: 'none',
-        repeat: -1,
-        modifiers: { x: gsap.utils.unitize(x => parseFloat(x) % half) }
-      });
-      track.addEventListener('mouseenter', () => gsap.to(loop, { timeScale: 0, duration: 0.4 }));
-      track.addEventListener('mouseleave', () => gsap.to(loop, { timeScale: 1, duration: 0.4 }));
-      window.addEventListener('resize', () => { half = track.scrollWidth / 2; });
-    })();
   </script>
     <script>
     (function(){
@@ -1604,7 +1801,7 @@
     })();
     </script>
 
-  <!-- SECTION 08: FAQPage Schema (SEO) -->
+  <!-- SECTION 09: FAQPage Schema (SEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1612,55 +1809,72 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What industries do you specialize in?",
+        "name": "Why do you show starting prices instead of fixed prices?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We deliver solutions across 15+ industries including retail & e-commerce, manufacturing, healthcare, education, real estate, and financial services. Every engagement starts with deep industry discovery so the solution fits how you actually operate."
+          "text": "Every business is different. A 5-page website for a Dubai consultancy costs less than a 25-page e-commerce site with payment gateways. Our starting prices reflect the minimum scope for that package. After your free assessment, we give you a fixed quote with no surprises."
         }
       },
       {
         "@type": "Question",
-        "name": "How long does an ERP implementation take?",
+        "name": "Are there any hidden fees?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A focused Odoo configuration typically takes 4 to 8 weeks, while a customized enterprise ERP with integrations runs 8 to 16 weeks. We deliver in phases so you see value every month rather than waiting for one big launch."
+          "text": "No. Every proposal includes a detailed cost breakdown: development, design, testing, project management, and third-party costs (licenses, hosting, APIs). Change requests outside the original scope are quoted separately before work begins."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you offer ongoing support?",
+        "name": "What payment terms do you offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Every project includes post-launch support, and we offer monthly care plans for dedicated support, system updates, and continuous optimization as your business grows."
+          "text": "For fixed-price projects: 30% upfront, 30% at midpoint, 40% at delivery. For outsourcing: monthly billing in advance. For enterprise: quarterly or milestone-based. We accept wire transfer, PayPal, and major credit cards. GCC clients can pay in AED, SAR, or USD."
         }
       },
       {
         "@type": "Question",
-        "name": "Can you integrate with our existing systems?",
+        "name": "Can I change my package after signing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. We integrate with ERP systems, accounting software, payment gateways, CRMs, and industry-specific tools. When native integration isn't available, we build custom APIs to connect your stack."
+          "text": "Yes. You can upgrade or downgrade your outsourcing engagement with 30 days' notice. For project-based work, scope changes are managed through our formal change order process, with every change quoted and approved before implementation."
         }
       },
       {
         "@type": "Question",
-        "name": "What makes your POS solutions different?",
+        "name": "Do you offer discounts for multiple services?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our POS systems are built for multi-branch operations with real-time inventory sync, billing, and reporting in a single live view. They're customizable for both retail and restaurant workflows rather than forced into a generic template."
+          "text": "Yes. Bundle 2+ services and save 10-15%. Commit to a 12-month outsourcing engagement and get 1 month free. Non-profits and startups get additional consideration, so ask during your assessment."
         }
       },
       {
         "@type": "Question",
-        "name": "How does AI automation reduce costs?",
+        "name": "What happens if the project goes over budget?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "By automating repetitive workflows, AI assistants, and integrations, your team reclaims hours spent on manual back-office work. Clients commonly see manual operations reduced by up to 70%, lowering operating costs and error rates."
+          "text": "Fixed-price projects don't go over budget. That's the point. If scope changes, we quote the change separately. For T&M engagements, we provide weekly burn reports so you always know where you stand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is post-launch support included in the price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All packages include 1-6 months of post-launch support depending on the tier. After that, you can choose a monthly care plan or managed services. Support includes bug fixes, minor enhancements, and performance monitoring."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get an exact quote for my project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Book a free 30-minute assessment via our contact form. We'll audit your current systems, understand your goals, and send you a detailed proposal within 48 hours, complete with a fixed price, clear timeline, and no obligation."
         }
       }
     ]
   }
   </script>
+
 
   <footer class="site-footer">
     <div class="container footer-grid">

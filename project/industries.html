@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Industries | Big Binary Tech</title>
+  <link rel="icon" type="image/png" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
+  <link rel="apple-touch-icon" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,202 +119,373 @@
       text-decoration: none;
       transition: all 0.3s ease;
       box-shadow: 0 4px 24px var(--bbt-orange-glow);
-      white-space: nowrap;
     }
-    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--bbt-orange-glow); }
 
-    /* ---- Mega Menu ---- */
-    .nav-item-dropdown {
-      position: static;
-      padding-bottom: 40px;
-      margin-bottom: -40px;
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      background: var(--bbt-orange-600);
+      box-shadow: 0 8px 32px var(--bbt-orange-glow);
     }
-    .mega-menu-wrapper {
-      position: fixed;
+
+    .nav-links a.active {
+      color: var(--bbt-orange);
+      position: relative;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
       left: 0;
-      width: 100vw;
-      top: 100px;
-      background: var(--bbt-navy);
-      border-top: 2px solid var(--bbt-orange);
-      border-bottom: 5px solid var(--bbt-orange);
-      padding: 50px 0;
-      box-shadow: 0 50px 100px rgba(0,0,0,0.5);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      z-index: 9999;
-    }
-    .nav-item-dropdown:hover .mega-menu-wrapper {
-      opacity: 1; visibility: visible; transform: translateY(0);
-    }
-    .mega-menu-container {
-      display: grid;
-      grid-template-columns: 1.4fr 0.6fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .mega-heading {
-      font-size: 28px; font-weight: 900; color: #fff;
-      margin-bottom: 35px; text-transform: uppercase; letter-spacing: 3px;
-    }
-    .mega-card { display: flex; gap: 30px; align-items: flex-start; }
-    .mega-card-img {
-      width: 320px; height: 220px;
-      border-radius: 12px; overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1); flex-shrink: 0;
-    }
-    .mega-card-img img { width: 100%; height: 100%; object-fit: cover; }
-    .mega-card-text h4 {
-      color: #fff; font-size: 18px; line-height: 1.5;
-      margin-bottom: 15px; font-weight: 600;
-    }
-    .mega-cta {
-      color: var(--bbt-orange); text-decoration: none;
-      font-weight: 800; font-size: 13px; letter-spacing: 1px;
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-    .mega-links-section { padding-top: 55px; }
-    .mega-list-link {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
-      text-decoration: none; color: #ffffff !important;
-      font-size: 16px; font-weight: 600; transition: all 0.3s ease;
-    }
-    .mega-list-link:last-child { border-bottom: none; }
-    .mega-list-link i { font-size: 14px; color: var(--bbt-orange); opacity: 0.6; transition: 0.3s; }
-    .mega-list-link:hover { color: var(--bbt-orange) !important; padding-left: 10px; }
-    .mega-list-link:hover i { opacity: 1; transform: translateX(5px); }
-
-    /* ---- Mobile Nav / Hamburger ---- */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 8px;
-      background: none;
-      border: none;
-      z-index: 1100;
-    }
-    .hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: #ffffff;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-    .header.scrolled .hamburger span { background: var(--bbt-navy); }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: var(--bbt-navy);
-      z-index: 1050;
-      flex-direction: column;
-      padding: 100px 40px 40px;
-      overflow-y: auto;
-      transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .mobile-menu.open { transform: translateX(0); }
-    .mobile-menu-links { list-style: none; }
-    .mobile-menu-links li { border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .mobile-menu-links a {
-      display: block; padding: 18px 0;
-      color: #ffffff; text-decoration: none;
-      font-size: 20px; font-weight: 700;
-      transition: color 0.2s;
-    }
-    .mobile-menu-links a:hover,
-    .mobile-menu-links a.active { color: var(--bbt-orange); }
-    .mobile-menu-sub { padding-left: 20px; margin-top: 4px; }
-    .mobile-menu-sub a {
-      font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.7);
-      padding: 10px 0;
-    }
-    .mobile-menu-cta {
-      margin-top: 40px;
+      width: 100%;
+      height: 2px;
       background: var(--bbt-orange);
-      color: #fff; border: none;
-      padding: 16px 32px; border-radius: 999px;
-      font-size: 16px; font-weight: 700;
-      text-decoration: none; display: inline-block;
+      border-radius: 2px;
     }
+      /* Parent item alignment */
+.nav-item-dropdown {
+    position: static; /* Required for the fixed full-width child */
+}
 
-    /* ============================================
-       HERO
-    ============================================ */
+/* The Full-Width Menu Container */
+.mega-menu-wrapper {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    top: 100px; /* Aligns exactly at bottom of header */
+    background: var(--bbt-navy); /* Dark Theme */
+    border-top: 2px solid var(--bbt-orange);
+    border-bottom: 5px solid var(--bbt-orange);
+    padding: 50px 0;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    
+    /* Animation States */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 9999;
+}
+
+/* Hover Trigger */
+.nav-item-dropdown:hover .mega-menu-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Visual ratio matching your SS */
+    gap: 100px;
+    align-items: start;
+}
+
+/* Left Section: Featured */
+.mega-heading {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mega-card {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.mega-card-img {
+    width: 320px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mega-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mega-card-text h4 {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.mega-cta {
+    color: var(--bbt-orange);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Right Section: Link List */
+.mega-links-section {
+    padding-top: 55px;
+}
+
+.mega-links-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 22px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link i {
+    font-size: 18px;
+    color: var(--bbt-orange);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+/* Hover States */
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+    padding-left: 15px;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+/* Header Padding adjustment to stop menu from disappearing */
+.nav-item-dropdown {
+    padding-bottom: 40px;
+    margin-bottom: -40px;
+}
+/* Ensure the Mega Menu Heading is prominent */
+.mega-heading {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Featured Card Image Styling to match your design */
+.mega-card-img {
+    width: 320px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0; /* Aligning with text side-by-side */
+}
+
+/* Link List Styling with the arrows and dividers seen in your screenshot */
+.mega-list-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.mega-list-link:last-child {
+    border-bottom: none;
+}
+
+.mega-list-link i {
+    font-size: 14px;
+    color: var(--bbt-orange);
+    opacity: 0.6;
+}
+
+.mega-list-link:hover {
+    color: var(--bbt-orange) !important;
+}
+
+.mega-list-link:hover i {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* Layout alignment */
+.mega-menu-container {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr; /* Exact ratio from your image */
+    gap: 80px;
+}
+
+    /* --- DARK HERO (Index Style) --- */
     .hero {
       height: 100vh;
-      min-height: 600px;
       display: flex;
       align-items: center;
       position: relative;
-      background-color: #000000;
+      background-color: #000000; /* Solid black base */
       padding-top: 80px;
       overflow: hidden;
       color: white;
     }
+
+    /* Image positioned strictly on the right half */
+    /* Image positioned strictly on the right half */
     .hero::after {
       content: "";
-      position: absolute; top: 0; right: 0;
-      width: 60%; height: 100%;
-      background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/industries-background.avif');
-      background-size: cover; background-position: center;
+      position: absolute;
+      top: 0; 
+      right: 0; 
+      width: 60%; /* Occupies right side */
+      height: 100%;
+      /* Updated to your specific .avif file */
+      background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/industries-background.avif'); 
+      background-size: cover; 
+      background-position: center;
       z-index: 1;
+      /* Mask ensures the left side is solid black for text readability */
       mask-image: linear-gradient(to right, transparent 0%, black 60%);
       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%);
-      opacity: 0.6;
+      opacity: 0.6; /* Adjusted opacity for high-quality .avif detail */
     }
-    .hero .container { position: relative; z-index: 5; }
-    .hero-content { max-width: 750px; }
-    .hero h1 {
-      font-size: clamp(2rem, 5.5vw, 4.5rem);
-      font-weight: 900; line-height: 1.1; margin-bottom: 24px;
+
+    /* Content container matching index.html structure */
+    .hero .container {
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-content { 
+      max-width: 750px; 
+      text-align: left; /* Explicitly left-aligned */
+    }
+
+    .hero h1 { 
+      font-size: clamp(2.5rem, 6vw, 4.5rem); 
+      font-weight: 900; 
+      line-height: 1.1; 
+      margin-bottom: 24px;
       text-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
-    .hero p {
-      font-size: clamp(0.95rem, 2vw, 1.2rem);
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 40px; max-width: 560px; line-height: 1.7;
+
+    .hero p { 
+      font-size: 1.2rem; 
+      color: rgba(255,255,255,0.7); 
+      margin-bottom: 40px; 
+      max-width: 600px; 
+      line-height: 1.6;
     }
-    .eyebrow {
-      color: var(--bbt-orange);
-      letter-spacing: 3px; font-weight: 700;
-      display: block; margin-bottom: 10px;
-      font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    /* --- RESPONSIVE HERO UPDATES --- */
+    @media (max-width: 768px) {
+      .hero {
+        height: auto;
+        min-height: 100vh; /* Ensures it still feels like a hero on mobile */
+        padding: 150px 0 80px 0; /* Extra top padding so text clears the logo/header */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero::after {
+        width: 100%; /* Image takes full width on mobile */
+        opacity: 0.35; /* Lowered opacity so text is easier to read */
+        mask-image: none; /* Remove the horizontal gradient mask */
+        -webkit-mask-image: none;
+        background-position: center;
+      }
+
+      /* Add a dark radial gradient on mobile to ensure text readability */
+      .hero {
+        background: radial-gradient(circle at center, rgba(15, 23, 42, 0.9) 0%, #000000 100%);
+      }
+
+      .hero-content {
+        max-width: 100%;
+        text-align: center !important; /* Center text for mobile balance */
+        padding: 0 10px;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.8rem, 9vw, 2.5rem); /* Smaller font for small screens */
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        margin: 0 auto 30px; /* Center the paragraph and give space for button */
+        max-width: 100%;
+      }
+
+      .hero .cta-btn {
+        display: inline-block;
+        width: 100%; /* Full width button on mobile for better thumb-reach */
+        max-width: 280px;
+        padding: 16px 0;
+      }
     }
 
-    /* ============================================
-       SECTIONS
-    ============================================ */
-    .section-padding { padding: 100px 0; }
+    /* Small Phone adjustments */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero .eyebrow {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+      }
+    }
 
-    /* ---- Bento Grid ---- */
+    /* --- BENTO INDUSTRY GRID --- */
+    .section-padding { padding: 120px 0; }
     .bento-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 20px;
+      grid-auto-rows: 380px; /* Changed from fixed rows to auto-rows */
+      gap: 24px;
       margin-top: 60px;
     }
-    .span-12 { grid-column: span 12; }
-    .span-8  { grid-column: span 8; }
-    .span-6  { grid-column: span 6; }
-    .span-4  { grid-column: span 4; }
 
+    /* Grid Spans */
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+
+    /* Responsive adjustments */
+    @media (max-width: 1100px) {
+      .span-8, .span-4, .span-6 { grid-column: span 6; }
+    }
+    @media (max-width: 768px) {
+      .bento-grid { display: flex; flex-direction: column; height: auto; }
+      .bento-card { height: 350px; }
+    }
     .bento-card {
       position: relative;
-      border-radius: 28px;
+      border-radius: 32px;
       overflow: hidden;
       border: 1px solid rgba(0,0,0,0.05);
       transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
       cursor: pointer;
-      min-height: 340px;
     }
     .bento-card:hover { transform: scale(0.98); }
     .bento-card-bg {
@@ -320,31 +493,88 @@
       background-size: cover; background-position: center;
       transition: transform 0.8s ease;
     }
-    .bento-card:hover .bento-card-bg { transform: scale(1.08); }
+    .bento-card:hover .bento-card-bg { transform: scale(1.1); }
     .bento-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(15,23,42,0.9) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 60%);
       display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 36px; color: white;
+      padding: 40px; color: white;
     }
-    .bento-overlay h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 800; margin-bottom: 10px; }
-    .bento-overlay p { font-size: 0.9rem; opacity: 0.8; max-width: 320px; line-height: 1.5; }
+    .bento-overlay h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; }
+    .bento-overlay p { font-size: 0.95rem; opacity: 0.8; max-width: 300px; }
 
-    /* ---- Sticky Detail Grid ---- */
-    .detail-section { background: #fafafa; }
-    .sticky-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .sticky-visual { position: sticky; top: 120px; height: 500px; border-radius: 32px; overflow: hidden; }
-    .sticky-visual img { width: 100%; height: 100%; object-fit: cover; }
-    .detail-content-item { margin-bottom: 90px; }
-    .detail-content-item:last-child { margin-bottom: 0; }
-    .detail-content-item h2 { font-size: clamp(1.8rem, 3.5vw, 3rem); color: var(--bbt-navy); font-weight: 900; margin-bottom: 20px; }
-    .detail-content-item p { color: #64748b; line-height: 1.7; font-size: 1rem; }
-    .feature-list { list-style: none; margin-top: 28px; }
-    .feature-list li { display: flex; gap: 14px; margin-bottom: 18px; font-weight: 600; color: var(--bbt-navy); font-size: 0.95rem; align-items: flex-start; }
-    .feature-list i { color: var(--bbt-orange); font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    /* --- STRATEGIC SECTION RESPONSIVENESS --- */
 
-    /* ---- Process Grid ---- */
+    /* Tablet & Small Laptops */
+    @media (max-width: 1100px) {
+      #explore h2 {
+        font-size: 2.5rem !important; /* Scale down the section title */
+      }
+      
+      .bento-grid {
+        grid-template-columns: repeat(2, 1fr); /* Change 12 columns to 2 columns */
+        grid-auto-rows: 350px;
+        gap: 20px;
+      }
+
+      /* Reset all spans to take 1 column in a 2-column grid */
+      .span-8, .span-4, .span-6 {
+        grid-column: span 1 !important;
+      }
+
+      /* Keep the Government card (span-12) as full width */
+      .span-12 {
+        grid-column: span 2 !important;
+      }
+    }
+
+    /* Mobile Phones */
+    @media (max-width: 768px) {
+      #explore {
+        padding: 80px 0; /* Reduce section padding */
+      }
+
+      #explore h2 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+      }
+
+      .bento-grid {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        height: auto;
+        gap: 16px;
+      }
+
+      .bento-card {
+        width: 100%;
+        height: 320px; /* Consistent height for mobile */
+        border-radius: 24px; /* Slightly smaller radius for mobile */
+      }
+
+      .bento-overlay {
+        padding: 25px; /* Less padding inside the card */
+      }
+
+      .bento-overlay h3 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+
+      .bento-overlay p {
+        font-size: 0.85rem;
+        max-width: 100%;
+        line-height: 1.4;
+      }
+    }
+    
+    /* Grid Sizes */
+    .span-8 { grid-column: span 8; }
+    .span-4 { grid-column: span 4; }
+
+    /* --- DELIVERY PROCESS SECTION --- */
     .process-section { background: #ffffff; }
+    
     .process-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -353,478 +583,1495 @@
       overflow: hidden;
       margin-top: 50px;
     }
+
     .process-item {
-      display: flex; flex-direction: column;
+      display: flex;
+      flex-direction: column;
       border-right: 1px solid #e2e8f0;
     }
+
     .process-item:last-child { border-right: none; }
+
     .process-number {
-      background: var(--bbt-navy); color: white;
-      padding: 20px; text-align: center;
-      font-size: 2.2rem; font-weight: 800;
+      background: var(--bbt-navy);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 800;
       border-bottom: 2px solid var(--bbt-orange);
     }
+
     .process-title {
-      background: #f8fafc; padding: 20px; text-align: center;
-      font-weight: 700; color: var(--bbt-navy); font-size: 1rem;
+      background: #f8fafc;
+      padding: 20px;
+      text-align: center;
+      font-weight: 700;
+      color: var(--bbt-navy);
+      font-size: 1.1rem;
       border-bottom: 1px solid #e2e8f0;
-      min-height: 70px; display: flex; align-items: center; justify-content: center;
-    }
-    .process-desc {
-      padding: 28px; font-size: 0.92rem;
-      line-height: 1.65; color: #475569;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* ---- Glass Slider ---- */
+    .process-desc {
+      padding: 30px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #475569;
+    }
+
+    @media (max-width: 1024px) {
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-item:nth-child(2) { border-right: none; }
+      .process-item:nth-child(1), .process-item:nth-child(2) { border-bottom: 1px solid #e2e8f0; }
+    }
+
+    @media (max-width: 600px) {
+      .process-grid { grid-template-columns: 1fr; }
+      .process-item { border-right: none; border-bottom: 1px solid #e2e8f0; }
+    }
+/* --- INTERNATIONAL GLASS SLIDER --- */
     .glass-stories-section {
-      background: #000;
+      background: #000; /* Deep base */
       position: relative;
-      padding: 120px 0;
+      padding: 140px 0;
       overflow: hidden;
     }
-    .glass-mesh-bg { position: absolute; inset: 0; z-index: 0; opacity: 0.6; }
+
+    /* Abstract Background Textures */
+    .glass-mesh-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.6;
+    }
     .mesh-circle-1 {
-      position: absolute; top: -10%; right: -5%;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%);
+      position: absolute; top: -10%; right: -5%; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
       filter: blur(100px);
     }
     .mesh-circle-2 {
-      position: absolute; bottom: 10%; left: 5%;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(30,64,175,0.2) 0%, transparent 70%);
+      position: absolute; bottom: 10%; left: 5%; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(30, 64, 175, 0.2) 0%, transparent 70%);
       filter: blur(120px);
     }
-    .glass-slider-container { position: relative; z-index: 5; padding: 0 5%; }
+
+    /* Slider Layout */
+    .glass-slider-container {
+      position: relative;
+      z-index: 5;
+      padding: 0 5%;
+    }
+
+  /* --- INFINITE LOOP ADJUSTMENTS --- */
     .glass-track {
-      display: flex; gap: 30px; padding: 40px 0;
-      overflow: hidden;
-      width: max-content;
+      display: flex;
+      gap: 30px;
+      padding: 40px 0;
+      /* Remove overflow-x: auto to allow GSAP to control motion */
+      overflow: hidden; 
+      width: max-content; /* Critical for infinite math */
       will-change: transform;
     }
+
     .glass-card {
-      flex: 0 0 420px;
-      white-space: normal;
-      background: rgba(255,255,255,0.03);
+      flex: 0 0 450px;
+      /* Ensure text doesn't wrap weirdly during motion */
+      white-space: normal; 
+      background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(25px);
       -webkit-backdrop-filter: blur(25px);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 36px;
-      padding: 45px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 40px;
+      padding: 50px;
       color: white;
       transition: background 0.3s ease, border-color 0.3s ease;
-      display: flex; flex-direction: column; justify-content: space-between;
-      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 520px;
+    }
+
+    /* Pause animation on hover */
+    .glass-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Hide Navigation Arrows as they conflict with infinite loops */
+    .glass-nav {
+        display: none;
     }
     .glass-card .industry-icon {
-      width: 58px; height: 58px;
-      background: rgba(245,158,11,0.1);
-      border-radius: 14px;
+      width: 60px; height: 60px;
+      background: rgba(245, 158, 11, 0.1);
+      border-radius: 15px;
       display: grid; place-items: center;
-      color: var(--bbt-orange); font-size: 22px;
-      margin-bottom: 28px;
+      color: var(--bbt-orange);
+      font-size: 24px;
+      margin-bottom: 30px;
     }
-    .glass-card h4 { font-size: 1.6rem; font-weight: 800; line-height: 1.3; margin-bottom: 18px; }
-    .glass-card p { font-size: 1rem; opacity: 0.7; line-height: 1.7; font-style: italic; }
-    .glass-card .result-pill {
-      display: inline-block; padding: 10px 20px;
-      background: rgba(245,158,11,0.2); color: var(--bbt-orange);
-      border-radius: 999px; font-weight: 800; font-size: 0.85rem;
-      margin-top: 28px; text-transform: uppercase; letter-spacing: 1px;
-    }
-    .glass-card .client-meta {
-      margin-top: auto; padding-top: 28px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      display: flex; align-items: center; gap: 12px;
-    }
-    .glass-nav { display: none; }
 
-    /* ---- Stats / Reach ---- */
-    .reach-section {
-      padding: 120px 0;
-      position: relative;
-      width: 100vw;
-      left: 50%; right: 50%;
-      margin-left: -50vw; margin-right: -50vw;
+    .glass-card h4 {
+      font-size: 1.8rem; font-weight: 800; line-height: 1.3; margin-bottom: 20px;
+    }
+
+    .glass-card p {
+      font-size: 1.05rem; opacity: 0.7; line-height: 1.7; font-style: italic;
+    }
+
+    .glass-card .result-pill {
+      display: inline-block;
+      padding: 10px 20px;
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--bbt-orange);
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-top: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .glass-card .client-meta {
+      margin-top: auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex; align-items: center; gap: 15px;
+    }
+
+    .glass-nav {
+      display: flex; gap: 15px; margin-top: 50px;
+    }
+    .glass-arrow {
+      width: 50px; height: 50px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: grid; place-items: center; color: white;
+      cursor: pointer; transition: 0.3s;
+    }
+    .glass-arrow:hover { background: var(--bbt-orange); border-color: var(--bbt-orange); color: black; }
+
+    /* --- RESPONSIVE GLASS SLIDER --- */
+    
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .glass-card {
+        flex: 0 0 380px; /* Slightly narrower cards */
+        padding: 40px;
+        min-height: 480px;
+      }
+    }
+
+    /* Mobile Phones */
+    @media (max-width: 768px) {
+      .glass-stories-section {
+        padding: 80px 0; /* Reduce section padding */
+      }
+
+      .glass-track {
+        gap: 20px; /* Tighter gap */
+      }
+
+      .glass-card {
+        flex: 0 0 85vw; /* Card takes up 85% of screen width */
+        padding: 30px;
+        min-height: auto; /* Let content dictate height */
+        border-radius: 30px;
+      }
+
+      .glass-card h4 {
+        font-size: 1.4rem; /* Smaller titles */
+        margin-bottom: 15px;
+      }
+
+      .glass-card p {
+        font-size: 0.95rem;
+      }
+
+      .glass-card .industry-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .mesh-circle-1 { width: 300px; height: 300px; } /* Smaller background textures */
+      .mesh-circle-2 { width: 300px; height: 300px; }
+    }
+    @media (max-width: 768px) {
+      .glass-card { flex: 0 0 85vw; padding: 30px; min-height: auto; }
+    }
+    /* --- SOCIAL PROOF & FAQ --- */
+    .testimonial-card {
+      background: #f8fafc;
+      padding: 40px;
+      border-radius: 24px;
+      border-left: 4px solid var(--bbt-orange);
+      margin-bottom: 24px;
+      transition: transform 0.3s ease;
+    }
+    .testimonial-card:hover { transform: translateY(-5px); }
+    .testimonial-card p { font-style: italic; font-size: 1.1rem; color: var(--bbt-navy); line-height: 1.7; margin-bottom: 20px; }
+    .testimonial-meta { font-weight: 700; color: #64748b; font-size: 0.9rem; }
+    .industry-tag { color: var(--bbt-orange); font-weight: 800; text-transform: uppercase; margin-left: 8px; }
+
+    .stats-bar {
+      background: var(--bbt-navy);
+      color: white;
+      padding: 30px 0;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+    }
+
+  /* --- FULL WIDTH MODERN STATS --- */
+    .reach-section { 
+      padding: 120px 0; 
+      position: relative; 
+      width: 100vw;          /* Force section to viewport width */
+      left: 50%;             /* Center alignment trick for breakout sections */
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
       background: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/global-reach.avif') no-repeat center center;
       background-size: cover;
       background-attachment: fixed;
       overflow: hidden;
     }
+
     .reach-section::before {
-      content: ""; position: absolute; inset: 0;
-      background: linear-gradient(rgba(15,23,42,0.96), rgba(15,23,42,0.88));
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.88));
       z-index: 1;
     }
+
+    /* Override the global .container for this specific section */
     .reach-section .container {
-      position: relative; z-index: 2;
-      width: 100% !important; max-width: 100% !important;
-      padding: 0 60px;
+      position: relative;
+      z-index: 2;
+      width: 100% !important;   /* Occupy full width */
+      max-width: 100% !important; /* Remove the 1300px limit */
+      padding: 0 60px;          /* Safe breathing room on the sides */
     }
-    .reach-stats {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0; text-align: center;
-      margin-top: 60px; width: 100%;
+
+    .reach-stats { 
+      display: grid; 
+      grid-template-columns: repeat(5, 1fr); 
+      gap: 0; /* Remove gaps to allow items to fill space evenly */
+      text-align: center; 
+      margin-top: 60px;
+      width: 100%;
     }
+    
     .stat-item {
       padding: 40px 20px;
-      border-right: 1px solid rgba(255,255,255,0.05);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-item h2 {
-      font-size: clamp(2rem, 4.5vw, 4.5rem);
-      font-weight: 900; color: var(--bbt-orange) !important;
-      margin: 0; line-height: 1;
-    }
-    .stat-item p {
-      color: #ffffff !important; font-weight: 700;
-      text-transform: uppercase; margin-top: 14px;
-      font-size: 0.85rem; letter-spacing: 2px; opacity: 0.7;
+      border-right: 1px solid rgba(255, 255, 255, 0.05); /* Optional subtle divider */
     }
 
-    /* ---- FAQ ---- */
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-item h2 { 
+      font-size: clamp(2.5rem, 5vw, 4.5rem); 
+      font-weight: 900; 
+      color: var(--bbt-orange) !important; 
+      margin: 0; 
+      line-height: 1;
+    }
+
+    .stat-item p { 
+      color: #ffffff !important; 
+      font-weight: 700; 
+      text-transform: uppercase; 
+      margin-top: 15px;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      opacity: 0.7;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1100px) {
+      .reach-stats { grid-template-columns: repeat(3, 1fr); }
+      .stat-item { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    }
+
+    @media (max-width: 768px) {
+      .reach-section { background-attachment: scroll; padding: 80px 0; }
+      .reach-stats { grid-template-columns: repeat(2, 1fr); }
+      .reach-section .container { padding: 0 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .reach-stats { grid-template-columns: 1fr; }
+    }
+    .stat-item { flex: 1; min-width: 150px; }
+    .stat-item strong { display: block; font-size: 1.5rem; color: var(--bbt-orange); }
+    .stat-item span { font-size: 0.85rem; opacity: 0.8; font-weight: 600; text-transform: uppercase; }
+
     .faq-container { max-width: 900px; margin: 50px auto 0; }
-    .faq-item { border-bottom: 1px solid #e2e8f0; padding: 24px 0; cursor: pointer; }
+    .faq-item {
+      border-bottom: 1px solid #e2e8f0;
+      padding: 25px 0;
+      cursor: pointer;
+    }
     .faq-question {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; gap: 20px;
-      font-weight: 700; color: var(--bbt-navy);
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      line-height: 1.4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      color: var(--bbt-navy);
+      font-size: 1.2rem;
     }
-    .faq-question i { font-size: 0.85rem; transition: transform 0.3s ease; flex-shrink: 0; margin-top: 4px; }
     .faq-answer {
-      max-height: 0; overflow: hidden;
+      max-height: 0;
+      overflow: hidden;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      color: #64748b; line-height: 1.7; font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-top: 0;
     }
-    .faq-item.active .faq-answer { max-height: 600px; margin-top: 14px; }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      margin-top: 15px;
+    }
     .faq-item.active i { transform: rotate(180deg); color: var(--bbt-orange); }
+    .faq-question i { transition: transform 0.3s ease; font-size: 0.9rem; }
 
-    /* ---- Final CTA ---- */
+    /* --- RESPONSIVE FAQ UPDATES --- */
+    
+    /* Desktop/Global Fix: Increase max-height for longer text */
+    .faq-item.active .faq-answer {
+      max-height: 600px; /* Increased from 300px to prevent cutting off text */
+      margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .faq-container {
+        margin-top: 30px;
+        padding: 0 5px;
+      }
+
+      .faq-container h2 {
+        font-size: 1.8rem !important; /* Scale down section title */
+        line-height: 1.3;
+      }
+
+      .faq-item {
+        padding: 20px 0; /* Tighter vertical spacing */
+      }
+
+      .faq-question {
+        font-size: 1.05rem; /* Smaller questions for mobile */
+        line-height: 1.4;
+        gap: 15px; /* Space between text and chevron */
+        align-items: flex-start; /* Align chevron to the top of wrapped text */
+      }
+
+      .faq-question i {
+        margin-top: 5px; /* Nudge icon down to align with first line of text */
+        font-size: 0.8rem;
+      }
+
+      .faq-answer {
+        font-size: 0.9rem; /* Standard mobile reading size */
+        padding-right: 10px; /* Prevent text from touching the edge */
+      }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 480px) {
+      .faq-container h2 {
+        font-size: 1.6rem !important;
+      }
+      
+      .faq-question {
+        font-size: 1rem;
+      }
+    }
+    /* --- RESPONSIVE FINAL CTA UPDATES --- */
+    @media (max-width: 768px) {
+      .compliance-section {
+        padding: 80px 0 !important; /* Tighter padding for mobile */
+        border-radius: 40px 40px 0 0 !important; /* Scaled down curve */
+      }
+
+      .compliance-section h2 {
+        font-size: 2.2rem !important; /* Smaller, readable heading */
+        line-height: 1.2 !important;
+        margin-bottom: 20px !important;
+      }
+
+      .compliance-section p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        padding: 0 20px; /* Safe padding for text wrapping */
+        margin-bottom: 40px !important;
+      }
+
+      /* Make button full-width or large on mobile */
+      .compliance-section .cta-btn {
+        display: inline-block;
+        width: calc(100% - 40px); 
+        max-width: 320px;
+        padding: 18px 0 !important;
+        font-size: 16px !important;
+        text-align: center;
+      }
+    }
+
+    /* Adjustments for extra small phones */
+    @media (max-width: 480px) {
+      .compliance-section h2 {
+        font-size: 1.8rem !important;
+      }
+      
+      .compliance-section {
+        border-radius: 30px 30px 0 0 !important;
+      }
+    }
+
+    /* --- FEATURE DETAIL BLOCKS (CREATIVE REVEAL) --- */
+    .detail-section { background: #fafafa; }
+    .sticky-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .sticky-visual { position: sticky; top: 150px; height: 500px; border-radius: 40px; overflow: hidden; }
+    .sticky-visual img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .detail-content-item { margin-bottom: 100px; }
+    .detail-content-item h2 { font-size: 3rem; color: var(--bbt-navy); font-weight: 900; margin-bottom: 24px; }
+    .feature-list { list-style: none; margin-top: 30px; }
+    .feature-list li { display: flex; gap: 15px; margin-bottom: 20px; font-weight: 600; color: var(--bbt-navy); }
+    .feature-list i { color: var(--bbt-orange); font-size: 20px; }
+
+    /* --- COMPLIANCE MESH --- */
     .compliance-section {
       background-color: var(--bbt-navy);
       color: white;
       border-radius: 60px 60px 0 0;
       position: relative;
-      padding: 120px 0;
     }
     .mesh-glow {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at 10% 10%, rgba(245,158,11,0.1) 0%, transparent 50%);
+      background: radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
       pointer-events: none;
     }
 
-    /* GSAP animation classes */
-    .reveal, .fade-up, .fade-in { opacity: 1; }
+    /* --- GSAP ANIMATION CLASSES --- */
+    .reveal { opacity: 1; transform: translateY(50px); }
+    /* Change this to 1 so content shows if JS fails */
 
-    /* ============================================
-       RESPONSIVE BREAKPOINTS
-    ============================================ */
+.fade-up, .fade-in {
+    opacity: 1;
+}
 
-    /* --- Tablet (≤1100px) --- */
-    @media (max-width: 1100px) {
-      .bento-grid { grid-template-columns: repeat(2, 1fr); }
-      .span-12 { grid-column: span 2; }
-      .span-8, .span-6, .span-4 { grid-column: span 1; }
-      .reach-stats { grid-template-columns: repeat(3, 1fr); }
-      .stat-item { border-bottom: 1px solid rgba(255,255,255,0.05); }
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-item:nth-child(2) { border-right: none; }
-      .process-item:nth-child(1),
-      .process-item:nth-child(2) { border-bottom: 1px solid #e2e8f0; }
-      .sticky-grid { gap: 48px; }
-      .mega-menu-wrapper { display: none; } /* Mega menu hidden on tablet — use mobile menu */
-    }
-
-    /* --- Hamburger threshold (≤960px) --- */
-    @media (max-width: 960px) {
-      .navbar, .header .cta-btn { display: none; }
-      .hamburger { display: flex; }
-      .mobile-menu { display: flex; }
-    }
-
-    /* --- Small laptop / large tablet (≤900px) sticky grid --- */
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
+      .bento-grid { display: flex; flex-direction: column; height: auto; }
       .sticky-grid { grid-template-columns: 1fr; }
-      .sticky-visual {
-        position: relative; top: 0;
-        height: 300px; margin-bottom: 36px;
-        border-radius: 24px;
-      }
+      .sticky-visual { position: relative; top: 0; height: 300px; margin-bottom: 40px; }
     }
 
-    /* --- Mobile (≤768px) --- */
+    /* --- HERO: BREADCRUMB · TRUST BAR · DUAL CTA --- */
+    .hero-breadcrumb { font-size: 0.85rem; font-weight: 600; margin-bottom: 18px; letter-spacing: 0.5px; }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.25s ease; }
+    .hero-breadcrumb a:hover { color: var(--bbt-orange); }
+    .hero-breadcrumb span[aria-hidden] { color: rgba(255,255,255,0.4); margin: 0 6px; }
+    .hero-breadcrumb .current { color: var(--bbt-orange); }
+    .hero-cta-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .cta-btn-secondary {
+      background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: none;
+    }
+    .cta-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: var(--bbt-orange); color: var(--bbt-orange); }
+    .hero-trust-bar {
+      list-style: none; display: flex; flex-wrap: wrap; gap: 14px 28px; margin-top: 38px; padding: 0;
+    }
+    .hero-trust-bar li {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600;
+      color: rgba(255,255,255,0.75); letter-spacing: 0.3px;
+    }
+    .hero-trust-bar li i { color: var(--bbt-orange); font-size: 0.9rem; }
     @media (max-width: 768px) {
-      .section-padding { padding: 72px 0; }
-
-      /* Hero */
-      .hero {
-        height: auto;
-        min-height: 100svh;
-        padding: 130px 0 80px;
-        text-align: center;
-        background: radial-gradient(circle at center, rgba(15,23,42,0.9) 0%, #000 100%);
-      }
-      .hero::after {
-        width: 100%; opacity: 0.25;
-        mask-image: none; -webkit-mask-image: none;
-      }
-      .hero-content { max-width: 100%; text-align: center; }
-      .hero p { margin: 0 auto 32px; }
-      .hero .cta-btn { padding: 16px 32px; font-size: 15px; }
-
-      /* Bento */
-      .bento-grid {
-        display: flex; flex-direction: column;
-        gap: 16px; margin-top: 40px;
-      }
-      .bento-card { width: 100%; min-height: 280px; border-radius: 20px; }
-      .bento-overlay { padding: 24px; }
-      .bento-overlay p { max-width: 100%; }
-
-      /* Process */
-      .process-grid { grid-template-columns: 1fr; }
-      .process-item { border-right: none; border-bottom: 1px solid #e2e8f0; }
-      .process-item:last-child { border-bottom: none; }
-      .process-number { font-size: 1.8rem; padding: 16px; }
-
-      /* Glass slider */
-      .glass-stories-section { padding: 72px 0; }
-      .glass-track { gap: 16px; }
-      .glass-card {
-        flex: 0 0 82vw;
-        padding: 28px; min-height: auto;
-        border-radius: 24px;
-      }
-      .glass-card h4 { font-size: 1.3rem; }
-      .glass-card p { font-size: 0.92rem; }
-      .glass-card .industry-icon { width: 48px; height: 48px; font-size: 18px; margin-bottom: 18px; }
-
-      /* Stats */
-      .reach-section {
-        background-attachment: scroll;
-        padding: 72px 0;
-      }
-      .reach-section .container { padding: 0 20px; }
-      .reach-stats { grid-template-columns: repeat(2, 1fr); }
-      .stat-item { padding: 28px 16px; }
-
-      /* FAQ */
-      .faq-container { margin-top: 32px; padding: 0; }
-
-      /* CTA */
-      .compliance-section {
-        padding: 72px 0;
-        border-radius: 36px 36px 0 0;
-      }
-      .compliance-section h2 { font-size: clamp(1.8rem, 7vw, 2.5rem) !important; }
-      .compliance-section p { padding: 0 16px; }
-      .compliance-section .cta-btn {
-        display: block; width: calc(100% - 80px);
-        max-width: 300px; margin: 0 auto;
-        padding: 18px 0; text-align: center; font-size: 16px;
-      }
-
-      /* Detail section */
-      .detail-content-item { margin-bottom: 56px; }
-      .detail-content-item h2 { font-size: 1.8rem; }
+      .hero-cta-row { justify-content: center; }
+      .hero-trust-bar { justify-content: center; gap: 12px 18px; }
+      .hero .cta-btn-secondary { width: 100%; max-width: 280px; padding: 16px 0; }
+      .hero-breadcrumb { text-align: center; }
     }
 
-    /* --- Very small (≤480px) --- */
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 1.9rem; }
-      .reach-stats { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; }
-      .compliance-section { border-radius: 24px 24px 0 0; }
-      .glass-card { flex: 0 0 88vw; padding: 22px; }
-      .bento-card { min-height: 240px; }
+    /* --- WHY INDUSTRY-SPECIFIC (3-COLUMN VALUE PROP) --- */
+    .why-section { background: #f8fafc; }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px; }
+    .why-card {
+      background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 40px 34px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .why-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(15,23,42,0.08); }
+    .why-card .why-icon {
+      width: 60px; height: 60px; border-radius: 16px; display: grid; place-items: center;
+      background: rgba(245,158,11,0.12); color: var(--bbt-orange); font-size: 24px; margin-bottom: 24px;
+    }
+    .why-card h3 { font-size: 1.3rem; font-weight: 800; color: var(--bbt-navy); margin-bottom: 14px; line-height: 1.3; }
+    .why-card p { font-size: 0.98rem; color: #475569; line-height: 1.7; }
+    @media (max-width: 1024px) { .why-grid { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; } }
+
+    /* --- BENTO CARD ANCHOR LINKS --- */
+    a.bento-card { display: block; text-decoration: none; color: inherit; }
+    .bento-overlay .bento-cta {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
+      color: var(--bbt-orange); font-weight: 800; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;
+    }
+    .bento-card:hover .bento-cta i { transform: translateX(5px); }
+    .bento-cta i { transition: transform 0.3s ease; }
+
+    /* --- PER-INDUSTRY DETAIL BLOCKS --- */
+    .industry-detail { padding: 90px 0; scroll-margin-top: 110px; }
+    .industry-detail.alt { background: #f8fafc; }
+    .industry-detail .detail-head { max-width: 820px; margin-bottom: 40px; }
+    .industry-detail .detail-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; color: var(--bbt-orange);
+      font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 14px;
+    }
+    .industry-detail .detail-eyebrow .num {
+      width: 34px; height: 34px; border-radius: 9px; background: var(--bbt-navy); color: #fff;
+      display: grid; place-items: center; font-size: 0.85rem;
+    }
+    .industry-detail h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 900; color: var(--bbt-navy); line-height: 1.1; }
+    .industry-detail .cs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 36px; }
+    .cs-block {
+      border-radius: 20px; padding: 30px 32px; line-height: 1.7; font-size: 1rem;
+    }
+    .cs-block.challenge { background: #fff5e6; border: 1px solid rgba(245,158,11,0.25); }
+    .cs-block.solution { background: var(--bbt-navy); color: #e2e8f0; }
+    .cs-block h4 {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800;
+      margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+    }
+    .cs-block.challenge h4 { color: #b45309; }
+    .cs-block.solution h4 { color: var(--bbt-orange); }
+    .cs-block.challenge p { color: #7c4a09; }
+    .detail-features-wrap { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 40px; align-items: start; }
+    .detail-features h4, .detail-stack h4 {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800;
+      color: var(--bbt-navy); margin-bottom: 20px;
+    }
+    .detail-features ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; padding: 0; }
+    .detail-features li { display: flex; gap: 12px; font-weight: 600; color: var(--bbt-navy); font-size: 0.97rem; line-height: 1.45; }
+    .detail-features li i { color: var(--bbt-orange); margin-top: 3px; }
+    .detail-stack .stack-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .detail-stack .stack-tags span {
+      background: rgba(15,23,42,0.05); border: 1px solid #e2e8f0; color: var(--bbt-navy);
+      padding: 8px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
+    }
+    .industry-detail.alt .detail-stack .stack-tags span { background: #ffffff; }
+    .detail-cta-row { margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap; }
+    .detail-cta-row .cta-btn.detail-ghost {
+      background: transparent; color: var(--bbt-navy); border: 1px solid #cbd5e1; box-shadow: none;
+    }
+    .detail-cta-row .cta-btn.detail-ghost:hover { border-color: var(--bbt-orange); color: var(--bbt-orange); background: rgba(245,158,11,0.06); }
+    @media (max-width: 900px) {
+      .industry-detail .cs-grid { grid-template-columns: 1fr; }
+      .detail-features-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .detail-features ul { grid-template-columns: 1fr; }
+    }
+
+    /* --- COMPLIANCE & STANDARDS TABLE --- */
+    .standards-section { background: #ffffff; }
+    .standards-head { max-width: 760px; margin-bottom: 50px; }
+    .standards-table-wrap { border: 1px solid #e2e8f0; border-radius: 20px; overflow: hidden; }
+    .standards-table { width: 100%; border-collapse: collapse; }
+    .standards-table th {
+      background: var(--bbt-navy); color: #fff; text-align: left; padding: 20px 24px;
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;
+    }
+    .standards-table td { padding: 22px 24px; border-top: 1px solid #e2e8f0; vertical-align: top; font-size: 0.95rem; line-height: 1.6; color: #475569; }
+    .standards-table tr:nth-child(even) td { background: #f8fafc; }
+    .standards-table .ind-name { font-weight: 800; color: var(--bbt-navy); }
+    .standards-table .ind-badges span {
+      display: inline-block; background: rgba(245,158,11,0.12); color: #b45309; border: 1px solid rgba(245,158,11,0.25);
+      padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; margin: 0 6px 6px 0;
+    }
+    @media (max-width: 768px) {
+      .standards-table, .standards-table thead, .standards-table tbody, .standards-table th, .standards-table td, .standards-table tr { display: block; }
+      .standards-table thead { display: none; }
+      .standards-table tr { border-top: 1px solid #e2e8f0; padding: 8px 0; }
+      .standards-table tr:first-child { border-top: none; }
+      .standards-table td { border: none; padding: 8px 20px; background: transparent !important; }
+      .standards-table td::before { content: attr(data-label); display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--bbt-orange); font-weight: 800; margin-bottom: 6px; }
+    }
+
+    /* --- RELATED PAGES --- */
+    .related-section { background: #f8fafc; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px; }
+    .related-card {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 38px 32px;
+      text-decoration: none; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .related-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(15,23,42,0.1); border-color: rgba(245,158,11,0.4); }
+    .related-card .r-icon { width: 56px; height: 56px; border-radius: 14px; background: rgba(245,158,11,0.12); color: var(--bbt-orange); display: grid; place-items: center; font-size: 22px; margin-bottom: 22px; }
+    .related-card h3 { font-size: 1.25rem; font-weight: 800; color: var(--bbt-navy); margin-bottom: 12px; }
+    .related-card p { font-size: 0.95rem; color: #475569; line-height: 1.6; margin-bottom: 20px; flex: 1; }
+    .related-card .r-link { color: var(--bbt-orange); font-weight: 800; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; }
+    .related-card:hover .r-link i { transform: translateX(5px); }
+    .related-card .r-link i { transition: transform 0.3s ease; }
+    @media (max-width: 900px) { .related-grid { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; } }
   </style>
+
+<style id="responsive-nav-patch">
+/* ===== Universal Responsive Mobile-Nav Patch (additive, desktop unchanged) ===== */
+.mobile-nav-toggle{
+  display:none; background:transparent; border:0; font-size:26px; line-height:1;
+  color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
+}
+.mobile-nav-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.5);
+  opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:1000;
+}
+@media (max-width:1024px){
+  .mobile-nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  .header .navbar, .header .nav-links{ display:flex !important; }
+  .header .navbar{
+    position:fixed; top:0; right:-100%; width:min(330px,86vw); height:100vh; height:100dvh;
+    background:#0b1020; flex-direction:column; justify-content:flex-start;
+    padding:96px 26px 40px; box-shadow:-8px 0 40px rgba(0,0,0,.45);
+    transition:right .35s ease; overflow-y:auto; z-index:1001;
+  }
+  .header.mobile-open .navbar{ right:0; }
+  .header .nav-links{ flex-direction:column; align-items:flex-start; gap:0; width:100%; }
+  .header .nav-links li{ width:100%; }
+  .header .nav-links a, .header .nav-links .nav-link-anchor{
+    color:#fff !important; text-shadow:none !important; display:block; width:100%;
+    padding:15px 0; font-size:17px; border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .header .mega-menu-wrapper{ display:none !important; }
+  .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
+  body.mobile-nav-open{ overflow:hidden; }
+  body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
+}
+    </style>
+
+<style id="responsive-content-patch">
+/* ===== Page-specific content responsiveness (additive, desktop unchanged) ===== */
+@media (max-width:1024px){
+  /* Reduce huge section paddings so content isn't cramped */
+  .section-padding{ padding:90px 0; }
+  /* Sticky detail headings scale down (desktop is fixed 3rem) */
+  .detail-content-item h2{ font-size:2.4rem; }
+  .detail-content-item{ margin-bottom:70px; }
+  /* Process section side headings shrink */
+  .process-section h2{ font-size:2.4rem !important; }
+  /* Prevent any media overflow */
+  img, iframe, video{ max-width:100%; }
+}
+@media (max-width:768px){
+  .section-padding{ padding:70px 0; }
+  .container{ width:92%; }
+  /* Detail / sticky block headings */
+  .detail-content-item h2{ font-size:2rem; }
+  .feature-list li{ font-size:0.95rem; line-height:1.5; }
+  /* Process delivery heading */
+  .process-section h2{ font-size:2rem !important; line-height:1.2; }
+  /* Glass slider section heading */
+  .glass-slider-container h2{ font-size:2rem !important; }
+  /* Reach section breakout heading / lead */
+  .reach-section h2{ font-size:2rem !important; }
+  .reach-section .container p{ font-size:1rem !important; }
+}
+@media (max-width:480px){
+  .section-padding{ padding:56px 0; }
+  /* Smallest-screen heading sizing to stop horizontal overflow */
+  .detail-content-item h2{ font-size:1.7rem; line-height:1.25; }
+  .process-section h2{ font-size:1.7rem !important; }
+  .glass-slider-container h2{ font-size:1.7rem !important; }
+  .reach-section h2{ font-size:1.7rem !important; }
+  /* Glass card full-bleed-ish so 450px desktop width never overflows */
+  .glass-card{ flex:0 0 88vw; padding:26px; border-radius:24px; }
+  .glass-card h4{ font-size:1.25rem; }
+  /* Process number/title tighter */
+  .process-number{ font-size:2rem; padding:16px; }
+  .process-desc{ padding:22px; }
+  /* Final CTA oversized button padding could overflow narrow screens */
+  .compliance-section .cta-btn{ padding:16px 0 !important; width:calc(100% - 40px); max-width:300px; display:inline-block; }
+}
+    </style>
+
+<style id="shared-footer-patch">
+/* ===== Canonical Site Footer (identical across all pages) ===== */
+.site-footer{ padding:72px 0 40px; background:#f8fafc; color:#334155; font-family:"Inter",system-ui,-apple-system,sans-serif; }
+.site-footer .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:32px; align-items:start; }
+.site-footer .footer-brand .logo{ display:inline-block; margin-bottom:18px; filter:none; }
+.site-footer .footer-brand .logo img{ height:100px; width:auto; display:block; filter:none; }
+.site-footer .footer-brand p{ max-width:42ch; line-height:1.8; margin-bottom:22px; color:#64748b; font-size:1rem; }
+.site-footer .footer-social{ display:flex; gap:12px; flex-wrap:wrap; }
+.site-footer .social-icon{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(15,23,42,0.1); background:rgba(255,255,255,0.06); color:#0f172a; text-decoration:none; transition:background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease; }
+.site-footer .social-icon svg{ width:18px; height:18px; fill:currentColor; }
+.site-footer .social-icon:hover{ background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.4); color:#f59e0b; transform:translateY(-2px); }
+.site-footer .footer-col h3{ margin:0 0 20px; font-size:1.1rem; color:#0f172a; font-weight:700; }
+.site-footer .footer-col ul{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.site-footer .footer-col li a, .site-footer .footer-contact .contact-line a{ color:#64748b; text-decoration:none; transition:color .25s ease; font-size:1rem; }
+.site-footer .footer-col li a:hover, .site-footer .footer-contact .contact-line a:hover{ color:#f59e0b; }
+.site-footer .footer-contact .contact-line{ margin:0 0 12px; color:#64748b; line-height:1.6; font-size:1rem; }
+.site-footer .footer-bottom{ margin-top:48px; padding-top:24px; text-align:center; }
+.site-footer .footer-bottom p{ margin:0; font-size:.875rem; color:#64748b; }
+@media (max-width:1100px){ .site-footer .footer-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } .site-footer .footer-brand{ grid-column:1 / -1; } }
+@media (max-width:640px){ .site-footer .footer-grid{ grid-template-columns:1fr; } .site-footer{ padding:56px 0 32px; } .site-footer .footer-brand .logo img{ height:80px; } }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Do you have experience in my specific industry?","acceptedAnswer":{"@type":"Answer","text":"Yes. We've delivered solutions across 15+ industries including retail, manufacturing, healthcare, education, real estate, financial services, hospitality, logistics, construction, and government. Every project starts with deep industry discovery."}},
+    {"@type":"Question","name":"How do you ensure compliance with industry regulations?","acceptedAnswer":{"@type":"Answer","text":"Compliance is built into the foundation of every solution. We research your industry's regulatory requirements during discovery (like ZATCA, HIPAA, or GDPR), build compliance features into the architecture, and validate before go-live."}},
+    {"@type":"Question","name":"Can you integrate with industry-specific tools we already use?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. We integrate with industry-standard platforms, including medical devices, ERP systems, accounting software, payment gateways, logistics APIs, and government portals. Custom API development is available when native integration isn't possible."}},
+    {"@type":"Question","name":"How long does an industry solution take to implement?","acceptedAnswer":{"@type":"Answer","text":"Simple industry configurations take 4 to 6 weeks. Custom industry platforms take 8 to 16 weeks. Enterprise multi-system integrations take 4 to 6 months. We deliver in phases so you see value every month."}},
+    {"@type":"Question","name":"Do you offer Arabic support for GCC industries?","acceptedAnswer":{"@type":"Answer","text":"Yes. We provide full Arabic RTL interfaces, Arabic documentation, bilingual training, and cultural adaptation. We test with native Arabic speakers to ensure natural workflow language."}},
+    {"@type":"Question","name":"What if our industry has unique workflows not covered by standard software?","acceptedAnswer":{"@type":"Answer","text":"That's exactly why businesses choose BBT. We don't force your workflows into generic software. We build custom modules, workflows, and interfaces that match how your industry actually operates."}},
+    {"@type":"Question","name":"How do you handle data migration from our old industry system?","acceptedAnswer":{"@type":"Answer","text":"We use validated migration scripts, parallel running, and data verification at every step. We offer a zero data loss guarantee and clean/structure data during migration for better performance."}},
+    {"@type":"Question","name":"What support do you offer after launch?","acceptedAnswer":{"@type":"Answer","text":"30-day post-launch support is included. After that, monthly industry care plans provide dedicated support, system updates, compliance updates, and continuous optimization. We grow with your industry."}}
+  ]
+}
+</script>
 </head>
 <body>
 
-  <!-- ======= HEADER ======= -->
-  <header class="header" id="header">
-    <div class="container header-wrapper">
-      <a href="index.html" class="logo">
-        <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
-      </a>
+    <header class="header" id="header">
+  <div class="container header-wrapper">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+    </a>
 
-      <nav class="navbar">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li class="nav-item-dropdown">
-            <a href="solutions.html" class="nav-link-anchor">Solutions <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:4px;"></i></a>
-            <div class="mega-menu-wrapper">
-              <div class="container mega-menu-container">
-                <div class="mega-featured-section">
-                  <h3 class="mega-heading">SOLUTIONS</h3>
-                  <div class="mega-card">
-                    <div class="mega-card-img"><img src="../assests/images/solutions.avif" alt="Enterprise Solutions"></div>
-                    <div class="mega-card-text">
-                      <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
-                      <a href="digital-transformation.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="mega-links-section">
-                  <div class="mega-links-grid">
-                    <a href="social-media-marketing.html" class="mega-list-link"><span>Social Media Marketing</span><i class="fa-solid fa-arrow-right-long"></i></a>
-                    <a href="enterprise-odoo.html" class="mega-list-link"><span>Enterprise Odoo ERP</span><i class="fa-solid fa-arrow-right-long"></i></a>
-                    <a href="digital-transformation.html" class="mega-list-link"><span>Digital Transformation</span><i class="fa-solid fa-arrow-right-long"></i></a>
-                    <a href="retail-pos.html" class="mega-list-link"><span>Retail & POS Solutions</span><i class="fa-solid fa-arrow-right-long"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li><a href="industries.html" class="active">Industries</a></li>
-          <li class="nav-item-dropdown">
-            <a href="resources.html" class="nav-link-anchor">Resources <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:4px;"></i></a>
-            <div class="mega-menu-wrapper">
-              <div class="container mega-menu-container">
-                <div class="mega-featured-section">
-                  <h3 class="mega-heading">Resources</h3>
-                  <div class="mega-card">
-                    <div class="mega-card-img"><img src="../assests/images/resources.avif" alt="AI Innovations"></div>
-                    <div class="mega-card-text">
-                      <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
-                      <a href="insights.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="mega-links-section">
-                  <div class="mega-links-grid">
-                    <a href="case-studies.html" class="mega-list-link"><span>Case Studies</span><i class="fa-solid fa-arrow-right-long"></i></a>
-                    <a href="blogs.html" class="mega-list-link"><span>Blogs</span><i class="fa-solid fa-arrow-right-long"></i></a>
-                    <a href="e-books.html" class="mega-list-link"><span>E-Books</span><i class="fa-solid fa-arrow-right-long"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li><a href="insights.html">Insights</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+       <li class="nav-item-dropdown">
+  <a href="solutions.html" class="nav-link-anchor">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+  
+  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+      
+      <!-- Left side: Large Title and Featured Card -->
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">SOLUTIONS</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <!-- Featured Image for Solutions -->
+            <img src="../assests/images/solutions.avif" alt="Enterprise Solutions">
+          </div>
+          <div class="mega-card-text">
+            <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
+            <a href="digital-transformation.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
 
-      <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+      <!-- Right side: Vertical Link List -->
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="social-media-marketing.html" class="mega-list-link">
+            <span>Social Media Marketing</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="enterprise-odoo.html" class="mega-list-link">
+            <span>Enterprise Odoo ERP</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="digital-transformation.html" class="mega-list-link">
+            <span>Digital Transformation</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="retail-pos.html" class="mega-list-link">
+            <span>Retail & POS Solutions</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
 
-      <!-- Hamburger (mobile only) -->
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </header>
-
-  <!-- ======= MOBILE MENU ======= -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul class="mobile-menu-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li>
-        <a href="solutions.html">Solutions</a>
-        <div class="mobile-menu-sub">
-          <a href="social-media-marketing.html">Social Media Marketing</a>
-          <a href="enterprise-odoo.html">Enterprise Odoo ERP</a>
-          <a href="digital-transformation.html">Digital Transformation</a>
-          <a href="retail-pos.html">Retail & POS Solutions</a>
-        </div>
-      </li>
-      <li><a href="industries.html" class="active">Industries</a></li>
-      <li>
-        <a href="resources.html">Resources</a>
-        <div class="mobile-menu-sub">
-          <a href="case-studies.html">Case Studies</a>
-          <a href="blogs.html">Blogs</a>
-          <a href="e-books.html">E-Books</a>
-        </div>
-      </li>
-      <li><a href="insights.html">Insights</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="contact.html" class="mobile-menu-cta">Get Free Consultation</a>
   </div>
+</li>
+        <li><a href="industries.html" class="active">Industries</a></li>
+        
+ <li class="nav-item-dropdown">
+  <a href="resources.html" class="nav-link-anchor">Resources <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+  
+  <!-- DARK THEME FULL SCREEN MEGA MENU -->
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+      
+      <!-- Left side: Featured Insight -->
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">Resources</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <img src="../assests/images/resources.avif" alt="AI Innovations">
+          </div>
+          <div class="mega-card-text">
+            <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
+            <a href="blogs.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Links -->
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="case-studies.html" class="mega-list-link">
+            <span>Case Studies</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="blogs.html" class="mega-list-link">
+            <span>Blogs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="e-books.html" class="mega-list-link">
+            <span>E-Books</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</li>
+        <li><a href="blogs.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <main>
-    <!-- ======= HERO ======= -->
-    <section class="hero">
+    <!-- HERO -->
+      <section class="hero">
       <div class="container">
-        <div class="hero-content">
-          <span class="eyebrow fade-up">Domain Excellence</span>
-          <h1 class="fade-up">Industry-Specific Odoo ERP &amp; <br><span style="color:var(--bbt-orange);">AI Automation Solutions</span></h1>
-          <p class="fade-in">We don't just build software; we engineer industry-specific ecosystems designed for global scale, regulatory compliance, and high-velocity growth.</p>
-          <div class="fade-in">
-            <a href="#explore" class="cta-btn">View Our Verticals</a>
+      <div class="hero-content">
+    <nav class="hero-breadcrumb fade-up" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> <span aria-hidden="true">&rsaquo;</span> <span class="current">Industries</span>
+    </nav>
+    <span class="eyebrow fade-up" style="color: var(--bbt-orange); letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 10px;">
+    Domain Excellence</span>
+    <h1 class="fade-up">Industry-Specific Technology Solutions for <span style="color: var(--bbt-orange);">GCC, USA &amp; UK</span></h1>
+    <p class="fade-in">We don't believe in one-size-fits-all technology. Every industry has unique workflows, compliance requirements, and customer expectations. We build software, ERP systems, POS solutions, and digital platforms tailored to how your industry actually works, from retail floors to factory floors and from clinics to classrooms.</p>
+    <div class="fade-in hero-cta-row">
+       <a href="contact.html" class="cta-btn">Get a Free Industry Consultation</a>
+       <a href="#explore" class="cta-btn cta-btn-secondary">Explore Solutions by Industry</a>
+    </div>
+    <ul class="hero-trust-bar fade-in" aria-label="Trust indicators">
+      <li><i class="fa-solid fa-layer-group"></i> 15+ industries served</li>
+      <li><i class="fa-solid fa-diagram-project"></i> 200+ industry-specific projects</li>
+      <li><i class="fa-solid fa-earth-americas"></i> GCC &middot; USA &middot; UK</li>
+      <li><i class="fa-solid fa-certificate"></i> PSEB Registered</li>
+      <li><i class="fa-solid fa-award"></i> Domain Expertise</li>
+    </ul>
+</div>
+      </div>
+    </section>
+
+    <!-- WHY INDUSTRY-SPECIFIC SOLUTIONS MATTER -->
+    <section class="section-padding why-section">
+      <div class="container">
+        <div style="max-width: 760px;" class="reveal">
+          <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 700; letter-spacing: 2px; display: block; margin-bottom: 12px;">Why Industry-Specific</span>
+          <h2 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: var(--bbt-navy); line-height: 1.1; margin-bottom: 22px;">Generic Software Fails. Industry-Tailored Technology Wins.</h2>
+          <p style="font-size: 1.1rem; color: #475569; line-height: 1.7;">Off-the-shelf software forces you to change your processes to fit the tool. We do the opposite. We study your industry's workflows, regulations, and pain points, then build technology that fits how you already work. The result: faster adoption, higher ROI, and systems your team actually wants to use.</p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Built for Your Compliance</h3>
+            <p>Whether it is healthcare HIPAA, retail VAT, or manufacturing ISO standards, we build compliance into the foundation, not as an afterthought.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3>Speaks Your Team's Language</h3>
+            <p>Medical staff see clinical terminology. Retail staff see SKUs and POS. Factory managers see production metrics. No confusion, no training resistance.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+            <h3>Integrates With Your Ecosystem</h3>
+            <p>We connect with industry-specific tools you already use, including medical devices, ERP systems, supply chain platforms, payment gateways, and government portals.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======= BENTO GRID ======= -->
-    <section id="explore" class="section-padding">
-      <div class="container">
-        <div style="max-width:700px;margin-bottom:60px;" class="reveal">
-          <span class="eyebrow">01. Our Verticals</span>
-          <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--bbt-navy);line-height:1.1;">Strategic Sector Focus</h2>
+    <!-- BENTO EXPLORATION -->
+<section id="explore" class="section-padding">
+  <div class="container">
+    <div style="max-width: 700px; margin-bottom: 60px;" class="reveal">
+      <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 700; letter-spacing: 2px; display: block; margin-bottom: 10px;">01. Our Verticals</span>
+      <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--bbt-navy); line-height: 1.1;">Strategic Sector Focus</h2>
         </div>
 
         <div class="bento-grid">
-          <div class="bento-card span-8 reveal">
-            <div class="bento-card-bg" style="background-image:url('https://bbt.mza-t.com/wp-content/uploads/2026/06/retail-clothes.avif');"></div>
-            <div class="bento-overlay"><h3>Retail &amp; E-Commerce</h3><p>Omnichannel POS, AI-driven inventory, and seamless checkout systems. We help retailers manage multi-store operations and sell smarter across every channel.</p></div>
-          </div>
-          <div class="bento-card span-4 reveal">
-            <div class="bento-card-bg" style="background-image:url('https://bbt.mza-t.com/wp-content/uploads/2026/06/case-odoo.avif');"></div>
-            <div class="bento-overlay"><h3>Manufacturing</h3><p>Industry 4.0 ERP systems with real-time shop floor monitoring. We connect production, inventory, and supply chain.</p></div>
-          </div>
-          <div class="bento-card span-4 reveal">
-            <div class="bento-card-bg" style="background-image:url('https://bbt.mza-t.com/wp-content/uploads/2026/06/health-care.avif');"></div>
-            <div class="bento-overlay"><h3>Healthcare &amp; Medical</h3><p>Compliant patient portals and automated clinical workflows. Manage records, appointments, and reporting with ease.</p></div>
-          </div>
-          <div class="bento-card span-4 reveal">
-            <div class="bento-card-bg" style="background-image:url('https://bbt.mza-t.com/wp-content/uploads/2026/06/education-scaled.avif');"></div>
-            <div class="bento-overlay"><h3>Education &amp; E-Learning</h3><p>Custom learning management systems and student platforms. Automate admissions, attendance, and delivery.</p></div>
-          </div>
-          <div class="bento-card span-4 reveal">
-            <div class="bento-card-bg" style="background-image:url('https://bbt.mza-t.com/wp-content/uploads/2026/06/real-estate-scaled.avif');"></div>
-            <div class="bento-overlay"><h3>Real Estate &amp; Property</h3><p>Property management software with automated billing and tenant portals for leasing and portfolio tracking.</p></div>
-          </div>
-          <div class="bento-card span-6 reveal">
-            <div class="bento-card-bg" style="background-image:url('https://bbt.mza-t.com/wp-content/uploads/2026/06/financial-services.jpg');"></div>
-            <div class="bento-overlay"><h3>Financial Services</h3><p>Secure, compliant systems for transaction processing and reporting. We build automation that reduces risk and speeds up operations.</p></div>
-          </div>
-          <div class="bento-card span-6 reveal">
-            <div class="bento-card-bg" style="background-image:url('https://bbt.mza-t.com/wp-content/uploads/2026/06/hospital.png');"></div>
-            <div class="bento-overlay"><h3>Hospitality &amp; Food Service</h3><p>Smart POS and reservation systems. Manage orders, inventory, and guest experience in real time for restaurants and hotels.</p></div>
-          </div>
-          <div class="bento-card span-8 reveal">
-            <div class="bento-card-bg" style="background-image:url('https://bbt.mza-t.com/wp-content/uploads/2026/06/supply-chain.avif');"></div>
-            <div class="bento-overlay"><h3>Logistics &amp; Supply Chain</h3><p>End-to-end fleet tracking and AI-powered route optimization. Move goods faster with full visibility across the supply chain.</p></div>
-          </div>
-          <div class="bento-card span-4 reveal">
-            <div class="bento-card-bg" style="background-image:url('https://bbt.mza-t.com/wp-content/uploads/2026/06/logistics.jpeg');"></div>
-            <div class="bento-overlay"><h3>Construction &amp; Engineering</h3><p>Project management and resource planning tools. Track budgets, materials, and progress from one dashboard.</p></div>
-          </div>
-          <div class="bento-card span-12 reveal">
-            <div class="bento-card-bg" style="background-image:url('https://bbt.mza-t.com/wp-content/uploads/2026/06/government-scaled.avif');"></div>
+          
+          <!-- 01. RETAIL -->
+          <a href="#retail-ecommerce" class="bento-card span-8 reveal">
+            <div class="bento-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/retail-clothes.avif');"></div>
             <div class="bento-overlay">
-              <div style="max-width:600px;">
-                <h3>Government &amp; Public Sector</h3>
+              <h3>Retail & E-Commerce</h3>
+              <p>Omnichannel POS, AI-driven inventory, and seamless checkout systems. We help retailers manage multi-store operations and sell smarter across every channel.</p>
+              <span class="bento-cta">View Solutions <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
+          </a>
+
+          <!-- 02. MANUFACTURING -->
+          <a href="#manufacturing" class="bento-card span-4 reveal">
+            <div class="bento-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/case-odoo.avif');"></div>
+            <div class="bento-overlay">
+              <h3>Manufacturing</h3>
+              <p>Industry 4.0 ERP systems with real-time shop floor monitoring. We connect production, inventory, and supply chain.</p>
+              <span class="bento-cta">View Solutions <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
+          </a>
+
+          <!-- 03. HEALTHCARE -->
+          <a href="#healthcare" class="bento-card span-4 reveal">
+            <div class="bento-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/health-care.avif');"></div>
+            <div class="bento-overlay">
+              <h3>Healthcare & Medical</h3>
+              <p>Compliant patient portals and automated clinical workflows. We help manage records, appointments, and reporting with ease.</p>
+              <span class="bento-cta">View Solutions <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
+          </a>
+
+          <!-- 04. EDUCATION -->
+          <a href="#education" class="bento-card span-4 reveal">
+            <div class="bento-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/education-scaled.avif');"></div>
+            <div class="bento-overlay">
+              <h3>Education & E-Learning</h3>
+              <p>Custom learning management systems and student platforms. Automate admissions, attendance, and delivery.</p>
+              <span class="bento-cta">View Solutions <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
+          </a>
+
+          <!-- 05. REAL ESTATE -->
+          <a href="#real-estate" class="bento-card span-4 reveal">
+            <div class="bento-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/real-estate-scaled.avif');"></div>
+            <div class="bento-overlay">
+              <h3>Real Estate & Property</h3>
+              <p>Property management software with automated billing and tenant portals for leasing and portfolio tracking.</p>
+              <span class="bento-cta">View Solutions <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
+          </a>
+
+          <!-- 06. FINANCIAL SERVICES -->
+          <a href="#financial-services" class="bento-card span-6 reveal">
+            <div class="bento-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/financial-services.jpg');"></div>
+            <div class="bento-overlay">
+              <h3>Financial Services</h3>
+              <p>Secure, compliant systems for transaction processing and reporting. We build automation that reduces risk and speeds up operations.</p>
+              <span class="bento-cta">View Solutions <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
+          </a>
+
+          <!-- 07. HOSPITALITY -->
+          <a href="#hospitality" class="bento-card span-6 reveal">
+            <div class="bento-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/hospital.png');"></div>
+            <div class="bento-overlay">
+              <h3>Hospitality & Food Service</h3>
+              <p>Smart POS and reservation systems. Manage orders, inventory, and guest experience in real time for restaurants and hotels.</p>
+              <span class="bento-cta">View Solutions <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
+          </a>
+
+          <!-- 08. LOGISTICS -->
+          <a href="#logistics" class="bento-card span-8 reveal">
+            <div class="bento-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/supply-chain.avif');"></div>
+            <div class="bento-overlay">
+              <h3>Logistics & Supply Chain</h3>
+              <p>End-to-end fleet tracking and AI-powered route optimization. Move goods faster with full visibility across the supply chain.</p>
+              <span class="bento-cta">View Solutions <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
+          </a>
+
+          <!-- 09. CONSTRUCTION -->
+          <a href="#construction" class="bento-card span-4 reveal">
+            <div class="bento-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/logistics.jpeg');"></div>
+            <div class="bento-overlay">
+              <h3>Construction & Engineering</h3>
+              <p>Project management and resource planning tools. Track budgets, materials, and progress from one dashboard.</p>
+              <span class="bento-cta">View Solutions <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
+          </a>
+
+          <!-- 10. GOVERNMENT -->
+          <a href="#government" class="bento-card span-12 reveal">
+            <div class="bento-card-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/government-scaled.avif');"></div>
+            <div class="bento-overlay">
+              <div style="max-width: 600px;">
+                <h3>Government & Public Sector</h3>
                 <p>Secure, compliant digital systems for public service delivery. We help government bodies modernize operations while meeting strict data and audit standards.</p>
+                <span class="bento-cta">View Solutions <i class="fa-solid fa-arrow-down"></i></span>
               </div>
             </div>
-          </div>
+          </a>
+
         </div>
       </div>
     </section>
 
-    <!-- ======= STICKY DETAIL ======= -->
+    <!-- ===== PER-INDUSTRY DETAIL BLOCKS (10 VERTICALS) ===== -->
+
+    <!-- 04: RETAIL & E-COMMERCE -->
+    <section id="retail-ecommerce" class="industry-detail">
+      <div class="container">
+        <div class="detail-head reveal">
+          <span class="detail-eyebrow"><span class="num">04</span> Retail &amp; E-Commerce</span>
+          <h2>Unified Omnichannel Retail Technology</h2>
+        </div>
+        <div class="cs-grid reveal">
+          <div class="cs-block challenge">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Industry Challenge</h4>
+            <p>Disconnected online and offline sales, manual inventory, slow checkout, no customer insights, and limited payment options in GCC markets.</p>
+          </div>
+          <div class="cs-block solution">
+            <h4><i class="fa-solid fa-lightbulb"></i> BBT Solution</h4>
+            <p>Unified omnichannel retail systems connecting in-store POS, e-commerce, inventory, and customer data. Arabic-ready, VAT-compliant, with local payment gateways.</p>
+          </div>
+        </div>
+        <div class="detail-features-wrap reveal">
+          <div class="detail-features">
+            <h4>Key Features</h4>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> Omnichannel POS with real-time inventory sync</li>
+              <li><i class="fa-solid fa-circle-check"></i> E-commerce integration (Shopify, WooCommerce, custom)</li>
+              <li><i class="fa-solid fa-circle-check"></i> Arabic RTL support and bilingual product pages</li>
+              <li><i class="fa-solid fa-circle-check"></i> Local payment gateways (Telr, PayFort, Noon, COD)</li>
+              <li><i class="fa-solid fa-circle-check"></i> Customer loyalty and membership management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Multi-branch stock transfer and reporting</li>
+              <li><i class="fa-solid fa-circle-check"></i> Sales analytics and demand forecasting</li>
+            </ul>
+          </div>
+          <div class="detail-stack">
+            <h4>Tech Stack</h4>
+            <div class="stack-tags">
+              <span>Odoo POS</span><span>Shopify</span><span>WooCommerce</span><span>Telr</span><span>PayFort</span><span>Noon Payments</span><span>AWS</span><span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cta-row reveal">
+          <a href="retail-pos.html" class="cta-btn">Explore Retail &amp; POS Solutions</a>
+          <a href="contact.html" class="cta-btn detail-ghost">Talk to a Retail Specialist</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05: MANUFACTURING -->
+    <section id="manufacturing" class="industry-detail alt">
+      <div class="container">
+        <div class="detail-head reveal">
+          <span class="detail-eyebrow"><span class="num">05</span> Manufacturing</span>
+          <h2>Smart Factory ERP &amp; Production Control</h2>
+        </div>
+        <div class="cs-grid reveal">
+          <div class="cs-block challenge">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Industry Challenge</h4>
+            <p>Production delays, inventory mismatches, quality control gaps, manual shop floor tracking, and no visibility into overall equipment effectiveness (OEE).</p>
+          </div>
+          <div class="cs-block solution">
+            <h4><i class="fa-solid fa-lightbulb"></i> BBT Solution</h4>
+            <p>Smart factory ERP with production planning, MRP, quality management, and IoT-ready monitoring. Real-time visibility from raw materials to finished goods.</p>
+          </div>
+        </div>
+        <div class="detail-features-wrap reveal">
+          <div class="detail-features">
+            <h4>Key Features</h4>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> Production planning and scheduling (MRP/MPP)</li>
+              <li><i class="fa-solid fa-circle-check"></i> Bill of materials (BOM) and routing management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Quality control checkpoints and non-conformance tracking</li>
+              <li><i class="fa-solid fa-circle-check"></i> Shop floor data collection and OEE dashboards</li>
+              <li><i class="fa-solid fa-circle-check"></i> Inventory and warehouse management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Supplier and procurement management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Maintenance scheduling and asset tracking</li>
+            </ul>
+          </div>
+          <div class="detail-stack">
+            <h4>Tech Stack</h4>
+            <div class="stack-tags">
+              <span>Odoo MRP</span><span>SAP Integration</span><span>IoT Sensors</span><span>Power BI</span><span>PostgreSQL</span><span>AWS IoT</span><span>Node.js</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cta-row reveal">
+          <a href="enterprise-odoo.html" class="cta-btn">Explore Manufacturing ERP</a>
+          <a href="contact.html" class="cta-btn detail-ghost">Request a Factory Assessment</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06: HEALTHCARE & MEDICAL -->
+    <section id="healthcare" class="industry-detail">
+      <div class="container">
+        <div class="detail-head reveal">
+          <span class="detail-eyebrow"><span class="num">06</span> Healthcare &amp; Medical</span>
+          <h2>Integrated Healthcare Management Platform</h2>
+        </div>
+        <div class="cs-grid reveal">
+          <div class="cs-block challenge">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Industry Challenge</h4>
+            <p>Fragmented patient records, appointment scheduling chaos, billing errors, compliance risks, and no integration between clinical and administrative systems.</p>
+          </div>
+          <div class="cs-block solution">
+            <h4><i class="fa-solid fa-lightbulb"></i> BBT Solution</h4>
+            <p>Integrated healthcare management platform connecting patient records, appointments, billing, and compliance. HIPAA-ready, Arabic-capable, and government portal integrated.</p>
+          </div>
+        </div>
+        <div class="detail-features-wrap reveal">
+          <div class="detail-features">
+            <h4>Key Features</h4>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> Electronic health records (EHR) and patient management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Appointment scheduling with SMS/email reminders</li>
+              <li><i class="fa-solid fa-circle-check"></i> Medical billing and insurance claim processing</li>
+              <li><i class="fa-solid fa-circle-check"></i> Pharmacy and inventory management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Lab integration and test result portals</li>
+              <li><i class="fa-solid fa-circle-check"></i> Doctor and staff scheduling</li>
+              <li><i class="fa-solid fa-circle-check"></i> Compliance reporting and audit trails</li>
+            </ul>
+          </div>
+          <div class="detail-stack">
+            <h4>Tech Stack</h4>
+            <div class="stack-tags">
+              <span>Odoo Healthcare</span><span>HL7/FHIR APIs</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS HIPAA</span><span>Arabic NLP</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cta-row reveal">
+          <a href="solutions.html" class="cta-btn">Explore Healthcare Solutions</a>
+          <a href="contact.html" class="cta-btn detail-ghost">Book a Compliance Review</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07: EDUCATION & E-LEARNING -->
+    <section id="education" class="industry-detail alt">
+      <div class="container">
+        <div class="detail-head reveal">
+          <span class="detail-eyebrow"><span class="num">07</span> Education &amp; E-Learning</span>
+          <h2>Complete Education Management Platform</h2>
+        </div>
+        <div class="cs-grid reveal">
+          <div class="cs-block challenge">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Industry Challenge</h4>
+            <p>Manual admissions, disconnected student data, no parent portal, outdated LMS, and administrative overload taking time away from teaching.</p>
+          </div>
+          <div class="cs-block solution">
+            <h4><i class="fa-solid fa-lightbulb"></i> BBT Solution</h4>
+            <p>A complete education management platform covering admissions, LMS, student portals, fee management, and parent communication, all in one unified system.</p>
+          </div>
+        </div>
+        <div class="detail-features-wrap reveal">
+          <div class="detail-features">
+            <h4>Key Features</h4>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> Online admissions and enrollment management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Learning management system (LMS) with course content</li>
+              <li><i class="fa-solid fa-circle-check"></i> Student portal with grades, schedules, and resources</li>
+              <li><i class="fa-solid fa-circle-check"></i> Fee collection and financial management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Parent communication portal and mobile app</li>
+              <li><i class="fa-solid fa-circle-check"></i> Examination and result management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Library and resource management</li>
+            </ul>
+          </div>
+          <div class="detail-stack">
+            <h4>Tech Stack</h4>
+            <div class="stack-tags">
+              <span>Moodle</span><span>Canvas</span><span>Custom LMS</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span><span>React Native</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cta-row reveal">
+          <a href="solutions.html" class="cta-btn">Explore Education Solutions</a>
+          <a href="contact.html" class="cta-btn detail-ghost">Plan Your LMS Rollout</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08: REAL ESTATE & PROPERTY -->
+    <section id="real-estate" class="industry-detail">
+      <div class="container">
+        <div class="detail-head reveal">
+          <span class="detail-eyebrow"><span class="num">08</span> Real Estate &amp; Property</span>
+          <h2>Integrated Real Estate &amp; CRM Platform</h2>
+        </div>
+        <div class="cs-grid reveal">
+          <div class="cs-block challenge">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Industry Challenge</h4>
+            <p>Scattered property listings, manual lead tracking, no client portal, slow document processing, and missed sales opportunities due to poor follow-up.</p>
+          </div>
+          <div class="cs-block solution">
+            <h4><i class="fa-solid fa-lightbulb"></i> BBT Solution</h4>
+            <p>Integrated real estate platform with CRM, property management, marketing automation, and client portals. From lead to closing, everything is fully digital.</p>
+          </div>
+        </div>
+        <div class="detail-features-wrap reveal">
+          <div class="detail-features">
+            <h4>Key Features</h4>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> Property listing management with photo/video uploads</li>
+              <li><i class="fa-solid fa-circle-check"></i> Lead capture and CRM with automated follow-up</li>
+              <li><i class="fa-solid fa-circle-check"></i> Client portal for document sharing and e-signatures</li>
+              <li><i class="fa-solid fa-circle-check"></i> Commission and agent management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Marketing automation for listings (email, SMS, social)</li>
+              <li><i class="fa-solid fa-circle-check"></i> Rental management and tenant portals</li>
+              <li><i class="fa-solid fa-circle-check"></i> Financial tracking and reporting</li>
+            </ul>
+          </div>
+          <div class="detail-stack">
+            <h4>Tech Stack</h4>
+            <div class="stack-tags">
+              <span>Odoo CRM</span><span>Custom RE Platform</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span><span>Twilio</span><span>Mailchimp</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cta-row reveal">
+          <a href="solutions.html" class="cta-btn">Explore Real Estate Solutions</a>
+          <a href="contact.html" class="cta-btn detail-ghost">See a CRM Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09: FINANCIAL SERVICES -->
+    <section id="financial-services" class="industry-detail alt">
+      <div class="container">
+        <div class="detail-head reveal">
+          <span class="detail-eyebrow"><span class="num">09</span> Financial Services</span>
+          <h2>Secure Financial Technology Platforms</h2>
+        </div>
+        <div class="cs-grid reveal">
+          <div class="cs-block challenge">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Industry Challenge</h4>
+            <p>Legacy core systems, slow reporting, compliance complexity, data security risks, and no real-time visibility into financial performance.</p>
+          </div>
+          <div class="cs-block solution">
+            <h4><i class="fa-solid fa-lightbulb"></i> BBT Solution</h4>
+            <p>Modern financial technology platforms with secure architecture, automated compliance reporting, real-time analytics, and integration with banking APIs.</p>
+          </div>
+        </div>
+        <div class="detail-features-wrap reveal">
+          <div class="detail-features">
+            <h4>Key Features</h4>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> Core banking and financial ERP integration</li>
+              <li><i class="fa-solid fa-circle-check"></i> Automated regulatory reporting and compliance</li>
+              <li><i class="fa-solid fa-circle-check"></i> Risk management and fraud detection dashboards</li>
+              <li><i class="fa-solid fa-circle-check"></i> Client onboarding and KYC digitization</li>
+              <li><i class="fa-solid fa-circle-check"></i> Portfolio management and investment tracking</li>
+              <li><i class="fa-solid fa-circle-check"></i> Secure document management and audit trails</li>
+              <li><i class="fa-solid fa-circle-check"></i> Real-time financial analytics and forecasting</li>
+            </ul>
+          </div>
+          <div class="detail-stack">
+            <h4>Tech Stack</h4>
+            <div class="stack-tags">
+              <span>Odoo Accounting</span><span>SAP</span><span>Power BI</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span><span>SOC 2</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cta-row reveal">
+          <a href="solutions.html" class="cta-btn">Explore Fintech Solutions</a>
+          <a href="contact.html" class="cta-btn detail-ghost">Discuss Compliance Needs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10: HOSPITALITY & FOOD SERVICE -->
+    <section id="hospitality" class="industry-detail">
+      <div class="container">
+        <div class="detail-head reveal">
+          <span class="detail-eyebrow"><span class="num">10</span> Hospitality &amp; Food Service</span>
+          <h2>Complete Hospitality Technology Stack</h2>
+        </div>
+        <div class="cs-grid reveal">
+          <div class="cs-block challenge">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Industry Challenge</h4>
+            <p>Slow restaurant POS, manual reservations, kitchen chaos during rush, no guest data, and inability to manage multiple outlets centrally.</p>
+          </div>
+          <div class="cs-block solution">
+            <h4><i class="fa-solid fa-lightbulb"></i> BBT Solution</h4>
+            <p>A complete hospitality technology stack featuring restaurant POS, reservation systems, kitchen display, inventory, and multi-outlet management, all cloud-connected.</p>
+          </div>
+        </div>
+        <div class="detail-features-wrap reveal">
+          <div class="detail-features">
+            <h4>Key Features</h4>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> Restaurant POS with table management and KDS</li>
+              <li><i class="fa-solid fa-circle-check"></i> Online reservation and booking system</li>
+              <li><i class="fa-solid fa-circle-check"></i> Online ordering integration (Talabat, Deliveroo, Careem)</li>
+              <li><i class="fa-solid fa-circle-check"></i> Ingredient-level inventory and recipe costing</li>
+              <li><i class="fa-solid fa-circle-check"></i> Guest CRM and loyalty program</li>
+              <li><i class="fa-solid fa-circle-check"></i> Multi-outlet management and reporting</li>
+              <li><i class="fa-solid fa-circle-check"></i> Staff scheduling and payroll integration</li>
+            </ul>
+          </div>
+          <div class="detail-stack">
+            <h4>Tech Stack</h4>
+            <div class="stack-tags">
+              <span>Odoo POS</span><span>Custom Restaurant POS</span><span>KDS</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span><span>Talabat API</span><span>Deliveroo API</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cta-row reveal">
+          <a href="retail-pos.html" class="cta-btn">Explore Hospitality POS</a>
+          <a href="contact.html" class="cta-btn detail-ghost">See a Live POS Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11: LOGISTICS & SUPPLY CHAIN -->
+    <section id="logistics" class="industry-detail alt">
+      <div class="container">
+        <div class="detail-head reveal">
+          <span class="detail-eyebrow"><span class="num">11</span> Logistics &amp; Supply Chain</span>
+          <h2>End-to-End Logistics Platform</h2>
+        </div>
+        <div class="cs-grid reveal">
+          <div class="cs-block challenge">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Industry Challenge</h4>
+            <p>No real-time shipment tracking, manual route planning, warehouse inefficiency, poor vendor coordination, and high operational costs.</p>
+          </div>
+          <div class="cs-block solution">
+            <h4><i class="fa-solid fa-lightbulb"></i> BBT Solution</h4>
+            <p>An end-to-end logistics platform with warehouse management, fleet tracking, route optimization, and supplier portals, all connected in real time.</p>
+          </div>
+        </div>
+        <div class="detail-features-wrap reveal">
+          <div class="detail-features">
+            <h4>Key Features</h4>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> Warehouse management with barcode/RFID tracking</li>
+              <li><i class="fa-solid fa-circle-check"></i> Fleet tracking and GPS route optimization</li>
+              <li><i class="fa-solid fa-circle-check"></i> Shipment tracking and delivery notifications</li>
+              <li><i class="fa-solid fa-circle-check"></i> Supplier and vendor portal integration</li>
+              <li><i class="fa-solid fa-circle-check"></i> Inventory forecasting and demand planning</li>
+              <li><i class="fa-solid fa-circle-check"></i> Customs and documentation management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Real-time analytics and cost optimization</li>
+            </ul>
+          </div>
+          <div class="detail-stack">
+            <h4>Tech Stack</h4>
+            <div class="stack-tags">
+              <span>Odoo Inventory</span><span>Custom WMS</span><span>GPS APIs</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span><span>Google Maps API</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cta-row reveal">
+          <a href="solutions.html" class="cta-btn">Explore Logistics Solutions</a>
+          <a href="contact.html" class="cta-btn detail-ghost">Map Your Supply Chain</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12: CONSTRUCTION & ENGINEERING -->
+    <section id="construction" class="industry-detail">
+      <div class="container">
+        <div class="detail-head reveal">
+          <span class="detail-eyebrow"><span class="num">12</span> Construction &amp; Engineering</span>
+          <h2>Construction Project Management Platform</h2>
+        </div>
+        <div class="cs-grid reveal">
+          <div class="cs-block challenge">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Industry Challenge</h4>
+            <p>Project delays, cost overruns, poor resource allocation, manual progress tracking, and no real-time visibility across multiple job sites.</p>
+          </div>
+          <div class="cs-block solution">
+            <h4><i class="fa-solid fa-lightbulb"></i> BBT Solution</h4>
+            <p>A construction project management platform with planning, budgeting, resource allocation, progress tracking, and document control, built for how construction actually works.</p>
+          </div>
+        </div>
+        <div class="detail-features-wrap reveal">
+          <div class="detail-features">
+            <h4>Key Features</h4>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> Project planning and Gantt chart scheduling</li>
+              <li><i class="fa-solid fa-circle-check"></i> Budget tracking and cost control</li>
+              <li><i class="fa-solid fa-circle-check"></i> Resource and equipment allocation</li>
+              <li><i class="fa-solid fa-circle-check"></i> Progress tracking with photo documentation</li>
+              <li><i class="fa-solid fa-circle-check"></i> Subcontractor and vendor management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Document control and blueprint management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Safety compliance and incident reporting</li>
+            </ul>
+          </div>
+          <div class="detail-stack">
+            <h4>Tech Stack</h4>
+            <div class="stack-tags">
+              <span>Odoo Project</span><span>Custom Construction Platform</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span><span>React Native</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cta-row reveal">
+          <a href="solutions.html" class="cta-btn">Explore Construction Solutions</a>
+          <a href="contact.html" class="cta-btn detail-ghost">Scope a Project Platform</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13: GOVERNMENT & PUBLIC SECTOR -->
+    <section id="government" class="industry-detail alt">
+      <div class="container">
+        <div class="detail-head reveal">
+          <span class="detail-eyebrow"><span class="num">13</span> Government &amp; Public Sector</span>
+          <h2>Secure, Compliant Digital Government Platforms</h2>
+        </div>
+        <div class="cs-grid reveal">
+          <div class="cs-block challenge">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Industry Challenge</h4>
+            <p>Paper-based processes, slow citizen service delivery, data silos across departments, compliance complexity, and security vulnerabilities.</p>
+          </div>
+          <div class="cs-block solution">
+            <h4><i class="fa-solid fa-lightbulb"></i> BBT Solution</h4>
+            <p>Secure, compliant digital government platforms that include citizen portals, document digitization, workflow automation, and inter-department integration, built for public sector requirements.</p>
+          </div>
+        </div>
+        <div class="detail-features-wrap reveal">
+          <div class="detail-features">
+            <h4>Key Features</h4>
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> Citizen service portals and e-government platforms</li>
+              <li><i class="fa-solid fa-circle-check"></i> Document digitization and records management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Workflow automation for internal processes</li>
+              <li><i class="fa-solid fa-circle-check"></i> Inter-department data integration</li>
+              <li><i class="fa-solid fa-circle-check"></i> Compliance and audit trail management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Secure cloud infrastructure with data residency</li>
+              <li><i class="fa-solid fa-circle-check"></i> Analytics and performance dashboards</li>
+            </ul>
+          </div>
+          <div class="detail-stack">
+            <h4>Tech Stack</h4>
+            <div class="stack-tags">
+              <span>Odoo</span><span>Custom Gov Platform</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS GovCloud</span><span>Azure Government</span><span>SOC 2</span><span>ISO 27001</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cta-row reveal">
+          <a href="digital-transformation.html" class="cta-btn">Explore Government Solutions</a>
+          <a href="contact.html" class="cta-btn detail-ghost">Request a Security Briefing</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STICKY CONTENT DETAIL -->
     <section class="section-padding detail-section">
       <div class="container sticky-grid">
         <div class="sticky-visual reveal">
@@ -832,85 +2079,166 @@
         </div>
         <div class="sticky-content">
           <div class="detail-content-item reveal">
-            <span class="eyebrow">The BBT Edge</span>
+            <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 700; letter-spacing: 2px;">The BBT Edge</span>
             <h2>We Speak Your Industry's Language</h2>
             <p>Generic software fails because it doesn't understand your unique constraints. We bridge the gap between "standard tech" and "industry reality."</p>
             <ul class="feature-list">
-              <li><i class="fa-solid fa-circle-check"></i>Deep Discovery of domain-specific pain points</li>
-              <li><i class="fa-solid fa-circle-check"></i>Integration with existing legacy ecosystem</li>
-              <li><i class="fa-solid fa-circle-check"></i>Terminology alignment for zero-friction training</li>
+              <li><i class="fa-solid fa-circle-check"></i> Deep Discovery of domain-specific pain points</li>
+              <li><i class="fa-solid fa-circle-check"></i> Integration with existing legacy ecosystem</li>
+              <li><i class="fa-solid fa-circle-check"></i> Terminology alignment for zero-friction training</li>
             </ul>
           </div>
           <div class="detail-content-item reveal">
-            <span class="eyebrow">Governance</span>
-            <h2>Regulatory Rigor &amp; Data Residency</h2>
+            <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 700; letter-spacing: 2px;">Governance</span>
+            <h2>Regulatory Rigor & Data Residency</h2>
             <p>Whether it's ZATCA e-invoicing in the GCC, HIPAA in the USA, or GDPR in the UK, our architecture ensures you are always compliant by default.</p>
             <ul class="feature-list">
-              <li><i class="fa-solid fa-shield-halved"></i>Military-grade data encryption</li>
-              <li><i class="fa-solid fa-globe"></i>Localized regional hosting options</li>
-              <li><i class="fa-solid fa-file-contract"></i>Audit trails and compliance reporting</li>
+              <li><i class="fa-solid fa-shield-halved"></i> Military-grade data encryption</li>
+              <li><i class="fa-solid fa-globe"></i> Localized regional hosting options</li>
+              <li><i class="fa-solid fa-file-contract"></i> Audit trails and compliance reporting</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======= PROCESS ======= -->
+    <!-- DELIVERY PROCESS -->
     <section class="section-padding process-section">
       <div class="container">
-        <div style="max-width:700px;margin-bottom:40px;" class="reveal">
-          <span class="eyebrow">Section 05 — Delivery</span>
-          <h2 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:var(--bbt-navy);line-height:1.1;">Our Industry Solution <br>Delivery Process</h2>
+        <div style="max-width: 700px; margin-bottom: 40px;" class="reveal">
+          <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 700; letter-spacing: 2px;">Section 05: Delivery</span>
+          <h2 style="font-size: 3rem; font-weight: 900; color: var(--bbt-navy); line-height: 1.1;">Our Industry Solution <br>Delivery Process</h2>
         </div>
+
         <div class="process-grid reveal">
+          <!-- Step 01 -->
           <div class="process-item">
             <div class="process-number">01</div>
             <div class="process-title">Industry Discovery</div>
-            <div class="process-desc">We study your industry's workflows, regulations, competitors, and technology gaps. We interview your team and map your exact pain points.</div>
+            <div class="process-desc">
+              We study your industry's workflows, regulations, competitors, and technology gaps. We interview your team and map your exact pain points.
+            </div>
           </div>
+
+          <!-- Step 02 -->
           <div class="process-item">
             <div class="process-number">02</div>
             <div class="process-title">Solution Design</div>
-            <div class="process-desc">We design a tailored solution architecture — modules, integrations, compliance features, and user flows — specific to your industry.</div>
+            <div class="process-desc">
+              We design a tailored solution architecture, covering modules, integrations, compliance features, and user flows, specific to your industry.
+            </div>
           </div>
+
+          <!-- Step 03 -->
           <div class="process-item">
             <div class="process-number">03</div>
-            <div class="process-title">Build &amp; Integrate</div>
-            <div class="process-desc">We develop, test, and integrate with your existing tools. Industry-specific configurations, data migration, and compliance validation.</div>
+            <div class="process-title">Build & Integrate</div>
+            <div class="process-desc">
+              We develop, test, and integrate with your existing tools. Industry-specific configurations, data migration, and compliance validation.
+            </div>
           </div>
+
+          <!-- Step 04 -->
           <div class="process-item">
             <div class="process-number">04</div>
-            <div class="process-title">Launch &amp; Optimize</div>
-            <div class="process-desc">We deploy, train your industry team, and optimize based on real usage. Continuous improvement as your industry evolves.</div>
+            <div class="process-title">Launch & Optimize</div>
+            <div class="process-desc">
+              We deploy, train your industry team, and optimize based on real usage. Continuous improvement as your industry evolves.
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======= GLASS SLIDER ======= -->
+    <!-- INDUSTRY-SPECIFIC COMPLIANCE & STANDARDS -->
+    <section class="section-padding standards-section">
+      <div class="container">
+        <div class="standards-head reveal">
+          <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 700; letter-spacing: 2px; display: block; margin-bottom: 12px;">Compliance &amp; Standards</span>
+          <h2 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: var(--bbt-navy); line-height: 1.1; margin-bottom: 18px;">Built to Meet Your Industry's Standards</h2>
+          <p style="font-size: 1.1rem; color: #475569; line-height: 1.7;">Every industry has rules. We build compliance into every solution from day one, not as an afterthought.</p>
+        </div>
+
+        <div class="standards-table-wrap reveal">
+          <table class="standards-table">
+            <thead>
+              <tr>
+                <th scope="col">Industry</th>
+                <th scope="col">Compliance &amp; Standards</th>
+                <th scope="col">Our Approach</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Industry" class="ind-name">Healthcare</td>
+                <td data-label="Compliance & Standards" class="ind-badges"><span>HIPAA</span><span>DHA</span><span>MOHAP</span><span>HL7/FHIR</span></td>
+                <td data-label="Our Approach">Encrypted data, access controls, audit trails, patient consent management.</td>
+              </tr>
+              <tr>
+                <td data-label="Industry" class="ind-name">Financial Services</td>
+                <td data-label="Compliance & Standards" class="ind-badges"><span>PCI DSS</span><span>SOC 2</span><span>GDPR</span><span>Central Bank</span></td>
+                <td data-label="Our Approach">Secure architecture, transaction encryption, regulatory reporting automation.</td>
+              </tr>
+              <tr>
+                <td data-label="Industry" class="ind-name">Retail &amp; E-commerce</td>
+                <td data-label="Compliance & Standards" class="ind-badges"><span>VAT/GST</span><span>ZATCA</span><span>FTA</span><span>Consumer Protection</span></td>
+                <td data-label="Our Approach">VAT-ready invoicing, Arabic receipts, local payment compliance.</td>
+              </tr>
+              <tr>
+                <td data-label="Industry" class="ind-name">Government</td>
+                <td data-label="Compliance & Standards" class="ind-badges"><span>Data Residency</span><span>ISO 27001</span><span>NESA</span><span>SEDD</span></td>
+                <td data-label="Our Approach">Local hosting, encryption, inter-department security, citizen data protection.</td>
+              </tr>
+              <tr>
+                <td data-label="Industry" class="ind-name">Manufacturing</td>
+                <td data-label="Compliance & Standards" class="ind-badges"><span>ISO 9001</span><span>ISO 14001</span><span>OSHA</span><span>HACCP</span></td>
+                <td data-label="Our Approach">Quality control workflows, safety checklists, environmental reporting.</td>
+              </tr>
+              <tr>
+                <td data-label="Industry" class="ind-name">Education</td>
+                <td data-label="Compliance & Standards" class="ind-badges"><span>FERPA</span><span>KHDA</span><span>ADEK</span><span>Data Privacy</span></td>
+                <td data-label="Our Approach">Student data protection, parent consent, accreditation reporting.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF + FAQ -->
+    <section class="section-padding" style="background: white;">
+     <!-- GLASSMORPHISM INDUSTRY STORIES -->
     <section class="glass-stories-section">
+      <!-- Animated Background Textures -->
       <div class="glass-mesh-bg">
         <div class="mesh-circle-1"></div>
         <div class="mesh-circle-2"></div>
       </div>
+
       <div class="container glass-slider-container">
-        <div style="margin-bottom:60px;" class="reveal">
-          <span class="eyebrow">Section 06 — Impact</span>
-          <h2 style="font-size:clamp(2rem,5vw,4rem);font-weight:900;color:#fff;line-height:1;">Global Success Stories</h2>
+        <div style="margin-bottom: 60px;" class="reveal">
+          <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 700; letter-spacing: 3px;">Section 06: Impact</span>
+          <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: #fff; line-height: 1;">Global Success Stories</h2>
         </div>
+
+        <!-- Slider Track -->
         <div class="glass-track" id="glassTrack">
+          
+          <!-- Card 1 -->
           <div class="glass-card reveal">
             <div class="industry-icon"><i class="fa-solid fa-cart-shopping"></i></div>
             <div>
               <h4>Omnichannel Scaling for Retail Giant</h4>
-              <p>"BBT delivered a seamless POS &amp; E-commerce integration across 5 UAE locations. Manual errors vanished, replaced by real-time precision."</p>
+              <p>"BBT delivered a seamless POS & E-commerce integration across 5 UAE locations. Manual errors vanished, replaced by real-time precision."</p>
               <div class="result-pill">+30% Sales Increase</div>
             </div>
             <div class="client-meta">
-              <div style="font-weight:800;">CEO, Retail Chain</div>
-              <div style="opacity:0.5;">| Dubai, UAE</div>
+              <div style="font-weight: 800;">CEO, Retail Chain</div>
+              <div style="opacity: 0.5;">| Dubai, UAE</div>
             </div>
           </div>
+
+          <!-- Card 2 -->
           <div class="glass-card reveal">
             <div class="industry-icon"><i class="fa-solid fa-industry"></i></div>
             <div>
@@ -947,222 +2275,412 @@
               <div class="result-pill">99.9% Data Uptime</div>
             </div>
             <div class="client-meta">
-              <div style="font-weight:800;">Ministry Lead, Public Sector</div>
-              <div style="opacity:0.5;">| Riyadh, KSA</div>
+              <div style="font-weight: 800;">Ministry Lead, Public Sector</div>
+              <div style="opacity: 0.5;">| Riyadh, KSA</div>
             </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+        <!-- MODERN STATS REACH SECTION -->
+   <!-- FULL WIDTH REACH SECTION -->
+    <section class="reach-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;" class="reveal">
+          <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 700; letter-spacing: 4px;">Industry Impact</span>
+          <h2 style="color: #ffffff; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-top: 10px;">Proven Results Across Verticals</h2>
+          <p style="color: rgba(255, 255, 255, 0.6); margin-top: 20px; font-size: 1.1rem;">We measure our success by the tangible operational improvements we deliver to our global industry partners.</p>
+        </div>
+
+        <div class="reach-stats">
+          <div class="stat-item reveal">
+            <h2 class="counter" data-target="15">0</h2>
+            <p>Industries Served</p>
+          </div>
+          <div class="stat-item reveal">
+            <h2 class="counter" data-target="200">0</h2>
+            <p>Industry Projects</p>
+          </div>
+          <div class="stat-item reveal">
+            <h2 class="counter" data-target="25">0</h2>
+            <p>Efficiency Gain %</p>
+          </div>
+          <div class="stat-item reveal">
+            <h2 class="counter" data-target="98">0</h2>
+            <p>Client Satisfaction</p>
+          </div>
+          <div class="stat-item reveal">
+            <h2>24/7</h2>
+            <p>Industry Support</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======= STATS ======= -->
-    <section class="reach-section">
-      <div class="container">
-        <div style="text-align:center;max-width:800px;margin:0 auto;" class="reveal">
-          <span class="eyebrow">Industry Impact</span>
-          <h2 style="color:#fff;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-top:10px;">Proven Results Across Verticals</h2>
-          <p style="color:rgba(255,255,255,0.6);margin-top:20px;font-size:1rem;">We measure our success by the tangible operational improvements we deliver to our global industry partners.</p>
+        <!-- Part B: FAQ -->
+        <div class="faq-container reveal">
+          <div style="text-align: center; margin-bottom: 40px;">
+            <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--bbt-navy);">Industry FAQ</h2>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Do you have experience in my specific industry? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes. We've delivered solutions across 15+ industries including retail, manufacturing, healthcare, education, real estate, financial services, hospitality, logistics, construction, and government. Every project starts with deep industry discovery.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How do you ensure compliance with industry regulations? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Compliance is built into the foundation of every solution. We research your industry's regulatory requirements during discovery (like ZATCA, HIPAA, or GDPR), build compliance features into the architecture, and validate before go-live.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Can you integrate with industry-specific tools we already use? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Absolutely. We integrate with industry-standard platforms, including medical devices, ERP systems, accounting software, payment gateways, logistics APIs, and government portals. Custom API development is available when native integration isn't possible.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How long does an industry solution take to implement? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Simple industry configurations take 4 to 6 weeks. Custom industry platforms take 8 to 16 weeks. Enterprise multi-system integrations take 4 to 6 months. We deliver in phases so you see value every month.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Do you offer Arabic support for GCC industries? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes. We provide full Arabic RTL interfaces, Arabic documentation, bilingual training, and cultural adaptation. We test with native Arabic speakers to ensure natural workflow language.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What if our industry has unique workflows not covered by standard software? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">That's exactly why businesses choose BBT. We don't force your workflows into generic software. We build custom modules, workflows, and interfaces that match how your industry actually operates.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How do you handle data migration from our old industry system? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">We use validated migration scripts, parallel running, and data verification at every step. We offer a zero data loss guarantee and clean/structure data during migration for better performance.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What support do you offer after launch? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">30-day post-launch support is included. After that, monthly industry care plans provide dedicated support, system updates, compliance updates, and continuous optimization. We grow with your industry.</div>
+          </div>
         </div>
-        <div class="reach-stats">
-          <div class="stat-item reveal"><h2 class="counter" data-target="15">0</h2><p>Industries Served</p></div>
-          <div class="stat-item reveal"><h2 class="counter" data-target="200">0</h2><p>Industry Projects</p></div>
-          <div class="stat-item reveal"><h2 class="counter" data-target="25">0</h2><p>Efficiency Gain %</p></div>
-          <div class="stat-item reveal"><h2 class="counter" data-target="98">0</h2><p>Client Satisfaction</p></div>
-          <div class="stat-item reveal"><h2>24/7</h2><p>Industry Support</p></div>
-        </div>
+
       </div>
     </section>
 
-    <!-- ======= FAQ ======= -->
-    <section class="section-padding" style="background:white;">
-      <div class="faq-container reveal">
-        <div style="text-align:center;margin-bottom:40px;">
-          <h2 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:var(--bbt-navy);">Industry FAQ</h2>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Do you have experience in my specific industry? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">Yes. We've delivered solutions across 15+ industries including retail, manufacturing, healthcare, education, real estate, financial services, hospitality, logistics, construction, and government. Every project starts with deep industry discovery.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">How do you ensure compliance with industry regulations? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">Compliance is built into the foundation of every solution. We research your industry's regulatory requirements during discovery (like ZATCA, HIPAA, or GDPR), build compliance features into the architecture, and validate before go-live.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Can you integrate with industry-specific tools we already use? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">Absolutely. We integrate with industry-standard platforms — medical devices, ERP systems, accounting software, payment gateways, logistics APIs, government portals, and more. Custom API development is available when native integration isn't possible.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">How long does an industry solution take to implement? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">Simple industry configurations take 4–6 weeks. Custom industry platforms take 8–16 weeks. Enterprise multi-system integrations take 4–6 months. We deliver in phases so you see value every month.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Do you offer Arabic support for GCC industries? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">Yes — full Arabic RTL interfaces, Arabic documentation, bilingual training, and cultural adaptation. We test with native Arabic speakers to ensure natural workflow language.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">What if our industry has unique workflows not covered by standard software? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">That's exactly why businesses choose BBT. We don't force your workflows into generic software. We build custom modules, workflows, and interfaces that match how your industry actually operates.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">How do you handle data migration from our old industry system? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">We use validated migration scripts, parallel running, and data verification at every step. We offer a zero data loss guarantee and clean/structure data during migration for better performance.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">What support do you offer after launch? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">30-day post-launch support is included. After that, monthly industry care plans provide dedicated support, system updates, compliance updates, and continuous optimization. We grow with your industry.</div>
-        </div>
-      </div>
-    </section>
+   <!-- FINAL CTA -->
+<section class="section-padding compliance-section">
+  <div class="mesh-glow"></div>
+  <div class="container reveal" style="text-align: center;">
+    <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 30px;">
+      Ready for Technology That <br>
+      <span style="color: var(--bbt-orange);">Understands Your Industry?</span>
+    </h2>
+    <p style="max-width: 640px; margin: 0 auto 40px; color: rgba(255,255,255,0.6);">
+      Book a free 30-minute industry assessment. We analyze your sector's challenges, map your workflows, and recommend the right technology solution before you commit to anything.
+    </p>
+    <a href="contact.html" class="cta-btn" style="background: white; color: var(--bbt-navy); padding: 20px 60px; font-size: 18px;">
+      Schedule Assessment
+    </a>
+  </div>
+</section>
 
-    <!-- ======= FINAL CTA ======= -->
-    <section class="section-padding compliance-section">
-      <div class="mesh-glow"></div>
-      <div class="container reveal" style="text-align:center;">
-        <h2 style="font-size:clamp(2rem,5vw,4rem);font-weight:900;margin-bottom:30px;">
-          Ready for an Industry <br><span style="color:var(--bbt-orange);">Deep Dive?</span>
-        </h2>
-        <p style="max-width:600px;margin:0 auto 40px;color:rgba(255,255,255,0.6);font-size:clamp(0.95rem,2vw,1.1rem);">
-          Connect with our solutions architects to discuss your industry-specific tech roadmap.
-        </p>
-        <a href="contact.html" class="cta-btn" style="background:white;color:var(--bbt-navy);padding:20px 60px;font-size:18px;">
-          Schedule Assessment
-        </a>
-      </div>
-    </section>
+   <!-- RELATED PAGES -->
+<section class="section-padding related-section">
+  <div class="container">
+    <div style="max-width: 700px; margin-bottom: 10px;" class="reveal">
+      <span class="eyebrow" style="color: var(--bbt-orange); font-weight: 700; letter-spacing: 2px; display: block; margin-bottom: 12px;">Keep Exploring</span>
+      <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--bbt-navy); line-height: 1.1;">Related Pages</h2>
+    </div>
+    <div class="related-grid">
+      <a href="solutions.html" class="related-card reveal">
+        <div class="r-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>Solutions Overview</h3>
+        <p>Explore our full portfolio of ERP, automation, POS, and digital transformation solutions built for modern business.</p>
+        <span class="r-link">View Solutions <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+      <a href="case-studies.html" class="related-card reveal">
+        <div class="r-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Case Studies</h3>
+        <p>See real-world results from industry partners across retail, manufacturing, healthcare, and the public sector.</p>
+        <span class="r-link">Read Case Studies <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+      <a href="services.html" class="related-card reveal">
+        <div class="r-icon"><i class="fa-solid fa-gears"></i></div>
+        <h3>Our Services</h3>
+        <p>From custom software to AI automation and Odoo ERP implementation, see how we engineer your technology stack.</p>
+        <span class="r-link">Explore Services <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
   </main>
 
-  <!-- ======= SCRIPTS ======= -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- 1. Libraries First -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 
-  <script>
-  (function() {
-
-    // --- Header scroll state ---
-    const header = document.getElementById('header');
-    const onScroll = () => {
-      if (window.scrollY > 60) { header.classList.add('scrolled'); }
-      else { header.classList.remove('scrolled'); }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    // --- Hamburger / Mobile Menu ---
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-    });
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // --- Main animations ---
+<!-- 2. Your Code Last -->
+<script>
+// We use a self-invoking function to avoid WordPress jQuery/Global conflicts
+(function() {
+    
     const initBBTAnimations = () => {
-      gsap.registerPlugin(ScrollTrigger);
+        // Register Plugins
+        gsap.registerPlugin(ScrollTrigger);
 
-      // Lenis smooth scroll
-      const lenis = new Lenis();
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-      gsap.ticker.lagSmoothing(0);
-
-      // Infinite Glass Slider
-      const loopTrack = document.getElementById('glassTrack');
-      if (loopTrack) {
-        const cardsHTML = loopTrack.innerHTML;
-        loopTrack.innerHTML += cardsHTML;
-        let infiniteLoop;
-        const createLoop = () => {
-          if (infiniteLoop) infiniteLoop.kill();
-          gsap.set(loopTrack, { x: 0 });
-          const scrollWidth = loopTrack.scrollWidth / 2;
-          infiniteLoop = gsap.to(loopTrack, { x: -scrollWidth, duration: 40, ease: "none", repeat: -1 });
-        };
-        createLoop();
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(createLoop, 500);
+        // --- 1. Initialize Lenis ---
+        const lenis = new Lenis();
+        window.__bbtLenis = lenis; // expose for in-page anchor smooth-scroll
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
         });
-        loopTrack.addEventListener('mouseenter', () => gsap.to(infiniteLoop, { timeScale: 0, duration: 0.5 }));
-        loopTrack.addEventListener('mouseleave', () => gsap.to(infiniteLoop, { timeScale: 1, duration: 0.5 }));
-        loopTrack.addEventListener('touchstart', () => gsap.to(infiniteLoop, { timeScale: 0, duration: 0.5 }), { passive: true });
-        loopTrack.addEventListener('touchend', () => gsap.to(infiniteLoop, { timeScale: 1, duration: 0.5 }), { passive: true });
-      }
+        gsap.ticker.lagSmoothing(0);
 
-      // FAQ
-      document.querySelectorAll('.faq-item').forEach(item => {
+       // --- 2. Infinite Glass Slider (Responsive Version) ---
+        const loopTrack = document.getElementById('glassTrack');
+        if (loopTrack) {
+            // Setup Clones
+            const originalCards = loopTrack.querySelectorAll('.glass-card:not(.clone)');
+            const cardsHTML = loopTrack.innerHTML;
+            loopTrack.innerHTML += cardsHTML; // Double the content for loop
+            
+            let infiniteLoop;
+
+            const createLoop = () => {
+                // kill old animation if it exists
+                if (infiniteLoop) infiniteLoop.kill();
+                
+                // Reset position before calculating
+                gsap.set(loopTrack, { x: 0 });
+
+                const scrollWidth = loopTrack.scrollWidth / 2;
+                
+                infiniteLoop = gsap.to(loopTrack, {
+                    x: -scrollWidth,
+                    duration: 40,
+                    ease: "none",
+                    repeat: -1
+                });
+            };
+
+            // Run on init
+            createLoop();
+
+            // Re-calculate on window resize (fixes mobile rotation/desktop resizing)
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(createLoop, 500);
+            });
+
+            // Hover interactions
+            loopTrack.addEventListener('mouseenter', () => gsap.to(infiniteLoop, { timeScale: 0, duration: 0.5 }));
+            loopTrack.addEventListener('mouseleave', () => gsap.to(infiniteLoop, { timeScale: 1, duration: 0.5 }));
+            
+            // For Mobile: pause on touch
+            loopTrack.addEventListener('touchstart', () => gsap.to(infiniteLoop, { timeScale: 0, duration: 0.5 }));
+            loopTrack.addEventListener('touchend', () => gsap.to(infiniteLoop, { timeScale: 1, duration: 0.5 }));
+        }
+
+        // FAQ Toggle Logic
+    document.querySelectorAll('.faq-item').forEach(item => {
         item.addEventListener('click', () => {
-          const isActive = item.classList.contains('active');
-          document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
-          if (!isActive) item.classList.add('active');
-        });
-      });
-
-      // Counters
-      document.querySelectorAll('.counter').forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        gsap.fromTo(counter,
-          { innerText: 0 },
-          {
-            innerText: target, duration: 2.5, ease: "power2.out",
-            scrollTrigger: { trigger: counter, start: "top 90%" },
-            snap: { innerText: 1 },
-            onUpdate: function() {
-              let suffix = (target === 25 || target === 98) ? "%" : "+";
-              counter.innerText = Math.floor(this.targets()[0].innerText) + suffix;
+            const isActive = item.classList.contains('active');
+            
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+            
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
             }
-          }
-        );
-      });
-
-      // Scroll reveals
-      gsap.utils.toArray('.reveal').forEach((el) => {
-        gsap.fromTo(el,
-          { opacity: 0, y: 50 },
-          {
-            scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none none" },
-            opacity: 1, y: 0, duration: 1, ease: "power3.out"
-          }
-        );
-      });
-
-      // Image swap
-      const dynamicImg = document.getElementById('dynamic-img');
-      if (dynamicImg) {
-        ScrollTrigger.create({
-          trigger: ".sticky-content",
-          start: "center center",
-          onEnter: () => {
-            gsap.to(dynamicImg, { opacity: 0, duration: 0.3, onComplete: () => {
-              dynamicImg.src = "https://bbt.mza-t.com/wp-content/uploads/2026/06/nodes.avif";
-              gsap.to(dynamicImg, { opacity: 1, duration: 0.3 });
-            }});
-          },
-          onLeaveBack: () => {
-            gsap.to(dynamicImg, { opacity: 0, duration: 0.3, onComplete: () => {
-              dynamicImg.src = "https://bbt.mza-t.com/wp-content/uploads/2026/06/data-analytics.avif";
-              gsap.to(dynamicImg, { opacity: 1, duration: 0.3 });
-            }});
-          }
         });
-      }
+    });
+        // --- 3. React Stats (Counters) ---
+        document.querySelectorAll('.counter').forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            gsap.fromTo(counter, 
+                { innerText: 0 },
+                {
+                    innerText: target,
+                    duration: 2.5,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: counter,
+                        start: "top 90%",
+                    },
+                    snap: { innerText: 1 },
+                    onUpdate: function() {
+                        let suffix = (target === 15 || target === 200) ? "+" : (target === 25 || target === 98) ? "%" : "";
+                        counter.innerText = Math.floor(this.targets()[0].innerText) + suffix;
+                    }
+                }
+            );
+        });
 
-      setTimeout(() => { ScrollTrigger.refresh(); }, 500);
+        // --- 4. Scroll Reveals ---
+        gsap.utils.toArray('.reveal').forEach((el) => {
+            gsap.fromTo(el, 
+                { opacity: 0, y: 50 },
+                {
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out"
+                }
+            );
+        });
+
+        // --- 5. Image Swap ---
+        const dynamicImg = document.getElementById('dynamic-img');
+        if (dynamicImg) {
+            ScrollTrigger.create({
+                trigger: ".sticky-content",
+                start: "center center",
+                onEnter: () => {
+                    gsap.to(dynamicImg, { opacity: 0, duration: 0.3, onComplete: () => {
+                        dynamicImg.src = "https://bbt.mza-t.com/wp-content/uploads/2026/06/nodes.avif";
+                        gsap.to(dynamicImg, { opacity: 1, duration: 0.3 });
+                    }});
+                },
+                onLeaveBack: () => {
+                    gsap.to(dynamicImg, { opacity: 0, duration: 0.3, onComplete: () => {
+                        dynamicImg.src = "https://bbt.mza-t.com/wp-content/uploads/2026/06/data-analytics.avif";
+                        gsap.to(dynamicImg, { opacity: 1, duration: 0.3 });
+                    }});
+                }
+            });
+        }
+
+        // --- 6. Important: Refresh for Elementor ---
+        // Elementor height changes as it loads widgets; refresh helps re-calculate trigger positions
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 500);
     };
 
-    if (document.readyState === 'complete') { initBBTAnimations(); }
-    else { window.addEventListener('load', initBBTAnimations); }
+    // RUN LOGIC:
+    // If the window is already loaded, run. Otherwise wait for window load.
+    if (document.readyState === 'complete') {
+        initBBTAnimations();
+    } else {
+        window.addEventListener('load', initBBTAnimations);
+    }
 
-  })();
-  </script>
+})();
+</script>
+    <script>
+    (function(){
+      var t=document.getElementById('mobileNavToggle'),
+          h=document.getElementById('header'),
+          o=document.getElementById('mobileNavOverlay');
+      if(!t||!h)return;
+      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
+      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      t.addEventListener('click',toggle);
+      if(o)o.addEventListener('click',close);
+      h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
+      window.addEventListener('resize',function(){if(window.innerWidth>1024)close();});
+    })();
+    </script>
+
+    <!-- Smooth scroll for in-page anchor links (industry cards / hero secondary CTA) -->
+    <script>
+    (function(){
+      function getLenis(){ return window.__bbtLenis || null; }
+      document.querySelectorAll('a[href^="#"]').forEach(function(link){
+        link.addEventListener('click', function(e){
+          var id = link.getAttribute('href');
+          if(!id || id === '#') return;
+          var target = document.querySelector(id);
+          if(!target) return;
+          e.preventDefault();
+          var l = getLenis();
+          if(l && typeof l.scrollTo === 'function'){
+            l.scrollTo(target, { offset: -90 });
+          } else {
+            var y = target.getBoundingClientRect().top + window.pageYOffset - 90;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+    </script>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo">
+          <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
+        </a>
+        <p>Big Binary Tech delivers AI, ERP, and software solutions that power business growth with modern automation
+          and digital transformation.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+          </a>
+          <a href="https://twitter.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          </a>
+          <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-services">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="services.html">AI &amp; Automation</a></li>
+          <li><a href="services.html">Odoo ERP</a></li>
+          <li><a href="services.html">Custom Software</a></li>
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">POS Solutions</a></li>
+          <li><a href="services.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-solutions">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="solutions.html">Business Automation</a></li>
+          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
+          <li><a href="solutions.html">Retail &amp; POS</a></li>
+          <li><a href="solutions.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-industries">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="industries.html">Education</a></li>
+          <li><a href="industries.html">Healthcare</a></li>
+          <li><a href="industries.html">Retail</a></li>
+          <li><a href="industries.html">Manufacturing</a></li>
+          <li><a href="industries.html">Hospitality</a></li>
+          <li><a href="industries.html">Logistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Contact</h3>
+        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
+        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
+        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav class="footer-nav" style="display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:14px;"><a href="about.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">About</a><a href="services.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Services</a><a href="pricing.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Pricing</a><a href="careers.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Careers</a><a href="contact.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Contact</a></nav>
+      <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media Marketing & Brand Growth | Big Binary Tech</title>
-  
+  <title>Social Media Marketing | Big Binary Tech</title>
+  <link rel="icon" type="image/png" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
+  <link rel="apple-touch-icon" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
+  <meta name="description" content="ROI-focused social media marketing with Arabic campaigns, LinkedIn lead generation, paid ads, and analytics. 150+ campaigns managed. Free audit.">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -18,8 +21,9 @@
       --bbt-navy: #0f172a;
       --bbt-orange: #f59e0b;
       --bbt-orange-600: #d97706;
-      --bbt-coral: #E76F51; /* Primary for Social Media Page */
-      --bbt-teal: #2A9D8F;
+      --bbt-orange-glow: rgba(245, 158, 11, 0.25);
+      --bbt-coral: #f59e0b; /* aliased to brand orange: navy/orange system */
+      --bbt-teal: #0f172a;  /* aliased to brand navy */
       --bbt-white: #ffffff;
       --bbt-text: #334155;
       --bbt-muted: #64748b;
@@ -337,8 +341,8 @@
     }
     .hero-mesh {
       position: absolute; inset: 0;
-      background: radial-gradient(circle at 20% 30%, rgba(231, 111, 81, 0.1) 0%, transparent 40%),
-                  radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.1) 0%, transparent 40%);
+      background: radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.12) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.08) 0%, transparent 40%);
     }
     .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; position: relative; z-index: 5; margin-top: 80px; }
     .breadcrumb { font-size: 12px; color: var(--bbt-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: block; }
@@ -383,9 +387,14 @@
 
     /* --- BUTTONS --- */
     .btn { padding: 16px 32px; border-radius: 100px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.3s; cursor: pointer; border: none; font-size: 14px; }
-    .btn-coral { background: var(--bbt-coral); color: white; }
-    .btn-coral:hover { background: #d65a3d; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(231,111,81,0.3); }
+    .btn-coral { background: var(--bbt-orange); color: white; }
+    .btn-coral:hover { background: var(--bbt-orange-600); transform: translateY(-3px); box-shadow: 0 10px 25px var(--bbt-orange-glow); }
     .btn-outline-white { border: 2px solid white; color: white; }
+    .btn-outline-white:hover { border-color: var(--bbt-orange); color: var(--bbt-orange); transform: translateY(-3px); }
+
+    /* shared helpers (match solutions.html) */
+    .eyebrow { display:inline-block; font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--bbt-orange); margin-bottom:14px; }
+    .fade-up { } /* GSAP target: no base offset needed */
 
     @media (max-width: 1024px) {
       .hero-grid, .problem-grid, .gcc-stats-grid, .service-flex, .metrics-grid, .pricing-grid { grid-template-columns: 1fr; }
@@ -393,6 +402,227 @@
       .nav-links { display: none; }
     }
   </style>
+
+<style id="responsive-nav-patch">
+/* ===== Universal Responsive Mobile-Nav Patch (additive, desktop unchanged) ===== */
+.mobile-nav-toggle{
+  display:none; background:transparent; border:0; font-size:26px; line-height:1;
+  color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
+}
+.mobile-nav-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.5);
+  opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:1000;
+}
+@media (max-width:1024px){
+  .mobile-nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  .header .navbar, .header .nav-links{ display:flex !important; }
+  .header .navbar{
+    position:fixed; top:0; right:-100%; width:min(330px,86vw); height:100vh; height:100dvh;
+    background:#0b1020; flex-direction:column; justify-content:flex-start;
+    padding:96px 26px 40px; box-shadow:-8px 0 40px rgba(0,0,0,.45);
+    transition:right .35s ease; overflow-y:auto; z-index:1001;
+  }
+  .header.mobile-open .navbar{ right:0; }
+  .header .nav-links{ flex-direction:column; align-items:flex-start; gap:0; width:100%; }
+  .header .nav-links li{ width:100%; }
+  .header .nav-links a, .header .nav-links .nav-link-anchor{
+    color:#fff !important; text-shadow:none !important; display:block; width:100%;
+    padding:15px 0; font-size:17px; border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .header .mega-menu-wrapper{ display:none !important; }
+  .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
+  body.mobile-nav-open{ overflow:hidden; }
+  body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
+}
+    </style>
+
+<style id="responsive-content-patch">
+/* ===== Page-specific Responsive Content Patch (additive, desktop unchanged) ===== */
+@media (max-width:1024px){
+  /* Hero: stack two-column to single column, image below text */
+  .hero { min-height:auto; padding:120px 0 70px; }
+  .hero-grid { grid-template-columns:1fr; gap:40px; margin-top:30px; }
+  .hero-visual img { max-width:520px; margin:0 auto; display:block; }
+  /* Intermediate 2-col for grids that were 3+ cols */
+  .problem-grid, .gcc-stats-grid, .pricing-grid { grid-template-columns:repeat(2,1fr); }
+  .metrics-grid { grid-template-columns:repeat(2,1fr); }
+  .price-card.popular { transform:none; }
+  /* Reduce big section paddings */
+  .problem-section, .gcc-spotlight, .service-block, .metrics-section { padding:70px 0; }
+}
+
+@media (max-width:768px){
+  .hero { padding:110px 0 60px; }
+  .hero h1 { font-size:2.2rem; }
+  .hero p { font-size:1rem; }
+  .trust-bar { gap:14px; }
+  .hero-btns { display:flex; flex-wrap:wrap; gap:14px; }
+  /* All multi-column grids collapse to a single column */
+  .problem-grid, .gcc-stats-grid, .service-flex, .metrics-grid, .pricing-grid { grid-template-columns:1fr !important; }
+  .service-flex { gap:40px; }
+  .deliverables { grid-template-columns:1fr; }
+  .service-text h2 { font-size:2rem; }
+  .gcc-stat-box h2 { font-size:2.8rem; }
+  .metric-item h2 { font-size:2.4rem; }
+  .price-amount { font-size:2.2rem; }
+  /* Center-aligned heading blocks scale down */
+  .problem-section h2, .gcc-spotlight h2, .metrics-section h2 { font-size:2rem !important; }
+  /* Media never overflows */
+  .hero-visual img, .service-visual img, img { max-width:100%; height:auto; }
+}
+
+@media (max-width:480px){
+  .container { width:92%; }
+  .hero { padding:100px 0 50px; }
+  .hero h1 { font-size:1.85rem; }
+  .breadcrumb { font-size:11px; }
+  .trust-bar { font-size:11px; gap:10px; }
+  .hero-btns { gap:12px; }
+  /* Buttons full-width so they never overflow */
+  .hero-btns .btn { display:block; width:100%; text-align:center; }
+  .problem-card, .price-card { padding:30px 24px; }
+  .gcc-stat-box { padding:30px 24px; }
+  .service-text h2 { font-size:1.7rem; }
+  .gcc-stat-box h2 { font-size:2.4rem; }
+  .metric-item h2 { font-size:2.1rem; }
+  .problem-section h2, .gcc-spotlight h2, .metrics-section h2 { font-size:1.7rem !important; }
+  /* Final CTA section (inline-styled .hero) */
+  .hero h2 { font-size:2rem !important; }
+}
+    </style>
+
+<style id="smm-spec-patch">
+/* ===== Social Media Marketing spec sections (navy/orange design language) ===== */
+
+/* HERO trust bar pills + section CTA helper */
+.hero .trust-bar span { display:inline-flex; align-items:center; gap:7px; }
+.hero .trust-bar i { color:var(--bbt-orange); }
+.section-head { text-align:center; max-width:760px; margin:0 auto 10px; }
+.section-head h2 { font-size:clamp(2rem,4vw,2.8rem); font-weight:900; color:var(--bbt-navy); line-height:1.15; }
+.section-head p { font-size:1.1rem; color:var(--bbt-muted); margin-top:16px; }
+.sec-cta-wrap { margin-top:34px; }
+.deliverables li i { color:var(--bbt-orange); }
+.problem-card:hover { border-color:var(--bbt-orange); }
+.problem-card i { color:var(--bbt-orange); }
+.gcc-stat-box h2 { color:var(--bbt-orange); }
+.price-card.popular { border:3px solid var(--bbt-orange); }
+.price-card.popular .badge { position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:var(--bbt-orange); color:#fff; padding:6px 18px; border-radius:999px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:1px; }
+.price-card ul { list-style:none; padding:0; margin:18px 0 26px; display:grid; gap:10px; text-align:left; }
+.price-card ul li { display:flex; align-items:center; gap:10px; font-size:.92rem; color:var(--bbt-text); }
+.price-card ul li i { color:var(--bbt-orange); font-size:.85rem; }
+.deliverables.eight { grid-template-columns:1fr 1fr; }
+.platforms-row { display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 26px; }
+.platform-pill { font-size:.8rem; font-weight:700; color:var(--bbt-navy); background:var(--bbt-bg-soft); border:1px solid var(--bbt-border); padding:7px 14px; border-radius:999px; }
+.service-link { font-weight:800; color:var(--bbt-orange); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap .3s ease; }
+.service-link:hover { gap:14px; }
+
+/* SECTION 03: What We Offer (nav pills + funnel) */
+.offer-section { padding:100px 0; background:#fff; border-bottom:1px solid var(--bbt-border); }
+.offer-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin:44px 0; }
+.offer-pill { display:inline-flex; align-items:center; gap:10px; padding:14px 26px; border-radius:999px; background:var(--bbt-bg-soft); border:1px solid var(--bbt-border); color:var(--bbt-navy); font-weight:700; font-size:.95rem; text-decoration:none; transition:all .3s ease; }
+.offer-pill i { color:var(--bbt-orange); }
+.offer-pill:hover { border-color:var(--bbt-orange); background:rgba(245,158,11,0.08); transform:translateY(-3px); }
+.funnel { max-width:760px; margin:50px auto 0; display:flex; flex-direction:column; align-items:center; gap:0; }
+.funnel-step { display:flex; align-items:center; gap:18px; width:100%; max-width:var(--w,560px); padding:20px 28px; border-radius:18px; background:radial-gradient(circle at 30% 30%, #1e293b, var(--bbt-navy)); color:#fff; font-weight:800; font-size:1.05rem; box-shadow:0 18px 40px rgba(15,23,42,0.12); }
+.funnel-step .fn-num { width:36px; height:36px; flex:0 0 36px; display:grid; place-items:center; border-radius:50%; background:rgba(245,158,11,0.2); color:var(--bbt-orange); font-size:.9rem; }
+.funnel-step span.fn-label { flex:1; }
+.funnel-step i.fn-icon { color:var(--bbt-orange); }
+.funnel-arrow { color:var(--bbt-orange); font-size:1.4rem; margin:10px 0; }
+
+/* SECTION 07: LinkedIn block uses .service-block (already styled) */
+
+/* SECTION 09: How We Work (5 steps) */
+.process-section { padding:100px 0; background:var(--bbt-bg-soft); background-image:radial-gradient(at 100% 0%, rgba(245,158,11,0.05) 0px, transparent 50%); }
+.process-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:22px; margin-top:60px; }
+.process-step { background:#fff; border:1px solid var(--bbt-border); border-radius:24px; padding:34px 26px; transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease; }
+.process-step:hover { transform:translateY(-8px); border-color:var(--bbt-orange); box-shadow:0 30px 60px rgba(15,23,42,0.08); }
+.process-num { width:52px; height:52px; display:grid; place-items:center; border-radius:14px; background:rgba(245,158,11,0.1); color:var(--bbt-orange); font-weight:900; font-size:1.2rem; margin-bottom:22px; }
+.process-step h3 { font-size:1.15rem; color:var(--bbt-navy); font-weight:800; margin-bottom:12px; }
+.process-step p { font-size:.92rem; color:var(--bbt-muted); line-height:1.6; }
+
+/* SECTION 11: Social proof / client results / perf stats */
+.proof-section { padding:100px 0; background:var(--bbt-navy); color:#fff; }
+.results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:50px; }
+.result-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(12px); border-radius:24px; padding:38px; }
+.result-card .r-pill { display:inline-block; padding:7px 16px; background:rgba(245,158,11,0.18); color:var(--bbt-orange); border-radius:999px; font-weight:800; font-size:.78rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:20px; }
+.result-card p { color:rgba(255,255,255,0.88); font-size:1.05rem; line-height:1.7; font-style:italic; }
+.perf-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:50px; text-align:center; }
+.perf-item .pf-num { font-size:2.6rem; font-weight:900; color:var(--bbt-orange); line-height:1; }
+.perf-item .pf-label { font-size:.9rem; color:rgba(255,255,255,0.7); margin-top:8px; }
+
+/* FAQ accordion (lifted from solutions/industries) */
+.faq-section { padding:100px 0; background:var(--bbt-bg-soft); }
+.faq-container { max-width:900px; margin:50px auto 0; }
+.faq-item { border-bottom:1px solid #e2e8f0; padding:25px 0; cursor:pointer; }
+.faq-question { display:flex; justify-content:space-between; align-items:center; gap:20px; font-weight:700; color:var(--bbt-navy); font-size:1.2rem; }
+.faq-question i { transition:transform .3s ease; font-size:.9rem; flex-shrink:0; }
+.faq-answer { max-height:0; overflow:hidden; transition:all .4s cubic-bezier(0.4,0,0.2,1); color:#64748b; line-height:1.6; margin-top:0; }
+.faq-item.active .faq-answer { max-height:600px; margin-top:15px; }
+.faq-item.active i { transform:rotate(180deg); color:var(--bbt-orange); }
+
+/* SECTION 12: Related services */
+.related-section { padding:100px 0; background:#fff; }
+.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+.related-card { position:relative; padding:40px 34px; background:#fff; border:1px solid var(--bbt-orange); border-radius:24px; text-decoration:none; transition:all .4s ease; box-shadow:0 8px 32px rgba(0,0,0,0.05); display:flex; flex-direction:column; }
+.related-card:hover { transform:translateY(-10px); background:var(--bbt-navy); border-color:var(--bbt-navy); }
+.related-type { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--bbt-orange); margin-bottom:16px; }
+.related-card i { font-size:34px; color:var(--bbt-orange); margin-bottom:22px; transition:.4s; }
+.related-card h3 { font-size:1.25rem; font-weight:700; color:var(--bbt-navy); margin-bottom:14px; transition:.4s; line-height:1.4; }
+.related-card p { font-size:.95rem; color:var(--bbt-muted); margin-bottom:auto; transition:.4s; }
+.related-card .related-go { margin-top:24px; font-weight:800; color:var(--bbt-orange); font-size:.9rem; transition:.4s; }
+.related-card:hover h3, .related-card:hover .related-type, .related-card:hover .related-go, .related-card:hover i, .related-card:hover p { color:#fff; }
+
+/* Sticky mobile CTA */
+.sticky-expert { display:none; position:fixed; left:16px; right:16px; bottom:16px; z-index:1500; text-align:center; padding:15px; border-radius:999px; background:var(--bbt-orange); color:#fff; font-weight:700; text-decoration:none; box-shadow:0 12px 30px rgba(245,158,11,0.4); }
+
+/* Responsive for new spec sections */
+@media (max-width:1024px){
+  .process-grid { grid-template-columns:repeat(2,1fr); }
+  .results-grid { grid-template-columns:1fr; }
+  .perf-grid { grid-template-columns:repeat(2,1fr); }
+  .offer-section, .process-section, .proof-section, .faq-section, .related-section { padding:70px 0; }
+  .related-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:768px){
+  .process-grid, .related-grid { grid-template-columns:1fr; }
+  .perf-grid { grid-template-columns:repeat(2,1fr); }
+  .deliverables.eight { grid-template-columns:1fr; }
+  .funnel-step { max-width:100%; font-size:.95rem; padding:18px 20px; }
+  .offer-pills { gap:12px; }
+  .sticky-expert { display:block; }
+  .faq-question { font-size:1.05rem; align-items:flex-start; }
+  .faq-question i { margin-top:5px; }
+}
+@media (max-width:480px){
+  .perf-grid { grid-template-columns:1fr; }
+  .result-card { padding:28px 24px; }
+  .process-step { padding:28px 22px; }
+  .related-card { padding:32px 26px; }
+  .offer-pill { width:100%; justify-content:center; }
+}
+</style>
+
+<style id="shared-footer-patch">
+/* ===== Canonical Site Footer (identical across all pages) ===== */
+.site-footer{ padding:72px 0 40px; background:#f8fafc; color:#334155; font-family:"Inter",system-ui,-apple-system,sans-serif; }
+.site-footer .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:32px; align-items:start; }
+.site-footer .footer-brand .logo{ display:inline-block; margin-bottom:18px; filter:none; }
+.site-footer .footer-brand .logo img{ height:100px; width:auto; display:block; filter:none; }
+.site-footer .footer-brand p{ max-width:42ch; line-height:1.8; margin-bottom:22px; color:#64748b; font-size:1rem; }
+.site-footer .footer-social{ display:flex; gap:12px; flex-wrap:wrap; }
+.site-footer .social-icon{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(15,23,42,0.1); background:rgba(255,255,255,0.06); color:#0f172a; text-decoration:none; transition:background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease; }
+.site-footer .social-icon svg{ width:18px; height:18px; fill:currentColor; }
+.site-footer .social-icon:hover{ background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.4); color:#f59e0b; transform:translateY(-2px); }
+.site-footer .footer-col h3{ margin:0 0 20px; font-size:1.1rem; color:#0f172a; font-weight:700; }
+.site-footer .footer-col ul{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.site-footer .footer-col li a, .site-footer .footer-contact .contact-line a{ color:#64748b; text-decoration:none; transition:color .25s ease; font-size:1rem; }
+.site-footer .footer-col li a:hover, .site-footer .footer-contact .contact-line a:hover{ color:#f59e0b; }
+.site-footer .footer-contact .contact-line{ margin:0 0 12px; color:#64748b; line-height:1.6; font-size:1rem; }
+.site-footer .footer-bottom{ margin-top:48px; padding-top:24px; text-align:center; }
+.site-footer .footer-bottom p{ margin:0; font-size:.875rem; color:#64748b; }
+@media (max-width:1100px){ .site-footer .footer-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } .site-footer .footer-brand{ grid-column:1 / -1; } }
+@media (max-width:640px){ .site-footer .footer-grid{ grid-template-columns:1fr; } .site-footer{ padding:56px 0 32px; } .site-footer .footer-brand .logo img{ height:80px; } }
+</style>
 </head>
 <body>
 
@@ -474,7 +704,7 @@
           </div>
           <div class="mega-card-text">
             <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
-            <a href="insights.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="blogs.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -500,15 +730,17 @@
     </div>
   </div>
 </li>
-        <li><a href="insights.html">Insights</a></li>
+        <li><a href="blogs.html">Insights</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <!-- CTA -->
     <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
   </div>
 </header>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <!-- SECTION 01: HERO -->
   <section class="hero">
@@ -516,21 +748,24 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-text">
-          <span class="breadcrumb">Home > Services > Social Media Marketing</span>
-          <h1>Turn Social Media Into a <span style="color:var(--bbt-orange)">Revenue Channel.</span></h1>
-          <p>Not just a posting schedule. We build social strategies for GCC, USA, and UK that attract followers, generate high-quality leads, and grow your brand ROI.</p>
+          <span class="breadcrumb">Home &gt; Services &gt; Social Media Marketing &amp; Brand Growth</span>
+          <h1>Social Media Marketing &amp; Brand <span style="color:var(--bbt-orange)">Growth</span> for GCC, USA &amp; UK</h1>
+          <p>We turn your social media into a revenue channel, not just a posting schedule. From Arabic-ready content campaigns to LinkedIn lead generation, we build social strategies that attract followers, generate leads, and grow revenue.</p>
           <div class="trust-bar">
-            <span><i class="fas fa-bullhorn"></i> 150+ Campaigns</span>
-            <span><i class="fas fa-globe"></i> GCC · USA · UK</span>
-            <span><i class="fas fa-chart-line"></i> ROI Focused</span>
+            <span><i class="fas fa-bullhorn"></i> 150+ Campaigns Managed</span>
+            <span><i class="fas fa-location-dot"></i> GCC</span>
+            <span><i class="fas fa-location-dot"></i> USA</span>
+            <span><i class="fas fa-location-dot"></i> UK</span>
+            <span><i class="fas fa-certificate"></i> PSEB Registered</span>
+            <span><i class="fas fa-chart-line"></i> ROI-Focused</span>
           </div>
           <div class="hero-btns">
-            <a href="#contact" class="btn btn-coral">Get Free Social Audit</a>
-            <a href="#process" class="btn btn-outline-white">How It Works</a>
+            <a href="contact.html" class="btn btn-coral">Get a Free Social Media Audit</a>
+            <a href="#how-we-work" class="btn btn-outline-white">See How It Works</a>
           </div>
         </div>
         <div class="hero-visual">
-            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/social-icons.avif" style="width:100%; border-radius:30px; box-shadow: 0 0 50px rgba(231,111,81,0.2);" alt="Social Media">
+            <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/social-icons.avif" style="width:100%; border-radius:30px; box-shadow: 0 0 50px rgba(245,158,11,0.25);" alt="Social media marketing funnel">
         </div>
       </div>
     </div>
@@ -539,13 +774,42 @@
   <!-- SECTION 02: PROBLEMS -->
   <section class="problem-section">
     <div class="container">
-      <div style="text-align:center;">
-        <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--bbt-navy);">Does Any of This Sound Familiar?</h2>
+      <div class="section-head">
+        <span class="eyebrow">The Problems We Solve</span>
+        <h2>Does Any of This Sound Familiar?</h2>
       </div>
       <div class="problem-grid">
-        <div class="problem-card"><i class="fas fa-thumbs-down"></i><h3>Likes but Zero Sales</h3><p>Followers scroll past. Comments don't convert. You're building an audience that never buys.</p></div>
-        <div class="problem-card"><i class="fas fa-fire"></i><h3>Burning Ad Budget</h3><p>Spending on Meta ads but can't trace a single sale back to a specific campaign.</p></div>
-        <div class="problem-card"><i class="fas fa-language"></i><h3>Culture Gap</h3><p>You need Arabic content but your agency uses literal translations that miss the cultural nuances.</p></div>
+        <div class="problem-card"><i class="fas fa-thumbs-down"></i><h3>Your social media posts get likes but zero sales</h3><p>Followers scroll past. Comments don't convert. You're building an audience that never buys.</p></div>
+        <div class="problem-card"><i class="fas fa-fire"></i><h3>Your ad budget is burning with no ROI</h3><p>You're spending on Facebook and Instagram ads but can't trace a single sale back to a campaign.</p></div>
+        <div class="problem-card"><i class="fas fa-language"></i><h3>You need Arabic content but your agency doesn't understand the culture</h3><p>Translations are literal. Cultural references are wrong.</p></div>
+        <div class="problem-card"><i class="fab fa-linkedin"></i><h3>Your LinkedIn is a ghost town</h3><p>Decision-makers don't see your content. Engagement remains low.</p></div>
+        <div class="problem-card"><i class="fas fa-magnifying-glass-chart"></i><h3>You have no idea what's working</h3><p>Reports contain numbers but no actionable insights.</p></div>
+        <div class="problem-card"><i class="fas fa-clock"></i><h3>You don't have time to manage social media</h3><p>Content creation, engagement, graphics, and ads consume too much time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03: WHAT WE OFFER -->
+  <section class="offer-section" id="what-we-offer">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Social Media That Grows Your Business, Not Just Your Follower Count</h2>
+        <p>Social media isn't about posting pretty pictures. It's about building a predictable growth engine. We combine organic content strategy, paid advertising, and data-driven analytics to transform social channels into revenue-generating assets.</p>
+      </div>
+      <div class="offer-pills">
+        <a href="#social-media-strategy" class="offer-pill"><i class="fas fa-pen-nib"></i> Social Media Strategy &amp; Content Creation</a>
+        <a href="#paid-advertising" class="offer-pill"><i class="fas fa-bullseye"></i> Paid Advertising &amp; Lead Generation</a>
+        <a href="#linkedin-analytics" class="offer-pill"><i class="fab fa-linkedin"></i> LinkedIn Marketing, Analytics &amp; Reporting</a>
+      </div>
+      <div class="funnel" aria-label="Social media growth funnel">
+        <div class="funnel-step" style="--w:620px;"><span class="fn-num">1</span><span class="fn-label">Awareness</span><i class="fas fa-eye fn-icon"></i></div>
+        <div class="funnel-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="funnel-step" style="--w:540px;"><span class="fn-num">2</span><span class="fn-label">Engagement</span><i class="fas fa-heart fn-icon"></i></div>
+        <div class="funnel-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="funnel-step" style="--w:460px;"><span class="fn-num">3</span><span class="fn-label">Leads</span><i class="fas fa-filter fn-icon"></i></div>
+        <div class="funnel-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="funnel-step" style="--w:380px;"><span class="fn-num">4</span><span class="fn-label">Customers</span><i class="fas fa-handshake fn-icon"></i></div>
       </div>
     </div>
   </section>
@@ -553,15 +817,18 @@
   <!-- SECTION 04: GCC SPOTLIGHT -->
   <section class="gcc-spotlight">
     <div class="container">
-      <div style="text-align: center;">
-        <span class="hero-tag" style="color:var(--bbt-coral)">Built for GCC</span>
-        <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--bbt-navy); margin-top: 10px;">Arabic Social Media Expertise</h2>
-        <p style="max-width: 800px; margin: 20px auto;">With 60% of GCC users preferring Arabic content, we create Arabic-first campaigns with RTL design for Snapchat MENA, TikTok Arabia, and Instagram.</p>
+      <div class="section-head">
+        <span class="eyebrow">Built for the GCC Market</span>
+        <h2>Arabic Social Media Campaigns &amp; Local Platform Expertise for UAE and Saudi Arabia</h2>
+        <p>With 60% of GCC social media users preferring Arabic content, businesses posting only in English often miss local audiences. We create Arabic-first campaigns with RTL design, culturally relevant messaging, and platform expertise across Snapchat MENA, TikTok Arabia, and Instagram Arabic.</p>
       </div>
       <div class="gcc-stats-grid">
-        <div class="gcc-stat-box"><h2>60%</h2><p>Prefer Arabic Content</p></div>
-        <div class="gcc-stat-box"><h2>MENA</h2><p>Snapchat & TikTok Focus</p></div>
-        <div class="gcc-stat-box"><h2>Local</h2><p>Influencer Network Access</p></div>
+        <div class="gcc-stat-box"><h2>60%</h2><p>GCC users prefer Arabic content</p></div>
+        <div class="gcc-stat-box"><h2>MENA</h2><p>Snapchat + TikTok MENA growth</p></div>
+        <div class="gcc-stat-box"><h2>Local</h2><p>Influencer network access</p></div>
+      </div>
+      <div class="sec-cta-wrap" style="text-align:center;">
+        <a href="contact.html" class="btn btn-coral">Get a GCC Social Media Strategy</a>
       </div>
     </div>
   </section>
@@ -570,78 +837,297 @@
   <section class="service-block" id="social-media-strategy">
     <div class="container service-flex">
       <div class="service-text reveal">
-        <span class="hero-tag" style="color:var(--bbt-coral)">Step 01</span>
-        <h2>Social Strategy & Content</h2>
-        <p>A content engine that builds trust and keeps you top-of-mind. Every post is planned, designed, and written to move ideal customers closer to a purchase.</p>
-        <ul class="deliverables">
-          <li><i class="fas fa-check"></i> Monthly Content Strategy</li>
-          <li><i class="fas fa-check"></i> Branded Graphic Design</li>
-          <li><i class="fas fa-check"></i> Arabic & English Copy</li>
-          <li><i class="fas fa-check"></i> Community Management</li>
+        <span class="eyebrow">Social Media Strategy &amp; Content Creation</span>
+        <h2>Social Media Strategy &amp; Content Creation</h2>
+        <p style="font-weight:700;color:var(--bbt-navy);">A content engine that builds trust and keeps you top-of-mind.</p>
+        <p>We create social media strategies rooted in business goals rather than vanity metrics. Every post is planned, designed, and written to attract ideal customers and move them closer to purchase.</p>
+        <ul class="deliverables eight">
+          <li><i class="fas fa-check"></i> Monthly content strategy</li>
+          <li><i class="fas fa-check"></i> Editorial calendar</li>
+          <li><i class="fas fa-check"></i> Branded graphic design</li>
+          <li><i class="fas fa-check"></i> Arabic &amp; English copywriting</li>
+          <li><i class="fas fa-check"></i> Hashtag research</li>
+          <li><i class="fas fa-check"></i> Community management</li>
+          <li><i class="fas fa-check"></i> Influencer outreach</li>
+          <li><i class="fas fa-check"></i> Monthly reviews</li>
         </ul>
+        <div class="platforms-row">
+          <span class="platform-pill">Instagram</span><span class="platform-pill">Facebook</span><span class="platform-pill">LinkedIn</span><span class="platform-pill">TikTok</span><span class="platform-pill">Snapchat</span><span class="platform-pill">X/Twitter</span>
+        </div>
+        <a href="contact.html" class="service-link">Build My Content Strategy <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-visual">
-        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/service-visuals.avif" style="width:100%; border-radius:24px;">
+        <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/service-visuals.avif" style="width:100%; border-radius:24px;" alt="Social media content strategy">
       </div>
     </div>
   </section>
 
   <!-- SECTION 06: PAID ADS -->
-  <section class="service-block">
+  <section class="service-block" id="paid-advertising">
     <div class="container service-flex reverse">
       <div class="service-text reveal">
-        <span class="hero-tag" style="color:var(--bbt-coral)">Step 02</span>
-        <h2>Paid Advertising & Lead Gen</h2>
-        <p>We launch and optimize paid social campaigns that generate leads and sales through Meta, LinkedIn, TikTok, and Snapchat with clear ROI targets.</p>
-        <ul class="deliverables">
-          <li><i class="fas fa-check"></i> Audience Research</li>
-          <li><i class="fas fa-check"></i> Conversion Tracking</li>
-          <li><i class="fas fa-check"></i> A/B Creative Testing</li>
-          <li><i class="fas fa-check"></i> CRM Integrations</li>
+        <span class="eyebrow">Paid Advertising &amp; Lead Generation</span>
+        <h2>Paid Advertising &amp; Lead Generation Campaigns</h2>
+        <p style="font-weight:700;color:var(--bbt-navy);">Every ad dollar spent with a clear ROI target.</p>
+        <p>We launch and optimize paid social campaigns that generate leads and sales through Meta, LinkedIn, TikTok, Snapchat, and Google Ads.</p>
+        <ul class="deliverables eight">
+          <li><i class="fas fa-check"></i> Campaign strategy</li>
+          <li><i class="fas fa-check"></i> Audience research</li>
+          <li><i class="fas fa-check"></i> Creative design</li>
+          <li><i class="fas fa-check"></i> Arabic &amp; English ad copy</li>
+          <li><i class="fas fa-check"></i> Conversion tracking</li>
+          <li><i class="fas fa-check"></i> A/B testing</li>
+          <li><i class="fas fa-check"></i> CRM integrations</li>
+          <li><i class="fas fa-check"></i> Monthly reporting</li>
         </ul>
+        <div class="platforms-row">
+          <span class="platform-pill">Meta Ads</span><span class="platform-pill">LinkedIn Ads</span><span class="platform-pill">TikTok Ads</span><span class="platform-pill">Snapchat Ads</span><span class="platform-pill">Google Ads</span>
+        </div>
+        <a href="contact.html" class="service-link">Launch My Lead Generation Campaign <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="service-visual">
-        <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/service-visuals2.avif" style="width:100%; border-radius:24px;">
+        <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/service-visuals2.avif" style="width:100%; border-radius:24px;" alt="Paid advertising and lead generation">
       </div>
     </div>
   </section>
 
-  <!-- SECTION 08: METRICS -->
-  <section class="metrics-section">
+  <!-- SECTION 07: LINKEDIN MARKETING, ANALYTICS & REPORTING -->
+  <section class="service-block" id="linkedin-analytics">
+    <div class="container service-flex">
+      <div class="service-text reveal">
+        <span class="eyebrow">LinkedIn Marketing, Analytics &amp; Reporting</span>
+        <h2>LinkedIn Marketing, Analytics &amp; Reporting</h2>
+        <p style="font-weight:700;color:var(--bbt-navy);">LinkedIn is where B2B buyers live, and we make sure they find you.</p>
+        <p>We transform LinkedIn into a lead-generation machine using content strategy, outreach campaigns, sponsored content, and advanced analytics.</p>
+        <ul class="deliverables eight">
+          <li><i class="fas fa-check"></i> Company page optimization</li>
+          <li><i class="fas fa-check"></i> Personal branding</li>
+          <li><i class="fas fa-check"></i> Thought leadership content</li>
+          <li><i class="fas fa-check"></i> LinkedIn Ads</li>
+          <li><i class="fas fa-check"></i> Sales Navigator outreach</li>
+          <li><i class="fas fa-check"></i> Analytics dashboards</li>
+          <li><i class="fas fa-check"></i> Competitor benchmarking</li>
+        </ul>
+        <div class="platforms-row">
+          <span class="platform-pill">LinkedIn</span><span class="platform-pill">LinkedIn Ads</span><span class="platform-pill">Sales Navigator</span><span class="platform-pill">Analytics Dashboard</span>
+        </div>
+        <a href="contact.html" class="service-link">Grow My LinkedIn Presence <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/social-icons.avif" style="width:100%; border-radius:24px;" alt="LinkedIn marketing and analytics">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 08: ANALYTICS DASHBOARD PREVIEW -->
+  <section class="metrics-section" id="analytics">
     <div class="container">
-      <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900;">Zero Guesswork. Real-Time Analytics.</h2>
+      <h2 style="text-align: center; font-size: clamp(2rem,4vw,2.5rem); font-weight: 900; max-width:820px; margin:0 auto;">See Exactly What You're Getting: Real-Time Analytics, Zero Guesswork</h2>
+      <p style="text-align:center; max-width:720px; margin:18px auto 0; color:rgba(255,255,255,0.75);">Our dashboards reveal exactly which content drives leads, which campaigns deliver ROI, and where to scale investment.</p>
       <div class="metrics-grid">
-        <div class="metric-item"><h2>45k</h2><p>Avg. Campaign Reach</p></div>
+        <div class="metric-item"><h2>45,200</h2><p>Campaign Reach</p></div>
         <div class="metric-item"><h2>4.8%</h2><p>Engagement Rate</p></div>
-        <div class="metric-item"><h2>3.2x</h2><p>Average ROAS</p></div>
+        <div class="metric-item"><h2>127</h2><p>Leads Generated</p></div>
         <div class="metric-item"><h2>$12</h2><p>Cost Per Lead</p></div>
       </div>
+      <div class="sec-cta-wrap" style="text-align:center;">
+        <a href="contact.html" class="btn btn-coral">Get a Sample Report</a>
+      </div>
     </div>
   </section>
 
-  <!-- SECTION 10: PRICING -->
-  <section class="service-block">
+  <!-- SECTION 09: HOW WE WORK -->
+  <section class="process-section" id="how-we-work">
     <div class="container">
-      <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900; color:var(--bbt-navy); margin-bottom: 50px;">Social Growth Packages</h2>
-      <div class="pricing-grid">
-        <div class="price-card"><h3>Starter</h3><div class="price-amount">$800<span style="font-size:14px">/mo</span></div><p>2 Platforms · 8 Posts · Basic Analytics</p></div>
-        <div class="price-card popular"><h3>Growth</h3><div class="price-amount">$1,800<span style="font-size:14px">/mo</span></div><p>4 Platforms · 16 Posts · Paid Ad Mgmt</p></div>
-        <div class="price-card"><h3>Enterprise</h3><div class="price-amount">Custom</div><p>All Platforms · Unlimited Content · Dedicated Manager</p></div>
+      <div class="section-head">
+        <span class="eyebrow">How We Work</span>
+        <h2>How We Grow Your Social Media, Start to Finish</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal"><div class="process-num">01</div><h3>Free Audit</h3><p>30-minute review of current presence, competitors, and audience.</p></div>
+        <div class="process-step reveal"><div class="process-num">02</div><h3>Strategy &amp; Setup</h3><p>Tracking setup, content calendar creation, and account configuration.</p></div>
+        <div class="process-step reveal"><div class="process-num">03</div><h3>Content &amp; Campaigns</h3><p>Content publishing, ad campaigns, and community engagement.</p></div>
+        <div class="process-step reveal"><div class="process-num">04</div><h3>Optimize &amp; Scale</h3><p>A/B testing, budget optimization, and campaign scaling.</p></div>
+        <div class="process-step reveal"><div class="process-num">05</div><h3>Report &amp; Refine</h3><p>Monthly reporting and ongoing improvement.</p></div>
+      </div>
+      <div class="sec-cta-wrap" style="text-align:center;">
+        <a href="contact.html" class="btn btn-coral">Start With a Free Social Media Audit</a>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="hero" style="height: 60vh; background: var(--bbt-coral);">
-    <div class="container" style="text-align: center;">
-      <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 20px;">Ready to Scale Your Brand?</h2>
-      <p style="color: white; font-weight: 600; margin-bottom: 40px; font-size: 1.2rem;">Book a free 30-minute social media audit with our experts today.</p>
-      <div class="hero-btns" style="justify-content: center;">
-        <a href="contact.html" class="btn" style="background:var(--bbt-navy); color:white;">Book My Free Audit</a>
-        <a href="#" class="btn" style="background:white; color:var(--bbt-coral);">Download Social Guide</a>
+  <!-- SECTION 10: PRICING & PACKAGES -->
+  <section class="service-block" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Pricing &amp; Packages</span>
+        <h2>Social Growth Packages</h2>
+      </div>
+      <div class="pricing-grid" style="margin-top:50px;">
+        <div class="price-card">
+          <h3>Starter</h3>
+          <p style="color:var(--bbt-muted);font-size:.9rem;">For businesses beginning their social media journey.</p>
+          <div class="price-amount">$800<span style="font-size:14px">/mo</span></div>
+          <ul>
+            <li><i class="fas fa-check"></i> 2 platforms</li>
+            <li><i class="fas fa-check"></i> 8 posts/month</li>
+            <li><i class="fas fa-check"></i> Basic analytics</li>
+            <li><i class="fas fa-check"></i> Community management</li>
+          </ul>
+          <a href="contact.html" class="btn btn-coral" style="width:100%;text-align:center;">Get Started</a>
+        </div>
+        <div class="price-card popular">
+          <span class="badge">Most Popular</span>
+          <h3>Growth</h3>
+          <div class="price-amount">$1,800<span style="font-size:14px">/mo</span></div>
+          <ul>
+            <li><i class="fas fa-check"></i> 4 platforms</li>
+            <li><i class="fas fa-check"></i> 16 posts/month</li>
+            <li><i class="fas fa-check"></i> Paid ad management</li>
+            <li><i class="fas fa-check"></i> Lead generation</li>
+            <li><i class="fas fa-check"></i> Monthly reporting</li>
+          </ul>
+          <a href="contact.html" class="btn btn-coral" style="width:100%;text-align:center;">Get Started</a>
+        </div>
+        <div class="price-card">
+          <h3>Enterprise</h3>
+          <div class="price-amount">Custom</div>
+          <ul>
+            <li><i class="fas fa-check"></i> All platforms</li>
+            <li><i class="fas fa-check"></i> Unlimited content</li>
+            <li><i class="fas fa-check"></i> Full ad management</li>
+            <li><i class="fas fa-check"></i> LinkedIn B2B marketing</li>
+            <li><i class="fas fa-check"></i> Arabic campaigns</li>
+            <li><i class="fas fa-check"></i> Dedicated manager</li>
+          </ul>
+          <a href="contact.html" class="btn btn-coral" style="width:100%;text-align:center;">Talk to Us</a>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- SECTION 11: SOCIAL PROOF + PERFORMANCE STATS -->
+  <section class="proof-section" id="results">
+    <div class="container">
+      <div class="section-head" style="color:#fff;">
+        <span class="eyebrow">Social Proof</span>
+        <h2 style="color:#fff;">Results Our Clients Have Seen</h2>
+      </div>
+      <div class="results-grid">
+        <div class="result-card reveal">
+          <span class="r-pill">GCC Client</span>
+          <p>Follower growth tripled and 15+ WhatsApp leads generated weekly.</p>
+        </div>
+        <div class="result-card reveal">
+          <span class="r-pill">USA Client</span>
+          <p>47 qualified B2B leads generated in the first month.</p>
+        </div>
+        <div class="result-card reveal">
+          <span class="r-pill">UK Client</span>
+          <p>30% reduction in ad spend and doubled engagement.</p>
+        </div>
+      </div>
+      <div class="perf-grid">
+        <div class="perf-item"><div class="pf-num">150+</div><div class="pf-label">Campaigns Managed</div></div>
+        <div class="perf-item"><div class="pf-num">3.2x</div><div class="pf-label">Average ROAS</div></div>
+        <div class="perf-item"><div class="pf-num">40%</div><div class="pf-label">Average CPL Reduction</div></div>
+        <div class="perf-item"><div class="pf-num">24/7</div><div class="pf-label">Campaign Monitoring</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11b: FAQ -->
+  <section class="faq-section" id="faqs">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">How much does social media marketing cost? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Our packages start at $800/month for the Starter plan and $1,800/month for the most popular Growth plan, with custom Enterprise pricing for full ad management, LinkedIn B2B, and Arabic campaigns. Ad spend is separate and always transparent. Book a free audit and we'll recommend the right fit for your goals.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How long before I see results? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Organic engagement typically improves within the first 4 to 6 weeks as we publish consistent, on-strategy content. Paid lead generation can produce qualified leads within the first month, and we report on performance monthly so you always know what's working.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Which platforms should I use? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">It depends on your audience. We work across Instagram, Facebook, LinkedIn, TikTok, Snapchat, and X/Twitter, plus Snapchat MENA and TikTok Arabia for GCC markets. During your free audit we identify the platforms where your customers actually are so budget isn't wasted.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can you create Arabic content? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes. We create Arabic-first campaigns with RTL design, culturally relevant messaging, and native copywriting rather than literal translations. With 60% of GCC users preferring Arabic content, this is core to how we win local audiences.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How is ad spend handled? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Ad spend is billed directly to your own ad accounts and kept separate from our management fee, so you retain full ownership and transparency. We set clear ROI targets, track conversions, and optimize budget allocation across campaigns every month.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I track results? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">You get real-time analytics dashboards showing campaign reach, engagement rate, leads generated, and cost per lead, plus a monthly report with actionable insights, not just numbers. You'll always know which content and campaigns drive ROI.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I pause or cancel? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes. Our plans are flexible. You can scale up, pause, or cancel with notice. There are no long-term lock-ins designed to trap you. We'd rather keep you because the results speak for themselves.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you work outside the GCC? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Absolutely. While we have deep GCC and Arabic expertise, we manage campaigns for clients across the USA and UK as well, covering English-language strategy, LinkedIn B2B lead generation, and paid advertising in those markets.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA BANNER -->
+  <section class="hero" style="min-height:auto; height:auto; padding:90px 0; background:var(--bbt-navy);">
+    <div class="hero-mesh"></div>
+    <div class="container" style="text-align: center; position:relative; z-index:5;">
+      <h2 style="font-size: clamp(2rem,5vw,3rem); font-weight: 900; margin-bottom: 20px; line-height:1.15;">Ready to Turn Social Media Into a Revenue Channel?</h2>
+      <p style="color: rgba(255,255,255,0.8); font-weight: 500; margin: 0 auto 36px; font-size: 1.15rem; max-width:680px;">Book a free 30-minute social media audit. We review your current presence, analyze competitors, and provide a clear growth plan before any commitment.</p>
+      <div class="hero-btns" style="justify-content: center; display:flex; flex-wrap:wrap; gap:16px;">
+        <a href="contact.html" class="btn btn-coral">Book Your Free Social Media Audit</a>
+        <a href="e-books.html" class="btn btn-outline-white">Download Our Social Media Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12: RELATED SERVICES -->
+  <section class="related-section" id="related-services">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Related Services</span>
+        <h2 style="font-size:clamp(1.8rem,3.5vw,2.4rem);">You Might Also Need</h2>
+      </div>
+      <div class="related-grid">
+        <a href="services.html" class="related-card fade-up">
+          <div class="related-type">Service</div>
+          <i class="fas fa-code"></i>
+          <h3>Website Development</h3>
+          <p>Fast, modern websites that convert visitors into customers.</p>
+          <span class="related-go">Explore Service →</span>
+        </a>
+        <a href="digital-transformation.html" class="related-card fade-up">
+          <div class="related-type">Service</div>
+          <i class="fas fa-robot"></i>
+          <h3>AI Automations &amp; Integrations</h3>
+          <p>Automate workflows and connect your marketing tools.</p>
+          <span class="related-go">Explore Service →</span>
+        </a>
+        <a href="social-media-marketing.html" class="related-card fade-up">
+          <div class="related-type">Current Page</div>
+          <i class="fas fa-bullhorn"></i>
+          <h3>Social Media Marketing &amp; Brand Growth</h3>
+          <p>You're here: ROI-focused social campaigns for GCC, USA &amp; UK.</p>
+          <span class="related-go">View Service →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky mobile CTA -->
+  <a href="contact.html" class="sticky-expert">Get a Free Social Media Audit</a>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
@@ -649,20 +1135,22 @@
     // Navbar Accordion JS
     const resBtn = document.getElementById("resources-btn");
     const megaPanel = document.getElementById("mega-menu-panel");
-    const toggleIcon = resBtn.querySelector(".toggle-icon");
+    if (resBtn && megaPanel) {
+        const toggleIcon = resBtn.querySelector(".toggle-icon");
 
-    resBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        megaPanel.classList.toggle("is-open");
-        toggleIcon.classList.toggle("rotate-icon");
-    });
+        resBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            megaPanel.classList.toggle("is-open");
+            if (toggleIcon) toggleIcon.classList.toggle("rotate-icon");
+        });
 
-    document.addEventListener("click", (e) => {
-        if (!megaPanel.contains(e.target) && e.target !== resBtn) {
-            megaPanel.classList.remove("is-open");
-            toggleIcon.classList.remove("rotate-icon");
-        }
-    });
+        document.addEventListener("click", (e) => {
+            if (!megaPanel.contains(e.target) && e.target !== resBtn) {
+                megaPanel.classList.remove("is-open");
+                if (toggleIcon) toggleIcon.classList.remove("rotate-icon");
+            }
+        });
+    }
 
     // Reveal Animations
     gsap.utils.toArray(".reveal").forEach((el) => {
@@ -671,7 +1159,120 @@
         opacity: 1, y: 0, duration: 0.8, ease: "power2.out"
       });
     });
+
+    // Fade-up (related cards etc.)
+    gsap.utils.toArray(".fade-up").forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: { trigger: el, start: "top 90%" },
+        opacity: 0, y: 40, duration: 0.9, ease: "power2.out"
+      });
+    });
+
+    // FAQ accordion (one open at a time)
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
   </script>
 
+    <script>
+    (function(){
+      var t=document.getElementById('mobileNavToggle'),
+          h=document.getElementById('header'),
+          o=document.getElementById('mobileNavOverlay');
+      if(!t||!h)return;
+      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
+      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      t.addEventListener('click',toggle);
+      if(o)o.addEventListener('click',close);
+      h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
+      window.addEventListener('resize',function(){if(window.innerWidth>1024)close();});
+    })();
+    </script>
+
+  <!-- FAQPage Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much does social media marketing cost?", "acceptedAnswer": { "@type": "Answer", "text": "Our packages start at $800/month for the Starter plan and $1,800/month for the most popular Growth plan, with custom Enterprise pricing for full ad management, LinkedIn B2B, and Arabic campaigns. Ad spend is separate and always transparent. Book a free audit and we'll recommend the right fit for your goals." } },
+      { "@type": "Question", "name": "How long before I see results?", "acceptedAnswer": { "@type": "Answer", "text": "Organic engagement typically improves within the first 4-6 weeks as we publish consistent, on-strategy content. Paid lead generation can produce qualified leads within the first month, and we report on performance monthly so you always know what's working." } },
+      { "@type": "Question", "name": "Which platforms should I use?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your audience. We work across Instagram, Facebook, LinkedIn, TikTok, Snapchat, and X/Twitter, plus Snapchat MENA and TikTok Arabia for GCC markets. During your free audit we identify the platforms where your customers actually are so budget isn't wasted." } },
+      { "@type": "Question", "name": "Can you create Arabic content?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We create Arabic-first campaigns with RTL design, culturally relevant messaging, and native copywriting, not literal translations. With 60% of GCC users preferring Arabic content, this is core to how we win local audiences." } },
+      { "@type": "Question", "name": "How is ad spend handled?", "acceptedAnswer": { "@type": "Answer", "text": "Ad spend is billed directly to your own ad accounts and kept separate from our management fee, so you retain full ownership and transparency. We set clear ROI targets, track conversions, and optimize budget allocation across campaigns every month." } },
+      { "@type": "Question", "name": "How do I track results?", "acceptedAnswer": { "@type": "Answer", "text": "You get real-time analytics dashboards showing campaign reach, engagement rate, leads generated, and cost per lead, plus a monthly report with actionable insights, not just numbers. You'll always know which content and campaigns drive ROI." } },
+      { "@type": "Question", "name": "Can I pause or cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our plans are flexible. You can scale up, pause, or cancel with notice, there are no long-term lock-ins designed to trap you. We'd rather keep you because the results speak for themselves." } },
+      { "@type": "Question", "name": "Do you work outside the GCC?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. While we have deep GCC and Arabic expertise, we manage campaigns for clients across the USA and UK as well, covering English-language strategy, LinkedIn B2B lead generation, and paid advertising in those markets." } }
+    ]
+  }
+  </script>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo">
+          <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech Logo">
+        </a>
+        <p>Big Binary Tech delivers AI, ERP, and software solutions that power business growth with modern automation
+          and digital transformation.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+          </a>
+          <a href="https://twitter.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          </a>
+          <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-services">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="services.html">AI &amp; Automation</a></li>
+          <li><a href="services.html">Odoo ERP</a></li>
+          <li><a href="services.html">Custom Software</a></li>
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">POS Solutions</a></li>
+          <li><a href="services.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-solutions">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="solutions.html">Business Automation</a></li>
+          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
+          <li><a href="solutions.html">Retail &amp; POS</a></li>
+          <li><a href="solutions.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-industries">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="industries.html">Education</a></li>
+          <li><a href="industries.html">Healthcare</a></li>
+          <li><a href="industries.html">Retail</a></li>
+          <li><a href="industries.html">Manufacturing</a></li>
+          <li><a href="industries.html">Hospitality</a></li>
+          <li><a href="industries.html">Logistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Contact</h3>
+        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
+        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
+        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav class="footer-nav" style="display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:14px;"><a href="about.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">About</a><a href="services.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Services</a><a href="pricing.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Pricing</a><a href="careers.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Careers</a><a href="contact.html" style="color:#64748b;text-decoration:none;font-size:.875rem;font-weight:600;">Contact</a></nav>
+      <p>&copy; 2026 Big Binary Tech. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
