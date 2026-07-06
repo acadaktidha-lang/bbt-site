@@ -4835,45 +4835,35 @@ function initHeroShifter() {
   const slides = document.querySelectorAll('.service-slide');
 
   if (introState && sliderState && slides.length > 0) {
-    const masterTL = gsap.timeline({ repeat: -1 });
+    // Crossfade rotation across the intro headline + each service word.
+    // Sequential overlap: the INCOMING headline fades up to full while the
+    // current one is still fully visible, THEN the current fades out while the
+    // incoming is at full. So at every instant at least one headline is at full
+    // opacity — no dim/blank valley between states (what made it look broken).
+    const panels = [introState, ...slides];
+    const HOLD = 2.8;     // seconds each headline stays fully readable
+    const FADE_IN = 0.5;  // incoming rise
+    const FADE_OUT = 0.5; // outgoing fall
 
-    // Ensure initial visibility
-    gsap.set(sliderState, { autoAlpha: 0 });
+    // Resting states: intro visible immediately, every service word primed but hidden.
+    gsap.set(introState, { opacity: 1, x: 0, y: 0 });
+    gsap.set(sliderState, { autoAlpha: 1 });
+    gsap.set(slides, { opacity: 0, x: 0, y: 0, visibility: "visible" });
 
-    // Phase 1: Intro Heading (Show for 3 seconds)
-    masterTL
-      .fromTo(introState, 
-        { opacity: 0, y: 20 }, 
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
-      )
-      .to({}, { duration: 3 }) // Pause on main title
-      .to(introState, { 
-        opacity: 0, 
-        y: -20, 
-        duration: 0.6, 
-        ease: "power3.in" 
-      });
+    const masterTL = gsap.timeline({ repeat: -1, defaults: { ease: "power2.inOut" } });
 
-    // Phase 2: Service Slider
-    masterTL.set(sliderState, { autoAlpha: 1 });
-
-    slides.forEach((slide) => {
+    panels.forEach((panel, i) => {
+      const next = panels[(i + 1) % panels.length];
       masterTL
-        .fromTo(slide, 
-          { opacity: 0, x: 30, visibility: "visible" }, 
-          { opacity: 1, x: 0, duration: 0.8, ease: "expo.out" }
-        )
-        .to({}, { duration: 2.5 }) // Hold each service
-        .to(slide, { 
-          opacity: 0, 
-          x: -30, 
-          duration: 0.5, 
-          ease: "expo.in" 
+        .to({}, { duration: HOLD })                                 // hold current, fully readable
+        .to(next, { opacity: 1, x: 0, y: 0, duration: FADE_IN })    // incoming rises (current still full)
+        .to(panel, {                                                // current drifts + fades out (incoming full)
+          opacity: 0,
+          y: panel === introState ? -20 : 0,
+          x: panel === introState ? 0 : -30,
+          duration: FADE_OUT
         });
     });
-
-    // Fade out slider before looping back to intro
-    masterTL.to(sliderState, { autoAlpha: 0, duration: 0.5 });
   }
 }
 
