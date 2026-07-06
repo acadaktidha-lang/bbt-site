@@ -4,6 +4,8 @@
 
 # Operational artifacts (local-only safety nets, not source)
 wp-backup/
+.playwright-mcp/
+fullbleed-check.jpeg
 
 # Spec source PDFs (large binaries kept locally, not in source control)
 *.pdf

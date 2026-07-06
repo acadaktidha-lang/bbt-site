@@ -2975,7 +2975,7 @@
     gsap.to(".scroll-progress-bar", {
       scaleX: 1,
       ease: "none",
-      scrollTrigger: { scrub: 0.3 }
+      scrollTrigger: { trigger: "body", start: "top top", end: "bottom bottom", scrub: true }
     });
 
     document.addEventListener("DOMContentLoaded", () => {
