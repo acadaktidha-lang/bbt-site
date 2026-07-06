@@ -4835,34 +4835,30 @@ function initHeroShifter() {
   const slides = document.querySelectorAll('.service-slide');
 
   if (introState && sliderState && slides.length > 0) {
-    // Crossfade rotation across the intro headline + each service word.
-    // Sequential overlap: the INCOMING headline fades up to full while the
-    // current one is still fully visible, THEN the current fades out while the
-    // incoming is at full. So at every instant at least one headline is at full
-    // opacity — no dim/blank valley between states (what made it look broken).
+    // ONE headline on screen at a time. Each holds fully visible and ALONE,
+    // then fades completely out BEFORE the next fades in. This avoids both
+    // failure modes of a crossfade on stacked text:
+    //   - no dim/blank "valley" that leaves the headline near-invisible, and
+    //   - no two headlines ghosting through each other at the same time.
+    // The fades are quick, so a swap reads as a clean transition, never a
+    // lingering dark gap.
     const panels = [introState, ...slides];
-    const HOLD = 2.8;     // seconds each headline stays fully readable
-    const FADE_IN = 0.5;  // incoming rise
-    const FADE_OUT = 0.5; // outgoing fall
+    const HOLD = 2.6;   // seconds each headline stays fully visible, alone
+    const FADE = 0.35;  // quick fade per direction
 
-    // Resting states: intro visible immediately, every service word primed but hidden.
-    gsap.set(introState, { opacity: 1, x: 0, y: 0 });
+    // Resting states: intro visible immediately, every service word hidden.
+    gsap.set(introState, { opacity: 1 });
     gsap.set(sliderState, { autoAlpha: 1 });
-    gsap.set(slides, { opacity: 0, x: 0, y: 0, visibility: "visible" });
+    gsap.set(slides, { opacity: 0, visibility: "visible" });
 
-    const masterTL = gsap.timeline({ repeat: -1, defaults: { ease: "power2.inOut" } });
+    const masterTL = gsap.timeline({ repeat: -1 });
 
     panels.forEach((panel, i) => {
       const next = panels[(i + 1) % panels.length];
       masterTL
-        .to({}, { duration: HOLD })                                 // hold current, fully readable
-        .to(next, { opacity: 1, x: 0, y: 0, duration: FADE_IN })    // incoming rises (current still full)
-        .to(panel, {                                                // current drifts + fades out (incoming full)
-          opacity: 0,
-          y: panel === introState ? -20 : 0,
-          x: panel === introState ? 0 : -30,
-          duration: FADE_OUT
-        });
+        .to({}, { duration: HOLD })                                        // hold current, alone
+        .to(panel, { opacity: 0, duration: FADE, ease: "power2.in" })      // current fades fully out
+        .to(next,  { opacity: 1, duration: FADE, ease: "power2.out" });    // then next fades in
     });
   }
 }
