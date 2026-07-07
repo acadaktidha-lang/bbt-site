@@ -3858,6 +3858,12 @@ color: var(--bbt-orange-600);
 }
     </style>
 
+<style id="bbt-fullbleed-fix">
+/* Cancel Elementor's boxed content-width so the pasted full-bleed HTML
+   renders edge-to-edge. Targets only Elementor wrappers, NOT the page's
+   own .container. Keeps prod in sync with staging. */
+.elementor-section > .elementor-container{max-width:100%!important;}
+</style>
 </head>
 
 <body>
