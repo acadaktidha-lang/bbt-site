@@ -2197,7 +2197,7 @@ color: var(--bbt-orange-600);
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('../assests/images/client.jpg');
+  background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/client.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0.38; 
@@ -2207,7 +2207,7 @@ color: var(--bbt-orange-600);
 }
 @media (min-width: 1px) {
   #testimonials::before, .testimonials::before {
-    background-image: url('../assests/images/client.jpg');
+    background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/client.jpg');
     background-blend-mode: normal;
   }
 }
@@ -3858,6 +3858,12 @@ color: var(--bbt-orange-600);
 }
     </style>
 
+<style id="bbt-fullbleed-fix">
+/* Cancel Elementor's boxed content-width so the pasted full-bleed HTML
+   renders edge-to-edge. Targets only Elementor wrappers, NOT the page's
+   own .container. Keeps prod in sync with staging. */
+.elementor-section > .elementor-container{max-width:100%!important;}
+</style>
 </head>
 
 <body>
@@ -3939,10 +3945,6 @@ color: var(--bbt-orange-600);
       <!-- Right side: Vertical Link List -->
       <div class="mega-links-section">
         <div class="mega-links-grid">
-          <a href="social-media-marketing.html" class="mega-list-link">
-            <span>Social Media Marketing</span>
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </a>
           <a href="enterprise-odoo.html" class="mega-list-link">
             <span>Enterprise Odoo ERP</span>
             <i class="fa-solid fa-arrow-right-long"></i>
@@ -3978,7 +3980,7 @@ color: var(--bbt-orange-600);
             <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="AI Innovations">
           </div>
           <div class="mega-card-text">
-            <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
+            <h4>Real-world case studies and expert guides on AI, Odoo ERP and cloud migration</h4>
             <a href="blogs.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
@@ -4005,7 +4007,6 @@ color: var(--bbt-orange-600);
     </div>
   </div>
 </li>
-        <li><a href="blogs.html">Insights</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -4157,8 +4158,8 @@ color: var(--bbt-orange-600);
       <!-- Animated Heading Section -->
       <div class="capabilities-header-wrapper">
         <div class="capabilities-header-content">
-          <p class="eyebrow">Core Capabilities</p>
-          <h2 class="capabilities-main-heading">What We Build: Core Capabilities Overview </h2>
+          <p class="eyebrow">What We Build</p>
+          <h2 class="capabilities-main-heading">Core Capabilities Overview</h2>
         </div>
       </div>
       
@@ -4693,9 +4694,9 @@ color: var(--bbt-orange-600);
 
       <div class="footer-col footer-contact">
         <h3>Contact</h3>
-        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
-        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
-        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+        <p class="contact-line">Phone: <a href="tel:+13074434365">+1 307-443-4365</a></p>
+        <p class="contact-line">Email: <a href="mailto:business@bigbinarytech.com">business@bigbinarytech.com</a></p>
+        <p class="contact-line">Address: 444-Q, DHA Phase II, Lahore, Pakistan</p>
       </div>
     </div>
     <div class="container footer-bottom">
@@ -4835,34 +4836,30 @@ function initHeroShifter() {
   const slides = document.querySelectorAll('.service-slide');
 
   if (introState && sliderState && slides.length > 0) {
-    // Crossfade rotation across the intro headline + each service word.
-    // Sequential overlap: the INCOMING headline fades up to full while the
-    // current one is still fully visible, THEN the current fades out while the
-    // incoming is at full. So at every instant at least one headline is at full
-    // opacity — no dim/blank valley between states (what made it look broken).
+    // ONE headline on screen at a time. Each holds fully visible and ALONE,
+    // then fades completely out BEFORE the next fades in. This avoids both
+    // failure modes of a crossfade on stacked text:
+    //   - no dim/blank "valley" that leaves the headline near-invisible, and
+    //   - no two headlines ghosting through each other at the same time.
+    // The fades are quick, so a swap reads as a clean transition, never a
+    // lingering dark gap.
     const panels = [introState, ...slides];
-    const HOLD = 2.8;     // seconds each headline stays fully readable
-    const FADE_IN = 0.5;  // incoming rise
-    const FADE_OUT = 0.5; // outgoing fall
+    const HOLD = 2.6;   // seconds each headline stays fully visible, alone
+    const FADE = 0.35;  // quick fade per direction
 
-    // Resting states: intro visible immediately, every service word primed but hidden.
-    gsap.set(introState, { opacity: 1, x: 0, y: 0 });
+    // Resting states: intro visible immediately, every service word hidden.
+    gsap.set(introState, { opacity: 1 });
     gsap.set(sliderState, { autoAlpha: 1 });
-    gsap.set(slides, { opacity: 0, x: 0, y: 0, visibility: "visible" });
+    gsap.set(slides, { opacity: 0, visibility: "visible" });
 
-    const masterTL = gsap.timeline({ repeat: -1, defaults: { ease: "power2.inOut" } });
+    const masterTL = gsap.timeline({ repeat: -1 });
 
     panels.forEach((panel, i) => {
       const next = panels[(i + 1) % panels.length];
       masterTL
-        .to({}, { duration: HOLD })                                 // hold current, fully readable
-        .to(next, { opacity: 1, x: 0, y: 0, duration: FADE_IN })    // incoming rises (current still full)
-        .to(panel, {                                                // current drifts + fades out (incoming full)
-          opacity: 0,
-          y: panel === introState ? -20 : 0,
-          x: panel === introState ? 0 : -30,
-          duration: FADE_OUT
-        });
+        .to({}, { duration: HOLD })                                        // hold current, alone
+        .to(panel, { opacity: 0, duration: FADE, ease: "power2.in" })      // current fades fully out
+        .to(next,  { opacity: 1, duration: FADE, ease: "power2.out" });    // then next fades in
     });
   }
 }

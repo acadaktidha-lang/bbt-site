@@ -623,6 +623,12 @@
 @media (max-width:1100px){ .site-footer .footer-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } .site-footer .footer-brand{ grid-column:1 / -1; } }
 @media (max-width:640px){ .site-footer .footer-grid{ grid-template-columns:1fr; } .site-footer{ padding:56px 0 32px; } .site-footer .footer-brand .logo img{ height:80px; } }
 </style>
+<style id="bbt-fullbleed-fix">
+/* Cancel Elementor's boxed content-width so the pasted full-bleed HTML
+   renders edge-to-edge. Targets only Elementor wrappers, NOT the page's
+   own .container. Keeps prod in sync with staging. */
+.elementor-section > .elementor-container{max-width:100%!important;}
+</style>
 </head>
 <body>
 
@@ -630,7 +636,7 @@
   <div class="container header-wrapper">
     <!-- Logo -->
     <a href="index.html" class="logo">
-      <img src="../assests/images/bbt-logo.png" alt="Big Binary Tech Logo">
+      <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo.png" alt="Big Binary Tech Logo">
     </a>
 
     <!-- Navigation -->
@@ -652,7 +658,7 @@
         <div class="mega-card">
           <div class="mega-card-img">
             <!-- Featured Image for Solutions -->
-            <img src="../assests/images/solutions.avif" alt="Enterprise Solutions">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/solutions.avif" alt="Enterprise Solutions">
           </div>
           <div class="mega-card-text">
             <h4>Accelerate your digital footprint with our enterprise-grade architecture</h4>
@@ -664,10 +670,6 @@
       <!-- Right side: Vertical Link List -->
       <div class="mega-links-section">
         <div class="mega-links-grid">
-          <a href="social-media-marketing.html" class="mega-list-link">
-            <span>Social Media Marketing</span>
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </a>
           <a href="enterprise-odoo.html" class="mega-list-link">
             <span>Enterprise Odoo ERP</span>
             <i class="fa-solid fa-arrow-right-long"></i>
@@ -700,10 +702,10 @@
         <h3 class="mega-heading">Resources</h3>
         <div class="mega-card">
           <div class="mega-card-img">
-            <img src="../assests/images/resources.avif" alt="AI Innovations">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="AI Innovations">
           </div>
           <div class="mega-card-text">
-            <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
+            <h4>Real-world case studies and expert guides on AI, Odoo ERP and cloud migration</h4>
             <a href="blogs.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
@@ -730,7 +732,6 @@
     </div>
   </div>
 </li>
-        <li><a href="blogs.html">Insights</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -1264,9 +1265,9 @@
       </div>
       <div class="footer-col footer-contact">
         <h3>Contact</h3>
-        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
-        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
-        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+        <p class="contact-line">Phone: <a href="tel:+13074434365">+1 307-443-4365</a></p>
+        <p class="contact-line">Email: <a href="mailto:business@bigbinarytech.com">business@bigbinarytech.com</a></p>
+        <p class="contact-line">Address: 444-Q, DHA Phase II, Lahore, Pakistan</p>
       </div>
     </div>
     <div class="container footer-bottom">

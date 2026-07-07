@@ -368,7 +368,7 @@
       right: 0;
       width: 60%; /* Slightly wider image area */
       height: 100%;
-      background-image: url('../assests/images/solutions.jpg');
+      background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/solutions.jpg');
       background-size: cover;
       background-position: center;
       z-index: 1;
@@ -1104,6 +1104,12 @@
 }
 </style>
 
+<style id="bbt-fullbleed-fix">
+/* Cancel Elementor's boxed content-width so the pasted full-bleed HTML
+   renders edge-to-edge. Targets only Elementor wrappers, NOT the page's
+   own .container. Keeps prod in sync with staging. */
+.elementor-section > .elementor-container{max-width:100%!important;}
+</style>
 </head>
 <body>
 
@@ -1145,10 +1151,6 @@
       <!-- Right side: Vertical Link List -->
       <div class="mega-links-section">
         <div class="mega-links-grid">
-          <a href="social-media-marketing.html" class="mega-list-link">
-            <span>Social Media Marketing</span>
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </a>
           <a href="enterprise-odoo.html" class="mega-list-link">
             <span>Enterprise Odoo ERP</span>
             <i class="fa-solid fa-arrow-right-long"></i>
@@ -1184,7 +1186,7 @@
             <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/resources.avif" alt="AI Innovations">
           </div>
           <div class="mega-card-text">
-            <h4>Systems Arabia unveils AI innovations at LEAP 2025 as the Lead Sponsor</h4>
+            <h4>Real-world case studies and expert guides on AI, Odoo ERP and cloud migration</h4>
             <a href="blogs.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
@@ -1211,7 +1213,6 @@
     </div>
   </div>
 </li>
-        <li><a href="blogs.html">Insights</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -1929,9 +1930,9 @@
       </div>
       <div class="footer-col footer-contact">
         <h3>Contact</h3>
-        <p class="contact-line">Phone: <a href="tel:+923268880101">0326 8880101</a></p>
-        <p class="contact-line">Email: <a href="mailto:info@bigbinarytech.com">info@bigbinarytech.com</a></p>
-        <p class="contact-line">Address: 123 Tech Park, Suite 400, City, Country</p>
+        <p class="contact-line">Phone: <a href="tel:+13074434365">+1 307-443-4365</a></p>
+        <p class="contact-line">Email: <a href="mailto:business@bigbinarytech.com">business@bigbinarytech.com</a></p>
+        <p class="contact-line">Address: 444-Q, DHA Phase II, Lahore, Pakistan</p>
       </div>
     </div>
     <div class="container footer-bottom">
