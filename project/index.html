@@ -3944,6 +3944,21 @@ color: var(--bbt-orange-600);
     line-height: 1.5;
   }
 }
+/* The clamps above still left the last card row ~11px past the pinned section on a
+   1366x650 laptop, so it was still being clipped by overflow:hidden. Two card rows
+   means every px trimmed off a row counts twice; trimming the row height and the
+   grid gap a little further reclaims the shortfall with room to spare. */
+@media (min-width: 1025px) and (max-height: 720px){
+  .process-steps-container{
+    margin-top: clamp(20px, 4vh, 60px) !important;
+  }
+  .process-grid{
+    gap: clamp(12px, 1.8vh, 20px) !important;
+  }
+  .step-card{
+    min-height: clamp(130px, 22vh, 200px) !important;
+  }
+}
 </style>
 <style id="bbt-hero-clear-fix">
 /* The desktop .hero was `height:100vh; display:flex; align-items:center; overflow:hidden`
