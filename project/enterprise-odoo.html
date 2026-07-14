@@ -451,6 +451,18 @@
   margin-right:0!important;
 }
 </style>
+<style id="bbt-pillar-grid-fix">
+/* The module grid is `repeat(auto-fit, minmax(280px, 1fr))`, which resolves to 3 columns
+   in the ~1108px container. There are exactly FOUR module cards, so the 4th (Odoo CRM
+   Solutions) was orphaned onto its own row with two-thirds of that row left blank -- a
+   large empty white block under the grid.
+   Four cards divide evenly into 2x2, which removes the orphan and gives the cards more
+   width for their bullet lists. Desktop only: below 1025px the page already collapses
+   .pillar-grid to a single column, so that path is untouched. */
+@media (min-width: 1025px){
+  .pillar-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+</style>
 </head>
 <body>
 
