@@ -453,7 +453,9 @@
     .section-head p { color: var(--bbt-muted); margin-top: 16px; font-size: 1.05rem; }
 
     /* Sticky mobile CTA */
-    .sticky-expert { display:none; position:fixed; left:16px; right:16px; bottom:16px; z-index:1500; text-align:center; padding:15px; border-radius:999px; background:var(--bbt-orange); color:#fff; font-weight:700; text-decoration:none; box-shadow:0 12px 30px rgba(245,158,11,0.4); }
+    .sticky-expert { display:none; position:fixed; left:16px; right:16px; bottom:16px; z-index:900; text-align:center; padding:15px; border-radius:999px; background:var(--bbt-orange); color:#fff; font-weight:700; text-decoration:none; box-shadow:0 12px 30px rgba(245,158,11,0.4); }
+/* The open nav drawer owns the screen; don't leave the CTA focusable behind the overlay. */
+body.mobile-nav-open .sticky-expert{ display:none !important; }
   </style>
 
 <style id="responsive-nav-patch">
@@ -492,7 +494,9 @@
   }
   .header .mega-menu-wrapper{ display:none !important; }
   .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
-  body.mobile-nav-open{ overflow:hidden; }
+  /* Lock the root, not just body: where html has overflow-x:hidden it becomes the
+     scroll container and a body-only lock lets the page scroll behind the drawer. */
+  html.mobile-nav-open, body.mobile-nav-open{ overflow:hidden; }
   body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
 }
     </style>
@@ -1259,8 +1263,17 @@
           h=document.getElementById('header'),
           o=document.getElementById('mobileNavOverlay');
       if(!t||!h)return;
-      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
-      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      function setNavOpen(open){
+        h.classList.toggle('mobile-open',open);
+        document.body.classList.toggle('mobile-nav-open',open);
+        document.documentElement.classList.toggle('mobile-nav-open',open);
+        t.setAttribute('aria-expanded',open?'true':'false');
+        var i=t.querySelector('i'); if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';
+        // Lenis scrolls programmatically, so CSS overflow:hidden cannot stop it.
+        if(window.__bbtLenis){ if(open) window.__bbtLenis.stop(); else window.__bbtLenis.start(); }
+      }
+      function close(){setNavOpen(false);}
+      function toggle(){setNavOpen(!h.classList.contains('mobile-open'));}
       t.addEventListener('click',toggle);
       if(o)o.addEventListener('click',close);
       h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
@@ -1321,20 +1334,20 @@
         <h3>Solutions</h3>
         <ul>
           <li><a href="solutions.html">Business Automation</a></li>
-          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
-          <li><a href="solutions.html">Retail &amp; POS</a></li>
-          <li><a href="solutions.html">Digital Transformation</a></li>
+          <li><a href="enterprise-odoo.html">ERP &amp; Odoo</a></li>
+          <li><a href="retail-pos.html">Retail &amp; POS</a></li>
+          <li><a href="digital-transformation.html">Digital Transformation</a></li>
         </ul>
       </div>
       <div class="footer-col footer-industries">
         <h3>Industries</h3>
         <ul>
-          <li><a href="industries.html">Education</a></li>
-          <li><a href="industries.html">Healthcare</a></li>
-          <li><a href="industries.html">Retail</a></li>
-          <li><a href="industries.html">Manufacturing</a></li>
-          <li><a href="industries.html">Hospitality</a></li>
-          <li><a href="industries.html">Logistics</a></li>
+          <li><a href="industries.html#education">Education</a></li>
+          <li><a href="industries.html#healthcare">Healthcare</a></li>
+          <li><a href="industries.html#retail-ecommerce">Retail</a></li>
+          <li><a href="industries.html#manufacturing">Manufacturing</a></li>
+          <li><a href="industries.html#hospitality">Hospitality</a></li>
+          <li><a href="industries.html#logistics">Logistics</a></li>
         </ul>
       </div>
       <div class="footer-col footer-contact">
@@ -1350,5 +1363,14 @@
     </div>
   </footer>
 
+
+<script>
+  /* CDN safety net: `.reveal` is opacity:0 in CSS and only GSAP un-hides it, so a blocked
+     or down cdnjs renders the page blank. Dropping the class restores every property the
+     CSS hid. Runs last, so it still fires if a page script threw. */
+  if (!window.gsap || !window.ScrollTrigger) {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.remove('reveal'); });
+  }
+</script>
 </body>
 </html>

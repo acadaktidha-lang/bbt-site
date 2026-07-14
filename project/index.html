@@ -567,8 +567,8 @@
     margin-bottom: 10px !important;
   }
 
-  .hero-state-intro h1, 
-  .service-slide h1 {
+  .hero-state-intro h1,
+  .service-slide .slide-title {
     font-size: clamp(1.5rem, 8vw, 2.2rem) !important; /* Significantly smaller on mobile */
     line-height: 1.2 !important;
     width: 100%;
@@ -604,7 +604,7 @@
 }
 
     /* Multi-color Gradient for the 4 Service Slider headings */
-    .service-slide h1 {
+    .service-slide .slide-title {
       margin: 0;
       font-size: clamp(2.5rem, 6vw, 4.5rem);
       line-height: 1;
@@ -3817,7 +3817,9 @@ color: var(--bbt-orange-600);
   }
   .header .mega-menu-wrapper{ display:none !important; }
   .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
-  body.mobile-nav-open{ overflow:hidden; }
+  /* Lock the root, not just body: where html has overflow-x:hidden it becomes the
+     scroll container and a body-only lock lets the page scroll behind the drawer. */
+  html.mobile-nav-open, body.mobile-nav-open{ overflow:hidden; }
   body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
 }
     </style>
@@ -4179,15 +4181,15 @@ color: var(--bbt-orange-600);
 
         <!-- State 2: Cycling Services -->
         <div class="hero-state-slider">
-          <div class="service-slide"><h1>AI & Cloud Automation</h1></div>
-          <div class="service-slide"><h1>Software Development</h1></div>
-          <div class="service-slide"><h1>Digital Transformation</h1></div>
+          <div class="service-slide"><div class="slide-title">AI & Cloud Automation</div></div>
+          <div class="service-slide"><div class="slide-title">Software Development</div></div>
+          <div class="service-slide"><div class="slide-title">Digital Transformation</div></div>
         </div>
       </div>
 
       <!-- Redesigned Premium Bullets -->
       <div class="hero-description-area">
-        <p class="hero-main-para">We engineering future-ready ecosystems for businesses in <strong>Dubai, London, and New York</strong>. We don't just build apps; we solve bottlenecks.</p>
+        <p class="hero-main-para">We engineer future-ready ecosystems for businesses in <strong>Dubai, London, and New York</strong>. We don't just build apps; we solve bottlenecks.</p>
         
         <ul class="hero-feature-list">
           <li>
@@ -4813,21 +4815,21 @@ color: var(--bbt-orange-600);
         <h3>Solutions</h3>
         <ul>
           <li><a href="solutions.html">Business Automation</a></li>
-          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
-          <li><a href="solutions.html">Retail &amp; POS</a></li>
-          <li><a href="solutions.html">Digital Transformation</a></li>
+          <li><a href="enterprise-odoo.html">ERP &amp; Odoo</a></li>
+          <li><a href="retail-pos.html">Retail &amp; POS</a></li>
+          <li><a href="digital-transformation.html">Digital Transformation</a></li>
         </ul>
       </div>
 
       <div class="footer-col footer-industries">
         <h3>Industries</h3>
         <ul>
-          <li><a href="industries.html">Education</a></li>
-          <li><a href="industries.html">Healthcare</a></li>
-          <li><a href="industries.html">Retail</a></li>
-          <li><a href="industries.html">Manufacturing</a></li>
-          <li><a href="industries.html">Hospitality</a></li>
-          <li><a href="industries.html">Logistics</a></li>
+          <li><a href="industries.html#education">Education</a></li>
+          <li><a href="industries.html#healthcare">Healthcare</a></li>
+          <li><a href="industries.html#retail-ecommerce">Retail</a></li>
+          <li><a href="industries.html#manufacturing">Manufacturing</a></li>
+          <li><a href="industries.html#hospitality">Hospitality</a></li>
+          <li><a href="industries.html#logistics">Logistics</a></li>
         </ul>
       </div>
 
@@ -5394,8 +5396,17 @@ if (pinSection) {
           h=document.getElementById('header'),
           o=document.getElementById('mobileNavOverlay');
       if(!t||!h)return;
-      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
-      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      function setNavOpen(open){
+        h.classList.toggle('mobile-open',open);
+        document.body.classList.toggle('mobile-nav-open',open);
+        document.documentElement.classList.toggle('mobile-nav-open',open);
+        t.setAttribute('aria-expanded',open?'true':'false');
+        var i=t.querySelector('i'); if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';
+        // Lenis scrolls programmatically, so CSS overflow:hidden cannot stop it.
+        if(window.__bbtLenis){ if(open) window.__bbtLenis.stop(); else window.__bbtLenis.start(); }
+      }
+      function close(){setNavOpen(false);}
+      function toggle(){setNavOpen(!h.classList.contains('mobile-open'));}
       t.addEventListener('click',toggle);
       if(o)o.addEventListener('click',close);
       h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});

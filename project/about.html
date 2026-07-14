@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Big Binary Tech</title>
+  <title>About Us | Big Binary Tech</title>
   <link rel="icon" type="image/png" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
   <link rel="apple-touch-icon" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2299,17 +2299,21 @@
   }
   .header .mega-menu-wrapper{ display:none !important; }
   .header .nav-item-dropdown .nav-link-anchor i{ display:none; }
-  body.mobile-nav-open{ overflow:hidden; }
+  /* Lock the root, not just body: where html has overflow-x:hidden it becomes the
+     scroll container and a body-only lock lets the page scroll behind the drawer. */
+  html.mobile-nav-open, body.mobile-nav-open{ overflow:hidden; }
   body.mobile-nav-open .mobile-nav-overlay{ opacity:1; visibility:visible; }
 }
     </style>
 <style id="responsive-content-patch">
 /* ===== Page-specific content responsiveness (additive, desktop unchanged) ===== */
 @media (max-width:1024px){
+  /* The off-canvas nav drawer is parked at right:-100%, so without this the page
+     is one viewport wider than the screen and scrolls sideways on phones/tablets. */
+  html, body{ max-width:100%; overflow-x:hidden; }
+
   /* Media never overflows its container */
-  .hero-img-element, .leader-img img, .mega-card-img img, .hub-logo{
-    max-width:100%;
-  }
+  img, video, iframe{ max-width:100%; }
 }
 @media (max-width:768px){
   /* Hero copy: tame the inline-styled lede paragraph + sub-heading so they fit narrow screens */
@@ -2587,7 +2591,7 @@
     }
   </style>
   <!-- COMPANY OVERVIEW & STORY -->
-  <section class="story-section-new">
+  <section class="story-section-new" id="story">
     <div class="story-bg" style="background-image: url('https://bbt.mza-t.com/wp-content/uploads/2026/06/company-illustration.png');"></div>
     <div class="story-overlay"></div>
     
@@ -3176,7 +3180,10 @@
     // Simple Counter Animation
     const counters = document.querySelectorAll('.counter');
     counters.forEach(counter => {
-      const target = +counter.innerText;
+      // Keep whatever suffix the markup authored ("50+" -> "+", "95" -> none).
+      // The old code hard-coded `target === 98 ? "%" : "+"`, which matched no counter,
+      // so the retention stat rendered as "95+" under a "Client Retention %" label.
+      const suffix = counter.textContent.replace(/[\d\s,.]/g, '');
       gsap.from(counter, {
         textContent: 0,
         duration: 2,
@@ -3187,7 +3194,7 @@
         },
         snap: { textContent: 1 },
         onUpdate: function() {
-            counter.innerText = Math.floor(this.targets()[0].textContent) + (target === 98 ? "%" : "+");
+            counter.innerText = Math.floor(this.targets()[0].textContent) + suffix;
         }
       });
     });
@@ -3198,8 +3205,17 @@
           h=document.getElementById('header'),
           o=document.getElementById('mobileNavOverlay');
       if(!t||!h)return;
-      function close(){h.classList.remove('mobile-open');document.body.classList.remove('mobile-nav-open');t.setAttribute('aria-expanded','false');var i=t.querySelector('i');if(i)i.className='fa-solid fa-bars';}
-      function toggle(){var open=h.classList.toggle('mobile-open');document.body.classList.toggle('mobile-nav-open',open);t.setAttribute('aria-expanded',open?'true':'false');var i=t.querySelector('i');if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+      function setNavOpen(open){
+        h.classList.toggle('mobile-open',open);
+        document.body.classList.toggle('mobile-nav-open',open);
+        document.documentElement.classList.toggle('mobile-nav-open',open);
+        t.setAttribute('aria-expanded',open?'true':'false');
+        var i=t.querySelector('i'); if(i)i.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';
+        // Lenis scrolls programmatically, so CSS overflow:hidden cannot stop it.
+        if(window.__bbtLenis){ if(open) window.__bbtLenis.stop(); else window.__bbtLenis.start(); }
+      }
+      function close(){setNavOpen(false);}
+      function toggle(){setNavOpen(!h.classList.contains('mobile-open'));}
       t.addEventListener('click',toggle);
       if(o)o.addEventListener('click',close);
       h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
@@ -3242,20 +3258,20 @@
         <h3>Solutions</h3>
         <ul>
           <li><a href="solutions.html">Business Automation</a></li>
-          <li><a href="solutions.html">ERP &amp; Odoo</a></li>
-          <li><a href="solutions.html">Retail &amp; POS</a></li>
-          <li><a href="solutions.html">Digital Transformation</a></li>
+          <li><a href="enterprise-odoo.html">ERP &amp; Odoo</a></li>
+          <li><a href="retail-pos.html">Retail &amp; POS</a></li>
+          <li><a href="digital-transformation.html">Digital Transformation</a></li>
         </ul>
       </div>
       <div class="footer-col footer-industries">
         <h3>Industries</h3>
         <ul>
-          <li><a href="industries.html">Education</a></li>
-          <li><a href="industries.html">Healthcare</a></li>
-          <li><a href="industries.html">Retail</a></li>
-          <li><a href="industries.html">Manufacturing</a></li>
-          <li><a href="industries.html">Hospitality</a></li>
-          <li><a href="industries.html">Logistics</a></li>
+          <li><a href="industries.html#education">Education</a></li>
+          <li><a href="industries.html#healthcare">Healthcare</a></li>
+          <li><a href="industries.html#retail-ecommerce">Retail</a></li>
+          <li><a href="industries.html#manufacturing">Manufacturing</a></li>
+          <li><a href="industries.html#hospitality">Hospitality</a></li>
+          <li><a href="industries.html#logistics">Logistics</a></li>
         </ul>
       </div>
       <div class="footer-col footer-contact">
