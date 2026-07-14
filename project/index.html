@@ -5078,9 +5078,21 @@ function initTrustSlider() {
   const trustTrack = document.getElementById("trustTrack");
   if (!trustTrack) return;
 
-  const cardWidth = 300; 
-  const gap = 24; 
-  const step = cardWidth + gap;
+  // The card size is NOT a constant, so the old `cardWidth = 300; gap = 24` maths could
+  // never centre the active card: below 480px the responsive patch makes the card 84vw,
+  // and .trusted-card is scale()d (the active one scales up), so its *visual* width and
+  // its *layout* width differ -- on a 390px phone the cards lay out 351.6px apart while
+  // the track stepped 324px, leaving the highlighted card ~345px off-centre and drifting
+  // a further ~12px out of true every 3s.
+  //
+  // Centre the target card by measuring where it actually is instead of deriving an
+  // absolute offset from an assumed width. A scale() transform is applied about the
+  // element's centre, so the centre point is scale-invariant -- which makes this immune
+  // to the responsive width, the flex gap and the active card's scale all at once.
+  const centreOf = el => {
+    const r = el.getBoundingClientRect();
+    return r.left + r.width / 2;
+  };
 
   // 1. Clone cards for infinite feel
   const originalCards = Array.from(trustTrack.children);
@@ -5099,17 +5111,28 @@ function initTrustSlider() {
   let autoTimer;
 
   function updateSlider(immediate = false) {
-    const containerWidth = trustTrack.parentElement.offsetWidth;
-    const trackOffset = (containerWidth / 2) - (cardWidth / 2) - (currentIndex * step);
-    
+    const target = allCards[currentIndex];
+    if (!target) return;
+
+    // Set the active state first so the scale is applied before we measure.
+    allCards.forEach((card, i) => {
+      card.classList.toggle("active", i === currentIndex);
+    });
+
+    const wrap = trustTrack.parentElement.getBoundingClientRect();
+    const currentX = Number(gsap.getProperty(trustTrack, "x")) || 0;
+    // Nudge the track by exactly the gap between the card's centre and the wrapper's
+    // centre. Relative, so it self-corrects on resize and after a loop teleport.
+    const trackOffset = currentX + (wrap.left + wrap.width / 2) - centreOf(target);
+
     isAnimating = true;
-    gsap.to(trustTrack, { 
-      x: trackOffset, 
-      duration: immediate ? 0 : 0.4, 
+    gsap.to(trustTrack, {
+      x: trackOffset,
+      duration: immediate ? 0 : 0.4,
       ease: "power2.inOut",
       onComplete: () => {
         isAnimating = false;
-        
+
         // Loop teleportation
         if (currentIndex >= totalOriginals * 2) {
           currentIndex -= totalOriginals;
@@ -5120,11 +5143,6 @@ function initTrustSlider() {
         }
       }
     });
-
-    // Update the "Active" design state (Scale/Glow)
-    allCards.forEach((card, i) => {
-      card.classList.toggle("active", i === currentIndex);
-    });
   }
 
   function goNext() {
@@ -5133,8 +5151,10 @@ function initTrustSlider() {
     updateSlider();
   }
 
-  // Start the automated loop
+  // Start the automated loop. Clear first: startAuto also runs on every mouseleave, so
+  // without this a hover in/out could stack a second interval and double the speed.
   function startAuto() {
+    clearInterval(autoTimer);
     autoTimer = setInterval(goNext, 3000); // Moves every 3 seconds
   }
 
