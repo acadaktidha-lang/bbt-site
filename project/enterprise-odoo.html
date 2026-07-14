@@ -300,6 +300,14 @@
   display:none; background:transparent; border:0; font-size:26px; line-height:1;
   color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
 }
+/* Neutralize WP theme reset.css button:hover/:focus maroon (#CC3366) leak */
+.mobile-nav-toggle:hover,
+.mobile-nav-toggle:focus,
+.mobile-nav-toggle:active,
+.mobile-nav-toggle[aria-expanded="true"]{
+  background:transparent !important; border:0 !important;
+  color:#fff !important; box-shadow:none !important; outline:none !important;
+}
 .mobile-nav-overlay{
   position:fixed; inset:0; background:rgba(0,0,0,.5);
   opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:1000;
@@ -403,9 +411,45 @@
 </style>
 <style id="bbt-fullbleed-fix">
 /* Cancel Elementor's boxed content-width so the pasted full-bleed HTML
-   renders edge-to-edge. Targets only Elementor wrappers, NOT the page's
+   renders edge-to-edge. Targets only Elementor/theme wrappers, NOT the page's
    own .container. Keeps prod in sync with staging. */
 .elementor-section > .elementor-container{max-width:100%!important;}
+/* Elementor 3.16+ flexbox containers -- the old selector above does not match these,
+   which is why About and the footer still rendered boxed at ~1140px. */
+.e-con,
+.e-con-inner{
+  --container-max-width:100%!important;
+  max-width:100%!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+.elementor-widget-container{max-width:100%!important;}
+/* Theme content wrappers that also impose a max-width on the page + footer. */
+.site-main,
+.content-area,
+#primary,
+#main,
+.entry-content,
+.wp-block-post-content{
+  max-width:100%!important;
+  width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+
+/* Hello Elementor theme.css boxes `.site-footer:not(.dynamic-footer)` to the 1140px
+   content width. Our footer reuses that class name, so the theme rule beat ours on
+   specificity (0,2,0 vs 0,1,0) and the footer band rendered as a 1140px island with
+   white gutters. Force it edge-to-edge; the inner .container still centres content.
+   Padding is left alone so the footer keeps its own 72px/40px vertical rhythm. */
+.site-footer{
+  max-width:100%!important;
+  width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+}
 </style>
 </head>
 <body>
@@ -414,14 +458,42 @@
     <header class="header" id="mainHeader" data-mobile-header>
         <div class="container header-wrapper">
             <a href="index.html" class="logo">
-                <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo.png" alt="Big Binary Tech">
+                <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-logo-1.png" alt="Big Binary Tech">
             </a>
 
             <nav class="navbar">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                      <li><a href="services.html">Services</a></li>
+                      <li class="nav-item-dropdown">
+  <a href="services.html" class="nav-link-anchor">Services <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">SERVICES</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/AI-Automation.png" alt="Our Services">
+          </div>
+          <div class="mega-card-text">
+            <h4>End-to-end engineering, from AI automation to custom software built around your business.</h4>
+            <a href="services.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="ai-automation.html" class="mega-list-link"><span>AI &amp; Automation</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="custom-software-development.html" class="mega-list-link"><span>Custom Software Development</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="web-development.html" class="mega-list-link"><span>Web Development</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="odoo-erp.html" class="mega-list-link"><span>Odoo &amp; ERP Services</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="social-media-marketing.html" class="mega-list-link"><span>Social Media Marketing</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="digital-transformation.html" class="mega-list-link"><span>Digital Transformation</span><i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
                     <li class="nav-item-dropdown">
                         <a href="solutions.html">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
                         <div class="mega-menu-wrapper">
@@ -972,12 +1044,12 @@
       <div class="footer-col footer-services">
         <h3>Services</h3>
         <ul>
-          <li><a href="services.html">AI &amp; Automation</a></li>
-          <li><a href="services.html">Odoo ERP</a></li>
-          <li><a href="services.html">Custom Software</a></li>
-          <li><a href="services.html">Website Development</a></li>
-          <li><a href="services.html">POS Solutions</a></li>
-          <li><a href="services.html">Digital Transformation</a></li>
+          <li><a href="ai-automation.html">AI &amp; Automation</a></li>
+          <li><a href="custom-software-development.html">Custom Software Development</a></li>
+          <li><a href="web-development.html">Web Development</a></li>
+          <li><a href="odoo-erp.html">Odoo &amp; ERP Services</a></li>
+          <li><a href="digital-transformation.html">Digital Transformation</a></li>
+          <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
         </ul>
       </div>
       <div class="footer-col footer-solutions">

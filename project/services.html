@@ -6,7 +6,7 @@
   <title>Services | Big Binary Tech</title>
   <link rel="icon" type="image/png" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
   <link rel="apple-touch-icon" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
-  <meta name="description" content="Explore Big Binary Tech's services: AI &amp; automation, Odoo ERP, custom software, website development, POS systems, digital transformation, and social media marketing. Built to scale.">
+  <meta name="description" content="Explore Big Binary Tech's six core services: AI &amp; automation, custom software development, web development, Odoo &amp; ERP services, digital transformation, and social media marketing. Built to scale.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -552,6 +552,14 @@
   display:none; background:transparent; border:0; font-size:26px; line-height:1;
   color:#fff; cursor:pointer; padding:8px; margin-left:14px; z-index:1002;
 }
+/* Neutralize WP theme reset.css button:hover/:focus maroon (#CC3366) leak */
+.mobile-nav-toggle:hover,
+.mobile-nav-toggle:focus,
+.mobile-nav-toggle:active,
+.mobile-nav-toggle[aria-expanded="true"]{
+  background:transparent !important; border:0 !important;
+  color:#fff !important; box-shadow:none !important; outline:none !important;
+}
 .mobile-nav-overlay{
   position:fixed; inset:0; background:rgba(0,0,0,.5);
   opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:1000;
@@ -673,6 +681,21 @@
 }
 .svc-link:hover{ gap:14px; }
 
+/* Packaged Solutions demoted from a service card to a navigation CTA band. */
+.svc-solutions-cta{
+  display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;
+  margin-top:44px; padding:36px 44px; border-radius:22px;
+  background:var(--bbt-navy); border:1px solid var(--bbt-border);
+}
+.svc-solutions-copy{ flex:1 1 420px; }
+.svc-solutions-copy h3{ color:#fff; font-size:1.5rem; font-weight:900; margin-bottom:10px; }
+.svc-solutions-copy p{ color:rgba(255,255,255,0.72); font-size:1rem; line-height:1.7; margin:0; }
+.svc-solutions-btn{ flex:0 0 auto; display:inline-flex; align-items:center; gap:10px; }
+@media (max-width: 767px){
+  .svc-solutions-cta{ padding:30px 24px; text-align:center; justify-content:center; }
+  .svc-solutions-copy{ flex:1 1 100%; }
+}
+
 /* WHY CHOOSE US */
 .why-section{ padding:120px 0; background:var(--bbt-bg-soft); background-image:radial-gradient(at 100% 0%, rgba(245,158,11,0.05) 0px, transparent 50%); }
 .why-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:60px; }
@@ -781,9 +804,60 @@
 </style>
 <style id="bbt-fullbleed-fix">
 /* Cancel Elementor's boxed content-width so the pasted full-bleed HTML
-   renders edge-to-edge. Targets only Elementor wrappers, NOT the page's
+   renders edge-to-edge. Targets only Elementor/theme wrappers, NOT the page's
    own .container. Keeps prod in sync with staging. */
 .elementor-section > .elementor-container{max-width:100%!important;}
+/* Elementor 3.16+ flexbox containers -- the old selector above does not match these,
+   which is why About and the footer still rendered boxed at ~1140px. */
+.e-con,
+.e-con-inner{
+  --container-max-width:100%!important;
+  max-width:100%!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+.elementor-widget-container{max-width:100%!important;}
+/* Theme content wrappers that also impose a max-width on the page + footer. */
+.site-main,
+.content-area,
+#primary,
+#main,
+.entry-content,
+.wp-block-post-content{
+  max-width:100%!important;
+  width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+
+/* Hello Elementor theme.css boxes `.site-footer:not(.dynamic-footer)` to the 1140px
+   content width. Our footer reuses that class name, so the theme rule beat ours on
+   specificity (0,2,0 vs 0,1,0) and the footer band rendered as a 1140px island with
+   white gutters. Force it edge-to-edge; the inner .container still centres content.
+   Padding is left alone so the footer keeps its own 72px/40px vertical rhythm. */
+.site-footer{
+  max-width:100%!important;
+  width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+}
+</style>
+<style id="bbt-hero-clear-fix">
+/* The desktop .hero was `height:100vh; display:flex; align-items:center; overflow:hidden`
+   with padding-top < the 140px header. A CENTERED flex box whose content is taller than
+   the box overflows in BOTH directions, so on short laptop viewports the breadcrumb/eyebrow
+   slid up behind the navbar and the CTAs were clipped off the bottom.
+   min-height lets the hero grow instead of overflowing; padding-top clears the header. */
+@media (min-width: 1025px){
+  .hero{
+    height: auto !important;
+    min-height: 100vh;
+    padding-top: 160px !important;
+    padding-bottom: 60px !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -800,7 +874,35 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
+        <li class="nav-item-dropdown">
+  <a href="services.html" class="nav-link-anchor">Services <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+  <div class="mega-menu-wrapper">
+    <div class="container mega-menu-container">
+      <div class="mega-featured-section">
+        <h3 class="mega-heading">SERVICES</h3>
+        <div class="mega-card">
+          <div class="mega-card-img">
+            <img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/AI-Automation.png" alt="Our Services">
+          </div>
+          <div class="mega-card-text">
+            <h4>End-to-end engineering, from AI automation to custom software built around your business.</h4>
+            <a href="services.html" class="mega-cta">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="mega-links-section">
+        <div class="mega-links-grid">
+          <a href="ai-automation.html" class="mega-list-link"><span>AI &amp; Automation</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="custom-software-development.html" class="mega-list-link"><span>Custom Software Development</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="web-development.html" class="mega-list-link"><span>Web Development</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="odoo-erp.html" class="mega-list-link"><span>Odoo &amp; ERP Services</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="social-media-marketing.html" class="mega-list-link"><span>Social Media Marketing</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="digital-transformation.html" class="mega-list-link"><span>Digital Transformation</span><i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
       <li class="nav-item-dropdown">
   <a href="solutions.html" class="nav-link-anchor">Solutions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
 
@@ -912,7 +1014,7 @@
           </h1>
 
           <p class="fade-up">
-            From AI automation and Odoo ERP to custom software, POS systems, and digital transformation, we deliver end-to-end technology services that streamline operations, reduce costs, and accelerate growth.
+            From AI automation and Odoo ERP to custom software, web development, and digital transformation, we deliver end-to-end technology services that streamline operations, reduce costs, and accelerate growth.
           </p>
 
           <div class="fade-up hero-actions">
@@ -925,7 +1027,7 @@
           </div>
 
           <div class="fade-up hero-trust">
-            <div class="trust-item"><span class="trust-num">7+</span><span class="trust-label">Core Service Lines</span></div>
+            <div class="trust-item"><span class="trust-num">6</span><span class="trust-label">Core Service Lines</span></div>
             <div class="trust-item"><span class="trust-num">50+</span><span class="trust-label">Projects Delivered</span></div>
             <div class="trust-item"><span class="trust-num">15+</span><span class="trust-label">Industries Served</span></div>
             <div class="trust-item"><span class="trust-num">98%</span><span class="trust-label">Client Retention</span></div>
@@ -940,11 +1042,11 @@
         <div style="text-align: center; max-width: 740px; margin: 0 auto;">
             <span class="eyebrow">02. What We Do</span>
             <h2 style="font-size: 3rem; color: var(--bbt-navy); font-weight: 900;">Technology Services Built for Real Business Results</h2>
-            <p style="font-size: 1.1rem; color: var(--bbt-muted); margin-top: 16px;">Seven core service lines, engineered to work together so your technology stack grows as one connected system rather than disconnected tools.</p>
+            <p style="font-size: 1.1rem; color: var(--bbt-muted); margin-top: 16px;">Six core service lines, engineered to work together so your technology stack grows as one connected system rather than disconnected tools.</p>
         </div>
 
         <div class="svc-grid">
-          <!-- AI & Automation -->
+          <!-- 1. AI & Automation -->
           <div class="svc-card fade-up">
             <div class="svc-icon"><i class="fa-solid fa-robot"></i></div>
             <h3>AI &amp; Automation</h3>
@@ -953,22 +1055,10 @@
             <ul class="svc-keys">
               <li>Workflow Automation</li><li>AI Assistants</li><li>Process Integration</li><li>API Connections</li>
             </ul>
-            <a href="digital-transformation.html" class="svc-link">Explore AI &amp; Automation <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="ai-automation.html" class="svc-link">Explore AI &amp; Automation <i class="fa-solid fa-arrow-right"></i></a>
           </div>
 
-          <!-- Odoo ERP -->
-          <div class="svc-card fade-up">
-            <div class="svc-icon"><i class="fa-solid fa-layer-group"></i></div>
-            <h3>Odoo ERP Solutions</h3>
-            <p>End-to-end Odoo ERP implementation, customization, and enterprise system integration that unifies finance, HR, inventory, sales, and CRM on one platform.</p>
-            <div class="svc-keys-label">Key Areas</div>
-            <ul class="svc-keys">
-              <li>Odoo ERP</li><li>HR &amp; Payroll</li><li>Finance</li><li>Inventory</li><li>CRM</li>
-            </ul>
-            <a href="enterprise-odoo.html" class="svc-link">Explore Odoo ERP <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-
-          <!-- Custom Software Development -->
+          <!-- 2. Custom Software Development -->
           <div class="svc-card fade-up">
             <div class="svc-icon"><i class="fa-solid fa-code"></i></div>
             <h3>Custom Software Development</h3>
@@ -977,34 +1067,34 @@
             <ul class="svc-keys">
               <li>Web Applications</li><li>Management Systems</li><li>Custom APIs</li><li>Cloud Apps</li>
             </ul>
-            <a href="solutions.html" class="svc-link">Explore Software Development <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="custom-software-development.html" class="svc-link">Explore Custom Software Development <i class="fa-solid fa-arrow-right"></i></a>
           </div>
 
-          <!-- Website Development -->
+          <!-- 3. Web Development -->
           <div class="svc-card fade-up">
             <div class="svc-icon"><i class="fa-solid fa-globe"></i></div>
-            <h3>Website Development</h3>
+            <h3>Web Development</h3>
             <p>Fast, responsive, conversion-focused websites and landing pages, from corporate sites to e-commerce storefronts, optimized for performance and SEO.</p>
             <div class="svc-keys-label">Key Areas</div>
             <ul class="svc-keys">
               <li>Corporate Sites</li><li>E-Commerce</li><li>Landing Pages</li><li>SEO &amp; Performance</li>
             </ul>
-            <a href="solutions.html" class="svc-link">Explore Website Development <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="web-development.html" class="svc-link">Explore Web Development <i class="fa-solid fa-arrow-right"></i></a>
           </div>
 
-          <!-- POS Solutions -->
+          <!-- 4. Odoo & ERP Services -->
           <div class="svc-card fade-up">
-            <div class="svc-icon"><i class="fa-solid fa-shop"></i></div>
-            <h3>POS Solutions</h3>
-            <p>Point-of-sale and retail management systems that unify sales, inventory, and operations, from a single café to multi-branch retail chains, with real-time sync.</p>
+            <div class="svc-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3>Odoo &amp; ERP Services</h3>
+            <p>End-to-end Odoo ERP implementation, customization, and enterprise system integration that unifies finance, HR, inventory, sales, and CRM on one platform.</p>
             <div class="svc-keys-label">Key Areas</div>
             <ul class="svc-keys">
-              <li>Retail POS</li><li>Restaurant POS</li><li>Inventory</li><li>Multi-Branch</li>
+              <li>Odoo ERP</li><li>HR &amp; Payroll</li><li>Finance</li><li>Inventory</li><li>CRM</li>
             </ul>
-            <a href="retail-pos.html" class="svc-link">Explore POS Solutions <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="odoo-erp.html" class="svc-link">Explore Odoo &amp; ERP Services <i class="fa-solid fa-arrow-right"></i></a>
           </div>
 
-          <!-- Digital Transformation -->
+          <!-- 5. Digital Transformation -->
           <div class="svc-card fade-up">
             <div class="svc-icon"><i class="fa-solid fa-arrows-spin"></i></div>
             <h3>Digital Transformation</h3>
@@ -1016,7 +1106,7 @@
             <a href="digital-transformation.html" class="svc-link">Explore Digital Transformation <i class="fa-solid fa-arrow-right"></i></a>
           </div>
 
-          <!-- Social Media Marketing -->
+          <!-- 6. Social Media Marketing -->
           <div class="svc-card fade-up">
             <div class="svc-icon"><i class="fa-solid fa-bullhorn"></i></div>
             <h3>Social Media Marketing</h3>
@@ -1027,18 +1117,15 @@
             </ul>
             <a href="social-media-marketing.html" class="svc-link">Explore Social Media Marketing <i class="fa-solid fa-arrow-right"></i></a>
           </div>
+        </div>
 
-          <!-- Cross-link card to Solutions -->
-          <div class="svc-card fade-up">
-            <div class="svc-icon"><i class="fa-solid fa-cubes"></i></div>
-            <h3>Packaged Solutions</h3>
-            <p>Not sure where to start? Browse our packaged solution pillars that combine these services into ready-to-deploy outcomes for common business challenges.</p>
-            <div class="svc-keys-label">Key Areas</div>
-            <ul class="svc-keys">
-              <li>Business Automation</li><li>ERP &amp; Odoo</li><li>Retail &amp; POS</li><li>Digital Transformation</li>
-            </ul>
-            <a href="solutions.html" class="svc-link">Browse All Solutions <i class="fa-solid fa-arrow-right"></i></a>
+        <!-- Packaged Solutions kept as a navigation CTA, not a core service card. -->
+        <div class="svc-solutions-cta fade-up">
+          <div class="svc-solutions-copy">
+            <h3>Looking for a packaged solution instead?</h3>
+            <p>Browse our solution pillars, which combine these services into ready-to-deploy outcomes for common business challenges, including Business Automation, ERP and Odoo, Retail and POS, and Digital Transformation.</p>
           </div>
+          <a href="solutions.html" class="cta-btn svc-solutions-btn">Browse All Solutions <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
@@ -1201,9 +1288,9 @@
               <div class="t-meta">Head of Technology<span>SaaS Company</span></div>
             </div>
             <div class="t-card">
-              <span class="t-pill">POS Solutions</span>
-              <p class="t-quote">"We run multiple branches and the new POS gives us a single live view of inventory and sales. Rollout was smooth and well-supported."</p>
-              <div class="t-meta">Retail Operations Lead<span>Multi-Branch Retailer</span></div>
+              <span class="t-pill">Web Development</span>
+              <p class="t-quote">"They rebuilt our corporate site and storefront around how customers actually buy. Page speed and enquiry volume both improved noticeably."</p>
+              <div class="t-meta">Marketing Director<span>E-Commerce Brand</span></div>
             </div>
             <div class="t-card">
               <span class="t-pill">Software Development</span>
@@ -1241,8 +1328,8 @@
             <div class="faq-answer">Yes. Every project includes post-launch support, and we offer monthly care plans for dedicated support, system updates, and continuous optimization as your business grows.</div>
           </div>
           <div class="faq-item">
-            <div class="faq-question">What makes your POS solutions different? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="faq-answer">Our POS systems are built for multi-branch operations with real-time inventory sync, billing, and reporting in a single live view. They're customizable for both retail and restaurant workflows rather than forced into a generic template.</div>
+            <div class="faq-question">Which services do you actually offer? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="faq-answer">We deliver six core service lines: AI and automation, custom software development, web development, Odoo and ERP services, digital transformation, and social media marketing. Each has its own page with the full scope, process, and typical outcomes. Retail and POS is available as a packaged solution rather than a standalone service.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question">How does AI automation reduce costs? <i class="fa-solid fa-chevron-down"></i></div>
@@ -1391,10 +1478,10 @@
       },
       {
         "@type": "Question",
-        "name": "What makes your POS solutions different?",
+        "name": "Which services do you actually offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our POS systems are built for multi-branch operations with real-time inventory sync, billing, and reporting in a single live view. They're customizable for both retail and restaurant workflows rather than forced into a generic template."
+          "text": "We deliver six core service lines: AI and automation, custom software development, web development, Odoo and ERP services, digital transformation, and social media marketing. Each has its own page with the full scope, process, and typical outcomes. Retail and POS is available as a packaged solution rather than a standalone service."
         }
       },
       {
@@ -1432,12 +1519,12 @@
       <div class="footer-col footer-services">
         <h3>Services</h3>
         <ul>
-          <li><a href="services.html">AI &amp; Automation</a></li>
-          <li><a href="services.html">Odoo ERP</a></li>
-          <li><a href="services.html">Custom Software</a></li>
-          <li><a href="services.html">Website Development</a></li>
-          <li><a href="services.html">POS Solutions</a></li>
-          <li><a href="services.html">Digital Transformation</a></li>
+          <li><a href="ai-automation.html">AI &amp; Automation</a></li>
+          <li><a href="custom-software-development.html">Custom Software Development</a></li>
+          <li><a href="web-development.html">Web Development</a></li>
+          <li><a href="odoo-erp.html">Odoo &amp; ERP Services</a></li>
+          <li><a href="digital-transformation.html">Digital Transformation</a></li>
+          <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
         </ul>
       </div>
       <div class="footer-col footer-solutions">
