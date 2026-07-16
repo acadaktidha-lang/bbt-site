@@ -785,179 +785,121 @@
       background: var(--bbt-bg);
     }
 
-    /* --- TRUSTED BY SLIDER STYLES --- */
-.trusted-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 10px;
+    @media (max-width: 1024px) {
+      /* Tablet: let each row wrap to as many lines as it needs. */
+      .trusted-logos { flex-wrap: wrap; }
+    }
+
+    @media (max-width: 767px) {
+      /* Phone: hand the row to initTrustSlider as a continuous marquee. */
+      .trusted-logos { flex-wrap: nowrap; justify-content: flex-start; width: max-content; will-change: transform; }
+      .trusted-slider-wrapper {
+        mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+      }
+    }
+
+    /* --- TRUSTED BY: AWARDS, PARTNERSHIPS & REGISTRATIONS --- */
+    /* A flat certification/compliance strip, not a testimonial card grid: every logo is
+       capped to the same 48px bounding box so FBR and LCCI can't out-size Cisco, and each
+       caption sits under its own logo. Greyscale by default keeps the row visually calm
+       across mixed logo styles; colour arrives on hover.
+       Desktop lays each row out as one centred line. Tablet wraps. Below 768px a row would
+       be a cramped grid, so each becomes an independent marquee (see initTrustSlider). */
+.trusted-header-row { margin-bottom: 10px; }
+
+.trusted-subhead {
+  max-width: 780px;
+  margin-top: 14px;
+  color: var(--bbt-muted);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.trusted-nav {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
-}
+.trusted-row { padding: 6px 0; }
 
-.trust-arrow {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 1px solid #e2e8f0;
-  background: #f8fafc;
-  color: var(--bbt-navy);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: grid;
-  place-items: center;
-}
-
-.trust-arrow:hover {
-  background: var(--bbt-orange);
-  color: white;
-  border-color: var(--bbt-orange);
-}
-
-/* --- SEAMLESS INFINITE AWARDS SLIDER --- */
-/* --- AWARDS SECTION FIXED --- */
-.trusted-slider-wrapper {
-  position: relative;
-  overflow: hidden;
-  padding: 60px 0;
-  width: 100%;
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-}
-
-.trusted-logos {
-  display: flex !important;
-  align-items: center;
-  gap: 24px; /* Matches JS 'gap' variable */
-  width: max-content;
-  will-change: transform;
-  transition: none !important;
-}
-
-/* ===== MODERN AWARDS CARDS ===== */
-.trusted-card {
-  position: relative;
-  width: 300px;
-  min-height: 340px;
-  flex: 0 0 300px;
-  background: #ffffff;
-  border: 1px solid var(--bbt-border);
-  border-radius: 28px;
-  padding: 36px 28px 32px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
-  opacity: 0.45;
-  transform: scale(0.88);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    box-shadow 0.5s ease, border-color 0.5s ease;
-}
-
-/* Gradient accent ribbon across the top */
-.trusted-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, var(--bbt-orange), var(--bbt-orange-600));
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-/* Soft orange glow blob behind the logo */
-.trusted-card::after {
-  content: "";
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 180px;
-  height: 180px;
-  background: radial-gradient(circle, var(--bbt-orange-glow), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  pointer-events: none;
-}
-
-.trusted-card.active {
-  opacity: 1 !important;
-  transform: scale(1.06) !important;
-  border-color: rgba(245, 158, 11, 0.35);
-  box-shadow: 0 30px 60px rgba(245, 158, 11, 0.18),
-    0 8px 20px rgba(15, 23, 42, 0.08);
-  z-index: 10;
-}
-
-.trusted-card.active::before { opacity: 1; }
-.trusted-card.active::after  { opacity: 1; }
-
-/* Logo sits inside a clean circular halo */
-.card-logo-box {
-  position: relative;
-  z-index: 1;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: var(--bbt-bg-soft);
-  border: 1px solid var(--bbt-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.trusted-card.active .card-logo-box {
-  background: #ffffff;
-  box-shadow: 0 10px 24px rgba(245, 158, 11, 0.15);
-  transform: translateY(-4px);
-}
-
-.card-logo-box img {
-  max-height: 64px;
-  width: auto;
-  max-width: 150px;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: filter 0.5s ease, opacity 0.5s ease;
-}
-
-.trusted-card.active .card-logo-box img {
-  filter: grayscale(0%);
-  opacity: 1;
-}
-
-/* Small "AWARD" eyebrow above the description */
-.card-desc {
-  position: relative;
-  z-index: 1;
-  font-size: 15px;
+.trusted-row-label {
+  font-size: 13px;
   font-weight: 700;
-  color: var(--bbt-navy);
-  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6B6B6B;
   margin: 0;
 }
 
-.card-desc::before {
-  content: "\f559"; /* font-awesome award icon */
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  display: block;
-  font-size: 18px;
-  color: var(--bbt-orange);
+/* Row 2 reads as "official registrations" rather than just more logos. */
+.trusted-row--registered {
+  background: #E4F5EE;
+  border-radius: 20px;
+  padding: 20px 24px;
+}
+
+.trusted-divider {
+  border: 0;
+  border-top: 1px solid var(--bbt-border);
+  margin: 30px 0;
+}
+
+.trusted-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.trusted-logos {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 24px 0 8px;
+  width: 100%;
+}
+
+.trusted-card {
+  flex: 0 0 165px;
+  width: 165px;
+  text-align: center;
+}
+
+/* Fixed box height, not fixed image height: logos keep their own proportions but all
+   occupy the same vertical space, so the row baseline stays even. */
+.card-logo-box {
+  height: 48px;
+  display: grid;
+  place-items: center;
   margin-bottom: 12px;
-  opacity: 0.85;
+}
+
+.card-logo-box img {
+  max-height: 48px;
+  max-width: 130px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.72;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.trusted-card:hover .card-logo-box img { filter: grayscale(0); opacity: 1; }
+
+/* Stand-in for logos we don't have artwork for yet (FBR, LCCI). */
+.logo-text {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #6B6B6B;
+  transition: color 0.3s ease;
+}
+
+.trusted-card:hover .logo-text { color: var(--bbt-navy); }
+
+.card-desc {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #6B6B6B;
+  margin: 0;
 }
 
     .process {
@@ -3497,9 +3439,6 @@ color: var(--bbt-orange-600);
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .trusted-logos {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
     }
 
     @media (max-width: 900px) {
@@ -3639,9 +3578,6 @@ color: var(--bbt-orange-600);
         grid-template-columns: 1fr;
       }
 
-      .trusted-logos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
 
       .cta-btn {
         display: none;
@@ -3747,11 +3683,6 @@ color: var(--bbt-orange-600);
       position: relative;
     }
 
-    .js .trusted-logo {
-      flex-shrink: 0;
-      width: 180px;
-      text-align: center;
-    }
 
     /* 4. Page Scroll Progress Indicator */
     .scroll-progress-bar {
@@ -3863,8 +3794,7 @@ color: var(--bbt-orange-600);
   .capability-card{ padding:32px 22px; min-height:auto; }
   .capabilities-main-heading{ font-size:26px; }
   .container{ width:92%; }
-  /* Trusted award cards are fixed 300px wide; cap them so they fit narrow phones */
-  .trusted-card{ width:84vw; flex:0 0 84vw; min-height:auto; }
+  .trusted-row--registered{ padding:16px 14px; }
 }
     </style>
 
@@ -4055,7 +3985,7 @@ color: var(--bbt-orange-600);
           <a href="web-development.html" class="mega-list-link"><span>Web Development</span><i class="fa-solid fa-arrow-right-long"></i></a>
           <a href="odoo-erp.html" class="mega-list-link"><span>Odoo &amp; ERP Services</span><i class="fa-solid fa-arrow-right-long"></i></a>
           <a href="social-media-marketing.html" class="mega-list-link"><span>Social Media Marketing</span><i class="fa-solid fa-arrow-right-long"></i></a>
-          <a href="digital-transformation.html" class="mega-list-link"><span>Digital Transformation</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="pos-systems-development.html" class="mega-list-link"><span>POS Systems</span><i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
       </div>
     </div>
@@ -4522,22 +4452,71 @@ color: var(--bbt-orange-600);
   <div class="container">
     <div class="trusted-header-row">
       <div class="section-header">
-        <p class="eyebrow">TRUSTED BY: AWARDS & PARTNERSHIPS </p>
-        <h2>Recognized by Industry Leaders</h2>
+        <p class="eyebrow">TRUSTED BY: AWARDS, PARTNERSHIPS &amp; REGISTRATIONS</p>
+        <h2>Recognized by Industry Leaders. Registered and Compliant in Pakistan.</h2>
+        <p class="trusted-subhead">From global tech certifications to national regulatory registrations, Big Binary Tech operates as a fully compliant, audit-ready technology partner.</p>
       </div>
     </div>
 
-    <div class="trusted-slider-wrapper">
-      <div class="trusted-logos" id="trustTrack">
-        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/cisco-1.png" alt="Cisco" loading="lazy" decoding="async"></div><p class="card-desc">Cisco Certified Regional Partner 2024</p></div>
-        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/navttc-1.png" alt="NAVTTC" loading="lazy" decoding="async"></div><p class="card-desc">National Vocational & Technical Training Partner</p></div>
-        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/pseb-1.png" alt="PSEB" loading="lazy" decoding="async"></div><p class="card-desc">Top 10 IT & ITeS Exporter of the Year</p></div>
-        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/psda.png" alt="PSDA" loading="lazy" decoding="async"></div><p class="card-desc">Punjab Skill Development Authority Member</p></div>
-        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/fast-nuces-1.png" alt="FAST" loading="lazy" decoding="async"></div><p class="card-desc">Academic Strategic Research Collaborator</p></div>
-        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/umt-1.png" alt="UMT" loading="lazy" decoding="async"></div><p class="card-desc">Strategic Partner for Digital Excellence</p></div>
-        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/hackthebox-1.png" alt="Hack The Box" loading="lazy" decoding="async"></div><p class="card-desc">Cybersecurity Awareness & Integration Partner</p></div>
-        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/list-1.png" alt="LIST" loading="lazy" decoding="async"></div><p class="card-desc">Leading Innovation in Systems & Technology</p></div>
-        <div class="trusted-card"><div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/wac-1.jpg" alt="WAC" loading="lazy" decoding="async"></div><p class="card-desc">Global Workforce & Career Consultant</p></div>
+    <div class="trusted-row">
+      <p class="trusted-row-label">Certifications, Awards &amp; Tech Partnerships</p>
+      <div class="trusted-slider-wrapper">
+        <ul class="trusted-logos" id="trustTrack">
+          <li class="trusted-card">
+            <div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/cisco-1.png" alt="Cisco Certified Regional Partner &mdash; Big Binary Tech" loading="lazy" decoding="async"></div>
+            <p class="card-desc">Cisco Certified Regional Partner 2024</p>
+          </li>
+          <li class="trusted-card">
+            <div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/psda.png" alt="Punjab Skill Development Authority member badge &mdash; Big Binary Tech" loading="lazy" decoding="async"></div>
+            <p class="card-desc">Punjab Skill Development Authority Member</p>
+          </li>
+          <li class="trusted-card">
+            <div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/fast-nuces-1.png" alt="FAST-NUCES academic research collaboration badge &mdash; Big Binary Tech" loading="lazy" decoding="async"></div>
+            <p class="card-desc">Academic Strategic Research Collaborator</p>
+          </li>
+          <li class="trusted-card">
+            <div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/umt-1.png" alt="UMT strategic digital partnership badge &mdash; Big Binary Tech" loading="lazy" decoding="async"></div>
+            <p class="card-desc">Strategic Partner for Digital Excellence</p>
+          </li>
+          <li class="trusted-card">
+            <div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/hackthebox-1.png" alt="Hack The Box cybersecurity partner badge &mdash; Big Binary Tech" loading="lazy" decoding="async"></div>
+            <p class="card-desc">Cybersecurity Awareness &amp; Integration Partner</p>
+          </li>
+          <li class="trusted-card">
+            <div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/list-1.png" alt="LIST innovation partnership badge &mdash; Big Binary Tech" loading="lazy" decoding="async"></div>
+            <p class="card-desc">Leading Innovation in Systems &amp; Technology</p>
+          </li>
+          <li class="trusted-card">
+            <div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/wac-1.jpg" alt="WAC global workforce consultant badge &mdash; Big Binary Tech" loading="lazy" decoding="async"></div>
+            <p class="card-desc">Global Workforce &amp; Career Consultant</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="trusted-divider">
+
+    <div class="trusted-row trusted-row--registered">
+      <p class="trusted-row-label">Registered &amp; Compliant With</p>
+      <div class="trusted-slider-wrapper">
+        <ul class="trusted-logos" id="trustTrackReg">
+          <li class="trusted-card">
+            <div class="card-logo-box"><span class="logo-text">FBR</span></div>
+            <p class="card-desc">Registered Taxpayer &mdash; Federal Board of Revenue</p>
+          </li>
+          <li class="trusted-card">
+            <div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/pseb-1.png" alt="PSEB registered IT and ITeS exporter badge &mdash; Big Binary Tech" loading="lazy" decoding="async"></div>
+            <p class="card-desc">Registered IT &amp; ITeS Exporter &mdash; Pakistan Software Export Board</p>
+          </li>
+          <li class="trusted-card">
+            <div class="card-logo-box"><span class="logo-text">LCCI</span></div>
+            <p class="card-desc">Member &mdash; Lahore Chamber of Commerce &amp; Industry</p>
+          </li>
+          <li class="trusted-card">
+            <div class="card-logo-box"><img src="https://bbt.mza-t.com/wp-content/uploads/2026/06/navttc-1.png" alt="NAVTTC public-private partnership badge &mdash; Big Binary Tech" loading="lazy" decoding="async"></div>
+            <p class="card-desc">Public-Private Partnership &mdash; National Vocational &amp; Technical Training Commission</p>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -4802,7 +4781,7 @@ color: var(--bbt-orange-600);
           <li><a href="custom-software-development.html">Custom Software Development</a></li>
           <li><a href="web-development.html">Web Development</a></li>
           <li><a href="odoo-erp.html">Odoo &amp; ERP Services</a></li>
-          <li><a href="digital-transformation.html">Digital Transformation</a></li>
+          <li><a href="pos-systems-development.html">POS Systems</a></li>
           <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
         </ul>
       </div>
@@ -5079,100 +5058,88 @@ function initHeroShifter() {
       });
 
       // ========== 6. LOGO MARQUEE ANIMATION ==========
-// --- TRUSTED BY MARQUEE (continuous glide, centre spotlight) ---
-// Was a step slider: it jumped one card every 3s over 0.4s, so it sat frozen 87% of the
-// time and each move read as a jerk. It also derived the track offset from a hard-coded
-// `cardWidth = 300; gap = 24`, which is wrong twice over -- below 480px the card is 84vw,
-// and .trusted-card is scale()d, so its visual width != its layout width. On a 390px phone
-// the cards lay out 351.6px apart while the track stepped 324px, leaving the highlighted
-// card ~345px off-centre and drifting ~12px further out of true every tick.
-//
-// Now: one linear tween slides the track continuously and wraps seamlessly, and the
-// "active" spotlight is derived from whichever card is nearest the wrapper's centre.
-// All geometry is measured from layout (offsetLeft/offsetWidth ignore the scale
-// transform), so it is correct at every breakpoint.
-function initTrustSlider() {
-  const trustTrack = document.getElementById("trustTrack");
-  if (!trustTrack) return;
+// --- TRUSTED BY MARQUEE (phones only, one instance per row) ---
+// Desktop and tablet lay each row out statically in CSS. Below 768px a row of logo tiles
+// would be a cramped grid, so each row becomes its own continuously gliding marquee.
+// All geometry is measured from layout (offsetLeft/offsetWidth), so it is correct at
+// every width; the loop wraps by exactly one duplicate set, so it never visibly resets.
+function initTrustSlider(trackId) {
+  const track = document.getElementById(trackId);
+  if (!track) return;
 
-  const wrapper = trustTrack.parentElement;
-  const originals = Array.from(trustTrack.children);
+  const wrapper = track.parentElement;
+  const originals = Array.from(track.children);
   if (!originals.length) return;
 
-  // One duplicate set is all a seamless wrap needs: we translate by exactly one set width
-  // and then reset, so the strip is visually identical at the wrap point.
-  originals.forEach(card => trustTrack.appendChild(card.cloneNode(true)));
-
-  const setCount = originals.length;
-  let step = 0;      // layout distance between consecutive cards (card width + gap)
-  let firstCentre = 0;
-  let loopWidth = 0;
+  const phone = window.matchMedia("(max-width: 767px)");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let clones = [];
   let tween = null;
 
-  function measure() {
-    const kids = trustTrack.children;
-    // offsetLeft/offsetWidth are LAYOUT values: unaffected by the active card's scale().
-    step = kids[1] ? kids[1].offsetLeft - kids[0].offsetLeft : kids[0].offsetWidth;
-    firstCentre = kids[0].offsetLeft + kids[0].offsetWidth / 2;
-    loopWidth = step * setCount;
+  function addClones() {
+    if (clones.length) return;
+    clones = originals.map(card => {
+      const c = card.cloneNode(true);
+      c.setAttribute("aria-hidden", "true");   // duplicates are decorative, not content
+      track.appendChild(c);
+      return c;
+    });
+  }
+
+  function removeClones() {
+    clones.forEach(c => c.remove());
+    clones = [];
   }
 
   function build() {
-    if (tween) tween.kill();
-    measure();
+    if (tween) { tween.kill(); tween = null; }
+
+    // Above the phone breakpoint the row is a static, centred line: no clones (they would
+    // render as duplicate logos) and no leftover transform from a previous marquee.
+    if (!phone.matches) {
+      removeClones();
+      gsap.set(track, { clearProps: "transform" });
+      return;
+    }
+
+    addClones();
+    const kids = track.children;
+    const step = kids[1] ? kids[1].offsetLeft - kids[0].offsetLeft : kids[0].offsetWidth;
+    const loopWidth = step * originals.length;
     if (!loopWidth) return;
 
+    // Respect the OS "reduce motion" setting: hold the strip still rather than glide it.
+    if (reduce.matches) return;
+
     const SPEED = 70; // px/sec -- a calm, readable glide
-    gsap.set(trustTrack, { x: 0 });
-    tween = gsap.to(trustTrack, {
+    gsap.set(track, { x: 0 });
+    tween = gsap.to(track, {
       x: `-=${loopWidth}`,
       ease: "none",
       duration: loopWidth / SPEED,
       repeat: -1,
-      // Wrap x back into [-loopWidth, 0] so it loops forever without ever resetting
-      // visibly -- the duplicate set means the frame after the wrap looks identical.
-      modifiers: {
-        x: v => (parseFloat(v) % loopWidth) + "px"
-      }
+      modifiers: { x: v => (parseFloat(v) % loopWidth) + "px" }
     });
   }
 
-  // Spotlight the card nearest the wrapper's centre. Derived from the track's x rather
-  // than measuring every card each frame, so it costs one read per frame, not 18.
-  let activeEl = null;
-  function spotlight() {
-    if (!step) return;
-    const x = Number(gsap.getProperty(trustTrack, "x")) || 0;
-    const centre = wrapper.clientWidth / 2;
-    let i = Math.round((centre - x - firstCentre) / step);
-    i = Math.max(0, Math.min(trustTrack.children.length - 1, i));
-    const el = trustTrack.children[i];
-    if (el !== activeEl) {
-      if (activeEl) activeEl.classList.remove("active");
-      el.classList.add("active");
-      activeEl = el;
-    }
-  }
-  gsap.ticker.add(spotlight);
+  const pause = () => tween && tween.pause();
+  const play = () => tween && tween.play();
+  wrapper.addEventListener("mouseenter", pause);
+  wrapper.addEventListener("mouseleave", play);
+  wrapper.addEventListener("touchstart", pause, { passive: true });
+  wrapper.addEventListener("touchend", play, { passive: true });
 
-  // Pause on hover so a reader can actually finish the card they are looking at.
-  wrapper.addEventListener("mouseenter", () => tween && tween.pause());
-  wrapper.addEventListener("mouseleave", () => tween && tween.play());
-
-  // Card width is viewport-relative below 480px, so the loop distance changes on resize.
+  // Tile width and the active breakpoint both change on resize, so re-derive the loop.
   let resizeTimer;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(build, 150);
   });
 
-  // Respect the OS "reduce motion" setting: hold the strip still rather than glide it.
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-  if (reduce.matches) { measure(); spotlight(); return; }
-
   build();
 }
-initTrustSlider();
+initTrustSlider("trustTrack");
+initTrustSlider("trustTrackReg");
       // ========== 6B. CORE CAPABILITIES SCROLL REVEAL (Clean & Minimal) ==========
       const capabilitiesCards = gsap.utils.toArray(".capability-card");
       
@@ -5442,6 +5409,63 @@ if (pinSection) {
     Array.prototype.forEach.call(vids, function(v){ io.observe(v); });
   })();
 </script>
+
+  <!-- Organization Schema (SEO / E-E-A-T: registrations, memberships, awards) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Big Binary Tech",
+    "url": "https://bbt.mza-t.com/",
+    "memberOf": [
+      {
+        "@type": "Organization",
+        "name": "Lahore Chamber of Commerce & Industry (LCCI)"
+      },
+      {
+        "@type": "Organization",
+        "name": "Punjab Skill Development Authority (PSDA)"
+      },
+      {
+        "@type": "Organization",
+        "name": "National Vocational & Technical Training Commission (NAVTTC)"
+      },
+      {
+        "@type": "Organization",
+        "name": "FAST-NUCES"
+      },
+      {
+        "@type": "Organization",
+        "name": "University of Management and Technology (UMT)"
+      }
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Registered IT & ITeS Exporter",
+        "credentialCategory": "Registration",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Pakistan Software Export Board (PSEB)"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Registered Taxpayer",
+        "credentialCategory": "Registration",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Federal Board of Revenue (FBR)"
+        }
+      }
+    ],
+    "award": [
+      "Cisco Certified Regional Partner 2024",
+      "Hack The Box Cybersecurity Awareness & Integration Partner",
+      "Top 10 IT & ITeS Exporter of the Year — PSEB"
+    ]
+  }
+  </script>
 </body>
 
 </html>
