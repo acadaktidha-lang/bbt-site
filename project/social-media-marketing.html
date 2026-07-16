@@ -346,6 +346,10 @@
     }
     .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; position: relative; z-index: 5; margin-top: 80px; }
     .breadcrumb { font-size: 12px; color: var(--bbt-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: block; }
+    /* Hero tagline sits between the breadcrumb and the H1. Both of those are loud (orange
+       uppercase / 4rem black), so this stays sentence-case and muted rather than becoming
+       a third competing line. */
+    .hero-tagline { display: block; font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 10px; }
     .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
     .trust-bar { display: flex; flex-wrap: wrap; gap: 20px; font-size: 12px; font-weight: 700; color: #94a3b8; margin-bottom: 35px; text-transform: uppercase;}
 
@@ -730,7 +734,7 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
           <a href="web-development.html" class="mega-list-link"><span>Web Development</span><i class="fa-solid fa-arrow-right-long"></i></a>
           <a href="odoo-erp.html" class="mega-list-link"><span>Odoo &amp; ERP Services</span><i class="fa-solid fa-arrow-right-long"></i></a>
           <a href="social-media-marketing.html" class="mega-list-link"><span>Social Media Marketing</span><i class="fa-solid fa-arrow-right-long"></i></a>
-          <a href="digital-transformation.html" class="mega-list-link"><span>Digital Transformation</span><i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="pos-systems-development.html" class="mega-list-link"><span>POS Systems</span><i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
       </div>
     </div>
@@ -841,18 +845,18 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
       <div class="hero-grid">
         <div class="hero-text">
           <span class="breadcrumb">Home &gt; Services &gt; Social Media Marketing &amp; Brand Growth</span>
-          <h1>Social Media Marketing &amp; Brand <span style="color:var(--bbt-orange)">Growth</span> for GCC, USA &amp; UK</h1>
-          <p>We turn your social media into a revenue channel, not just a posting schedule. From Arabic-ready content campaigns to LinkedIn lead generation, we build social strategies that attract followers, generate leads, and grow revenue.</p>
+          <span class="hero-tagline">Your Brand Deserves More Than Likes</span>
+          <h1>Social Media Marketing That Turns Followers Into <span style="color:var(--bbt-orange)">Customers</span></h1>
+          <p>Stop posting into the void. We build social media strategies that do real business — attracting leads, building trust, and driving revenue. Whether you need Arabic-first campaigns for the GCC market, LinkedIn lead generation for the USA, or brand growth in the UK, we create content and campaigns that connect with the right people and move them to action.</p>
           <div class="trust-bar">
             <span><i class="fas fa-bullhorn"></i> 150+ Campaigns Managed</span>
-            <span><i class="fas fa-location-dot"></i> GCC</span>
-            <span><i class="fas fa-location-dot"></i> USA</span>
-            <span><i class="fas fa-location-dot"></i> UK</span>
+            <span><i class="fas fa-location-dot"></i> GCC &amp; MENA Specialists</span>
+            <span><i class="fas fa-globe"></i> USA &amp; UK Market Expertise</span>
+            <span><i class="fas fa-chart-line"></i> ROI-Focused Strategies</span>
             <span><i class="fas fa-certificate"></i> PSEB Registered</span>
-            <span><i class="fas fa-chart-line"></i> ROI-Focused</span>
           </div>
           <div class="hero-btns">
-            <a href="contact.html" class="btn btn-coral">Get a Free Social Media Audit</a>
+            <a href="contact.html" class="btn btn-coral">Get Your Free Social Media Audit</a>
             <a href="#how-we-work" class="btn btn-outline-white">See How It Works</a>
           </div>
         </div>
@@ -867,16 +871,16 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
   <section class="problem-section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">The Problems We Solve</span>
+        <span class="eyebrow">Let's Be Honest — Social Media Is Harder Than It Looks</span>
         <h2>Does Any of This Sound Familiar?</h2>
       </div>
       <div class="problem-grid">
-        <div class="problem-card"><i class="fas fa-thumbs-down"></i><h3>Your social media posts get likes but zero sales</h3><p>Followers scroll past. Comments don't convert. You're building an audience that never buys.</p></div>
-        <div class="problem-card"><i class="fas fa-fire"></i><h3>Your ad budget is burning with no ROI</h3><p>You're spending on Facebook and Instagram ads but can't trace a single sale back to a campaign.</p></div>
-        <div class="problem-card"><i class="fas fa-language"></i><h3>You need Arabic content but your agency doesn't understand the culture</h3><p>Translations are literal. Cultural references are wrong.</p></div>
-        <div class="problem-card"><i class="fab fa-linkedin"></i><h3>Your LinkedIn is a ghost town</h3><p>Decision-makers don't see your content. Engagement remains low.</p></div>
-        <div class="problem-card"><i class="fas fa-magnifying-glass-chart"></i><h3>You have no idea what's working</h3><p>Reports contain numbers but no actionable insights.</p></div>
-        <div class="problem-card"><i class="fas fa-clock"></i><h3>You don't have time to manage social media</h3><p>Content creation, engagement, graphics, and ads consume too much time.</p></div>
+        <div class="problem-card"><i class="fas fa-thumbs-down"></i><h3>Your Posts Get Likes, But No Sales</h3><p>Followers scroll past. Comments never convert. You are building an audience that never buys.</p></div>
+        <div class="problem-card"><i class="fas fa-fire"></i><h3>Your Ad Budget Is Burning With No Return</h3><p>You spend on Facebook and Instagram ads, but you cannot trace a single sale back to a campaign.</p></div>
+        <div class="problem-card"><i class="fas fa-language"></i><h3>You Need Arabic Content, But Culture Gets Lost</h3><p>Translations are literal. Cultural references feel off. You miss the local audience you want to reach.</p></div>
+        <div class="problem-card"><i class="fab fa-linkedin"></i><h3>Your LinkedIn Is a Ghost Town</h3><p>Decision-makers never see your content. Engagement stays low. Your profile does not build authority.</p></div>
+        <div class="problem-card"><i class="fas fa-magnifying-glass-chart"></i><h3>You Have No Idea What Is Working</h3><p>Reports show numbers, but no clear insights. You cannot tell which effort drives real results.</p></div>
+        <div class="problem-card"><i class="fas fa-clock"></i><h3>You Simply Do Not Have Time</h3><p>Content creation, design, engagement, and ads eat up your schedule. Social media becomes a burden, not a tool.</p></div>
       </div>
     </div>
   </section>
@@ -885,9 +889,9 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
   <section class="offer-section" id="what-we-offer">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">What We Offer</span>
+        <span class="eyebrow">We Do Not Chase Vanity Metrics. We Chase Revenue.</span>
         <h2>Social Media That Grows Your Business, Not Just Your Follower Count</h2>
-        <p>Social media isn't about posting pretty pictures. It's about building a predictable growth engine. We combine organic content strategy, paid advertising, and data-driven analytics to transform social channels into revenue-generating assets.</p>
+        <p>Social media is not about posting pretty pictures. It is about building a predictable growth engine. We combine organic content strategy, paid advertising, and data-driven analytics to turn your social channels into assets that generate real revenue.</p>
       </div>
       <div class="offer-pills">
         <a href="#social-media-strategy" class="offer-pill"><i class="fas fa-pen-nib"></i> Social Media Strategy &amp; Content Creation</a>
@@ -910,13 +914,13 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
   <section class="gcc-spotlight">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Built for the GCC Market</span>
-        <h2>Arabic Social Media Campaigns &amp; Local Platform Expertise for UAE and Saudi Arabia</h2>
-        <p>With 60% of GCC social media users preferring Arabic content, businesses posting only in English often miss local audiences. We create Arabic-first campaigns with RTL design, culturally relevant messaging, and platform expertise across Snapchat MENA, TikTok Arabia, and Instagram Arabic.</p>
+        <span class="eyebrow">Speak Their Language. Win Their Trust.</span>
+        <h2>Arabic Social Media Campaigns &amp; Local Platform Expertise</h2>
+        <p>More than 60% of social media users in the GCC prefer Arabic content. Businesses that post only in English often miss this large, engaged audience. We create Arabic-first campaigns with RTL design, culturally relevant messaging, and deep platform knowledge across Snapchat MENA, TikTok Arabia, and Instagram Arabic. We also connect you with local influencers who already have the trust of your target market.</p>
       </div>
       <div class="gcc-stats-grid">
         <div class="gcc-stat-box"><h2>60%</h2><p>GCC users prefer Arabic content</p></div>
-        <div class="gcc-stat-box"><h2>MENA</h2><p>Snapchat + TikTok MENA growth</p></div>
+        <div class="gcc-stat-box"><h2>MENA</h2><p>Snapchat + TikTok growth expertise</p></div>
         <div class="gcc-stat-box"><h2>Local</h2><p>Influencer network access</p></div>
       </div>
       <div class="sec-cta-wrap" style="text-align:center;">
@@ -932,7 +936,7 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
         <span class="eyebrow">Social Media Strategy &amp; Content Creation</span>
         <h2>Social Media Strategy &amp; Content Creation</h2>
         <p style="font-weight:700;color:var(--bbt-navy);">A content engine that builds trust and keeps you top-of-mind.</p>
-        <p>We create social media strategies rooted in business goals rather than vanity metrics. Every post is planned, designed, and written to attract ideal customers and move them closer to purchase.</p>
+        <p>We build content engines that earn trust and keep your brand top-of-mind. Every post is planned, designed, and written to attract your ideal customer and move them closer to purchase.</p>
         <ul class="deliverables eight">
           <li><i class="fas fa-check"></i> Monthly content strategy</li>
           <li><i class="fas fa-check"></i> Editorial calendar</li>
@@ -989,8 +993,8 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
       <div class="service-text reveal">
         <span class="eyebrow">LinkedIn Marketing, Analytics &amp; Reporting</span>
         <h2>LinkedIn Marketing, Analytics &amp; Reporting</h2>
-        <p style="font-weight:700;color:var(--bbt-navy);">LinkedIn is where B2B buyers live, and we make sure they find you.</p>
-        <p>We transform LinkedIn into a lead-generation machine using content strategy, outreach campaigns, sponsored content, and advanced analytics.</p>
+        <p style="font-weight:700;color:var(--bbt-navy);">LinkedIn is where B2B buyers live. We make sure they find you.</p>
+        <p>We turn LinkedIn into a lead-generation machine using content strategy, outreach campaigns, sponsored content, and advanced analytics.</p>
         <ul class="deliverables eight">
           <li><i class="fas fa-check"></i> Company page optimization</li>
           <li><i class="fas fa-check"></i> Personal branding</li>
@@ -1014,8 +1018,9 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
   <!-- SECTION 08: ANALYTICS DASHBOARD PREVIEW -->
   <section class="metrics-section" id="analytics">
     <div class="container">
-      <h2 style="text-align: center; font-size: clamp(2rem,4vw,2.5rem); font-weight: 900; max-width:820px; margin:0 auto;">See Exactly What You're Getting: Real-Time Analytics, Zero Guesswork</h2>
-      <p style="text-align:center; max-width:720px; margin:18px auto 0; color:rgba(255,255,255,0.75);">Our dashboards reveal exactly which content drives leads, which campaigns deliver ROI, and where to scale investment.</p>
+      <p class="eyebrow" style="text-align:center;">No Guessing. Just Clear Numbers.</p>
+      <h2 style="text-align: center; font-size: clamp(2rem,4vw,2.5rem); font-weight: 900; max-width:820px; margin:0 auto;">See Exactly What You Are Getting: Real-Time Analytics</h2>
+      <p style="text-align:center; max-width:720px; margin:18px auto 0; color:rgba(255,255,255,0.75);">Our dashboards show you exactly which content drives leads, which campaigns deliver ROI, and where to scale your investment. You always know what works.</p>
       <div class="metrics-grid">
         <div class="metric-item"><h2>45,200</h2><p>Campaign Reach</p></div>
         <div class="metric-item"><h2>4.8%</h2><p>Engagement Rate</p></div>
@@ -1032,11 +1037,11 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
   <section class="process-section" id="how-we-work">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">How We Work</span>
+        <span class="eyebrow">A Simple Path From Audit to Growth</span>
         <h2>How We Grow Your Social Media, Start to Finish</h2>
       </div>
       <div class="process-grid">
-        <div class="process-step reveal"><div class="process-num">01</div><h3>Free Audit</h3><p>30-minute review of current presence, competitors, and audience.</p></div>
+        <div class="process-step reveal"><div class="process-num">01</div><h3>Free Audit</h3><p>A 30-minute review of your current presence, competitors, and audience.</p></div>
         <div class="process-step reveal"><div class="process-num">02</div><h3>Strategy &amp; Setup</h3><p>Tracking setup, content calendar creation, and account configuration.</p></div>
         <div class="process-step reveal"><div class="process-num">03</div><h3>Content &amp; Campaigns</h3><p>Content publishing, ad campaigns, and community engagement.</p></div>
         <div class="process-step reveal"><div class="process-num">04</div><h3>Optimize &amp; Scale</h3><p>A/B testing, budget optimization, and campaign scaling.</p></div>
@@ -1052,7 +1057,7 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
   <section class="service-block" id="pricing">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Pricing &amp; Packages</span>
+        <span class="eyebrow">Plans That Fit Your Stage of Growth</span>
         <h2>Social Growth Packages</h2>
       </div>
       <div class="pricing-grid" style="margin-top:50px;">
@@ -1083,6 +1088,7 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
         </div>
         <div class="price-card">
           <h3>Enterprise</h3>
+          <p style="color:var(--bbt-muted);font-size:.9rem;">Custom pricing for full-scale growth.</p>
           <div class="price-amount">Custom</div>
           <ul>
             <li><i class="fas fa-check"></i> All platforms</li>
@@ -1102,13 +1108,13 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
   <section class="proof-section" id="results">
     <div class="container">
       <div class="section-head" style="color:#fff;">
-        <span class="eyebrow">Social Proof</span>
+        <span class="eyebrow">Real Brands. Real Growth.</span>
         <h2 style="color:#fff;">Results Our Clients Have Seen</h2>
       </div>
       <div class="results-grid">
         <div class="result-card reveal">
           <span class="r-pill">GCC Client</span>
-          <p>Follower growth tripled and 15+ WhatsApp leads generated weekly.</p>
+          <p>Follower growth tripled and 15+ WhatsApp leads generated every week.</p>
         </div>
         <div class="result-card reveal">
           <span class="r-pill">USA Client</span>
@@ -1121,8 +1127,8 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
       </div>
       <div class="perf-grid">
         <div class="perf-item"><div class="pf-num">150+</div><div class="pf-label">Campaigns Managed</div></div>
-        <div class="perf-item"><div class="pf-num">3.2x</div><div class="pf-label">Average ROAS</div></div>
-        <div class="perf-item"><div class="pf-num">40%</div><div class="pf-label">Average CPL Reduction</div></div>
+        <div class="perf-item"><div class="pf-num">3.2x</div><div class="pf-label">Average Return on Ad Spend</div></div>
+        <div class="perf-item"><div class="pf-num">40%</div><div class="pf-label">Average Cost Per Lead Reduction</div></div>
         <div class="perf-item"><div class="pf-num">24/7</div><div class="pf-label">Campaign Monitoring</div></div>
       </div>
     </div>
@@ -1132,7 +1138,7 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
   <section class="faq-section" id="faqs">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">FAQ</span>
+        <span class="eyebrow">Common Questions, Clear Answers</span>
         <h2>Frequently Asked Questions</h2>
       </div>
       <div class="faq-container">
@@ -1176,10 +1182,11 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
   <section class="hero" style="min-height:auto; height:auto; padding:90px 0; background:var(--bbt-navy);">
     <div class="hero-mesh"></div>
     <div class="container" style="text-align: center; position:relative; z-index:5;">
+      <p class="eyebrow">Stop Posting. Start Growing.</p>
       <h2 style="font-size: clamp(2rem,5vw,3rem); font-weight: 900; margin-bottom: 20px; line-height:1.15;">Ready to Turn Social Media Into a Revenue Channel?</h2>
-      <p style="color: rgba(255,255,255,0.8); font-weight: 500; margin: 0 auto 36px; font-size: 1.15rem; max-width:680px;">Book a free 30-minute social media audit. We review your current presence, analyze competitors, and provide a clear growth plan before any commitment.</p>
+      <p style="color: rgba(255,255,255,0.8); font-weight: 500; margin: 0 auto 36px; font-size: 1.15rem; max-width:680px;">Book a free 30-minute social media audit. We review your current presence, analyze your competitors, and give you a clear growth plan — before any commitment.</p>
       <div class="hero-btns" style="justify-content: center; display:flex; flex-wrap:wrap; gap:16px;">
-        <a href="contact.html" class="btn btn-coral">Book Your Free Social Media Audit</a>
+        <a href="contact.html" class="btn btn-coral">Get a Free Social Media Audit</a>
         <a href="e-books.html" class="btn btn-outline-white">Download Our Social Media Guide</a>
       </div>
     </div>
@@ -1339,7 +1346,7 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
           <li><a href="custom-software-development.html">Custom Software Development</a></li>
           <li><a href="web-development.html">Web Development</a></li>
           <li><a href="odoo-erp.html">Odoo &amp; ERP Services</a></li>
-          <li><a href="digital-transformation.html">Digital Transformation</a></li>
+          <li><a href="pos-systems-development.html">POS Systems</a></li>
           <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
         </ul>
       </div>
