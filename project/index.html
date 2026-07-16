@@ -523,8 +523,8 @@
     .hero-heading-wrapper {
       position: relative;
       width: 100%;
-      /* Reserved space to prevent jumping/overlap */
-      height: clamp(160px, 22vh, 220px); 
+      /* Reserved space to prevent jumping/overlap; min-height (not fixed height) lets the box grow when the intro heading wraps to 3 lines instead of overlapping the paragraph below */
+      min-height: clamp(160px, 22vh, 220px);
       margin-bottom: 20px;
       display: grid;
       align-items: center; /* Vertical Centering */
