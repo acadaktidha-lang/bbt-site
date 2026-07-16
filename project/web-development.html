@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Development | Big Binary Tech</title>
+  <title>Web Development Services | Responsive Websites | Big Binary Tech</title>
   <link rel="icon" type="image/png" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
   <link rel="apple-touch-icon" href="https://bbt.mza-t.com/wp-content/uploads/2026/06/bbt-favicon.png">
-  <meta name="description" content="Fast, responsive, conversion-focused web development. Corporate websites, e-commerce storefronts, landing pages, and SEO and performance optimization. 50+ projects delivered.">
+  <meta name="description" content="Fast, responsive websites that turn visitors into customers. Corporate sites, online stores, landing pages and CMS builds. Book a free website audit.">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -682,6 +682,54 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
   }
 }
 </style>
+
+  <style>
+    /* --- Ported from the Social Media Marketing page (identical design system): the
+       markup patterns this page's content report needs but that were never styled here. --- */
+    .platforms-row { display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 26px; }
+    .platform-pill { font-size:.8rem; font-weight:700; color:var(--bbt-navy); background:var(--bbt-bg-soft); border:1px solid var(--bbt-border); padding:7px 14px; border-radius:999px; }
+    .offer-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin:44px 0; }
+    .offer-pill { display:inline-flex; align-items:center; gap:10px; padding:14px 26px; border-radius:999px; background:var(--bbt-bg-soft); border:1px solid var(--bbt-border); color:var(--bbt-navy); font-weight:700; font-size:.95rem; text-decoration:none; transition:all .3s ease; }
+    .offer-pill i { color:var(--bbt-orange); }
+    .offer-pill:hover { border-color:var(--bbt-orange); background:rgba(245,158,11,0.08); transform:translateY(-3px); }
+    .funnel { max-width:760px; margin:50px auto 0; display:flex; flex-direction:column; align-items:center; gap:0; }
+    .funnel-step { display:flex; align-items:center; gap:18px; width:100%; max-width:var(--w,560px); padding:20px 28px; border-radius:18px; background:radial-gradient(circle at 30% 30%, #1e293b, var(--bbt-navy)); color:#fff; font-weight:800; font-size:1.05rem; box-shadow:0 18px 40px rgba(15,23,42,0.12); }
+    .funnel-step .fn-num { width:36px; height:36px; flex:0 0 36px; display:grid; place-items:center; border-radius:50%; background:rgba(245,158,11,0.2); color:var(--bbt-orange); font-size:.9rem; }
+    .funnel-step span.fn-label { flex:1; }
+    .funnel-step i.fn-icon { color:var(--bbt-orange); }
+    .funnel-arrow { color:var(--bbt-orange); font-size:1.4rem; margin:10px 0; }
+    .results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:50px; }
+    .result-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(12px); border-radius:24px; padding:38px; }
+    .result-card .r-pill { display:inline-block; padding:7px 16px; background:rgba(245,158,11,0.18); color:var(--bbt-orange); border-radius:999px; font-weight:800; font-size:.78rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:20px; }
+    .result-card p { color:rgba(255,255,255,0.88); font-size:1.05rem; line-height:1.7; font-style:italic; }
+
+    .related-section { padding:100px 0; background:#fff; }
+    .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+    .related-card { position:relative; padding:40px 34px; background:#fff; border:1px solid var(--bbt-orange); border-radius:24px; text-decoration:none; transition:all .4s ease; box-shadow:0 8px 32px rgba(0,0,0,0.05); display:flex; flex-direction:column; }
+    .related-card:hover { transform:translateY(-10px); background:var(--bbt-navy); border-color:var(--bbt-navy); }
+    .related-type { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--bbt-orange); margin-bottom:16px; }
+    .related-card i { font-size:34px; color:var(--bbt-orange); margin-bottom:22px; transition:.4s; }
+    .related-card h3 { font-size:1.25rem; font-weight:700; color:var(--bbt-navy); margin-bottom:14px; transition:.4s; line-height:1.4; }
+    .related-card p { font-size:.95rem; color:var(--bbt-muted); margin-bottom:auto; transition:.4s; }
+    .related-card .related-go { margin-top:24px; font-weight:800; color:var(--bbt-orange); font-size:.9rem; transition:.4s; }
+    .related-card:hover h3, .related-card:hover .related-type, .related-card:hover .related-go, .related-card:hover i, .related-card:hover p { color:#fff; }
+
+    @media (max-width:1024px) {
+      .results-grid { grid-template-columns:1fr; }
+      .related-grid { grid-template-columns:repeat(2,1fr); }
+      .related-section { padding:70px 0; }
+    }
+    @media (max-width:768px) {
+      .related-grid { grid-template-columns:1fr; }
+      .funnel-step { max-width:100%; font-size:.95rem; padding:18px 20px; }
+      .offer-pills { gap:12px; }
+    }
+    @media (max-width:480px) {
+      .result-card { padding:28px 24px; }
+      .related-card { padding:32px 26px; }
+      .offer-pill { width:100%; justify-content:center; }
+    }
+  </style>
 </head>
 <body>
 
@@ -832,99 +880,300 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
         <div class="hero-text">
           <span class="breadcrumb">Home &gt; Services &gt; Web Development</span>
           <span class="eyebrow">Web Development</span>
-          <h1>Fast, Responsive Websites Built to <span style="color:var(--bbt-orange)">Convert</span></h1>
-          <p>From corporate websites and e-commerce storefronts to high-intent landing pages, we design and build sites that load quickly, rank well, and turn visitors into customers. Every build is responsive by default, optimized for performance and SEO, and ready to connect to the systems your business already runs on.</p>
-          <div class="hero-actions">
-            <a href="contact.html" class="btn btn-coral">Start Your Website Project</a>
-            <a href="#capabilities" class="cta-ghost">See What's Included</a>
+          <h1>Websites Built to Load Fast and Turn Visitors Into <span style="color:var(--bbt-orange)">Customers</span></h1>
+          <p>We design and build responsive websites that look sharp on every screen, load in seconds, and are set up to bring in leads from day one.</p>
+          <div class="hero-btns">
+            <a href="contact.html?service=web-development&amp;offer=audit" class="btn btn-coral">Get a Free Website Audit</a>
+            <a href="#process" class="btn btn-outline-white">See How It Works</a>
           </div>
-          <div class="hero-trust">
-            <div class="trust-item"><span class="trust-num">50+</span><span class="trust-label">Projects Delivered</span></div>
-            <div class="trust-item"><span class="trust-num">15+</span><span class="trust-label">Industries Served</span></div>
-            <div class="trust-item"><span class="trust-num">98%</span><span class="trust-label">Client Retention</span></div>
+          <div class="trust-bar">
+            <span><i class="fas fa-globe"></i> 100+ Websites Built</span>
+            <span><i class="fas fa-certificate"></i> PSEB Registered</span>
+            <span><i class="fas fa-mobile-screen-button"></i> Responsive &amp; Mobile-First</span>
+            <span><i class="fas fa-location-dot"></i> GCC, USA &amp; UK</span>
           </div>
         </div>
         <div class="hero-visual">
-          <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/frontend.jpg" style="width:100%; border-radius:30px; box-shadow: 0 0 50px rgba(245,158,11,0.25);" alt="Responsive website development">
+          <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/frontend.jpg" style="width:100%; border-radius:30px; box-shadow: 0 0 50px rgba(245,158,11,0.25);" alt="Responsive website mockup shown on desktop, tablet, and mobile screens">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 02: WHAT'S INCLUDED -->
-  <section class="problem-section" id="capabilities">
+  <!-- SECTION 02: PROBLEM STATEMENT -->
+  <section class="problem-section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">What's Included</span>
-        <h2>Everything You Need to Launch and Grow a Website That Works</h2>
-        <p>We cover the full build, from the first wireframe to the post-launch performance tuning, so you never have to stitch together three different vendors.</p>
+        <span class="eyebrow">The Problems We Solve</span>
+        <h2>Does Any of This Sound Familiar?</h2>
       </div>
       <div class="problem-grid">
-        <div class="problem-card reveal">
-          <i class="fa-solid fa-building"></i>
-          <h3>Corporate Websites</h3>
-          <p>Brand-led company sites with clear service pages, credibility content, and lead capture built into the structure rather than bolted on afterwards.</p>
-          <ul class="cap-keys"><li>Multi-page builds</li><li>Lead forms</li><li>Brand systems</li></ul>
-        </div>
-        <div class="problem-card reveal">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <h3>E-Commerce Storefronts</h3>
-          <p>Online stores with clean product catalogs, secure checkout, payment gateway setup, and inventory that stays in sync with your back office.</p>
-          <ul class="cap-keys"><li>Product catalogs</li><li>Payments</li><li>Inventory sync</li></ul>
-        </div>
-        <div class="problem-card reveal">
-          <i class="fa-solid fa-bullseye"></i>
-          <h3>Landing Pages</h3>
-          <p>Focused campaign pages built around a single conversion goal, with fast load times, clear messaging, and tracking wired in from day one.</p>
-          <ul class="cap-keys"><li>Campaign pages</li><li>A/B ready</li><li>Conversion tracking</li></ul>
-        </div>
-        <div class="problem-card reveal">
-          <i class="fa-solid fa-gauge-high"></i>
-          <h3>SEO &amp; Performance</h3>
-          <p>Technical SEO, Core Web Vitals tuning, image optimization, and clean semantic markup so your pages load fast and search engines can read them.</p>
-          <ul class="cap-keys"><li>Technical SEO</li><li>Core Web Vitals</li><li>Schema markup</li></ul>
-        </div>
-        <div class="problem-card reveal">
-          <i class="fa-solid fa-pen-to-square"></i>
-          <h3>CMS &amp; Content Control</h3>
-          <p>WordPress and headless CMS setups that let your team publish pages, update copy, and add content without waiting on a developer.</p>
-          <ul class="cap-keys"><li>WordPress</li><li>Headless CMS</li><li>Editor training</li></ul>
-        </div>
-        <div class="problem-card reveal">
-          <i class="fa-solid fa-plug"></i>
-          <h3>Integrations &amp; Support</h3>
-          <p>CRM, ERP, analytics, and payment integrations, plus hosting, security updates, and ongoing maintenance after your site goes live.</p>
-          <ul class="cap-keys"><li>CRM &amp; ERP</li><li>Analytics</li><li>Maintenance</li></ul>
-        </div>
-      </div>
-      <div class="sec-cta-wrap" style="text-align:center;">
-        <a href="contact.html" class="btn btn-coral">Discuss Your Requirements</a>
+        <div class="problem-card"><i class="fa-solid fa-mobile-screen-button"></i><h3>Your website looks old and breaks on mobile</h3><p>Visitors leave in seconds if your site is slow or doesn't work properly on their phone. You're losing leads without even knowing it.</p></div>
+        <div class="problem-card"><i class="fa-solid fa-user-slash"></i><h3>Your old developer disappeared after launch</h3><p>No updates, no support, no one to call when something breaks. You're stuck with a site nobody maintains.</p></div>
+        <div class="problem-card"><i class="fa-solid fa-language"></i><h3>Your site can't handle Arabic content</h3><p>Text breaks, the layout flips the wrong way, or you can't add Arabic at all. Your GCC customers feel ignored.</p></div>
+        <div class="problem-card"><i class="fa-solid fa-cart-shopping"></i><h3>Your online store loses sales at checkout</h3><p>Customers add items to their cart but never buy. Payment options are limited and shipping settings confuse people.</p></div>
+        <div class="problem-card"><i class="fa-solid fa-pen-to-square"></i><h3>You can't update your own website</h3><p>Every small text change needs a developer. You wait days and pay for edits that should take minutes.</p></div>
+        <div class="problem-card"><i class="fa-solid fa-tags"></i><h3>You don't know what a website should cost</h3><p>Quotes range from a few hundred dollars to tens of thousands. Nobody explains what's included, so you're afraid of hidden fees.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 03: HOW IT WORKS -->
+  <!-- SECTION 03: WHAT WE OFFER -->
+  <section class="offer-section" id="what-we-offer">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Custom Websites Built Around Your Business</h2>
+        <p>We build websites that fit your business, not templates forced onto your brand. Whether you need a corporate site that builds trust, an online store that sells, or a landing page that converts, we handle the full build from design to launch. No hidden costs. No technical jargon. Just a website that works.</p>
+      </div>
+      <div class="offer-pills">
+        <a href="#corporate-websites" class="offer-pill"><i class="fas fa-building"></i> Corporate Websites</a>
+        <a href="#business-websites" class="offer-pill"><i class="fas fa-briefcase"></i> Business Websites</a>
+        <a href="#ecommerce-websites" class="offer-pill"><i class="fas fa-cart-shopping"></i> E-commerce Websites</a>
+        <a href="#landing-pages" class="offer-pill"><i class="fas fa-bullseye"></i> Landing Pages</a>
+        <a href="#website-redesign" class="offer-pill"><i class="fas fa-wand-magic-sparkles"></i> Website Redesign</a>
+        <a href="#cms-development" class="offer-pill"><i class="fas fa-pen-to-square"></i> CMS Development</a>
+        <a href="#website-maintenance" class="offer-pill"><i class="fas fa-screwdriver-wrench"></i> Website Maintenance</a>
+      </div>
+      <!-- Equal-width steps: this is a linear delivery pipeline, not a narrowing funnel. -->
+      <div class="funnel" aria-label="How a website build runs from discovery to support">
+<div class="funnel-step" style="--w:620px;"><span class="fn-num">1</span><span class="fn-label">Discovery</span><i class="fas fa-comments fn-icon"></i></div>
+        <div class="funnel-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="funnel-step" style="--w:620px;"><span class="fn-num">2</span><span class="fn-label">Design</span><i class="fas fa-pen-ruler fn-icon"></i></div>
+        <div class="funnel-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="funnel-step" style="--w:620px;"><span class="fn-num">3</span><span class="fn-label">Build</span><i class="fas fa-code fn-icon"></i></div>
+        <div class="funnel-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="funnel-step" style="--w:620px;"><span class="fn-num">4</span><span class="fn-label">Test</span><i class="fas fa-vial-circle-check fn-icon"></i></div>
+        <div class="funnel-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="funnel-step" style="--w:620px;"><span class="fn-num">5</span><span class="fn-label">Launch</span><i class="fas fa-rocket fn-icon"></i></div>
+        <div class="funnel-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="funnel-step" style="--w:620px;"><span class="fn-num">6</span><span class="fn-label">Support</span><i class="fas fa-headset fn-icon"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04: GCC SPOTLIGHT -->
+  <section class="gcc-spotlight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Built for the GCC Market</span>
+        <h2>Arabic-Ready Websites and Local Payment Gateways for UAE and Saudi Arabia</h2>
+        <p>Most GCC internet users prefer to browse in Arabic, and businesses in the UAE and Saudi Arabia that skip Arabic-ready websites lose local customers without realizing it. We build right-to-left websites with full Arabic support, local payment gateways like Telr and PayFort, and hosting optimized for GCC visitors. Your customers see Arabic text that reads naturally, layouts that flip correctly, and payment options they already trust.</p>
+      </div>
+      <div class="gcc-stats-grid">
+        <div class="gcc-stat-box"><h2>60%</h2><p>of GCC users prefer Arabic content</p></div>
+        <div class="gcc-stat-box"><h2>RTL</h2><p>Built-in right-to-left support</p></div>
+        <div class="gcc-stat-box"><h2>Local</h2><p>Telr, PayFort &amp; Noon Payments ready</p></div>
+      </div>
+      <div class="sec-cta-wrap" style="text-align:center;">
+        <a href="contact.html?service=web-development&amp;market=gcc" class="btn btn-coral">Get a GCC-Ready Website</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05: Corporate Websites -->
+  <section class="service-block" id="corporate-websites">
+    <div class="container service-flex">
+      <div class="service-text reveal">
+        <span class="eyebrow">Corporate Websites</span>
+        <h2>Corporate Websites</h2>
+        <p style="font-weight:700;color:var(--bbt-navy);">A website that builds trust before your sales team even makes a call.</p>
+        <p>We design corporate websites that present your company as professional, stable, and credible. Clean layouts, strong messaging, and fast performance, so investors, partners, and clients see you as a serious business from the first click.</p>
+        <p style="margin-top:14px;"><strong style="color:var(--bbt-navy);">GCC:</strong> Arabic and English corporate sites with right-to-left support, local domain registration for .ae and .sa, and hosting that meets GCC rules.</p>
+        <p style="margin-top:8px;"><strong style="color:var(--bbt-navy);">USA:</strong> Investor-ready corporate sites with clear team profiles, compliance-friendly pages, and well-structured service pages.</p>
+        <p style="margin-top:8px; margin-bottom:18px;"><strong style="color:var(--bbt-navy);">UK:</strong> GDPR-compliant corporate sites with cookie consent, privacy policies, and professional B2B messaging.</p>
+        <ul class="deliverables">
+          <li><i class="fas fa-check"></i> Multi-page corporate site structure</li>
+          <li><i class="fas fa-check"></i> Brand-led design system</li>
+          <li><i class="fas fa-check"></i> Team and leadership pages</li>
+          <li><i class="fas fa-check"></i> Lead capture forms</li>
+          <li><i class="fas fa-check"></i> Fast, SEO-friendly build</li>
+        </ul>
+        <a href="contact.html?service=corporate-websites" class="service-link">Get a Corporate Website Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/about-us.jpg" style="width:100%; border-radius:24px;" alt="Corporate homepage mockup on desktop, shown in English and Arabic">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 06: Business Websites -->
+  <section class="service-block" id="business-websites">
+    <div class="container service-flex reverse">
+      <div class="service-text reveal">
+        <span class="eyebrow">Business Websites</span>
+        <h2>Business Websites</h2>
+        <p style="font-weight:700;color:var(--bbt-navy);">A website that brings you customers, not just visitors.</p>
+        <p>We build business websites designed to generate leads: clear service pages, strong calls-to-action, contact forms that actually work, and fast loading on every device. Whether you're a consultant, a clinic, or a construction firm, we make sure people who find you online actually contact you.</p>
+        <p style="margin-top:14px;"><strong style="color:var(--bbt-navy);">GCC:</strong> Business sites with WhatsApp click-to-chat, Google Maps for UAE and KSA locations, and Arabic support.</p>
+        <p style="margin-top:8px;"><strong style="color:var(--bbt-navy);">USA:</strong> Lead-focused builds with easy-to-use contact forms, online booking, and a local SEO-friendly structure.</p>
+        <p style="margin-top:8px; margin-bottom:18px;"><strong style="color:var(--bbt-navy);">UK:</strong> Professional service sites with review integration, clear service areas, and GDPR-compliant forms.</p>
+        <ul class="deliverables">
+          <li><i class="fas fa-check"></i> Clear service pages</li>
+          <li><i class="fas fa-check"></i> Contact and quote forms</li>
+          <li><i class="fas fa-check"></i> Click-to-call and WhatsApp buttons</li>
+          <li><i class="fas fa-check"></i> Local map integration</li>
+          <li><i class="fas fa-check"></i> Mobile-first design</li>
+        </ul>
+        <a href="contact.html?service=business-websites" class="service-link">Build My Business Website <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/professional-services.jpg" style="width:100%; border-radius:24px;" alt="Business website shown on desktop and mobile with call and WhatsApp buttons">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 07: E-commerce Websites -->
+  <section class="service-block" id="ecommerce-websites">
+    <div class="container service-flex">
+      <div class="service-text reveal">
+        <span class="eyebrow">E-commerce Websites</span>
+        <h2>E-commerce Websites</h2>
+        <p style="font-weight:700;color:var(--bbt-navy);">An online store that actually sells.</p>
+        <p>We build online stores on Shopify, WooCommerce, or custom platforms, with payment gateways that work in your country, shipping rules that make sense, and a checkout flow that doesn't lose customers. From product pages to order confirmation, every step is designed to turn visitors into buyers.</p>
+        <p style="margin-top:14px;"><strong style="color:var(--bbt-navy);">GCC:</strong> Shopify and WooCommerce stores with Telr, PayFort, Noon Payments, cash on delivery, and Arabic product pages.</p>
+        <p style="margin-top:8px;"><strong style="color:var(--bbt-navy);">USA:</strong> Stripe, PayPal, and Apple Pay integration with automatic sales tax and standard US shipping carriers.</p>
+        <p style="margin-top:8px; margin-bottom:18px;"><strong style="color:var(--bbt-navy);">UK:</strong> Shopify stores with Klarna, Clearpay, Royal Mail integration, and VAT-ready invoicing.</p>
+        <ul class="deliverables">
+          <li><i class="fas fa-check"></i> Product catalog setup</li>
+          <li><i class="fas fa-check"></i> Secure checkout</li>
+          <li><i class="fas fa-check"></i> Local payment gateway integration</li>
+          <li><i class="fas fa-check"></i> Shipping and tax rules</li>
+          <li><i class="fas fa-check"></i> Order and inventory sync</li>
+        </ul>
+        <a href="contact.html?service=ecommerce-websites" class="service-link">Start My E-commerce Store <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/ecommerce-scaled.jpg" style="width:100%; border-radius:24px;" alt="Phone mockup of an e-commerce checkout with local GCC payment options">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 08: Landing Pages -->
+  <section class="service-block" id="landing-pages">
+    <div class="container service-flex reverse">
+      <div class="service-text reveal">
+        <span class="eyebrow">Landing Pages</span>
+        <h2>Landing Pages</h2>
+        <p style="font-weight:700;color:var(--bbt-navy);">One page. One goal. More conversions.</p>
+        <p>We design landing pages for ads, campaigns, and product launches, with a single clear message, one strong call-to-action, and no distractions. Every element is built to convert: headlines that grab attention, forms that are easy to fill, and mobile speed that keeps visitors from leaving.</p>
+        <p style="margin-top:14px;"><strong style="color:var(--bbt-navy);">GCC:</strong> Arabic landing pages for Google Ads and social campaigns, with WhatsApp click-to-chat as the main call-to-action.</p>
+        <p style="margin-top:8px;"><strong style="color:var(--bbt-navy);">USA:</strong> High-conversion pages built for Facebook and Instagram ads, with lead form integration and A/B testing ready.</p>
+        <p style="margin-top:8px; margin-bottom:18px;"><strong style="color:var(--bbt-navy);">UK:</strong> GDPR-compliant landing pages with clear consent checkboxes and local phone number capture.</p>
+        <ul class="deliverables">
+          <li><i class="fas fa-check"></i> Single-goal page design</li>
+          <li><i class="fas fa-check"></i> Fast mobile load speed</li>
+          <li><i class="fas fa-check"></i> Conversion-focused copy</li>
+          <li><i class="fas fa-check"></i> Lead form or WhatsApp CTA</li>
+          <li><i class="fas fa-check"></i> A/B testing ready</li>
+        </ul>
+        <a href="contact.html?service=landing-pages" class="service-link">Get a High-Converting Landing Page <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/service-visuals.avif" style="width:100%; border-radius:24px;" alt="A cluttered landing page beside a clean, focused BBT landing page">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 09: Website Redesign -->
+  <section class="service-block" id="website-redesign">
+    <div class="container service-flex">
+      <div class="service-text reveal">
+        <span class="eyebrow">Website Redesign</span>
+        <h2>Website Redesign</h2>
+        <p style="font-weight:700;color:var(--bbt-navy);">Your old website, rebuilt to work in 2026.</p>
+        <p>We take your existing website and rebuild it with modern design, mobile-first layout, faster loading, and better conversion. We keep what's working, fix what's broken, and add what's missing, so you don't lose your search ranking, but you gain a site that actually performs.</p>
+        <p style="margin-top:14px;"><strong style="color:var(--bbt-navy);">GCC:</strong> Redesign of old Arabic websites with proper right-to-left support, modern fonts, and full mobile responsiveness.</p>
+        <p style="margin-top:8px;"><strong style="color:var(--bbt-navy);">USA:</strong> Rebuilds of outdated WordPress or static sites with a modern CMS, clean SEO structure, and lead generation tools.</p>
+        <p style="margin-top:8px; margin-bottom:18px;"><strong style="color:var(--bbt-navy);">UK:</strong> GDPR and accessibility-friendly redesigns for professional service firms and public sector sites.</p>
+        <ul class="deliverables">
+          <li><i class="fas fa-check"></i> Full design refresh</li>
+          <li><i class="fas fa-check"></i> Mobile-first rebuild</li>
+          <li><i class="fas fa-check"></i> Faster load times</li>
+          <li><i class="fas fa-check"></i> SEO ranking preserved</li>
+          <li><i class="fas fa-check"></i> Conversion-focused layout</li>
+        </ul>
+        <a href="contact.html?service=website-redesign" class="service-link">Redesign My Website <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/frontend.jpg" style="width:100%; border-radius:24px;" alt="Before and after: an outdated site next to the modern redesign">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: CMS Development -->
+  <section class="service-block" id="cms-development">
+    <div class="container service-flex reverse">
+      <div class="service-text reveal">
+        <span class="eyebrow">CMS Development</span>
+        <h2>CMS Development</h2>
+        <p style="font-weight:700;color:var(--bbt-navy);">Update your own website, no coding needed.</p>
+        <p>We build websites on WordPress, Shopify, or a custom CMS, so you can add pages, edit text, and upload images without calling a developer. We train your team, write simple documentation, and make sure you're confident in managing your own site.</p>
+        <p style="margin-top:14px;"><strong style="color:var(--bbt-navy);">GCC:</strong> Arabic-friendly CMS setup with right-to-left text editing, multilingual support, and local hosting.</p>
+        <p style="margin-top:8px;"><strong style="color:var(--bbt-navy);">USA:</strong> WordPress and Shopify CMS with easy-to-use admin panels, role-based access, and plugin integration.</p>
+        <p style="margin-top:8px; margin-bottom:18px;"><strong style="color:var(--bbt-navy);">UK:</strong> GDPR-compliant CMS with data handling controls, consent management, and accessibility tools.</p>
+        <ul class="deliverables">
+          <li><i class="fas fa-check"></i> User-friendly admin panel</li>
+          <li><i class="fas fa-check"></i> Team training session</li>
+          <li><i class="fas fa-check"></i> Simple written guides</li>
+          <li><i class="fas fa-check"></i> Role-based access</li>
+          <li><i class="fas fa-check"></i> Multilingual content support</li>
+        </ul>
+        <a href="contact.html?service=cms-development" class="service-link">Get a Website I Can Manage Myself <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/database.jpg" style="width:100%; border-radius:24px;" alt="Simple CMS dashboard with Add Page, Edit Text and Upload Image buttons">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: Website Maintenance -->
+  <section class="service-block" id="website-maintenance">
+    <div class="container service-flex">
+      <div class="service-text reveal">
+        <span class="eyebrow">Website Maintenance</span>
+        <h2>Website Maintenance</h2>
+        <p style="font-weight:700;color:var(--bbt-navy);">Your website stays fast, secure, and up to date, without you lifting a finger.</p>
+        <p>We handle updates, security patches, backups, speed optimization, and content changes. If something breaks, we fix it. If your site slows down, we speed it up. You focus on your business, we keep your website running.</p>
+        <p style="margin-top:14px;"><strong style="color:var(--bbt-navy);">GCC:</strong> Local hosting maintenance, Arabic content updates, and support during GCC business hours.</p>
+        <p style="margin-top:8px;"><strong style="color:var(--bbt-navy);">USA:</strong> 24/7 monitoring, security hardening, plugin updates, and ongoing performance optimization.</p>
+        <p style="margin-top:8px; margin-bottom:18px;"><strong style="color:var(--bbt-navy);">UK:</strong> GDPR-compliant maintenance, regular backups, and accessibility audit updates.</p>
+        <ul class="deliverables">
+          <li><i class="fas fa-check"></i> Regular updates and backups</li>
+          <li><i class="fas fa-check"></i> Security monitoring</li>
+          <li><i class="fas fa-check"></i> Speed optimization</li>
+          <li><i class="fas fa-check"></i> Content edits on request</li>
+          <li><i class="fas fa-check"></i> Direct support access</li>
+        </ul>
+        <a href="contact.html?service=website-maintenance" class="service-link">Get Website Maintenance <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <img loading="lazy" src="https://bbt.mza-t.com/wp-content/uploads/2026/06/cloud.jpg" style="width:100%; border-radius:24px;" alt="Checklist showing Updates, Backups, Security, Speed and Support">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12: HOW WE WORK -->
   <section class="process-section" id="process">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">How It Works</span>
-        <h2>From First Conversation to Live Website</h2>
-        <p>A clear, staged process with visible progress at every step. You always know what is being built, what is next, and when it ships.</p>
+        <span class="eyebrow">How We Work</span>
+        <h2>How We Build Your Website, Start to Finish</h2>
       </div>
       <div class="process-grid">
-        <div class="process-step reveal"><div class="process-num">01</div><h3>Discovery</h3><p>We map your goals, audience, and competitors, then agree the pages, features, and success metrics for the build.</p></div>
-        <div class="process-step reveal"><div class="process-num">02</div><h3>Design</h3><p>Wireframes and UI designs for every key template, reviewed with you before a single line of production code is written.</p></div>
-        <div class="process-step reveal"><div class="process-num">03</div><h3>Build</h3><p>Responsive front-end development, CMS setup, and integrations with your CRM, ERP, payment, and analytics tools.</p></div>
-        <div class="process-step reveal"><div class="process-num">04</div><h3>Test &amp; Launch</h3><p>Cross-browser and device testing, speed and SEO checks, content migration, then a monitored go-live.</p></div>
-        <div class="process-step reveal"><div class="process-num">05</div><h3>Optimize</h3><p>Post-launch monitoring, security updates, performance tuning, and iterative improvements based on real user data.</p></div>
+        <div class="process-step reveal"><div class="process-num">01</div><h3>Free Discovery</h3><p>30 minutes, free. We learn about your business and show you what's possible.</p></div>
+        <div class="process-step reveal"><div class="process-num">02</div><h3>Design &amp; Plan</h3><p>We create wireframes and a clear plan with timeline and cost, before any code is written.</p></div>
+        <div class="process-step reveal"><div class="process-num">03</div><h3>Build &amp; Test</h3><p>We build your website, test every page, and make sure it works on all devices.</p></div>
+        <div class="process-step reveal"><div class="process-num">04</div><h3>Launch &amp; Train</h3><p>We go live, show you how to manage the site, and hand over all access.</p></div>
+        <div class="process-step reveal"><div class="process-num">05</div><h3>Ongoing Support</h3><p>We handle updates, security, and improvements. Optional monthly care plans available.</p></div>
       </div>
       <div class="sec-cta-wrap" style="text-align:center;">
-        <a href="contact.html" class="btn btn-coral">Book a Free Consultation</a>
+        <a href="contact.html?service=web-development&amp;offer=process" class="btn btn-coral">Start With a Free Discovery Call</a>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 04: WHY BIG BINARY TECH -->
+  <!-- SECTION 12B: WHY BIG BINARY TECH (build addition; not in the content spec) -->
   <section class="why-section" id="why-us">
     <div class="container">
       <div class="section-head">
@@ -979,27 +1228,37 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
     </div>
   </section>
 
-  <!-- SECTION 05: RESULTS -->
+  <!-- SECTION 13A: SOCIAL PROOF -->
   <section class="proof-section" id="results">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Results</span>
-        <h2 style="color:#fff;">What Working With Us Looks Like</h2>
-        <p style="color:rgba(255,255,255,0.75);">The same delivery standard we apply across AI, ERP, and custom software runs through every website we ship.</p>
+      <div class="section-head" style="color:#fff;">
+        <span class="eyebrow">Client Results</span>
+        <h2 style="color:#fff;">Results Our Clients Have Seen</h2>
+      </div>
+      <div class="results-grid">
+        <div class="result-card reveal">
+          <span class="r-pill">Dubai, UAE</span>
+          <p>"BBT built our Arabic e-commerce site with Telr integration. We went from zero online sales to a steady stream of weekly orders in the first month."</p>
+        </div>
+        <div class="result-card reveal">
+          <span class="r-pill">Texas, USA</span>
+          <p>"Our corporate website loads in under 2 seconds now. Contact form submissions have gone up noticeably since the redesign."</p>
+        </div>
+        <div class="result-card reveal">
+          <span class="r-pill">London, UK</span>
+          <p>"The CMS is so simple our marketing team updates the site daily without any help. It saves us hours every week."</p>
+        </div>
       </div>
       <div class="perf-grid">
-        <div class="perf-item"><div class="pf-num">50+</div><div class="pf-label">Projects Delivered</div></div>
-        <div class="perf-item"><div class="pf-num">15+</div><div class="pf-label">Industries Served</div></div>
-        <div class="perf-item"><div class="pf-num">98%</div><div class="pf-label">Client Retention</div></div>
-        <div class="perf-item"><div class="pf-num">24/7</div><div class="pf-label">Monitoring &amp; Support</div></div>
-      </div>
-      <div class="sec-cta-wrap" style="text-align:center;">
-        <a href="case-studies.html" class="btn btn-outline-white">View Our Case Studies</a>
+        <div class="perf-item"><div class="pf-num">100+</div><div class="pf-label">websites built</div></div>
+        <div class="perf-item"><div class="pf-num">2.5 weeks</div><div class="pf-label">average launch time</div></div>
+        <div class="perf-item"><div class="pf-num">60%</div><div class="pf-label">average load speed improvement</div></div>
+        <div class="perf-item"><div class="pf-num">24/7</div><div class="pf-label">support available</div></div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 06: FAQ -->
+  <!-- SECTION 13B: FAQ -->
   <section class="faq-section" id="faqs">
     <div class="container">
       <div class="section-head">
@@ -1008,44 +1267,56 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
       </div>
       <div class="faq-container">
         <div class="faq-item">
-          <div class="faq-question">How long does a website project take? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">It depends on scope. A focused landing page or small corporate site typically moves from discovery to launch in a few weeks, while a larger e-commerce build with integrations takes longer. After discovery we give you a staged timeline with clear milestones so you know exactly when each part ships.</div>
+          <div class="faq-question">How much does a website cost? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">It depends on what you need. A simple business website usually runs $1,500 to $3,500. A corporate site is typically $3,500 to $8,000. An e-commerce store starts around $5,000 and goes up from there depending on features. We start every project with a free audit, so you get a real number before you commit to anything.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Will my website be mobile friendly? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">Yes. Every site we build is responsive by default and tested on phones, tablets, and desktops before launch. Layouts, images, navigation, and forms are all checked at each breakpoint so the experience holds up on any screen size.</div>
+          <div class="faq-question">How long does it take to build a website? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">A standard business website takes about 2 to 3 weeks. A corporate site or online store takes 4 to 6 weeks. Larger custom builds can take 6 to 10 weeks. We work in phases, so you'll see progress within the first week.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Can you build an e-commerce store? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">Yes. We build online stores with product catalogs, secure checkout, and payment gateway setup, and we can connect them to your inventory, POS, or ERP so stock and orders stay in sync instead of being re-keyed by hand.</div>
+          <div class="faq-question">Will my website work on mobile phones? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes. Every site we build is mobile-first, which means we design for phones first and scale up from there. We test on real devices, not just desktop screens, so the experience holds up wherever your visitors are.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Do you handle SEO and site speed? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">Technical SEO and performance work are part of the build, not an upsell. We handle semantic markup, metadata, schema, image optimization, and Core Web Vitals tuning, then verify the results before we hand the site over.</div>
+          <div class="faq-question">Can you build Arabic websites? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes. We build full right-to-left layouts, Arabic fonts, and bilingual switching between English and Arabic. We test everything with native Arabic speakers so it reads naturally.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Can I update the website myself after launch? <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">Yes. We set up WordPress or a headless CMS so your team can publish pages, edit copy, and add content without a developer. We also walk your team through the editor and hand over full ownership of the code, hosting, and accounts.</div>
+          <div class="faq-question">Do I need to find my own hosting? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">No. We can set you up with GCC-optimized hosting or work with a hosting provider you already use. We'll explain the trade-offs so you can pick what fits your visitors best.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What if I need changes after launch? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Every project includes a 30-day support period. After that, you can choose a monthly care plan or pay for updates as you need them. You can reach us directly by email or WhatsApp, no ticket systems.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Will I be able to update the website myself? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes. We build on WordPress, Shopify, or a custom CMS with an easy-to-use admin panel. You'll get a training session and simple written guides, so you're confident making changes on your own.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you work with businesses outside the GCC? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes. We work with clients across the GCC, USA, and UK. Our team overlaps with all three time zones, so you're never waiting long for a reply.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA BANNER -->
+  <!-- SECTION 13C: BOTTOM CTA -->
   <section class="hero" style="min-height:auto; height:auto; padding:90px 0; background:var(--bbt-navy);">
     <div class="hero-mesh"></div>
     <div class="container" style="text-align: center; position:relative; z-index:5;">
-      <h2 style="font-size: clamp(2rem,5vw,3rem); font-weight: 900; margin-bottom: 20px; line-height:1.15;">Ready to Build a Website That Earns Its Keep?</h2>
-      <p style="color: rgba(255,255,255,0.8); font-weight: 500; margin: 0 auto 36px; font-size: 1.15rem; max-width:680px;">Tell us what you need and we will map the pages, features, and timeline in a free consultation. No commitment, no jargon, just a clear plan.</p>
+      <h2 style="font-size: clamp(2rem,5vw,3rem); font-weight: 900; margin-bottom: 20px; line-height:1.15;">Ready for a Website That Actually Works?</h2>
+      <p style="color: rgba(255,255,255,0.8); font-weight: 500; margin: 0 auto 36px; font-size: 1.15rem; max-width:680px;">Book a free 30-minute website audit. We'll review your current site, point out what's holding it back, and give you a clear plan, before you commit to anything.</p>
       <div class="hero-btns" style="justify-content: center; display:flex; flex-wrap:wrap; gap:16px;">
-        <a href="contact.html" class="btn btn-coral">Get Your Free Consultation</a>
-        <a href="services.html" class="btn btn-outline-white">Explore All Services</a>
+        <a href="contact.html?service=web-development&amp;offer=audit" class="btn btn-coral">Book Your Free Website Audit</a>
+        <a href="e-books.html" class="btn btn-outline-white">Download Our Web Guide</a>
       </div>
     </div>
   </section>
 
   <!-- Sticky mobile CTA -->
-  <a href="contact.html" class="sticky-expert">Start Your Website Project</a>
+  <a href="contact.html?service=web-development&amp;offer=audit" class="sticky-expert">Get a Free Website Audit</a>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
@@ -1121,16 +1392,142 @@ body.mobile-nav-open .sticky-expert{ display:none !important; }
     </script>
 
   <!-- FAQPage Schema (SEO) -->
+  <!-- Service Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Web Development Services",
+    "description": "Responsive corporate websites, business sites, online stores, landing pages, redesigns, CMS builds and website maintenance.",
+    "serviceType": "Web Development",
+    "provider": {
+      "@type": "Organization",
+      "name": "Big Binary Tech",
+      "url": "https://bbt.mza-t.com/"
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      {
+        "@type": "Country",
+        "name": "Saudi Arabia"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      {
+        "@type": "Country",
+        "name": "Pakistan"
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://bbt.mza-t.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://bbt.mza-t.com/services/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Web Development",
+        "item": "https://bbt.mza-t.com/services/web-development/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQPage Schema (SEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "How long does a website project take?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on scope. A focused landing page or small corporate site typically moves from discovery to launch in a few weeks, while a larger e-commerce build with integrations takes longer. After discovery we give you a staged timeline with clear milestones so you know exactly when each part ships." } },
-      { "@type": "Question", "name": "Will my website be mobile friendly?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every site we build is responsive by default and tested on phones, tablets, and desktops before launch. Layouts, images, navigation, and forms are all checked at each breakpoint so the experience holds up on any screen size." } },
-      { "@type": "Question", "name": "Can you build an e-commerce store?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build online stores with product catalogs, secure checkout, and payment gateway setup, and we can connect them to your inventory, POS, or ERP so stock and orders stay in sync instead of being re-keyed by hand." } },
-      { "@type": "Question", "name": "Do you handle SEO and site speed?", "acceptedAnswer": { "@type": "Answer", "text": "Technical SEO and performance work are part of the build, not an upsell. We handle semantic markup, metadata, schema, image optimization, and Core Web Vitals tuning, then verify the results before we hand the site over." } },
-      { "@type": "Question", "name": "Can I update the website myself after launch?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set up WordPress or a headless CMS so your team can publish pages, edit copy, and add content without a developer. We also walk your team through the editor and hand over full ownership of the code, hosting, and accounts." } }
+      {
+        "@type": "Question",
+        "name": "How much does a website cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on what you need. A simple business website usually runs $1,500 to $3,500. A corporate site is typically $3,500 to $8,000. An e-commerce store starts around $5,000 and goes up from there depending on features. We start every project with a free audit, so you get a real number before you commit to anything."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard business website takes about 2 to 3 weeks. A corporate site or online store takes 4 to 6 weeks. Larger custom builds can take 6 to 10 weeks. We work in phases, so you'll see progress within the first week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my website work on mobile phones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every site we build is mobile-first, which means we design for phones first and scale up from there. We test on real devices, not just desktop screens, so the experience holds up wherever your visitors are."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you build Arabic websites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We build full right-to-left layouts, Arabic fonts, and bilingual switching between English and Arabic. We test everything with native Arabic speakers so it reads naturally."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to find my own hosting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We can set you up with GCC-optimized hosting or work with a hosting provider you already use. We'll explain the trade-offs so you can pick what fits your visitors best."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I need changes after launch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every project includes a 30-day support period. After that, you can choose a monthly care plan or pay for updates as you need them. You can reach us directly by email or WhatsApp, no ticket systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I be able to update the website myself?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We build on WordPress, Shopify, or a custom CMS with an easy-to-use admin panel. You'll get a training session and simple written guides, so you're confident making changes on your own."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with businesses outside the GCC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We work with clients across the GCC, USA, and UK. Our team overlaps with all three time zones, so you're never waiting long for a reply."
+        }
+      }
     ]
   }
   </script>
