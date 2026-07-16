@@ -5,7 +5,12 @@
 # Operational artifacts (local-only safety nets, not source)
 wp-backup/
 .playwright-mcp/
-fullbleed-check.jpeg
+
+# Audit / verification screenshots taken at the repo root. Real site imagery
+# lives in assests/ and project/assets/, so nothing at the root is ever source.
+/*.jpeg
+/*.jpg
+/*.png
 
 # Spec source PDFs (large binaries kept locally, not in source control)
 *.pdf
