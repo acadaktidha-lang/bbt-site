@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:#f4f6f9; }
+  img{ max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  a:hover{ color:#d98c0a; }
+  summary{ cursor:pointer; list-style:none; }
+  summary::-webkit-details-marker{ display:none; }
+  :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  .bb-card{ transition:transform .25s ease, box-shadow .25s ease; }
+  .bb-card:hover{ transform:translateY(-6px); box-shadow:0 22px 44px rgba(13,27,42,.1); }
+  .bb-badge{ transition:background .2s ease, color .2s ease, border-color .2s ease; }
+  .bb-badge:hover{ border-color:#f5a623 !important; }
+  @media (max-width:980px){
+    .g3{ grid-template-columns:1fr 1fr !important; }
+    .g4{ grid-template-columns:1fr 1fr !important; }
+    .story2{ grid-template-columns:1fr !important; }
+    .stat4{ grid-template-columns:1fr 1fr !important; }
+    .h1{ font-size:44px !important; }
+    .h2{ font-size:31px !important; }
+  }
+  @media (max-width:620px){
+    .sec{ padding-left:22px !important; padding-right:22px !important; padding-top:60px !important; padding-bottom:60px !important; }
+    .g3{ grid-template-columns:1fr !important; }
+    .g4{ grid-template-columns:1fr !important; }
+    .stat4{ grid-template-columns:1fr 1fr !important; }
+    .h1{ font-size:34px !important; }
+    .h2{ font-size:26px !important; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; } html{ scroll-behavior:auto; } }
+</style>
+</helmet>
+
+<div style="font-family:'IBM Plex Sans',sans-serif; color:#1c2b3a; background:#f4f6f9;">
+  <dc-import name="BBT Nav" style="display:contents" hint-size="100%,70px"></dc-import>
+
+  <main>
+  <!-- HERO -->
+  <section class="sec" style="position:relative; background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:52px 40px 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; top:-120px; right:-90px; width:480px; height:480px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.14), transparent 70%);"></div>
+    <div style="position:relative; z-index:2; max-width:1240px; margin:0 auto;">
+      <nav aria-label="Breadcrumb" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d94ab; margin-bottom:30px;"><a href="BBT Homepage Family.dc.html">Home</a> <span style="color:#3f5772;">/</span> About</nav>
+      <div style="max-width:760px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:20px;">// SINCE 2015 · LAHORE, PAKISTAN</div>
+        <h1 class="h1" style="font-family:'Bricolage Grotesque',sans-serif; font-size:54px; line-height:1.06; font-weight:700; letter-spacing:-.025em; margin:0 0 20px;">About Big Binary Tech</h1>
+        <p style="font-size:18px; line-height:1.6; color:#a8bcce; max-width:620px; margin:0 0 30px;">A Pakistani engineering house that brings powerful enterprise technology to businesses of every size, not just big corporations. We are the team behind the ERP rollouts, automations and custom platforms that quietly run our clients' operations every day.</p>
+      </div>
+      <div class="stat4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; margin:44px 0 -44px;">
+        <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">2015</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Founded</div></div>
+        <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">200+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Projects delivered</div></div>
+        <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">15+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Industries served</div></div>
+        <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">4</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Markets: PK, GCC, US, UK</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="sec" style="background:#fff; padding:96px 40px 92px;">
+    <div class="story2" style="max-width:1240px; margin:0 auto; display:grid; grid-template-columns:.85fr 1.15fr; gap:52px; align-items:start;">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// OUR STORY</div>
+        <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0;">The smart way forward, since day one</h2>
+      </div>
+      <div style="font-size:17px; line-height:1.72; color:#42546a;">
+        <p style="margin:0 0 20px;">Big Binary Tech started in September 2015 with one simple goal: bring powerful enterprise technology to businesses of every size, not just big corporations. What began as a small software team has grown into a full digital transformation partner, offering Odoo ERP implementation, AI automation, custom software development and POS solutions to clients across the world.</p>
+        <p style="margin:0 0 24px;">For us, "Binary" means a choice: between doing things the old way, or doing them the smart way. Every business we work with is choosing to move forward. Our job is to make that move easy, reliable and worth it.</p>
+        <div style="border-left:3px solid #f5a623; padding:6px 0 6px 22px;">
+          <p style="font-family:'Bricolage Grotesque',sans-serif; font-size:21px; line-height:1.4; font-weight:500; color:#0d1b2a; margin:0;">We are Pakistan based and PSEB registered, and we hold ourselves to the standard our international clients expect. Global delivery, local accountability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="sec" style="background:#f4f6f9; padding:92px 40px;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// HOW WE WORK</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 46px; max-width:620px;">The principles behind every project</h2>
+      <div class="g4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:16px;">01</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">Outcomes, not tools</h3><p style="font-size:13.5px; line-height:1.62; color:#5a6b7b; margin:0;">We start with what you are trying to achieve, then choose the technology. Never the other way around.</p></div>
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:16px;">02</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">Progress in the open</h3><p style="font-size:13.5px; line-height:1.62; color:#5a6b7b; margin:0;">Weekly milestones and working features every month. You always know where your project stands.</p></div>
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:16px;">03</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">Built to last</h3><p style="font-size:13.5px; line-height:1.62; color:#5a6b7b; margin:0;">Clean, documented, secure code that keeps working after go-live and scales as you grow.</p></div>
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:16px;">04</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">We stay after launch</h3><p style="font-size:13.5px; line-height:1.62; color:#5a6b7b; margin:0;">Support, care plans and a real person to call. We do not disappear once the invoice clears.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS (two rows per handoff) -->
+  <section class="sec" style="background:#fff; padding:92px 40px;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// TRUSTED BY: AWARDS, PARTNERSHIPS &amp; REGISTRATIONS</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 10px; max-width:720px;">Recognized by industry leaders. Registered and compliant in Pakistan.</h2>
+      <p style="font-size:16px; line-height:1.6; color:#5a6b7b; max-width:640px; margin:0 0 40px;">From global tech certifications to national regulatory registrations, Big Binary Tech operates as a fully compliant, audit-ready technology partner.</p>
+
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.08em; color:#8a99a8; margin-bottom:14px;">CERTIFICATIONS, AWARDS &amp; TECH PARTNERSHIPS</div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:34px;">
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">Cisco</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Certified Regional Partner 2024</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">PSDA</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Punjab Skill Development Authority Member</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">FAST</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Academic Strategic Research Collaborator</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">UMT</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Strategic Partner for Digital Excellence</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">Hack The Box</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Cybersecurity Awareness &amp; Integration Partner</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">LIST</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Leading Innovation in Systems &amp; Technology</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">WAC</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Global Workforce &amp; Career Consultant</div></div>
+      </div>
+
+      <div style="height:1px; background:#e3e8ee; margin:0 0 30px;"></div>
+
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.08em; color:#1e6b4f; margin-bottom:14px;">REGISTERED &amp; COMPLIANT WITH</div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px;">
+        <div class="bb-badge" style="flex:1 1 200px; background:#e7f3ec; border:1px solid #cfe6d8; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">FBR</div><div style="font-size:12px; color:#4c6a5b; margin-top:5px; line-height:1.4;">Registered Taxpayer, Federal Board of Revenue</div></div>
+        <div class="bb-badge" style="flex:1 1 200px; background:#e7f3ec; border:1px solid #cfe6d8; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">PSEB</div><div style="font-size:12px; color:#4c6a5b; margin-top:5px; line-height:1.4;">Registered IT &amp; ITeS Exporter, Pakistan Software Export Board</div></div>
+        <div class="bb-badge" style="flex:1 1 200px; background:#e7f3ec; border:1px solid #cfe6d8; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">LCCI</div><div style="font-size:12px; color:#4c6a5b; margin-top:5px; line-height:1.4;">Member, Lahore Chamber of Commerce &amp; Industry</div></div>
+        <div class="bb-badge" style="flex:1 1 200px; background:#e7f3ec; border:1px solid #cfe6d8; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">NAVTTC</div><div style="font-size:12px; color:#4c6a5b; margin-top:5px; line-height:1.4;">Public-Private Partnership, National Vocational &amp; Technical Training Commission</div></div>
+      </div>
+      <div style="margin-top:16px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8a99a8;">// swap text badges for official logos before launch; confirm FBR NTN and LCCI membership numbers with the client</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" style="background:#f4f6f9; padding:92px 40px;">
+    <div style="max-width:900px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// ABOUT BBT</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 38px;">Questions about working with us</h2>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <details style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Is Big Binary Tech a registered and compliant software company in Pakistan?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. Big Binary Tech is registered with the Federal Board of Revenue (FBR) as a taxpayer, registered with the Pakistan Software Export Board (PSEB) as an IT &amp; ITeS exporter, and holds membership with the Lahore Chamber of Commerce &amp; Industry (LCCI). These registrations mean every engagement is invoiced, taxed, and documented the way an audit-ready enterprise vendor should be, not an informal freelance setup.</p></details>
+        <details style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">What is Big Binary Tech's partnership with NAVTTC?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Big Binary Tech holds a public-private partnership with the National Vocational &amp; Technical Training Commission (NAVTTC), Pakistan's federal body for technical and vocational training. This partnership supports workforce development and technical training initiatives, and reflects our standing as a recognized contributor to Pakistan's IT talent pipeline, not just a service vendor.</p></details>
+        <details style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Why do your registrations and certifications matter to clients outside Pakistan?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">For GCC, USA, and UK clients, our PSEB registration, FBR tax compliance, LCCI membership, and Cisco partnership give you the same vendor due-diligence trail you'd expect from a locally registered agency, at Pakistan-based delivery costs. It also means contracts, invoicing, and any compliance documentation you need for procurement are already in place, not something we scramble to produce mid-project.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sec" style="background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:96px 40px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.12em; color:#f5a623; margin-bottom:20px;">// LET'S TALK</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:42px; font-weight:700; letter-spacing:-.025em; line-height:1.08; margin:0 0 18px;">Choose the smart way forward</h2>
+      <p style="font-size:17px; line-height:1.6; color:#9fb2c4; margin:0 0 32px;">Every business we work with is choosing to move forward. Let us make that move easy, reliable and worth it.</p>
+      <a href="BBT Contact.dc.html" style="display:inline-block; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px 32px; border-radius:12px;">Book your free consultation →</a>
+    </div>
+  </section>
+  </main>
+
+  <dc-import name="BBT Footer" style="display:contents" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+</body>
+</html>

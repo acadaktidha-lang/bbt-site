@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:#f4f6f9; }
+  img{ max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  a:hover{ color:#d98c0a; }
+  summary{ cursor:pointer; list-style:none; }
+  summary::-webkit-details-marker{ display:none; }
+  :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  .bb-card{ transition:transform .25s ease, box-shadow .25s ease; }
+  .bb-card:hover{ transform:translateY(-6px); box-shadow:0 22px 44px rgba(13,27,42,.1); }
+  .bb-field{ width:100%; font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1c2b3a; background:#f4f6f9; border:1px solid #d9e0e8; border-radius:11px; padding:13px 15px; }
+  .bb-field:focus{ outline:none; border-color:#f5a623; background:#fff; box-shadow:0 0 0 3px rgba(245,166,35,.15); }
+  .bb-field::placeholder{ color:#93a2b0; }
+  @media (max-width:980px){
+    .g3{ grid-template-columns:1fr 1fr !important; }
+    .g2{ grid-template-columns:1fr !important; }
+    .contact-grid{ grid-template-columns:1fr !important; }
+    .form2{ grid-template-columns:1fr !important; }
+    .h1{ font-size:42px !important; }
+    .h2{ font-size:31px !important; }
+  }
+  @media (max-width:620px){
+    .sec{ padding-left:22px !important; padding-right:22px !important; padding-top:60px !important; padding-bottom:60px !important; }
+    .g3{ grid-template-columns:1fr !important; }
+    .h1{ font-size:32px !important; }
+    .h2{ font-size:25px !important; }
+    .trustbar{ flex-wrap:wrap !important; row-gap:8px !important; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; } html{ scroll-behavior:auto; } }
+</style>
+</helmet>
+
+<div style="font-family:'IBM Plex Sans',sans-serif; color:#1c2b3a; background:#f4f6f9;">
+  <dc-import name="BBT Nav" style="display:contents" hint-size="100%,70px"></dc-import>
+
+  <main>
+  <!-- HERO -->
+  <section class="sec" style="position:relative; background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:52px 40px 66px; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; top:-120px; right:-90px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.14), transparent 70%);"></div>
+    <div style="position:relative; z-index:2; max-width:1240px; margin:0 auto;">
+      <nav aria-label="Breadcrumb" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d94ab; margin-bottom:28px;"><a href="BBT Homepage Family.dc.html">Home</a> <span style="color:#3f5772;">/</span> Contact</nav>
+      <div style="max-width:720px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:18px;">// LET'S CONNECT</div>
+        <h1 class="h1" style="font-family:'Bricolage Grotesque',sans-serif; font-size:52px; line-height:1.07; font-weight:700; letter-spacing:-.025em; margin:0 0 18px;">Let's build something great together</h1>
+        <p style="font-size:18px; line-height:1.6; color:#a8bcce; max-width:600px; margin:0 0 26px;">Whether you need a custom POS system, an Odoo ERP implementation, a full digital transformation, or you simply want to explore what is possible, we are here to help. Tell us about your project and we will get back to you within 24 hours.</p>
+        <div class="trustbar" style="display:flex; align-items:center; gap:22px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#9fb2c4;">
+          <span>24-HOUR RESPONSE</span><span>FREE CONSULTATION</span><span>NO OBLIGATION</span><span>PK · GCC · US · UK</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM + NEXT STEPS -->
+  <section class="sec" style="background:#fff; padding:80px 40px;">
+    <div class="contact-grid" style="max-width:1240px; margin:0 auto; display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:start;">
+      <!-- form -->
+      <div style="background:#fff; border:1px solid #e3e8ee; border-radius:20px; padding:36px; box-shadow:0 20px 50px rgba(13,27,42,.06);">
+        <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#0d1b2a; margin:0 0 8px;">Send us a message</h2>
+        <p style="font-size:15px; line-height:1.6; color:#5a6b7b; margin:0 0 28px;">Fill out the form below and a real person will review your project and reply with specific next steps.</p>
+        <form action="#" method="post" novalidate>
+          <div class="form2" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+            <div><label for="c-name" style="display:block; font-size:13px; font-weight:600; color:#42546a; margin-bottom:7px;">Full name <span style="color:#d98c0a;">*</span></label><input class="bb-field" id="c-name" name="name" type="text" required autocomplete="name" placeholder="Your name"></div>
+            <div><label for="c-email" style="display:block; font-size:13px; font-weight:600; color:#42546a; margin-bottom:7px;">Business email <span style="color:#d98c0a;">*</span></label><input class="bb-field" id="c-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com"></div>
+            <div><label for="c-phone" style="display:block; font-size:13px; font-weight:600; color:#42546a; margin-bottom:7px;">Phone number</label><input class="bb-field" id="c-phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional"></div>
+            <div><label for="c-company" style="display:block; font-size:13px; font-weight:600; color:#42546a; margin-bottom:7px;">Company name</label><input class="bb-field" id="c-company" name="company" type="text" autocomplete="organization" placeholder="Optional"></div>
+            <div><label for="c-region" style="display:block; font-size:13px; font-weight:600; color:#42546a; margin-bottom:7px;">Country / region</label><select class="bb-field" id="c-region" name="region"><option>Pakistan</option><option>GCC</option><option>USA</option><option>UK</option><option>Other</option></select></div>
+            <div><label for="c-service" style="display:block; font-size:13px; font-weight:600; color:#42546a; margin-bottom:7px;">Service you need</label><select class="bb-field" id="c-service" name="service"><option>Odoo ERP</option><option>AI Automation</option><option>Custom Software</option><option>Web Development</option><option>POS System</option><option>Digital Transformation</option><option>Social Media Marketing</option><option>Not sure yet</option></select></div>
+          </div>
+          <div style="margin-bottom:16px;"><label for="c-msg" style="display:block; font-size:13px; font-weight:600; color:#42546a; margin-bottom:7px;">Tell us about your project</label><textarea class="bb-field" id="c-msg" name="message" rows="5" placeholder="Describe your current challenge, goals, timeline and budget range. Even a brief description is enough to start."></textarea></div>
+          <button type="submit" style="width:100%; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px; border:none; border-radius:12px; cursor:pointer;">Get my free consultation →</button>
+          <p style="font-size:12.5px; color:#8a99a8; margin:14px 0 0; text-align:center;">We respect your privacy. Your information is safe with us and will never be shared.</p>
+        </form>
+      </div>
+      <!-- next steps -->
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// WHAT HAPPENS NEXT</div>
+        <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#0d1b2a; margin:0 0 26px;">After you reach out</h2>
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <div style="display:flex; gap:16px;"><div style="flex:none; width:44px; height:44px; border-radius:12px; background:#0d1b2a; color:#f5a623; font-family:'IBM Plex Mono',monospace; font-weight:600; display:flex; align-items:center; justify-content:center;">01</div><div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 5px;">We respond in 24 hours</h3><p style="font-size:14px; line-height:1.6; color:#5a6b7b; margin:0;">No automated bots. A real person reviews your project and replies with specific next steps, not a generic template.</p></div></div>
+          <div style="display:flex; gap:16px;"><div style="flex:none; width:44px; height:44px; border-radius:12px; background:#0d1b2a; color:#f5a623; font-family:'IBM Plex Mono',monospace; font-weight:600; display:flex; align-items:center; justify-content:center;">02</div><div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 5px;">Free 30-minute consultation</h3><p style="font-size:14px; line-height:1.6; color:#5a6b7b; margin:0;">We learn about your business, identify quick wins and give you an honest assessment, even if we are not the right fit.</p></div></div>
+          <div style="display:flex; gap:16px;"><div style="flex:none; width:44px; height:44px; border-radius:12px; background:#0d1b2a; color:#f5a623; font-family:'IBM Plex Mono',monospace; font-weight:600; display:flex; align-items:center; justify-content:center;">03</div><div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 5px;">Clear proposal &amp; timeline</h3><p style="font-size:14px; line-height:1.6; color:#5a6b7b; margin:0;">You get a detailed proposal with scope, timeline, cost and deliverables. No hidden fees, no vague promises.</p></div></div>
+          <div style="display:flex; gap:16px;"><div style="flex:none; width:44px; height:44px; border-radius:12px; background:linear-gradient(160deg,#f5a623,#e08c0a); color:#0d1b2a; font-family:'IBM Plex Mono',monospace; font-weight:600; display:flex; align-items:center; justify-content:center;">04</div><div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 5px;">Start when you are ready</h3><p style="font-size:14px; line-height:1.6; color:#5a6b7b; margin:0;">No pressure to commit immediately. Review the proposal, ask questions and start when you are comfortable.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTI-CHANNEL -->
+  <section class="sec" style="background:#f4f6f9; padding:80px 40px;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// MULTI-CHANNEL</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 8px;">Other ways to reach us</h2>
+      <p style="font-size:16px; color:#5a6b7b; margin:0 0 40px;">Prefer to reach out another way? Here are all your options.</p>
+      <div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:28px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:14px;">EMAIL</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 8px;">Email us directly</h3><p style="font-size:14px; line-height:1.6; color:#5a6b7b; margin:0 0 14px;">For detailed project briefs and document sharing.</p><a href="mailto:business@bigbinarytech.com" style="font-size:14px; font-weight:600; color:#d98c0a;">business@bigbinarytech.com</a></div>
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:28px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:14px;">PHONE</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 8px;">Call us</h3><p style="font-size:14px; line-height:1.6; color:#5a6b7b; margin:0 0 14px;">Speak directly with our team during business hours across PK, GCC, US and UK time zones.</p><a href="tel:+13074434365" style="font-size:14px; font-weight:600; color:#d98c0a;">+1 307-443-4365</a></div>
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:28px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:14px;">BOOK A CALL</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 8px;">Book a video call</h3><p style="font-size:14px; line-height:1.6; color:#5a6b7b; margin:0 0 14px;">Schedule a 30-minute consultation at a time that works for you.</p><a href="#" style="font-size:14px; font-weight:600; color:#d98c0a;">Pick a time →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICES -->
+  <section class="sec" style="background:#fff; padding:80px 40px;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// VISIT US</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 40px;">Our offices</h2>
+      <div class="g2" style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+        <div style="background:#0d1b2a; color:#e7edf3; border-radius:18px; padding:34px; position:relative; overflow:hidden;">
+          <div aria-hidden="true" style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#f5a623,#1e6b4f);"></div>
+          <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#f5a623; margin-bottom:16px;">🇵🇰 HEADQUARTERS</div>
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:23px; font-weight:600; margin:0 0 14px;">Lahore, Pakistan</h3>
+          <div style="font-size:14.5px; line-height:1.9; color:#9fb2c4;">444-Q, DHA Phase II, Lahore, Pakistan<br>Monday to Friday, 9:00 AM to 6:00 PM PKT<br><a href="tel:+13074434365" style="color:#e7edf3;">+1 307-443-4365</a><br><a href="mailto:business@bigbinarytech.com" style="color:#e7edf3;">business@bigbinarytech.com</a></div>
+        </div>
+        <div style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:34px;">
+          <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:16px;">🇦🇪 REGIONAL OFFICE</div>
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:23px; font-weight:600; color:#0d1b2a; margin:0 0 14px;">Dubai, UAE</h3>
+          <div style="font-size:14.5px; line-height:1.9; color:#5a6b7b;">Address to be confirmed<br>Sunday to Thursday, 9:00 AM to 6:00 PM GST<br><a href="tel:+13074434365">+1 307-443-4365</a><br><a href="mailto:business@bigbinarytech.com">business@bigbinarytech.com</a></div>
+        </div>
+      </div>
+      <p style="font-size:14px; color:#5a6b7b; margin:22px 0 0;">We also serve clients across the USA and the UK remotely, with flexible scheduling to match your time zone.</p>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="sec" style="background:#f4f6f9; padding:70px 40px;">
+    <div style="max-width:1240px; margin:0 auto; text-align:center;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:12px;">// TRUSTED &amp; REGISTERED</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:30px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 34px;">Recognized by industry bodies and technology partners</h2>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a; background:#fff; border:1px solid #e3e8ee; border-radius:11px; padding:13px 22px;">PSEB Registered</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a; background:#fff; border:1px solid #e3e8ee; border-radius:11px; padding:13px 22px;">Cisco Academy</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a; background:#fff; border:1px solid #e3e8ee; border-radius:11px; padding:13px 22px;">FAST-NUCES</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a; background:#fff; border:1px solid #e3e8ee; border-radius:11px; padding:13px 22px;">NAVTTC Certified</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a; background:#fff; border:1px solid #e3e8ee; border-radius:11px; padding:13px 22px;">Odoo Partner</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a; background:#fff; border:1px solid #e3e8ee; border-radius:11px; padding:13px 22px;">AWS Partner</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a; background:#fff; border:1px solid #e3e8ee; border-radius:11px; padding:13px 22px;">Microsoft Partner</span>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <dc-import name="BBT Footer" style="display:contents" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+</body>
+</html>

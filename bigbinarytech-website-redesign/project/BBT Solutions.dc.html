@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:#f4f6f9; }
+  img{ max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  a:hover{ color:#d98c0a; }
+  summary{ cursor:pointer; list-style:none; }
+  summary::-webkit-details-marker{ display:none; }
+  :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  .bb-card{ transition:transform .25s ease, box-shadow .25s ease; }
+  .bb-card:hover{ transform:translateY(-6px); box-shadow:0 22px 44px rgba(13,27,42,.1); }
+  @media (max-width:980px){
+    .g3{ grid-template-columns:1fr 1fr !important; }
+    .g2{ grid-template-columns:1fr !important; }
+    .hero2{ grid-template-columns:1fr !important; }
+    .stat4{ grid-template-columns:1fr 1fr !important; }
+    .h1{ font-size:42px !important; }
+    .h2{ font-size:31px !important; }
+  }
+  @media (max-width:620px){
+    .sec{ padding-left:22px !important; padding-right:22px !important; padding-top:60px !important; padding-bottom:60px !important; }
+    .g3{ grid-template-columns:1fr !important; }
+    .stat4{ grid-template-columns:1fr 1fr !important; }
+    .h1{ font-size:33px !important; }
+    .h2{ font-size:26px !important; }
+    .herocta{ flex-direction:column !important; align-items:stretch !important; }
+    .herocta a{ text-align:center; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; } html{ scroll-behavior:auto; } }
+</style>
+</helmet>
+
+<div style="font-family:'IBM Plex Sans',sans-serif; color:#1c2b3a; background:#f4f6f9;">
+  <dc-import name="BBT Nav" style="display:contents" hint-size="100%,70px"></dc-import>
+
+  <main>
+  <!-- HERO -->
+  <section class="sec" style="position:relative; background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:52px 40px 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; top:-120px; right:-90px; width:480px; height:480px; border-radius:50%; background:radial-gradient(circle, rgba(30,107,79,.28), transparent 70%);"></div>
+    <div style="position:relative; z-index:2; max-width:1240px; margin:0 auto;">
+      <nav aria-label="Breadcrumb" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d94ab; margin-bottom:30px;"><a href="BBT Homepage Family.dc.html">Home</a> <span style="color:#3f5772;">/</span> Solutions</nav>
+      <div style="max-width:760px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:20px;">// BUILT FOR BUSINESSES THAT OUTGROW OFF-THE-SHELF TOOLS</div>
+        <h1 class="h1" style="font-family:'Bricolage Grotesque',sans-serif; font-size:54px; line-height:1.06; font-weight:700; letter-spacing:-.025em; margin:0 0 20px;">Enterprise technology solutions that actually work</h1>
+        <p style="font-size:18px; line-height:1.6; color:#a8bcce; max-width:600px; margin:0 0 14px;">Stop forcing your business into generic software. We build solutions around your workflow, not the other way around.</p>
+        <p style="font-size:16px; line-height:1.6; color:#8ea0b2; max-width:600px; margin:0 0 30px;">From AI-driven automation to full ERP rollouts, we design technology that connects your teams, cuts your costs and grows with you. One system, one partner, zero gaps.</p>
+        <div class="herocta" style="display:flex; gap:13px; align-items:center;">
+          <a href="BBT Contact.dc.html" style="background:#f5a623; color:#0d1b2a; font-weight:700; font-size:15px; padding:15px 26px; border-radius:11px;">Start your project →</a>
+          <a href="#pillars" style="font-weight:600; font-size:15px; color:#fff; padding:15px 20px; border:1px solid rgba(255,255,255,.25); border-radius:11px;">See our solutions</a>
+        </div>
+      </div>
+      <!-- stats bar -->
+      <div class="stat4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; margin:52px 0 -44px;">
+        <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:30px; font-weight:700; color:#f5a623;">15+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Industries served</div></div>
+        <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:30px; font-weight:700; color:#f5a623;">200+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Projects delivered</div></div>
+        <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:30px; font-weight:700; color:#f5a623;">70%</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Less manual work</div></div>
+        <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:30px; font-weight:700; color:#f5a623;">4</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Markets: PK, GCC, US, UK</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION PILLARS -->
+  <section id="pillars" class="sec" style="background:#fff; padding:96px 40px 92px;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// THREE WAYS WE SOLVE YOUR BIGGEST PROBLEMS</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:40px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:620px;">Solutions built to connect everything</h2>
+      <p style="font-size:17px; line-height:1.6; color:#5a6b7b; max-width:620px; margin:0 0 46px;">Most businesses run on disconnected tools that do not talk to each other. We fix that. Our three solution pillars are designed to work together, so your technology stack finally acts like one team.</p>
+      <div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:30px; display:flex; flex-direction:column;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:18px;">01 · ENTERPRISE &amp; ODOO</div>
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:600; color:#0d1b2a; margin:0 0 12px;">Enterprise ERP &amp; Odoo Solutions</h3>
+          <p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 18px;">Your finance, inventory, sales and HR data scattered across spreadsheets and old software? We implement and customize Odoo ERP so everything lives on one platform. Real-time reports, fewer errors, less chaos.</p>
+          <ul style="list-style:none; padding:0; margin:0 0 22px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>› Odoo ERP Implementation</li><li>› HR &amp; Payroll Modules</li><li>› Finance &amp; Accounting</li><li>› Inventory &amp; Warehouse</li><li>› CRM &amp; Sales Pipeline</li></ul>
+          <a href="BBT Contact.dc.html" style="margin-top:auto; font-size:14px; font-weight:600; color:#d98c0a;">Explore Enterprise Solutions →</a>
+        </article>
+        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:30px; display:flex; flex-direction:column;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:18px;">02 · RETAIL &amp; POS</div>
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:600; color:#0d1b2a; margin:0 0 12px;">Retail &amp; POS Solutions</h3>
+          <p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 18px;">Running multiple stores but cannot see what is happening in real time? Our POS systems sync sales, inventory and billing across every branch, instantly. From a single cafe to a retail chain, we scale with you.</p>
+          <ul style="list-style:none; padding:0; margin:0 0 22px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>› Retail POS Systems</li><li>› Restaurant POS Systems</li><li>› Inventory Management</li><li>› Billing &amp; Invoicing</li><li>› Multi-Branch Operations</li></ul>
+          <a href="BBT Contact.dc.html" style="margin-top:auto; font-size:14px; font-weight:600; color:#d98c0a;">Explore Retail Solutions →</a>
+        </article>
+        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:30px; display:flex; flex-direction:column;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:18px;">03 · DIGITAL TRANSFORMATION</div>
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:600; color:#0d1b2a; margin:0 0 12px;">Digital Transformation Solutions</h3>
+          <p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 18px;">Still doing work that software should handle? We automate your workflows, modernize your legacy systems and build custom APIs that connect everything. Delivered across Pakistan, the GCC, the USA and the UK.</p>
+          <ul style="list-style:none; padding:0; margin:0 0 22px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>› AI &amp; Workflow Automation</li><li>› Business Process Automation</li><li>› Legacy System Modernization</li><li>› Custom API Development</li><li>› Digital Strategy</li></ul>
+          <a href="BBT Contact.dc.html" style="margin-top:auto; font-size:14px; font-weight:600; color:#d98c0a;">Explore Digital Transformation →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BY CHALLENGE -->
+  <section class="sec" style="background:#f4f6f9; padding:92px 40px;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// FIND YOUR PROBLEM, WE WILL FIND THE FIX</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 14px; max-width:640px;">Solutions matched to your real business challenges</h2>
+      <p style="font-size:17px; line-height:1.6; color:#5a6b7b; max-width:600px; margin:0 0 44px;">You do not need a technology list. You need a fix for what is broken. Pick your biggest pain point below and see how we solve it.</p>
+      <div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 8px;">Manual processes slowing your team down?</h3><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#1e6b4f; margin-bottom:12px;">FIX: AI AUTOMATION &amp; INTEGRATIONS</div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:0 0 14px;">Workflow automation, AI chatbots, CRM integrations and custom API connections.</p><a href="BBT Contact.dc.html" style="font-size:13.5px; font-weight:600; color:#d98c0a;">Fix my manual work →</a></div>
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 8px;">Disconnected systems creating data silos?</h3><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#1e6b4f; margin-bottom:12px;">FIX: ERP INTEGRATION &amp; ODOO</div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:0 0 14px;">ERP implementation, system integration, Odoo customization and data synchronization.</p><a href="BBT Contact.dc.html" style="font-size:13.5px; font-weight:600; color:#d98c0a;">Connect my systems →</a></div>
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 8px;">Outdated website losing you customers?</h3><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#1e6b4f; margin-bottom:12px;">FIX: WEBSITE DEVELOPMENT &amp; CMS</div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:0 0 14px;">Corporate sites, e-commerce stores, landing pages and redesign or migration.</p><a href="BBT Contact.dc.html" style="font-size:13.5px; font-weight:600; color:#d98c0a;">Redesign my website →</a></div>
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 8px;">Need software built around your workflow?</h3><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#1e6b4f; margin-bottom:12px;">FIX: CUSTOM SOFTWARE DEVELOPMENT</div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:0 0 14px;">SaaS platforms, business applications, analytics dashboards and management systems.</p><a href="BBT Contact.dc.html" style="font-size:13.5px; font-weight:600; color:#d98c0a;">Build my custom software →</a></div>
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 8px;">Retail operations difficult to manage?</h3><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#1e6b4f; margin-bottom:12px;">FIX: POS SYSTEMS</div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:0 0 14px;">Retail and restaurant POS, billing and invoicing, real-time inventory tracking.</p><a href="BBT Contact.dc.html" style="font-size:13.5px; font-weight:600; color:#d98c0a;">Fix my retail operations →</a></div>
+        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 8px;">Marketing not bringing real leads?</h3><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#1e6b4f; margin-bottom:12px;">FIX: SOCIAL MEDIA MARKETING</div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:0 0 14px;">Paid advertising, content strategy, LinkedIn lead generation and performance reporting.</p><a href="BBT Contact.dc.html" style="font-size:13.5px; font-weight:600; color:#d98c0a;">Get real marketing results →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRY SOLUTIONS strip -->
+  <section class="sec" style="background:#0d1b2a; color:#e7edf3; padding:92px 40px;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// WE DO NOT DO ONE-SIZE-FITS-ALL</div>
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:40px;">
+        <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; margin:0; max-width:560px;">Solutions built for how your industry actually works</h2>
+        <a href="BBT Industries.dc.html" style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#9fb2c4; border-bottom:1px solid #2a3d55; padding-bottom:4px;">VIEW ALL INDUSTRIES →</a>
+      </div>
+      <div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <div style="background:#12233a; border:1px solid #1e3350; border-radius:14px; padding:24px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; margin:0 0 12px;">Retail &amp; E-Commerce</h3><p style="font-size:13.5px; line-height:1.6; color:#9fb2c4; margin:0;">POS and checkout, inventory management, e-commerce integrations.</p></div>
+        <div style="background:#12233a; border:1px solid #1e3350; border-radius:14px; padding:24px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; margin:0 0 12px;">Manufacturing</h3><p style="font-size:13.5px; line-height:1.6; color:#9fb2c4; margin:0;">ERP and production planning, inventory and supply chain, quality control.</p></div>
+        <div style="background:#12233a; border:1px solid #1e3350; border-radius:14px; padding:24px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; margin:0 0 12px;">Healthcare</h3><p style="font-size:13.5px; line-height:1.6; color:#9fb2c4; margin:0;">Patient CRM and scheduling, compliance and reporting, workflow automation.</p></div>
+        <div style="background:#12233a; border:1px solid #1e3350; border-radius:14px; padding:24px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; margin:0 0 12px;">Education</h3><p style="font-size:13.5px; line-height:1.6; color:#9fb2c4; margin:0;">Learning management systems, student and parent portals, administration.</p></div>
+        <div style="background:#12233a; border:1px solid #1e3350; border-radius:14px; padding:24px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; margin:0 0 12px;">Real Estate</h3><p style="font-size:13.5px; line-height:1.6; color:#9fb2c4; margin:0;">Property CRM and lead management, property management, marketing automation.</p></div>
+        <div style="background:#12233a; border:1px solid #1e3350; border-radius:14px; padding:24px;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; margin:0 0 12px;">Financial Services</h3><p style="font-size:13.5px; line-height:1.6; color:#9fb2c4; margin:0;">ERP and financial reporting, security and compliance, audit systems.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS STORIES -->
+  <section class="sec" style="background:#fff; padding:92px 40px;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// REAL NUMBERS, REAL RESULTS</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 14px;">Solutions that delivered measurable impact</h2>
+      <p style="font-size:17px; line-height:1.6; color:#5a6b7b; max-width:560px; margin:0 0 44px;">We do not talk about vague promises. Here are actual outcomes from projects we have delivered.</p>
+      <div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+        <div class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:16px; padding:28px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5a6b7b; margin-bottom:14px;">TECHNOLOGY</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 16px;">AI Workflow Automation Suite</h3><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; color:#d98c0a; line-height:1;">70%</div><p style="font-size:13.5px; color:#5a6b7b; margin:6px 0 18px;">reduction in manual operations</p><a href="#" style="font-size:13.5px; font-weight:600; color:#d98c0a;">View case study →</a></div>
+        <div class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:16px; padding:28px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5a6b7b; margin-bottom:14px;">MANUFACTURING</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 16px;">Odoo Sales &amp; Inventory Integration</h3><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; color:#d98c0a; line-height:1;">40%</div><p style="font-size:13.5px; color:#5a6b7b; margin:6px 0 18px;">improvement in operational visibility</p><a href="#" style="font-size:13.5px; font-weight:600; color:#d98c0a;">View case study →</a></div>
+        <div class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:16px; padding:28px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5a6b7b; margin-bottom:14px;">PROFESSIONAL SERVICES</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 16px;">Custom Management System</h3><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; color:#d98c0a; line-height:1;">5</div><p style="font-size:13.5px; color:#5a6b7b; margin:6px 0 18px;">departments unified on one platform</p><a href="#" style="font-size:13.5px; font-weight:600; color:#d98c0a;">View case study →</a></div>
+      </div>
+      <div style="margin-top:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8a99a8;">// replace with named case studies and verified metrics before launch</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sec" style="background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:96px 40px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.12em; color:#f5a623; margin-bottom:20px;">// FREE · 30 MINUTES · NO JARGON</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:42px; font-weight:700; letter-spacing:-.025em; line-height:1.08; margin:0 0 18px;">Let us find the solution your business needs</h2>
+      <p style="font-size:17px; line-height:1.6; color:#9fb2c4; margin:0 0 32px;">Book a free discovery call. Tell us what you are trying to fix, build or scale, and we will recommend the right mix, with complete clarity and zero obligation.</p>
+      <a href="BBT Contact.dc.html" style="display:inline-block; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px 32px; border-radius:12px;">Book your free consultation →</a>
+    </div>
+  </section>
+  </main>
+
+  <dc-import name="BBT Footer" style="display:contents" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+</body>
+</html>

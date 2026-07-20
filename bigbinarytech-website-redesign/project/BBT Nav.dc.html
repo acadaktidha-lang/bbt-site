@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  .bbnav *{ box-sizing:border-box; }
+  .bbnav a{ color:inherit; text-decoration:none; }
+  .bbnav a:hover{ color:#d98c0a; }
+  .bbnav summary{ cursor:pointer; list-style:none; }
+  .bbnav summary::-webkit-details-marker{ display:none; }
+  .bbnav :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  .bbnav-drop{ position:absolute; left:0; top:100%; padding-top:14px; opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .16s ease, transform .16s ease; z-index:60; }
+  .bbnav-item:hover>.bbnav-drop, .bbnav-item:focus-within>.bbnav-drop{ opacity:1; visibility:visible; transform:translateY(0); }
+  .bbnav-item>a[aria-haspopup]::after{ content:"⌄"; font-size:12px; margin-left:5px; position:relative; top:-1px; color:#93a2b0; }
+  .bbnav-link:hover{ background:#f4f6f9; color:#0d1b2a; }
+  .bbnav-mob{ display:none; }
+  @media (max-width:980px){
+    .bbnav-desk{ display:none !important; }
+    .bbnav-cta{ display:none !important; }
+    .bbnav-mob{ display:block !important; }
+  }
+  .bbnav-loader{ position:fixed; inset:0; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; background:#0d1b2a; animation:bbldOut 1.25s ease .55s forwards; }
+  .bbnav-loader .ring{ width:58px; height:58px; border-radius:50%; border:3px solid rgba(245,166,35,.18); border-top-color:#f5a623; animation:bbldSpin .8s linear infinite; }
+  .bbnav-loader .num{ position:absolute; font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:700; color:#fff; animation:bbldBlink 1s step-end infinite; }
+  .bbnav-loader .bar{ width:156px; height:3px; border-radius:2px; background:rgba(255,255,255,.12); overflow:hidden; }
+  .bbnav-loader .bar>span{ display:block; height:100%; width:0; background:linear-gradient(90deg,#f5a623,#ffc65c); animation:bbldBar 1s ease .15s forwards; }
+  .bbnav-loader .word{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.32em; color:#7d94ab; text-transform:uppercase; }
+  @keyframes bbldSpin{ to{ transform:rotate(360deg); } }
+  @keyframes bbldBar{ to{ width:100%; } }
+  @keyframes bbldBlink{ 0%,49%{ content:"01"; opacity:1; } 50%,100%{ opacity:.35; } }
+  @keyframes bbldOut{ 0%,58%{ opacity:1; visibility:visible; } 100%{ opacity:0; visibility:hidden; } }
+  @media (prefers-reduced-motion:reduce){ .bbnav-loader{ animation:bbldOut .1s linear forwards !important; } .bbnav-loader .ring{ animation:none !important; } }
+</style>
+</helmet>
+<div class="bbnav-loader" aria-hidden="true">
+  <div style="position:relative; width:58px; height:58px; display:flex; align-items:center; justify-content:center;">
+    <div class="ring"></div>
+    <span class="num">01</span>
+  </div>
+  <div class="bar"><span></span></div>
+  <div class="word">Big Binary Tech</div>
+</div>
+<header class="bbnav" style="font-family:'IBM Plex Sans',sans-serif; position:sticky; top:0; z-index:80; background:rgba(244,246,249,.88); backdrop-filter:blur(12px); border-bottom:1px solid #e3e8ee;">
+  <div style="max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 40px;">
+    <a href="BBT Homepage Family.dc.html" aria-label="Big Binary Tech home" style="display:flex; align-items:center;"><img src="assets/bbt-logo.png" alt="Big Binary Tech" style="height:38px; width:auto; display:block;"></a>
+
+    <nav class="bbnav-desk" aria-label="Primary" style="display:flex; align-items:center; gap:4px; font-size:14.5px; color:#42546a; font-weight:500;">
+      <div class="bbnav-item" style="position:relative;">
+        <a href="BBT Services.dc.html" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Services</a>
+        <div class="bbnav-drop">
+          <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:344px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">WHAT WE BUILD</div>
+            <a class="bbnav-link" href="BBT Services.dc.html" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">AI Automation Services</a>
+            <a class="bbnav-link" href="BBT Services.dc.html" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Odoo ERP Implementation</a>
+            <a class="bbnav-link" href="BBT Services.dc.html" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Custom Software Development</a>
+            <a class="bbnav-link" href="BBT Services.dc.html" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Website Development</a>
+            <a class="bbnav-link" href="BBT Services.dc.html" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Point of Sale (POS) Systems</a>
+            <a class="bbnav-link" href="BBT Services.dc.html" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation</a>
+          </div>
+        </div>
+      </div>
+      <div class="bbnav-item" style="position:relative;">
+        <a href="BBT Solutions.dc.html" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Solutions</a>
+        <div class="bbnav-drop">
+          <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:324px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">SOLUTION PILLARS</div>
+            <a class="bbnav-link" href="BBT Solutions.dc.html" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Enterprise &amp; Odoo Solutions</a>
+            <a class="bbnav-link" href="BBT Solutions.dc.html" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Retail &amp; POS Solutions</a>
+            <a class="bbnav-link" href="BBT Solutions.dc.html" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation Solutions</a>
+          </div>
+        </div>
+      </div>
+      <a href="BBT Industries.dc.html" style="padding:10px 14px; border-radius:9px;">Industries</a>
+      <a href="BBT About.dc.html" style="padding:10px 14px; border-radius:9px;">About</a>
+      <a href="BBT Contact.dc.html" style="padding:10px 14px; border-radius:9px;">Contact</a>
+    </nav>
+
+    <a class="bbnav-cta" href="BBT Contact.dc.html" style="font-size:14px; font-weight:600; background:#0d1b2a; color:#fff; padding:11px 20px; border-radius:10px; white-space:nowrap;">Get free consultation</a>
+
+    <details class="bbnav-mob" style="position:relative;">
+      <summary aria-label="Open menu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #d3dae2; border-radius:10px; background:#fff; font-size:18px; color:#0d1b2a;">☰</summary>
+      <div style="position:absolute; right:0; top:calc(100% + 12px); background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.16); padding:10px; width:244px; display:flex; flex-direction:column; gap:2px; z-index:90;">
+        <a class="bbnav-link" href="BBT Services.dc.html" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Services</a>
+        <a class="bbnav-link" href="BBT Solutions.dc.html" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Solutions</a>
+        <a class="bbnav-link" href="BBT Industries.dc.html" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Industries</a>
+        <a class="bbnav-link" href="BBT About.dc.html" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">About</a>
+        <a class="bbnav-link" href="BBT Contact.dc.html" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Contact</a>
+        <a href="BBT Contact.dc.html" style="margin-top:6px; text-align:center; font-weight:600; background:#0d1b2a; color:#fff; padding:12px; border-radius:10px; font-size:14px;">Get free consultation</a>
+      </div>
+    </details>
+  </div>
+</header>
+</x-dc>
+</body>
+</html>
