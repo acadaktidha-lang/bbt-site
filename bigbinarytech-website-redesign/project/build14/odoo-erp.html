@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odoo &amp; ERP Services · Big Binary Tech</title>
+<meta name="description" content="We deliver Odoo end to end. Module configuration, data migration, third party integration, custom development, team training, and ongoing support that keeps finance, HR, inventory,">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     BIG BINARY TECH · /odoo-erp/  (production build)
+     Content carried over from the previous design (99.8% of text
+     nodes preserved); restyled into the new design system. CSS,
+     nav and footer are identical to the already-live pages.
+     ============================================================ */
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:#f4f6f9; }
+  img{ max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  a:hover{ color:#d98c0a; }
+  summary{ cursor:pointer; list-style:none; }
+  summary::-webkit-details-marker{ display:none; }
+  :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  .bb-card{ transition:transform .25s ease, box-shadow .25s ease; }
+  .bb-card:hover{ transform:translateY(-6px); box-shadow:0 22px 44px rgba(13,27,42,.1); }
+  @media (max-width:980px){
+    .g3,.g4{ grid-template-columns:1fr 1fr !important; }
+    .g2{ grid-template-columns:1fr !important; }
+    .stat4,.stat5,.stat3{ grid-template-columns:1fr 1fr !important; }
+    .h1{ font-size:40px !important; }
+    .h2{ font-size:30px !important; }
+  }
+  @media (max-width:620px){
+    .sec{ padding-left:22px !important; padding-right:22px !important; padding-top:60px !important; padding-bottom:60px !important; }
+    .g3,.g4,.g2{ grid-template-columns:1fr !important; }
+    .stat4,.stat5,.stat3,.stat2{ grid-template-columns:1fr 1fr !important; }
+    .h1{ font-size:32px !important; }
+    .h2{ font-size:25px !important; }
+    .herocta{ flex-direction:column !important; align-items:stretch !important; }
+    .herocta a{ text-align:center; }
+    .trustbar{ row-gap:8px !important; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; } html{ scroll-behavior:auto; } }
+
+/* ---- BBT Nav ---- */
+
+  .bbnav *{ box-sizing:border-box; }
+  .bbnav a{ color:inherit; text-decoration:none; }
+  .bbnav a:hover{ color:#d98c0a; }
+  .bbnav summary{ cursor:pointer; list-style:none; }
+  .bbnav summary::-webkit-details-marker{ display:none; }
+  .bbnav :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  .bbnav-drop{ position:absolute; left:0; top:100%; padding-top:14px; opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .16s ease, transform .16s ease; z-index:60; }
+  .bbnav-item:hover>.bbnav-drop, .bbnav-item:focus-within>.bbnav-drop{ opacity:1; visibility:visible; transform:translateY(0); }
+  .bbnav-item>a[aria-haspopup]::after{ content:"⌄"; font-size:12px; margin-left:5px; position:relative; top:-1px; color:#93a2b0; }
+  .bbnav-link:hover{ background:#f4f6f9; color:#0d1b2a; }
+  .bbnav-mob{ display:none; }
+  @media (max-width:980px){
+    .bbnav-desk{ display:none !important; }
+    .bbnav-cta{ display:none !important; }
+    .bbnav-mob{ display:block !important; }
+  }
+  .bbnav-loader{ position:fixed; inset:0; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; background:#0d1b2a; animation:bbldOut 1.25s ease .55s forwards; }
+  .bbnav-loader .ring{ width:58px; height:58px; border-radius:50%; border:3px solid rgba(245,166,35,.18); border-top-color:#f5a623; animation:bbldSpin .8s linear infinite; }
+  .bbnav-loader .num{ position:absolute; font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:700; color:#fff; animation:bbldBlink 1s step-end infinite; }
+  .bbnav-loader .bar{ width:156px; height:3px; border-radius:2px; background:rgba(255,255,255,.12); overflow:hidden; }
+  .bbnav-loader .bar>span{ display:block; height:100%; width:0; background:linear-gradient(90deg,#f5a623,#ffc65c); animation:bbldBar 1s ease .15s forwards; }
+  .bbnav-loader .word{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.32em; color:#7d94ab; text-transform:uppercase; }
+  @keyframes bbldSpin{ to{ transform:rotate(360deg); } }
+  @keyframes bbldBar{ to{ width:100%; } }
+  @keyframes bbldBlink{ 0%,49%{ content:"01"; opacity:1; } 50%,100%{ opacity:.35; } }
+  @keyframes bbldOut{ 0%,58%{ opacity:1; visibility:visible; } 100%{ opacity:0; visibility:hidden; } }
+  @media (prefers-reduced-motion:reduce){ .bbnav-loader{ animation:bbldOut .1s linear forwards !important; } .bbnav-loader .ring{ animation:none !important; } }
+
+/* ---- BBT Footer ---- */
+
+  .bbfoot *{ box-sizing:border-box; }
+  .bbfoot a{ color:inherit; text-decoration:none; transition:color .15s ease; }
+  .bbfoot a:hover{ color:#f5a623; }
+  .bbfoot :focus-visible{ outline:2px solid #f5a623; outline-offset:3px; border-radius:6px; }
+  .bbfoot-soc:hover{ background:#f5a623 !important; border-color:#f5a623 !important; color:#0d1b2a !important; transform:translateY(-3px); }
+  @media (max-width:900px){ .bbfoot-grid{ grid-template-columns:1fr 1fr !important; row-gap:40px !important; } .bbfoot-brand{ grid-column:1 / -1 !important; } }
+  @media (max-width:560px){ .bbfoot-grid{ grid-template-columns:1fr !important; } .bbfoot-bottom{ flex-direction:column !important; align-items:flex-start !important; gap:12px !important; } .bbfoot-pad{ padding-left:22px !important; padding-right:22px !important; } }
+
+</style>
+</head>
+
+<body>
+<div style="font-family:'IBM Plex Sans',sans-serif; color:#1c2b3a; background:#f4f6f9;">
+  <a href="#main" style="position:absolute; left:-9999px; top:0; background:#0d1b2a; color:#fff; padding:10px 16px; border-radius:0 0 8px 0; z-index:200;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to content</a>
+<div class="bbnav-loader" aria-hidden="true">
+  <div style="position:relative; width:58px; height:58px; display:flex; align-items:center; justify-content:center;">
+    <div class="ring"></div>
+    <span class="num">01</span>
+  </div>
+  <div class="bar"><span></span></div>
+  <div class="word">Big Binary Tech</div>
+</div>
+<header class="bbnav" style="font-family:'IBM Plex Sans',sans-serif; position:sticky; top:0; z-index:80; background:rgba(244,246,249,.88); backdrop-filter:blur(12px); border-bottom:1px solid #e3e8ee;">
+  <div style="max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 40px;">
+    <a href="/" aria-label="Big Binary Tech home" style="display:flex; align-items:center;"><img src="https://bigbinarytech.com/wp-content/uploads/2026/07/redesign-bbt-logo.png" alt="Big Binary Tech" style="height:38px; width:auto; display:block;"></a>
+
+    <nav class="bbnav-desk" aria-label="Primary" style="display:flex; align-items:center; gap:4px; font-size:14.5px; color:#42546a; font-weight:500;">
+      <div class="bbnav-item" style="position:relative;">
+        <a href="/services/" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Services</a>
+        <div class="bbnav-drop">
+          <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:344px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">WHAT WE BUILD</div>
+            <a class="bbnav-link" href="/ai-automation-2/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">AI &amp; Automation</a>
+            <a class="bbnav-link" href="/custom-software-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Custom Software Development</a>
+            <a class="bbnav-link" href="/web-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Web Development</a>
+            <a class="bbnav-link" href="/odoo-erp/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Odoo &amp; ERP Services</a>
+            <a class="bbnav-link" href="/social-media-marketing/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Social Media Marketing</a>
+            <a class="bbnav-link" href="/digital-transformation-3/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation</a>
+          </div>
+        </div>
+      </div>
+      <div class="bbnav-item" style="position:relative;">
+        <a href="/solutions-3/" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Solutions</a>
+        <div class="bbnav-drop">
+          <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:324px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">SOLUTION PILLARS</div>
+            <a class="bbnav-link" href="/enterprise-odoo/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Enterprise &amp; Odoo Solutions</a>
+            <a class="bbnav-link" href="/retail-pos-2/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Retail &amp; POS Solutions</a>
+            <a class="bbnav-link" href="/digital-transformation-3/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation Solutions</a>
+          </div>
+        </div>
+      </div>
+      <a href="/industries/" style="padding:10px 14px; border-radius:9px;">Industries</a>
+      <a href="/about-us-2/" style="padding:10px 14px; border-radius:9px;">About</a>
+      <a href="/contact-us/" style="padding:10px 14px; border-radius:9px;">Contact</a>
+    </nav>
+
+    <a class="bbnav-cta" href="/contact-us/" style="font-size:14px; font-weight:600; background:#0d1b2a; color:#fff; padding:11px 20px; border-radius:10px; white-space:nowrap;">Get free consultation</a>
+
+    <details class="bbnav-mob" style="position:relative;">
+      <summary aria-label="Open menu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #d3dae2; border-radius:10px; background:#fff; font-size:18px; color:#0d1b2a;">☰</summary>
+      <div style="position:absolute; right:0; top:calc(100% + 12px); background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.16); padding:10px; width:244px; display:flex; flex-direction:column; gap:2px; z-index:90;">
+        <a class="bbnav-link" href="/services/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Services</a>
+        <a class="bbnav-link" href="/solutions-3/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Solutions</a>
+        <a class="bbnav-link" href="/industries/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Industries</a>
+        <a class="bbnav-link" href="/about-us-2/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">About</a>
+        <a class="bbnav-link" href="/contact-us/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Contact</a>
+        <a href="/contact-us/" style="margin-top:6px; text-align:center; font-weight:600; background:#0d1b2a; color:#fff; padding:12px; border-radius:10px; font-size:14px;">Get free consultation</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+  <main id="main">
+<section class="sec" style="position:relative; background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:52px 40px 0;"><div aria-hidden="true" style="position:absolute; inset:0; overflow:hidden; pointer-events:none;"><div style="position:absolute; top:-120px; right:-90px; width:480px; height:480px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.14), transparent 70%);"></div></div><div style="position:relative; z-index:2; max-width:1240px; margin:0 auto;"><nav aria-label="Breadcrumb" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d94ab; margin-bottom:26px;"><a href="/">Home</a> <span style="color:#3f5772;">/</span> Odoo &amp; ERP Services</nav><div style="max-width:780px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// ODOO &amp; ERP SERVICES</div><h1 class="h1" style="font-family:'Bricolage Grotesque',sans-serif; font-size:52px; line-height:1.07; font-weight:700; letter-spacing:-.025em; margin:0 0 18px;">Odoo Implementation, Customisation &amp; <span style="color:#f5a623;">Support</span></h1><p style="font-size:18px; line-height:1.62; color:#a8bcce; max-width:640px; margin:0 0 14px;">We deliver Odoo end to end. Module configuration, data migration, third party integration, custom development, team training, and ongoing support that keeps finance, HR, inventory, sales, and CRM running on one platform.</p><div class="herocta" style="display:flex; gap:13px; align-items:center; margin-bottom:6px;"><a href="/contact-us/" style="background:#f5a623; color:#0d1b2a; font-weight:700; font-size:15px; padding:15px 26px; border-radius:11px;">Book a Free ERP Consultation &rarr;</a><a href="/contact-us/" style="font-weight:600; font-size:15px; color:#fff; padding:15px 20px; border:1px solid rgba(255,255,255,.25); border-radius:11px;">See What's Included</a></div></div><div class="stat4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; margin:44px 0 -44px;"><div style="background:#0d1b2a; padding:24px 22px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">50+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Projects Delivered</div></div><div style="background:#0d1b2a; padding:24px 22px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">15+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Industries Served</div></div><div style="background:#0d1b2a; padding:24px 22px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">98%</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Client Retention</div></div><div style="background:#0d1b2a; padding:24px 22px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">40+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Odoo Modules Supported</div></div></div></div></section>
+<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// WHAT'S INCLUDED</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Everything Your Odoo Engagement Covers</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">One team handles the whole delivery, from the first process workshop to the module configuration, the migration, and the support that follows go-live.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Odoo Implementation &amp; Module Configuration</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">We map your processes, select the right modules, and configure Odoo around how your business actually works instead of forcing your team into a default setup.</p><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Covers</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Process Mapping</li><li>&rsaquo; Module Setup</li><li>&rsaquo; User Roles</li><li>&rsaquo; Approval Flows</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Finance &amp; Accounting Setup</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Chart of accounts, tax rules, invoicing, and reporting configured so your finance team closes the books faster and works from live numbers.</p><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Covers</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Finance</li><li>&rsaquo; Invoicing</li><li>&rsaquo; Tax Rules</li><li>&rsaquo; Reporting</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">HR &amp; Payroll Configuration</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Employee records, attendance, leave, appraisals, and payroll rules set up in Odoo so HR stops running the company on spreadsheets.</p><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Covers</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; HR &amp; Payroll</li><li>&rsaquo; Attendance</li><li>&rsaquo; Leave</li><li>&rsaquo; Appraisals</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Inventory &amp; Supply Chain Setup</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Warehouses, stock rules, purchase workflows, and multi location tracking configured so you always know what you have and what to reorder.</p><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Covers</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Inventory</li><li>&rsaquo; Purchase</li><li>&rsaquo; Warehousing</li><li>&rsaquo; Stock Rules</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Sales &amp; CRM Configuration</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Pipelines, quotations, and customer records set up so sales activity, orders, and invoices stay connected instead of living in separate tools.</p><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Covers</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; CRM</li><li>&rsaquo; Sales Pipeline</li><li>&rsaquo; Quotations</li><li>&rsaquo; Customer Portal</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Migration, Integration &amp; Custom Modules</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">We move your data across from spreadsheets or a legacy ERP, connect Odoo to the tools you already run, and build custom modules where standard Odoo stops short.</p><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Covers</p><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Looking for the business case rather than the delivery detail? Our Enterprise Odoo ERP solution page covers the outcomes, pillars, and industry fit.</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Data Migration</li><li>&rsaquo; API Integration</li><li>&rsaquo; Custom Modules</li><li>&rsaquo; Version Upgrades</li></ul></article></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">View Enterprise Odoo ERP &rarr;</a></div></div></section><section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// HOW IT WORKS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">A Phased Odoo Rollout, Not a Risky Big Bang</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">We deliver in phases so your team sees working modules early and nothing critical goes live untested.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">01</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Discovery &amp; Process Mapping</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">We sit with each department, document how work moves today, and agree on what Odoo needs to handle.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">02</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Blueprint &amp; Module Plan</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">You get a written scope covering modules, integrations, custom work, phases, and the go-live date.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">03</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Configuration &amp; Customisation</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">We configure standard modules first, then build custom modules only where the standard setup falls short.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">04</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Data Migration &amp; Testing</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">We migrate and reconcile your records, then run user acceptance testing with your team before anything goes live.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">05</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Go-Live, Training &amp; Support</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">We train your users, stay close through the first cycles, and keep improving the system after handover.</p></article></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Start With a Free Process Review &rarr;</a></div></div></section><section class="sec" style="background:#0d1b2a; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// WHY BIG BINARY TECH</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#e7edf3; margin:0 0 16px; max-width:760px;">An ERP Partner That Stays After Go-Live</h2><p style="font-size:16.5px; line-height:1.65; color:#9fb2c4; max-width:760px; margin:0 0 18px;">Most Odoo projects do not fail on the software. They fail on scope, data, and adoption. That is exactly where we spend our time.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Process First, Software Second</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">We fix the workflow before we configure the module, so you are not automating a broken process at speed.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Clean Data Migration</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">We migrate and reconcile your existing records so opening balances, stock counts, and customer histories actually match.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Integration Without Silos</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Odoo connects to the systems you already run, so your ERP becomes the single source of truth rather than another island.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Training Built Into Delivery</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Role based training and documentation come with the project, so adoption does not depend on one person remembering everything.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Ongoing Support &amp; Upgrades</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Bug fixes, enhancements, and version upgrades handled by the same team that built your system.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Flexible Engagement</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Take a full implementation, a rescue of an existing Odoo setup, or a support retainer. You choose the scope that fits.</p></article></div></div></section><section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// RESULTS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">What Delivery Looks Like in Numbers</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">A focused Odoo configuration typically goes live in 4 to 8 weeks. A customised system with integrations runs 8 to 16 weeks, delivered in phases so value arrives every month.</p><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">4 to 8</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px;"><div><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; color:#d98c0a; line-height:1;">50+</div><div style="font-size:13.5px; color:#5a6b7b; margin-top:6px;">Projects Delivered</div></div><div><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; color:#d98c0a; line-height:1;">15+</div><div style="font-size:13.5px; color:#5a6b7b; margin-top:6px;">Industries Served</div></div><div><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; color:#d98c0a; line-height:1;">98%</div><div style="font-size:13.5px; color:#5a6b7b; margin-top:6px;">Client Retention</div></div></div><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Weeks to a Typical Go-Live</p><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Get a Scoped Odoo Estimate &rarr;</a></div></div></section><section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// FAQ</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Frequently Asked Questions</h2><div style="display:flex; flex-direction:column; gap:12px;"><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">What does an Odoo project with Big Binary Tech actually involve?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">We start with discovery workshops to map how each department works today, then issue a written blueprint covering modules, integrations, custom development, phases, and a go-live date. From there we configure, migrate your data, run user acceptance testing with your team, train your users, and stay on for support once you are live.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Can you take over an Odoo system another partner set up?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. We regularly take over half finished or poorly configured Odoo instances. We audit the current setup, document what works and what needs rebuilding, clean up the data, and give you a clear plan to get the system usable again before we touch any code.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Do you build custom Odoo modules, or only configure the standard ones?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Both, in that order. We configure standard Odoo first because it is faster to deliver and cheaper to upgrade. Where the standard modules genuinely cannot cover a workflow, we build custom modules that follow Odoo conventions, so future version upgrades do not break your system.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">How do you migrate data from spreadsheets or our legacy ERP?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">We extract your existing records, clean and map them to the Odoo data model, then load them into a staging environment where your team reconciles opening balances, stock counts, and customer histories. Only once the numbers match do we migrate to production, so you never go live on data you do not trust.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">How do you train our team and support us after go-live?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Training is part of the delivery, not an extra. We run role based sessions for finance, HR, warehouse, and sales users and hand over written documentation. After go-live we stay close through your first reporting cycles and offer a support retainer covering bug fixes, enhancements, and Odoo version upgrades.</p></details></div></div></section>
+<section class="sec" style="background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:96px 40px; text-align:center;"><div style="max-width:720px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.12em; color:#f5a623; margin-bottom:20px;">// FREE &middot; 30 MINUTES &middot; NO JARGON</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:40px; font-weight:700; letter-spacing:-.025em; line-height:1.1; margin:0 0 18px;">Ready to Get Your Odoo Rollout Right?</h2><p style="font-size:17px; line-height:1.6; color:#9fb2c4; margin:0 0 32px;">Book a free consultation. We review your current processes and systems, then come back with a scoped module plan and a realistic timeline before you commit to anything.</p><a href="/contact-us/" style="display:inline-block; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px 32px; border-radius:12px;">Book your free consultation &rarr;</a></div></section>
+  </main>
+
+<footer class="bbfoot" style="font-family:'IBM Plex Sans',sans-serif; background:#0d1b2a; color:#e7edf3; position:relative; overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#f5a623,#ffc65c,#1e6b4f);"></div>
+  <div aria-hidden="true" style="position:absolute; bottom:-140px; right:-80px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.10), transparent 70%);"></div>
+
+  <div class="bbfoot-pad" style="position:relative; z-index:2; max-width:1240px; margin:0 auto; padding:72px 40px 0;">
+    <div class="bbfoot-grid" style="display:grid; grid-template-columns:1.7fr 1fr 1fr 1fr; gap:32px;">
+      <div class="bbfoot-brand">
+        <img src="https://bigbinarytech.com/wp-content/uploads/2026/07/redesign-bbt-logo-light-v2.png" alt="Big Binary Tech" style="height:44px; width:auto; display:block; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.7; color:#8ea0b2; max-width:290px; margin:0 0 22px;">A Lahore based, PSEB registered software house. We build ERP, AI automation, POS and custom software for businesses in Pakistan and around the world.</p>
+        <div style="display:flex; gap:10px;">
+          <a class="bbfoot-soc" href="#" aria-label="LinkedIn" style="width:40px; height:40px; border-radius:11px; border:1px solid #24374f; background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; color:#9fb2c4;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9V9z"/></svg></a>
+          <a class="bbfoot-soc" href="#" aria-label="X" style="width:40px; height:40px; border-radius:11px; border:1px solid #24374f; background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; color:#9fb2c4;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7-6.2 7H1.6l8-9.2L.9 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.1 4H5.1l11.4 16z"/></svg></a>
+          <a class="bbfoot-soc" href="#" aria-label="GitHub" style="width:40px; height:40px; border-radius:11px; border:1px solid #24374f; background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; color:#9fb2c4;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">SERVICES</div>
+        <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
+          <a href="/ai-automation-2/">AI &amp; Automation</a>
+          <a href="/custom-software-development/">Custom Software Development</a>
+          <a href="/web-development/">Web Development</a>
+          <a href="/odoo-erp/">Odoo &amp; ERP Services</a>
+          <a href="/social-media-marketing/">Social Media Marketing</a>
+          <a href="/digital-transformation-3/">Digital Transformation</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">SOLUTIONS</div>
+        <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
+          <a href="/enterprise-odoo/">Enterprise &amp; Odoo</a>
+          <a href="/retail-pos-2/">Retail &amp; POS</a>
+          <a href="/digital-transformation-3/">Digital Transformation</a>
+          <a href="/industries/">Industries</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">COMPANY</div>
+        <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
+          <a href="/about-us-2/">About Big Binary Tech</a>
+          <a href="/case-studies/">Selected Work</a>
+          <a href="/resources-2/">Resources</a>
+          <a href="/contact-us/">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:56px; padding:22px 0; border-top:1px solid rgba(255,255,255,.1); display:flex; align-items:center; gap:20px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d8ea0;">
+      <span style="display:inline-flex; align-items:center; gap:8px;"><span aria-hidden="true" style="width:8px; height:8px; border-radius:50%; background:#1e6b4f;"></span>Head office: Lahore, Pakistan</span>
+      <span style="color:#42546a;">/</span>
+      <span>Serving clients worldwide</span>
+      <span style="color:#42546a;">/</span>
+      <span>Odoo Partner · PSEB · P@SHA</span>
+    </div>
+
+    <div class="bbfoot-bottom" style="padding:18px 0 26px; border-top:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5f7488;">© 2026 Big Binary Tech. All rights reserved.</span>
+      <div style="display:flex; gap:22px; font-size:12.5px; color:#7d8ea0;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>

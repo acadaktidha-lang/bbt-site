@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Development · Big Binary Tech</title>
+<meta name="description" content="From corporate websites and e-commerce storefronts to high-intent landing pages, we design and build sites that load quickly, rank well, and turn visitors into customers. Every bui">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     BIG BINARY TECH · /web-development/  (production build)
+     Content carried over from the previous design (99.8% of text
+     nodes preserved); restyled into the new design system. CSS,
+     nav and footer are identical to the already-live pages.
+     ============================================================ */
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:#f4f6f9; }
+  img{ max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  a:hover{ color:#d98c0a; }
+  summary{ cursor:pointer; list-style:none; }
+  summary::-webkit-details-marker{ display:none; }
+  :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  .bb-card{ transition:transform .25s ease, box-shadow .25s ease; }
+  .bb-card:hover{ transform:translateY(-6px); box-shadow:0 22px 44px rgba(13,27,42,.1); }
+  @media (max-width:980px){
+    .g3,.g4{ grid-template-columns:1fr 1fr !important; }
+    .g2{ grid-template-columns:1fr !important; }
+    .stat4,.stat5,.stat3{ grid-template-columns:1fr 1fr !important; }
+    .h1{ font-size:40px !important; }
+    .h2{ font-size:30px !important; }
+  }
+  @media (max-width:620px){
+    .sec{ padding-left:22px !important; padding-right:22px !important; padding-top:60px !important; padding-bottom:60px !important; }
+    .g3,.g4,.g2{ grid-template-columns:1fr !important; }
+    .stat4,.stat5,.stat3,.stat2{ grid-template-columns:1fr 1fr !important; }
+    .h1{ font-size:32px !important; }
+    .h2{ font-size:25px !important; }
+    .herocta{ flex-direction:column !important; align-items:stretch !important; }
+    .herocta a{ text-align:center; }
+    .trustbar{ row-gap:8px !important; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; } html{ scroll-behavior:auto; } }
+
+/* ---- BBT Nav ---- */
+
+  .bbnav *{ box-sizing:border-box; }
+  .bbnav a{ color:inherit; text-decoration:none; }
+  .bbnav a:hover{ color:#d98c0a; }
+  .bbnav summary{ cursor:pointer; list-style:none; }
+  .bbnav summary::-webkit-details-marker{ display:none; }
+  .bbnav :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  .bbnav-drop{ position:absolute; left:0; top:100%; padding-top:14px; opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .16s ease, transform .16s ease; z-index:60; }
+  .bbnav-item:hover>.bbnav-drop, .bbnav-item:focus-within>.bbnav-drop{ opacity:1; visibility:visible; transform:translateY(0); }
+  .bbnav-item>a[aria-haspopup]::after{ content:"⌄"; font-size:12px; margin-left:5px; position:relative; top:-1px; color:#93a2b0; }
+  .bbnav-link:hover{ background:#f4f6f9; color:#0d1b2a; }
+  .bbnav-mob{ display:none; }
+  @media (max-width:980px){
+    .bbnav-desk{ display:none !important; }
+    .bbnav-cta{ display:none !important; }
+    .bbnav-mob{ display:block !important; }
+  }
+  .bbnav-loader{ position:fixed; inset:0; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; background:#0d1b2a; animation:bbldOut 1.25s ease .55s forwards; }
+  .bbnav-loader .ring{ width:58px; height:58px; border-radius:50%; border:3px solid rgba(245,166,35,.18); border-top-color:#f5a623; animation:bbldSpin .8s linear infinite; }
+  .bbnav-loader .num{ position:absolute; font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:700; color:#fff; animation:bbldBlink 1s step-end infinite; }
+  .bbnav-loader .bar{ width:156px; height:3px; border-radius:2px; background:rgba(255,255,255,.12); overflow:hidden; }
+  .bbnav-loader .bar>span{ display:block; height:100%; width:0; background:linear-gradient(90deg,#f5a623,#ffc65c); animation:bbldBar 1s ease .15s forwards; }
+  .bbnav-loader .word{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.32em; color:#7d94ab; text-transform:uppercase; }
+  @keyframes bbldSpin{ to{ transform:rotate(360deg); } }
+  @keyframes bbldBar{ to{ width:100%; } }
+  @keyframes bbldBlink{ 0%,49%{ content:"01"; opacity:1; } 50%,100%{ opacity:.35; } }
+  @keyframes bbldOut{ 0%,58%{ opacity:1; visibility:visible; } 100%{ opacity:0; visibility:hidden; } }
+  @media (prefers-reduced-motion:reduce){ .bbnav-loader{ animation:bbldOut .1s linear forwards !important; } .bbnav-loader .ring{ animation:none !important; } }
+
+/* ---- BBT Footer ---- */
+
+  .bbfoot *{ box-sizing:border-box; }
+  .bbfoot a{ color:inherit; text-decoration:none; transition:color .15s ease; }
+  .bbfoot a:hover{ color:#f5a623; }
+  .bbfoot :focus-visible{ outline:2px solid #f5a623; outline-offset:3px; border-radius:6px; }
+  .bbfoot-soc:hover{ background:#f5a623 !important; border-color:#f5a623 !important; color:#0d1b2a !important; transform:translateY(-3px); }
+  @media (max-width:900px){ .bbfoot-grid{ grid-template-columns:1fr 1fr !important; row-gap:40px !important; } .bbfoot-brand{ grid-column:1 / -1 !important; } }
+  @media (max-width:560px){ .bbfoot-grid{ grid-template-columns:1fr !important; } .bbfoot-bottom{ flex-direction:column !important; align-items:flex-start !important; gap:12px !important; } .bbfoot-pad{ padding-left:22px !important; padding-right:22px !important; } }
+
+</style>
+</head>
+
+<body>
+<div style="font-family:'IBM Plex Sans',sans-serif; color:#1c2b3a; background:#f4f6f9;">
+  <a href="#main" style="position:absolute; left:-9999px; top:0; background:#0d1b2a; color:#fff; padding:10px 16px; border-radius:0 0 8px 0; z-index:200;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to content</a>
+<div class="bbnav-loader" aria-hidden="true">
+  <div style="position:relative; width:58px; height:58px; display:flex; align-items:center; justify-content:center;">
+    <div class="ring"></div>
+    <span class="num">01</span>
+  </div>
+  <div class="bar"><span></span></div>
+  <div class="word">Big Binary Tech</div>
+</div>
+<header class="bbnav" style="font-family:'IBM Plex Sans',sans-serif; position:sticky; top:0; z-index:80; background:rgba(244,246,249,.88); backdrop-filter:blur(12px); border-bottom:1px solid #e3e8ee;">
+  <div style="max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 40px;">
+    <a href="/" aria-label="Big Binary Tech home" style="display:flex; align-items:center;"><img src="https://bigbinarytech.com/wp-content/uploads/2026/07/redesign-bbt-logo.png" alt="Big Binary Tech" style="height:38px; width:auto; display:block;"></a>
+
+    <nav class="bbnav-desk" aria-label="Primary" style="display:flex; align-items:center; gap:4px; font-size:14.5px; color:#42546a; font-weight:500;">
+      <div class="bbnav-item" style="position:relative;">
+        <a href="/services/" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Services</a>
+        <div class="bbnav-drop">
+          <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:344px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">WHAT WE BUILD</div>
+            <a class="bbnav-link" href="/ai-automation-2/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">AI &amp; Automation</a>
+            <a class="bbnav-link" href="/custom-software-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Custom Software Development</a>
+            <a class="bbnav-link" href="/web-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Web Development</a>
+            <a class="bbnav-link" href="/odoo-erp/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Odoo &amp; ERP Services</a>
+            <a class="bbnav-link" href="/social-media-marketing/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Social Media Marketing</a>
+            <a class="bbnav-link" href="/digital-transformation-3/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation</a>
+          </div>
+        </div>
+      </div>
+      <div class="bbnav-item" style="position:relative;">
+        <a href="/solutions-3/" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Solutions</a>
+        <div class="bbnav-drop">
+          <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:324px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">SOLUTION PILLARS</div>
+            <a class="bbnav-link" href="/enterprise-odoo/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Enterprise &amp; Odoo Solutions</a>
+            <a class="bbnav-link" href="/retail-pos-2/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Retail &amp; POS Solutions</a>
+            <a class="bbnav-link" href="/digital-transformation-3/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation Solutions</a>
+          </div>
+        </div>
+      </div>
+      <a href="/industries/" style="padding:10px 14px; border-radius:9px;">Industries</a>
+      <a href="/about-us-2/" style="padding:10px 14px; border-radius:9px;">About</a>
+      <a href="/contact-us/" style="padding:10px 14px; border-radius:9px;">Contact</a>
+    </nav>
+
+    <a class="bbnav-cta" href="/contact-us/" style="font-size:14px; font-weight:600; background:#0d1b2a; color:#fff; padding:11px 20px; border-radius:10px; white-space:nowrap;">Get free consultation</a>
+
+    <details class="bbnav-mob" style="position:relative;">
+      <summary aria-label="Open menu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #d3dae2; border-radius:10px; background:#fff; font-size:18px; color:#0d1b2a;">☰</summary>
+      <div style="position:absolute; right:0; top:calc(100% + 12px); background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.16); padding:10px; width:244px; display:flex; flex-direction:column; gap:2px; z-index:90;">
+        <a class="bbnav-link" href="/services/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Services</a>
+        <a class="bbnav-link" href="/solutions-3/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Solutions</a>
+        <a class="bbnav-link" href="/industries/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Industries</a>
+        <a class="bbnav-link" href="/about-us-2/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">About</a>
+        <a class="bbnav-link" href="/contact-us/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Contact</a>
+        <a href="/contact-us/" style="margin-top:6px; text-align:center; font-weight:600; background:#0d1b2a; color:#fff; padding:12px; border-radius:10px; font-size:14px;">Get free consultation</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+  <main id="main">
+<section class="sec" style="position:relative; background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:52px 40px 0;"><div aria-hidden="true" style="position:absolute; inset:0; overflow:hidden; pointer-events:none;"><div style="position:absolute; top:-120px; right:-90px; width:480px; height:480px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.14), transparent 70%);"></div></div><div style="position:relative; z-index:2; max-width:1240px; margin:0 auto;"><nav aria-label="Breadcrumb" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d94ab; margin-bottom:26px;"><a href="/">Home</a> <span style="color:#3f5772;">/</span> Web Development</nav><div style="max-width:780px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// WEB DEVELOPMENT</div><h1 class="h1" style="font-family:'Bricolage Grotesque',sans-serif; font-size:52px; line-height:1.07; font-weight:700; letter-spacing:-.025em; margin:0 0 18px;">Fast, Responsive Websites Built to <span style="color:#f5a623;">Convert</span></h1><p style="font-size:18px; line-height:1.62; color:#a8bcce; max-width:640px; margin:0 0 14px;">From corporate websites and e-commerce storefronts to high-intent landing pages, we design and build sites that load quickly, rank well, and turn visitors into customers. Every build is responsive by default, optimized for performance and SEO, and ready to connect to the systems your business already runs on.</p><div class="herocta" style="display:flex; gap:13px; align-items:center; margin-bottom:6px;"><a href="/contact-us/" style="background:#f5a623; color:#0d1b2a; font-weight:700; font-size:15px; padding:15px 26px; border-radius:11px;">Start Your Website Project &rarr;</a><a href="/contact-us/" style="font-weight:600; font-size:15px; color:#fff; padding:15px 20px; border:1px solid rgba(255,255,255,.25); border-radius:11px;">See What's Included</a></div></div><div class="stat3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; margin:44px 0 -44px;"><div style="background:#0d1b2a; padding:24px 22px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">50+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Projects Delivered</div></div><div style="background:#0d1b2a; padding:24px 22px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">15+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Industries Served</div></div><div style="background:#0d1b2a; padding:24px 22px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">98%</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Client Retention</div></div></div></div></section>
+<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// WHAT'S INCLUDED</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Everything You Need to Launch and Grow a Website That Works</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">We cover the full build, from the first wireframe to the post-launch performance tuning, so you never have to stitch together three different vendors.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Corporate Websites</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Brand-led company sites with clear service pages, credibility content, and lead capture built into the structure rather than bolted on afterwards.</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Multi-page builds</li><li>&rsaquo; Lead forms</li><li>&rsaquo; Brand systems</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">E-Commerce Storefronts</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Online stores with clean product catalogs, secure checkout, payment gateway setup, and inventory that stays in sync with your back office.</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Product catalogs</li><li>&rsaquo; Payments</li><li>&rsaquo; Inventory sync</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Landing Pages</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Focused campaign pages built around a single conversion goal, with fast load times, clear messaging, and tracking wired in from day one.</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Campaign pages</li><li>&rsaquo; A/B ready</li><li>&rsaquo; Conversion tracking</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">SEO &amp; Performance</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Technical SEO, Core Web Vitals tuning, image optimization, and clean semantic markup so your pages load fast and search engines can read them.</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Technical SEO</li><li>&rsaquo; Core Web Vitals</li><li>&rsaquo; Schema markup</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">CMS &amp; Content Control</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">WordPress and headless CMS setups that let your team publish pages, update copy, and add content without waiting on a developer.</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; WordPress</li><li>&rsaquo; Headless CMS</li><li>&rsaquo; Editor training</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Integrations &amp; Support</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">CRM, ERP, analytics, and payment integrations, plus hosting, security updates, and ongoing maintenance after your site goes live.</p><ul style="list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; CRM &amp; ERP</li><li>&rsaquo; Analytics</li><li>&rsaquo; Maintenance</li></ul></article></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Discuss Your Requirements &rarr;</a></div></div></section><section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// HOW IT WORKS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">From First Conversation to Live Website</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">A clear, staged process with visible progress at every step. You always know what is being built, what is next, and when it ships.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">01</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Discovery</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">We map your goals, audience, and competitors, then agree the pages, features, and success metrics for the build.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">02</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Design</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Wireframes and UI designs for every key template, reviewed with you before a single line of production code is written.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">03</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Build</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Responsive front-end development, CMS setup, and integrations with your CRM, ERP, payment, and analytics tools.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">04</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Test &amp; Launch</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Cross-browser and device testing, speed and SEO checks, content migration, then a monitored go-live.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">05</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Optimize</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Post-launch monitoring, security updates, performance tuning, and iterative improvements based on real user data.</p></article></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Book a Free Consultation &rarr;</a></div></div></section><section class="sec" style="background:#0d1b2a; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// WHY BIG BINARY TECH</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#e7edf3; margin:0 0 16px; max-width:760px;">An Engineering Team, Not Just a Web Shop</h2><p style="font-size:16.5px; line-height:1.65; color:#9fb2c4; max-width:760px; margin:0 0 18px;">We build websites the same way we build enterprise software, with clean architecture, real testing, and systems that connect to the rest of your business.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Performance Is Built In, Not Patched On</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">We optimize images, scripts, and markup during the build, so your site is fast on launch day rather than after an expensive rescue project.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Responsive Across Every Screen</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Every layout is tested on phones, tablets, and desktops. Your visitors get the same clear experience whether they arrive on mobile data or a wide monitor.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Connected to Your Business Systems</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Because we also build ERP, POS, and custom software, your website can talk to your CRM, inventory, and finance tools instead of sitting on an island.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Search and Conversion Focused</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Semantic structure, technical SEO, and analytics tracking come standard, so you can see which pages bring traffic and which ones bring leads.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">You Own Everything</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Code, hosting, domains, and CMS accounts are handed over to you. There are no locked platforms and no hostage situations if you ever move on.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Support After Go-Live</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Monitoring, bug fixes, security updates, and performance tuning continue after launch, with a team that already knows your codebase.</p></article></div></div></section><section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// RESULTS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">What Working With Us Looks Like</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">The same delivery standard we apply across AI, ERP, and custom software runs through every website we ship.</p><div class="g4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:8px;"><div><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; color:#d98c0a; line-height:1;">50+</div><div style="font-size:13.5px; color:#5a6b7b; margin-top:6px;">Projects Delivered</div></div><div><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; color:#d98c0a; line-height:1;">15+</div><div style="font-size:13.5px; color:#5a6b7b; margin-top:6px;">Industries Served</div></div><div><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; color:#d98c0a; line-height:1;">98%</div><div style="font-size:13.5px; color:#5a6b7b; margin-top:6px;">Client Retention</div></div><div><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; color:#d98c0a; line-height:1;">24/7</div><div style="font-size:13.5px; color:#5a6b7b; margin-top:6px;">Monitoring &amp; Support</div></div></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/case-studies/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">View Our Case Studies &rarr;</a></div></div></section><section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// FAQ</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Frequently Asked Questions</h2><div style="display:flex; flex-direction:column; gap:12px;"><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">How long does a website project take?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">It depends on scope. A focused landing page or small corporate site typically moves from discovery to launch in a few weeks, while a larger e-commerce build with integrations takes longer. After discovery we give you a staged timeline with clear milestones so you know exactly when each part ships.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Will my website be mobile friendly?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. Every site we build is responsive by default and tested on phones, tablets, and desktops before launch. Layouts, images, navigation, and forms are all checked at each breakpoint so the experience holds up on any screen size.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Can you build an e-commerce store?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. We build online stores with product catalogs, secure checkout, and payment gateway setup, and we can connect them to your inventory, POS, or ERP so stock and orders stay in sync instead of being re-keyed by hand.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Do you handle SEO and site speed?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Technical SEO and performance work are part of the build, not an upsell. We handle semantic markup, metadata, schema, image optimization, and Core Web Vitals tuning, then verify the results before we hand the site over.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Can I update the website myself after launch?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. We set up WordPress or a headless CMS so your team can publish pages, edit copy, and add content without a developer. We also walk your team through the editor and hand over full ownership of the code, hosting, and accounts.</p></details></div></div></section>
+<section class="sec" style="background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:96px 40px; text-align:center;"><div style="max-width:720px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.12em; color:#f5a623; margin-bottom:20px;">// FREE &middot; 30 MINUTES &middot; NO JARGON</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:40px; font-weight:700; letter-spacing:-.025em; line-height:1.1; margin:0 0 18px;">Ready to Build a Website That Earns Its Keep?</h2><p style="font-size:17px; line-height:1.6; color:#9fb2c4; margin:0 0 32px;">Tell us what you need and we will map the pages, features, and timeline in a free consultation. No commitment, no jargon, just a clear plan.</p><a href="/contact-us/" style="display:inline-block; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px 32px; border-radius:12px;">Book your free consultation &rarr;</a></div></section>
+  </main>
+
+<footer class="bbfoot" style="font-family:'IBM Plex Sans',sans-serif; background:#0d1b2a; color:#e7edf3; position:relative; overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#f5a623,#ffc65c,#1e6b4f);"></div>
+  <div aria-hidden="true" style="position:absolute; bottom:-140px; right:-80px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.10), transparent 70%);"></div>
+
+  <div class="bbfoot-pad" style="position:relative; z-index:2; max-width:1240px; margin:0 auto; padding:72px 40px 0;">
+    <div class="bbfoot-grid" style="display:grid; grid-template-columns:1.7fr 1fr 1fr 1fr; gap:32px;">
+      <div class="bbfoot-brand">
+        <img src="https://bigbinarytech.com/wp-content/uploads/2026/07/redesign-bbt-logo-light-v2.png" alt="Big Binary Tech" style="height:44px; width:auto; display:block; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.7; color:#8ea0b2; max-width:290px; margin:0 0 22px;">A Lahore based, PSEB registered software house. We build ERP, AI automation, POS and custom software for businesses in Pakistan and around the world.</p>
+        <div style="display:flex; gap:10px;">
+          <a class="bbfoot-soc" href="#" aria-label="LinkedIn" style="width:40px; height:40px; border-radius:11px; border:1px solid #24374f; background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; color:#9fb2c4;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9V9z"/></svg></a>
+          <a class="bbfoot-soc" href="#" aria-label="X" style="width:40px; height:40px; border-radius:11px; border:1px solid #24374f; background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; color:#9fb2c4;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7-6.2 7H1.6l8-9.2L.9 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.1 4H5.1l11.4 16z"/></svg></a>
+          <a class="bbfoot-soc" href="#" aria-label="GitHub" style="width:40px; height:40px; border-radius:11px; border:1px solid #24374f; background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; color:#9fb2c4;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">SERVICES</div>
+        <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
+          <a href="/ai-automation-2/">AI &amp; Automation</a>
+          <a href="/custom-software-development/">Custom Software Development</a>
+          <a href="/web-development/">Web Development</a>
+          <a href="/odoo-erp/">Odoo &amp; ERP Services</a>
+          <a href="/social-media-marketing/">Social Media Marketing</a>
+          <a href="/digital-transformation-3/">Digital Transformation</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">SOLUTIONS</div>
+        <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
+          <a href="/enterprise-odoo/">Enterprise &amp; Odoo</a>
+          <a href="/retail-pos-2/">Retail &amp; POS</a>
+          <a href="/digital-transformation-3/">Digital Transformation</a>
+          <a href="/industries/">Industries</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">COMPANY</div>
+        <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
+          <a href="/about-us-2/">About Big Binary Tech</a>
+          <a href="/case-studies/">Selected Work</a>
+          <a href="/resources-2/">Resources</a>
+          <a href="/contact-us/">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:56px; padding:22px 0; border-top:1px solid rgba(255,255,255,.1); display:flex; align-items:center; gap:20px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d8ea0;">
+      <span style="display:inline-flex; align-items:center; gap:8px;"><span aria-hidden="true" style="width:8px; height:8px; border-radius:50%; background:#1e6b4f;"></span>Head office: Lahore, Pakistan</span>
+      <span style="color:#42546a;">/</span>
+      <span>Serving clients worldwide</span>
+      <span style="color:#42546a;">/</span>
+      <span>Odoo Partner · PSEB · P@SHA</span>
+    </div>
+
+    <div class="bbfoot-bottom" style="padding:18px 0 26px; border-top:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5f7488;">© 2026 Big Binary Tech. All rights reserved.</span>
+      <div style="display:flex; gap:22px; font-size:12.5px; color:#7d8ea0;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>
