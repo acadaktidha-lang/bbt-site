@@ -32,8 +32,7 @@ documented, logged, and traceable from the start.
 
 ## Total scope
 
-8 Epics, 24 Issues, mapping all 52 commits plus the current uncommitted
-in-flight work. One Issue (US-7.4) is Doing. Everything else is Done.
+8 Epics, 24 Issues, mapping all 54 commits. Everything is Done.
 
 ## Board status: created
 
@@ -45,9 +44,13 @@ with Closed By set on every Done item.
   Layout".
 - Work items 9 to 32 are the 24 Issues, in seed file order from US-1.1 to
   US-8.2, each parented to its Epic.
-- Doing: work item 30 (US-7.4) and its parent, work item 7 (EPIC-7). An Epic
-  cannot be Done while a child is still open, so EPIC-7 tracks US-7.4.
-- Every other item is Done.
+- Every item is Done. US-7.4 (work item 30) was the last one open, and closed
+  when its work landed as commit 83aebc1.
+
+The code now lives in Azure DevOps Repos as well. The repository
+`bigbinarytech.com` in this same project holds all 54 commits on master plus the
+feat/site-review-fixes and fix/hero-headline-crossfade branches, and is the
+`origin` remote. The former GitHub remote is kept as `github`.
 
 ---
 
@@ -340,18 +343,19 @@ Prepare the pages to run inside WordPress and Elementor and finalize the build.
 
 ### US-7.4: Finalize the WordPress document-container builds and logo
 
-- Type: User Story
-- State: **Active (in progress)**
-- Commits: none yet (uncommitted working tree)
-- Working tree: modified BBT About.dc.html, BBT Footer.dc.html, BBT Homepage
-  Family.dc.html, BBT Homepage Family.html, BBT Industries.dc.html, BBT Nav.dc.html,
-  BBT Solutions.dc.html, and bbt-logo-light.png; untracked build/ and build14/.
-- What: finalizing the WordPress document-container (.dc) builds, swapping the
-  light logo, and producing the build/ and build14/ output.
-- How: editing the .dc.html builds and regenerating the build output.
+- Type: Issue
+- State: Done
+- Commits: 83aebc1
+- What: finalized the WordPress document-container (.dc) builds, swapped the
+  light logo, and produced the build/ and build14/ output.
+- How: edited the .dc.html builds, replaced the light logo with the higher
+  resolution asset, and regenerated the build output.
 - Why: to produce the final WordPress-ready bundle for deployment.
 - Acceptance: the .dc builds and logo are final and the build output is
-  generated. This work is committed as its own tracked item next.
+  generated. Met.
+- Note: the same commit swapped the services list across the nav and footer to
+  the client's final six, so POS Systems is out and Social Media Marketing is
+  in. Build output is build/ with 7 pages and build14/ with 13 pages.
 
 ---
 
