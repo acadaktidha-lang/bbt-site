@@ -192,29 +192,30 @@
           <p style="font-size:12.5px; color:#8a99a8; margin:10px 0 0; text-align:center;">We respect your privacy. Your information is safe with us and will never be shared. Read our <a href="/privacy-policy/" style="color:#8a99a8; text-decoration:underline;">Privacy Policy</a>.</p>
         </form>
         <script>
-        /* The form has no server side handler. Rather than discard enquiries silently,
-           hand the completed enquiry to the visitor's mail client, and always show the
-           address so a visitor without a mail client can still reach us. */
+        /* Submits this form to Contact Form 7 (form 704) over its public REST
+           endpoint, so every enquiry is stored in WordPress by Flamingo and
+           emailed out. The markup above stays exactly as designed; only the
+           submit path is wired up. The page's six extra fields are folded into
+           the message body, because form 704 carries CF7's four default fields.
+           If the request fails for any reason, the enquiry falls back to the
+           visitor's mail client rather than being lost. */
         (function () {
           var form = document.getElementById('bb-contact-form');
           if (!form) return;
           var note = document.getElementById('bb-form-note');
+          var button = form.querySelector('button[type="submit"]');
           var INBOX = 'business@bigbinarytech.com';
+          var ENDPOINT = '/wp-json/contact-form-7/v1/contact-forms/704/feedback';
           var val = function (id) {
             var el = document.getElementById(id);
             return el && el.value ? el.value.trim() : '';
           };
-          form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            var name = val('c-name'), email = val('c-email');
-            if (!name || !email) {
-              note.style.color = '#c0392b';
-              note.textContent = 'Please add your name and business email so we can reply.';
-              return;
-            }
-            var body = [
-              'Name: ' + name,
-              'Business email: ' + email,
+          var say = function (colour, html) {
+            note.style.color = colour;
+            note.innerHTML = html;
+          };
+          var details = function () {
+            return [
               'Phone: ' + (val('c-phone') || 'not provided'),
               'Company: ' + (val('c-company') || 'not provided'),
               'Country or region: ' + (val('c-region') || 'not provided'),
@@ -223,13 +224,51 @@
               'Project details:',
               val('c-msg') || 'not provided'
             ].join('\n');
-            note.style.color = '#42546a';
-            note.innerHTML = 'Opening your email app to send this to <a href="mailto:' + INBOX +
-              '" style="color:#d98c0a; font-weight:600;">' + INBOX +
-              '</a>. If nothing opens, please email us there directly.';
+          };
+          var fallback = function (name) {
+            say('#42546a', 'We could not send that automatically. Opening your email app instead, addressed to <a href="mailto:' +
+              INBOX + '" style="color:#d98c0a; font-weight:600;">' + INBOX + '</a>.');
             window.location.href = 'mailto:' + INBOX +
               '?subject=' + encodeURIComponent('Website enquiry from ' + name) +
-              '&body=' + encodeURIComponent(body);
+              '&body=' + encodeURIComponent('Name: ' + name + '\nBusiness email: ' + val('c-email') + '\n' + details());
+          };
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = val('c-name'), email = val('c-email');
+            if (!name || !email) {
+              say('#c0392b', 'Please add your name and business email so we can reply.');
+              return;
+            }
+            var data = new FormData();
+            data.append('_wpcf7', '704');
+            data.append('_wpcf7_locale', 'en_US');
+            data.append('_wpcf7_unit_tag', 'wpcf7-f704-o1');
+            data.append('_wpcf7_container_post', '0');
+            data.append('your-name', name);
+            data.append('your-email', email);
+            data.append('your-subject', 'Website enquiry: ' + (val('c-service') || 'General'));
+            data.append('your-message', details());
+
+            button.disabled = true;
+            var original = button.textContent;
+            button.textContent = 'Sending...';
+            say('#42546a', 'Sending your enquiry...');
+
+            fetch(ENDPOINT, { method: 'POST', body: data })
+              .then(function (r) { return r.json(); })
+              .then(function (res) {
+                if (res && res.status === 'mail_sent') {
+                  form.reset();
+                  say('#1e6b4f', 'Thank you. Your enquiry has reached us and we will reply within one business day.');
+                } else {
+                  fallback(name);
+                }
+              })
+              .catch(function () { fallback(name); })
+              .then(function () {
+                button.disabled = false;
+                button.textContent = original;
+              });
           });
         })();
         </script>
@@ -275,9 +314,9 @@
           <div style="font-size:14.5px; line-height:1.9; color:#9fb2c4;">444-Q, DHA Phase II, Lahore, Pakistan<br>Monday to Friday, 9:00 AM to 6:00 PM PKT<br><a href="tel:+13074434365" style="color:#e7edf3;">+1 307-443-4365</a><br><a href="mailto:business@bigbinarytech.com" style="color:#e7edf3;">business@bigbinarytech.com</a></div>
         </div>
         <div style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:34px;">
-          <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:16px;">🇦🇪 REGIONAL OFFICE</div>
+          <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:16px;">🇦🇪 REGIONAL COVERAGE</div>
           <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:23px; font-weight:600; color:#0d1b2a; margin:0 0 14px;">Dubai, UAE</h3>
-          <div style="font-size:14.5px; line-height:1.9; color:#5a6b7b;">Meetings by appointment<br>Sunday to Thursday, 9:00 AM to 6:00 PM GST<br><a href="tel:+13074434365">+1 307-443-4365</a><br><a href="mailto:business@bigbinarytech.com">business@bigbinarytech.com</a></div>
+          <div style="font-size:14.5px; line-height:1.9; color:#5a6b7b;">We serve UAE clients remotely<br>Meetings by appointment<br>Sunday to Thursday, 9:00 AM to 6:00 PM GST<br><a href="tel:+13074434365">+1 307-443-4365</a><br><a href="mailto:business@bigbinarytech.com">business@bigbinarytech.com</a></div>
         </div>
       </div>
       <p style="font-size:14px; color:#5a6b7b; margin:22px 0 0;">We also serve clients across the USA and the UK remotely, with flexible scheduling to match your time zone.</p>
