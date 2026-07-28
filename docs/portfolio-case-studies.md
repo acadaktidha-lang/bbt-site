@@ -197,7 +197,36 @@ availability on a language model.
 
 ---
 
-## Home page Selected Work: recommended three
+## Home page Selected Work: what is live
+
+Superseded on 28 July 2026. The client directed that the education and retail
+products should not headline bigbinarytech.com, because the site sells AI and
+automation and that work sits with DataSap Inc, a sister company under the same
+ownership.
+
+The three cards now live are DataSap platforms, shown with the product artwork
+from datasapinc.com and attributed in a line under the grid: "Delivered by our
+team with our sister company DataSap Inc, which leads our AI and data
+engineering practice."
+
+1. **DataNexus** autonomous data onboarding platform. Azure OpenAI, TypeScript,
+   Python, Next.js.
+2. **Carrier Revenue Operations** billing intelligence. Azure, Apache Airflow,
+   dbt, Power BI.
+3. **FlowStack** zero touch validation and load engine. Snowflake, dbt,
+   PostgreSQL, Python.
+
+A fourth DataSap platform, **Meridian Hospitality Data Hub** (Azure, Snowflake,
+dbt, Airflow, Power BI), is available and unused. It suits a case studies page.
+
+**Do not import DataSap's testimonials.** That site's five client quotes use
+randomuser.me stock portraits, so the people pictured are not real. The quotes
+themselves are unverified.
+
+Case studies 1, 2, 3, 5 and 6 below remain accurate descriptions of work that
+exists. They are candidates for a case studies page, not for the home page.
+
+## Original home page recommendation (superseded)
 
 Pick the three with the strongest verifiable substance:
 
