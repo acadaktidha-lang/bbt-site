@@ -1,0 +1,570 @@
+<title>bigbinarytech.com QA Report</title>
+
+<style>
+  :root {
+    --ground: #f5f7f9;
+    --surface: #ffffff;
+    --surface-2: #eef1f5;
+    --ink: #15202b;
+    --ink-2: #4c5b6b;
+    --ink-3: #78899a;
+    --rule: #dde3ea;
+    --rule-strong: #c4cfda;
+    --accent: #c47f0a;
+    --accent-ink: #8a5a05;
+    --ok: #1a6b4c;
+    --ok-bg: #e4f1eb;
+    --warn: #92610a;
+    --warn-bg: #f8eed8;
+    --crit: #a52a1c;
+    --crit-bg: #f9e5e2;
+    --shadow: 0 1px 2px rgba(21,32,43,.06), 0 8px 24px rgba(21,32,43,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0c1621;
+      --surface: #131f2c;
+      --surface-2: #182634;
+      --ink: #e6edf4;
+      --ink-2: #a3b3c4;
+      --ink-3: #7488a0;
+      --rule: #223345;
+      --rule-strong: #31465c;
+      --accent: #f0a93a;
+      --accent-ink: #f5c377;
+      --ok: #5fc79c;
+      --ok-bg: #12312a;
+      --warn: #e0b25f;
+      --warn-bg: #33280f;
+      --crit: #f08c7d;
+      --crit-bg: #38191a;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0c1621; --surface: #131f2c; --surface-2: #182634;
+    --ink: #e6edf4; --ink-2: #a3b3c4; --ink-3: #7488a0;
+    --rule: #223345; --rule-strong: #31465c;
+    --accent: #f0a93a; --accent-ink: #f5c377;
+    --ok: #5fc79c; --ok-bg: #12312a; --warn: #e0b25f; --warn-bg: #33280f;
+    --crit: #f08c7d; --crit-bg: #38191a;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.28);
+  }
+  :root[data-theme="light"] {
+    --ground: #f5f7f9; --surface: #ffffff; --surface-2: #eef1f5;
+    --ink: #15202b; --ink-2: #4c5b6b; --ink-3: #78899a;
+    --rule: #dde3ea; --rule-strong: #c4cfda;
+    --accent: #c47f0a; --accent-ink: #8a5a05;
+    --ok: #1a6b4c; --ok-bg: #e4f1eb; --warn: #92610a; --warn-bg: #f8eed8;
+    --crit: #a52a1c; --crit-bg: #f9e5e2;
+    --shadow: 0 1px 2px rgba(21,32,43,.06), 0 8px 24px rgba(21,32,43,.05);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 56px 24px 96px; }
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- masthead ---------- */
+  .eyebrow {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--accent-ink); margin: 0 0 14px;
+  }
+  h1 {
+    font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.022em;
+    font-weight: 700; margin: 0 0 14px; text-wrap: balance;
+  }
+  .lede { font-size: 18px; color: var(--ink-2); max-width: 64ch; margin: 0; }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 22px;
+    font-size: 13px; color: var(--ink-3);
+  }
+  .meta b { color: var(--ink-2); font-weight: 600; }
+
+  /* ---------- verdict ---------- */
+  .verdict {
+    margin: 40px 0 12px; padding: 26px 28px; border-radius: 14px;
+    background: var(--surface); border: 1px solid var(--rule);
+    border-left: 4px solid var(--ok); box-shadow: var(--shadow);
+  }
+  .verdict h2 { margin: 0 0 8px; font-size: 21px; letter-spacing: -.012em; }
+  .verdict p { margin: 0; color: var(--ink-2); max-width: 70ch; }
+
+  .scores {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px; margin: 22px 0 0;
+  }
+  .score {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-radius: 12px; padding: 18px 18px 16px;
+  }
+  .score .n {
+    font-size: 30px; font-weight: 700; letter-spacing: -.02em; line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .score .k {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--ink-3); margin-top: 8px;
+  }
+  .score.good .n { color: var(--ok); }
+  .score.open .n { color: var(--warn); }
+
+  /* ---------- sections ---------- */
+  section { margin-top: 52px; }
+  h2.sec {
+    font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    color: var(--ink-3); margin: 0 0 6px; font-weight: 600;
+  }
+  h3.title {
+    font-size: 25px; letter-spacing: -.016em; margin: 0 0 10px; font-weight: 700;
+    text-wrap: balance;
+  }
+  .intro { color: var(--ink-2); max-width: 68ch; margin: 0 0 24px; }
+
+  /* ---------- findings ---------- */
+  .finding {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-radius: 12px; padding: 20px 22px; margin-bottom: 12px;
+    display: grid; grid-template-columns: auto 1fr; gap: 4px 16px;
+    align-items: start;
+  }
+  .sev {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: .1em; font-weight: 700; text-transform: uppercase;
+    padding: 4px 9px; border-radius: 5px; white-space: nowrap; margin-top: 2px;
+  }
+  .sev.b { background: var(--crit-bg); color: var(--crit); }
+  .sev.m { background: var(--warn-bg); color: var(--warn); }
+  .sev.f { background: var(--ok-bg); color: var(--ok); }
+  .finding h4 { margin: 0; font-size: 16.5px; font-weight: 650; letter-spacing: -.008em; }
+  .finding .where {
+    grid-column: 2; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px; color: var(--ink-3); margin: 2px 0 8px;
+  }
+  .finding p { grid-column: 2; margin: 0 0 8px; color: var(--ink-2); font-size: 15px; max-width: 72ch; }
+  .finding p:last-child { margin-bottom: 0; }
+  .finding .fix {
+    grid-column: 2; font-size: 14.5px; color: var(--ink); padding-top: 8px;
+    border-top: 1px dashed var(--rule);
+  }
+  .finding .fix b { color: var(--ok); font-weight: 650; }
+
+  /* ---------- table ---------- */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 12px; background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 620px; }
+  th, td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--rule); }
+  thead th {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 10.5px; letter-spacing: .11em; text-transform: uppercase;
+    color: var(--ink-3); background: var(--surface-2); font-weight: 600;
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.path { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; }
+  .pill {
+    display: inline-block; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 10.5px; letter-spacing: .06em; font-weight: 700;
+    padding: 3px 8px; border-radius: 999px;
+  }
+  .pill.pass { background: var(--ok-bg); color: var(--ok); }
+  .pill.note { background: var(--warn-bg); color: var(--warn); }
+
+  /* ---------- outstanding ---------- */
+  .owner {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent); border-radius: 10px;
+    padding: 18px 20px; margin-bottom: 12px;
+  }
+  .owner h4 { margin: 0 0 6px; font-size: 16px; font-weight: 650; }
+  .owner p { margin: 0 0 8px; color: var(--ink-2); font-size: 14.5px; max-width: 72ch; }
+  .owner p:last-child { margin-bottom: 0; }
+  .tag {
+    display: inline-block; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+    border: 1px solid var(--rule-strong); padding: 3px 8px; border-radius: 5px; margin-bottom: 10px;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: .9em; background: var(--surface-2); padding: 1.5px 5px;
+    border-radius: 4px; border: 1px solid var(--rule);
+  }
+  ul.clean { margin: 0; padding-left: 20px; color: var(--ink-2); }
+  ul.clean li { margin-bottom: 5px; }
+
+  .signoff {
+    margin-top: 52px; padding: 26px 28px; border-radius: 14px;
+    background: var(--surface-2); border: 1px solid var(--rule-strong);
+  }
+  .signoff h3 { margin: 0 0 10px; font-size: 19px; }
+  .signoff p { margin: 0 0 14px; color: var(--ink-2); max-width: 70ch; }
+  .checkrow {
+    display: flex; align-items: baseline; gap: 10px; padding: 9px 0;
+    border-bottom: 1px solid var(--rule); font-size: 15px;
+  }
+  .checkrow:last-child { border-bottom: 0; }
+  .box {
+    width: 14px; height: 14px; border: 1.5px solid var(--rule-strong);
+    border-radius: 3px; flex: none; position: relative; top: 2px;
+  }
+  footer.note {
+    margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 13px; color: var(--ink-3); max-width: 72ch;
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 36px 18px 72px; }
+    .finding { grid-template-columns: 1fr; }
+    .finding .where, .finding p, .finding .fix { grid-column: 1; }
+  }
+</style>
+
+<div class="wrap">
+
+  <p class="eyebrow">Quality assurance &middot; Release candidate</p>
+  <h1>bigbinarytech.com pre-launch QA</h1>
+  <p class="lede">A full sweep of all 22 public pages covering content accuracy, link integrity,
+  layout at four screen widths, accessibility basics and metadata. Everything found has been
+  fixed and re-verified against the live site, apart from four items that need a decision or an
+  admin login rather than a code change.</p>
+
+  <div class="meta">
+    <span><b>Date</b> 28 July 2026</span>
+    <span><b>Environment</b> Production, bigbinarytech.com</span>
+    <span><b>Pages</b> 22</span>
+    <span><b>Widths</b> 1440 / 1024 / 768 / 390 px</span>
+  </div>
+
+  <div class="verdict">
+    <h2>Recommendation: ready for sign-off, with four items owned by the client</h2>
+    <p>No blocking defects remain. Every page returns 200, every internal link resolves, no page
+    scrolls sideways at any tested width, no images fail to load, and the browser console is clean
+    across the whole site. The four open items are listed in full below; none of them prevent
+    launch, but two of them are commercial decisions only Big Binary Tech can make.</p>
+  </div>
+
+  <div class="scores">
+    <div class="score good"><div class="n">0</div><div class="k">Blocking defects</div></div>
+    <div class="score good"><div class="n">18</div><div class="k">Defects fixed</div></div>
+    <div class="score open"><div class="n">4</div><div class="k">Open, client owned</div></div>
+    <div class="score good"><div class="n">88</div><div class="k">Page/width renders passed</div></div>
+  </div>
+
+  <!-- ============ BLOCKERS ============ -->
+  <section>
+    <h2 class="sec">Section 01</h2>
+    <h3 class="title">Blocking defects found and fixed</h3>
+    <p class="intro">Three defects would have been visible to any visitor and embarrassing in front
+    of a prospect. All three are resolved on the live site.</p>
+
+    <div class="finding">
+      <span class="sev b">Blocker</span>
+      <h4>The About page rendered two navigation bars and two footers</h4>
+      <div class="where">/about-us/</div>
+      <p>This page was the only one of 22 still on the default theme template, while every other
+      page uses Elementor Canvas. The theme therefore added its own header and footer on top of the
+      ones built into the page. Visitors saw the navigation twice, the footer twice, and two
+      competing H1 headings.</p>
+      <p>The duplicated theme footer also carried contact details that are no longer correct:
+      <code>info@bigbinarytech.com</code>, <code>0326 8880101</code> and an address of
+      &ldquo;123 Tech Park, Lahore&rdquo;. A visitor who used those details would not have reached
+      anyone.</p>
+      <div class="fix"><b>Fixed.</b> Page template set to Elementor Canvas, matching the other 21
+      pages. Verified live: one header, one footer, one H1, and no stale contact details anywhere
+      on the site.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev b">Blocker</span>
+      <h4>A designer&rsquo;s brief was published as customer-facing copy</h4>
+      <div class="where">/e-books-guides/</div>
+      <p>Under a heading that read &ldquo;See What&rsquo;s Inside Before You Download&rdquo; and a
+      paragraph promising &ldquo;a preview of the actual content you&rsquo;ll receive: real pages,
+      real frameworks&rdquo;, the page listed five build instructions rather than any preview. The
+      published text included &ldquo;Page 4 Comparison Matrix (e.g., AWS vs Azure vs GCP feature
+      comparison)&rdquo; and &ldquo;Page 5 Real Project Screenshot (e.g., dashboard, workflow, or
+      system interface)&rdquo;.</p>
+      <div class="fix"><b>Fixed.</b> Rebuilt as a five-card grid describing how every guide is
+      structured. The section no longer promises a preview that does not exist, and no build
+      instructions remain in published copy.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev b">Blocker</span>
+      <h4>An unfinished page was publicly reachable</h4>
+      <div class="where">/pos-systems/</div>
+      <p>The page was live and read &ldquo;This page is being prepared. The full POS Systems layout
+      and content are on the way, check back soon.&rdquo; Nothing on the site linked to it, and POS
+      Systems is not part of the agreed six-service menu.</p>
+      <div class="fix"><b>Fixed.</b> Set to draft and given a permanent redirect to
+      <code>/retail-pos/</code>, which is the page that actually covers this offering.</div>
+    </div>
+  </section>
+
+  <!-- ============ MAJOR ============ -->
+  <section>
+    <h2 class="sec">Section 02</h2>
+    <h3 class="title">Layout and content defects fixed</h3>
+    <p class="intro">These came from the same root cause: when page content was converted into the
+    new design, several labels were flattened into plain paragraphs and landed one position away
+    from the element they belong to.</p>
+
+    <div class="finding">
+      <span class="sev m">Major</span>
+      <h4>The &ldquo;Most Popular&rdquo; badge sat on the wrong package on five pages</h4>
+      <div class="where">/pricing/ &middot; /careers/ &middot; /digital-transformation/ &middot; /social-media-marketing/ &middot; /enterprise-odoo/</div>
+      <p>On the pricing page the badge labelled <b>Starter</b> rather than <b>Growth</b>. The same
+      one-card offset appeared in four other package grids, so in each case the cheapest tier was
+      being promoted as the most popular one. The badge was also rendering as ordinary body text
+      rather than as a badge, so it read as a stray line inside the card.</p>
+      <div class="fix"><b>Fixed.</b> Each badge is now a styled pill on the correct middle tier.
+      Verified live on all five pages.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev m">Major</span>
+      <h4>Module numbering was one card out of step</h4>
+      <div class="where">/enterprise-odoo/</div>
+      <p>In &ldquo;The Four Pillars of Enterprise Automation&rdquo;, the label &ldquo;Module
+      02&rdquo; sat above Module 01&rsquo;s feature list, &ldquo;Module 03&rdquo; above Module
+      02&rsquo;s, and so on. &ldquo;Module 01&rdquo; floated outside the cards entirely.</p>
+      <div class="fix"><b>Fixed.</b> Each label now sits at the head of the card it names.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev m">Major</span>
+      <h4>Every social media icon in the footer led nowhere</h4>
+      <div class="where">All 22 pages</div>
+      <p>The LinkedIn, X and GitHub icons in the footer were all set to <code>href="#"</code>, so
+      clicking any of them did nothing. This was present on every page of the site, and the
+      previous design had the same placeholders.</p>
+      <div class="fix"><b>Fixed.</b> Wired to the profiles that actually exist:
+      <code>linkedin.com/company/big-binary-tech</code> and <code>github.com/bigbinarytech</code>.
+      No X account exists for Big Binary Tech, so that icon now points at the active Instagram
+      account instead.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev m">Major</span>
+      <h4>Prices read back to front</h4>
+      <div class="where">/pricing/</div>
+      <p>Package prices rendered as two identical grey paragraphs in the wrong order, for example
+      &ldquo;$2,500&rdquo; followed by &ldquo;/mo per specialist &middot; Starting at&rdquo;. The
+      unit and the qualifier both trailed the number.</p>
+      <div class="fix"><b>Fixed.</b> Restructured so the qualifier sits above the figure as a small
+      label, the figure is set prominently, and the unit reads underneath as a caption.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev m">Major</span>
+      <h4>Three pricing cards shared two buttons</h4>
+      <div class="where">/pricing/</div>
+      <p>The &ldquo;Get Started&rdquo; and &ldquo;Talk to Sales&rdquo; links sat outside the card
+      grid rather than inside the cards, so no individual package had its own call to action.</p>
+      <div class="fix"><b>Fixed.</b> Each card now carries its own button, pinned to the foot of
+      the card so all three align regardless of how much content sits above.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev m">Major</span>
+      <h4>A booking link promised a scheduler that does not exist</h4>
+      <div class="where">/contact-us/</div>
+      <p>The &ldquo;Book a video call&rdquo; card invited visitors to &ldquo;Pick a time&rdquo;,
+      but the link went nowhere and the site has no scheduling tool connected.</p>
+      <div class="fix"><b>Fixed.</b> The card now says we will send a calendar invite, and the link
+      takes the visitor to the enquiry form, which works.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev m">Major</span>
+      <h4>Contact details were inconsistent across the site</h4>
+      <div class="where">Sitewide</div>
+      <p>Three different email addresses and two different phone numbers appeared across the site
+      depending on which page a visitor landed on.</p>
+      <div class="fix"><b>Fixed.</b> The site now reports exactly one email address
+      (<code>business@bigbinarytech.com</code>) and one phone number
+      (<code>+1&nbsp;307&#8209;443&#8209;4365</code>) on every page.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev m">Major</span>
+      <h4>Smaller copy and interface faults</h4>
+      <div class="where">/pricing/ &middot; /about-us/</div>
+      <p>Three further faults, all now resolved: the question &ldquo;Not sure which package
+      fits?&rdquo; appeared with no answer or link following it; the instruction &ldquo;Swipe to
+      compare all packages&rdquo; displayed at every screen width including desktop, where nothing
+      scrolls; and one image carried no alternative text for screen readers.</p>
+      <div class="fix"><b>Fixed.</b> The question now leads somewhere useful, the swipe hint appears
+      only below 760&nbsp;px where the table genuinely scrolls, and the image issue disappeared with
+      the template correction.</div>
+    </div>
+  </section>
+
+  <!-- ============ EARLIER ============ -->
+  <section>
+    <h2 class="sec">Section 03</h2>
+    <h3 class="title">Also resolved in this release</h3>
+    <p class="intro">Fixed earlier in the same work, listed here so the sign-off covers the full
+    scope of what changed.</p>
+
+    <div class="finding">
+      <span class="sev f">Fixed</span>
+      <h4>The contact form was discarding every enquiry</h4>
+      <div class="where">/contact-us/</div>
+      <p>The form was published with no handler behind it. Submitting it reloaded the page and threw
+      the enquiry away without showing an error, so every lead submitted since launch was lost.</p>
+      <div class="fix"><b>Fixed.</b> Contact Form 7 and Flamingo installed. Submissions are now
+      delivered by email and stored in WordPress. Tested end to end on the live page: the enquiry
+      sends, the confirmation appears and the form resets.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev f">Fixed</span>
+      <h4>Privacy Policy and Terms of Service did not exist</h4>
+      <div class="where">Footer, all pages</div>
+      <p>Both footer links were dead anchors. WordPress still held its default privacy stub in
+      draft, full of &ldquo;Suggested text:&rdquo; boilerplate.</p>
+      <div class="fix"><b>Fixed.</b> Both pages written against how the site actually behaves and
+      published, built on the site&rsquo;s own layout so they match everything else.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev f">Fixed</span>
+      <h4>Page addresses carried numeric suffixes</h4>
+      <div class="where">Six pages</div>
+      <p>Six pages were published at addresses such as <code>/about-us-2/</code> and
+      <code>/solutions-3/</code>, which look unfinished in a browser bar or a shared link. The
+      cause was that images in the media library had claimed the clean addresses.</p>
+      <div class="fix"><b>Fixed.</b> All six now use clean addresses, with permanent redirects from
+      the old ones so no existing link breaks, and 331 internal links updated to match.</div>
+    </div>
+
+    <div class="finding">
+      <span class="sev f">Fixed</span>
+      <h4>Home page showed work that could not be substantiated</h4>
+      <div class="where">/</div>
+      <p>The Selected Work section described three projects with no supporting evidence, and the
+      hero presented a revenue figure as if it were a product metric.</p>
+      <div class="fix"><b>Fixed.</b> Replaced with three platforms that genuinely exist, shown with
+      their real product artwork and attributed to the team that built them.</div>
+    </div>
+  </section>
+
+  <!-- ============ COVERAGE ============ -->
+  <section>
+    <h2 class="sec">Section 04</h2>
+    <h3 class="title">Coverage and results</h3>
+    <p class="intro">Every page was checked against the same list. A note means an item is open and
+    listed in the next section, not that the page is broken.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Check</th><th>Scope</th><th>Result</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Page loads</td><td class="path">22 pages</td><td><span class="pill pass">All 200</span></td></tr>
+          <tr><td>Internal links resolve</td><td class="path">Every link on every page</td><td><span class="pill pass">No dead links</span></td></tr>
+          <tr><td>Horizontal scrolling</td><td class="path">22 pages &times; 4 widths</td><td><span class="pill pass">None at any width</span></td></tr>
+          <tr><td>Images load</td><td class="path">22 pages &times; 4 widths</td><td><span class="pill pass">No failures</span></td></tr>
+          <tr><td>Browser console</td><td class="path">All pages</td><td><span class="pill pass">No errors</span></td></tr>
+          <tr><td>Card rows align</td><td class="path">All package and feature grids</td><td><span class="pill pass">Equal height</span></td></tr>
+          <tr><td>Placeholder copy</td><td class="path">All published text</td><td><span class="pill pass">None remaining</span></td></tr>
+          <tr><td>Heading structure</td><td class="path">22 pages</td><td><span class="pill pass">One H1 per page</span></td></tr>
+          <tr><td>Image alt text</td><td class="path">22 pages</td><td><span class="pill pass">Complete</span></td></tr>
+          <tr><td>Contact details</td><td class="path">Sitewide</td><td><span class="pill pass">One email, one number</span></td></tr>
+          <tr><td>Search engine titles</td><td class="path">9 pages</td><td><span class="pill note">Open, see below</span></td></tr>
+          <tr><td>Search engine descriptions</td><td class="path">4 pages</td><td><span class="pill note">Open, see below</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ OPEN ============ -->
+  <section>
+    <h2 class="sec">Section 05</h2>
+    <h3 class="title">Open items owned by Big Binary Tech</h3>
+    <p class="intro">None of these block launch. Two are short admin tasks; two are decisions that
+    cannot be made from the code.</p>
+
+    <div class="owner">
+      <div class="tag">Decision needed</div>
+      <h4>Roughly 100 published statistics are unverified</h4>
+      <p>The site publishes claims such as &ldquo;200+ Industry Specific Projects&rdquo;,
+      &ldquo;80+ POS Systems Deployed&rdquo;, &ldquo;12M+ Global Users&rdquo;, &ldquo;98% Client
+      Retention&rdquo; and &ldquo;Rated 4.8/5 by readers&rdquo;. None can be confirmed from the
+      codebase, though a services business delivers plenty of work that leaves no code behind, so
+      that is not evidence they are wrong.</p>
+      <p>One point does need attention regardless: the site currently states <b>three different
+      project totals</b>. Pages variously claim 200+, 60+ and 50+ projects delivered, and client
+      satisfaction appears as both 98% and 92%. Anyone reading two service pages will see the
+      contradiction.</p>
+      <p>A page-by-page checklist of every figure has been prepared for the team to confirm,
+      correct or remove.</p>
+    </div>
+
+    <div class="owner">
+      <div class="tag">Admin task, about 5 minutes</div>
+      <h4>Four pages have no search engine description</h4>
+      <p><code>/odoo-erp/</code>, <code>/custom-software-development/</code>,
+      <code>/privacy-policy/</code> and <code>/terms-of-service/</code> have no meta description, so
+      search engines will invent one from page text. These are stored by the SEO plugin and can only
+      be set from the WordPress admin, not from the site code. Draft text has been prepared.</p>
+    </div>
+
+    <div class="owner">
+      <div class="tag">Admin task, about 10 minutes</div>
+      <h4>Nine page titles are too long for search results</h4>
+      <p>Nine titles run between 63 and 67 characters and will be cut off in Google. Same situation:
+      these are set in the SEO plugin and need an admin login. Shortened versions have been
+      prepared for each.</p>
+    </div>
+
+    <div class="owner">
+      <div class="tag">Admin task, about 2 minutes</div>
+      <h4>Enquiry notifications go to the wrong inbox</h4>
+      <p>The contact form works and every submission is stored, but the notification email is
+      currently addressed to the WordPress administrator account rather than
+      <code>business@bigbinarytech.com</code>. The plugin will not accept this change through the
+      site code and needs it set once in the admin. Until then, submissions are safe and viewable
+      under Flamingo, but the notification lands in the wrong place.</p>
+    </div>
+  </section>
+
+  <!-- ============ SIGN OFF ============ -->
+  <div class="signoff">
+    <h3>Sign-off</h3>
+    <p>The items below are what this QA pass covered. Anything not listed here was outside its
+    scope, in particular the accuracy of the statistics discussed above, which needs confirmation
+    from the team rather than testing.</p>
+
+    <div class="checkrow"><span class="box"></span><span>All 22 pages load and every internal link resolves</span></div>
+    <div class="checkrow"><span class="box"></span><span>No page scrolls sideways at 1440, 1024, 768 or 390&nbsp;px</span></div>
+    <div class="checkrow"><span class="box"></span><span>No placeholder or draft copy remains in published text</span></div>
+    <div class="checkrow"><span class="box"></span><span>Package badges, prices and buttons are correct on every pricing grid</span></div>
+    <div class="checkrow"><span class="box"></span><span>Contact form delivers and stores enquiries</span></div>
+    <div class="checkrow"><span class="box"></span><span>Privacy Policy and Terms of Service are published and linked</span></div>
+    <div class="checkrow"><span class="box"></span><span>One email address and one phone number sitewide</span></div>
+    <div class="checkrow"><span class="box"></span><span>Footer social links reach live profiles</span></div>
+  </div>
+
+  <footer class="note">
+    Testing was carried out against the live production site using an automated sweep of all 22
+    pages, followed by browser rendering checks at four screen widths, and confirmed by re-running
+    the full sweep after each fix. Counts in this report reflect the state of the site at the time
+    and date shown above.
+  </footer>
+
+</div>
