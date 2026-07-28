@@ -177,7 +177,7 @@
       <div style="background:#fff; border:1px solid #e3e8ee; border-radius:20px; padding:36px; box-shadow:0 20px 50px rgba(13,27,42,.06);">
         <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#0d1b2a; margin:0 0 8px;">Send us a message</h2>
         <p style="font-size:15px; line-height:1.6; color:#5a6b7b; margin:0 0 28px;">Fill out the form below and a real person will review your project and reply with specific next steps.</p>
-        <form action="#" method="post" novalidate>
+        <form id="bb-contact-form" action="#" method="post" novalidate>
           <div class="form2" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
             <div><label for="c-name" style="display:block; font-size:13px; font-weight:600; color:#42546a; margin-bottom:7px;">Full name <span style="color:#d98c0a;">*</span></label><input class="bb-field" id="c-name" name="name" type="text" required autocomplete="name" placeholder="Your name"></div>
             <div><label for="c-email" style="display:block; font-size:13px; font-weight:600; color:#42546a; margin-bottom:7px;">Business email <span style="color:#d98c0a;">*</span></label><input class="bb-field" id="c-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com"></div>
@@ -188,8 +188,51 @@
           </div>
           <div style="margin-bottom:16px;"><label for="c-msg" style="display:block; font-size:13px; font-weight:600; color:#42546a; margin-bottom:7px;">Tell us about your project</label><textarea class="bb-field" id="c-msg" name="message" rows="5" placeholder="Describe your current challenge, goals, timeline and budget range. Even a brief description is enough to start."></textarea></div>
           <button type="submit" style="width:100%; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px; border:none; border-radius:12px; cursor:pointer;">Get my free consultation →</button>
-          <p style="font-size:12.5px; color:#8a99a8; margin:14px 0 0; text-align:center;">We respect your privacy. Your information is safe with us and will never be shared.</p>
+          <p id="bb-form-note" role="status" aria-live="polite" style="font-size:13px; color:#42546a; margin:14px 0 0; text-align:center;"></p>
+          <p style="font-size:12.5px; color:#8a99a8; margin:10px 0 0; text-align:center;">We respect your privacy. Your information is safe with us and will never be shared. Read our <a href="/privacy-policy/" style="color:#8a99a8; text-decoration:underline;">Privacy Policy</a>.</p>
         </form>
+        <script>
+        /* The form has no server side handler. Rather than discard enquiries silently,
+           hand the completed enquiry to the visitor's mail client, and always show the
+           address so a visitor without a mail client can still reach us. */
+        (function () {
+          var form = document.getElementById('bb-contact-form');
+          if (!form) return;
+          var note = document.getElementById('bb-form-note');
+          var INBOX = 'business@bigbinarytech.com';
+          var val = function (id) {
+            var el = document.getElementById(id);
+            return el && el.value ? el.value.trim() : '';
+          };
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = val('c-name'), email = val('c-email');
+            if (!name || !email) {
+              note.style.color = '#c0392b';
+              note.textContent = 'Please add your name and business email so we can reply.';
+              return;
+            }
+            var body = [
+              'Name: ' + name,
+              'Business email: ' + email,
+              'Phone: ' + (val('c-phone') || 'not provided'),
+              'Company: ' + (val('c-company') || 'not provided'),
+              'Country or region: ' + (val('c-region') || 'not provided'),
+              'Service needed: ' + (val('c-service') || 'not provided'),
+              '',
+              'Project details:',
+              val('c-msg') || 'not provided'
+            ].join('\n');
+            note.style.color = '#42546a';
+            note.innerHTML = 'Opening your email app to send this to <a href="mailto:' + INBOX +
+              '" style="color:#d98c0a; font-weight:600;">' + INBOX +
+              '</a>. If nothing opens, please email us there directly.';
+            window.location.href = 'mailto:' + INBOX +
+              '?subject=' + encodeURIComponent('Website enquiry from ' + name) +
+              '&body=' + encodeURIComponent(body);
+          });
+        })();
+        </script>
       </div>
       <!-- next steps -->
       <div>
@@ -234,7 +277,7 @@
         <div style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:34px;">
           <div style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:16px;">🇦🇪 REGIONAL OFFICE</div>
           <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:23px; font-weight:600; color:#0d1b2a; margin:0 0 14px;">Dubai, UAE</h3>
-          <div style="font-size:14.5px; line-height:1.9; color:#5a6b7b;">Address to be confirmed<br>Sunday to Thursday, 9:00 AM to 6:00 PM GST<br><a href="tel:+13074434365">+1 307-443-4365</a><br><a href="mailto:business@bigbinarytech.com">business@bigbinarytech.com</a></div>
+          <div style="font-size:14.5px; line-height:1.9; color:#5a6b7b;">Meetings by appointment<br>Sunday to Thursday, 9:00 AM to 6:00 PM GST<br><a href="tel:+13074434365">+1 307-443-4365</a><br><a href="mailto:business@bigbinarytech.com">business@bigbinarytech.com</a></div>
         </div>
       </div>
       <p style="font-size:14px; color:#5a6b7b; margin:22px 0 0;">We also serve clients across the USA and the UK remotely, with flexible scheduling to match your time zone.</p>
@@ -316,8 +359,8 @@
     <div class="bbfoot-bottom" style="padding:18px 0 26px; border-top:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
       <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5f7488;">© 2026 Big Binary Tech. All rights reserved.</span>
       <div style="display:flex; gap:22px; font-size:12.5px; color:#7d8ea0;">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
       </div>
     </div>
   </div>
