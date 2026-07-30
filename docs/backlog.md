@@ -356,6 +356,10 @@ Prepare the pages to run inside WordPress and Elementor and finalize the build.
 - Note: the same commit swapped the services list across the nav and footer to
   the client's final six, so POS Systems is out and Social Media Marketing is
   in. Build output is build/ with 7 pages and build14/ with 13 pages.
+- Since superseded: build14/ was merged into build/ and the six files carrying
+  attachment collision suffixes were renamed to match their live slugs. There is
+  now one build file per published page, listed in
+  [page-manifest.md](page-manifest.md).
 
 ---
 

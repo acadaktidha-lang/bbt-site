@@ -238,7 +238,7 @@ that worse. The offering is persuasive on specifics alone: the use cases, the
 grounding sources, the citation behaviour and the permission model are all
 things competitors do not spell out.
 
-One thing worth noting in your favour: [careers.html](../bigbinarytech-website-redesign/project/build14/careers.html)
+One thing worth noting in your favour: [careers.html](../bigbinarytech-website-redesign/project/build/careers.html)
 already advertises hiring for LLM powered chatbots with OpenAI API and LangChain,
 and the DataSap work on the home page carries an Azure OpenAI tech chip. So the
 capability is already claimed publicly. This copy makes it sellable rather than
