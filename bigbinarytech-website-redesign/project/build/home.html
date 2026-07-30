@@ -72,6 +72,65 @@
   }
   @media (prefers-reduced-motion: reduce){ *{ animation:none !important; } html{ scroll-behavior:auto; } }
 
+/* ---- Section layout components ---- */
+
+  .bb-subnav{ position:sticky; top:69px; z-index:70; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); border-bottom:1px solid #e3e8ee; }
+  .bb-subnav-in{ max-width:1240px; margin:0 auto; display:flex; gap:8px; padding:12px 40px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; }
+  .bb-subnav-in::-webkit-scrollbar{ display:none; }
+  .bb-subnav a{ flex:0 0 auto; font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#42546a; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:999px; padding:9px 16px; white-space:nowrap; transition:background .16s ease, color .16s ease, border-color .16s ease; }
+  .bb-subnav a:hover{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  .bb-subnav a.bb-on{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  @media (max-width:620px){ .bb-subnav-in{ padding:10px 22px; } }
+
+  .bb-split{ display:grid; grid-template-columns:1.3fr 1fr; gap:52px; align-items:start; }
+  .bb-split-v{ background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:26px; }
+  .bb-split-v.bb-on-dark{ background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.12); }
+  @media (min-width:981px){ .bb-split-alt > *:first-child{ order:2; } .bb-split-alt > *:last-child{ order:1; } }
+  @media (max-width:980px){ .bb-split{ grid-template-columns:1fr !important; gap:32px; } }
+
+  .bb-deliv{ list-style:none; padding:0; margin:0 0 22px; display:grid; grid-template-columns:1fr 1fr; gap:11px 28px; }
+  .bb-deliv li{ position:relative; padding-left:22px; font-size:14.5px; line-height:1.55; color:#42546a; }
+  .bb-deliv li::before{ content:""; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:2px; background:#d98c0a; }
+  .bb-deliv.bb-one{ grid-template-columns:1fr; }
+  .bb-deliv.bb-on-dark li{ color:#a8bcce; }
+  .bb-deliv.bb-on-dark li::before{ background:#f5a623; }
+  @media (max-width:620px){ .bb-deliv{ grid-template-columns:1fr; } }
+
+  .bb-chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
+  .bb-chips li{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#42546a; background:#eef1f6; border:1px solid #e0e6ee; border-radius:999px; padding:6px 13px; }
+  .bb-chips.bb-on-dark li{ color:#a8bcce; background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.15); }
+
+  .bb-pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+  .bb-pill{ display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#1c4b82; background:#e6f1fb; border:1px solid #cfe2f5; border-radius:999px; padding:9px 17px; transition:background .16s ease, color .16s ease, border-color .16s ease; }
+  .bb-pill:hover{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  .bb-pill.bb-on{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+
+  .bb-quote{ background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column; }
+  .bb-quote .stars{ color:#f5a623; font-size:13px; letter-spacing:3px; margin-bottom:14px; }
+  .bb-quote blockquote{ font-size:15px; line-height:1.68; color:#3d4f61; margin:0 0 18px; }
+  .bb-quote .who{ font-size:13.5px; font-weight:600; color:#0d1b2a; margin-top:auto; }
+  .bb-quote .org{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#7b8b9c; margin-top:4px; }
+
+  .bb-statg{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
+  .bb-statg .n{ font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; color:#d98c0a; line-height:1; }
+  .bb-statg .l{ font-size:13.5px; line-height:1.5; color:#5a6b7b; margin-top:8px; }
+  .bb-statg.bb-on-dark .n{ color:#f5a623; }
+  .bb-statg.bb-on-dark .l{ color:#9fb2c4; }
+  @media (max-width:620px){ .bb-statg{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:980px){ .g4{ grid-template-columns:repeat(2,1fr) !important; } }
+  @media (max-width:620px){ .g4{ grid-template-columns:1fr !important; } }
+  .bb-statg-1{ grid-template-columns:1fr; }
+  .bb-statg-2{ grid-template-columns:repeat(2,1fr); }
+  .bb-statg-4{ grid-template-columns:repeat(4,1fr); }
+  .bb-statg-5{ grid-template-columns:repeat(5,1fr); }
+  .bb-statg-6{ grid-template-columns:repeat(6,1fr); }
+  @media (max-width:980px){ .bb-statg-4,.bb-statg-5,.bb-statg-6{ grid-template-columns:repeat(3,1fr) !important; } }
+  @media (max-width:620px){ .bb-statg-2,.bb-statg-4,.bb-statg-5,.bb-statg-6{ grid-template-columns:repeat(2,1fr) !important; } .bb-statg-1{ grid-template-columns:1fr !important; } }
+
+  .bb-steps{ display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-top:30px; }
+  @media (max-width:980px){ .bb-steps{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .bb-steps{ grid-template-columns:1fr; } }
+
   /* ---- shared header / nav / page loader (from BBT Nav) ---- */
   .bbnav *{ box-sizing:border-box; }
   .bbnav a{ color:inherit; text-decoration:none; }
@@ -141,7 +200,7 @@
             <a class="bbnav-link" href="/web-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Web Development</a>
             <a class="bbnav-link" href="/odoo-erp/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Odoo &amp; ERP Services</a>
             <a class="bbnav-link" href="/social-media-marketing/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Social Media Marketing</a>
-            <a class="bbnav-link" href="/digital-transformation/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation</a>
+            <a class="bbnav-link" href="/pos-systems/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">POS Systems</a>
           </div>
         </div>
       </div>
@@ -200,7 +259,7 @@
         <div style="display:inline-flex; align-items:center; gap:2px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:26px; animation:bbUp .6s .05s both;">// SOFTWARE HOUSE · LAHORE, PAKISTAN<span aria-hidden="true" style="animation:bbCaret 1s step-end infinite; margin-left:3px;">▊</span></div>
         <h1 class="bb-h1" style="font-family:'Bricolage Grotesque',sans-serif; font-size:60px; line-height:1.06; font-weight:700; letter-spacing:-.025em; margin:0 0 24px; color:#0d1b2a; animation:bbUp .6s .12s both;">
           Engineering software for businesses
-          <span style="position:relative; display:inline-block; vertical-align:top; width:6.6em; height:1.16em; color:#d98c0a;">
+          <span style="position:relative; display:inline-block; vertical-align:top; width:6.6em; height:1.06em; color:#d98c0a;">
             <span style="position:absolute; left:0; top:0; opacity:0; white-space:nowrap; animation:bbWord 8s ease-in-out 0s infinite backwards;">in Pakistan</span>
             <span style="position:absolute; left:0; top:0; opacity:0; white-space:nowrap; animation:bbWord 8s ease-in-out 2s infinite backwards;">across the Gulf</span>
             <span style="position:absolute; left:0; top:0; opacity:0; white-space:nowrap; animation:bbWord 8s ease-in-out 4s infinite backwards;">in the US &amp; UK</span>
@@ -465,7 +524,7 @@
           <a href="/web-development/">Web Development</a>
           <a href="/odoo-erp/">Odoo &amp; ERP Services</a>
           <a href="/social-media-marketing/">Social Media Marketing</a>
-          <a href="/digital-transformation/">Digital Transformation</a>
+          <a href="/pos-systems/">POS Systems</a>
         </div>
       </div>
       <div>

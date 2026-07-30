@@ -47,6 +47,65 @@
   }
   @media (prefers-reduced-motion:reduce){ *{ animation:none !important; } html{ scroll-behavior:auto; } }
 
+/* ---- Section layout components ---- */
+
+  .bb-subnav{ position:sticky; top:69px; z-index:70; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); border-bottom:1px solid #e3e8ee; }
+  .bb-subnav-in{ max-width:1240px; margin:0 auto; display:flex; gap:8px; padding:12px 40px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; }
+  .bb-subnav-in::-webkit-scrollbar{ display:none; }
+  .bb-subnav a{ flex:0 0 auto; font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#42546a; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:999px; padding:9px 16px; white-space:nowrap; transition:background .16s ease, color .16s ease, border-color .16s ease; }
+  .bb-subnav a:hover{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  .bb-subnav a.bb-on{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  @media (max-width:620px){ .bb-subnav-in{ padding:10px 22px; } }
+
+  .bb-split{ display:grid; grid-template-columns:1.3fr 1fr; gap:52px; align-items:start; }
+  .bb-split-v{ background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:26px; }
+  .bb-split-v.bb-on-dark{ background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.12); }
+  @media (min-width:981px){ .bb-split-alt > *:first-child{ order:2; } .bb-split-alt > *:last-child{ order:1; } }
+  @media (max-width:980px){ .bb-split{ grid-template-columns:1fr !important; gap:32px; } }
+
+  .bb-deliv{ list-style:none; padding:0; margin:0 0 22px; display:grid; grid-template-columns:1fr 1fr; gap:11px 28px; }
+  .bb-deliv li{ position:relative; padding-left:22px; font-size:14.5px; line-height:1.55; color:#42546a; }
+  .bb-deliv li::before{ content:""; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:2px; background:#d98c0a; }
+  .bb-deliv.bb-one{ grid-template-columns:1fr; }
+  .bb-deliv.bb-on-dark li{ color:#a8bcce; }
+  .bb-deliv.bb-on-dark li::before{ background:#f5a623; }
+  @media (max-width:620px){ .bb-deliv{ grid-template-columns:1fr; } }
+
+  .bb-chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
+  .bb-chips li{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#42546a; background:#eef1f6; border:1px solid #e0e6ee; border-radius:999px; padding:6px 13px; }
+  .bb-chips.bb-on-dark li{ color:#a8bcce; background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.15); }
+
+  .bb-pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+  .bb-pill{ display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#1c4b82; background:#e6f1fb; border:1px solid #cfe2f5; border-radius:999px; padding:9px 17px; transition:background .16s ease, color .16s ease, border-color .16s ease; }
+  .bb-pill:hover{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  .bb-pill.bb-on{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+
+  .bb-quote{ background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column; }
+  .bb-quote .stars{ color:#f5a623; font-size:13px; letter-spacing:3px; margin-bottom:14px; }
+  .bb-quote blockquote{ font-size:15px; line-height:1.68; color:#3d4f61; margin:0 0 18px; }
+  .bb-quote .who{ font-size:13.5px; font-weight:600; color:#0d1b2a; margin-top:auto; }
+  .bb-quote .org{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#7b8b9c; margin-top:4px; }
+
+  .bb-statg{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
+  .bb-statg .n{ font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; color:#d98c0a; line-height:1; }
+  .bb-statg .l{ font-size:13.5px; line-height:1.5; color:#5a6b7b; margin-top:8px; }
+  .bb-statg.bb-on-dark .n{ color:#f5a623; }
+  .bb-statg.bb-on-dark .l{ color:#9fb2c4; }
+  @media (max-width:620px){ .bb-statg{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:980px){ .g4{ grid-template-columns:repeat(2,1fr) !important; } }
+  @media (max-width:620px){ .g4{ grid-template-columns:1fr !important; } }
+  .bb-statg-1{ grid-template-columns:1fr; }
+  .bb-statg-2{ grid-template-columns:repeat(2,1fr); }
+  .bb-statg-4{ grid-template-columns:repeat(4,1fr); }
+  .bb-statg-5{ grid-template-columns:repeat(5,1fr); }
+  .bb-statg-6{ grid-template-columns:repeat(6,1fr); }
+  @media (max-width:980px){ .bb-statg-4,.bb-statg-5,.bb-statg-6{ grid-template-columns:repeat(3,1fr) !important; } }
+  @media (max-width:620px){ .bb-statg-2,.bb-statg-4,.bb-statg-5,.bb-statg-6{ grid-template-columns:repeat(2,1fr) !important; } .bb-statg-1{ grid-template-columns:1fr !important; } }
+
+  .bb-steps{ display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-top:30px; }
+  @media (max-width:980px){ .bb-steps{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .bb-steps{ grid-template-columns:1fr; } }
+
 /* ---- BBT Nav ---- */
 
   .bbnav *{ box-sizing:border-box; }
@@ -115,7 +174,7 @@
             <a class="bbnav-link" href="/web-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Web Development</a>
             <a class="bbnav-link" href="/odoo-erp/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Odoo &amp; ERP Services</a>
             <a class="bbnav-link" href="/social-media-marketing/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Social Media Marketing</a>
-            <a class="bbnav-link" href="/digital-transformation/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation</a>
+            <a class="bbnav-link" href="/pos-systems/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">POS Systems</a>
           </div>
         </div>
       </div>
@@ -163,7 +222,7 @@
   </div>
 </header>
 
-  <main>
+  <main id="main">
   <!-- HERO -->
   <section class="sec" style="position:relative; background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:52px 40px 72px; overflow:hidden;">
     <div aria-hidden="true" style="position:absolute; top:-120px; right:-90px; width:480px; height:480px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.14), transparent 70%);"></div>
@@ -201,79 +260,17 @@
   </section>
 
   <!-- OUR SERVICES -->
-  <section class="sec" style="background:#fff; padding:92px 40px;">
-    <div style="max-width:1240px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// WHAT WE DO</div>
-      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:40px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:640px;">Technology services built for real business results</h2>
-      <p style="font-size:17px; line-height:1.6; color:#5a6b7b; max-width:620px; margin:0 0 46px;">Every service we offer connects to the next. Your website talks to your CRM. Your CRM talks to your ERP. Your AI talks to your team. One system, one partner, zero gaps.</p>
-      <div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
-
-        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:30px; display:flex; flex-direction:column;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:18px;">01 · AI &amp; AUTOMATION</div>
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:600; color:#0d1b2a; margin:0 0 12px;">AI Automation Services</h3>
-          <p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 18px;">Tired of your team repeating the same tasks? We build AI assistants and smart workflows that handle the busywork, so your people focus on what moves the needle. Most clients cut manual work by 70% in the first 90 days.</p>
-          <ul style="list-style:none; padding:0; margin:0 0 22px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;">
-            <li>› Workflow Automation</li><li>› AI Chatbots &amp; Assistants</li><li>› Document Grounded Assistants (RAG)</li><li>› LLM Integration &amp; API Connections</li>
-          </ul>
-          <a href="/contact-us/" style="margin-top:auto; font-size:14px; font-weight:600; color:#d98c0a;">Explore AI &amp; Automation →</a>
-        </article>
-
-        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:30px; display:flex; flex-direction:column;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:18px;">02 · CUSTOM SOFTWARE</div>
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:600; color:#0d1b2a; margin:0 0 12px;">Custom Software Development</h3>
-          <p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 18px;">Off-the-shelf software never fits perfectly. We build web apps, management systems and cloud platforms around your exact workflow, not the other way around. Built to scale, built to last.</p>
-          <ul style="list-style:none; padding:0; margin:0 0 22px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;">
-            <li>› Business Web Applications</li><li>› Internal Management Systems</li><li>› Custom API Development</li><li>› Data Warehousing &amp; Analytics</li>
-          </ul>
-          <a href="/contact-us/" style="margin-top:auto; font-size:14px; font-weight:600; color:#d98c0a;">Explore Software Development →</a>
-        </article>
-
-        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:30px; display:flex; flex-direction:column;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:18px;">03 · WEB DEVELOPMENT</div>
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:600; color:#0d1b2a; margin:0 0 12px;">Professional Website Development</h3>
-          <p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 18px;">Your website is your first impression. We build fast, mobile-first sites that load in under three seconds and turn visitors into leads. Corporate sites, online stores or landing pages, built to rank and convert.</p>
-          <ul style="list-style:none; padding:0; margin:0 0 22px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;">
-            <li>› Corporate &amp; Business Websites</li><li>› E-Commerce Stores</li><li>› High-Converting Landing Pages</li><li>› SEO &amp; Speed Optimization</li>
-          </ul>
-          <a href="/contact-us/" style="margin-top:auto; font-size:14px; font-weight:600; color:#d98c0a;">Explore Website Development →</a>
-        </article>
-
-        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:30px; display:flex; flex-direction:column;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:18px;">04 · ODOO &amp; ERP</div>
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:600; color:#0d1b2a; margin:0 0 12px;">Odoo ERP Implementation &amp; Customization</h3>
-          <p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 18px;">Your finance, inventory, sales and HR data live in different places? That stops now. We implement and customize Odoo so everything lives on one platform. One dashboard, real-time numbers, no more guessing.</p>
-          <ul style="list-style:none; padding:0; margin:0 0 22px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;">
-            <li>› Full Odoo ERP Setup</li><li>› HR &amp; Payroll Modules</li><li>› Finance &amp; Accounting</li><li>› Inventory, CRM &amp; Sales</li>
-          </ul>
-          <a href="/contact-us/" style="margin-top:auto; font-size:14px; font-weight:600; color:#d98c0a;">Explore Odoo ERP Solutions →</a>
-        </article>
-
-        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:30px; display:flex; flex-direction:column;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:18px;">05 · DIGITAL TRANSFORMATION</div>
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:600; color:#0d1b2a; margin:0 0 12px;">Digital Transformation Services</h3>
-          <p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 18px;">Still running on spreadsheets and outdated tools? We modernize your whole operation: automate processes, connect legacy systems and build a digital strategy that works. Delivered across Pakistan, the GCC, the USA and the UK.</p>
-          <ul style="list-style:none; padding:0; margin:0 0 22px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;">
-            <li>› Business Process Automation</li><li>› Legacy System Modernization</li><li>› System Integration &amp; APIs</li><li>› Digital Strategy Consulting</li>
-          </ul>
-          <a href="/contact-us/" style="margin-top:auto; font-size:14px; font-weight:600; color:#d98c0a;">Explore Digital Transformation →</a>
-        </article>
-
-        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:30px; display:flex; flex-direction:column;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:18px;">06 · SOCIAL MEDIA MARKETING</div>
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:22px; font-weight:600; color:#0d1b2a; margin:0 0 12px;">Social Media Marketing</h3>
-          <p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 18px;">Marketing that brings real leads, not just likes. We run paid campaigns, LinkedIn lead generation and content that actually converts, in English and Urdu. Every campaign is tracked and reported against ROI.</p>
-          <ul style="list-style:none; padding:0; margin:0 0 22px; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;">
-            <li>› Paid Advertising Campaigns</li><li>› Content Strategy &amp; Creative</li><li>› LinkedIn Lead Generation</li><li>› Performance Analytics &amp; Reporting</li>
-          </ul>
-          <a href="/contact-us/" style="margin-top:auto; font-size:14px; font-weight:600; color:#d98c0a;">Explore Social Media Marketing →</a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- DELIVERY PROCESS -->
-  <section id="process" class="sec" style="background:#0d1b2a; color:#e7edf3; padding:92px 40px;">
+  <nav class="bb-subnav" aria-label="On this page"><div class="bb-subnav-in"><a href="#ai">AI Automation</a><a href="#webdev">Website Dev</a><a href="#odoo-erp">Odoo ERP</a><a href="#custom-software">Custom Software</a><a href="#pos">POS Systems</a><a href="#social-media">Social Media</a></div></nav>
+<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// WHAT WE DO</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Technology services built for real business results</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Every service we offer connects to the next. Your website talks to your CRM. Your CRM talks to your ERP. Your AI talks to your team. One system, one partner, zero gaps.</p><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Six service lines below. Each one links straight through to the detail, and the pills jump you to the exact capability you came for.</p></div></section>
+<section id="ai" class="sec" style="background:#f4f6f9; padding:88px 40px; scroll-margin-top:92px;"><div style="max-width:1240px; margin:0 auto;"><div class="bb-split"><div><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">01 &middot; AI &amp; AUTOMATION</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">AI Automation Services</h2><p style="font-family:'Bricolage Grotesque',sans-serif; font-size:20px; line-height:1.45; font-weight:600; color:#0d1b2a; max-width:660px; margin:0 0 18px;">Automate repetitive work and connect your tools, so your team focuses on what grows the business.</p><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Tired of your team repeating the same tasks? We build AI assistants and smart workflows that handle the busywork, so your people focus on what moves the needle. Most clients cut manual work by 70% in the first 90 days.</p><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">EXPLORE</div><div class="bb-pills" style="margin-top:0;"><a class="bb-pill" href="/ai-automation/#workflow-automation">Workflow Automation</a><a class="bb-pill" href="/ai-automation/#ai-integrations">AI Integrations</a><a class="bb-pill" href="/ai-automation/#crm-integrations">CRM Integrations</a><a class="bb-pill" href="/ai-automation/#api-integrations">API Integrations</a><a class="bb-pill" href="/ai-automation/#chatbot-automation">Chatbot Automation</a><a class="bb-pill" href="/ai-automation/#business-process-automation">Business Process Automation</a></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/ai-automation/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Explore AI &amp; Automation &rarr;</a><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Get a Quote &rarr;</a></div></div><div class="bb-split-v"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">PROOF</div><div class="bb-statg bb-statg-1"><div><div class="n">70%</div><div class="l">less manual work</div></div></div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:16px 0 0;">WhatsApp Business API automation for UAE and Saudi Arabia, in Arabic and English.</p></div></div></div></section>
+<section id="webdev" class="sec" style="background:#ffffff; padding:88px 40px; scroll-margin-top:92px;"><div style="max-width:1240px; margin:0 auto;"><div class="bb-split bb-split-alt"><div><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">02 &middot; WEB DEVELOPMENT</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Professional Website Development</h2><p style="font-family:'Bricolage Grotesque',sans-serif; font-size:20px; line-height:1.45; font-weight:600; color:#0d1b2a; max-width:660px; margin:0 0 18px;">Websites that load fast, rank on Google, and convert visitors into leads.</p><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Your website is your first impression. We build fast, mobile-first sites that load in under three seconds and turn visitors into leads. Corporate sites, online stores or landing pages, built to rank and convert.</p><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">EXPLORE</div><div class="bb-pills" style="margin-top:0;"><a class="bb-pill" href="/web-development/#corporate-websites">Corporate Websites</a><a class="bb-pill" href="/web-development/#business-websites">Business Websites</a><a class="bb-pill" href="/web-development/#ecommerce-websites">E-commerce</a><a class="bb-pill" href="/web-development/#landing-pages">Landing Pages</a><a class="bb-pill" href="/web-development/#website-redesign">Website Redesign</a><a class="bb-pill" href="/web-development/#cms-development">CMS Development</a><a class="bb-pill" href="/web-development/#website-maintenance">Maintenance</a></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/web-development/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Explore Website Development &rarr;</a><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Get a Quote &rarr;</a></div></div><div class="bb-split-v"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">PROOF</div><div class="bb-statg bb-statg-1"><div><div class="n">100+</div><div class="l">websites built</div></div></div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:16px 0 0;">Arabic and English bilingual builds with right-to-left support, and GDPR-ready sites for the UK.</p></div></div></div></section>
+<section id="odoo-erp" class="sec" style="background:#0d1b2a; padding:88px 40px; scroll-margin-top:92px;"><div style="max-width:1240px; margin:0 auto;"><div class="bb-split"><div><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">03 &middot; ODOO &amp; ERP &middot; OFFICIAL ODOO PARTNER</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#e7edf3; margin:0 0 16px; max-width:760px;">Odoo ERP Implementation &amp; Customization</h2><p style="font-family:'Bricolage Grotesque',sans-serif; font-size:20px; line-height:1.45; font-weight:600; color:#f5a623; max-width:660px; margin:0 0 18px;">Replace fragmented systems with one Odoo ERP, covering accounting, HR, inventory, CRM, and POS on a single platform.</p><p style="font-size:16.5px; line-height:1.65; color:#9fb2c4; max-width:760px; margin:0 0 18px;">Your finance, inventory, sales and HR data live in different places? That stops now. We implement and customize Odoo so everything lives on one platform. One dashboard, real-time numbers, no more guessing. ZATCA e-invoicing for Saudi Arabia, WPS payroll for the UAE, and VAT with Making Tax Digital for the UK are built in rather than bolted on.</p><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#7d94ab; margin-bottom:12px;">EXPLORE</div><div class="bb-pills" style="margin-top:0;"><a class="bb-pill" href="/odoo-erp/#odoo-implementation">Implementation</a><a class="bb-pill" href="/odoo-erp/#odoo-customization">Customization</a><a class="bb-pill" href="/odoo-erp/#odoo-customization">Module Development</a><a class="bb-pill" href="/odoo-erp/#odoo-migration">Migration</a><a class="bb-pill" href="/odoo-erp/#odoo-support">Support &amp; Training</a></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/odoo-erp/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#f5a623; border-bottom:1px solid rgba(245,166,35,.35); padding-bottom:3px;">Explore Odoo ERP &rarr;</a><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#f5a623; border-bottom:1px solid rgba(245,166,35,.35); padding-bottom:3px;">Get a Quote &rarr;</a></div></div><div class="bb-split-v bb-on-dark"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#7d94ab; margin-bottom:12px;">PROOF</div><div class="bb-statg bb-on-dark bb-statg-1"><div><div class="n">50+</div><div class="l">Odoo projects delivered</div></div></div><p style="font-size:13.5px; line-height:1.6; color:#a8bcce; margin:16px 0 0;">Official Odoo Ready Partner. Highest-demand service we run, and the one we are best known for.</p></div></div></div></section>
+<section id="custom-software" class="sec" style="background:#ffffff; padding:88px 40px; scroll-margin-top:92px;"><div style="max-width:1240px; margin:0 auto;"><div class="bb-split bb-split-alt"><div><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">04 &middot; CUSTOM SOFTWARE</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Custom Software Development</h2><p style="font-family:'Bricolage Grotesque',sans-serif; font-size:20px; line-height:1.45; font-weight:600; color:#0d1b2a; max-width:660px; margin:0 0 18px;">From SaaS platforms to enterprise dashboards, software engineered for your exact workflows and scale.</p><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Off-the-shelf software never fits perfectly. We build web apps, management systems and cloud platforms around your exact workflow, not the other way around. Built to scale, built to last, and you own the code outright.</p><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">EXPLORE</div><div class="bb-pills" style="margin-top:0;"><a class="bb-pill" href="/custom-software-development/#web-applications-saas">Web Applications &amp; SaaS</a><a class="bb-pill" href="/custom-software-development/#enterprise-software">Dashboards &amp; Enterprise Software</a><a class="bb-pill" href="/custom-software-development/#api-cloud">API &amp; Cloud Solutions</a></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/custom-software-development/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Explore Custom Software &rarr;</a><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Get a Quote &rarr;</a></div></div><div class="bb-split-v"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">PROOF</div><div class="bb-statg bb-statg-1"><div><div class="n">100%</div><div class="l">code ownership</div></div></div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:16px 0 0;">React, Next.js, Node, Python and PostgreSQL, hosted where your data rules require.</p></div></div></div></section>
+<section id="pos" class="sec" style="background:#f4f6f9; padding:88px 40px; scroll-margin-top:92px;"><div style="max-width:1240px; margin:0 auto;"><div class="bb-split"><div><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">05 &middot; POS SYSTEMS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">POS Systems Development</h2><p style="font-family:'Bricolage Grotesque',sans-serif; font-size:20px; line-height:1.45; font-weight:600; color:#0d1b2a; max-width:660px; margin:0 0 18px;">Smart POS systems for retail and restaurants: cloud-based, multi-branch ready, and connected to your inventory and accounting.</p><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">One system for your checkout, kitchen, and stock. We build POS software that keeps working when the internet drops, syncs every branch in real time, and issues invoices the regulator accepts. No monthly feature fees, no locked-in hardware.</p><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">EXPLORE</div><div class="bb-pills" style="margin-top:0;"><a class="bb-pill" href="/pos-systems/#retail-pos">Retail POS</a><a class="bb-pill" href="/pos-systems/#restaurant-hospitality-pos">Restaurant &amp; Hospitality POS</a><a class="bb-pill" href="/pos-systems/#cloud-pos-inventory">Cloud POS &amp; Inventory</a></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/pos-systems/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Explore POS Systems &rarr;</a><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Get a Quote &rarr;</a></div></div><div class="bb-split-v"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">PROOF</div><div class="bb-statg bb-statg-1"><div><div class="n">60+</div><div class="l">POS systems deployed</div></div></div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:16px 0 0;">ZATCA-compliant invoicing for Saudi Arabia and Arabic checkout screens as standard.</p></div></div></div></section>
+<section id="social-media" class="sec" style="background:#ffffff; padding:88px 40px; scroll-margin-top:92px;"><div style="max-width:1240px; margin:0 auto;"><div class="bb-split bb-split-alt"><div><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">06 &middot; SOCIAL MEDIA MARKETING</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Social Media Marketing</h2><p style="font-family:'Bricolage Grotesque',sans-serif; font-size:20px; line-height:1.45; font-weight:600; color:#0d1b2a; max-width:660px; margin:0 0 18px;">From LinkedIn B2B lead generation to paid social campaigns, content and strategy that turns followers into paying clients.</p><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Marketing that brings real leads, not just likes. We run paid campaigns, LinkedIn lead generation and content that actually converts, in Arabic and English. Every campaign is tracked and reported against ROI.</p><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">EXPLORE</div><div class="bb-pills" style="margin-top:0;"><a class="bb-pill" href="/social-media-marketing/#social-media-strategy">Strategy &amp; Content</a><a class="bb-pill" href="/social-media-marketing/#paid-advertising">Paid Advertising</a><a class="bb-pill" href="/social-media-marketing/#linkedin-analytics">LinkedIn &amp; Analytics</a></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/social-media-marketing/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Explore Social Media Marketing &rarr;</a><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Get a Quote &rarr;</a></div></div><div class="bb-split-v"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">PROOF</div><div class="bb-statg bb-statg-1"><div><div class="n">150+</div><div class="l">campaigns managed</div></div></div><p style="font-size:13.5px; line-height:1.6; color:#5a6b7b; margin:16px 0 0;">Instagram and TikTok lead the UAE. LinkedIn carries B2B in Saudi Arabia and the UK.</p></div></div></div></section>
+<section class="sec" style="background:#0d1b2a; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// TRUSTED BY BUSINESSES IN GCC, USA AND UK</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#e7edf3; margin:0 0 16px; max-width:760px;">Proof before you pick up the phone</h2><div class="bb-statg bb-on-dark bb-statg-4"><div><div class="n">50+</div><div class="l">Projects delivered</div></div><div><div class="n">3</div><div class="l">Global markets served</div></div><div><div class="n">Odoo</div><div class="l">Official Odoo Ready Partner</div></div><div><div class="n">PSEB</div><div class="l">PSEB registered</div></div></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/case-studies/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#f5a623; border-bottom:1px solid rgba(245,166,35,.35); padding-bottom:3px;">View Our Case Studies &rarr;</a></div></div></section>
+<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// INDUSTRIES</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Serving businesses across key industries</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">The same six services, shaped by what each sector actually has to deal with. Compliance, margins, seasonality and the systems already in the building.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Retail</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Stock accuracy, multi-branch checkout, and VAT-ready receipts.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Food &amp; Beverage</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Kitchen displays, delivery app integration, and table management.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Healthcare</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Patient records, appointment flows, and data residency rules.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Manufacturing</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Production planning, inventory, and shop-floor reporting.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Real Estate</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Listings, lead routing, and contract and commission tracking.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">E-Commerce</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Storefronts, payment gateways, and stock that stays in sync.</p></article></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/industries/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Explore All Industries &rarr;</a></div></div></section>
+<section id="process" class="sec" style="background:#0d1b2a; color:#e7edf3; padding:92px 40px;">
     <div style="max-width:1240px; margin:0 auto;">
       <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// DELIVERY PROCESS</div>
       <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; margin:0 0 12px;">How we deliver your project, step by step</h2>
@@ -329,7 +326,39 @@
       <a href="/contact-us/" style="display:inline-block; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px 32px; border-radius:12px;">Book your free consultation →</a>
     </div>
   </section>
-  </main>
+  <script>
+(function () {
+  var nav = document.querySelector('.bb-subnav');
+  if (!nav) return;
+  var links = [].slice.call(nav.querySelectorAll('a'));
+  var pairs = links.map(function (a) {
+    var el = document.querySelector(a.getAttribute('href'));
+    return el ? { a: a, el: el } : null;
+  }).filter(Boolean);
+  if (!pairs.length) return;
+
+  // The active pill is the last section whose top has passed under the sticky
+  // bar. Deterministic, so exactly one pill is lit and it never goes stale.
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var line = nav.getBoundingClientRect().bottom + 8;
+    var current = pairs[0];
+    for (var i = 0; i < pairs.length; i++) {
+      if (pairs[i].el.getBoundingClientRect().top <= line) current = pairs[i];
+    }
+    links.forEach(function (a) { a.classList.remove('bb-on'); });
+    current.a.classList.add('bb-on');
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+</main>
 
   <footer class="bbfoot" style="font-family:'IBM Plex Sans',sans-serif; background:#0d1b2a; color:#e7edf3; position:relative; overflow:hidden;">
   <div aria-hidden="true" style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#f5a623,#ffc65c,#1e6b4f);"></div>
@@ -354,7 +383,7 @@
           <a href="/web-development/">Web Development</a>
           <a href="/odoo-erp/">Odoo &amp; ERP Services</a>
           <a href="/social-media-marketing/">Social Media Marketing</a>
-          <a href="/digital-transformation/">Digital Transformation</a>
+          <a href="/pos-systems/">POS Systems</a>
         </div>
       </div>
       <div>

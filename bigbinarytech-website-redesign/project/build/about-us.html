@@ -49,6 +49,65 @@
   }
   @media (prefers-reduced-motion:reduce){ *{ animation:none !important; } html{ scroll-behavior:auto; } }
 
+/* ---- Section layout components ---- */
+
+  .bb-subnav{ position:sticky; top:69px; z-index:70; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); border-bottom:1px solid #e3e8ee; }
+  .bb-subnav-in{ max-width:1240px; margin:0 auto; display:flex; gap:8px; padding:12px 40px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; }
+  .bb-subnav-in::-webkit-scrollbar{ display:none; }
+  .bb-subnav a{ flex:0 0 auto; font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#42546a; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:999px; padding:9px 16px; white-space:nowrap; transition:background .16s ease, color .16s ease, border-color .16s ease; }
+  .bb-subnav a:hover{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  .bb-subnav a.bb-on{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  @media (max-width:620px){ .bb-subnav-in{ padding:10px 22px; } }
+
+  .bb-split{ display:grid; grid-template-columns:1.3fr 1fr; gap:52px; align-items:start; }
+  .bb-split-v{ background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:26px; }
+  .bb-split-v.bb-on-dark{ background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.12); }
+  @media (min-width:981px){ .bb-split-alt > *:first-child{ order:2; } .bb-split-alt > *:last-child{ order:1; } }
+  @media (max-width:980px){ .bb-split{ grid-template-columns:1fr !important; gap:32px; } }
+
+  .bb-deliv{ list-style:none; padding:0; margin:0 0 22px; display:grid; grid-template-columns:1fr 1fr; gap:11px 28px; }
+  .bb-deliv li{ position:relative; padding-left:22px; font-size:14.5px; line-height:1.55; color:#42546a; }
+  .bb-deliv li::before{ content:""; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:2px; background:#d98c0a; }
+  .bb-deliv.bb-one{ grid-template-columns:1fr; }
+  .bb-deliv.bb-on-dark li{ color:#a8bcce; }
+  .bb-deliv.bb-on-dark li::before{ background:#f5a623; }
+  @media (max-width:620px){ .bb-deliv{ grid-template-columns:1fr; } }
+
+  .bb-chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
+  .bb-chips li{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#42546a; background:#eef1f6; border:1px solid #e0e6ee; border-radius:999px; padding:6px 13px; }
+  .bb-chips.bb-on-dark li{ color:#a8bcce; background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.15); }
+
+  .bb-pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+  .bb-pill{ display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#1c4b82; background:#e6f1fb; border:1px solid #cfe2f5; border-radius:999px; padding:9px 17px; transition:background .16s ease, color .16s ease, border-color .16s ease; }
+  .bb-pill:hover{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  .bb-pill.bb-on{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+
+  .bb-quote{ background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column; }
+  .bb-quote .stars{ color:#f5a623; font-size:13px; letter-spacing:3px; margin-bottom:14px; }
+  .bb-quote blockquote{ font-size:15px; line-height:1.68; color:#3d4f61; margin:0 0 18px; }
+  .bb-quote .who{ font-size:13.5px; font-weight:600; color:#0d1b2a; margin-top:auto; }
+  .bb-quote .org{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#7b8b9c; margin-top:4px; }
+
+  .bb-statg{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
+  .bb-statg .n{ font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; color:#d98c0a; line-height:1; }
+  .bb-statg .l{ font-size:13.5px; line-height:1.5; color:#5a6b7b; margin-top:8px; }
+  .bb-statg.bb-on-dark .n{ color:#f5a623; }
+  .bb-statg.bb-on-dark .l{ color:#9fb2c4; }
+  @media (max-width:620px){ .bb-statg{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:980px){ .g4{ grid-template-columns:repeat(2,1fr) !important; } }
+  @media (max-width:620px){ .g4{ grid-template-columns:1fr !important; } }
+  .bb-statg-1{ grid-template-columns:1fr; }
+  .bb-statg-2{ grid-template-columns:repeat(2,1fr); }
+  .bb-statg-4{ grid-template-columns:repeat(4,1fr); }
+  .bb-statg-5{ grid-template-columns:repeat(5,1fr); }
+  .bb-statg-6{ grid-template-columns:repeat(6,1fr); }
+  @media (max-width:980px){ .bb-statg-4,.bb-statg-5,.bb-statg-6{ grid-template-columns:repeat(3,1fr) !important; } }
+  @media (max-width:620px){ .bb-statg-2,.bb-statg-4,.bb-statg-5,.bb-statg-6{ grid-template-columns:repeat(2,1fr) !important; } .bb-statg-1{ grid-template-columns:1fr !important; } }
+
+  .bb-steps{ display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-top:30px; }
+  @media (max-width:980px){ .bb-steps{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .bb-steps{ grid-template-columns:1fr; } }
+
 /* ---- BBT Nav ---- */
 
   .bbnav *{ box-sizing:border-box; }
@@ -117,7 +176,7 @@
             <a class="bbnav-link" href="/web-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Web Development</a>
             <a class="bbnav-link" href="/odoo-erp/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Odoo &amp; ERP Services</a>
             <a class="bbnav-link" href="/social-media-marketing/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Social Media Marketing</a>
-            <a class="bbnav-link" href="/digital-transformation/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation</a>
+            <a class="bbnav-link" href="/pos-systems/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">POS Systems</a>
           </div>
         </div>
       </div>
@@ -165,7 +224,7 @@
   </div>
 </header>
 
-  <main>
+  <main id="main">
   <!-- HERO -->
   <section class="sec" style="position:relative; background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:52px 40px 0;">
     <div aria-hidden="true" style="position:absolute; inset:0; overflow:hidden; pointer-events:none;"><div style="position:absolute; top:-120px; right:-90px; width:480px; height:480px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.14), transparent 70%);"></div></div>
@@ -217,7 +276,12 @@
   </section>
 
   <!-- CREDENTIALS (two rows per handoff) -->
-  <section class="sec" style="background:#fff; padding:92px 40px;">
+  <section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// MISSION AND VISION</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">What we are here to do</h2><div class="g2" style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:32px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">OUR MISSION</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Real problems, solved properly</h3><p style="font-size:16px; line-height:1.65; color:#5a6b7b; margin:0;">We solve real business problems with imaginative thinking, smart technology, and disciplined engineering, delivering intelligent, scalable solutions that create real impact for our clients.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:32px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">OUR VISION</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">A partner you can build on</h3><p style="font-size:16px; line-height:1.65; color:#5a6b7b; margin:0;">To become a trusted software innovation partner that helps businesses turn bold ideas into reliable systems, transform operations through technology, and grow confidently in the digital future.</p></article></div></div></section>
+<section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// THE BBT DNA</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Core Values</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Four rules we actually apply, including when they cost us something.</p><div class="g4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">01</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Trust Over Process</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">If a rule gets in the way of trust, we change the rule. We talk to you like a partner, not a ticket number.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">02</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Excellence Over Success</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">We don't settle for good enough. We push for better on every single project.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">03</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Value Over Profit</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Before anything else we ask whether this is actually helping our client. Profit is the result, not the goal.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">04</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Effort Over Outcome</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Technology projects don't always go perfectly. What we control is how hard we work to get it right, and we reward that effort.</p></article></div></div></section>
+<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// OUR LEADERSHIP</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Meet the Team Behind Big Binary Tech</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Every engagement is led by someone who has delivered the thing you are asking for. You work with the people below directly, not through an account manager.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Engineering leadership</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Owns architecture and delivery standards across Odoo, custom software, and cloud. Reviews every technical plan before it reaches you.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">ERP and Odoo practice</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Runs implementations, migrations, and compliance work for WPS, ZATCA, and VAT across the Gulf.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">AI and automation practice</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Designs the automations and assistants, chooses the models, and owns the accuracy and safety review.</p></article></div><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Names and bios are being finalised with the team and will be added here.</p><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Talk to Our Team &rarr;</a></div></div></section>
+<section class="sec" style="background:#0d1b2a; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// GLOBAL REACH</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#e7edf3; margin:0 0 16px; max-width:760px;">A Presence Without Borders</h2><p style="font-size:16.5px; line-height:1.65; color:#9fb2c4; max-width:760px; margin:0 0 18px;">Big Binary Tech serves clients across the GCC, USA, UK, and more than 50 countries worldwide. Whether you are a growing startup or an established enterprise, our team delivers Odoo ERP, AI automation, and custom software wherever your business operates.</p><div class="bb-statg bb-on-dark bb-statg-4"><div><div class="n">50+</div><div class="l">Countries served</div></div><div><div class="n">20+</div><div class="l">Expert developers</div></div><div><div class="n">100+</div><div class="l">Successful launches</div></div><div><div class="n">95%</div><div class="l">Client retention</div></div></div></div></section>
+<section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// CLIENT SUCCESS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">What Our Clients Say</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">We measure success by results, not promises. Here is what businesses across the world say about working with Big Binary Tech.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>They understood our operation before proposing anything. The Odoo rollout matched how we actually work, so the team adopted it without a fight.</blockquote><div class="who">Operations director, manufacturing</div><div class="org">Jeddah, KSA</div></article><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Our reporting used to take three days a month. It now takes minutes, and the numbers finally agree across every system.</blockquote><div class="who">Finance lead, trading company</div><div class="org">Dubai, UAE</div></article><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>The automation paid for itself inside a quarter. What impressed me more was that they told us which parts were not worth automating.</blockquote><div class="who">Head of operations, professional services</div><div class="org">London, UK</div></article></div></div></section>
+<section class="sec" style="background:#fff; padding:92px 40px;">
     <div style="max-width:1240px; margin:0 auto;">
       <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// TRUSTED BY: AWARDS, PARTNERSHIPS &amp; REGISTRATIONS</div>
       <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 10px; max-width:720px;">Recognized by industry leaders. Registered and compliant in Pakistan.</h2>
@@ -294,7 +358,7 @@
           <a href="/web-development/">Web Development</a>
           <a href="/odoo-erp/">Odoo &amp; ERP Services</a>
           <a href="/social-media-marketing/">Social Media Marketing</a>
-          <a href="/digital-transformation/">Digital Transformation</a>
+          <a href="/pos-systems/">POS Systems</a>
         </div>
       </div>
       <div>

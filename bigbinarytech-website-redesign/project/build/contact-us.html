@@ -49,6 +49,65 @@
   }
   @media (prefers-reduced-motion:reduce){ *{ animation:none !important; } html{ scroll-behavior:auto; } }
 
+/* ---- Section layout components ---- */
+
+  .bb-subnav{ position:sticky; top:69px; z-index:70; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); border-bottom:1px solid #e3e8ee; }
+  .bb-subnav-in{ max-width:1240px; margin:0 auto; display:flex; gap:8px; padding:12px 40px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; }
+  .bb-subnav-in::-webkit-scrollbar{ display:none; }
+  .bb-subnav a{ flex:0 0 auto; font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#42546a; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:999px; padding:9px 16px; white-space:nowrap; transition:background .16s ease, color .16s ease, border-color .16s ease; }
+  .bb-subnav a:hover{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  .bb-subnav a.bb-on{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  @media (max-width:620px){ .bb-subnav-in{ padding:10px 22px; } }
+
+  .bb-split{ display:grid; grid-template-columns:1.3fr 1fr; gap:52px; align-items:start; }
+  .bb-split-v{ background:#f4f6f9; border:1px solid #e3e8ee; border-radius:18px; padding:26px; }
+  .bb-split-v.bb-on-dark{ background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.12); }
+  @media (min-width:981px){ .bb-split-alt > *:first-child{ order:2; } .bb-split-alt > *:last-child{ order:1; } }
+  @media (max-width:980px){ .bb-split{ grid-template-columns:1fr !important; gap:32px; } }
+
+  .bb-deliv{ list-style:none; padding:0; margin:0 0 22px; display:grid; grid-template-columns:1fr 1fr; gap:11px 28px; }
+  .bb-deliv li{ position:relative; padding-left:22px; font-size:14.5px; line-height:1.55; color:#42546a; }
+  .bb-deliv li::before{ content:""; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:2px; background:#d98c0a; }
+  .bb-deliv.bb-one{ grid-template-columns:1fr; }
+  .bb-deliv.bb-on-dark li{ color:#a8bcce; }
+  .bb-deliv.bb-on-dark li::before{ background:#f5a623; }
+  @media (max-width:620px){ .bb-deliv{ grid-template-columns:1fr; } }
+
+  .bb-chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
+  .bb-chips li{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#42546a; background:#eef1f6; border:1px solid #e0e6ee; border-radius:999px; padding:6px 13px; }
+  .bb-chips.bb-on-dark li{ color:#a8bcce; background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.15); }
+
+  .bb-pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+  .bb-pill{ display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#1c4b82; background:#e6f1fb; border:1px solid #cfe2f5; border-radius:999px; padding:9px 17px; transition:background .16s ease, color .16s ease, border-color .16s ease; }
+  .bb-pill:hover{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+  .bb-pill.bb-on{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
+
+  .bb-quote{ background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column; }
+  .bb-quote .stars{ color:#f5a623; font-size:13px; letter-spacing:3px; margin-bottom:14px; }
+  .bb-quote blockquote{ font-size:15px; line-height:1.68; color:#3d4f61; margin:0 0 18px; }
+  .bb-quote .who{ font-size:13.5px; font-weight:600; color:#0d1b2a; margin-top:auto; }
+  .bb-quote .org{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#7b8b9c; margin-top:4px; }
+
+  .bb-statg{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
+  .bb-statg .n{ font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; color:#d98c0a; line-height:1; }
+  .bb-statg .l{ font-size:13.5px; line-height:1.5; color:#5a6b7b; margin-top:8px; }
+  .bb-statg.bb-on-dark .n{ color:#f5a623; }
+  .bb-statg.bb-on-dark .l{ color:#9fb2c4; }
+  @media (max-width:620px){ .bb-statg{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:980px){ .g4{ grid-template-columns:repeat(2,1fr) !important; } }
+  @media (max-width:620px){ .g4{ grid-template-columns:1fr !important; } }
+  .bb-statg-1{ grid-template-columns:1fr; }
+  .bb-statg-2{ grid-template-columns:repeat(2,1fr); }
+  .bb-statg-4{ grid-template-columns:repeat(4,1fr); }
+  .bb-statg-5{ grid-template-columns:repeat(5,1fr); }
+  .bb-statg-6{ grid-template-columns:repeat(6,1fr); }
+  @media (max-width:980px){ .bb-statg-4,.bb-statg-5,.bb-statg-6{ grid-template-columns:repeat(3,1fr) !important; } }
+  @media (max-width:620px){ .bb-statg-2,.bb-statg-4,.bb-statg-5,.bb-statg-6{ grid-template-columns:repeat(2,1fr) !important; } .bb-statg-1{ grid-template-columns:1fr !important; } }
+
+  .bb-steps{ display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-top:30px; }
+  @media (max-width:980px){ .bb-steps{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .bb-steps{ grid-template-columns:1fr; } }
+
 /* ---- BBT Nav ---- */
 
   .bbnav *{ box-sizing:border-box; }
@@ -117,7 +176,7 @@
             <a class="bbnav-link" href="/web-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Web Development</a>
             <a class="bbnav-link" href="/odoo-erp/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Odoo &amp; ERP Services</a>
             <a class="bbnav-link" href="/social-media-marketing/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Social Media Marketing</a>
-            <a class="bbnav-link" href="/digital-transformation/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation</a>
+            <a class="bbnav-link" href="/pos-systems/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">POS Systems</a>
           </div>
         </div>
       </div>
@@ -165,7 +224,7 @@
   </div>
 </header>
 
-  <main>
+  <main id="main">
   <!-- HERO -->
   <section class="sec" style="position:relative; background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:52px 40px 66px; overflow:hidden;">
     <div aria-hidden="true" style="position:absolute; top:-120px; right:-90px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.14), transparent 70%);"></div>
@@ -300,7 +359,9 @@
   </section>
 
   <!-- MULTI-CHANNEL -->
-  <section class="sec" style="background:#f4f6f9; padding:80px 40px;">
+  <section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// QUICK GUIDE</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Not Sure What You Need? Here's What We Do</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">If you are not sure which service fits your project, this is the short version. Pick whichever is closest, or just describe the problem in the form above and we will point you in the right direction.</p><div class="bb-pills" style="margin-top:24px;"><a class="bb-pill" href="/odoo-erp/">Odoo ERP Implementation</a><a class="bb-pill" href="/pos-systems/">Custom POS Systems</a><a class="bb-pill" href="/web-development/">Website Development</a><a class="bb-pill" href="/ai-automation/">AI &amp; Automation</a><a class="bb-pill" href="/custom-software-development/">Custom Software</a><a class="bb-pill" href="/digital-transformation/">Digital Transformation</a><a class="bb-pill" href="/social-media-marketing/">Social Media Marketing</a><a class="bb-pill" href="/enterprise-odoo/">Enterprise &amp; Odoo Solutions</a><a class="bb-pill" href="/retail-pos/">Retail &amp; POS Solutions</a></div><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Still not sure? Describe your problem in the form above and we will recommend the right solution.</p></div></section>
+<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// BEFORE YOU WRITE</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Common Questions About Working With Us</h2><div style="display:flex; flex-direction:column; gap:12px;"><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">How quickly will you respond to my inquiry?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Within 24 hours on business days. For urgent projects, put the word urgent in your message and we will prioritize it. GCC clients get responses aligned to Gulf business hours.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Is the initial consultation really free?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes, completely free and with no obligation. It is a 30-minute call where we understand your project and give you an honest assessment. There is no sales pitch, and if we are not the right fit we will tell you.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">What information should I include in my message?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">The more context the better: your industry, current challenges, goals, timeline, and budget range. But do not overthink it. Even a brief description is enough to start the conversation.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Do you work with startups and small businesses?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. We have engagement models for businesses of every size, from single-location startups through to enterprise chains, and we will say plainly which one fits your budget.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Can we meet in person if we are in Lahore or Dubai?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. We welcome in-person meetings at our Lahore headquarters and our Dubai office. Mention it in your message and we will schedule accordingly.</p></details><details style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">What if I am not ready to start yet?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">That is completely fine. We are happy to answer questions, give advice, and stay in touch. Many clients get in contact two or three months before they are ready to begin.</p></details></div></div></section>
+<section class="sec" style="background:#f4f6f9; padding:80px 40px;">
     <div style="max-width:1240px; margin:0 auto;">
       <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// MULTI-CHANNEL</div>
       <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 8px;">Other ways to reach us</h2>
@@ -336,7 +397,8 @@
   </section>
 
   <!-- TRUST -->
-  <section class="sec" style="background:#f4f6f9; padding:70px 40px;">
+  <section class="sec" style="background:#0d1b2a; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// CLIENT VOICES</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#e7edf3; margin:0 0 16px; max-width:760px;">What Our Clients Say About Working With Us</h2><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>I filled out the form on Sunday evening and had a detailed response on Monday morning. The consultation was incredibly helpful. They identified problems we didn't even know we had.</blockquote><div class="who">Chief executive, retail chain</div><div class="org">Dubai, UAE</div></article><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>We weren't sure if our budget was enough for a custom ERP. BBT was honest about what was possible and proposed a phased approach that worked perfectly.</blockquote><div class="who">Operations director, manufacturing firm</div><div class="org">Jeddah, KSA</div></article><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>The team made the whole process feel easy. From first contact to project kickoff took 10 days, and that included a full discovery session and a detailed proposal.</blockquote><div class="who">IT manager, healthcare group</div><div class="org">Lahore, Pakistan</div></article></div></div></section>
+<section class="sec" style="background:#f4f6f9; padding:70px 40px;">
     <div style="max-width:1240px; margin:0 auto; text-align:center;">
       <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:12px;">// TRUSTED &amp; REGISTERED</div>
       <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:30px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 34px;">Recognized by industry bodies and technology partners</h2>
@@ -351,7 +413,8 @@
       </div>
     </div>
   </section>
-  </main>
+  <section class="sec" style="background:linear-gradient(160deg,#0d1b2a,#13294b); padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="max-width:720px;"><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#e7edf3; margin:0 0 16px; max-width:760px;">Still Have Questions?</h2><p style="font-size:16.5px; line-height:1.65; color:#a8bcce; margin:0 0 26px;">We are here to help, whether you are ready to start or just exploring. Send us a message and we will get back to you within 24 hours.</p><div class="herocta" style="display:flex; gap:13px; align-items:center;"><a href="#main" style="background:#f5a623; color:#0d1b2a; font-weight:700; font-size:15px; padding:15px 26px; border-radius:11px;">Send Us a Message &rarr;</a><a href="/faqs/" style="font-weight:600; font-size:15px; color:#fff; padding:15px 20px; border:1px solid rgba(255,255,255,.25); border-radius:11px;">Read the Full FAQs</a></div></div></div></section>
+</main>
 
   <footer class="bbfoot" style="font-family:'IBM Plex Sans',sans-serif; background:#0d1b2a; color:#e7edf3; position:relative; overflow:hidden;">
   <div aria-hidden="true" style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#f5a623,#ffc65c,#1e6b4f);"></div>
@@ -376,7 +439,7 @@
           <a href="/web-development/">Web Development</a>
           <a href="/odoo-erp/">Odoo &amp; ERP Services</a>
           <a href="/social-media-marketing/">Social Media Marketing</a>
-          <a href="/digital-transformation/">Digital Transformation</a>
+          <a href="/pos-systems/">POS Systems</a>
         </div>
       </div>
       <div>
