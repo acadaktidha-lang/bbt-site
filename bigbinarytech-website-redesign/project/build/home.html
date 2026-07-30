@@ -72,7 +72,14 @@
   }
   @media (prefers-reduced-motion: reduce){ *{ animation:none !important; } html{ scroll-behavior:auto; } }
 
-/* ---- Section layout components ---- */
+/* ---- Elementor host fix ---- */
+
+  /* These pages are pasted full-bleed into an Elementor HTML widget. Elementor's
+     default boxed container confines them to a centred 1140px box, which reads as
+     cramped, shifted sections on wide screens. Inert outside WordPress. */
+  .elementor-section > .elementor-container{ max-width:100% !important; }
+
+  /* ---- Section layout components ---- */
 
   .bb-subnav{ position:sticky; top:69px; z-index:70; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); border-bottom:1px solid #e3e8ee; }
   .bb-subnav-in{ max-width:1240px; margin:0 auto; display:flex; gap:8px; padding:12px 40px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; }
