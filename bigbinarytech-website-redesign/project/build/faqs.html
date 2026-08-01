@@ -258,6 +258,7 @@
     items.forEach(function (d) {
       var okCat = cat === 'all' || d.getAttribute('data-cat') === cat;
       var okQ = !q || d.getAttribute('data-q').indexOf(q) > -1 ||
+                d.getAttribute('data-cat').indexOf(q) > -1 ||
                 d.textContent.toLowerCase().indexOf(q) > -1;
       var show = okCat && okQ;
       d.style.display = show ? '' : 'none';
