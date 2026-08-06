@@ -14,3 +14,6 @@ wp-backup/
 
 # Spec source PDFs (large binaries kept locally, not in source control)
 *.pdf
+
+# Local WordPress application password (never commit)
+.claude/.wp-credentials

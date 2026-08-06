@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About Big Binary Tech · Lahore based, PSEB registered software house</title>
-<meta name="description" content="A Pakistani engineering house bringing enterprise technology to businesses of every size. ERP, AI automation, POS and custom software since 2015.">
+<title>About Big Binary Tech · Odoo ERP, AI automation &amp; custom software</title>
+<meta name="description" content="Big Binary Tech is a global Odoo ERP, AI automation and custom software development company. Established 2015, serving clients across the GCC, USA, UK and 50+ countries.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,15 +23,16 @@
   body{ margin:0; background:#f4f6f9; }
   img{ max-width:100%; }
   a{ color:inherit; text-decoration:none; }
-  a:hover{ color:#d98c0a; }
+  a:hover{ color:#9d6507; }
   summary{ cursor:pointer; list-style:none; }
   summary::-webkit-details-marker{ display:none; }
-  :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  :focus-visible{ outline:2px solid #9d6507; outline-offset:3px; border-radius:6px; }
   .bb-card{ transition:transform .25s ease, box-shadow .25s ease; }
   .bb-card:hover{ transform:translateY(-6px); box-shadow:0 22px 44px rgba(13,27,42,.1); }
   .bb-badge{ transition:background .2s ease, color .2s ease, border-color .2s ease; }
   .bb-badge:hover{ border-color:#f5a623 !important; }
   @media (max-width:980px){
+    .g2{ grid-template-columns:1fr !important; }
     .g3{ grid-template-columns:1fr 1fr !important; }
     .g4{ grid-template-columns:1fr 1fr !important; }
     .story2{ grid-template-columns:1fr !important; }
@@ -41,6 +42,7 @@
   }
   @media (max-width:620px){
     .sec{ padding-left:22px !important; padding-right:22px !important; padding-top:60px !important; padding-bottom:60px !important; }
+    .g2{ grid-template-columns:1fr !important; }
     .g3{ grid-template-columns:1fr !important; }
     .g4{ grid-template-columns:1fr !important; }
     .stat4{ grid-template-columns:1fr 1fr !important; }
@@ -74,7 +76,7 @@
 
   .bb-deliv{ list-style:none; padding:0; margin:0 0 22px; display:grid; grid-template-columns:1fr 1fr; gap:11px 28px; }
   .bb-deliv li{ position:relative; padding-left:22px; font-size:14.5px; line-height:1.55; color:#42546a; }
-  .bb-deliv li::before{ content:""; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:2px; background:#d98c0a; }
+  .bb-deliv li::before{ content:""; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:2px; background:#9d6507; }
   .bb-deliv.bb-one{ grid-template-columns:1fr; }
   .bb-deliv.bb-on-dark li{ color:#a8bcce; }
   .bb-deliv.bb-on-dark li::before{ background:#f5a623; }
@@ -90,13 +92,23 @@
   .bb-pill.bb-on{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
 
   .bb-quote{ background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column; }
-  .bb-quote .stars{ color:#f5a623; font-size:13px; letter-spacing:3px; margin-bottom:14px; }
+  .bb-quote .stars{ color:#9d6507; font-size:13px; letter-spacing:3px; margin-bottom:14px; }
   .bb-quote blockquote{ font-size:15px; line-height:1.68; color:#3d4f61; margin:0 0 18px; }
   .bb-quote .who{ font-size:13.5px; font-weight:600; color:#0d1b2a; margin-top:auto; }
-  .bb-quote .org{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#7b8b9c; margin-top:4px; }
+  .bb-quote .org{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#657280; margin-top:4px; }
+
+  /* Testimonial slider: 3 cards visible on desktop, 1 on mobile, CSS scroll-snap
+     only - no JS. Four cards do not divide into a 3-column grid, so the row
+     scrolls instead of wrapping an orphan card onto a second line. */
+  .bb-tslide{ display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 36px)/3); gap:18px; margin-top:28px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -ms-overflow-style:none; padding-bottom:4px; }
+  .bb-tslide::-webkit-scrollbar{ display:none; }
+  .bb-tslide > *{ scroll-snap-align:start; }
+  .bb-tslide-hint{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#67727d; margin-top:14px; }
+  @media (max-width:980px){ .bb-tslide{ grid-auto-columns:calc((100% - 18px)/2); } }
+  @media (max-width:620px){ .bb-tslide{ grid-auto-columns:88%; } }
 
   .bb-statg{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
-  .bb-statg .n{ font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; color:#d98c0a; line-height:1; }
+  .bb-statg .n{ font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; color:#9d6507; line-height:1; }
   .bb-statg .l{ font-size:13.5px; line-height:1.5; color:#5a6b7b; margin-top:8px; }
   .bb-statg.bb-on-dark .n{ color:#f5a623; }
   .bb-statg.bb-on-dark .l{ color:#9fb2c4; }
@@ -119,13 +131,13 @@
 
   .bbnav *{ box-sizing:border-box; }
   .bbnav a{ color:inherit; text-decoration:none; }
-  .bbnav a:hover{ color:#d98c0a; }
+  .bbnav a:hover{ color:#9d6507; }
   .bbnav summary{ cursor:pointer; list-style:none; }
   .bbnav summary::-webkit-details-marker{ display:none; }
-  .bbnav :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  .bbnav :focus-visible{ outline:2px solid #9d6507; outline-offset:3px; border-radius:6px; }
   .bbnav-drop{ position:absolute; left:0; top:100%; padding-top:14px; opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .16s ease, transform .16s ease; z-index:60; }
   .bbnav-item:hover>.bbnav-drop, .bbnav-item:focus-within>.bbnav-drop{ opacity:1; visibility:visible; transform:translateY(0); }
-  .bbnav-item>a[aria-haspopup]::after{ content:"⌄"; font-size:12px; margin-left:5px; position:relative; top:-1px; color:#93a2b0; }
+  .bbnav-item>a[aria-haspopup]::after{ content:"⌄"; font-size:12px; margin-left:5px; position:relative; top:-1px; color:#68727c; }
   .bbnav-link:hover{ background:#f4f6f9; color:#0d1b2a; }
   .bbnav-mob{ display:none; }
   @media (max-width:980px){
@@ -177,7 +189,7 @@
         <a href="/services/" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Services</a>
         <div class="bbnav-drop">
           <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:344px;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">WHAT WE BUILD</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#68727c; padding:8px 12px 6px;">WHAT WE BUILD</div>
             <a class="bbnav-link" href="/ai-automation/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">AI &amp; Automation</a>
             <a class="bbnav-link" href="/custom-software-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Custom Software Development</a>
             <a class="bbnav-link" href="/web-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Web Development</a>
@@ -191,7 +203,7 @@
         <a href="/solutions/" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Solutions</a>
         <div class="bbnav-drop">
           <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:324px;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">SOLUTION PILLARS</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#68727c; padding:8px 12px 6px;">SOLUTION PILLARS</div>
             <a class="bbnav-link" href="/enterprise-odoo/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Enterprise &amp; Odoo Solutions</a>
             <a class="bbnav-link" href="/retail-pos/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Retail &amp; POS Solutions</a>
             <a class="bbnav-link" href="/digital-transformation/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation Solutions</a>
@@ -203,144 +215,255 @@
         <a href="/resources/" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Resources</a>
         <div class="bbnav-drop">
           <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:324px;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">RESOURCES</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#68727c; padding:8px 12px 6px;">RESOURCES</div>
             <a class="bbnav-link" href="/blogs/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Blogs</a>
             <a class="bbnav-link" href="/e-books-guides/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">E-Books &amp; Guides</a>
             <a class="bbnav-link" href="/case-studies/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Case Studies</a>
+            <a class="bbnav-link" href="/faqs/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">FAQs</a>
           </div>
         </div>
       </div>
       <a href="/about-us/" style="padding:10px 14px; border-radius:9px;">About</a>
-      <a href="/contact-us/" style="padding:10px 14px; border-radius:9px;">Contact</a>
+      <a href="/contact-us/?service=about" style="padding:10px 14px; border-radius:9px;">Contact</a>
     </nav>
 
-    <a class="bbnav-cta" href="/contact-us/" style="font-size:14px; font-weight:600; background:#0d1b2a; color:#fff; padding:11px 20px; border-radius:10px; white-space:nowrap;">Get free consultation</a>
+    <a class="bbnav-cta" href="/contact-us/?service=about" style="font-size:14px; font-weight:600; background:#0d1b2a; color:#fff; padding:11px 20px; border-radius:10px; white-space:nowrap;">Get free consultation</a>
 
     <details class="bbnav-mob" style="position:relative;">
       <summary aria-label="Open menu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #d3dae2; border-radius:10px; background:#fff; font-size:18px; color:#0d1b2a;">☰</summary>
-      <div style="position:absolute; right:0; top:calc(100% + 12px); background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.16); padding:10px; width:244px; display:flex; flex-direction:column; gap:2px; z-index:90;">
-        <a class="bbnav-link" href="/services/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Services</a>
-        <a class="bbnav-link" href="/solutions/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Solutions</a>
-        <a class="bbnav-link" href="/industries/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Industries</a>
-        <a class="bbnav-link" href="/resources/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Resources</a>
-        <a class="bbnav-link" href="/about-us/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">About</a>
-        <a class="bbnav-link" href="/contact-us/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Contact</a>
-        <a href="/contact-us/" style="margin-top:6px; text-align:center; font-weight:600; background:#0d1b2a; color:#fff; padding:12px; border-radius:10px; font-size:14px;">Get free consultation</a>
-      </div>
+      <div style="position:absolute; right:0; top:calc(100% + 12px); background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.16); padding:10px; width:262px; max-height:calc(100vh - 120px); overflow-y:auto; display:flex; flex-direction:column; gap:1px; z-index:90; -webkit-overflow-scrolling:touch;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; color:#68727c; padding:10px 12px 4px;">SERVICES</div><a class="bbnav-link" href="/services/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">All Services</a><a class="bbnav-link" href="/ai-automation/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">AI &amp; Automation</a><a class="bbnav-link" href="/custom-software-development/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Custom Software Development</a><a class="bbnav-link" href="/web-development/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Web Development</a><a class="bbnav-link" href="/odoo-erp/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Odoo &amp; ERP Services</a><a class="bbnav-link" href="/social-media-marketing/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Social Media Marketing</a><a class="bbnav-link" href="/pos-systems/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">POS Systems</a><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; color:#68727c; padding:10px 12px 4px;">SOLUTIONS</div><a class="bbnav-link" href="/solutions/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">All Solutions</a><a class="bbnav-link" href="/enterprise-odoo/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Enterprise &amp; Odoo</a><a class="bbnav-link" href="/retail-pos/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Retail &amp; POS</a><a class="bbnav-link" href="/digital-transformation/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Digital Transformation</a><a class="bbnav-link" href="/industries/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Industries</a><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; color:#68727c; padding:10px 12px 4px;">RESOURCES</div><a class="bbnav-link" href="/resources/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Resource Hub</a><a class="bbnav-link" href="/blogs/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Blogs</a><a class="bbnav-link" href="/e-books-guides/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">E-Books &amp; Guides</a><a class="bbnav-link" href="/case-studies/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Case Studies</a><a class="bbnav-link" href="/resources/videos/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Video Walkthroughs</a><a class="bbnav-link" href="/faqs/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">FAQs</a><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; color:#68727c; padding:10px 12px 4px;">COMPANY</div><a class="bbnav-link" href="/about-us/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">About Big Binary Tech</a><a class="bbnav-link" href="/outsourcing/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Outsourcing</a><a class="bbnav-link" href="/pricing/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Pricing</a><a class="bbnav-link" href="/careers/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Careers</a><a class="bbnav-link" href="/contact-us/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Contact</a><a href="/contact-us/?service=about" style="margin-top:8px; text-align:center; font-weight:600; background:#0d1b2a; color:#fff; padding:12px; border-radius:10px; font-size:14px;">Get free consultation</a></div>
     </details>
   </div>
 </header>
 
   <main id="main">
-  <!-- HERO -->
+  <!-- 1 · HERO -->
   <section class="sec" style="position:relative; background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:52px 40px 0;">
     <div aria-hidden="true" style="position:absolute; inset:0; overflow:hidden; pointer-events:none;"><div style="position:absolute; top:-120px; right:-90px; width:480px; height:480px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.14), transparent 70%);"></div></div>
     <div style="position:relative; z-index:2; max-width:1240px; margin:0 auto;">
-      <nav aria-label="Breadcrumb" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d94ab; margin-bottom:30px;"><a href="/">Home</a> <span style="color:#3f5772;">/</span> About</nav>
-      <div style="max-width:760px;">
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:20px;">// SINCE 2015 · LAHORE, PAKISTAN</div>
-        <h1 class="h1" style="font-family:'Bricolage Grotesque',sans-serif; font-size:54px; line-height:1.06; font-weight:700; letter-spacing:-.025em; margin:0 0 20px;">About Big Binary Tech</h1>
-        <p style="font-size:18px; line-height:1.6; color:#a8bcce; max-width:620px; margin:0 0 30px;">A Pakistani engineering house that brings powerful enterprise technology to businesses of every size, not just big corporations. We are the team behind the ERP rollouts, automations and custom platforms that quietly run our clients' operations every day.</p>
+      <nav aria-label="Breadcrumb" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d94ab; margin-bottom:30px;"><a href="/">Home</a> <span style="color:#6288b2;">/</span> About</nav>
+      <div style="max-width:860px;">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-bottom:20px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623;">// ABOUT BIG BINARY TECH</div>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; letter-spacing:.06em; color:#e7edf3; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); border-radius:999px; padding:6px 14px;">Established 2015</span>
+        </div>
+        <h1 class="h1" style="font-family:'Bricolage Grotesque',sans-serif; font-size:54px; line-height:1.06; font-weight:700; letter-spacing:-.025em; margin:0 0 20px;">Where Odoo ERP, AI Automation, and Custom Software Meet</h1>
+        <p style="font-size:18px; line-height:1.6; color:#a8bcce; max-width:680px; margin:0 0 30px;">Big Binary Tech is a global Odoo ERP, AI automation, and custom software development company. We turn complex technology into simple, working solutions that help your business run better, grow faster, and stay ahead, wherever you are in the world.</p>
       </div>
       <div class="stat4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; margin:44px 0 -44px;">
         <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">2015</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Founded</div></div>
-        <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">200+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Projects delivered</div></div>
+        <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">60+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Projects delivered</div></div>
         <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">15+</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Industries served</div></div>
         <div style="background:#0d1b2a; padding:26px 24px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:#f5a623;">4</div><div style="font-size:13px; color:#9fb2c4; margin-top:4px;">Markets: PK, GCC, US, UK</div></div>
       </div>
     </div>
   </section>
 
-  <!-- OUR STORY -->
+  <!-- 2 · OUR STORY -->
   <section class="sec" style="background:#fff; padding:96px 40px 92px;">
     <div class="story2" style="max-width:1240px; margin:0 auto; display:grid; grid-template-columns:.85fr 1.15fr; gap:52px; align-items:start;">
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// OUR STORY</div>
-        <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0;">The smart way forward, since day one</h2>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// OUR STORY</div>
+        <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0;">The Binary Evolution</h2>
       </div>
       <div style="font-size:17px; line-height:1.72; color:#42546a;">
         <p style="margin:0 0 20px;">Big Binary Tech started in September 2015 with one simple goal: bring powerful enterprise technology to businesses of every size, not just big corporations. What began as a small software team has grown into a full digital transformation partner, offering Odoo ERP implementation, AI automation, custom software development and POS solutions to clients across the world.</p>
-        <p style="margin:0 0 24px;">For us, "Binary" means a choice: between doing things the old way, or doing them the smart way. Every business we work with is choosing to move forward. Our job is to make that move easy, reliable and worth it.</p>
+        <p style="margin:0 0 24px;">For us, &ldquo;Binary&rdquo; means a choice: between doing things the old way, or doing them the smart way. Every business we work with is choosing to move forward. Our job is to make that move easy, reliable and worth it.</p>
         <div style="border-left:3px solid #f5a623; padding:6px 0 6px 22px;">
-          <p style="font-family:'Bricolage Grotesque',sans-serif; font-size:21px; line-height:1.4; font-weight:500; color:#0d1b2a; margin:0;">We are Pakistan based and PSEB registered, and we hold ourselves to the standard our international clients expect. Global delivery, local accountability.</p>
+          <p style="font-family:'Bricolage Grotesque',sans-serif; font-size:21px; line-height:1.4; font-weight:500; color:#0d1b2a; margin:0;">We are headquartered in Sheridan, Wyoming, and we hold ourselves to the standard our international clients expect. Global delivery, local accountability.</p>
         </div>
+        <a href="/contact-us/?service=about" style="display:inline-block; background:#0d1b2a; color:#fff; font-weight:700; font-size:15px; padding:14px 28px; border-radius:12px; margin-top:30px;">Talk to Our Team &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- VALUES -->
-  <section class="sec" style="background:#f4f6f9; padding:92px 40px;">
-    <div style="max-width:1240px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// HOW WE WORK</div>
-      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 46px; max-width:620px;">The principles behind every project</h2>
-      <div class="g4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
-        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:16px;">01</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">Outcomes, not tools</h3><p style="font-size:13.5px; line-height:1.62; color:#5a6b7b; margin:0;">We start with what you are trying to achieve, then choose the technology. Never the other way around.</p></div>
-        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:16px;">02</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">Progress in the open</h3><p style="font-size:13.5px; line-height:1.62; color:#5a6b7b; margin:0;">Weekly milestones and working features every month. You always know where your project stands.</p></div>
-        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:16px;">03</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">Built to last</h3><p style="font-size:13.5px; line-height:1.62; color:#5a6b7b; margin:0;">Clean, documented, secure code that keeps working after go-live and scales as you grow.</p></div>
-        <div class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#d98c0a; margin-bottom:16px;">04</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">We stay after launch</h3><p style="font-size:13.5px; line-height:1.62; color:#5a6b7b; margin:0;">Support, care plans and a real person to call. We do not disappear once the invoice clears.</p></div>
-      </div>
-    </div>
-  </section>
+  <!-- 3 · MISSION & VISION -->
+  <section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// MISSION AND VISION</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">What we are here to do</h2><div class="g2" style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:32px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#68727c; margin-bottom:12px;">OUR MISSION</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Real problems, solved properly</h3><p style="font-size:16px; line-height:1.65; color:#5a6b7b; margin:0;">We solve real business problems with imaginative thinking, smart technology, and disciplined engineering, delivering intelligent, scalable solutions that create real impact for our clients.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:32px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#68727c; margin-bottom:12px;">OUR VISION</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">A partner you can build on</h3><p style="font-size:16px; line-height:1.65; color:#5a6b7b; margin:0;">To become a trusted software innovation partner that helps businesses turn bold ideas into reliable systems, transform operations through technology, and grow confidently in the digital future.</p></article></div></div></section>
 
-  <!-- CREDENTIALS (two rows per handoff) -->
-  <section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// MISSION AND VISION</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">What we are here to do</h2><div class="g2" style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:32px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">OUR MISSION</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Real problems, solved properly</h3><p style="font-size:16px; line-height:1.65; color:#5a6b7b; margin:0;">We solve real business problems with imaginative thinking, smart technology, and disciplined engineering, delivering intelligent, scalable solutions that create real impact for our clients.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:32px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">OUR VISION</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">A partner you can build on</h3><p style="font-size:16px; line-height:1.65; color:#5a6b7b; margin:0;">To become a trusted software innovation partner that helps businesses turn bold ideas into reliable systems, transform operations through technology, and grow confidently in the digital future.</p></article></div></div></section>
-<section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// THE BBT DNA</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Core Values</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Four rules we actually apply, including when they cost us something.</p><div class="g4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">01</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Trust Over Process</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">If a rule gets in the way of trust, we change the rule. We talk to you like a partner, not a ticket number.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">02</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Excellence Over Success</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">We don't settle for good enough. We push for better on every single project.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">03</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Value Over Profit</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Before anything else we ask whether this is actually helping our client. Profit is the result, not the goal.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#d98c0a; margin-bottom:12px;">04</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Effort Over Outcome</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Technology projects don't always go perfectly. What we control is how hard we work to get it right, and we reward that effort.</p></article></div></div></section>
-<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// OUR LEADERSHIP</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Meet the Team Behind Big Binary Tech</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Every engagement is led by someone who has delivered the thing you are asking for. You work with the people below directly, not through an account manager.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Engineering leadership</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Owns architecture and delivery standards across Odoo, custom software, and cloud. Reviews every technical plan before it reaches you.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">ERP and Odoo practice</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Runs implementations, migrations, and compliance work for WPS, ZATCA, and VAT across the Gulf.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">AI and automation practice</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Designs the automations and assistants, chooses the models, and owns the accuracy and safety review.</p></article></div><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Names and bios are being finalised with the team and will be added here.</p><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Talk to Our Team &rarr;</a></div></div></section>
+  <!-- 4 · CORE VALUES -->
+<section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// THE BBT DNA</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Core Values</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">4 Steps of Excellence</p><div class="g4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#9d6507; margin-bottom:12px;">01</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Trust Over Process</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">If a rule gets in the way of trust, we change the rule. We talk to you like a partner, not a ticket number.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#9d6507; margin-bottom:12px;">02</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Excellence Over Success</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">We don't settle for good enough. We push for better on every single project.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#9d6507; margin-bottom:12px;">03</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Value Over Profit</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Before anything else we ask whether this is actually helping our client. Profit is the result, not the goal.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#9d6507; margin-bottom:12px;">04</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Effort Over Outcome</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Technology projects don't always go perfectly. What we control is how hard we work to get it right, and we reward that effort.</p></article></div></div></section>
+
+  <!-- 5 · LEADERSHIP -->
+<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// OUR LEADERSHIP</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Meet the Team Behind Big Binary Tech</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Every engagement is led by someone who has delivered the thing you are asking for. You work with the people below directly, not through an account manager.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Engineering leadership</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Owns architecture and delivery standards across Odoo, custom software, and cloud. Reviews every technical plan before it reaches you.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">ERP and Odoo practice</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Runs implementations, migrations, and compliance work for WPS, ZATCA, and VAT across the Gulf.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">AI and automation practice</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Designs the automations and assistants, chooses the models, and owns the accuracy and safety review.</p></article></div><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Names and bios are being finalised with the team and will be added here.</p><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/contact-us/?service=about" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#9d6507; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Talk to Our Team &rarr;</a></div></div></section>
+
+  <!-- 6 · GLOBAL REACH -->
 <section class="sec" style="background:#0d1b2a; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// GLOBAL REACH</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#e7edf3; margin:0 0 16px; max-width:760px;">A Presence Without Borders</h2><p style="font-size:16.5px; line-height:1.65; color:#9fb2c4; max-width:760px; margin:0 0 18px;">Big Binary Tech serves clients across the GCC, USA, UK, and more than 50 countries worldwide. Whether you are a growing startup or an established enterprise, our team delivers Odoo ERP, AI automation, and custom software wherever your business operates.</p><div class="bb-statg bb-on-dark bb-statg-4"><div><div class="n">50+</div><div class="l">Countries served</div></div><div><div class="n">20+</div><div class="l">Expert developers</div></div><div><div class="n">100+</div><div class="l">Successful launches</div></div><div><div class="n">95%</div><div class="l">Client retention</div></div></div></div></section>
-<section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// CLIENT SUCCESS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">What Our Clients Say</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">We measure success by results, not promises. Here is what businesses across the world say about working with Big Binary Tech.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>They understood our operation before proposing anything. The Odoo rollout matched how we actually work, so the team adopted it without a fight.</blockquote><div class="who">Operations director, manufacturing</div><div class="org">Jeddah, KSA</div></article><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Our reporting used to take three days a month. It now takes minutes, and the numbers finally agree across every system.</blockquote><div class="who">Finance lead, trading company</div><div class="org">Dubai, UAE</div></article><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>The automation paid for itself inside a quarter. What impressed me more was that they told us which parts were not worth automating.</blockquote><div class="who">Head of operations, professional services</div><div class="org">London, UK</div></article></div></div></section>
+
+  <!-- CREDENTIALS (extra section, not in the content doc - kept as a trust signal) -->
 <section class="sec" style="background:#fff; padding:92px 40px;">
     <div style="max-width:1240px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// TRUSTED BY: AWARDS, PARTNERSHIPS &amp; REGISTRATIONS</div>
-      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 10px; max-width:720px;">Recognized by industry leaders. Registered and compliant in Pakistan.</h2>
-      <p style="font-size:16px; line-height:1.6; color:#5a6b7b; max-width:640px; margin:0 0 40px;">From global tech certifications to national regulatory registrations, Big Binary Tech operates as a fully compliant, audit-ready technology partner.</p>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// TRUSTED BY: AWARDS, PARTNERSHIPS &amp; REGISTRATIONS</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 10px; max-width:720px;">Recognized by industry leaders. Registered and compliant in the United States.</h2>
+      <p style="font-size:16px; line-height:1.6; color:#5a6b7b; max-width:640px; margin:0 0 40px;">From global tech certifications to US corporate registration, Big Binary Tech operates as a fully compliant, audit-ready technology partner.</p>
 
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.08em; color:#8a99a8; margin-bottom:14px;">CERTIFICATIONS, AWARDS &amp; TECH PARTNERSHIPS</div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.08em; color:#67727d; margin-bottom:14px;">CERTIFICATIONS, AWARDS &amp; TECH PARTNERSHIPS</div>
       <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:34px;">
-        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">Cisco</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Certified Regional Partner 2024</div></div>
-        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">PSDA</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Punjab Skill Development Authority Member</div></div>
-        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">FAST</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Academic Strategic Research Collaborator</div></div>
-        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">UMT</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Strategic Partner for Digital Excellence</div></div>
-        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">Hack The Box</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Cybersecurity Awareness &amp; Integration Partner</div></div>
-        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">LIST</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Leading Innovation in Systems &amp; Technology</div></div>
-        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">WAC</div><div style="font-size:12px; color:#6b7787; margin-top:5px; line-height:1.4;">Global Workforce &amp; Career Consultant</div></div>
-      </div>
-
-      <div style="height:1px; background:#e3e8ee; margin:0 0 30px;"></div>
-
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.08em; color:#1e6b4f; margin-bottom:14px;">REGISTERED &amp; COMPLIANT WITH</div>
-      <div style="display:flex; flex-wrap:wrap; gap:12px;">
-        <div class="bb-badge" style="flex:1 1 200px; background:#e7f3ec; border:1px solid #cfe6d8; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">FBR</div><div style="font-size:12px; color:#4c6a5b; margin-top:5px; line-height:1.4;">Registered Taxpayer, Federal Board of Revenue</div></div>
-        <div class="bb-badge" style="flex:1 1 200px; background:#e7f3ec; border:1px solid #cfe6d8; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">PSEB</div><div style="font-size:12px; color:#4c6a5b; margin-top:5px; line-height:1.4;">Registered IT &amp; ITeS Exporter, Pakistan Software Export Board</div></div>
-        <div class="bb-badge" style="flex:1 1 200px; background:#e7f3ec; border:1px solid #cfe6d8; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">LCCI</div><div style="font-size:12px; color:#4c6a5b; margin-top:5px; line-height:1.4;">Member, Lahore Chamber of Commerce &amp; Industry</div></div>
-        <div class="bb-badge" style="flex:1 1 200px; background:#e7f3ec; border:1px solid #cfe6d8; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">NAVTTC</div><div style="font-size:12px; color:#4c6a5b; margin-top:5px; line-height:1.4;">Public-Private Partnership, National Vocational &amp; Technical Training Commission</div></div>
-      </div>
-      <!-- TEAM NOTE (was rendering as visible page copy): swap text badges for official logos before launch; confirm FBR NTN and LCCI membership numbers with the client -->
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="sec" style="background:#f4f6f9; padding:92px 40px;">
-    <div style="max-width:900px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// ABOUT BBT</div>
-      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 38px;">Questions about working with us</h2>
-      <div style="display:flex; flex-direction:column; gap:12px;">
-        <details style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Is Big Binary Tech a registered and compliant software company in Pakistan?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. Big Binary Tech is registered with the Federal Board of Revenue (FBR) as a taxpayer, registered with the Pakistan Software Export Board (PSEB) as an IT &amp; ITeS exporter, and holds membership with the Lahore Chamber of Commerce &amp; Industry (LCCI). These registrations mean every engagement is invoiced, taxed, and documented the way an audit-ready enterprise vendor should be, not an informal freelance setup.</p></details>
-        <details style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">What is Big Binary Tech's partnership with NAVTTC?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Big Binary Tech holds a public-private partnership with the National Vocational &amp; Technical Training Commission (NAVTTC), Pakistan's federal body for technical and vocational training. This partnership supports workforce development and technical training initiatives, and reflects our standing as a recognized contributor to Pakistan's IT talent pipeline, not just a service vendor.</p></details>
-        <details style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Why do your registrations and certifications matter to clients outside Pakistan?<span aria-hidden="true" style="color:#d98c0a; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">For GCC, USA, and UK clients, our PSEB registration, FBR tax compliance, LCCI membership, and Cisco partnership give you the same vendor due-diligence trail you'd expect from a locally registered agency, at Pakistan-based delivery costs. It also means contracts, invoicing, and any compliance documentation you need for procurement are already in place, not something we scramble to produce mid-project.</p></details>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">Cisco</div><div style="font-size:12px; color:#667281; margin-top:5px; line-height:1.4;">Certified Regional Partner 2024</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">AWS</div><div style="font-size:12px; color:#667281; margin-top:5px; line-height:1.4;">Cloud Solutions Technology Partner</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">FAST</div><div style="font-size:12px; color:#667281; margin-top:5px; line-height:1.4;">Academic Strategic Research Collaborator</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">UMT</div><div style="font-size:12px; color:#667281; margin-top:5px; line-height:1.4;">Strategic Partner for Digital Excellence</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">Hack The Box</div><div style="font-size:12px; color:#667281; margin-top:5px; line-height:1.4;">Cybersecurity Awareness &amp; Integration Partner</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">LIST</div><div style="font-size:12px; color:#667281; margin-top:5px; line-height:1.4;">Leading Innovation in Systems &amp; Technology</div></div>
+        <div class="bb-badge" style="flex:1 1 150px; background:#f4f6f9; border:1px solid #e3e8ee; border-radius:14px; padding:18px 20px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:#0d1b2a;">WAC</div><div style="font-size:12px; color:#667281; margin-top:5px; line-height:1.4;">Global Workforce &amp; Career Consultant</div></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- 7 · TESTIMONIALS -->
+  <section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// CLIENT SUCCESS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">What Our Clients Say</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">We measure success by results, not promises. Here is what businesses across the world say about working with Big Binary Tech.</p><div class="bb-tslide"><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>They understood our operation before proposing anything. The Odoo rollout matched how we actually work, so the team adopted it without a fight.</blockquote><div class="who">Operations director, manufacturing</div><div class="org">Jeddah, KSA</div></article><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Our reporting used to take three days a month. It now takes minutes, and the numbers finally agree across every system.</blockquote><div class="who">Finance lead, trading company</div><div class="org">Dubai, UAE</div></article><article class="bb-quote bb-card"><div class="stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>The automation paid for itself inside a quarter. What impressed me more was that they told us which parts were not worth automating.</blockquote><div class="who">Head of operations, professional services</div><div class="org">London, UK</div></article></div><div class="bb-tslide-hint">Scroll for more &rarr;</div></div></section>
+
+  <!-- 8 · FINAL CTA -->
   <section class="sec" style="background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:96px 40px; text-align:center;">
     <div style="max-width:720px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.12em; color:#f5a623; margin-bottom:20px;">// LET'S TALK</div>
-      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:42px; font-weight:700; letter-spacing:-.025em; line-height:1.08; margin:0 0 18px;">Choose the smart way forward</h2>
-      <p style="font-size:17px; line-height:1.6; color:#9fb2c4; margin:0 0 32px;">Every business we work with is choosing to move forward. Let us make that move easy, reliable and worth it.</p>
-      <a href="/contact-us/" style="display:inline-block; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px 32px; border-radius:12px;">Book your free consultation →</a>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.12em; color:#f5a623; margin-bottom:20px;">// LET'S BUILD SOMETHING</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:42px; font-weight:700; letter-spacing:-.025em; line-height:1.08; margin:0 0 18px;">Ready to Move Your Business Forward?</h2>
+      <p style="font-size:17px; line-height:1.6; color:#9fb2c4; margin:0 0 32px;">Whether it&rsquo;s Odoo ERP, AI automation, custom software, or POS. Let&rsquo;s talk about what your business actually needs.</p>
+      <a href="/contact-us/?service=about" style="display:inline-block; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px 32px; border-radius:12px;">Book a Free Consultation &rarr;</a>
+      <div style="font-size:15px; color:#9fb2c4; margin-top:20px;">Or call us at <a href="tel:+13074434365" style="color:#f5a623; font-weight:600; border-bottom:1px solid rgba(245,166,35,.35); white-space:nowrap;">+1 307-443-4365</a> <span style="color:#7590a8;">·</span> <a href="tel:+923268880101" style="color:#f5a623; font-weight:600; border-bottom:1px solid rgba(245,166,35,.35); white-space:nowrap;">0326 8880101</a></div>
     </div>
   </section>
-  </main>
+
+  <!-- 9 · FAQs -->
+  <section class="sec" style="background:#f4f6f9; padding:92px 40px;">
+    <div style="max-width:900px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// COMMON QUESTIONS</div>
+      <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 38px;">Frequently Asked Questions</h2>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <details name="bbtfaq" style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">What services does Big Binary Tech offer?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">We offer Odoo ERP implementation, AI automation, custom software development, and POS solutions, built around what your business actually needs, not a one-size-fits-all package.</p></details>
+        <details name="bbtfaq" style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Do you only work with large companies?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">No. We work with startups, growing SMEs, and large enterprises alike. Our solutions are built to scale with you, whether you&rsquo;re just starting out or already running a multi-country operation.</p></details>
+        <details name="bbtfaq" style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Which industries do you work with?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">We&rsquo;ve delivered projects across healthcare, retail, logistics, and education, along with many other sectors. If your industry isn&rsquo;t listed, reach out, there&rsquo;s a good chance we&rsquo;ve solved something similar before.</p></details>
+        <details name="bbtfaq" style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">How long does a typical project take?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">It depends on the scope. A custom Odoo ERP setup or software build can take anywhere from a few weeks to a few months. We&rsquo;ll give you a clear timeline before any work begins, so there are no surprises.</p></details>
+        <details name="bbtfaq" style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Do you provide support after the project is delivered?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. We don&rsquo;t disappear after launch. Our team provides ongoing support, updates, and troubleshooting to keep your systems running smoothly.</p></details>
+        <details name="bbtfaq" style="background:#fff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Where is Big Binary Tech located, and do you work internationally?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">We&rsquo;re headquartered in Sheridan, Wyoming and serve clients across 50+ countries on four continents. Distance has never been a problem for us, most of our work is delivered remotely with the same quality and attention as local projects.</p></details>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  
+
+  
+
+  <!-- BBT-SCHEMA-START (generated) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does Big Binary Tech offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer Odoo ERP implementation, AI automation, custom software development, and POS solutions, built around what your business actually needs, not a one-size-fits-all package."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you only work with large companies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We work with startups, growing SMEs, and large enterprises alike. Our solutions are built to scale with you, whether you’re just starting out or already running a multi-country operation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which industries do you work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We’ve delivered projects across healthcare, retail, logistics, and education, along with many other sectors. If your industry isn’t listed, reach out, there’s a good chance we’ve solved something similar before."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical project take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the scope. A custom Odoo ERP setup or software build can take anywhere from a few weeks to a few months. We’ll give you a clear timeline before any work begins, so there are no surprises."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide support after the project is delivered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We don’t disappear after launch. Our team provides ongoing support, updates, and troubleshooting to keep your systems running smoothly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Big Binary Tech located, and do you work internationally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We’re headquartered in Sheridan, Wyoming and serve clients across 50+ countries on four continents. Distance has never been a problem for us, most of our work is delivered remotely with the same quality and attention as local projects."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://bigbinarytech.com/#organization",
+  "name": "Big Binary Tech",
+  "url": "https://bigbinarytech.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://bigbinarytech.com/wp-content/uploads/2026/07/redesign-bbt-logo.png"
+  },
+  "description": "Odoo ERP implementation, AI automation, custom software, web development, POS systems and social media marketing for businesses in the GCC, USA and UK.",
+  "foundingDate": "2015",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "30 N Gould St # 48715",
+    "addressLocality": "Sheridan",
+    "addressRegion": "WY",
+    "postalCode": "82801",
+    "addressCountry": "US"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+92-326-8880101",
+      "contactType": "technical support",
+      "email": "business@bigbinarytech.com",
+      "areaServed": [
+        "AE",
+        "SA",
+        "GB",
+        "US"
+      ],
+      "availableLanguage": [
+        "English",
+        "Urdu",
+        "Arabic"
+      ]
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-307-443-4365",
+      "contactType": "sales",
+      "email": "business@bigbinarytech.com",
+      "areaServed": [
+        "US",
+        "GB"
+      ],
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/big-binary-tech",
+    "https://github.com/bigbinarytech",
+    "https://www.instagram.com/bigbinarytech"
+  ]
+}
+</script>
+  <!-- BBT-SCHEMA-END -->
+</main>
 
   <footer class="bbfoot" style="font-family:'IBM Plex Sans',sans-serif; background:#0d1b2a; color:#e7edf3; position:relative; overflow:hidden;">
   <div aria-hidden="true" style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#f5a623,#ffc65c,#1e6b4f);"></div>
@@ -350,7 +473,7 @@
     <div class="bbfoot-grid" style="display:grid; grid-template-columns:1.7fr 1fr 1fr 1fr; gap:32px;">
       <div class="bbfoot-brand">
         <img src="https://bigbinarytech.com/wp-content/uploads/2026/07/redesign-bbt-logo-light-v2.png" alt="Big Binary Tech" style="height:44px; width:auto; display:block; margin-bottom:20px;">
-        <p style="font-size:14px; line-height:1.7; color:#8ea0b2; max-width:290px; margin:0 0 22px;">A Lahore based, PSEB registered software house. We build ERP, AI automation, POS and custom software for businesses in Pakistan and around the world.</p>
+        <p style="font-size:14px; line-height:1.7; color:#8ea0b2; max-width:290px; margin:0 0 22px;">A US registered software house headquartered in Sheridan, Wyoming. We build ERP, AI automation, POS and custom software for businesses around the world.</p>
         <div style="display:flex; gap:10px;">
           <a class="bbfoot-soc" href="https://www.linkedin.com/company/big-binary-tech" rel="noopener" target="_blank" aria-label="LinkedIn" style="width:40px; height:40px; border-radius:11px; border:1px solid #24374f; background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; color:#9fb2c4;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9V9z"/></svg></a>
           <a class="bbfoot-soc" href="https://www.instagram.com/bigbinarytech" rel="noopener" target="_blank" aria-label="Instagram" style="width:40px; height:40px; border-radius:11px; border:1px solid #24374f; background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; color:#9fb2c4;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 5.68a4.16 4.16 0 1 0 0 8.32 4.16 4.16 0 0 0 0-8.32zm0 6.86a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4zm5.3-7.02a.97.97 0 1 1-1.94 0 .97.97 0 0 1 1.94 0z"/></svg></a>
@@ -358,7 +481,7 @@
         </div>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">SERVICES</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#6d859c; margin-bottom:16px;">SERVICES</div>
         <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
           <a href="/ai-automation/">AI &amp; Automation</a>
           <a href="/custom-software-development/">Custom Software Development</a>
@@ -369,37 +492,37 @@
         </div>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">SOLUTIONS</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#6d859c; margin-bottom:16px;">SOLUTIONS</div>
         <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
           <a href="/enterprise-odoo/">Enterprise &amp; Odoo</a>
           <a href="/retail-pos/">Retail &amp; POS</a>
           <a href="/digital-transformation/">Digital Transformation</a>
-          <a href="/industries/">Industries</a>
         </div>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">COMPANY</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#6d859c; margin-bottom:16px;">COMPANY</div>
         <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
           <a href="/about-us/">About Big Binary Tech</a>
+          <a href="/industries/">Industries</a>
           <a href="/case-studies/">Selected Work</a>
           <a href="/resources/">Resources</a>
-          <a href="/careers/">Careers</a>
+          <a href="/careers/">Careers</a><a href="/outsourcing/">Outsourcing</a>
           <a href="/pricing/">Pricing</a>
-          <a href="/contact-us/">Contact</a>
+          <a href="/contact-us/?service=about">Contact</a>
         </div>
       </div>
     </div>
 
     <div style="margin-top:56px; padding:22px 0; border-top:1px solid rgba(255,255,255,.1); display:flex; align-items:center; gap:20px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d8ea0;">
-      <span style="display:inline-flex; align-items:center; gap:8px;"><span aria-hidden="true" style="width:8px; height:8px; border-radius:50%; background:#1e6b4f;"></span>Head office: Lahore, Pakistan</span>
-      <span style="color:#42546a;">/</span>
+      <span style="display:inline-flex; align-items:center; gap:8px;"><span aria-hidden="true" style="width:8px; height:8px; border-radius:50%; background:#1e6b4f;"></span>Head office: Sheridan, Wyoming, USA</span>
+      <span style="color:#6884a7;">/</span>
       <span>Serving clients worldwide</span>
-      <span style="color:#42546a;">/</span>
-      <span>Odoo Partner · PSEB · P@SHA</span>
+      <span style="color:#6884a7;">/</span>
+      <span>Odoo Partner · Cisco NetAcademy · AWS</span>
     </div>
 
     <div class="bbfoot-bottom" style="padding:18px 0 26px; border-top:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
-      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5f7488;">© 2026 Big Binary Tech. All rights reserved.</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#6d859c;">© 2026 Big Binary Tech. All rights reserved.</span>
       <div style="display:flex; gap:22px; font-size:12.5px; color:#7d8ea0;">
         <a href="/privacy-policy/">Privacy Policy</a>
         <a href="/terms-of-service/">Terms of Service</a>
@@ -408,5 +531,31 @@
   </div>
 </footer>
 </div>
+
+<!-- BBT-GA4-START (generated) -->
+<script>
+/* GA4 hooks the specs ask for. Pushes to dataLayer, which GTM/GA4 picks up if
+   present and which is a harmless no-op if it is not. Covers CTA clicks (the
+   ?service= value identifies the package or page), form submits and newsletter
+   signups. FAQ-specific events live in the FAQ page's own script. */
+(function () {
+  function push(o) { try { (window.dataLayer = window.dataLayer || []).push(o); } catch (e) {} }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href*="/contact-us/?service="]');
+    if (!a) return;
+    var q = a.getAttribute('href').split('?')[1] || '';
+    var p = {};
+    q.split('&').forEach(function (kv) { var b = kv.split('='); if (b[0]) p[b[0]] = decodeURIComponent(b[1] || ''); });
+    push({ event: 'cta_click', cta_service: p.service || '', cta_offer: p.offer || '',
+           cta_label: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60),
+           page_path: location.pathname });
+  });
+  document.addEventListener('submit', function (e) {
+    var f = e.target.closest('form[data-ga]');
+    if (f) push({ event: f.getAttribute('data-ga'), page_path: location.pathname });
+  });
+})();
+</script>
+<!-- BBT-GA4-END -->
 </body>
 </html>

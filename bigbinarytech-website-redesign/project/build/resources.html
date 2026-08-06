@@ -23,10 +23,10 @@
   body{ margin:0; background:#f4f6f9; }
   img{ max-width:100%; }
   a{ color:inherit; text-decoration:none; }
-  a:hover{ color:#d98c0a; }
+  a:hover{ color:#9d6507; }
   summary{ cursor:pointer; list-style:none; }
   summary::-webkit-details-marker{ display:none; }
-  :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  :focus-visible{ outline:2px solid #9d6507; outline-offset:3px; border-radius:6px; }
   .bb-card{ transition:transform .25s ease, box-shadow .25s ease; }
   .bb-card:hover{ transform:translateY(-6px); box-shadow:0 22px 44px rgba(13,27,42,.1); }
   @media (max-width:980px){
@@ -70,7 +70,7 @@
 
   .bb-deliv{ list-style:none; padding:0; margin:0 0 22px; display:grid; grid-template-columns:1fr 1fr; gap:11px 28px; }
   .bb-deliv li{ position:relative; padding-left:22px; font-size:14.5px; line-height:1.55; color:#42546a; }
-  .bb-deliv li::before{ content:""; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:2px; background:#d98c0a; }
+  .bb-deliv li::before{ content:""; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:2px; background:#9d6507; }
   .bb-deliv.bb-one{ grid-template-columns:1fr; }
   .bb-deliv.bb-on-dark li{ color:#a8bcce; }
   .bb-deliv.bb-on-dark li::before{ background:#f5a623; }
@@ -86,13 +86,13 @@
   .bb-pill.bb-on{ background:#0d1b2a; border-color:#0d1b2a; color:#fff; }
 
   .bb-quote{ background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column; }
-  .bb-quote .stars{ color:#f5a623; font-size:13px; letter-spacing:3px; margin-bottom:14px; }
+  .bb-quote .stars{ color:#9d6507; font-size:13px; letter-spacing:3px; margin-bottom:14px; }
   .bb-quote blockquote{ font-size:15px; line-height:1.68; color:#3d4f61; margin:0 0 18px; }
   .bb-quote .who{ font-size:13.5px; font-weight:600; color:#0d1b2a; margin-top:auto; }
-  .bb-quote .org{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#7b8b9c; margin-top:4px; }
+  .bb-quote .org{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#657280; margin-top:4px; }
 
   .bb-statg{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
-  .bb-statg .n{ font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; color:#d98c0a; line-height:1; }
+  .bb-statg .n{ font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; color:#9d6507; line-height:1; }
   .bb-statg .l{ font-size:13.5px; line-height:1.5; color:#5a6b7b; margin-top:8px; }
   .bb-statg.bb-on-dark .n{ color:#f5a623; }
   .bb-statg.bb-on-dark .l{ color:#9fb2c4; }
@@ -115,13 +115,13 @@
 
   .bbnav *{ box-sizing:border-box; }
   .bbnav a{ color:inherit; text-decoration:none; }
-  .bbnav a:hover{ color:#d98c0a; }
+  .bbnav a:hover{ color:#9d6507; }
   .bbnav summary{ cursor:pointer; list-style:none; }
   .bbnav summary::-webkit-details-marker{ display:none; }
-  .bbnav :focus-visible{ outline:2px solid #d98c0a; outline-offset:3px; border-radius:6px; }
+  .bbnav :focus-visible{ outline:2px solid #9d6507; outline-offset:3px; border-radius:6px; }
   .bbnav-drop{ position:absolute; left:0; top:100%; padding-top:14px; opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .16s ease, transform .16s ease; z-index:60; }
   .bbnav-item:hover>.bbnav-drop, .bbnav-item:focus-within>.bbnav-drop{ opacity:1; visibility:visible; transform:translateY(0); }
-  .bbnav-item>a[aria-haspopup]::after{ content:"⌄"; font-size:12px; margin-left:5px; position:relative; top:-1px; color:#93a2b0; }
+  .bbnav-item>a[aria-haspopup]::after{ content:"⌄"; font-size:12px; margin-left:5px; position:relative; top:-1px; color:#68727c; }
   .bbnav-link:hover{ background:#f4f6f9; color:#0d1b2a; }
   .bbnav-mob{ display:none; }
   @media (max-width:980px){
@@ -151,6 +151,12 @@
   @media (max-width:900px){ .bbfoot-grid{ grid-template-columns:1fr 1fr !important; row-gap:40px !important; } .bbfoot-brand{ grid-column:1 / -1 !important; } }
   @media (max-width:560px){ .bbfoot-grid{ grid-template-columns:1fr !important; } .bbfoot-bottom{ flex-direction:column !important; align-items:flex-start !important; gap:12px !important; } .bbfoot-pad{ padding-left:22px !important; padding-right:22px !important; } }
 
+
+  /* ---- newsletter (spec S12) ---- */
+  .bb-news{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+  .bb-news input{ flex:1 1 320px; max-width:420px; font-family:inherit; font-size:15px; color:#e7edf3; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); border-radius:11px; padding:14px 16px; }
+  .bb-news input::placeholder{ color:#7d94ab; }
+  .bb-news button{ font-family:inherit; font-weight:700; font-size:15px; color:#0d1b2a; background:#f5a623; border:0; border-radius:11px; padding:14px 28px; cursor:pointer; }
 </style>
 </head>
 
@@ -173,7 +179,7 @@
         <a href="/services/" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Services</a>
         <div class="bbnav-drop">
           <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:344px;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">WHAT WE BUILD</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#68727c; padding:8px 12px 6px;">WHAT WE BUILD</div>
             <a class="bbnav-link" href="/ai-automation/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">AI &amp; Automation</a>
             <a class="bbnav-link" href="/custom-software-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Custom Software Development</a>
             <a class="bbnav-link" href="/web-development/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Web Development</a>
@@ -187,7 +193,7 @@
         <a href="/solutions/" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Solutions</a>
         <div class="bbnav-drop">
           <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:324px;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">SOLUTION PILLARS</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#68727c; padding:8px 12px 6px;">SOLUTION PILLARS</div>
             <a class="bbnav-link" href="/enterprise-odoo/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Enterprise &amp; Odoo Solutions</a>
             <a class="bbnav-link" href="/retail-pos/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Retail &amp; POS Solutions</a>
             <a class="bbnav-link" href="/digital-transformation/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Digital Transformation Solutions</a>
@@ -199,30 +205,23 @@
         <a href="/resources/" aria-haspopup="true" style="display:inline-flex; align-items:center; padding:10px 14px; border-radius:9px;">Resources</a>
         <div class="bbnav-drop">
           <div style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.14); padding:10px; width:324px;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; padding:8px 12px 6px;">RESOURCES</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#68727c; padding:8px 12px 6px;">RESOURCES</div>
             <a class="bbnav-link" href="/blogs/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Blogs</a>
             <a class="bbnav-link" href="/e-books-guides/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">E-Books &amp; Guides</a>
             <a class="bbnav-link" href="/case-studies/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">Case Studies</a>
+            <a class="bbnav-link" href="/faqs/" style="display:block; padding:9px 12px; border-radius:10px; font-size:14px; color:#1c2b3a;">FAQs</a>
           </div>
         </div>
       </div>
       <a href="/about-us/" style="padding:10px 14px; border-radius:9px;">About</a>
-      <a href="/contact-us/" style="padding:10px 14px; border-radius:9px;">Contact</a>
+      <a href="/contact-us/?service=resources" style="padding:10px 14px; border-radius:9px;">Contact</a>
     </nav>
 
-    <a class="bbnav-cta" href="/contact-us/" style="font-size:14px; font-weight:600; background:#0d1b2a; color:#fff; padding:11px 20px; border-radius:10px; white-space:nowrap;">Get free consultation</a>
+    <a class="bbnav-cta" href="/contact-us/?service=resources" style="font-size:14px; font-weight:600; background:#0d1b2a; color:#fff; padding:11px 20px; border-radius:10px; white-space:nowrap;">Get free consultation</a>
 
     <details class="bbnav-mob" style="position:relative;">
       <summary aria-label="Open menu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #d3dae2; border-radius:10px; background:#fff; font-size:18px; color:#0d1b2a;">☰</summary>
-      <div style="position:absolute; right:0; top:calc(100% + 12px); background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.16); padding:10px; width:244px; display:flex; flex-direction:column; gap:2px; z-index:90;">
-        <a class="bbnav-link" href="/services/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Services</a>
-        <a class="bbnav-link" href="/solutions/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Solutions</a>
-        <a class="bbnav-link" href="/industries/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Industries</a>
-        <a class="bbnav-link" href="/resources/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Resources</a>
-        <a class="bbnav-link" href="/about-us/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">About</a>
-        <a class="bbnav-link" href="/contact-us/" style="padding:11px 12px; border-radius:10px; font-size:15px; color:#1c2b3a;">Contact</a>
-        <a href="/contact-us/" style="margin-top:6px; text-align:center; font-weight:600; background:#0d1b2a; color:#fff; padding:12px; border-radius:10px; font-size:14px;">Get free consultation</a>
-      </div>
+      <div style="position:absolute; right:0; top:calc(100% + 12px); background:#fff; border:1px solid #e3e8ee; border-radius:16px; box-shadow:0 26px 60px rgba(13,27,42,.16); padding:10px; width:262px; max-height:calc(100vh - 120px); overflow-y:auto; display:flex; flex-direction:column; gap:1px; z-index:90; -webkit-overflow-scrolling:touch;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; color:#68727c; padding:10px 12px 4px;">SERVICES</div><a class="bbnav-link" href="/services/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">All Services</a><a class="bbnav-link" href="/ai-automation/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">AI &amp; Automation</a><a class="bbnav-link" href="/custom-software-development/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Custom Software Development</a><a class="bbnav-link" href="/web-development/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Web Development</a><a class="bbnav-link" href="/odoo-erp/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Odoo &amp; ERP Services</a><a class="bbnav-link" href="/social-media-marketing/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Social Media Marketing</a><a class="bbnav-link" href="/pos-systems/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">POS Systems</a><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; color:#68727c; padding:10px 12px 4px;">SOLUTIONS</div><a class="bbnav-link" href="/solutions/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">All Solutions</a><a class="bbnav-link" href="/enterprise-odoo/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Enterprise &amp; Odoo</a><a class="bbnav-link" href="/retail-pos/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Retail &amp; POS</a><a class="bbnav-link" href="/digital-transformation/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Digital Transformation</a><a class="bbnav-link" href="/industries/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Industries</a><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; color:#68727c; padding:10px 12px 4px;">RESOURCES</div><a class="bbnav-link" href="/resources/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Resource Hub</a><a class="bbnav-link" href="/blogs/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Blogs</a><a class="bbnav-link" href="/e-books-guides/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">E-Books &amp; Guides</a><a class="bbnav-link" href="/case-studies/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Case Studies</a><a class="bbnav-link" href="/resources/videos/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Video Walkthroughs</a><a class="bbnav-link" href="/faqs/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">FAQs</a><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; color:#68727c; padding:10px 12px 4px;">COMPANY</div><a class="bbnav-link" href="/about-us/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">About Big Binary Tech</a><a class="bbnav-link" href="/outsourcing/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Outsourcing</a><a class="bbnav-link" href="/pricing/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Pricing</a><a class="bbnav-link" href="/careers/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Careers</a><a class="bbnav-link" href="/contact-us/" style="padding:10px 12px; border-radius:10px; font-size:14.5px; color:#1c2b3a;">Contact</a><a href="/contact-us/?service=resources" style="margin-top:8px; text-align:center; font-weight:600; background:#0d1b2a; color:#fff; padding:12px; border-radius:10px; font-size:14px;">Get free consultation</a></div>
     </details>
   </div>
 </header>
@@ -232,26 +231,26 @@
   <section class="sec" style="position:relative; background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:52px 40px 66px; overflow:hidden;">
     <div aria-hidden="true" style="position:absolute; top:-120px; right:-90px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle, rgba(245,166,35,.14), transparent 70%);"></div>
     <div style="position:relative; z-index:2; max-width:1240px; margin:0 auto;">
-      <nav aria-label="Breadcrumb" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d94ab; margin-bottom:28px;"><a href="/">Home</a> <span style="color:#3f5772;">/</span> Resources</nav>
+      <nav aria-label="Breadcrumb" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d94ab; margin-bottom:28px;"><a href="/">Home</a> <span style="color:#6288b2;">/</span> Resources</nav>
       <div style="max-width:760px;">
         <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:18px;">// KNOWLEDGE HUB · EXPERT INSIGHTS</div>
         <h1 class="h1" style="font-family:'Bricolage Grotesque',sans-serif; font-size:50px; line-height:1.08; font-weight:700; letter-spacing:-.025em; margin:0 0 18px;">Resources, insights and guides for digital transformation leaders</h1>
-        <p style="font-size:18px; line-height:1.6; color:#a8bcce; max-width:640px; margin:0 0 26px;">Explore real-world case studies, expert-written guides and practical insights on AI automation, Odoo ERP, cloud migration and digital transformation for businesses across Pakistan, the GCC, the USA and the UK.</p>
-        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:20px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#9fb2c4;"><span>60+ PROJECTS</span><span>PSEB REGISTERED</span><span>AI-FIRST</span><span>FREE DOWNLOADS</span></div>
+        <p style="font-size:18px; line-height:1.6; color:#a8bcce; max-width:640px; margin:0 0 26px;">Explore real-world case studies, expert-written guides and practical insights on AI automation, Odoo ERP, cloud migration and digital transformation for businesses across the USA, the GCC, the UK and MENA.</p>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:20px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#9fb2c4;"><span>60+ PROJECTS</span><span>US REGISTERED</span><span>AI-FIRST</span><span>FREE DOWNLOADS</span></div>
       </div>
     </div>
   </section>
 
   <!-- FEATURED CASE STUDY -->
-  <section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// START HERE</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Four ways in</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Everything on this page falls into one of four kinds. Pick whichever suits how you like to read.</p><div class="g4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:28px;"><a class="bb-card" href="/case-studies/" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Case Studies</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 16px;">Real transformation stories from GCC, USA and UK businesses, with the numbers behind them.</p><span style="margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#d98c0a;">Open &rarr;</span></a><a class="bb-card" href="/e-books-guides/" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">E-Books &amp; Guides</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 16px;">Downloadable playbooks, implementation guides, and transformation frameworks.</p><span style="margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#d98c0a;">Open &rarr;</span></a><a class="bb-card" href="/blogs/" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Blog</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 16px;">Weekly insights on AI, Odoo, cloud migration, and GCC technology trends.</p><span style="margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#d98c0a;">Open &rarr;</span></a><a class="bb-card" href="/faqs/" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">FAQs</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 16px;">Answers on services, pricing, implementation, and support. 32 of them, searchable.</p><span style="margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#d98c0a;">Open &rarr;</span></a></div></div></section>
+  <section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// START HERE</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Five ways in</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Everything on this page falls into one of five kinds. Pick whichever suits how you like to read.</p><div class="g4" style="display:grid; grid-template-columns:repeat(5,1fr); gap:18px; margin-top:28px;"><a class="bb-card" href="/case-studies/" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Case Studies</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 16px;">Real transformation stories from GCC, USA and UK businesses, with the numbers behind them.</p><span style="margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#9d6507;">Open &rarr;</span></a><a class="bb-card" href="/e-books-guides/" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">E-Books &amp; Guides</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 16px;">Downloadable playbooks, implementation guides, and transformation frameworks.</p><span style="margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#9d6507;">Open &rarr;</span></a><a class="bb-card" href="/blogs/" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Blog</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 16px;">Weekly insights on AI, Odoo, cloud migration, and GCC technology trends.</p><span style="margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#9d6507;">Open &rarr;</span></a><a class="bb-card" href="/faqs/" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">FAQs</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 16px;">Answers on services, pricing, implementation, and support. 32 of them, searchable.</p><span style="margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#9d6507;">Open &rarr;</span></a><a class="bb-card" href="/resources/videos/" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Video Walkthroughs</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 16px;">Short screen recordings of Odoo, POS and automation workflows, watched in minutes.</p><span style="margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#9d6507;">Open &rarr;</span></a></div></div></section>
 <section class="sec" style="background:#fff; padding:80px 40px;">
     <div style="max-width:1240px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// FEATURED CASE STUDY</div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// FEATURED CASE STUDY</div>
       <div class="feat2" style="display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:stretch;">
         <div style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:20px; padding:38px;">
           <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:30px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 22px; line-height:1.2;">How a Dubai trading company cut reporting time from 3 days to 15 minutes</h2>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
-            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:6px;">CHALLENGE</div><p style="font-size:14px; line-height:1.6; color:#5a6b7b; margin:0;">A 12-year-old inventory system created operational bottlenecks across six warehouses.</p></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9d6507; margin-bottom:6px;">CHALLENGE</div><p style="font-size:14px; line-height:1.6; color:#5a6b7b; margin:0;">A 12-year-old inventory system created operational bottlenecks across six warehouses.</p></div>
             <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#1e6b4f; margin-bottom:6px;">SOLUTION</div><p style="font-size:14px; line-height:1.6; color:#5a6b7b; margin:0;">A cloud-native ecosystem with real-time analytics, automated reporting, AI demand forecasting and zero-downtime migration.</p></div>
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px;">
@@ -260,7 +259,7 @@
             <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#42546a; background:#fff; border:1px solid #e3e8ee; padding:6px 12px; border-radius:8px;">AI Analytics</span>
             <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#42546a; background:#fff; border:1px solid #e3e8ee; padding:6px 12px; border-radius:8px;">Retail &amp; Trading · Dubai, UAE</span>
           </div>
-          <a href="/case-studies/" style="font-size:14.5px; font-weight:700; color:#d98c0a;">Read full case study →</a>
+          <a href="/case-studies/" style="font-size:14.5px; font-weight:700; color:#9d6507;">Read full case study →</a>
         </div>
         <div style="background:#0d1b2a; color:#e7edf3; border-radius:20px; padding:38px; display:flex; flex-direction:column; justify-content:center; gap:22px;">
           <div><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:40px; font-weight:700; color:#f5a623; line-height:1;">92%</div><div style="font-size:13px; color:#9fb2c4; margin-top:5px;">reduction in reporting time</div></div>
@@ -274,13 +273,13 @@
   <!-- LATEST CASE STUDIES -->
   <section class="sec" style="background:#f4f6f9; padding:80px 40px;">
     <div style="max-width:1240px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// CASE STUDIES</div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// CASE STUDIES</div>
       <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 12px;">Latest transformation stories</h2>
-      <p style="font-size:16px; color:#5a6b7b; margin:0 0 40px;">Real outcomes from businesses that modernized with Big Binary Tech across Pakistan, the GCC, the USA and the UK.</p>
+      <p style="font-size:16px; color:#5a6b7b; margin:0 0 40px;">Real outcomes from businesses that modernized with Big Binary Tech across the USA, the GCC, the UK and MENA.</p>
       <div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
-        <article class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:14px;">E-COMMERCE · LONDON, UK</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 16px; line-height:1.3;">E-commerce platform auto-scales on AWS, cuts infrastructure costs by 40%</h3><ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:7px; font-size:13.5px; color:#42546a;"><li>› 40% cost reduction</li><li>› Zero downtime</li><li>› Auto scaling</li></ul><a href="/case-studies/" style="margin-top:auto; font-size:13.5px; font-weight:600; color:#d98c0a;">Read case study →</a></article>
-        <article class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:14px;">PROFESSIONAL SERVICES · KARACHI</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 16px; line-height:1.3;">Professional services firm digitizes document processing from 2 weeks to 2 hours</h3><ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:7px; font-size:13.5px; color:#42546a;"><li>› 99% time reduction</li><li>› 85% error elimination</li><li>› Compliance automation</li></ul><a href="/case-studies/" style="margin-top:auto; font-size:13.5px; font-weight:600; color:#d98c0a;">Read case study →</a></article>
-        <article class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d98c0a; margin-bottom:14px;">MANUFACTURING · RIYADH</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 16px; line-height:1.3;">Saudi manufacturer integrates Odoo ERP with ZATCA</h3><ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:7px; font-size:13.5px; color:#42546a;"><li>› 100% compliance</li><li>› Real-time VAT reporting</li><li>› Faster invoicing</li></ul><a href="/case-studies/" style="margin-top:auto; font-size:13.5px; font-weight:600; color:#d98c0a;">Read case study →</a></article>
+        <article class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9d6507; margin-bottom:14px;">E-COMMERCE · LONDON, UK</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 16px; line-height:1.3;">E-commerce platform auto-scales on AWS, cuts infrastructure costs by 40%</h3><ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:7px; font-size:13.5px; color:#42546a;"><li>› 40% cost reduction</li><li>› Zero downtime</li><li>› Auto scaling</li></ul><a href="/case-studies/" style="margin-top:auto; font-size:13.5px; font-weight:600; color:#9d6507;">Read case study →</a></article>
+        <article class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9d6507; margin-bottom:14px;">PROFESSIONAL SERVICES</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 16px; line-height:1.3;">Professional services firm digitizes document processing from 2 weeks to 2 hours</h3><ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:7px; font-size:13.5px; color:#42546a;"><li>› 99% time reduction</li><li>› 85% error elimination</li><li>› Compliance automation</li></ul><a href="/case-studies/" style="margin-top:auto; font-size:13.5px; font-weight:600; color:#9d6507;">Read case study →</a></article>
+        <article class="bb-card" style="background:#fff; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9d6507; margin-bottom:14px;">MANUFACTURING · RIYADH</div><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:600; color:#0d1b2a; margin:0 0 16px; line-height:1.3;">Saudi manufacturer integrates Odoo ERP with ZATCA</h3><ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:7px; font-size:13.5px; color:#42546a;"><li>› 100% compliance</li><li>› Real-time VAT reporting</li><li>› Faster invoicing</li></ul><a href="/case-studies/" style="margin-top:auto; font-size:13.5px; font-weight:600; color:#9d6507;">Read case study →</a></article>
       </div>
     </div>
   </section>
@@ -288,13 +287,13 @@
   <!-- E-BOOKS -->
   <section class="sec" style="background:#fff; padding:80px 40px;">
     <div style="max-width:1240px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// E-BOOKS &amp; GUIDES</div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// E-BOOKS &amp; GUIDES</div>
       <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 12px;">Free e-books and guides: expert knowledge at zero cost</h2>
       <p style="font-size:16px; color:#5a6b7b; margin:0 0 40px;">Downloadable playbooks delivered straight to your inbox. Email-gated, always free.</p>
       <div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
-        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><span style="align-self:flex-start; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#0d1b2a; background:#ffe4b3; padding:5px 10px; border-radius:6px; margin-bottom:18px;">BBT PLAYBOOK</span><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">Odoo Implementation Playbook</h3><p style="font-size:13.5px; color:#5a6b7b; margin:0 0 18px;">48 pages · PDF</p><a href="/e-books-guides/" style="margin-top:auto; font-size:14px; font-weight:700; color:#d98c0a;">Download free →</a></article>
-        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><span style="align-self:flex-start; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#0d1b2a; background:#cfe6d8; padding:5px 10px; border-radius:6px; margin-bottom:18px;">BBT STARTER KIT</span><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">AI Automation Starter Kit</h3><p style="font-size:13.5px; color:#5a6b7b; margin:0 0 18px;">32 pages · PDF</p><a href="/e-books-guides/" style="margin-top:auto; font-size:14px; font-weight:700; color:#d98c0a;">Download free →</a></article>
-        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><span style="align-self:flex-start; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#0d1b2a; background:#ffe4b3; padding:5px 10px; border-radius:6px; margin-bottom:18px;">BBT CHECKLIST</span><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">Cloud Migration Checklist for SMEs</h3><p style="font-size:13.5px; color:#5a6b7b; margin:0 0 18px;">24 pages · PDF + checklist</p><a href="/e-books-guides/" style="margin-top:auto; font-size:14px; font-weight:700; color:#d98c0a;">Download free →</a></article>
+        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><span style="align-self:flex-start; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#0d1b2a; background:#ffe4b3; padding:5px 10px; border-radius:6px; margin-bottom:18px;">BBT PLAYBOOK</span><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">Odoo Implementation Playbook</h3><p style="font-size:13.5px; color:#5a6b7b; margin:0 0 18px;">48 pages · PDF</p><a href="/e-books-guides/" style="margin-top:auto; font-size:14px; font-weight:700; color:#9d6507;">Download free →</a></article>
+        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><span style="align-self:flex-start; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#0d1b2a; background:#cfe6d8; padding:5px 10px; border-radius:6px; margin-bottom:18px;">BBT STARTER KIT</span><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">AI Automation Starter Kit</h3><p style="font-size:13.5px; color:#5a6b7b; margin:0 0 18px;">32 pages · PDF</p><a href="/e-books-guides/" style="margin-top:auto; font-size:14px; font-weight:700; color:#9d6507;">Download free →</a></article>
+        <article class="bb-card" style="background:#f4f6f9; border:1px solid #e3e8ee; border-radius:16px; padding:28px; display:flex; flex-direction:column;"><span style="align-self:flex-start; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#0d1b2a; background:#ffe4b3; padding:5px 10px; border-radius:6px; margin-bottom:18px;">BBT CHECKLIST</span><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 10px;">Cloud Migration Checklist for SMEs</h3><p style="font-size:13.5px; color:#5a6b7b; margin:0 0 18px;">24 pages · PDF + checklist</p><a href="/e-books-guides/" style="margin-top:auto; font-size:14px; font-weight:700; color:#9d6507;">Download free →</a></article>
       </div>
     </div>
   </section>
@@ -302,7 +301,7 @@
   <!-- TOPICS + VIDEOS -->
   <section class="sec" style="background:#f4f6f9; padding:80px 40px;">
     <div style="max-width:1240px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// TOPICS</div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// TOPICS</div>
       <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 12px;">Topics we cover</h2>
       <p style="font-size:16px; color:#5a6b7b; margin:0 0 34px;">Deep, practical expertise across the technologies that drive digital transformation.</p>
       <div class="g4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:64px;">
@@ -311,12 +310,12 @@
         <div style="background:#fff; border:1px solid #e3e8ee; border-radius:12px; padding:20px; font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a;">Cloud Migration &amp; DevOps</div>
         <div style="background:#fff; border:1px solid #e3e8ee; border-radius:12px; padding:20px; font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a;">Legacy Modernization</div>
         <div style="background:#fff; border:1px solid #e3e8ee; border-radius:12px; padding:20px; font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a;">Business Process Automation</div>
-        <div style="background:#fff; border:1px solid #e3e8ee; border-radius:12px; padding:20px; font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a;">FBR &amp; Tax Compliance</div>
+        <div style="background:#fff; border:1px solid #e3e8ee; border-radius:12px; padding:20px; font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a;">Tax &amp; VAT Compliance</div>
         <div style="background:#fff; border:1px solid #e3e8ee; border-radius:12px; padding:20px; font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a;">Data Analytics &amp; BI</div>
         <div style="background:#fff; border:1px solid #e3e8ee; border-radius:12px; padding:20px; font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:#0d1b2a;">Cybersecurity &amp; Risk</div>
       </div>
 
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// VIDEOS</div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// VIDEOS</div>
       <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 12px;">Watch and learn</h2>
       <p style="font-size:16px; color:#5a6b7b; margin:0 0 34px;">Short, focused walkthroughs and product demos from our implementation team.</p>
       <div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
@@ -328,16 +327,16 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// FROM THE BLOG</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Latest From The Blog</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Written by the engineers doing the work, not a content team.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Legacy Modernization</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">When to rebuild, when to wrap, and how to tell the difference before you spend anything.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Engineering</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">AWS vs Azure vs Google Cloud</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">An honest comparison on cost, region availability, and what actually matters for GCC data rules.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Cloud</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">ZATCA Compliance</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">What Phase 2 requires, what breaks in practice, and how to test your invoices before the regulator does.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Compliance</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">AI Chatbots</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Where a bot genuinely helps, where it annoys customers, and how to tell in advance.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; AI</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Odoo 18 vs Odoo 17</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">What changed, what it costs to upgrade, and whether you need to.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Odoo</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">GCC Outsourcing Trends</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">How delivery models are shifting across the Gulf and what buyers are asking for now.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Market</li></ul></article></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/blogs/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">View All Blog Posts &rarr;</a></div></div></section>
-<section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// BY INDUSTRY</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Resources by sector</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">The compliance rules, the systems, and the failure modes differ by sector. These are the sector-specific write-ups.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Retail</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">POS, stock accuracy, VAT-ready receipts, and omnichannel.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Manufacturing</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">ERP, production planning, quality control, and shop-floor reporting.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Healthcare</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Patient records, appointment flows, and data residency.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Finance</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Compliance reporting, security, and real-time analytics.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Real Estate</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">CRM, property management, and marketing automation.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Government</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Citizen portals, document digitization, and data residency.</p></article></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/industries/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Explore All Industries &rarr;</a></div></div></section>
-<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// QUESTIONS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Looking for a straight answer?</h2><div class="bb-split"><div><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">We keep every answer in one place rather than scattering them across pages. Thirty-two questions across eight categories, searchable, covering services, pricing, timelines, data migration, legacy systems, cloud platforms, support, GCC compliance, and outsourcing models.</p><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/faqs/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Open the FAQs &rarr;</a><a href="/contact-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Ask Something Else &rarr;</a></div></div><div class="bb-split-v"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">MOST ASKED</div><ul class="bb-deliv bb-one"><li>How much does digital transformation cost?</li><li>How long does a typical project take?</li><li>Will we lose data during migration?</li><li>Do you offer Arabic-language support?</li><li>Can you work with our legacy ERP?</li></ul></div></div></div></section>
+  <section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// FROM THE BLOG</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Latest From The Blog</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Written by the engineers doing the work, not a content team.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Legacy Modernization</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">When to rebuild, when to wrap, and how to tell the difference before you spend anything.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Engineering</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">AWS vs Azure vs Google Cloud</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">An honest comparison on cost, region availability, and what actually matters for GCC data rules.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Cloud</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">ZATCA Compliance</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">What Phase 2 requires, what breaks in practice, and how to test your invoices before the regulator does.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Compliance</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">AI Chatbots</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">Where a bot genuinely helps, where it annoys customers, and how to tell in advance.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; AI</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Odoo 18 vs Odoo 17</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">What changed, what it costs to upgrade, and whether you need to.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Odoo</li></ul></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">GCC Outsourcing Trends</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 14px;">How delivery models are shifting across the Gulf and what buyers are asking for now.</p><ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px; color:#42546a;"><li>&rsaquo; Market</li></ul></article></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/blogs/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#9d6507; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">View All Blog Posts &rarr;</a></div></div></section>
+<section class="sec" style="background:#f4f6f9; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// BY INDUSTRY</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Resources by sector</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">The compliance rules, the systems, and the failure modes differ by sector. These are the sector-specific write-ups.</p><div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;"><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Retail</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">POS, stock accuracy, VAT-ready receipts, and omnichannel.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Manufacturing</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">ERP, production planning, quality control, and shop-floor reporting.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Healthcare</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Patient records, appointment flows, and data residency.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Finance</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Compliance reporting, security, and real-time analytics.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Real Estate</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">CRM, property management, and marketing automation.</p></article><article class="bb-card" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:18px; padding:28px; display:flex; flex-direction:column;"><h3 style="font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:600; color:#0d1b2a; margin:0 0 12px; line-height:1.3;">Government</h3><p style="font-size:14.5px; line-height:1.62; color:#5a6b7b; margin:0 0 0;">Citizen portals, document digitization, and data residency.</p></article></div><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/industries/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#9d6507; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Explore All Industries &rarr;</a></div></div></section>
+<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// QUESTIONS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Looking for a straight answer?</h2><div class="bb-split"><div><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">We keep every answer in one place rather than scattering them across pages. Thirty-two questions across eight categories, searchable, covering services, pricing, timelines, data migration, legacy systems, cloud platforms, support, GCC compliance, and outsourcing models.</p><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/faqs/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#9d6507; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Open the FAQs &rarr;</a><a href="/contact-us/?service=resources" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#9d6507; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Ask Something Else &rarr;</a></div></div><div class="bb-split-v"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#68727c; margin-bottom:12px;">MOST ASKED</div><ul class="bb-deliv bb-one"><li>How much does digital transformation cost?</li><li>How long does a typical project take?</li><li>Will we lose data during migration?</li><li>Do you offer Arabic-language support?</li><li>Can you work with our legacy ERP?</li></ul></div></div><div style="display:flex; flex-direction:column; gap:12px; margin-top:34px;"><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">What services does Big Binary Tech offer?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">AI automation, website development, Odoo ERP implementation, custom software development, POS systems, and social media marketing. Most engagements combine several of these, delivered under one contract with one point of accountability.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">How much does a typical project cost?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Our Starter package begins at $3,500, Growth at $15,000, and enterprise transformations are custom-quoted. Outsourcing starts at $2,500 per month per specialist. Every engagement opens with a free 30-minute assessment so you see a fixed number before committing.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">How long does a project take?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">An assessment and roadmap takes 2 to 3 weeks. Single system modernization runs 6 to 10 weeks. Full business digitization takes 3 to 6 months, and enterprise transformation 6 to 12 months. We deliver in phases so you see value every 4 to 6 weeks.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Will we lose data during migration?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">No. We use validated migration scripts, parallel running environments, and rollback plans. Every data point is verified before cutover, and for critical systems we run parallel operations for 2 to 4 weeks before switching over completely.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Can you work with our existing legacy ERP?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. We build API layers and middleware where direct integration is not possible. We have integrated with SAP, Oracle, Microsoft Dynamics, custom-built systems, and decades-old databases without replacing what already works.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">What cloud platform do you recommend?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">It depends on your needs: AWS for flexibility and scale, Azure for Microsoft ecosystem integration, GCP for AI and analytics workloads. For GCC clients we factor data residency into the region and availability zone choice.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Do you provide support after launch?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. All projects include post-launch support as standard, covering bug fixes, performance tuning, and minor enhancements. After that you can move to a monthly care plan or fully managed services.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Do you handle GCC compliance like ZATCA and FTA VAT?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Yes. We integrate Odoo and custom systems with ZATCA APIs for Saudi e-invoicing, and configure FTA-compliant tax invoices and VAT returns for the UAE. Arabic localization and RTL interface support are included.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Where is our data stored for GCC projects?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">We can deploy on UAE-based regions (AWS Dubai, Azure UAE North) or Saudi-based regions (AWS Riyadh, STC Cloud) so sensitive data never leaves the jurisdiction. Data residency clauses go into the contract.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">How does your outsourcing model work?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">Four models: staff augmentation from $2,500 per month, a dedicated development team from $12,000 per month, managed project delivery with fixed-price or T&amp;M options, and a full offshore development center. You can scale up or down monthly.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">Who owns the code you write?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">You do, from day one. Every contract includes explicit IP assignment. We never reuse client-specific code on other projects, and source code escrow is available for enterprise engagements.</p></details><details name="bbtres" style="background:#ffffff; border:1px solid #e3e8ee; border-radius:14px; padding:4px 22px;"><summary style="display:flex; justify-content:space-between; gap:16px; padding:20px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:17px; font-weight:600; color:#0d1b2a;">What makes Big Binary Tech different from a larger consultancy?<span aria-hidden="true" style="color:#9d6507; font-size:22px;">+</span></summary><p style="font-size:15px; line-height:1.65; color:#5a6b7b; margin:0 0 20px;">You work directly with senior engineers rather than account managers, we onboard in weeks rather than months, and we deliver enterprise-quality outcomes at meaningfully lower cost than tier-1 consultancies. Our US registration and enterprise partnerships give you the due-diligence trail procurement needs.</p></details></div></div></section>
 <section class="sec" style="background:#e7f3ec; padding:80px 40px;">
     <div style="max-width:1240px; margin:0 auto;">
       <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#1e6b4f; margin-bottom:14px;">// TESTIMONIALS</div>
       <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 40px;">What our clients say about working with BBT</h2>
       <div class="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
         <figure style="background:#fff; border:1px solid #cfe6d8; border-radius:16px; padding:28px; margin:0;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#1e6b4f; margin-bottom:14px;">CLOUD MIGRATION</div><blockquote style="font-family:'Bricolage Grotesque',sans-serif; font-size:17px; line-height:1.45; font-weight:500; color:#0d1b2a; margin:0 0 18px;">"Big Binary Tech moved our entire platform to AWS without a single hour of downtime. Infrastructure costs dropped 40% almost immediately."</blockquote><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#1e6b4f; background:#e7f3ec; display:inline-block; padding:5px 10px; border-radius:6px; margin-bottom:14px;">40% cost reduction · zero downtime</div><figcaption style="font-size:13px; color:#5a6b7b;"><strong style="color:#1c2b3a;">AK</strong>, Operations Director · E-Commerce, London, UK</figcaption></figure>
-        <figure style="background:#fff; border:1px solid #cfe6d8; border-radius:16px; padding:28px; margin:0;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#1e6b4f; margin-bottom:14px;">BUSINESS DIGITIZATION</div><blockquote style="font-family:'Bricolage Grotesque',sans-serif; font-size:17px; line-height:1.45; font-weight:500; color:#0d1b2a; margin:0 0 18px;">"Document processing that used to take two weeks now takes two hours. The error rate practically vanished and compliance is automatic."</blockquote><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#1e6b4f; background:#e7f3ec; display:inline-block; padding:5px 10px; border-radius:6px; margin-bottom:14px;">99% faster · 85% fewer errors</div><figcaption style="font-size:13px; color:#5a6b7b;"><strong style="color:#1c2b3a;">SM</strong>, Managing Partner · Professional Services, Karachi</figcaption></figure>
+        <figure style="background:#fff; border:1px solid #cfe6d8; border-radius:16px; padding:28px; margin:0;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#1e6b4f; margin-bottom:14px;">BUSINESS DIGITIZATION</div><blockquote style="font-family:'Bricolage Grotesque',sans-serif; font-size:17px; line-height:1.45; font-weight:500; color:#0d1b2a; margin:0 0 18px;">"Document processing that used to take two weeks now takes two hours. The error rate practically vanished and compliance is automatic."</blockquote><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#1e6b4f; background:#e7f3ec; display:inline-block; padding:5px 10px; border-radius:6px; margin-bottom:14px;">99% faster · 85% fewer errors</div><figcaption style="font-size:13px; color:#5a6b7b;"><strong style="color:#1c2b3a;">SM</strong>, Managing Partner · Professional Services</figcaption></figure>
         <figure style="background:#fff; border:1px solid #cfe6d8; border-radius:16px; padding:28px; margin:0;"><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#1e6b4f; margin-bottom:14px;">ODOO ERP</div><blockquote style="font-family:'Bricolage Grotesque',sans-serif; font-size:17px; line-height:1.45; font-weight:500; color:#0d1b2a; margin:0 0 18px;">"Their team integrated Odoo with ZATCA flawlessly. Real-time VAT reporting and faster invoicing transformed our finance operations."</blockquote><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#1e6b4f; background:#e7f3ec; display:inline-block; padding:5px 10px; border-radius:6px; margin-bottom:14px;">100% compliance · real-time VAT</div><figcaption style="font-size:13px; color:#5a6b7b;"><strong style="color:#1c2b3a;">RF</strong>, Finance Manager · Manufacturing, Riyadh, KSA</figcaption></figure>
       </div>
     </div>
@@ -345,16 +344,187 @@
 
   <!-- CTA -->
   <section class="sec" style="background:#0d1b2a; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// WHAT IS HERE</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#e7edf3; margin:0 0 16px; max-width:760px;">The library, in numbers</h2><div class="bb-statg bb-on-dark bb-statg-4"><div><div class="n">60+</div><div class="l">Projects delivered</div></div><div><div class="n">25+</div><div class="l">Free guides</div></div><div><div class="n">100+</div><div class="l">Blog articles</div></div><div><div class="n">32</div><div class="l">FAQ answers</div></div></div></div></section>
-<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#d98c0a; margin-bottom:14px;">// CREDENTIALS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Registered, partnered, and checkable</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Every registration and partnership below is a matter of public record, so you can verify each one without asking us.</p><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#93a2b0; margin-bottom:12px;">REGISTRATIONS AND PARTNERSHIPS</div><ul class="bb-chips"><li>PSEB Registered</li><li>P@SHA Member</li><li>NAVTTC</li><li>PSDA</li><li>Odoo Ready Partner</li><li>Cisco NetAcademy</li><li>Hack The Box</li><li>FAST SOFTEC</li><li>UMT</li></ul><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/about-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#d98c0a; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Read About the Team &rarr;</a></div></div></section>
-<section class="sec" style="background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:96px 40px; text-align:center;">
+<section class="sec" style="background:#ffffff; padding:88px 40px;"><div style="max-width:1240px; margin:0 auto;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d6507; margin-bottom:14px;">// CREDENTIALS</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#0d1b2a; margin:0 0 16px; max-width:760px;">Registered, partnered, and checkable</h2><p style="font-size:16.5px; line-height:1.65; color:#5a6b7b; max-width:760px; margin:0 0 18px;">Every registration and partnership below is a matter of public record, so you can verify each one without asking us.</p><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#68727c; margin-bottom:12px;">REGISTRATIONS AND PARTNERSHIPS</div><ul class="bb-chips"><li>US Registered</li><li>Odoo Partner</li><li>Odoo Ready Partner</li><li>Cisco NetAcademy</li><li>Hack The Box</li><li>FAST SOFTEC</li><li>UMT</li></ul><div style="display:flex; flex-wrap:wrap; gap:14px 26px; margin-top:30px;"><a href="/about-us/" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600; color:#9d6507; border-bottom:1px solid rgba(217,140,10,.3); padding-bottom:3px;">Read About the Team &rarr;</a></div></div></section>
+<section class="sec" style="background:#0d1b2a; color:#e7edf3; padding:88px 40px;"><div style="max-width:900px; margin:0 auto; text-align:center;"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; color:#f5a623; margin-bottom:14px;">// STAY CURRENT</div><h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:38px; font-weight:700; letter-spacing:-.02em; color:#e7edf3; margin:0 0 16px;">Get New Resources Before Everyone Else</h2><p style="font-size:16.5px; line-height:1.65; color:#9fb2c4; max-width:640px; margin:0 auto 28px;">One email a month: new guides, case studies, and the GCC compliance changes worth knowing about. No filler, unsubscribe any time.</p><form class="bb-news" action="/contact-us/?service=resources-newsletter" method="post" data-ga="newsletter_signup"><label for="res-news" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Email address</label><input id="res-news" name="email" type="email" required placeholder="you@company.com"><button type="submit">Subscribe &rarr;</button></form><p style="font-size:12.5px; color:#7d94ab; margin:16px 0 0;">Roughly one email a month. We never share your address.</p></div></section><section class="sec" style="background:linear-gradient(160deg,#0d1b2a,#13294b); color:#e7edf3; padding:96px 40px; text-align:center;">
     <div style="max-width:720px; margin:0 auto;">
       <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.12em; color:#f5a623; margin-bottom:20px;">// PUT THE INSIGHTS TO WORK</div>
       <h2 class="h2" style="font-family:'Bricolage Grotesque',sans-serif; font-size:42px; font-weight:700; letter-spacing:-.025em; line-height:1.08; margin:0 0 18px;">Ready to write your own success story?</h2>
       <p style="font-size:17px; line-height:1.6; color:#9fb2c4; margin:0 0 32px;">Book a free discovery call and we will map the fastest path from where you are to where you want to be.</p>
-      <a href="/contact-us/" style="display:inline-block; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px 32px; border-radius:12px;">Book your free consultation →</a>
+      <a href="/contact-us/?service=resources" style="display:inline-block; background:#f5a623; color:#0d1b2a; font-weight:700; font-size:16px; padding:16px 32px; border-radius:12px;">Book your free consultation →</a>
     </div>
   </section>
-  </main>
+  
+  
+
+  
+
+  <!-- BBT-SCHEMA-START (generated) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does Big Binary Tech offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI automation, website development, Odoo ERP implementation, custom software development, POS systems, and social media marketing. Most engagements combine several of these, delivered under one contract with one point of accountability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a typical project cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our Starter package begins at $3,500, Growth at $15,000, and enterprise transformations are custom-quoted. Outsourcing starts at $2,500 per month per specialist. Every engagement opens with a free 30-minute assessment so you see a fixed number before committing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a project take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An assessment and roadmap takes 2 to 3 weeks. Single system modernization runs 6 to 10 weeks. Full business digitization takes 3 to 6 months, and enterprise transformation 6 to 12 months. We deliver in phases so you see value every 4 to 6 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will we lose data during migration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We use validated migration scripts, parallel running environments, and rollback plans. Every data point is verified before cutover, and for critical systems we run parallel operations for 2 to 4 weeks before switching over completely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you work with our existing legacy ERP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We build API layers and middleware where direct integration is not possible. We have integrated with SAP, Oracle, Microsoft Dynamics, custom-built systems, and decades-old databases without replacing what already works."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What cloud platform do you recommend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your needs: AWS for flexibility and scale, Azure for Microsoft ecosystem integration, GCP for AI and analytics workloads. For GCC clients we factor data residency into the region and availability zone choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide support after launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All projects include post-launch support as standard, covering bug fixes, performance tuning, and minor enhancements. After that you can move to a monthly care plan or fully managed services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you handle GCC compliance like ZATCA and FTA VAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We integrate Odoo and custom systems with ZATCA APIs for Saudi e-invoicing, and configure FTA-compliant tax invoices and VAT returns for the UAE. Arabic localization and RTL interface support are included."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is our data stored for GCC projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can deploy on UAE-based regions (AWS Dubai, Azure UAE North) or Saudi-based regions (AWS Riyadh, STC Cloud) so sensitive data never leaves the jurisdiction. Data residency clauses go into the contract."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does your outsourcing model work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four models: staff augmentation from $2,500 per month, a dedicated development team from $12,000 per month, managed project delivery with fixed-price or T&M options, and a full offshore development center. You can scale up or down monthly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the code you write?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do, from day one. Every contract includes explicit IP assignment. We never reuse client-specific code on other projects, and source code escrow is available for enterprise engagements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Big Binary Tech different from a larger consultancy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You work directly with senior engineers rather than account managers, we onboard in weeks rather than months, and we deliver enterprise-quality outcomes at meaningfully lower cost than tier-1 consultancies. Our US registration and enterprise partnerships give you the due-diligence trail procurement needs."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://bigbinarytech.com/#organization",
+  "name": "Big Binary Tech",
+  "url": "https://bigbinarytech.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://bigbinarytech.com/wp-content/uploads/2026/07/redesign-bbt-logo.png"
+  },
+  "description": "Odoo ERP implementation, AI automation, custom software, web development, POS systems and social media marketing for businesses in the GCC, USA and UK.",
+  "foundingDate": "2015",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "30 N Gould St # 48715",
+    "addressLocality": "Sheridan",
+    "addressRegion": "WY",
+    "postalCode": "82801",
+    "addressCountry": "US"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+92-326-8880101",
+      "contactType": "technical support",
+      "email": "business@bigbinarytech.com",
+      "areaServed": [
+        "AE",
+        "SA",
+        "GB",
+        "US"
+      ],
+      "availableLanguage": [
+        "English",
+        "Urdu",
+        "Arabic"
+      ]
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-307-443-4365",
+      "contactType": "sales",
+      "email": "business@bigbinarytech.com",
+      "areaServed": [
+        "US",
+        "GB"
+      ],
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/big-binary-tech",
+    "https://github.com/bigbinarytech",
+    "https://www.instagram.com/bigbinarytech"
+  ]
+}
+</script>
+  <!-- BBT-SCHEMA-END -->
+</main>
 
   <footer class="bbfoot" style="font-family:'IBM Plex Sans',sans-serif; background:#0d1b2a; color:#e7edf3; position:relative; overflow:hidden;">
   <div aria-hidden="true" style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#f5a623,#ffc65c,#1e6b4f);"></div>
@@ -364,7 +534,7 @@
     <div class="bbfoot-grid" style="display:grid; grid-template-columns:1.7fr 1fr 1fr 1fr; gap:32px;">
       <div class="bbfoot-brand">
         <img src="https://bigbinarytech.com/wp-content/uploads/2026/07/redesign-bbt-logo-light-v2.png" alt="Big Binary Tech" style="height:44px; width:auto; display:block; margin-bottom:20px;">
-        <p style="font-size:14px; line-height:1.7; color:#8ea0b2; max-width:290px; margin:0 0 22px;">A Lahore based, PSEB registered software house. We build ERP, AI automation, POS and custom software for businesses in Pakistan and around the world.</p>
+        <p style="font-size:14px; line-height:1.7; color:#8ea0b2; max-width:290px; margin:0 0 22px;">A US registered software house headquartered in Sheridan, Wyoming. We build ERP, AI automation, POS and custom software for businesses around the world.</p>
         <div style="display:flex; gap:10px;">
           <a class="bbfoot-soc" href="https://www.linkedin.com/company/big-binary-tech" rel="noopener" target="_blank" aria-label="LinkedIn" style="width:40px; height:40px; border-radius:11px; border:1px solid #24374f; background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; color:#9fb2c4;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9V9z"/></svg></a>
           <a class="bbfoot-soc" href="https://www.instagram.com/bigbinarytech" rel="noopener" target="_blank" aria-label="Instagram" style="width:40px; height:40px; border-radius:11px; border:1px solid #24374f; background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; color:#9fb2c4;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 5.68a4.16 4.16 0 1 0 0 8.32 4.16 4.16 0 0 0 0-8.32zm0 6.86a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4zm5.3-7.02a.97.97 0 1 1-1.94 0 .97.97 0 0 1 1.94 0z"/></svg></a>
@@ -372,7 +542,7 @@
         </div>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">SERVICES</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#6d859c; margin-bottom:16px;">SERVICES</div>
         <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
           <a href="/ai-automation/">AI &amp; Automation</a>
           <a href="/custom-software-development/">Custom Software Development</a>
@@ -383,37 +553,37 @@
         </div>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">SOLUTIONS</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#6d859c; margin-bottom:16px;">SOLUTIONS</div>
         <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
           <a href="/enterprise-odoo/">Enterprise &amp; Odoo</a>
           <a href="/retail-pos/">Retail &amp; POS</a>
           <a href="/digital-transformation/">Digital Transformation</a>
-          <a href="/industries/">Industries</a>
         </div>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#5f7488; margin-bottom:16px;">COMPANY</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:#6d859c; margin-bottom:16px;">COMPANY</div>
         <div style="display:flex; flex-direction:column; gap:11px; font-size:14px; color:#9fb2c4;">
           <a href="/about-us/">About Big Binary Tech</a>
+          <a href="/industries/">Industries</a>
           <a href="/case-studies/">Selected Work</a>
           <a href="/resources/">Resources</a>
-          <a href="/careers/">Careers</a>
+          <a href="/careers/">Careers</a><a href="/outsourcing/">Outsourcing</a>
           <a href="/pricing/">Pricing</a>
-          <a href="/contact-us/">Contact</a>
+          <a href="/contact-us/?service=resources">Contact</a>
         </div>
       </div>
     </div>
 
     <div style="margin-top:56px; padding:22px 0; border-top:1px solid rgba(255,255,255,.1); display:flex; align-items:center; gap:20px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7d8ea0;">
-      <span style="display:inline-flex; align-items:center; gap:8px;"><span aria-hidden="true" style="width:8px; height:8px; border-radius:50%; background:#1e6b4f;"></span>Head office: Lahore, Pakistan</span>
-      <span style="color:#42546a;">/</span>
+      <span style="display:inline-flex; align-items:center; gap:8px;"><span aria-hidden="true" style="width:8px; height:8px; border-radius:50%; background:#1e6b4f;"></span>Head office: Sheridan, Wyoming, USA</span>
+      <span style="color:#6884a7;">/</span>
       <span>Serving clients worldwide</span>
-      <span style="color:#42546a;">/</span>
-      <span>Odoo Partner · PSEB · P@SHA</span>
+      <span style="color:#6884a7;">/</span>
+      <span>Odoo Partner · Cisco NetAcademy · AWS</span>
     </div>
 
     <div class="bbfoot-bottom" style="padding:18px 0 26px; border-top:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
-      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5f7488;">© 2026 Big Binary Tech. All rights reserved.</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#6d859c;">© 2026 Big Binary Tech. All rights reserved.</span>
       <div style="display:flex; gap:22px; font-size:12.5px; color:#7d8ea0;">
         <a href="/privacy-policy/">Privacy Policy</a>
         <a href="/terms-of-service/">Terms of Service</a>
@@ -422,5 +592,142 @@
   </div>
 </footer>
 </div>
+
+<!-- BBT-GA4-START (generated) -->
+<script>
+/* GA4 hooks the specs ask for. Pushes to dataLayer, which GTM/GA4 picks up if
+   present and which is a harmless no-op if it is not. Covers CTA clicks (the
+   ?service= value identifies the package or page), form submits and newsletter
+   signups. FAQ-specific events live in the FAQ page's own script. */
+(function () {
+  function push(o) { try { (window.dataLayer = window.dataLayer || []).push(o); } catch (e) {} }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href*="/contact-us/?service="]');
+    if (!a) return;
+    var q = a.getAttribute('href').split('?')[1] || '';
+    var p = {};
+    q.split('&').forEach(function (kv) { var b = kv.split('='); if (b[0]) p[b[0]] = decodeURIComponent(b[1] || ''); });
+    push({ event: 'cta_click', cta_service: p.service || '', cta_offer: p.offer || '',
+           cta_label: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60),
+           page_path: location.pathname });
+  });
+  document.addEventListener('submit', function (e) {
+    var f = e.target.closest('form[data-ga]');
+    if (f) push({ event: f.getAttribute('data-ga'), page_path: location.pathname });
+  });
+})();
+</script>
+<!-- BBT-GA4-END -->
+
+  <script>
+    /* Shared submit path for the secondary forms (FAQ question, newsletter).
+       Posts to CF7 form 704 exactly like the contact page, so submissions are
+       stored by Flamingo and emailed, instead of being lost in a GET redirect. */
+    (function () {
+      var INBOX = 'business@bigbinarytech.com';
+      var ENDPOINT = '/wp-json/contact-form-7/v1/contact-forms/704/feedback';
+      function val(id) { var e = document.getElementById(id); return e && e.value ? e.value.trim() : ''; }
+      function note(form, colour, msg) {
+        var n = form.querySelector('.bb-formnote');
+        if (!n) {
+          n = document.createElement('p');
+          n.className = 'bb-formnote';
+          n.style.cssText = 'grid-column:1/-1; margin:10px 0 0; font-size:14px; line-height:1.5;';
+          form.appendChild(n);
+        }
+        n.style.color = colour;
+        n.textContent = msg;
+      }
+      function send(form, subject, name, email, body, okMsg) {
+        var btn = form.querySelector('button[type=submit]');
+        var label = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+        note(form, '#42546a', 'Sending...');
+        var d = new FormData();
+        d.append('_wpcf7', '704');
+        d.append('_wpcf7_locale', 'en_US');
+        d.append('_wpcf7_unit_tag', 'wpcf7-f704-o1');
+        d.append('_wpcf7_container_post', '0');
+        d.append('your-name', name);
+        d.append('your-email', email);
+        d.append('your-subject', subject);
+        d.append('your-message', body);
+        fetch(ENDPOINT, { method: 'POST', body: d })
+          .then(function (r) { return r.json(); })
+          .then(function (res) {
+            if (res && res.status === 'mail_sent') { form.reset(); note(form, '#1e6b4f', okMsg); }
+            else { throw new Error('cf7'); }
+          })
+          .catch(function () {
+            note(form, '#42546a', 'We could not send that automatically, opening your email app instead.');
+            window.location.href = 'mailto:' + INBOX + '?subject=' + encodeURIComponent(subject) +
+              '&body=' + encodeURIComponent(body);
+          })
+          .then(function () { if (btn) { btn.disabled = false; btn.textContent = label; } });
+      }
+
+      /* guard-armed */
+      [].slice.call(document.querySelectorAll('form#faq-ask, form.bb-news'))
+        .forEach(function (f) { if (window.bbGuard) window.bbGuard.arm(f); });
+      var ask = document.getElementById('faq-ask');
+      if (ask) {
+        ask.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (!ask.checkValidity()) { ask.reportValidity(); return; }
+          if (window.bbGuard && !window.bbGuard.clean(ask)) { ask.reset(); return; }
+          send(ask, 'FAQ question: ' + (val('fq-topic') || 'General'),
+               val('fq-name'), val('fq-email'),
+               ['Company: ' + (val('fq-company') || 'not provided'),
+                'Location: ' + (val('fq-location') || 'not provided'),
+                'Topic: ' + (val('fq-topic') || 'not provided'),
+                '', 'Question:', val('fq-question'),
+                '', 'Submitted from: ' + window.location.pathname].join('\n'),
+               'Thank you. Your question has reached us and we will reply within one business day.');
+        });
+      }
+
+      var news = document.querySelector('form.bb-news');
+      if (news) {
+        news.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (!news.checkValidity()) { news.reportValidity(); return; }
+          if (window.bbGuard && !window.bbGuard.clean(news)) { news.reset(); return; }
+          var email = (news.querySelector('input[type=email]') || {}).value || '';
+          send(news, 'Newsletter signup', email.split('@')[0], email,
+               ['Newsletter subscription request.',
+                'Email: ' + email,
+                'Submitted from: ' + window.location.pathname].join('\n'),
+               'You are on the list. New resources will land in your inbox.');
+        });
+      }
+    })();
+  </script>
+  <script>
+    /* Spam guard shared by every form on the site. A hidden field no human can
+       see, plus a floor on how fast the form can plausibly be filled in. */
+    window.bbGuard = (function () {
+      var loaded = Date.now();
+      function arm(form) {
+        if (!form || form.querySelector('.bb-hp')) return;
+        var wrap = document.createElement('div');
+        wrap.className = 'bb-hp';
+        wrap.setAttribute('aria-hidden', 'true');
+        wrap.style.cssText = 'position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden;';
+        wrap.innerHTML = '<label>Leave this field empty' +
+          '<input type="text" name="bb_website" tabindex="-1" autocomplete="off"></label>';
+        form.appendChild(wrap);
+      }
+      function clean(form) {
+        var hp = form.querySelector('input[name=bb_website]');
+        if (hp && hp.value) return false;               // only a bot fills it
+        if (Date.now() - loaded < 2500) return false;   // filled faster than a human can read
+        return true;
+      }
+      var api = { arm: arm, clean: clean };
+      /* the guard is defined last, so it arms every form itself */
+      [].slice.call(document.querySelectorAll('form')).forEach(arm);
+      return api;
+    })();
+  </script>
 </body>
 </html>

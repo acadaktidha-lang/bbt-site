@@ -25,10 +25,12 @@ to `/wp-json/wp/v2/pages/<id>` as `meta._elementor_data`, then
 | 482 | `home` | `project/build/home.html` | Home |
 | 465 | `industries` | `project/build/industries.html` | Industries |
 | 553 | `odoo-erp` | `project/build/odoo-erp.html` | Odoo & ERP Services |
+| 720 | `outsourcing` | `project/build/outsourcing.html` | Outsourcing |
 | 715 | `pos-systems` | `project/build/pos-systems.html` | POS Systems |
 | 472 | `pricing` | `project/build/pricing.html` | Pricing |
 | 3 | `privacy-policy` | `project/build/privacy-policy.html` | Privacy Policy |
 | 466 | `resources` | `project/build/resources.html` | Resources |
+| 721 | `videos` (child of `resources`, lives at `/resources/videos/`) | `project/build/resources-videos.html` | Video Tutorials & Walkthroughs |
 | 467 | `retail-pos` | `project/build/retail-pos.html` | Retail & POS Solutions |
 | 470 | `services` | `project/build/services.html` | Services |
 | 468 | `social-media-marketing` | `project/build/social-media-marketing.html` | Social Media Marketing |
@@ -36,13 +38,35 @@ to `/wp-json/wp/v2/pages/<id>` as `meta._elementor_data`, then
 | 703 | `terms-of-service` | `project/build/terms-of-service.html` | Terms of Service |
 | 552 | `web-development` | `project/build/web-development.html` | Web Development |
 
-24 published pages, 24 build files. `faqs` (716) and `pos-systems` (715) were
-created and published on 2026-08-01, so every page now has a live URL behind it.
+26 published pages, 26 build files. `faqs` (716) and `pos-systems` (715) were
+created and published on 2026-08-01; `outsourcing` (720) and `videos` (721)
+followed, so every page now has a live URL behind it.
 
-The whole set was last published on 2026-08-01: all 24 pages written to
-`meta._elementor_data`, verified by re-read, Elementor cache flushed. The live
-section spine of every page, heading text and computed background colour in order,
-was diffed against the local build and matched exactly.
+Note the build filename and the live slug differ for one page: `resources-videos.html`
+publishes to slug `videos` under parent `resources`, i.e. `/resources/videos/`.
+
+The whole set was last published on 2026-08-07: all 26 pages written to
+`meta._elementor_data`, verified by re-read, Elementor cache flushed. Every live
+URL was then re-fetched and checked for HTTP 200, exactly one `<header>` and one
+`<footer>` (no theme chrome doubling), valid JSON-LD, and the Wyoming postal
+address present in the structured data.
+
+## Page content is not the only place copy lives
+
+The 2026-08-07 Pakistan-to-Wyoming sweep found that pushing `_elementor_data`
+leaves **Yoast SEO fields untouched**. `/careers/` and `/enterprise-odoo/` still
+served "Pakistan" in the `<title>` and `<meta name="description">` after all 26
+pages had been republished and the cache flushed.
+
+Those fields are not in `meta` on `/wp/v2/pages/<id>` — they are not registered
+for REST. Read and write them through the Yoast bulk editor instead:
+
+- `GET  /wp-json/yoast/v1/bulk_editor/posts?content_type=page&per_page=100`
+- `POST /wp-json/yoast/v1/bulk_editor/update_search` with
+  `{"items":[{"id":<id>,"seo_title":"...","meta_description":"..."}]}`
+
+After any sitewide copy change, sweep `focus_keyphrase`, `seo_title`,
+`meta_description`, `social_title` and `social_description` across every page.
 
 ## Slugs that changed
 
