@@ -7,9 +7,10 @@ documented, logged, and traceable from the start.
 
 ## Conventions
 
-- **Work item hierarchy:** Epic contains Issues. An Issue contains Tasks only
-  where a task adds real detail beyond the story. The tier written below as
-  "User Story" is created on the board as an **Issue** (see the process note).
+- **Work item hierarchy:** Epic contains User Stories. A User Story contains
+  Tasks only where a task adds real detail beyond the story. The Release 1 items
+  were originally created as Issues under the Basic process and were migrated to
+  User Story on 9 August 2026 (see the process note).
 - **Traceability:** every item cites the exact commit hashes it maps to, so the
   board and the git history stay in lock-step. This is the audit trail.
 - **Assignment:** every item is assigned to **You** and, once closed, its
@@ -28,22 +29,52 @@ documented, logged, and traceable from the start.
   levels are now Epics, Features, Stories and Tasks, the middle tier type is
   **User Story**, and the states are New, Active, Resolved and Closed. Agile does
   have an Acceptance Criteria field, so Release 2 items carry their acceptance
-  line there rather than inside the description. Items 1 to 32 were not migrated:
-  they keep the Issue type and the now invalid state string "Done". The project
-  property string still reads "Scrum", which is wrong in both processes and
-  should be ignored. The one constant is that Azure DevOps refuses to create a
-  work item directly in a closed state, so every item is created in the initial
-  state and then transitioned.
+  line there rather than inside the description. **Items 1 to 32 were migrated on
+  9 August 2026**: the 24 Issues became User Stories and every item moved from
+  the stale state string "Done" to "Closed". Changing System.WorkItemType over
+  the REST API preserves the parent link, the description and the history. The
+  project property string still reads "Scrum", which is wrong in both processes
+  and should be ignored. The one constant is that Azure DevOps refuses to create
+  a work item directly in a closed state, so every item is created in the initial
+  state and then transitioned. Two further API notes: System.Parent is returned
+  as a field but is **not settable** as one, so a parent must be added as a
+  System.LinkTypes.Hierarchy-Reverse relation, and the wit $batch endpoint is not
+  available on this project, so bulk edits have to be issued one request each.
 
 ## Total scope
 
-Release 1: 8 Epics and 24 Issues, mapping the first 49 commits. All Done.
+Release 1: 8 Epics and 24 User Stories, mapping the first 49 commits.
 Release 2: 8 Epics and 20 User Stories, mapping the remaining 24 commits.
+60 items in total, all Closed.
 
 Together these cover every non-merge commit on master. The three merge commits,
 34e15b2, 89c5cae and e33972a, carry no changes of their own and get no item.
 
-## Board status: Release 1 created, Release 2 pending creation
+## Board status: created
+
+All 60 items exist on the bigbinarytech.com board, assigned to Ghazanfar Sheikh,
+every one Closed with Closed By set. Verified 9 August 2026: 16 Epics, 44 User
+Stories, no orphaned story, nothing left in a stale state.
+
+Release 2 work item ids:
+
+| Item | Id | Item | Id | Item | Id |
+| --- | --- | --- | --- | --- | --- |
+| EPIC-9 | 78 | EPIC-13 | 82 | US-13.1 | 102 |
+| EPIC-10 | 79 | EPIC-14 | 83 | US-13.2 | 103 |
+| EPIC-11 | 80 | EPIC-15 | 84 | US-13.3 | 104 |
+| EPIC-12 | 81 | EPIC-16 | 85 | US-14.1 | 105 |
+| US-9.1 | 86 | US-10.3 | 97 | US-14.2 | 106 |
+| US-9.2 | 87 | US-10.4 | 98 | US-15.1 | 113 |
+| US-9.3 | 88 | US-11.1 | 99 | US-15.2 | 115 |
+| US-10.1 | 95 | US-11.2 | 100 | US-15.3 | 117 |
+| US-10.2 | 96 | US-12.1 | 101 | US-15.4 | 119 |
+| US-16.1 | 121 | | | | |
+
+Every Release 2 User Story carries its commits as real Azure DevOps commit
+links, not just hashes in prose, so each item opens straight into its diffs.
+Acceptance lines live in the Acceptance Criteria field, and each description
+follows As, I want, So that, then What, How and Why.
 
 All 32 items exist on the bigbinarytech.com board, assigned to Ghazanfar Sheikh,
 with Closed By set on every Done item.
@@ -51,8 +82,9 @@ with Closed By set on every Done item.
 - Work items 1 to 8 are EPIC-1 through EPIC-8, in that order. EPIC-1 reuses the
   pre-existing work item 1, which was retitled from "BigBinaryTech Website
   Layout".
-- Work items 9 to 32 are the 24 Issues, in seed file order from US-1.1 to
-  US-8.2, each parented to its Epic.
+- Work items 9 to 32 are the 24 User Stories, in seed file order from US-1.1 to
+  US-8.2, each parented to its Epic. They were Issues until the 9 August 2026
+  migration.
 - Every item is Done. US-7.4 (work item 30) was the last one open, and closed
   when its work landed as commit 83aebc1.
 
