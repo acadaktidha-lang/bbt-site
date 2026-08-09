@@ -16,9 +16,11 @@ documented, logged, and traceable from the start.
 - **Assignment:** every item is assigned to **You** and, once closed, its
   Completed By (Closed By) is **You**. "You" resolves to the signed-in Azure
   DevOps account when the items are created.
-- **State:** this process has three states, **To Do**, **Doing** and **Done**.
-  Finished history is **Done**. Work still in progress is **Doing**. Future work
-  is **To Do**. There is no New/Active/Closed triad in this process.
+- **State:** the Agile process has four states, **New**, **Active**, **Resolved**
+  and **Closed**, plus a hidden **Removed**. Finished history is **Closed**. Work
+  in progress is **Active** or **Resolved**. Future work is **New**. The old
+  To Do, Doing and Done triad belonged to the Basic process and no longer exists
+  anywhere on this project, including on the board columns.
 - **Writing standard:** no em dashes and no en dashes anywhere, in titles,
   descriptions, comments, or acceptance criteria. Plain sentences only. This
   standard is already part of the project (see US-3.4).
@@ -40,6 +42,18 @@ documented, logged, and traceable from the start.
   as a field but is **not settable** as one, so a parent must be added as a
   System.LinkTypes.Hierarchy-Reverse relation, and the wit $batch endpoint is not
   available on this project, so bulk edits have to be issued one request each.
+- **Board configuration repair, 9 August 2026:** switching the process migrated
+  the work item types but left the team's Kanban boards behind. The Stories board
+  still carried the Basic columns To Do, Doing and Done with **no state mapping
+  at all**, and the Epics board mapped its columns to the three dead Basic
+  states, so both boards refused to render and showed only "The column
+  configurations are not valid. The board cannot be displayed." Only the Features
+  board was correct, because Azure DevOps generated it after the switch. All
+  three boards now use New, Active, Resolved and Closed, matching the process,
+  and each reports isValid. The team also had the Epics backlog level switched
+  off, which hid all 16 Epics from the UI, so that was turned back on. This is
+  team configuration rather than work item data: it lives in Azure DevOps only
+  and is recorded here for the audit trail, not stored in this repository.
 
 ## Total scope
 
