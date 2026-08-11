@@ -1425,6 +1425,46 @@ adopted in full.
   with its eyebrow, tags balanced, JSON-LD parsing, no horizontal overflow risk
   since every grid uses the page's existing responsive classes.
 
+### US-17.12: Close the last gaps on the POS Systems page
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 337258f
+- What: three fixes, none of them visible copy. This page was built from this
+  handoff in US-15.1 and is the closest match of any page in the sweep.
+- Already correct, and left alone: the hero and its trust bar, all six problem
+  cards, the What We Offer intro with three pills and the six-node flow, the
+  Gulf spotlight with all three stat boxes, all three sub-service blocks with
+  outcome lines, bodies and Gulf, USA and UK market notes, all five process
+  steps, the stats bar, and all eight FAQs, which are verbatim down to the
+  dollar and week ranges. The meta description also already matched exactly.
+- The meta title read "POS Systems, Big Binary Tech" and is now the handoff's
+  "Custom POS System Development Company | Big Binary Tech".
+- The two audit CTAs, in the hero and the bottom banner, lacked the offer
+  parameter the handoff specifies. Both now carry offer=audit, which the GA4
+  hook added in US-15.1 reads.
+- Schema: the handoff asks for three types and the page had one. Service and
+  BreadcrumbList now sit alongside the existing FAQPage, all four blocks parse,
+  and the Home, Services, POS Systems trail is in structured data. The Service
+  block references the existing organization node by id rather than repeating
+  it. This is the first page in the sweep to carry Service schema, and the same
+  gap exists on the other service pages.
+- How: no element removed, every style attribute unchanged, and the only markup
+  added is the two schema scripts. Structure unchanged at one h1, 10 h2, 11
+  sections, 9 details, FAQ schema and accordion in sync at eight.
+- Not changed: the bottom banner's secondary button reads "Talk to an Engineer"
+  where the handoff wants "Download Our POS Buying Guide" pointing at
+  /resources/pos-buying-guide/. That page does not exist and the handoff itself
+  says the PDF must be created first, so a working button was kept over a 404.
+  This is the third page whose spec asks for a lead magnet that has not been
+  written, after ai-automation and custom-software-development.
+- Not changed: the testimonials section still states that client quotes are
+  being collected. The handoff is explicit that a quote must carry a real name
+  and that no placeholder name may be published.
+- Also verified: the handoff's menu instruction, replacing Digital
+  Transformation with POS Systems as the last item in the Services mega menu, is
+  already applied sitewide.
+
 ---
 
 ## Going forward
