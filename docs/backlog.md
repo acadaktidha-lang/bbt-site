@@ -954,6 +954,50 @@ adopted in full.
   is. The same heading is also live on about-us.html, so that page needs the same
   change when its turn comes or the two will drift.
 
+### US-17.2: Reconcile the About page to its content document
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 942fe07
+- What: nine text edits bringing about-us.html back to the wording of its
+  content document, plus one Pakistan reference the US-16.1 sweep missed.
+- How: text nodes only. Every style attribute and every tag on the changed lines
+  is identical before and after, verified by extracting them from the patch and
+  comparing. Structure after the edit is unchanged: one h1, 9 h2, 10 sections,
+  7 details, both JSON-LD blocks parse.
+- The drift that was corrected: the two story paragraphs had lost the spec's
+  serial commas; core value 02 had dropped the spec's quotation marks around
+  "good enough" and read "better on every single project" for "better, every
+  single project"; core value 03 had been flattened from the spec's question,
+  "Before anything else, we ask: is this actually helping our client?", into a
+  statement; Global Reach read "more than 50 countries", "you are" and "custom
+  software" where the spec has "50+ countries", "you're" and "custom software
+  solutions"; and the testimonials line read "Here is what businesses" for
+  "Here's what businesses".
+- The missed Pakistan reference: the hero stat strip read "4 / Markets: PK, GCC,
+  US, UK". US-16.1 swept for place names, regulators and currency codes, so a
+  bare ISO country code sitting inside a stat label passed through it. Now
+  "3 / Markets: GCC, US, UK". No other build file contains that string.
+- Carried from US-17.1: the Trusted By section is retitled "Recognized by
+  Industry Leaders" with the spec's body line. This page's content document does
+  not describe that section, but home and About carried the same heading, so
+  changing one and not the other would have drifted them.
+- Why: the page was structurally complete against its spec. What had gone was
+  the exact wording, in small edits that individually look like tidying and
+  together move the copy away from what the client signed off.
+- Acceptance: all nine spec sections present in the spec's order and wording,
+  except the conflicts recorded below.
+- Spec lines deliberately not applied, per the EPIC-17 standing decision: FAQ 6
+  answers "We're based in Pakistan and serve clients across 50+ countries", and
+  the final CTA gives "Or call us at 0326 8880101" as the only number. The page
+  keeps Sheridan, Wyoming and leads with +1 307-443-4365, with the +92 line
+  retained as the secondary contact set up in US-16.1.
+- Open follow up, not actioned: the spec's testimonials section calls for four
+  cards and the page carries three, because US-16.1 removed the two located in
+  Pakistan rather than relocate them. The spec supplies no copy for any of the
+  four, so there is nothing to restore without new client material. The FAST,
+  UMT, LIST and WAC badges noted in US-17.1 are on this page too.
+
 ---
 
 ## Going forward
