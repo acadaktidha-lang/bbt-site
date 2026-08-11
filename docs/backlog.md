@@ -1507,6 +1507,47 @@ adopted in full.
   five rows and the page's stat grid shows four, missing "Downtime, Zero". The
   grid is a fixed four column layout, so a fifth cell reflows it.
 
+### US-17.14: Reconcile the Retail and POS page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 2c216ba
+- What: three changes. One div added, nothing removed, no href changed, no new
+  style string. Structure unchanged: one h1, 15 h2, 16 sections, 9 details, FAQ
+  schema and accordion in sync at eight.
+- The hero had no tagline and now carries the spec's "Retail Technology" above
+  the H1, matching the eight eyebrows already on the page.
+- Defect fixed: the Related Solutions section carried two truncated links
+  reading "Solution" and "Service", pointing at /solutions/ and /services/. They
+  now read "Explore All Solutions" and "Explore All Services". This is the same
+  defect fixed on enterprise-odoo in US-17.9, so it is a pattern in the related
+  solutions block rather than a one-off, and the remaining pages with that block
+  should be checked.
+- Already matching and left alone: all six pain point cards, the What We Offer
+  body and its four visual labels, the GCC spotlight with all three badges, all
+  four sub-service blocks with subheadlines, bodies, feature lists and tech
+  stacks, all four integration categories, all five process steps, all three
+  pricing tiers with prices and the pricing note, the four client result stats,
+  all eight FAQs verbatim including the dollar and week ranges, and the final
+  CTA.
+- Already handled by US-16.1 and kept: the hero stats bar reads "US Registered"
+  where the spec says "PSEB Registered", and testimonial three is attributed to
+  "Owner, Electronics Store" where the spec adds "Lahore, Pakistan".
+- Left as it is: the bottom CTA's secondary button, "Download Our POS Buyer's
+  Guide", points at /e-books-guides/, which exists. The spec gives this section
+  one CTA only, so the second is additive rather than wrong, and unlike the guide
+  buttons on ai-automation, custom-software-development and pos-systems it does
+  not 404.
+- Spec contradiction worth recording: this report says "80+ POS Systems
+  Deployed" where the POS Systems handoff behind US-17.12 says 60+, and the two
+  pages currently publish both. docs/stats-verification.md lists the 80+ figure
+  as unverified and docs/portfolio-case-studies.md asks for its removal on the
+  grounds that one in-house POS build exists. Neither number was changed here,
+  pending a decision on the real figure.
+- Spec self-contradiction, also unresolved: section 01 gives the H1 as "Retail
+  and POS Solutions" while the SEO section at the end gives it as "Retail & POS
+  Solutions for GCC, USA & UK". The page carries the second, so it was left.
+
 ---
 
 ## Going forward
