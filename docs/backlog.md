@@ -1075,13 +1075,12 @@ adopted in full.
   registration" and "Pakistan-based partners". The page keeps the US-16.1
   wording, "Offshore Tech Outsourcing", "verified vendor credentials" and
   "offshore delivery partners".
-- Not applied, structure rather than copy. The spec gives a tagline above eight
-  of its eleven sections and this page has an eyebrow element on only two, so
-  adopting the rest means adding elements to six sections. The same applies to a
-  fourth trust badge, "GCC, USA, UK Coverage", which has no badge to sit in, and
-  to the video section's body paragraph, which has no paragraph. Section 11 asks
-  for an H3 "Keep Exploring" where the page has an eyebrow reading KEEP
-  EXPLORING above an H2 "Related Pages", so the words are already on screen.
+- Deferred at the time and delivered in US-17.5 below: the section taglines.
+- Not applied. A fourth trust badge, "GCC, USA, UK Coverage", has no badge row
+  section of its own to sit in, and the video section's body paragraph has no
+  paragraph element. Section 11 asks for an H3 "Keep Exploring" where the page
+  has an eyebrow reading KEEP EXPLORING above an H2 "Related Pages", so the
+  words are already on screen.
 - Not applied, and worth a decision before it is. The spec attributes its three
   testimonials to Rashid Al-Mutairi, Priya Sharma and Abdullah Al-Saud. The page
   carries the same three quotes with role and company only. Naming them means
@@ -1089,6 +1088,39 @@ adopted in full.
   among the names confirmed as usable in the 2026-08-05 spec audit. See
   docs/portfolio-case-studies.md, which records that placeholder attributed
   quotes are not to be published.
+
+### US-17.5: Add the Blogs section taglines and repair the stats section
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 6b56f86
+- What: the six section taglines held back from US-17.4, plus a repair to the
+  stats section found while placing them.
+- How: no new component. Each eyebrow reuses the one already on the page, byte
+  for byte, in the variant matching its ground, #9d6507 on light and #f5a623 on
+  dark. Verified from the patch: six div elements added, nothing removed, no
+  href changed, and exactly two distinct new style strings, which are those two
+  existing variants. Heading counts unchanged at one h1, 11 h2 and 21 h3.
+- Taglines added above the hero, Latest Posts, the newsletter, the video
+  section, the testimonials and the final CTA. The page carried this element on
+  only two of its twelve sections beforehand.
+- The stats repair: the section heading read "Weekly" and was followed by two
+  paragraphs reading "Published" and "Coverage". Those are the labels of the
+  spec's fifth and sixth stats, "Weekly, Published" and "GCC, USA, UK,
+  Coverage", flattened out of the stat grid and into prose, which is why the
+  grid showed four of the spec's six. The heading now reads "Numbers That
+  Speak", the name the spec gives the section, and the two paragraphs carry the
+  information as sentences. Moving them back into the grid was not done because
+  the grid is a fixed four column layout and six cells would reflow it.
+- Why: the taglines are the client's own section labels, and the site already
+  uses this exact element everywhere else, so the page was inconsistent with
+  both the spec and its own siblings.
+- Acceptance: verified rendered in order. Every section from the hero to Related
+  Pages now carries its tagline above its heading.
+- Not added: section 3's "Editor's Pick This Week", already on the page as the
+  featured card's own heading, where an eyebrow would duplicate it; and section
+  2's "Trusted by Readers Across Three Continents", which sits above a badge row
+  that is part of the hero rather than a section of its own.
 
 ---
 
