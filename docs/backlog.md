@@ -1465,6 +1465,48 @@ adopted in full.
   Transformation with POS Systems as the last item in the Services mega menu, is
   already applied sitewide.
 
+### US-17.13: Reconcile the Resources page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 1b8ab84
+- What: six text edits plus one badge.
+- How: the diff removes no tag, leaves every style attribute and every href
+  identical, and adds a single span. Structure unchanged: one h1, 14 h2, 14
+  sections, 13 details, FAQ schema and accordion in sync at 12.
+- The hero trust bar carried four badges where the spec lists five. "60+
+  PROJECTS" becomes "60+ TRANSFORMATION PROJECTS", "AI-FIRST" becomes "AI-FIRST
+  APPROACH", and the missing "GCC, USA, UK" badge is added.
+- The hero paragraph reads "actionable insights", the spec's word. The first
+  e-book card regains its full title, "Odoo Implementation Playbook for GCC".
+  Three topic labels return to the spec's fuller versions: "Legacy System
+  Modernization", "ZATCA & GCC Compliance" for "Tax & VAT Compliance", and
+  "Cybersecurity & Risk Management".
+- A correction made in passing, recorded because it nearly shipped: "Legacy
+  Modernization" appears three times on this page, as a topic tag on the
+  featured case study, as a blog card heading, and as a topic grid item. Only
+  the grid item takes the spec's longer form. The first pass replaced all three
+  and the other two were put back before commit. A global replace on a short
+  label is not safe on a page that reuses category names.
+- Already handled by US-16.1 and kept: the spec's trust bar reads "PSEB
+  Registered" where the page says "US REGISTERED", and the spec labels both case
+  study card two and testimonial two "Professional Services, Karachi" where the
+  page carries no location.
+- Not changed, and stated here because it reads as a difference. The spec writes
+  the markets as "the GCC, USA, and UK"; the page writes "the USA, the GCC, the
+  UK and MENA" in the hero and the case studies intro. Leading with the USA is
+  the point of US-16.1, so reordering would work against it.
+- Section 09 of the spec says of the FAQ "keep this section as it is", so it was
+  left untouched.
+- Not applied, would duplicate content: the spec's section 3 is an E-Book
+  Spotlight for the Odoo playbook, with the label "THE ODOO PLAYBOOK" and the
+  heading "Comprehensive Guide to ERP Implementation in the GCC Region". That
+  same asset is already the first card in the E-Books and Guides section, so
+  building the spotlight would put one download on the page twice.
+- Not applied, needs a new cell: the spec's featured case study results table has
+  five rows and the page's stat grid shows four, missing "Downtime, Zero". The
+  grid is a fixed four column layout, so a fifth cell reflows it.
+
 ---
 
 ## Going forward
