@@ -1591,6 +1591,48 @@ adopted in full.
   existing testimonials. This page has no testimonials section, only the stats
   strip under "Proof before you pick up the phone".
 
+### US-17.16: Reconcile the Social Media Marketing page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 59162aa
+- What: twenty-four text edits plus three taglines.
+- How: three div elements added, nothing removed, no href changed, no new style
+  string, because the taglines reuse the two eyebrow variants already on the
+  page. Structure unchanged: one h1, 14 h2, 15 sections, 9 details, FAQ schema
+  and accordion in sync at eight. Verified rendered in order on a local server:
+  every one of the 14 sections now carries its tagline.
+- The main finding: this spec names a tagline for every section and seven were
+  carrying a generic label instead. THE PROBLEMS WE SOLVE, WHAT WE OFFER, BUILT
+  FOR THE GCC MARKET, HOW WE WORK, PRICING AND PACKAGES, SOCIAL PROOF and FAQ
+  all now carry the client's line. Three sections had no tagline at all, the
+  hero, the analytics section and the final CTA, and now do.
+- Hero: the H1 becomes "Social Media Marketing That Turns Followers Into
+  Customers" from "Social Media Marketing & Brand Growth for GCC, USA & UK",
+  with the amber accent moved onto "Followers Into Customers". Dropping the
+  geography from an H1 is what the Custom Software report asks for site-wide, so
+  the page can rank globally while the markets are named in the body and the GCC
+  section. The body becomes the spec's "Stop posting into the void" paragraph,
+  the button becomes "Get Your Free Social Media Audit", and the trust bar takes
+  the spec's five labels rather than one-word versions.
+- All six problem cards regain the spec's headings and fuller bodies. Four had
+  been cut to a single short sentence, losing the consequence that makes the
+  card land: card three now ends "You miss the local audience you want to
+  reach", card six "Social media becomes a burden, not a tool".
+- The GCC section regains its closing sentence on local influencer access. The
+  analytics H2 drops "Zero Guesswork", which the spec places as that section's
+  tagline, so the phrase now appears once rather than twice.
+- Kept per the EPIC-17 standing decision: the trust bar reads "US Registered"
+  where the spec's fifth badge is "PSEB Registered".
+- Not changed, a deliberate departure: the GCC section H2 keeps "for UAE and
+  Saudi Arabia", which this spec omits. Every other GCC spotlight spec in this
+  sweep requires the geography in that H2 for local search, so removing it here
+  would break the pattern for a single page.
+- Note on US-14.2, which recorded closing "the remaining Social Media Marketing
+  gaps against its content spec". That work covered the service cards and
+  deliverables. The taglines, the hero and the problem card bodies were not part
+  of it, which is why this page still had 24 differences.
+
 ---
 
 ## Going forward
