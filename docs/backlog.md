@@ -977,7 +977,12 @@ adopted in full.
 - The missed Pakistan reference: the hero stat strip read "4 / Markets: PK, GCC,
   US, UK". US-16.1 swept for place names, regulators and currency codes, so a
   bare ISO country code sitting inside a stat label passed through it. Now
-  "3 / Markets: GCC, US, UK". No other build file contains that string.
+  "3 / Markets: GCC, US, UK".
+- **Correction, made in US-17.17.** This story originally recorded that no other
+  build file contained that string. That was wrong. solutions.html carried the
+  identical stat and contact-us.html carried two more PK references. The check
+  behind the claim searched a narrower pattern than the one it reported on. All
+  three are fixed and a sitewide search now returns nothing.
 - Carried from US-17.1: the Trusted By section is retitled "Recognized by
   Industry Leaders" with the spec's body line. This page's content document does
   not describe that section, but home and About carried the same heading, so
@@ -1632,6 +1637,51 @@ adopted in full.
   gaps against its content spec". That work covered the service cards and
   deliverables. The taglines, the hero and the problem card bodies were not part
   of it, which is why this page still had 24 differences.
+
+### US-17.17: Reconcile the Solutions page, and clear the last Pakistan references
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 993d7a9
+- What: twenty text edits on solutions.html and two on contact-us.html. No
+  element added or removed on either, every style attribute and every href
+  identical. Structure unchanged on both.
+- The correction this story exists to record: US-17.2 stated that no build file
+  other than about-us.html carried the "Markets: PK, GCC, US, UK" stat.
+  solutions.html carried the identical stat, and contact-us.html carried PK
+  twice more, once in a coverage strip and once in a sentence about time zones.
+  The check behind that claim searched a narrower pattern than the one it
+  reported on. All three are fixed and a sitewide search for a bare PK now
+  returns nothing. US-17.2 has been annotated with the correction.
+- Solutions copy restored: the delivery framework had been written as a house
+  summary rather than the client's copy, with every step reduced to a noun list.
+  Its tagline, heading, intro and all four step bodies are now the spec's, so
+  "Agile implementation with milestones and regular reviews" reads "Agile
+  sprints with weekly demos. You review. We adjust. No surprises."
+- The trust section tagline and heading, and the FAQ tagline and heading, take
+  the spec's wording. The hero body reads "technology solutions that connect
+  your teams".
+- All six industry cards take the spec's headings, so "Manufacturing" becomes
+  "Manufacturing Solutions". This closes the 2026-08-05 audit finding that the
+  industry blocks were a flattened grid rather than the spec's named solution
+  blocks.
+- Already handled and kept: the spec's Partners and Certifications list names
+  PSEB and NAVTTC. The page carries Cisco, FAST, UMT, Hack The Box and Odoo
+  Partner, both having been removed by US-16.1.
+- Not changed: the trust section intro. The spec's version ends "Here's what
+  they say", which promises testimonials this section does not have. The build's
+  intro is about registrations being matters of public record, which is what the
+  section actually shows. Adopting the spec's line would advertise content that
+  is not there.
+- Not applied, needs new accordion entries and schema: the spec lists ten FAQs
+  and the page carries six. The six cover the spec's Q1 to Q6 with more specific
+  answers. Missing are Q7 on working outside the GCC, Q8 on Odoo for small
+  businesses, Q9 on what digital transformation is, and Q10 on how to get
+  started. The 2026-08-05 audit recorded this page as having six FAQs where the
+  spec then wanted seven; the spec has since grown to ten.
+- Not applied, needs a new paragraph: the industry section has no intro, where
+  the spec gives "Every industry has its own rules, compliance needs, and
+  workflows. We build solutions that fit."
 
 ---
 
