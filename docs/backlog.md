@@ -1548,6 +1548,49 @@ adopted in full.
   and POS Solutions" while the SEO section at the end gives it as "Retail & POS
   Solutions for GCC, USA & UK". The page carries the second, so it was left.
 
+### US-17.15: Reconcile the Services hub to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: b3b49c4
+- What: twelve text edits. No element added or removed, every style attribute and
+  every href identical. Structure unchanged: one h1, 14 h2, 15 sections, 14
+  details, FAQ schema and accordion in sync at 13.
+- The hero body becomes the spec's "We help businesses cut costs, save time, and
+  scale faster with smart technology", replacing a line about not stitching five
+  vendors together. The services intro regains the spec's example, "Your POS
+  talks to your inventory", which had been changed to "Your CRM talks to your
+  ERP". The AI and Website service bodies return to the spec's wording.
+- Three card buttons take the spec's exact labels: "Explore Odoo ERP Solutions",
+  "Explore Software Development", "Explore POS System Features".
+- Three Why Choose Us cards were carrying the spec's card labels instead of its
+  H3s, so "Global delivery experience", "Support that stays" and "Built to scale
+  securely" become "Delivered across GCC, USA and UK", "Support that does not
+  disappear" and "Grow without breaking".
+- The industries section becomes "Built for your industry" with the spec's intro.
+- Three findings from the 2026-08-05 spec audit are now confirmed closed, checked
+  rather than assumed: the page carries all 13 FAQs this spec lists, not the six
+  recorded then; the sticky scroll-anchor nav exists and is wired to the service
+  blocks; and the POS block heading is already "Point of Sale (POS) Systems".
+- Kept per the EPIC-17 standing decision: the Global Delivery card body reads
+  "Headquartered in Wyoming, delivering across the United States, the GCC and the
+  United Kingdom" where the spec says "We've delivered projects in the GCC,
+  United States, and United Kingdom". The spec's H3 for that card was adopted,
+  its body was not, because the Wyoming line is US-16.1.
+- Not applied, an information architecture decision rather than a copy one, and
+  the last open item from the 2026-08-05 audit for this page. The spec's sixth
+  service card is Digital Transformation. This page carries Social Media
+  Marketing in that slot, which is the sixth of the six service lines named in
+  the mega menu, the footer and the "6 CORE SERVICE LINES" chip. Digital
+  Transformation is a solution on this site with its own page under Solutions.
+  Adding it here would make seven services on a page headed "Six services, one
+  engineering partner" and would place the same offering in both the services and
+  the solutions trees. Needs a decision before it is built.
+- Not applied, needs a section and real quotes: the spec's section 6 is Client
+  Testimonials under "What Our Clients Say", with the instruction to keep
+  existing testimonials. This page has no testimonials section, only the stats
+  strip under "Proof before you pick up the phone".
+
 ---
 
 ## Going forward
