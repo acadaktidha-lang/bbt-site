@@ -1386,6 +1386,45 @@ adopted in full.
 - Also not applied: the spec's hero stats bar has five items, two of which the
   page does not carry as stats, "GCC, USA, UK" and "Domain Expertise".
 
+### US-17.11: Build the four Industries sections the spec defines but the page lacked
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 057e2a8
+- What: the four sections and two FAQs held back from US-17.10, plus the two the
+  2026-08-05 spec audit had recorded as missing since then.
+- How: pure addition. The diff removes no line and no tag from the existing
+  markup, 56 lines added and 0 removed, with section and div tags balancing at
+  21 and 280. Nothing new was designed. Every section is assembled from
+  components already on this page: the eyebrow, h2 and lead paragraph pattern
+  from the Why Industry-Specific section, bb-card for the cards, and the page's
+  own bb-statg with bb-statg-5 and bb-on-dark for the stat strip. Only the two
+  existing typefaces appear, every colour is from the site palette, and every
+  font size matches a value already in the file.
+- Sections added, in the spec's positions: The BBT Edge and Regulatory Rigor and
+  Data Residency after the last vertical and before Compliance and Standards;
+  Global Success Stories and Proven Results Across Verticals after the delivery
+  process and before the FAQ. Backgrounds continue the page's alternation.
+- Responsive: the card rows use g3 and g4 and the stats use bb-statg-5, all of
+  which already carry collapse rules at 980 and 620 pixels. US-15.1 records that
+  writing the column count as an inline style outranks those media queries and
+  broke seven pages at 390px, so it is written as classes here.
+- Two FAQs added, on Arabic support for GCC industries and on data migration
+  from an old system, in the accordion and the JSON-LD together and in the
+  spec's order. Verified afterwards at 8 questions each, matching one for one.
+- Content decision on the stat: the spec's Proven Results bar reads "200+
+  Industry Projects" and this section carries 60+, matching the hero on the same
+  page. Publishing 60+ at the top and 200+ lower down is the exact contradiction
+  docs/stats-verification.md warns about, and docs/portfolio-case-studies.md
+  lists the 200+ figure for this page as one to remove for lack of evidence.
+- Content decision on the success stories: the four are written with the sector,
+  the region and the outcome but no client named. The spec supplies no names, and
+  the project standard is not to publish attributed quotes nobody will stand
+  behind.
+- Acceptance: verified rendered in order on a local server, 21 sections each
+  with its eyebrow, tags balanced, JSON-LD parsing, no horizontal overflow risk
+  since every grid uses the page's existing responsive classes.
+
 ---
 
 ## Going forward
