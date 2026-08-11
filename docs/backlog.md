@@ -1277,6 +1277,65 @@ adopted in full.
   that the PDF must exist first because an outlined button linking to a 404 is
   worse than no button. The page does not exist, so the button was not added.
 
+### US-17.9: Reconcile the Enterprise Odoo page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 82db461
+- What: thirty-four text edits plus five section taglines on enterprise-odoo.html.
+  This is the report that belongs to this page, unlike the Odoo ERP Services one
+  handled in US-17.8. Its sections match one for one.
+- How: the diff adds five div elements, removes nothing, changes no href, and
+  introduces no new style string, because the taglines reuse the two eyebrow
+  variants already on the page. Structure otherwise unchanged: one h1, 12 h2,
+  13 sections, 8 details, JSON-LD parsing.
+- Hero: the tagline becomes "Stop Running Your Business on Spreadsheets" from
+  "Odoo Implementation & Customization", and the body becomes the spec's "Tired
+  of jumping between five different tools" paragraph.
+- The Why Odoo intro becomes the spec's plain-language version about no vendor
+  lock-in, replacing "open-source advantages with a modular architecture that
+  ensures maximum scalability".
+- All four module card bodies. Each had been cut to a single feature summary
+  sentence where the spec opens with the problem, so HR now begins "Stop chasing
+  timesheets and fixing payroll errors" and CRM "Stop losing leads in email
+  threads".
+- Nineteen of the twenty-four feature list labels had been shortened, for
+  example "Employee Self-Service" for "Employee Self-Service Portal" and "Batch
+  Tracking" for "Batch & Serial Tracking". All restored.
+- All five implementation journey steps were three-word fragments: "Deep process
+  audit.", "System architecture.", "Tailored configuration.", "QA & migration."
+  and "Rollout & support.". They now carry the spec's sentences.
+- Defect fixed: the Related Solutions section carried a stray link reading
+  "Solution" with no card behind it. It now reads "Explore All Solutions" and
+  points at /solutions/ as before.
+- Already correct and kept: the spec's Partners & Certifications list names
+  PSEB, FAST SOFTEC, Cisco Networking Academy, NAVTTC and Odoo Partner. The page
+  carries three of them, PSEB and NAVTTC having been removed by US-16.1, which
+  the EPIC-17 standing decision preserves.
+- Why: this page had the widest gap between spec and build of any page in the
+  sweep. The module bodies and journey steps in particular had been compressed
+  to the point where the page described features without ever naming the problem
+  they solve, which is the whole structure the spec is built on.
+- Acceptance: every section of the report present in its order, with its copy,
+  except the items recorded below.
+- Not applied, all of which need new elements rather than new words: the hero
+  subheading line "One Platform. One Dashboard. Every Department Working
+  Together."; the four stat context lines under Why Odoo, such as "Trusted
+  worldwide"; the implementation journey intro; the eight integration category
+  body lines, such as "Accept payments your customers already trust"; and the
+  Why Choose intro.
+- Not applied, FAQ. The spec lists ten questions and the page carries seven.
+  The seven cover the spec's Q1 to Q7 with the same facts in slightly shorter
+  wording. Missing entirely are Q8 on whether Odoo suits small businesses, Q9 on
+  implementation cost, and Q10 on why to choose Big Binary Tech. Adding them
+  means new accordion entries and matching FAQPage schema, so it was left for a
+  decision.
+- Spec defect worth noting: the report lists Retail & E-Commerce twice, as
+  Industry 1 and again as Industry 3 with different body copy, and its
+  integration categories skip number 3. The page fills the third industry slot
+  with Trading & Distribution, which is not in the report but is the sensible
+  reading, and adds a Communications integration category. Both were left.
+
 ---
 
 ## Going forward
