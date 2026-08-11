@@ -937,10 +937,9 @@ adopted in full.
   all six capability cards, all eight industry cards, all four solution cards,
   the four reasons and all eight FAQs matched on a line by line diff. This
   heading was the only copy left that the spec disagreed with on wording alone.
-- Why the em dashes in the spec are not reproduced: the document writes
-  "What We Build — Core Capabilities Overview" and "More Than a Vendor — Your
-  Technology Partner". The build renders both with a colon, which is US-3.4 and
-  stays.
+- Why the spec's punctuation is not reproduced: the document separates the two
+  halves of the "What We Build" and "More Than a Vendor" headings with an em
+  dash. The build renders both with a colon, which is US-3.4 and stays.
 - Spec lines deliberately not applied, per the standing decision above: the FAQ
   answer "What makes Big Binary Tech different" credits "PSEB registration" and
   "government affiliations" in the spec, and the page keeps "US registration"
