@@ -1683,6 +1683,45 @@ adopted in full.
   the spec gives "Every industry has its own rules, compliance needs, and
   workflows. We build solutions that fit."
 
+### US-17.18: Reconcile the Web Development page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 2b62ce1
+- What: eighteen text edits plus four link changes. No element added or removed,
+  every style attribute identical. Structure unchanged: one h1, 17 h2, 18
+  sections, 11 details, FAQ schema and accordion in sync at 10.
+- Hero, which carried none of the spec's copy: the H1 becomes "Websites Built to
+  Load Fast and Turn Visitors Into Customers" with the amber accent on the
+  second half; the subheadline becomes the spec's one-liner; button one becomes
+  "Get a Free Website Audit" with offer=audit; button two becomes "See How It
+  Works" pointing at #process.
+- The #process anchor existed with nothing linking to it. This is the fourth
+  page in the sweep with the same defect, after US-17.3, US-17.6 and US-17.8,
+  which confirms it across every service page that has a process section.
+- Process: the heading becomes "How We Build Your Website, Start to Finish", the
+  five steps become Free Discovery, Design & Plan, Build & Test, Launch & Train
+  and Ongoing Support with the spec's descriptions, and its CTA becomes "Start
+  With a Free Discovery Call" with offer=process.
+- Bottom CTA becomes "Ready for a Website That Actually Works?" with the spec's
+  subline, the label "Book Your Free Website Audit", and offer=audit.
+- Three FAQs rewritten to the spec's wording in the accordion and the JSON-LD
+  together. The duration answer now carries the spec's 2 to 3, 4 to 6 and 6 to
+  10 week ranges where the page previously gave none.
+- Already matching: all six problem cards, the What We Offer intro with its
+  seven pills and six-node flow, the GCC spotlight, and all seven sub-service
+  blocks with outcome lines, bodies, deliverables and GCC, USA and UK market
+  notes.
+- Not applied: the spec's hero trust bar reads "100+ Websites Built, PSEB
+  Registered, Responsive & Mobile-First, GCC, USA & UK". PSEB is barred by the
+  EPIC-17 standing decision, and the rest is a text bar where the build carries a
+  three stat grid.
+- Not applied: the spec's bottom CTA asks for a second button, "Download Our Web
+  Guide", pointing at /resources/web-development-guide/, which does not exist.
+  That is the fourth lead magnet in this sweep with no PDF behind it, after
+  ai-automation, custom-software-development and pos-systems. Worth commissioning
+  the four as a batch rather than one at a time.
+
 ---
 
 ## Going forward
