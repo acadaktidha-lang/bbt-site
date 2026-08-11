@@ -1336,6 +1336,56 @@ adopted in full.
   with Trading & Distribution, which is not in the report but is the sensible
   reading, and adds a Communications integration category. Both were left.
 
+### US-17.10: Reconcile the Industries page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 4fa7760
+- What: thirty-six text edits across the hero, the ten vertical sections, the
+  compliance table and the FAQ.
+- How: text nodes only. No element added or removed, every style attribute and
+  every href identical, verified from the patch. Structure unchanged: one h1,
+  16 h2, 17 sections, 7 details, FAQ schema and accordion in sync at six.
+- The main finding: the ten vertical headings were duplicating their own
+  eyebrow. Each section opened with an eyebrow reading, for example, "// RETAIL
+  & E-COMMERCE" followed by an h2 reading "Retail & E-commerce", so the sector
+  name appeared twice and the heading said nothing. The spec gives each vertical
+  a descriptive heading and all ten are now in place, from Unified Omnichannel
+  Retail Technology through to Secure, Compliant Digital Government Platforms.
+  The eyebrows are untouched, so each section now names the sector and then says
+  what gets built. The 2026-08-05 spec audit had recorded this as a naming
+  difference and left it; it is closed now.
+- All ten vertical summary cards regain the spec's fuller wording, the three Why
+  Industry-Specific features and the hero body return to the spec's phrasing, and
+  the first delivery step regains "competitors".
+- The compliance table regains the regulators the build had dropped: DHA and
+  MOHAP for healthcare, Central Bank for financial services, FTA for retail,
+  NESA and SEDD for government, HACCP for manufacturing, KHDA and ADEK for
+  education. Its retail approach line also returns to "VAT-ready invoicing,
+  Arabic receipts" from "Tax-ready invoicing, localized receipts".
+- Two FAQ questions restored to the spec's wording in both the accordion and the
+  JSON-LD.
+- Not applied, a claims decision rather than a copy one. The spec's hero stats
+  bar reads "200+ Industry-Specific Projects" and the page says 60+. Raising it
+  is the opposite of what docs/portfolio-case-studies.md asks, which lists that
+  exact claim on this page as one to remove for lack of evidence, and
+  docs/stats-verification.md records it as unverified. The lower figure stays
+  until someone decides which is true. The spec's "PSEB Registered" badge is
+  already "USA Registered" from US-16.1 and the EPIC-17 decision keeps it.
+- Not applied, whole sections the page does not have. The spec defines four that
+  are absent: section 14 The BBT Edge, "We Speak Your Industry's Language";
+  section 15, "Regulatory Rigor and Data Residency"; section 18, Global Success
+  Stories with four case snippets; and section 19, "Proven Results Across
+  Verticals". The 2026-08-05 audit already recorded the last two as missing.
+  Building them is new sections rather than new words.
+- Not applied, FAQ count. The spec lists eight questions and the page carries
+  six. Missing are "Do you offer Arabic support for GCC industries?", which the
+  2026-08-05 audit also flagged, and "How do you handle data migration from our
+  old industry system?". Adding them needs new accordion entries and matching
+  schema.
+- Also not applied: the spec's hero stats bar has five items, two of which the
+  page does not carry as stats, "GCC, USA, UK" and "Domain Expertise".
+
 ---
 
 ## Going forward
