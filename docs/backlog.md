@@ -1176,6 +1176,48 @@ adopted in full.
   inconsistency rather than a defect. The same pattern is in faqs, industries,
   odoo-erp, pos-systems and social-media-marketing.
 
+### US-17.7: Reconcile the Digital Transformation page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: db83fd8
+- What: two text edits. This page was the closest to its spec of any reconciled
+  so far.
+- How: text nodes only. No element added or removed, every style attribute and
+  every href identical, verified from the patch. Structure unchanged: one h1,
+  15 h2, 16 sections, 9 details, 8 schema questions.
+- The H1 becomes "Digital Transformation Solutions", the spec's exact heading,
+  from "Digital Transformation Solutions for GCC, USA & UK". The amber accent
+  span is kept and moved onto the word "Solutions" so the hero keeps the
+  highlight pattern every other page uses, rather than losing it along with the
+  geography. Dropping the geography also matches the SEO instruction in the
+  Custom Software report, which says to keep the H1 broad and name the markets
+  in the subheadline and section copy instead.
+- The final CTA button becomes "Get a Free Assessment" from "Book Your Free
+  Transformation Assessment".
+- Already matching, and left alone: all fifteen sections in the spec's order,
+  the six pain point cards, the three state labels, the GCC spotlight with all
+  three badges, all three sub-service blocks with their full deliverables lists
+  and tech stacks, the six AI cards, the five process steps, the six industry
+  cards, all three pricing tiers with prices, features and the MOST POPULAR
+  badge, the four stat figures and all eight FAQs.
+- Already handled by US-16.1 and kept, per the EPIC-17 standing decision: the
+  hero trust bar reads "US Registered" where the spec says "PSEB Registered",
+  and testimonial three is attributed to "Managing Director, Professional
+  Services Firm" where the spec adds "Karachi, Pakistan".
+- Not changed, a style call rather than a content one: the spec expands
+  contractions throughout, writing "It is about rethinking" and "AI Is Not the
+  Future", where the build contracts them. The information is identical and the
+  contracted form is the site's established voice, so it was left. Say the word
+  and it can be matched to the spec exactly.
+- Defect found, not fixed, needs a decision. The pricing note, "All packages
+  include discovery, documentation, and knowledge transfer...", is a section
+  level note in the spec that applies to all three tiers. In the build it sits
+  inside the Enterprise Transformation card, between its "Custom Quote" line and
+  its feature list, so it reads as if it applied to that tier alone. Fixing it
+  means moving the paragraph out of the card and below the grid, which is a
+  structural move rather than a copy change, so it was left for a decision.
+
 ---
 
 ## Going forward
