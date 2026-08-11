@@ -1045,6 +1045,51 @@ adopted in full.
   where the build uses sentence case, which is a typography convention set in
   US-3.4 rather than a copy difference, so it was left alone.
 
+### US-17.4: Reconcile the Blogs page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: f516b2c
+- What: ten text edits restoring copy that had been shortened or mislabelled
+  against the content report.
+- How: text nodes only. All 232 style attributes, 244 tags and 9 hrefs on the
+  changed lines are identical before and after, verified from the patch.
+  Structure unchanged: one h1, 11 h2, 21 h3, 12 sections.
+- The drift corrected: the hero body had been cut to two short sentences, losing
+  the Dubai, London and New York line and the claim that the engineers write
+  about what they have actually built; the featured post tagline read "Featured
+  This Week" for "Editor's Pick This Week", its body had lost two clauses and
+  its button read "Read Full Article"; post 4 had lost its subtitle "A Complete
+  2026 Guide" and the closing sentence of its summary; the most read eyebrow
+  read "MOST READ"; the newsletter line had lost "One email. Zero spam. Real
+  insights you can use."; the stats bar abbreviated "Average Rating".
+- The testimonials heading was carrying the spec's tagline, "What Our Readers
+  Say", as its H2. It now carries the spec's H2, "Real Feedback From Real
+  Readers".
+- Why: the shortened copy reads as house style rather than error, which is
+  exactly why it survived. Restored, the page says what the client wrote.
+- Acceptance: every section of the content report present in its order and
+  wording, except the items recorded below.
+- Not applied, per the EPIC-17 standing decision: the spec titles post 5 "Why
+  GCC Businesses Are Moving to Pakistan for Tech Outsourcing" and credits "PSEB
+  registration" and "Pakistan-based partners". The page keeps the US-16.1
+  wording, "Offshore Tech Outsourcing", "verified vendor credentials" and
+  "offshore delivery partners".
+- Not applied, structure rather than copy. The spec gives a tagline above eight
+  of its eleven sections and this page has an eyebrow element on only two, so
+  adopting the rest means adding elements to six sections. The same applies to a
+  fourth trust badge, "GCC, USA, UK Coverage", which has no badge to sit in, and
+  to the video section's body paragraph, which has no paragraph. Section 11 asks
+  for an H3 "Keep Exploring" where the page has an eyebrow reading KEEP
+  EXPLORING above an H2 "Related Pages", so the words are already on screen.
+- Not applied, and worth a decision before it is. The spec attributes its three
+  testimonials to Rashid Al-Mutairi, Priya Sharma and Abdullah Al-Saud. The page
+  carries the same three quotes with role and company only. Naming them means
+  publishing three identified people as references, and these three are not
+  among the names confirmed as usable in the 2026-08-05 spec audit. See
+  docs/portfolio-case-studies.md, which records that placeholder attributed
+  quotes are not to be published.
+
 ---
 
 ## Going forward
