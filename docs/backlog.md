@@ -1218,6 +1218,65 @@ adopted in full.
   means moving the paragraph out of the card and below the grid, which is a
   structural move rather than a copy change, so it was left for a decision.
 
+### US-17.8: Reconcile the Odoo ERP Services page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 29310a8
+- What: eleven text edits plus three link changes on odoo-erp.html.
+- Which page: the report was handed over against enterprise-odoo.html and does
+  not belong to it. It is headed "Odoo ERP Services Page", its breadcrumb is
+  Home > Services > Odoo ERP Services, and its sections match odoo-erp.html one
+  for one, including the six problem cards, "Odoo ERP, Set Up to Fit Your
+  Business", "Odoo ERP Compliance for UAE and Saudi Arabia" and the four
+  sub-service blocks. enterprise-odoo.html is the solution page and carries none
+  of them: it has The Four Pillars of Enterprise Automation, Flexible Engagement
+  Models and industry fit. Applying the report there would have overwritten a
+  distinct page with service copy and left the page it was written for
+  untouched. Confirmed with the client before any edit.
+- How: text nodes only apart from the three links. No element added or removed,
+  all 90 style attributes on the changed lines identical, verified from the
+  patch. Structure unchanged: one h1, 14 h2, 15 sections, 11 details, FAQ schema
+  and accordion in sync at 10 questions.
+- Hero: the H1 becomes "Odoo ERP Services Built Around How You Work" from "Odoo
+  Implementation, Customisation & Support", with the amber accent span moved to
+  "How You Work"; the subheadline becomes the spec's one-liner; button one
+  becomes "Get a Free ERP Audit" with offer=audit; button two becomes "See How
+  We Work" pointing at #process.
+- The #process anchor existed with nothing linking to it. That is the third page
+  in this sweep with the same defect, after US-17.3 and US-17.6.
+- How We Work: the heading becomes "How We Deliver Your Odoo Project", the five
+  steps become Free Discovery Call, Plan & Proposal, Build & Configure, Migrate
+  & Go Live and Train & Support, and the CTA becomes "Start With a Free
+  Discovery Call".
+- Bottom CTA becomes "Ready to Stop Running Your Business on Spreadsheets?" with
+  the spec's subline and the label "Book Your Free ERP Audit".
+- Already matching: all six problem cards, the What We Offer intro and its four
+  pills, the compliance spotlight with all three stat boxes, and all four
+  sub-service blocks with bodies, deliverables and GCC, USA and UK region notes.
+- Already correct and worth noting: this spec instructs that placeholder
+  testimonials must not be published, because a fake-looking quote does more
+  damage than an empty section, and that the stats bar should reuse the figures
+  already published elsewhere on the site. The page states that client quotes
+  are being collected and carries 50+, 15+, 98% and 4 to 8 weeks. Both
+  instructions were already satisfied.
+- Not applied: the spec's hero trust bar includes "PSEB Registered", barred by
+  the EPIC-17 standing decision, and the rest is a text bar where the build
+  carries a four stat grid.
+- Not applied, and a deliberate choice rather than an oversight. The spec lists
+  eight FAQs and the page carries ten. Five match verbatim, including the cost
+  and duration answers with their dollar and week ranges. Three are phrased
+  differently: the spec asks "Will our existing data migrate safely?", "What
+  happens if we need changes after go-live?" and "Do you provide training for
+  our team?", where the page asks how migration is done and how training and
+  post go-live support work. Every topic the spec raises is covered, and the
+  page's versions are more specific, so replacing them would have removed
+  content to gain nothing. Flagged for a decision rather than forced.
+- Open follow up: the spec's bottom CTA asks for a second button, "Download Our
+  Odoo Guide", pointing at /resources/odoo-erp-guide/. The spec itself notes
+  that the PDF must exist first because an outlined button linking to a 404 is
+  worse than no button. The page does not exist, so the button was not added.
+
 ---
 
 ## Going forward
