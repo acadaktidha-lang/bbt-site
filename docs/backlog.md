@@ -904,6 +904,826 @@ Move the company's stated home from Pakistan to the Wyoming head office.
 
 ---
 
+## EPIC-17: Page content alignment to the client content specs
+
+Walk every published page against its client content document and reconcile the
+copy. Layout, section structure and design are out of scope: this epic changes
+words only. All of it lands on one branch, `content/page-content-updates`, and
+goes up as a single pull request.
+
+**Standing decision, taken 11 August 2026.** The content specs were written
+before the Pakistan to Wyoming repositioning in US-16.1. Where a spec conflicts
+with that repositioning, **the repositioning wins** and the conflict is recorded
+on the story rather than applied. This keeps Pakistan, PSEB, NAVTTC and
+government affiliation language off the site while the rest of each spec is
+adopted in full.
+
+### US-17.1: Reconcile the home page to its content document
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 09a8adf
+- What: the Trusted By section is retitled from "Recognized by industry leaders.
+  Registered and compliant in the United States." to the spec's "Recognized by
+  Industry Leaders", its eyebrow drops "& REGISTRATIONS", and its body becomes
+  the spec line "We've earned the trust of leading technology and education
+  bodies. Here's who stands behind us:".
+- How: text nodes only. Every style attribute, class and element in the section
+  is byte for byte unchanged, so the heading, the paragraph and the badge row
+  occupy the same layout as before. Verified after the edit: one h1, 11 h2, 12
+  sections, both JSON-LD blocks parse, 440 style attributes, zero Pakistan terms.
+- Why: the rest of the page already carried the spec verbatim, applied as
+  structure in d3127cb. Hero, the seven step process, the partnership section,
+  all six capability cards, all eight industry cards, all four solution cards,
+  the four reasons and all eight FAQs matched on a line by line diff. This
+  heading was the only copy left that the spec disagreed with on wording alone.
+- Why the spec's punctuation is not reproduced: the document separates the two
+  halves of the "What We Build" and "More Than a Vendor" headings with an em
+  dash. The build renders both with a colon, which is US-3.4 and stays.
+- Spec lines deliberately not applied, per the standing decision above: the FAQ
+  answer "What makes Big Binary Tech different" credits "PSEB registration" and
+  "government affiliations" in the spec, and the page keeps "US registration"
+  and "university affiliations". The two registration and compliance FAQs added
+  during US-16.1 are kept, though the spec lists eight questions rather than ten.
+- Acceptance: every section of the content document is present on the page in the
+  spec's order and wording, except the conflicts recorded above.
+- Open follow up, not actioned: the badge row still lists FAST, UMT, LIST and
+  WAC. FAST and UMT read as Pakistani university affiliations that the US-16.1
+  term sweep did not catch, because it searched for place names and regulators
+  rather than institutions. Left in place pending confirmation of what each body
+  is. The same heading is also live on about-us.html, so that page needs the same
+  change when its turn comes or the two will drift.
+
+### US-17.2: Reconcile the About page to its content document
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 942fe07
+- What: nine text edits bringing about-us.html back to the wording of its
+  content document, plus one Pakistan reference the US-16.1 sweep missed.
+- How: text nodes only. Every style attribute and every tag on the changed lines
+  is identical before and after, verified by extracting them from the patch and
+  comparing. Structure after the edit is unchanged: one h1, 9 h2, 10 sections,
+  7 details, both JSON-LD blocks parse.
+- The drift that was corrected: the two story paragraphs had lost the spec's
+  serial commas; core value 02 had dropped the spec's quotation marks around
+  "good enough" and read "better on every single project" for "better, every
+  single project"; core value 03 had been flattened from the spec's question,
+  "Before anything else, we ask: is this actually helping our client?", into a
+  statement; Global Reach read "more than 50 countries", "you are" and "custom
+  software" where the spec has "50+ countries", "you're" and "custom software
+  solutions"; and the testimonials line read "Here is what businesses" for
+  "Here's what businesses".
+- The missed Pakistan reference: the hero stat strip read "4 / Markets: PK, GCC,
+  US, UK". US-16.1 swept for place names, regulators and currency codes, so a
+  bare ISO country code sitting inside a stat label passed through it. Now
+  "3 / Markets: GCC, US, UK".
+- **Correction, made in US-17.17.** This story originally recorded that no other
+  build file contained that string. That was wrong. solutions.html carried the
+  identical stat and contact-us.html carried two more PK references. The check
+  behind the claim searched a narrower pattern than the one it reported on. All
+  three are fixed and a sitewide search now returns nothing.
+- Carried from US-17.1: the Trusted By section is retitled "Recognized by
+  Industry Leaders" with the spec's body line. This page's content document does
+  not describe that section, but home and About carried the same heading, so
+  changing one and not the other would have drifted them.
+- Why: the page was structurally complete against its spec. What had gone was
+  the exact wording, in small edits that individually look like tidying and
+  together move the copy away from what the client signed off.
+- Acceptance: all nine spec sections present in the spec's order and wording,
+  except the conflicts recorded below.
+- Spec lines deliberately not applied, per the EPIC-17 standing decision: FAQ 6
+  answers "We're based in Pakistan and serve clients across 50+ countries", and
+  the final CTA gives "Or call us at 0326 8880101" as the only number. The page
+  keeps Sheridan, Wyoming and leads with +1 307-443-4365, with the +92 line
+  retained as the secondary contact set up in US-16.1.
+- Open follow up, not actioned: the spec's testimonials section calls for four
+  cards and the page carries three, because US-16.1 removed the two located in
+  Pakistan rather than relocate them. The spec supplies no copy for any of the
+  four, so there is nothing to restore without new client material. The FAST,
+  UMT, LIST and WAC badges noted in US-17.1 are on this page too.
+
+### US-17.3: Reconcile the AI Automation page to its SEO content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 0bd0ceb
+- What: nine text edits plus three link changes, bringing ai-automation.html to
+  the wording of its content report. The hero and the five step process carried
+  none of the spec's copy; everything between them already matched.
+- How: text nodes only apart from the three links. All 193 style attributes and
+  all 237 tags on the changed lines are identical before and after, verified by
+  extracting them from the patch. Structure after the edit is unchanged: one h1,
+  17 h2, 18 sections, 16 details.
+- Hero: the H1 becomes "AI Automation & Integration Services That Save Hours
+  Every Day"; the subheadline becomes the spec's "Stop wasting time on tasks a
+  system can handle for you"; the primary CTA becomes "Get a Free Automation
+  Audit" and gains offer=audit, which the GA4 hook added in US-15.1 already
+  reads; the secondary CTA becomes "See How It Works" and points at #process.
+- The #process anchor was already on the how-we-work section and nothing linked
+  to it, so the spec's scroll target had been built and left unreachable.
+- Process section: the heading becomes "How We Build Your Automation: Start to
+  Finish", the five steps become Free Discovery Call, Audit & Roadmap, Build &
+  Test, Launch & Train and Ongoing Support with the spec's descriptions, and its
+  CTA becomes "Start With a Free Discovery Call".
+- Bottom CTA becomes "Ready to Stop Doing It Manually?" with the spec's subline
+  and button label, and gains offer=audit.
+- Two FAQs are restored to the spec's wording in the visible accordion and the
+  FAQPage JSON-LD together, since editing one and not the other is how the two
+  drift. Verified in sync afterwards, 15 questions each matching one for one.
+- Why: this page sells the service the business leads with, and its hero was the
+  one part a visitor reads first and the one part that matched nothing in the
+  spec.
+- Acceptance: every section of the content report present in its order and
+  wording, except the item recorded below.
+- Not applied: the spec's hero trust bar reads "50+ automations built, GCC, USA,
+  UK, PSEB Registered, WhatsApp API Partner". PSEB is barred by the EPIC-17
+  standing decision, and the remainder is a text bar where the build carries a
+  four stat grid, so adopting it would change layout rather than copy.
+- Note on the meta description: it now carries the spec's text, but that tag is
+  not published. Only the body reaches _elementor_data and the live description
+  is a Yoast field, so this change is for source accuracy only.
+- Open follow ups, not actioned: the spec's bottom CTA asks for a second button,
+  "Download Our AI Guide", pointing at /resources/ai-automation-guide/, which
+  does not exist and would 404, and the lead magnet PDF behind it has not been
+  written. The spec also writes the six problem card headlines in title case
+  where the build uses sentence case, which is a typography convention set in
+  US-3.4 rather than a copy difference, so it was left alone.
+
+### US-17.4: Reconcile the Blogs page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: f516b2c
+- What: ten text edits restoring copy that had been shortened or mislabelled
+  against the content report.
+- How: text nodes only. All 232 style attributes, 244 tags and 9 hrefs on the
+  changed lines are identical before and after, verified from the patch.
+  Structure unchanged: one h1, 11 h2, 21 h3, 12 sections.
+- The drift corrected: the hero body had been cut to two short sentences, losing
+  the Dubai, London and New York line and the claim that the engineers write
+  about what they have actually built; the featured post tagline read "Featured
+  This Week" for "Editor's Pick This Week", its body had lost two clauses and
+  its button read "Read Full Article"; post 4 had lost its subtitle "A Complete
+  2026 Guide" and the closing sentence of its summary; the most read eyebrow
+  read "MOST READ"; the newsletter line had lost "One email. Zero spam. Real
+  insights you can use."; the stats bar abbreviated "Average Rating".
+- The testimonials heading was carrying the spec's tagline, "What Our Readers
+  Say", as its H2. It now carries the spec's H2, "Real Feedback From Real
+  Readers".
+- Why: the shortened copy reads as house style rather than error, which is
+  exactly why it survived. Restored, the page says what the client wrote.
+- Acceptance: every section of the content report present in its order and
+  wording, except the items recorded below.
+- Not applied, per the EPIC-17 standing decision: the spec titles post 5 "Why
+  GCC Businesses Are Moving to Pakistan for Tech Outsourcing" and credits "PSEB
+  registration" and "Pakistan-based partners". The page keeps the US-16.1
+  wording, "Offshore Tech Outsourcing", "verified vendor credentials" and
+  "offshore delivery partners".
+- Deferred at the time and delivered in US-17.5 below: the section taglines.
+- Not applied. A fourth trust badge, "GCC, USA, UK Coverage", has no badge row
+  section of its own to sit in, and the video section's body paragraph has no
+  paragraph element. Section 11 asks for an H3 "Keep Exploring" where the page
+  has an eyebrow reading KEEP EXPLORING above an H2 "Related Pages", so the
+  words are already on screen.
+- Not applied, and worth a decision before it is. The spec attributes its three
+  testimonials to Rashid Al-Mutairi, Priya Sharma and Abdullah Al-Saud. The page
+  carries the same three quotes with role and company only. Naming them means
+  publishing three identified people as references, and these three are not
+  among the names confirmed as usable in the 2026-08-05 spec audit. See
+  docs/portfolio-case-studies.md, which records that placeholder attributed
+  quotes are not to be published.
+
+### US-17.5: Add the Blogs section taglines and repair the stats section
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 6b56f86
+- What: the six section taglines held back from US-17.4, plus a repair to the
+  stats section found while placing them.
+- How: no new component. Each eyebrow reuses the one already on the page, byte
+  for byte, in the variant matching its ground, #9d6507 on light and #f5a623 on
+  dark. Verified from the patch: six div elements added, nothing removed, no
+  href changed, and exactly two distinct new style strings, which are those two
+  existing variants. Heading counts unchanged at one h1, 11 h2 and 21 h3.
+- Taglines added above the hero, Latest Posts, the newsletter, the video
+  section, the testimonials and the final CTA. The page carried this element on
+  only two of its twelve sections beforehand.
+- The stats repair: the section heading read "Weekly" and was followed by two
+  paragraphs reading "Published" and "Coverage". Those are the labels of the
+  spec's fifth and sixth stats, "Weekly, Published" and "GCC, USA, UK,
+  Coverage", flattened out of the stat grid and into prose, which is why the
+  grid showed four of the spec's six. The heading now reads "Numbers That
+  Speak", the name the spec gives the section, and the two paragraphs carry the
+  information as sentences. Moving them back into the grid was not done because
+  the grid is a fixed four column layout and six cells would reflow it.
+- Why: the taglines are the client's own section labels, and the site already
+  uses this exact element everywhere else, so the page was inconsistent with
+  both the spec and its own siblings.
+- Acceptance: verified rendered in order. Every section from the hero to Related
+  Pages now carries its tagline above its heading.
+- Not added: section 3's "Editor's Pick This Week", already on the page as the
+  featured card's own heading, where an eyebrow would duplicate it; and section
+  2's "Trusted by Readers Across Three Continents", which sits above a badge row
+  that is part of the hero rather than a section of its own.
+
+### US-17.6: Reconcile the Custom Software page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 90e55ea
+- What: eleven text edits plus three link changes. The hero, the five step
+  process and the bottom CTA carried none of the spec's copy; sections 02
+  through 07 already matched it verbatim, including all six problem cards, the
+  GCC spotlight and all three sub-service blocks with their GCC, USA and UK
+  market notes and deliverables.
+- How: text nodes only apart from the three links. All 147 style attributes on
+  the changed lines are identical before and after, and the diff adds and
+  removes no elements. Structure unchanged: one h1, 13 h2, 14 sections, 10
+  details.
+- Hero: the H1 highlight word becomes "Business" from "Workflows"; the
+  subheadline becomes the spec's sentence about web apps, dashboards and APIs;
+  the primary CTA becomes "Get a Free Software Audit" with offer=audit; the
+  secondary becomes "See How It Works" pointing at #process, which existed on
+  the process section with nothing linking to it, the same defect found on
+  ai-automation in US-17.3.
+- Process: the heading becomes "How We Build Your Custom Software, Start to
+  Finish" and the five steps become Discovery & Planning, Design, Build & Test,
+  Launch and Support & Scale with the spec's descriptions.
+- Bottom CTA becomes "Ready for Software That Actually Fits Your Business?" with
+  the spec's subline and the label "Book Your Free Software Audit". This spec
+  sets a rule that no button on the page may read "Contact Us" and every button
+  must say what happens next, and all nine of its named CTAs now match.
+- Four FAQs rewritten to the spec's wording, in the accordion and the JSON-LD
+  together, verified in sync at nine questions each.
+- Why: the parts a visitor reads first and last, the hero and the closing CTA,
+  were the parts that matched the spec least.
+- Acceptance: every section of the content report present in its order and
+  wording, except the item recorded below.
+- Commitments this introduces, all the client's own words and worth a second
+  look before publication: prices of $8,000, $20,000 to $60,000 and $50,000
+  upward where the page previously gave no figures; timelines of 6 to 10, 12 to
+  20 and 20 to 40 weeks where it said weeks to months; "Every project comes with
+  a 30-day warranty", a contractual term that appears nowhere else on the site;
+  and code ownership now conditioned on final payment, where the page had said
+  the code is yours without that condition.
+- Not applied: the spec's hero trust bar reads "75+ Custom Builds Delivered,
+  PSEB Registered, Full-Stack Team, GCC, USA & UK". PSEB is barred by the
+  EPIC-17 standing decision, and the remainder is a text bar where the build
+  carries a four stat grid.
+- Not applied, and already correct on the page: the spec marks its three
+  testimonials as placeholders to be replaced with real client quotes before
+  launch. The page carries the same three quotes attributed by role and market
+  only, with no invented names, which is the safer of the two.
+- Checked and left alone: three eyebrows on this page write the ampersand as
+  "&AMP;" rather than "&amp;", an artifact of uppercasing after escaping. That
+  is a valid HTML5 legacy named reference and renders as "&", so it is a source
+  inconsistency rather than a defect. The same pattern is in faqs, industries,
+  odoo-erp, pos-systems and social-media-marketing.
+
+### US-17.7: Reconcile the Digital Transformation page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: db83fd8
+- What: two text edits. This page was the closest to its spec of any reconciled
+  so far.
+- How: text nodes only. No element added or removed, every style attribute and
+  every href identical, verified from the patch. Structure unchanged: one h1,
+  15 h2, 16 sections, 9 details, 8 schema questions.
+- The H1 becomes "Digital Transformation Solutions", the spec's exact heading,
+  from "Digital Transformation Solutions for GCC, USA & UK". The amber accent
+  span is kept and moved onto the word "Solutions" so the hero keeps the
+  highlight pattern every other page uses, rather than losing it along with the
+  geography. Dropping the geography also matches the SEO instruction in the
+  Custom Software report, which says to keep the H1 broad and name the markets
+  in the subheadline and section copy instead.
+- The final CTA button becomes "Get a Free Assessment" from "Book Your Free
+  Transformation Assessment".
+- Already matching, and left alone: all fifteen sections in the spec's order,
+  the six pain point cards, the three state labels, the GCC spotlight with all
+  three badges, all three sub-service blocks with their full deliverables lists
+  and tech stacks, the six AI cards, the five process steps, the six industry
+  cards, all three pricing tiers with prices, features and the MOST POPULAR
+  badge, the four stat figures and all eight FAQs.
+- Already handled by US-16.1 and kept, per the EPIC-17 standing decision: the
+  hero trust bar reads "US Registered" where the spec says "PSEB Registered",
+  and testimonial three is attributed to "Managing Director, Professional
+  Services Firm" where the spec adds "Karachi, Pakistan".
+- Not changed, a style call rather than a content one: the spec expands
+  contractions throughout, writing "It is about rethinking" and "AI Is Not the
+  Future", where the build contracts them. The information is identical and the
+  contracted form is the site's established voice, so it was left. Say the word
+  and it can be matched to the spec exactly.
+- Defect found, not fixed, needs a decision. The pricing note, "All packages
+  include discovery, documentation, and knowledge transfer...", is a section
+  level note in the spec that applies to all three tiers. In the build it sits
+  inside the Enterprise Transformation card, between its "Custom Quote" line and
+  its feature list, so it reads as if it applied to that tier alone. Fixing it
+  means moving the paragraph out of the card and below the grid, which is a
+  structural move rather than a copy change, so it was left for a decision.
+
+### US-17.8: Reconcile the Odoo ERP Services page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 29310a8
+- What: eleven text edits plus three link changes on odoo-erp.html.
+- Which page: the report was handed over against enterprise-odoo.html and does
+  not belong to it. It is headed "Odoo ERP Services Page", its breadcrumb is
+  Home > Services > Odoo ERP Services, and its sections match odoo-erp.html one
+  for one, including the six problem cards, "Odoo ERP, Set Up to Fit Your
+  Business", "Odoo ERP Compliance for UAE and Saudi Arabia" and the four
+  sub-service blocks. enterprise-odoo.html is the solution page and carries none
+  of them: it has The Four Pillars of Enterprise Automation, Flexible Engagement
+  Models and industry fit. Applying the report there would have overwritten a
+  distinct page with service copy and left the page it was written for
+  untouched. Confirmed with the client before any edit.
+- How: text nodes only apart from the three links. No element added or removed,
+  all 90 style attributes on the changed lines identical, verified from the
+  patch. Structure unchanged: one h1, 14 h2, 15 sections, 11 details, FAQ schema
+  and accordion in sync at 10 questions.
+- Hero: the H1 becomes "Odoo ERP Services Built Around How You Work" from "Odoo
+  Implementation, Customisation & Support", with the amber accent span moved to
+  "How You Work"; the subheadline becomes the spec's one-liner; button one
+  becomes "Get a Free ERP Audit" with offer=audit; button two becomes "See How
+  We Work" pointing at #process.
+- The #process anchor existed with nothing linking to it. That is the third page
+  in this sweep with the same defect, after US-17.3 and US-17.6.
+- How We Work: the heading becomes "How We Deliver Your Odoo Project", the five
+  steps become Free Discovery Call, Plan & Proposal, Build & Configure, Migrate
+  & Go Live and Train & Support, and the CTA becomes "Start With a Free
+  Discovery Call".
+- Bottom CTA becomes "Ready to Stop Running Your Business on Spreadsheets?" with
+  the spec's subline and the label "Book Your Free ERP Audit".
+- Already matching: all six problem cards, the What We Offer intro and its four
+  pills, the compliance spotlight with all three stat boxes, and all four
+  sub-service blocks with bodies, deliverables and GCC, USA and UK region notes.
+- Already correct and worth noting: this spec instructs that placeholder
+  testimonials must not be published, because a fake-looking quote does more
+  damage than an empty section, and that the stats bar should reuse the figures
+  already published elsewhere on the site. The page states that client quotes
+  are being collected and carries 50+, 15+, 98% and 4 to 8 weeks. Both
+  instructions were already satisfied.
+- Not applied: the spec's hero trust bar includes "PSEB Registered", barred by
+  the EPIC-17 standing decision, and the rest is a text bar where the build
+  carries a four stat grid.
+- Not applied, and a deliberate choice rather than an oversight. The spec lists
+  eight FAQs and the page carries ten. Five match verbatim, including the cost
+  and duration answers with their dollar and week ranges. Three are phrased
+  differently: the spec asks "Will our existing data migrate safely?", "What
+  happens if we need changes after go-live?" and "Do you provide training for
+  our team?", where the page asks how migration is done and how training and
+  post go-live support work. Every topic the spec raises is covered, and the
+  page's versions are more specific, so replacing them would have removed
+  content to gain nothing. Flagged for a decision rather than forced.
+- Open follow up: the spec's bottom CTA asks for a second button, "Download Our
+  Odoo Guide", pointing at /resources/odoo-erp-guide/. The spec itself notes
+  that the PDF must exist first because an outlined button linking to a 404 is
+  worse than no button. The page does not exist, so the button was not added.
+
+### US-17.9: Reconcile the Enterprise Odoo page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 82db461
+- What: thirty-four text edits plus five section taglines on enterprise-odoo.html.
+  This is the report that belongs to this page, unlike the Odoo ERP Services one
+  handled in US-17.8. Its sections match one for one.
+- How: the diff adds five div elements, removes nothing, changes no href, and
+  introduces no new style string, because the taglines reuse the two eyebrow
+  variants already on the page. Structure otherwise unchanged: one h1, 12 h2,
+  13 sections, 8 details, JSON-LD parsing.
+- Hero: the tagline becomes "Stop Running Your Business on Spreadsheets" from
+  "Odoo Implementation & Customization", and the body becomes the spec's "Tired
+  of jumping between five different tools" paragraph.
+- The Why Odoo intro becomes the spec's plain-language version about no vendor
+  lock-in, replacing "open-source advantages with a modular architecture that
+  ensures maximum scalability".
+- All four module card bodies. Each had been cut to a single feature summary
+  sentence where the spec opens with the problem, so HR now begins "Stop chasing
+  timesheets and fixing payroll errors" and CRM "Stop losing leads in email
+  threads".
+- Nineteen of the twenty-four feature list labels had been shortened, for
+  example "Employee Self-Service" for "Employee Self-Service Portal" and "Batch
+  Tracking" for "Batch & Serial Tracking". All restored.
+- All five implementation journey steps were three-word fragments: "Deep process
+  audit.", "System architecture.", "Tailored configuration.", "QA & migration."
+  and "Rollout & support.". They now carry the spec's sentences.
+- Defect fixed: the Related Solutions section carried a stray link reading
+  "Solution" with no card behind it. It now reads "Explore All Solutions" and
+  points at /solutions/ as before.
+- Already correct and kept: the spec's Partners & Certifications list names
+  PSEB, FAST SOFTEC, Cisco Networking Academy, NAVTTC and Odoo Partner. The page
+  carries three of them, PSEB and NAVTTC having been removed by US-16.1, which
+  the EPIC-17 standing decision preserves.
+- Why: this page had the widest gap between spec and build of any page in the
+  sweep. The module bodies and journey steps in particular had been compressed
+  to the point where the page described features without ever naming the problem
+  they solve, which is the whole structure the spec is built on.
+- Acceptance: every section of the report present in its order, with its copy,
+  except the items recorded below.
+- Not applied, all of which need new elements rather than new words: the hero
+  subheading line "One Platform. One Dashboard. Every Department Working
+  Together."; the four stat context lines under Why Odoo, such as "Trusted
+  worldwide"; the implementation journey intro; the eight integration category
+  body lines, such as "Accept payments your customers already trust"; and the
+  Why Choose intro.
+- Not applied, FAQ. The spec lists ten questions and the page carries seven.
+  The seven cover the spec's Q1 to Q7 with the same facts in slightly shorter
+  wording. Missing entirely are Q8 on whether Odoo suits small businesses, Q9 on
+  implementation cost, and Q10 on why to choose Big Binary Tech. Adding them
+  means new accordion entries and matching FAQPage schema, so it was left for a
+  decision.
+- Spec defect worth noting: the report lists Retail & E-Commerce twice, as
+  Industry 1 and again as Industry 3 with different body copy, and its
+  integration categories skip number 3. The page fills the third industry slot
+  with Trading & Distribution, which is not in the report but is the sensible
+  reading, and adds a Communications integration category. Both were left.
+
+### US-17.10: Reconcile the Industries page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 4fa7760
+- What: thirty-six text edits across the hero, the ten vertical sections, the
+  compliance table and the FAQ.
+- How: text nodes only. No element added or removed, every style attribute and
+  every href identical, verified from the patch. Structure unchanged: one h1,
+  16 h2, 17 sections, 7 details, FAQ schema and accordion in sync at six.
+- The main finding: the ten vertical headings were duplicating their own
+  eyebrow. Each section opened with an eyebrow reading, for example, "// RETAIL
+  & E-COMMERCE" followed by an h2 reading "Retail & E-commerce", so the sector
+  name appeared twice and the heading said nothing. The spec gives each vertical
+  a descriptive heading and all ten are now in place, from Unified Omnichannel
+  Retail Technology through to Secure, Compliant Digital Government Platforms.
+  The eyebrows are untouched, so each section now names the sector and then says
+  what gets built. The 2026-08-05 spec audit had recorded this as a naming
+  difference and left it; it is closed now.
+- All ten vertical summary cards regain the spec's fuller wording, the three Why
+  Industry-Specific features and the hero body return to the spec's phrasing, and
+  the first delivery step regains "competitors".
+- The compliance table regains the regulators the build had dropped: DHA and
+  MOHAP for healthcare, Central Bank for financial services, FTA for retail,
+  NESA and SEDD for government, HACCP for manufacturing, KHDA and ADEK for
+  education. Its retail approach line also returns to "VAT-ready invoicing,
+  Arabic receipts" from "Tax-ready invoicing, localized receipts".
+- Two FAQ questions restored to the spec's wording in both the accordion and the
+  JSON-LD.
+- Not applied, a claims decision rather than a copy one. The spec's hero stats
+  bar reads "200+ Industry-Specific Projects" and the page says 60+. Raising it
+  is the opposite of what docs/portfolio-case-studies.md asks, which lists that
+  exact claim on this page as one to remove for lack of evidence, and
+  docs/stats-verification.md records it as unverified. The lower figure stays
+  until someone decides which is true. The spec's "PSEB Registered" badge is
+  already "USA Registered" from US-16.1 and the EPIC-17 decision keeps it.
+- Not applied, whole sections the page does not have. The spec defines four that
+  are absent: section 14 The BBT Edge, "We Speak Your Industry's Language";
+  section 15, "Regulatory Rigor and Data Residency"; section 18, Global Success
+  Stories with four case snippets; and section 19, "Proven Results Across
+  Verticals". The 2026-08-05 audit already recorded the last two as missing.
+  Building them is new sections rather than new words.
+- Not applied, FAQ count. The spec lists eight questions and the page carries
+  six. Missing are "Do you offer Arabic support for GCC industries?", which the
+  2026-08-05 audit also flagged, and "How do you handle data migration from our
+  old industry system?". Adding them needs new accordion entries and matching
+  schema.
+- Also not applied: the spec's hero stats bar has five items, two of which the
+  page does not carry as stats, "GCC, USA, UK" and "Domain Expertise".
+
+### US-17.11: Build the four Industries sections the spec defines but the page lacked
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 057e2a8
+- What: the four sections and two FAQs held back from US-17.10, plus the two the
+  2026-08-05 spec audit had recorded as missing since then.
+- How: pure addition. The diff removes no line and no tag from the existing
+  markup, 56 lines added and 0 removed, with section and div tags balancing at
+  21 and 280. Nothing new was designed. Every section is assembled from
+  components already on this page: the eyebrow, h2 and lead paragraph pattern
+  from the Why Industry-Specific section, bb-card for the cards, and the page's
+  own bb-statg with bb-statg-5 and bb-on-dark for the stat strip. Only the two
+  existing typefaces appear, every colour is from the site palette, and every
+  font size matches a value already in the file.
+- Sections added, in the spec's positions: The BBT Edge and Regulatory Rigor and
+  Data Residency after the last vertical and before Compliance and Standards;
+  Global Success Stories and Proven Results Across Verticals after the delivery
+  process and before the FAQ. Backgrounds continue the page's alternation.
+- Responsive: the card rows use g3 and g4 and the stats use bb-statg-5, all of
+  which already carry collapse rules at 980 and 620 pixels. US-15.1 records that
+  writing the column count as an inline style outranks those media queries and
+  broke seven pages at 390px, so it is written as classes here.
+- Two FAQs added, on Arabic support for GCC industries and on data migration
+  from an old system, in the accordion and the JSON-LD together and in the
+  spec's order. Verified afterwards at 8 questions each, matching one for one.
+- Content decision on the stat: the spec's Proven Results bar reads "200+
+  Industry Projects" and this section carries 60+, matching the hero on the same
+  page. Publishing 60+ at the top and 200+ lower down is the exact contradiction
+  docs/stats-verification.md warns about, and docs/portfolio-case-studies.md
+  lists the 200+ figure for this page as one to remove for lack of evidence.
+- Content decision on the success stories: the four are written with the sector,
+  the region and the outcome but no client named. The spec supplies no names, and
+  the project standard is not to publish attributed quotes nobody will stand
+  behind.
+- Acceptance: verified rendered in order on a local server, 21 sections each
+  with its eyebrow, tags balanced, JSON-LD parsing, no horizontal overflow risk
+  since every grid uses the page's existing responsive classes.
+
+### US-17.12: Close the last gaps on the POS Systems page
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 337258f
+- What: three fixes, none of them visible copy. This page was built from this
+  handoff in US-15.1 and is the closest match of any page in the sweep.
+- Already correct, and left alone: the hero and its trust bar, all six problem
+  cards, the What We Offer intro with three pills and the six-node flow, the
+  Gulf spotlight with all three stat boxes, all three sub-service blocks with
+  outcome lines, bodies and Gulf, USA and UK market notes, all five process
+  steps, the stats bar, and all eight FAQs, which are verbatim down to the
+  dollar and week ranges. The meta description also already matched exactly.
+- The meta title read "POS Systems, Big Binary Tech" and is now the handoff's
+  "Custom POS System Development Company | Big Binary Tech".
+- The two audit CTAs, in the hero and the bottom banner, lacked the offer
+  parameter the handoff specifies. Both now carry offer=audit, which the GA4
+  hook added in US-15.1 reads.
+- Schema: the handoff asks for three types and the page had one. Service and
+  BreadcrumbList now sit alongside the existing FAQPage, all four blocks parse,
+  and the Home, Services, POS Systems trail is in structured data. The Service
+  block references the existing organization node by id rather than repeating
+  it. This is the first page in the sweep to carry Service schema, and the same
+  gap exists on the other service pages.
+- How: no element removed, every style attribute unchanged, and the only markup
+  added is the two schema scripts. Structure unchanged at one h1, 10 h2, 11
+  sections, 9 details, FAQ schema and accordion in sync at eight.
+- Not changed: the bottom banner's secondary button reads "Talk to an Engineer"
+  where the handoff wants "Download Our POS Buying Guide" pointing at
+  /resources/pos-buying-guide/. That page does not exist and the handoff itself
+  says the PDF must be created first, so a working button was kept over a 404.
+  This is the third page whose spec asks for a lead magnet that has not been
+  written, after ai-automation and custom-software-development.
+- Not changed: the testimonials section still states that client quotes are
+  being collected. The handoff is explicit that a quote must carry a real name
+  and that no placeholder name may be published.
+- Also verified: the handoff's menu instruction, replacing Digital
+  Transformation with POS Systems as the last item in the Services mega menu, is
+  already applied sitewide.
+
+### US-17.13: Reconcile the Resources page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 1b8ab84
+- What: six text edits plus one badge.
+- How: the diff removes no tag, leaves every style attribute and every href
+  identical, and adds a single span. Structure unchanged: one h1, 14 h2, 14
+  sections, 13 details, FAQ schema and accordion in sync at 12.
+- The hero trust bar carried four badges where the spec lists five. "60+
+  PROJECTS" becomes "60+ TRANSFORMATION PROJECTS", "AI-FIRST" becomes "AI-FIRST
+  APPROACH", and the missing "GCC, USA, UK" badge is added.
+- The hero paragraph reads "actionable insights", the spec's word. The first
+  e-book card regains its full title, "Odoo Implementation Playbook for GCC".
+  Three topic labels return to the spec's fuller versions: "Legacy System
+  Modernization", "ZATCA & GCC Compliance" for "Tax & VAT Compliance", and
+  "Cybersecurity & Risk Management".
+- A correction made in passing, recorded because it nearly shipped: "Legacy
+  Modernization" appears three times on this page, as a topic tag on the
+  featured case study, as a blog card heading, and as a topic grid item. Only
+  the grid item takes the spec's longer form. The first pass replaced all three
+  and the other two were put back before commit. A global replace on a short
+  label is not safe on a page that reuses category names.
+- Already handled by US-16.1 and kept: the spec's trust bar reads "PSEB
+  Registered" where the page says "US REGISTERED", and the spec labels both case
+  study card two and testimonial two "Professional Services, Karachi" where the
+  page carries no location.
+- Not changed, and stated here because it reads as a difference. The spec writes
+  the markets as "the GCC, USA, and UK"; the page writes "the USA, the GCC, the
+  UK and MENA" in the hero and the case studies intro. Leading with the USA is
+  the point of US-16.1, so reordering would work against it.
+- Section 09 of the spec says of the FAQ "keep this section as it is", so it was
+  left untouched.
+- Not applied, would duplicate content: the spec's section 3 is an E-Book
+  Spotlight for the Odoo playbook, with the label "THE ODOO PLAYBOOK" and the
+  heading "Comprehensive Guide to ERP Implementation in the GCC Region". That
+  same asset is already the first card in the E-Books and Guides section, so
+  building the spotlight would put one download on the page twice.
+- Not applied, needs a new cell: the spec's featured case study results table has
+  five rows and the page's stat grid shows four, missing "Downtime, Zero". The
+  grid is a fixed four column layout, so a fifth cell reflows it.
+
+### US-17.14: Reconcile the Retail and POS page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 2c216ba
+- What: three changes. One div added, nothing removed, no href changed, no new
+  style string. Structure unchanged: one h1, 15 h2, 16 sections, 9 details, FAQ
+  schema and accordion in sync at eight.
+- The hero had no tagline and now carries the spec's "Retail Technology" above
+  the H1, matching the eight eyebrows already on the page.
+- Defect fixed: the Related Solutions section carried two truncated links
+  reading "Solution" and "Service", pointing at /solutions/ and /services/. They
+  now read "Explore All Solutions" and "Explore All Services". This is the same
+  defect fixed on enterprise-odoo in US-17.9, so it is a pattern in the related
+  solutions block rather than a one-off, and the remaining pages with that block
+  should be checked.
+- Already matching and left alone: all six pain point cards, the What We Offer
+  body and its four visual labels, the GCC spotlight with all three badges, all
+  four sub-service blocks with subheadlines, bodies, feature lists and tech
+  stacks, all four integration categories, all five process steps, all three
+  pricing tiers with prices and the pricing note, the four client result stats,
+  all eight FAQs verbatim including the dollar and week ranges, and the final
+  CTA.
+- Already handled by US-16.1 and kept: the hero stats bar reads "US Registered"
+  where the spec says "PSEB Registered", and testimonial three is attributed to
+  "Owner, Electronics Store" where the spec adds "Lahore, Pakistan".
+- Left as it is: the bottom CTA's secondary button, "Download Our POS Buyer's
+  Guide", points at /e-books-guides/, which exists. The spec gives this section
+  one CTA only, so the second is additive rather than wrong, and unlike the guide
+  buttons on ai-automation, custom-software-development and pos-systems it does
+  not 404.
+- Spec contradiction worth recording: this report says "80+ POS Systems
+  Deployed" where the POS Systems handoff behind US-17.12 says 60+, and the two
+  pages currently publish both. docs/stats-verification.md lists the 80+ figure
+  as unverified and docs/portfolio-case-studies.md asks for its removal on the
+  grounds that one in-house POS build exists. Neither number was changed here,
+  pending a decision on the real figure.
+- Spec self-contradiction, also unresolved: section 01 gives the H1 as "Retail
+  and POS Solutions" while the SEO section at the end gives it as "Retail & POS
+  Solutions for GCC, USA & UK". The page carries the second, so it was left.
+
+### US-17.15: Reconcile the Services hub to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: b3b49c4
+- What: twelve text edits. No element added or removed, every style attribute and
+  every href identical. Structure unchanged: one h1, 14 h2, 15 sections, 14
+  details, FAQ schema and accordion in sync at 13.
+- The hero body becomes the spec's "We help businesses cut costs, save time, and
+  scale faster with smart technology", replacing a line about not stitching five
+  vendors together. The services intro regains the spec's example, "Your POS
+  talks to your inventory", which had been changed to "Your CRM talks to your
+  ERP". The AI and Website service bodies return to the spec's wording.
+- Three card buttons take the spec's exact labels: "Explore Odoo ERP Solutions",
+  "Explore Software Development", "Explore POS System Features".
+- Three Why Choose Us cards were carrying the spec's card labels instead of its
+  H3s, so "Global delivery experience", "Support that stays" and "Built to scale
+  securely" become "Delivered across GCC, USA and UK", "Support that does not
+  disappear" and "Grow without breaking".
+- The industries section becomes "Built for your industry" with the spec's intro.
+- Three findings from the 2026-08-05 spec audit are now confirmed closed, checked
+  rather than assumed: the page carries all 13 FAQs this spec lists, not the six
+  recorded then; the sticky scroll-anchor nav exists and is wired to the service
+  blocks; and the POS block heading is already "Point of Sale (POS) Systems".
+- Kept per the EPIC-17 standing decision: the Global Delivery card body reads
+  "Headquartered in Wyoming, delivering across the United States, the GCC and the
+  United Kingdom" where the spec says "We've delivered projects in the GCC,
+  United States, and United Kingdom". The spec's H3 for that card was adopted,
+  its body was not, because the Wyoming line is US-16.1.
+- Not applied, an information architecture decision rather than a copy one, and
+  the last open item from the 2026-08-05 audit for this page. The spec's sixth
+  service card is Digital Transformation. This page carries Social Media
+  Marketing in that slot, which is the sixth of the six service lines named in
+  the mega menu, the footer and the "6 CORE SERVICE LINES" chip. Digital
+  Transformation is a solution on this site with its own page under Solutions.
+  Adding it here would make seven services on a page headed "Six services, one
+  engineering partner" and would place the same offering in both the services and
+  the solutions trees. Needs a decision before it is built.
+- Not applied, needs a section and real quotes: the spec's section 6 is Client
+  Testimonials under "What Our Clients Say", with the instruction to keep
+  existing testimonials. This page has no testimonials section, only the stats
+  strip under "Proof before you pick up the phone".
+
+### US-17.16: Reconcile the Social Media Marketing page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 59162aa
+- What: twenty-four text edits plus three taglines.
+- How: three div elements added, nothing removed, no href changed, no new style
+  string, because the taglines reuse the two eyebrow variants already on the
+  page. Structure unchanged: one h1, 14 h2, 15 sections, 9 details, FAQ schema
+  and accordion in sync at eight. Verified rendered in order on a local server:
+  every one of the 14 sections now carries its tagline.
+- The main finding: this spec names a tagline for every section and seven were
+  carrying a generic label instead. THE PROBLEMS WE SOLVE, WHAT WE OFFER, BUILT
+  FOR THE GCC MARKET, HOW WE WORK, PRICING AND PACKAGES, SOCIAL PROOF and FAQ
+  all now carry the client's line. Three sections had no tagline at all, the
+  hero, the analytics section and the final CTA, and now do.
+- Hero: the H1 becomes "Social Media Marketing That Turns Followers Into
+  Customers" from "Social Media Marketing & Brand Growth for GCC, USA & UK",
+  with the amber accent moved onto "Followers Into Customers". Dropping the
+  geography from an H1 is what the Custom Software report asks for site-wide, so
+  the page can rank globally while the markets are named in the body and the GCC
+  section. The body becomes the spec's "Stop posting into the void" paragraph,
+  the button becomes "Get Your Free Social Media Audit", and the trust bar takes
+  the spec's five labels rather than one-word versions.
+- All six problem cards regain the spec's headings and fuller bodies. Four had
+  been cut to a single short sentence, losing the consequence that makes the
+  card land: card three now ends "You miss the local audience you want to
+  reach", card six "Social media becomes a burden, not a tool".
+- The GCC section regains its closing sentence on local influencer access. The
+  analytics H2 drops "Zero Guesswork", which the spec places as that section's
+  tagline, so the phrase now appears once rather than twice.
+- Kept per the EPIC-17 standing decision: the trust bar reads "US Registered"
+  where the spec's fifth badge is "PSEB Registered".
+- Not changed, a deliberate departure: the GCC section H2 keeps "for UAE and
+  Saudi Arabia", which this spec omits. Every other GCC spotlight spec in this
+  sweep requires the geography in that H2 for local search, so removing it here
+  would break the pattern for a single page.
+- Note on US-14.2, which recorded closing "the remaining Social Media Marketing
+  gaps against its content spec". That work covered the service cards and
+  deliverables. The taglines, the hero and the problem card bodies were not part
+  of it, which is why this page still had 24 differences.
+
+### US-17.17: Reconcile the Solutions page, and clear the last Pakistan references
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 993d7a9
+- What: twenty text edits on solutions.html and two on contact-us.html. No
+  element added or removed on either, every style attribute and every href
+  identical. Structure unchanged on both.
+- The correction this story exists to record: US-17.2 stated that no build file
+  other than about-us.html carried the "Markets: PK, GCC, US, UK" stat.
+  solutions.html carried the identical stat, and contact-us.html carried PK
+  twice more, once in a coverage strip and once in a sentence about time zones.
+  The check behind that claim searched a narrower pattern than the one it
+  reported on. All three are fixed and a sitewide search for a bare PK now
+  returns nothing. US-17.2 has been annotated with the correction.
+- Solutions copy restored: the delivery framework had been written as a house
+  summary rather than the client's copy, with every step reduced to a noun list.
+  Its tagline, heading, intro and all four step bodies are now the spec's, so
+  "Agile implementation with milestones and regular reviews" reads "Agile
+  sprints with weekly demos. You review. We adjust. No surprises."
+- The trust section tagline and heading, and the FAQ tagline and heading, take
+  the spec's wording. The hero body reads "technology solutions that connect
+  your teams".
+- All six industry cards take the spec's headings, so "Manufacturing" becomes
+  "Manufacturing Solutions". This closes the 2026-08-05 audit finding that the
+  industry blocks were a flattened grid rather than the spec's named solution
+  blocks.
+- Already handled and kept: the spec's Partners and Certifications list names
+  PSEB and NAVTTC. The page carries Cisco, FAST, UMT, Hack The Box and Odoo
+  Partner, both having been removed by US-16.1.
+- Not changed: the trust section intro. The spec's version ends "Here's what
+  they say", which promises testimonials this section does not have. The build's
+  intro is about registrations being matters of public record, which is what the
+  section actually shows. Adopting the spec's line would advertise content that
+  is not there.
+- Not applied, needs new accordion entries and schema: the spec lists ten FAQs
+  and the page carries six. The six cover the spec's Q1 to Q6 with more specific
+  answers. Missing are Q7 on working outside the GCC, Q8 on Odoo for small
+  businesses, Q9 on what digital transformation is, and Q10 on how to get
+  started. The 2026-08-05 audit recorded this page as having six FAQs where the
+  spec then wanted seven; the spec has since grown to ten.
+- Not applied, needs a new paragraph: the industry section has no intro, where
+  the spec gives "Every industry has its own rules, compliance needs, and
+  workflows. We build solutions that fit."
+
+### US-17.18: Reconcile the Web Development page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 2b62ce1
+- What: eighteen text edits plus four link changes. No element added or removed,
+  every style attribute identical. Structure unchanged: one h1, 17 h2, 18
+  sections, 11 details, FAQ schema and accordion in sync at 10.
+- Hero, which carried none of the spec's copy: the H1 becomes "Websites Built to
+  Load Fast and Turn Visitors Into Customers" with the amber accent on the
+  second half; the subheadline becomes the spec's one-liner; button one becomes
+  "Get a Free Website Audit" with offer=audit; button two becomes "See How It
+  Works" pointing at #process.
+- The #process anchor existed with nothing linking to it. This is the fourth
+  page in the sweep with the same defect, after US-17.3, US-17.6 and US-17.8,
+  which confirms it across every service page that has a process section.
+- Process: the heading becomes "How We Build Your Website, Start to Finish", the
+  five steps become Free Discovery, Design & Plan, Build & Test, Launch & Train
+  and Ongoing Support with the spec's descriptions, and its CTA becomes "Start
+  With a Free Discovery Call" with offer=process.
+- Bottom CTA becomes "Ready for a Website That Actually Works?" with the spec's
+  subline, the label "Book Your Free Website Audit", and offer=audit.
+- Three FAQs rewritten to the spec's wording in the accordion and the JSON-LD
+  together. The duration answer now carries the spec's 2 to 3, 4 to 6 and 6 to
+  10 week ranges where the page previously gave none.
+- Already matching: all six problem cards, the What We Offer intro with its
+  seven pills and six-node flow, the GCC spotlight, and all seven sub-service
+  blocks with outcome lines, bodies, deliverables and GCC, USA and UK market
+  notes.
+- Not applied: the spec's hero trust bar reads "100+ Websites Built, PSEB
+  Registered, Responsive & Mobile-First, GCC, USA & UK". PSEB is barred by the
+  EPIC-17 standing decision, and the rest is a text bar where the build carries a
+  three stat grid.
+- Not applied: the spec's bottom CTA asks for a second button, "Download Our Web
+  Guide", pointing at /resources/web-development-guide/, which does not exist.
+  That is the fourth lead magnet in this sweep with no PDF behind it, after
+  ai-automation, custom-software-development and pos-systems. Worth commissioning
+  the four as a batch rather than one at a time.
+
+---
+
 ## Going forward
 
 New code changes are tracked the same way: a User Story per change, assigned to
