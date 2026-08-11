@@ -998,6 +998,53 @@ adopted in full.
   four, so there is nothing to restore without new client material. The FAST,
   UMT, LIST and WAC badges noted in US-17.1 are on this page too.
 
+### US-17.3: Reconcile the AI Automation page to its SEO content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 0bd0ceb
+- What: nine text edits plus three link changes, bringing ai-automation.html to
+  the wording of its content report. The hero and the five step process carried
+  none of the spec's copy; everything between them already matched.
+- How: text nodes only apart from the three links. All 193 style attributes and
+  all 237 tags on the changed lines are identical before and after, verified by
+  extracting them from the patch. Structure after the edit is unchanged: one h1,
+  17 h2, 18 sections, 16 details.
+- Hero: the H1 becomes "AI Automation & Integration Services That Save Hours
+  Every Day"; the subheadline becomes the spec's "Stop wasting time on tasks a
+  system can handle for you"; the primary CTA becomes "Get a Free Automation
+  Audit" and gains offer=audit, which the GA4 hook added in US-15.1 already
+  reads; the secondary CTA becomes "See How It Works" and points at #process.
+- The #process anchor was already on the how-we-work section and nothing linked
+  to it, so the spec's scroll target had been built and left unreachable.
+- Process section: the heading becomes "How We Build Your Automation: Start to
+  Finish", the five steps become Free Discovery Call, Audit & Roadmap, Build &
+  Test, Launch & Train and Ongoing Support with the spec's descriptions, and its
+  CTA becomes "Start With a Free Discovery Call".
+- Bottom CTA becomes "Ready to Stop Doing It Manually?" with the spec's subline
+  and button label, and gains offer=audit.
+- Two FAQs are restored to the spec's wording in the visible accordion and the
+  FAQPage JSON-LD together, since editing one and not the other is how the two
+  drift. Verified in sync afterwards, 15 questions each matching one for one.
+- Why: this page sells the service the business leads with, and its hero was the
+  one part a visitor reads first and the one part that matched nothing in the
+  spec.
+- Acceptance: every section of the content report present in its order and
+  wording, except the item recorded below.
+- Not applied: the spec's hero trust bar reads "50+ automations built, GCC, USA,
+  UK, PSEB Registered, WhatsApp API Partner". PSEB is barred by the EPIC-17
+  standing decision, and the remainder is a text bar where the build carries a
+  four stat grid, so adopting it would change layout rather than copy.
+- Note on the meta description: it now carries the spec's text, but that tag is
+  not published. Only the body reaches _elementor_data and the live description
+  is a Yoast field, so this change is for source accuracy only.
+- Open follow ups, not actioned: the spec's bottom CTA asks for a second button,
+  "Download Our AI Guide", pointing at /resources/ai-automation-guide/, which
+  does not exist and would 404, and the lead magnet PDF behind it has not been
+  written. The spec also writes the six problem card headlines in title case
+  where the build uses sentence case, which is a typography convention set in
+  US-3.4 rather than a copy difference, so it was left alone.
+
 ---
 
 ## Going forward
