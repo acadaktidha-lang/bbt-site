@@ -904,6 +904,59 @@ Move the company's stated home from Pakistan to the Wyoming head office.
 
 ---
 
+## EPIC-17: Page content alignment to the client content specs
+
+Walk every published page against its client content document and reconcile the
+copy. Layout, section structure and design are out of scope: this epic changes
+words only. All of it lands on one branch, `content/page-content-updates`, and
+goes up as a single pull request.
+
+**Standing decision, taken 11 August 2026.** The content specs were written
+before the Pakistan to Wyoming repositioning in US-16.1. Where a spec conflicts
+with that repositioning, **the repositioning wins** and the conflict is recorded
+on the story rather than applied. This keeps Pakistan, PSEB, NAVTTC and
+government affiliation language off the site while the rest of each spec is
+adopted in full.
+
+### US-17.1: Reconcile the home page to its content document
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 09a8adf
+- What: the Trusted By section is retitled from "Recognized by industry leaders.
+  Registered and compliant in the United States." to the spec's "Recognized by
+  Industry Leaders", its eyebrow drops "& REGISTRATIONS", and its body becomes
+  the spec line "We've earned the trust of leading technology and education
+  bodies. Here's who stands behind us:".
+- How: text nodes only. Every style attribute, class and element in the section
+  is byte for byte unchanged, so the heading, the paragraph and the badge row
+  occupy the same layout as before. Verified after the edit: one h1, 11 h2, 12
+  sections, both JSON-LD blocks parse, 440 style attributes, zero Pakistan terms.
+- Why: the rest of the page already carried the spec verbatim, applied as
+  structure in d3127cb. Hero, the seven step process, the partnership section,
+  all six capability cards, all eight industry cards, all four solution cards,
+  the four reasons and all eight FAQs matched on a line by line diff. This
+  heading was the only copy left that the spec disagreed with on wording alone.
+- Why the em dashes in the spec are not reproduced: the document writes
+  "What We Build — Core Capabilities Overview" and "More Than a Vendor — Your
+  Technology Partner". The build renders both with a colon, which is US-3.4 and
+  stays.
+- Spec lines deliberately not applied, per the standing decision above: the FAQ
+  answer "What makes Big Binary Tech different" credits "PSEB registration" and
+  "government affiliations" in the spec, and the page keeps "US registration"
+  and "university affiliations". The two registration and compliance FAQs added
+  during US-16.1 are kept, though the spec lists eight questions rather than ten.
+- Acceptance: every section of the content document is present on the page in the
+  spec's order and wording, except the conflicts recorded above.
+- Open follow up, not actioned: the badge row still lists FAST, UMT, LIST and
+  WAC. FAST and UMT read as Pakistani university affiliations that the US-16.1
+  term sweep did not catch, because it searched for place names and regulators
+  rather than institutions. Left in place pending confirmation of what each body
+  is. The same heading is also live on about-us.html, so that page needs the same
+  change when its turn comes or the two will drift.
+
+---
+
 ## Going forward
 
 New code changes are tracked the same way: a User Story per change, assigned to
