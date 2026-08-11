@@ -1122,6 +1122,60 @@ adopted in full.
   2's "Trusted by Readers Across Three Continents", which sits above a badge row
   that is part of the hero rather than a section of its own.
 
+### US-17.6: Reconcile the Custom Software page to its content report
+
+- Type: User Story
+- State: Closed (Done)
+- Commits: 90e55ea
+- What: eleven text edits plus three link changes. The hero, the five step
+  process and the bottom CTA carried none of the spec's copy; sections 02
+  through 07 already matched it verbatim, including all six problem cards, the
+  GCC spotlight and all three sub-service blocks with their GCC, USA and UK
+  market notes and deliverables.
+- How: text nodes only apart from the three links. All 147 style attributes on
+  the changed lines are identical before and after, and the diff adds and
+  removes no elements. Structure unchanged: one h1, 13 h2, 14 sections, 10
+  details.
+- Hero: the H1 highlight word becomes "Business" from "Workflows"; the
+  subheadline becomes the spec's sentence about web apps, dashboards and APIs;
+  the primary CTA becomes "Get a Free Software Audit" with offer=audit; the
+  secondary becomes "See How It Works" pointing at #process, which existed on
+  the process section with nothing linking to it, the same defect found on
+  ai-automation in US-17.3.
+- Process: the heading becomes "How We Build Your Custom Software, Start to
+  Finish" and the five steps become Discovery & Planning, Design, Build & Test,
+  Launch and Support & Scale with the spec's descriptions.
+- Bottom CTA becomes "Ready for Software That Actually Fits Your Business?" with
+  the spec's subline and the label "Book Your Free Software Audit". This spec
+  sets a rule that no button on the page may read "Contact Us" and every button
+  must say what happens next, and all nine of its named CTAs now match.
+- Four FAQs rewritten to the spec's wording, in the accordion and the JSON-LD
+  together, verified in sync at nine questions each.
+- Why: the parts a visitor reads first and last, the hero and the closing CTA,
+  were the parts that matched the spec least.
+- Acceptance: every section of the content report present in its order and
+  wording, except the item recorded below.
+- Commitments this introduces, all the client's own words and worth a second
+  look before publication: prices of $8,000, $20,000 to $60,000 and $50,000
+  upward where the page previously gave no figures; timelines of 6 to 10, 12 to
+  20 and 20 to 40 weeks where it said weeks to months; "Every project comes with
+  a 30-day warranty", a contractual term that appears nowhere else on the site;
+  and code ownership now conditioned on final payment, where the page had said
+  the code is yours without that condition.
+- Not applied: the spec's hero trust bar reads "75+ Custom Builds Delivered,
+  PSEB Registered, Full-Stack Team, GCC, USA & UK". PSEB is barred by the
+  EPIC-17 standing decision, and the remainder is a text bar where the build
+  carries a four stat grid.
+- Not applied, and already correct on the page: the spec marks its three
+  testimonials as placeholders to be replaced with real client quotes before
+  launch. The page carries the same three quotes attributed by role and market
+  only, with no invented names, which is the safer of the two.
+- Checked and left alone: three eyebrows on this page write the ampersand as
+  "&AMP;" rather than "&amp;", an artifact of uppercasing after escaping. That
+  is a valid HTML5 legacy named reference and renders as "&", so it is a source
+  inconsistency rather than a defect. The same pattern is in faqs, industries,
+  odoo-erp, pos-systems and social-media-marketing.
+
 ---
 
 ## Going forward
