@@ -102,43 +102,87 @@ WordPress page title plus the site name):
 | `/terms-of-service/` | 703 | still empty |
 | `/resources/videos/` | 721 | still empty |
 
-**Empty `meta_description`**, beyond the four in section 2: `/faqs/` (716),
-`/outsourcing/` (720), `/pos-systems/` (715) and `/resources/videos/` (721).
+**Empty `meta_description`** at the time of the sweep, eight pages: the four in
+section 2 plus `/faqs/` (716), `/outsourcing/` (720), `/pos-systems/` (715) and
+`/resources/videos/` (721). All eight have since been filled, see below.
 
-Section 1's nine replacement titles are deliberately **not** applied. Every one of
-those pages carries hand-authored SEO copy today, and the standing instruction is
-to leave live SEO copy alone. Applying them is a separate, explicit decision.
+**Section 1 undercounts the long titles.** It lists nine. Measuring every live
+`seo_title` found **twelve** over 60 characters: the nine listed, plus
+`/digital-transformation/` (61), `/e-books-guides/` (62) and `/home/` (62). Anyone
+working that list should re-measure rather than trust it, and should handle all
+twelve in one pass, since applying nine of twelve leaves the set inconsistent and
+the file still wrong.
+
+Section 1's replacements are deliberately **not** applied. Every one of those pages
+carries hand-authored SEO copy today, and the standing instruction is to leave live
+SEO copy alone. Note also that going over 60 characters only truncates how the
+title displays in results, it is not a ranking penalty, so this is a presentation
+tidy-up and not urgent.
 
 The empty `seo_title` fields are also left alone on purpose. The build file title
 tags are generic, of the form `Page Name · Big Binary Tech`, and Yoast's own
 fallback already renders effectively the same string from the WordPress page title
-plus the site name. Writing them would add no value.
+plus the site name. Writing them would add no value. `/privacy-policy/` and
+`/terms-of-service/` do not need one at all. For the commercial pages a real
+keyword title would help, but that is SEO copywriting, best folded into the
+twelve-title pass above rather than done piecemeal.
 
 ### Descriptions applied on 2026-08-12
 
-Unlike the title tags, the build file `<meta name="description">` values are real
-page-specific copy, so they are a usable source. These four were written into
-previously **empty** `meta_description` fields, which disturbed no existing copy:
+All eight pages that had an empty `meta_description` now have one. Every write went
+into an empty field, so no existing copy was touched. The first four came straight
+from the build file description tags. The last four could not: see the truncation
+section below for why.
 
-| Page | ID | Chars |
-| --- | --- | --- |
-| `/pos-systems/` | 715 | 139 |
-| `/privacy-policy/` | 3 | 142 |
-| `/terms-of-service/` | 703 | 135 |
-| `/resources/videos/` | 721 | 145 |
+| Page | ID | Chars | Source |
+| --- | --- | --- | --- |
+| `/pos-systems/` | 715 | 139 | build tag as-is |
+| `/privacy-policy/` | 3 | 142 | build tag as-is |
+| `/terms-of-service/` | 703 | 135 | build tag as-is |
+| `/resources/videos/` | 721 | 145 | build tag as-is |
+| `/faqs/` | 716 | 158 | build tag, trimmed from 162 |
+| `/outsourcing/` | 720 | 153 | build tag, trimmed from 161 |
+| `/custom-software-development/` | 551 | 155 | written from the page H1 and opening paragraph, because the build tag is truncated |
+| `/odoo-erp/` | 553 | 147 | written from the page H1 and opening paragraph, because the build tag is truncated |
 
-### Still open, and why
+Nothing was invented for the last two beyond rephrasing what the page itself says.
+In particular the "certified Odoo partner" claim that this file used to propose for
+`/odoo-erp/` was left out, because it is not verifiable from anything in the repo.
 
-| Page | ID | Blocker |
-| --- | --- | --- |
-| `/faqs/` | 716 | Build copy is 162 chars, 2 over the limit. Needs a trim decision. |
-| `/outsourcing/` | 720 | Build copy is 161 chars, 1 over the limit. Needs a trim decision. |
-| `/custom-software-development/` | 551 | **Build copy is truncated mid-word**, ending "from internal management syste". Fix the build file first. |
-| `/odoo-erp/` | 553 | **Build copy is truncated**, ending "keeps finance, HR, inventory,". Fix the build file first. |
+Every live `meta_description` is now within the 160 character limit.
 
-Those last two are a defect in the build files themselves, not just a WordPress
-gap. Whatever wrote those `<meta name="description">` tags cut them off at 180
-characters. Do not paste either one anywhere until the sentence is finished.
+### The build file description tags are truncated on seven pages
+
+Whatever produced the "reconcile the copy to its content report" commits cut every
+long description off at exactly 180 characters, mid-word, with no ellipsis. These
+seven are affected:
+
+| Build file | Ends with |
+| --- | --- |
+| `custom-software-development.html` | "from internal management syste" |
+| `odoo-erp.html` | "keeps finance, HR, inventory," |
+| `digital-transformation.html` | "From outdated spreadshe" |
+| `e-books-guides.html` | "is built from 60+ real-world proje" |
+| `retail-pos.html` | "cloud-based mult" |
+| `social-media-marketing.html` | "we build social strategies that attr" |
+| `web-development.html` | "Every bui" |
+
+`case-studies.html` is broken differently: its description is the 34 character
+tagline "Digital Excellence · Proven Impact", not a description at all.
+
+Git history shows these tags were **added already truncated**, so no complete
+version exists anywhere in the repo to recover. If that reconcile step is a
+repeatable script or process, it will keep doing this.
+
+**These were deliberately not repaired, and the tags should not be treated as
+metadata.** The publish transform strips `<title>` and `<meta name="description">`
+from every build file, so neither has ever reached the live site. Six of the seven
+pages above already carry good hand-authored Yoast descriptions. Repairing the tags
+would buy nothing for SEO and would restore the illusion that they are a usable
+copy source, which is exactly the trap that made this list wrong for so long.
+
+Keep the tags for local preview if that is useful. Do not copy them into Yoast
+without checking length and that the sentence actually finishes.
 
 ---
 
