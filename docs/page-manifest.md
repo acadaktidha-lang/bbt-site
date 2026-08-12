@@ -45,11 +45,28 @@ followed, so every page now has a live URL behind it.
 Note the build filename and the live slug differ for one page: `resources-videos.html`
 publishes to slug `videos` under parent `resources`, i.e. `/resources/videos/`.
 
-The whole set was last published on 2026-08-07: all 26 pages written to
+The whole set was published on 2026-08-07: all 26 pages written to
 `meta._elementor_data`, verified by re-read, Elementor cache flushed. Every live
 URL was then re-fetched and checked for HTTP 200, exactly one `<header>` and one
 `<footer>` (no theme chrome doubling), valid JSON-LD, and the Wyoming postal
-address present in the structured data.
+address present in the structured data. Pages were published again on 2026-08-11,
+which is the `modified` timestamp most of them now carry.
+
+**Reconciled on 2026-08-12.** Every one of the 26 pages was read back from
+`/wp-json/wp/v2/pages/<id>?context=edit` and its HTML widget compared against its
+build file, normalising away the document wrapper the transform strips. All 26
+match at `23f6353`, so nothing is pending publication. Two things to know before
+repeating this:
+
+- The transform drops `<!DOCTYPE html>`, `<html>`, `<head>`, `<meta charset>`,
+  `<meta name="viewport">`, `<title>`, `<meta name="description">`, `</head>`,
+  `<body>`, `</body>` and `</html>`. Everything else in the head, the preconnect
+  and style blocks included, is kept. Each page holds exactly one `widget/html`
+  inside one `section` > one `column`.
+- The host throttles sustained REST reads. Roughly twelve rapid requests in and
+  connections start timing out for minutes. Pace the sweep, about three seconds
+  between pages, and retry with backoff. `curl` recovered far more reliably than
+  Python's `urllib` here.
 
 ## Page content is not the only place copy lives
 
