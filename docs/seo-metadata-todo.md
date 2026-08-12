@@ -105,20 +105,54 @@ WordPress page title plus the site name):
 **Empty `meta_description`**, beyond the four in section 2: `/faqs/` (716),
 `/outsourcing/` (720), `/pos-systems/` (715) and `/resources/videos/` (721).
 
-No copy is proposed here for the still-empty ones, because choosing it is an
-editorial decision and the build file tags are not usable as a source. Section 1's
-nine replacement titles are also still unapplied: every one of those pages carries
-its original over-length title.
+Section 1's nine replacement titles are deliberately **not** applied. Every one of
+those pages carries hand-authored SEO copy today, and the standing instruction is
+to leave live SEO copy alone. Applying them is a separate, explicit decision.
+
+The empty `seo_title` fields are also left alone on purpose. The build file title
+tags are generic, of the form `Page Name · Big Binary Tech`, and Yoast's own
+fallback already renders effectively the same string from the WordPress page title
+plus the site name. Writing them would add no value.
+
+### Descriptions applied on 2026-08-12
+
+Unlike the title tags, the build file `<meta name="description">` values are real
+page-specific copy, so they are a usable source. These four were written into
+previously **empty** `meta_description` fields, which disturbed no existing copy:
+
+| Page | ID | Chars |
+| --- | --- | --- |
+| `/pos-systems/` | 715 | 139 |
+| `/privacy-policy/` | 3 | 142 |
+| `/terms-of-service/` | 703 | 135 |
+| `/resources/videos/` | 721 | 145 |
+
+### Still open, and why
+
+| Page | ID | Blocker |
+| --- | --- | --- |
+| `/faqs/` | 716 | Build copy is 162 chars, 2 over the limit. Needs a trim decision. |
+| `/outsourcing/` | 720 | Build copy is 161 chars, 1 over the limit. Needs a trim decision. |
+| `/custom-software-development/` | 551 | **Build copy is truncated mid-word**, ending "from internal management syste". Fix the build file first. |
+| `/odoo-erp/` | 553 | **Build copy is truncated**, ending "keeps finance, HR, inventory,". Fix the build file first. |
+
+Those last two are a defect in the build files themselves, not just a WordPress
+gap. Whatever wrote those `<meta name="description">` tags cut them off at 180
+characters. Do not paste either one anywhere until the sentence is finished.
 
 ---
 
-## 3. Contact form notification address
+## 3. Contact form notification address: already done
 
-**Where:** WP Admin, Contact, then the form named "Contact form 1" (ID 704),
-then the Mail tab.
+**Resolved.** Checked on 2026-08-12 via
+`GET /wp-json/contact-form-7/v1/contact-forms/704`. The primary mail `recipient`
+is already `business@bigbinarytech.com`, not `[_site_admin_email]`, so there is
+nothing left to change. `mail_2`, the autoresponder, is inactive.
 
-Change the **To** field from `[_site_admin_email]` to `business@bigbinarytech.com`.
+Worth knowing for next time: Contact Form 7 does expose a REST route at
+`/wp-json/contact-form-7/v1/contact-forms/<id>`, so its settings can be read, and
+written, without opening WP Admin. This file previously sent the reader to the
+admin UI for this.
 
-Every submission is already stored under Flamingo, Inbound Messages, so nothing
-is being lost in the meantime. Only the notification is going to the wrong inbox.
+Every submission is also stored under Flamingo, Inbound Messages.
 
