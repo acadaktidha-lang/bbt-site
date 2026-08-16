@@ -11,32 +11,32 @@ to `/wp-json/wp/v2/pages/<id>` as `meta._elementor_data`, then
 
 | Page ID | Slug | Build file | Title |
 | --- | --- | --- | --- |
-| 478 | `about-us` | `project/build/about-us.html` | About Us |
-| 550 | `ai-automation` | `project/build/ai-automation.html` | AI & Automation |
-| 459 | `blogs` | `project/build/blogs.html` | Blog & Insights |
-| 471 | `careers` | `project/build/careers.html` | Careers |
-| 460 | `case-studies` | `project/build/case-studies.html` | Case Studies |
-| 461 | `contact-us` | `project/build/contact-us.html` | Contact Us |
-| 551 | `custom-software-development` | `project/build/custom-software-development.html` | Custom Software Development |
-| 462 | `digital-transformation` | `project/build/digital-transformation.html` | Digital Transformation |
-| 463 | `e-books-guides` | `project/build/e-books-guides.html` | Ebooks & Guides |
-| 464 | `enterprise-odoo` | `project/build/enterprise-odoo.html` | Enterprise & Odoo ERP |
-| 716 | `faqs` | `project/build/faqs.html` | FAQs |
-| 482 | `home` | `project/build/home.html` | Home |
-| 465 | `industries` | `project/build/industries.html` | Industries |
-| 553 | `odoo-erp` | `project/build/odoo-erp.html` | Odoo & ERP Services |
-| 720 | `outsourcing` | `project/build/outsourcing.html` | Outsourcing |
-| 715 | `pos-systems` | `project/build/pos-systems.html` | POS Systems |
-| 472 | `pricing` | `project/build/pricing.html` | Pricing |
-| 3 | `privacy-policy` | `project/build/privacy-policy.html` | Privacy Policy |
-| 466 | `resources` | `project/build/resources.html` | Resources |
-| 721 | `videos` (child of `resources`, lives at `/resources/videos/`) | `project/build/resources-videos.html` | Video Tutorials & Walkthroughs |
-| 467 | `retail-pos` | `project/build/retail-pos.html` | Retail & POS Solutions |
-| 470 | `services` | `project/build/services.html` | Services |
-| 468 | `social-media-marketing` | `project/build/social-media-marketing.html` | Social Media Marketing |
-| 469 | `solutions` | `project/build/solutions.html` | Solutions |
-| 703 | `terms-of-service` | `project/build/terms-of-service.html` | Terms of Service |
-| 552 | `web-development` | `project/build/web-development.html` | Web Development |
+| 478 | `about-us` | `about-us.html` | About Us |
+| 550 | `ai-automation` | `ai-automation.html` | AI & Automation |
+| 459 | `blogs` | `blogs.html` | Blog & Insights |
+| 471 | `careers` | `careers.html` | Careers |
+| 460 | `case-studies` | `case-studies.html` | Case Studies |
+| 461 | `contact-us` | `contact-us.html` | Contact Us |
+| 551 | `custom-software-development` | `custom-software-development.html` | Custom Software Development |
+| 462 | `digital-transformation` | `digital-transformation.html` | Digital Transformation |
+| 463 | `e-books-guides` | `e-books-guides.html` | Ebooks & Guides |
+| 464 | `enterprise-odoo` | `enterprise-odoo.html` | Enterprise & Odoo ERP |
+| 716 | `faqs` | `faqs.html` | FAQs |
+| 482 | `home` | `home.html` | Home |
+| 465 | `industries` | `industries.html` | Industries |
+| 553 | `odoo-erp` | `odoo-erp.html` | Odoo & ERP Services |
+| 720 | `outsourcing` | `outsourcing.html` | Outsourcing |
+| 715 | `pos-systems` | `pos-systems.html` | POS Systems |
+| 472 | `pricing` | `pricing.html` | Pricing |
+| 3 | `privacy-policy` | `privacy-policy.html` | Privacy Policy |
+| 466 | `resources` | `resources.html` | Resources |
+| 721 | `videos` (child of `resources`, lives at `/resources/videos/`) | `resources-videos.html` | Video Tutorials & Walkthroughs |
+| 467 | `retail-pos` | `retail-pos.html` | Retail & POS Solutions |
+| 470 | `services` | `services.html` | Services |
+| 468 | `social-media-marketing` | `social-media-marketing.html` | Social Media Marketing |
+| 469 | `solutions` | `solutions.html` | Solutions |
+| 703 | `terms-of-service` | `terms-of-service.html` | Terms of Service |
+| 552 | `web-development` | `web-development.html` | Web Development |
 
 26 published pages, 26 build files. `faqs` (716) and `pos-systems` (715) were
 created and published on 2026-08-01; `outsourcing` (720) and `videos` (721)

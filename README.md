@@ -3,30 +3,36 @@
 Source for the pages published at <https://bigbinarytech.com>.
 
 The live site is **WordPress with Elementor**. Nothing in this repository is
-served to visitors directly. The 26 HTML files in
-`bigbinarytech-website-redesign/project/build/` are the source of truth for page
-content, and they reach the site only when they are pushed into Elementor through
-the WordPress REST API. Editing a file here changes nothing until it is published.
+served to visitors directly. The 26 HTML files at the repository root are the
+source of truth for page content, and they reach the site only when they are
+pushed into Elementor through the WordPress REST API. Editing a file here changes
+nothing until it is published.
 
 ## Layout
 
 ```
-bigbinarytech-website-redesign/project/build/   the 26 page sources, one per published page
-docs/                                          manifest, backlog, runbooks, audits
-wp-backup/                                     local REST snapshots, gitignored, not source
-.claude/.wp-credentials                         WordPress application password, gitignored
+*.html                    the 26 page sources, one per published page
+assets/                   image masters (logos)
+docs/                     manifest, backlog, runbooks, audits
+wp-backup/                local REST snapshots, gitignored, not source
+.claude/.wp-credentials   WordPress application password, gitignored
 ```
 
-`build/<slug>.html` is named for the live slug, with one exception:
+`<slug>.html` is named for the live slug, with one exception:
 `resources-videos.html` publishes to `/resources/videos/` as a child of
 `resources`. [docs/page-manifest.md](docs/page-manifest.md) maps every file to its
 WordPress page ID and is the authoritative list.
 
+Every image referenced by a page is an absolute `https://bigbinarytech.com/...`
+URL served by WordPress. `assets/` holds source masters only; no page loads
+anything from it, so moving or renaming a file there cannot break the site.
+
 These files began life as exports from an AI design tool and are now maintained by
 hand. Some still carry a `Generated from "BBT ....dc.html"` comment near the top.
 That is history, not a live dependency. The prototypes it refers to, along with the
-design tool's runtime and its handoff README, were removed once `build/` superseded
-them. They remain in git history if anyone needs to see the original design.
+design tool's runtime and its handoff README, were removed once these page files
+superseded them. They remain in git history if anyone needs to see the original
+design.
 
 ## Publishing a page
 

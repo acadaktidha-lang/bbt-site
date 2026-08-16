@@ -2,7 +2,7 @@
 
 Date: 2026-08-05. Source of truth: 33 unique spec PDFs in `~/Downloads/ajjeeeebbbt/`
 (41 files, but the `(1)`/`(2)` copies are byte-identical re-downloads — verified by md5).
-Compared against `bigbinarytech-website-redesign/project/build/*.html`, which is what
+Compared against the `*.html` page files at the repository root, which is what
 gets pushed to WordPress.
 
 Two build files have no spec and are excluded: `privacy-policy.html`, `terms-of-service.html`.
