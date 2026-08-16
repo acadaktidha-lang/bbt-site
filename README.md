@@ -3,30 +3,34 @@
 Source for the pages published at <https://bigbinarytech.com>.
 
 The live site is **WordPress with Elementor**. Nothing in this repository is
-served to visitors directly. The 26 HTML files in
-`bigbinarytech-website-redesign/project/build/` are the source of truth for page
-content, and they reach the site only when they are pushed into Elementor through
-the WordPress REST API. Editing a file here changes nothing until it is published.
+served to visitors directly. The 26 HTML files at the repository root are the
+source of truth for page content, and they reach the site only when they are
+pushed into Elementor through the WordPress REST API. Editing a file here changes
+nothing until it is published.
 
 ## Layout
 
 ```
-bigbinarytech-website-redesign/project/build/   the 26 page sources, one per published page
-docs/                                          manifest, backlog, runbooks, audits
-wp-backup/                                     local REST snapshots, gitignored, not source
-.claude/.wp-credentials                         WordPress application password, gitignored
+*.html                    the 26 page sources, one per published page
+assets/                   image masters (logos)
+wp-backup/                local REST snapshots, gitignored, not source
+.claude/.wp-credentials   WordPress application password, gitignored
 ```
 
-`build/<slug>.html` is named for the live slug, with one exception:
+`<slug>.html` is named for the live slug, with one exception:
 `resources-videos.html` publishes to `/resources/videos/` as a child of
-`resources`. [docs/page-manifest.md](docs/page-manifest.md) maps every file to its
-WordPress page ID and is the authoritative list.
+`resources`.
+
+Every image referenced by a page is an absolute `https://bigbinarytech.com/...`
+URL served by WordPress. `assets/` holds source masters only; no page loads
+anything from it, so moving or renaming a file there cannot break the site.
 
 These files began life as exports from an AI design tool and are now maintained by
 hand. Some still carry a `Generated from "BBT ....dc.html"` comment near the top.
 That is history, not a live dependency. The prototypes it refers to, along with the
-design tool's runtime and its handoff README, were removed once `build/` superseded
-them. They remain in git history if anyone needs to see the original design.
+design tool's runtime and its handoff README, were removed once these page files
+superseded them. They remain in git history if anyone needs to see the original
+design.
 
 ## Publishing a page
 
@@ -59,30 +63,59 @@ POST /wp-json/yoast/v1/bulk_editor/update_search
 ```
 
 Do not treat the build file tags as a source for those fields. The titles are
-generic placeholders and the descriptions are truncated on seven pages. See
-[docs/seo-metadata-todo.md](docs/seo-metadata-todo.md).
+generic placeholders and the descriptions are truncated on seven pages.
 
 **The host throttles sustained REST traffic.** Around twelve rapid requests in,
 connections begin timing out for minutes at a time. Pace any sweep across all 26
 pages, roughly three seconds between requests, and retry with backoff. `curl` has
 proven more reliable here than Python's `urllib`.
 
-## Docs
+## Page IDs
 
-| File | What it covers |
-| --- | --- |
-| [page-manifest.md](docs/page-manifest.md) | Every page, its ID, its build file, and the publish procedure in full |
-| [backlog.md](docs/backlog.md) | Delivery log, one entry per change, commit hash cited on completion |
-| [seo-metadata-todo.md](docs/seo-metadata-todo.md) | Outstanding Yoast work and the build tag caveats |
-| [ado-backlog-runbook.md](docs/ado-backlog-runbook.md) | Reconstructing this board in Azure DevOps |
-| [spec-audit-2026-08-05.md](docs/spec-audit-2026-08-05.md) | Page copy audited against the client specs |
-| [stats-verification.md](docs/stats-verification.md) | Provenance for the numbers quoted on the site |
-| [portfolio-case-studies.md](docs/portfolio-case-studies.md) | Case study source copy |
-| [ai-data-services-copy.md](docs/ai-data-services-copy.md) | Service page source copy |
-| [qa-report-2026-07-28.html](docs/qa-report-2026-07-28.html) | QA sweep from 2026-07-28 |
+Each file publishes to the WordPress page ID below. These IDs are what
+`POST /wp-json/wp/v2/pages/<id>` needs, so keep this table current.
+
+| ID | File | Live slug |
+| --- | --- | --- |
+| 478 | `about-us.html` | `about-us` |
+| 550 | `ai-automation.html` | `ai-automation` |
+| 459 | `blogs.html` | `blogs` |
+| 471 | `careers.html` | `careers` |
+| 460 | `case-studies.html` | `case-studies` |
+| 461 | `contact-us.html` | `contact-us` |
+| 551 | `custom-software-development.html` | `custom-software-development` |
+| 462 | `digital-transformation.html` | `digital-transformation` |
+| 463 | `e-books-guides.html` | `e-books-guides` |
+| 464 | `enterprise-odoo.html` | `enterprise-odoo` |
+| 716 | `faqs.html` | `faqs` |
+| 482 | `home.html` | `home` |
+| 465 | `industries.html` | `industries` |
+| 553 | `odoo-erp.html` | `odoo-erp` |
+| 720 | `outsourcing.html` | `outsourcing` |
+| 715 | `pos-systems.html` | `pos-systems` |
+| 472 | `pricing.html` | `pricing` |
+| 3 | `privacy-policy.html` | `privacy-policy` |
+| 466 | `resources.html` | `resources` |
+| 721 | `resources-videos.html` | `videos`, child of `resources`, at `/resources/videos/` |
+| 467 | `retail-pos.html` | `retail-pos` |
+| 470 | `services.html` | `services` |
+| 468 | `social-media-marketing.html` | `social-media-marketing` |
+| 469 | `solutions.html` | `solutions` |
+| 703 | `terms-of-service.html` | `terms-of-service` |
+| 552 | `web-development.html` | `web-development` |
+
+Six pages were renamed off WordPress attachment collision suffixes
+(`/about-us-2/`, `/ai-automation-2/`, `/digital-transformation-3/`,
+`/resources-2/`, `/retail-pos-2/`, `/solutions-3/`). The old URLs are kept alive
+by 301s in the Redirection plugin, so do not reuse those names.
 
 ## Working conventions
 
 Changes land on a branch and merge to `master` by pull request in Azure DevOps.
-There is no GitHub remote, so `gh` will not work. Every change gets a backlog entry
-with its commit hash. No em dashes and no en dashes in backlog items.
+There is no GitHub remote, so `gh` will not work.
+
+The delivery log, page manifest, SEO tracker, spec audits and QA reports used to
+live in a `docs/` folder. It was removed to keep this repository to one README,
+the page files and their assets. Nothing is lost: every one of those files is
+still in git history, recoverable with
+`git log --diff-filter=D --name-only -- docs/` and `git show <commit>^:<path>`.

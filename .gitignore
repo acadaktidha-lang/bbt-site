@@ -7,7 +7,7 @@ wp-backup/
 .playwright-mcp/
 
 # Audit / verification screenshots taken at the repo root. Real site imagery
-# lives in assests/ and project/assets/, so nothing at the root is ever source.
+# lives in assets/, so no image at the root is ever source.
 /*.jpeg
 /*.jpg
 /*.png
