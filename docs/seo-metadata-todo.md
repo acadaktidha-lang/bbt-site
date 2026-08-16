@@ -1,11 +1,32 @@
-# SEO metadata to set in WordPress admin
+# SEO metadata to set in WordPress
 
-These two lists are the only QA findings that cannot be fixed from the site code.
-Yoast stores them per page and its REST route will not persist a change, so each
-one has to be pasted in through the WordPress admin.
+These two lists are QA findings that cannot be fixed from the site code. Yoast
+stores them per page, outside `_elementor_data`, so republishing a build file
+never touches them.
 
-**Where:** edit the page, scroll to the Yoast SEO panel below the editor, open
-the Google preview and use the SEO title and Meta description fields.
+**Correction, 2026-08-12:** this file previously said Yoast's REST route will not
+persist a change and that every value had to be pasted in through the admin. That
+is wrong. The bulk editor route does persist:
+
+```
+POST /wp-json/yoast/v1/bulk_editor/update_search
+{"items":[{"id":<id>,"seo_title":"...","meta_description":"..."}]}
+```
+
+Verified on 2026-08-12 by setting `seo_title` on `/pos-systems/` (715), re-reading
+it from `GET /wp-json/yoast/v1/bulk_editor/posts?content_type=page&per_page=100`,
+and confirming the rendered `<title>` on the live URL. No Elementor cache flush
+was needed. Always re-read and re-fetch the live page to confirm, because the
+endpoint returns `{"success":true}` either way.
+
+The admin UI remains a valid fallback: edit the page, scroll to the Yoast SEO
+panel below the editor, open the Google preview and use the SEO title and Meta
+description fields.
+
+**Note:** the build files carry their own `<title>` and `<meta name="description">`,
+but the publish transform strips both, so they are not the source of truth for
+anything on this list. Most are generic placeholders of the form
+`Page Name · Big Binary Tech`. Do not copy them into Yoast.
 
 ---
 
@@ -55,15 +76,127 @@ With no description set, Google invents one from whatever text it finds on the p
 
 All four sit inside the 160 character limit.
 
+Flag on `/odoo-erp/`: the copy above says "across Pakistan, the Gulf, the UK and
+the US". Pakistan was removed sitewide by the 2026-08-07 Pakistan to Wyoming
+sweep, so this line predates that decision and must be reworded before it is
+pasted anywhere.
+
 ---
 
-## 3. Contact form notification address
+## 2b. Audit of 2026-08-12: the two lists above are incomplete
 
-**Where:** WP Admin, Contact, then the form named "Contact form 1" (ID 704),
-then the Mail tab.
+A full sweep of `seo_title` and `meta_description` across all 26 pages found more
+empty fields than section 2 records. Live state at the time of the sweep:
 
-Change the **To** field from `[_site_admin_email]` to `business@bigbinarytech.com`.
+**Empty `seo_title`** (page falls back to the Yoast template, which renders as the
+WordPress page title plus the site name):
 
-Every submission is already stored under Flamingo, Inbound Messages, so nothing
-is being lost in the meantime. Only the notification is going to the wrong inbox.
+| Page | ID | Status |
+| --- | --- | --- |
+| `/pos-systems/` | 715 | **Set on 2026-08-12** to `Custom POS System Development Company \| Big Binary Tech`, the value commit 337258f had put in the build file. Verified live. |
+| `/custom-software-development/` | 551 | still empty |
+| `/odoo-erp/` | 553 | still empty |
+| `/faqs/` | 716 | still empty |
+| `/outsourcing/` | 720 | still empty |
+| `/privacy-policy/` | 3 | still empty |
+| `/terms-of-service/` | 703 | still empty |
+| `/resources/videos/` | 721 | still empty |
+
+**Empty `meta_description`** at the time of the sweep, eight pages: the four in
+section 2 plus `/faqs/` (716), `/outsourcing/` (720), `/pos-systems/` (715) and
+`/resources/videos/` (721). All eight have since been filled, see below.
+
+**Section 1 undercounts the long titles.** It lists nine. Measuring every live
+`seo_title` found **twelve** over 60 characters: the nine listed, plus
+`/digital-transformation/` (61), `/e-books-guides/` (62) and `/home/` (62). Anyone
+working that list should re-measure rather than trust it, and should handle all
+twelve in one pass, since applying nine of twelve leaves the set inconsistent and
+the file still wrong.
+
+Section 1's replacements are deliberately **not** applied. Every one of those pages
+carries hand-authored SEO copy today, and the standing instruction is to leave live
+SEO copy alone. Note also that going over 60 characters only truncates how the
+title displays in results, it is not a ranking penalty, so this is a presentation
+tidy-up and not urgent.
+
+The empty `seo_title` fields are also left alone on purpose. The build file title
+tags are generic, of the form `Page Name · Big Binary Tech`, and Yoast's own
+fallback already renders effectively the same string from the WordPress page title
+plus the site name. Writing them would add no value. `/privacy-policy/` and
+`/terms-of-service/` do not need one at all. For the commercial pages a real
+keyword title would help, but that is SEO copywriting, best folded into the
+twelve-title pass above rather than done piecemeal.
+
+### Descriptions applied on 2026-08-12
+
+All eight pages that had an empty `meta_description` now have one. Every write went
+into an empty field, so no existing copy was touched. The first four came straight
+from the build file description tags. The last four could not: see the truncation
+section below for why.
+
+| Page | ID | Chars | Source |
+| --- | --- | --- | --- |
+| `/pos-systems/` | 715 | 139 | build tag as-is |
+| `/privacy-policy/` | 3 | 142 | build tag as-is |
+| `/terms-of-service/` | 703 | 135 | build tag as-is |
+| `/resources/videos/` | 721 | 145 | build tag as-is |
+| `/faqs/` | 716 | 158 | build tag, trimmed from 162 |
+| `/outsourcing/` | 720 | 153 | build tag, trimmed from 161 |
+| `/custom-software-development/` | 551 | 155 | written from the page H1 and opening paragraph, because the build tag is truncated |
+| `/odoo-erp/` | 553 | 147 | written from the page H1 and opening paragraph, because the build tag is truncated |
+
+Nothing was invented for the last two beyond rephrasing what the page itself says.
+In particular the "certified Odoo partner" claim that this file used to propose for
+`/odoo-erp/` was left out, because it is not verifiable from anything in the repo.
+
+Every live `meta_description` is now within the 160 character limit.
+
+### The build file description tags are truncated on seven pages
+
+Whatever produced the "reconcile the copy to its content report" commits cut every
+long description off at exactly 180 characters, mid-word, with no ellipsis. These
+seven are affected:
+
+| Build file | Ends with |
+| --- | --- |
+| `custom-software-development.html` | "from internal management syste" |
+| `odoo-erp.html` | "keeps finance, HR, inventory," |
+| `digital-transformation.html` | "From outdated spreadshe" |
+| `e-books-guides.html` | "is built from 60+ real-world proje" |
+| `retail-pos.html` | "cloud-based mult" |
+| `social-media-marketing.html` | "we build social strategies that attr" |
+| `web-development.html` | "Every bui" |
+
+`case-studies.html` is broken differently: its description is the 34 character
+tagline "Digital Excellence · Proven Impact", not a description at all.
+
+Git history shows these tags were **added already truncated**, so no complete
+version exists anywhere in the repo to recover. If that reconcile step is a
+repeatable script or process, it will keep doing this.
+
+**These were deliberately not repaired, and the tags should not be treated as
+metadata.** The publish transform strips `<title>` and `<meta name="description">`
+from every build file, so neither has ever reached the live site. Six of the seven
+pages above already carry good hand-authored Yoast descriptions. Repairing the tags
+would buy nothing for SEO and would restore the illusion that they are a usable
+copy source, which is exactly the trap that made this list wrong for so long.
+
+Keep the tags for local preview if that is useful. Do not copy them into Yoast
+without checking length and that the sentence actually finishes.
+
+---
+
+## 3. Contact form notification address: already done
+
+**Resolved.** Checked on 2026-08-12 via
+`GET /wp-json/contact-form-7/v1/contact-forms/704`. The primary mail `recipient`
+is already `business@bigbinarytech.com`, not `[_site_admin_email]`, so there is
+nothing left to change. `mail_2`, the autoresponder, is inactive.
+
+Worth knowing for next time: Contact Form 7 does expose a REST route at
+`/wp-json/contact-form-7/v1/contact-forms/<id>`, so its settings can be read, and
+written, without opening WP Admin. This file previously sent the reader to the
+admin UI for this.
+
+Every submission is also stored under Flamingo, Inbound Messages.
 
