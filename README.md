@@ -3,7 +3,7 @@
 Source for the pages published at <https://bigbinarytech.com>.
 
 The live site is **WordPress with Elementor**. Nothing in this repository is
-served to visitors directly. The 26 HTML files at the repository root are the
+served to visitors directly. The 23 HTML files at the repository root are the
 source of truth for page content, and they reach the site only when they are
 pushed into Elementor through the WordPress REST API. Editing a file here changes
 nothing until it is published.
@@ -11,15 +11,13 @@ nothing until it is published.
 ## Layout
 
 ```
-*.html                    the 26 page sources, one per published page
+*.html                    the 23 page sources, one per published page
 assets/                   image masters (logos)
 wp-backup/                local REST snapshots, gitignored, not source
 .claude/.wp-credentials   WordPress application password, gitignored
 ```
 
-`<slug>.html` is named for the live slug, with one exception:
-`resources-videos.html` publishes to `/resources/videos/` as a child of
-`resources`.
+`<slug>.html` is named for the live slug.
 
 Every image referenced by a page is an absolute `https://bigbinarytech.com/...`
 URL served by WordPress. `assets/` holds source masters only; no page loads
@@ -66,7 +64,7 @@ Do not treat the build file tags as a source for those fields. The titles are
 generic placeholders and the descriptions are truncated on seven pages.
 
 **The host throttles sustained REST traffic.** Around twelve rapid requests in,
-connections begin timing out for minutes at a time. Pace any sweep across all 26
+connections begin timing out for minutes at a time. Pace any sweep across all 23
 pages, roughly three seconds between requests, and retry with backoff. `curl` has
 proven more reliable here than Python's `urllib`.
 
@@ -79,13 +77,11 @@ Each file publishes to the WordPress page ID below. These IDs are what
 | --- | --- | --- |
 | 478 | `about-us.html` | `about-us` |
 | 550 | `ai-automation.html` | `ai-automation` |
-| 459 | `blogs.html` | `blogs` |
 | 471 | `careers.html` | `careers` |
 | 460 | `case-studies.html` | `case-studies` |
 | 461 | `contact-us.html` | `contact-us` |
 | 551 | `custom-software-development.html` | `custom-software-development` |
 | 462 | `digital-transformation.html` | `digital-transformation` |
-| 463 | `e-books-guides.html` | `e-books-guides` |
 | 464 | `enterprise-odoo.html` | `enterprise-odoo` |
 | 716 | `faqs.html` | `faqs` |
 | 482 | `home.html` | `home` |
@@ -96,7 +92,6 @@ Each file publishes to the WordPress page ID below. These IDs are what
 | 472 | `pricing.html` | `pricing` |
 | 3 | `privacy-policy.html` | `privacy-policy` |
 | 466 | `resources.html` | `resources` |
-| 721 | `resources-videos.html` | `videos`, child of `resources`, at `/resources/videos/` |
 | 467 | `retail-pos.html` | `retail-pos` |
 | 470 | `services.html` | `services` |
 | 468 | `social-media-marketing.html` | `social-media-marketing` |
