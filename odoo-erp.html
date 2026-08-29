@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1958,7 +1974,7 @@
   <section id="top" class="bbx-sec bbx-hero bbx-hero-mid bbx-hero-binary">
     <div class="bbx-wrap">
       <div>
-        <span class="bbx-badge-line">// Odoo &amp; ERP services<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
+        <span class="bbx-badge-line">// 01. Odoo &amp; ERP services<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
         <h1 class="bbx-h1">
           <span class="bbx-ml"><span style="--d:0">Odoo</span> <span style="--d:1">ERP</span> <span style="--d:2">Services</span></span>
           <span class="bbx-ml"><span style="--d:3">Built</span> <span style="--d:4">Around</span> <em><span style="--d:5">How</span></em></span>
@@ -1980,7 +1996,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// The problems we solve</span>
+          <span class="bbx-eyebrow bbx-rev">// 02. The problems we solve</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Does Any of This Sound Familiar?</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Six reasons a business finally goes looking for an ERP.</p>
@@ -2002,7 +2018,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// What we offer</span>
+          <span class="bbx-eyebrow bbx-rev">// 03. What we offer</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Odoo ERP, Set Up to Fit Your Business</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">We implement and customize Odoo around how your business already runs, not a generic template. From first setup to custom modules, from data migration to team training, one team handles the whole project. No hidden modules, no lock-in.</p>
@@ -2029,7 +2045,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Compliance built in</span>
+          <span class="bbx-eyebrow bbx-rev">// 04. Compliance built in</span>
           <h2 class="bbx-h2 bbx-wide bbx-rev bbx-d1">Odoo ERP Compliance for UAE and Saudi Arabia</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Running a business in the Gulf means dealing with WPS payroll reporting, ZATCA e-invoicing, and GOSI or Mudad integration, on top of actually running the business. Most ERP providers treat this as an afterthought and bolt it on later. We build it into your Odoo setup from day one, so your payroll exports and your invoices already match what the government expects.</p>
@@ -2048,7 +2064,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// What's included</span>
+          <span class="bbx-eyebrow bbx-rev">// 05. What's included</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Everything Your Odoo Engagement Covers</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">One team handles the whole delivery, from the first process workshop to the module configuration, the migration, and the support that follows go-live.</p>
@@ -2105,7 +2121,7 @@
       <div id="odoo-implementation">
         <div class="bbx-proseconsole bbx-split">
           <div>
-            <span class="bbx-eyebrow bbx-rev">// Odoo implementation &amp; deployment</span>
+            <span class="bbx-eyebrow bbx-rev">// 06. Odoo implementation &amp; deployment</span>
             <h2 class="bbx-h2 bbx-rev bbx-d1">Odoo Implementation &amp; Deployment</h2>
             <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Your ERP, live and working.</p>
             <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We handle the full Odoo setup: server configuration, module selection, data import, user roles, and go-live. Whether you run Odoo Community, Enterprise, or Odoo.sh, we configure it around your workflow instead of asking your team to adapt to a default template. Your team logs in on day one and it already makes sense to them.</p>
@@ -2119,7 +2135,7 @@
       <div id="odoo-customization">
         <div class="bbx-proseconsole bbx-split bbx-flip">
           <div>
-            <span class="bbx-eyebrow bbx-rev">// Odoo customization &amp; module development</span>
+            <span class="bbx-eyebrow bbx-rev">// 07. Odoo customization &amp; module development</span>
             <h2 class="bbx-h2 bbx-rev bbx-d1">Odoo Customization &amp; Module Development</h2>
             <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Odoo that works your way.</p>
             <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">Standard Odoo covers most of what a business needs, but not all of it. We build the rest: custom modules, adjusted workflows, and reports that match how your team actually operates. Everything is built on Odoo's own framework and properly documented, so it keeps working when you upgrade later instead of breaking.</p>
@@ -2133,7 +2149,7 @@
       <div id="odoo-migration">
         <div class="bbx-proseconsole bbx-split">
           <div>
-            <span class="bbx-eyebrow bbx-rev">// Odoo migration &amp; upgrades</span>
+            <span class="bbx-eyebrow bbx-rev">// 08. Odoo migration &amp; upgrades</span>
             <h2 class="bbx-h2 bbx-rev bbx-d1">Odoo Migration &amp; Upgrades</h2>
             <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Your data, moved without the risk.</p>
             <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We move your data from Excel, QuickBooks, SAP, Tally, or an old Odoo version into a clean, current setup without losing records. We also fix slow Odoo instances through database tuning, server upgrades, and code cleanup. Still on Odoo 14 or 15? We upgrade you to the latest version with minimal downtime.</p>
@@ -2147,7 +2163,7 @@
       <div id="odoo-support">
         <div class="bbx-proseconsole bbx-split bbx-flip">
           <div>
-            <span class="bbx-eyebrow bbx-rev">// Odoo support &amp; training</span>
+            <span class="bbx-eyebrow bbx-rev">// 09. Odoo support &amp; training</span>
             <h2 class="bbx-h2 bbx-rev bbx-d1">Odoo Support &amp; Training</h2>
             <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Help that doesn't end at go-live.</p>
             <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We don't disappear after launch. Monthly support retainers, on-demand fixes, and role-based training for your finance, sales, HR, and warehouse teams, delivered live or recorded, in English or Arabic. If something breaks or someone forgets how a report works, there is someone to call.</p>
@@ -2166,7 +2182,7 @@
     <div class="bbx-proc-outer" id="bbxProcOuter">
       <div class="bbx-proc-sticky">
         <div class="bbx-proc-head">
-          <span class="bbx-eyebrow">// How it works</span>
+          <span class="bbx-eyebrow">// 10. How it works</span>
           <h2 class="bbx-h2">How We Deliver Your Odoo Project</h2>
           <p>We deliver in phases so your team sees working modules early and nothing critical goes live untested.</p>
         </div>
@@ -2190,7 +2206,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Social proof</span>
+          <span class="bbx-eyebrow bbx-rev">// 11. Social proof</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Results Our Clients Have Seen</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Client quotes for this page are being collected now. The figures below are the same ones published across the rest of the site, so nothing here contradicts another page.</p>
@@ -2208,7 +2224,7 @@
   <section class="bbx-sec" style="padding-top:0;">
     <div class="bbx-wrap bbx-faqgrid">
       <div>
-        <span class="bbx-eyebrow bbx-rev">// FAQ</span>
+        <span class="bbx-eyebrow bbx-rev">// 12. FAQ</span>
         <h2 class="bbx-h2 bbx-rev bbx-d1">Frequently Asked Questions</h2>
       </div>
       <div class="bbx-faq bbx-rev bbx-d2">

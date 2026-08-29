@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }

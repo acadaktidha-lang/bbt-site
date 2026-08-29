@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1260,11 +1276,33 @@
     .bbx-filters a.bbx-pill,.bbx-filters a.bbx-pill::before{ transform:none !important; }
   }
 
-  .bbx-searchbar{ position:sticky; top:var(--bbx-stick); z-index:12;
-    background:rgba(255,255,255,.9); backdrop-filter:blur(16px) saturate(1.4);
+  /* The category rail. The glass sits on the rail itself rather than on a
+     full-bleed strip, so when it sticks it reads as one of the page's own
+     surfaces floating over the paper ground instead of a band cutting the
+     layout in half. The filters are a flowing chip row here, not the stacked
+     grid they fall back to elsewhere: nine full-width tiles pinned under the
+     nav took most of the viewport with them. */
+  .bbx-searchbar{ position:sticky; top:var(--bbx-stick); z-index:12; }
+  .bbx-searchbar .bbx-filters{ display:flex; flex-wrap:wrap; gap:9px;
+    padding:12px 14px; border-radius:22px;
+    background:rgba(255,255,255,.82); border:1px solid var(--bbx-line);
+    backdrop-filter:blur(16px) saturate(1.4);
     -webkit-backdrop-filter:blur(16px) saturate(1.4);
-    transition:box-shadow .25s ease; }
-  .bbx-searchbar.bb-stuck{ box-shadow:0 14px 34px -18px rgba(13,27,42,.28); }
+    box-shadow:0 10px 30px -22px rgba(13,27,42,.45);
+    transition:box-shadow .25s ease, border-color .25s ease; }
+  .bbx-searchbar.bb-stuck .bbx-filters{
+    box-shadow:0 18px 40px -24px rgba(13,27,42,.5);
+    border-color:rgba(245,166,35,.34); }
+  .bbx-searchbar .bbx-filters > li{ display:flex; }
+  .bbx-searchbar .bbx-filters a.bbx-pill{ width:auto; min-height:0;
+    padding:9px 15px; white-space:nowrap; }
+  /* On a narrow screen the row scrolls sideways rather than stacking into a
+     tall block that would pin half the screen while reading. */
+  @media (max-width:719px){
+    .bbx-searchbar .bbx-filters{ flex-wrap:nowrap; overflow-x:auto;
+      border-radius:100px; scrollbar-width:none; }
+    .bbx-searchbar .bbx-filters::-webkit-scrollbar{ display:none; }
+  }
   .bb-help{ display:flex; align-items:center; flex-wrap:wrap; gap:10px;
     padding:0 0 20px; font-family:var(--bbx-mono); font-size:11.5px; color:var(--bbx-faint); }
   .bb-help button{ font-family:var(--bbx-mono); font-size:11.5px; color:var(--bbx-ink2);
@@ -1955,8 +1993,8 @@
   <div class="bbx-prog" aria-hidden="true"><i id="bbxProg"></i></div>
   <div class="bbx-ring" aria-hidden="true"></div>
   <!-- ============ HERO ============ -->
-  <section id="top" class="bbx-sec bbx-hero bbx-hero-mid">
-    <div class="bbx-wrap">
+  <section id="top" class="bbx-sec bbx-hero">
+    <div class="bbx-wrap bbx-hero-grid">
 
       <div>
         <span class="bbx-badge-line">// FAQs<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
@@ -1971,12 +2009,8 @@
           <a class="bbx-ghost" href="#browse">Browse by Topic</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- the hero panel, moved out from beside the headline -->
-  <section class="bbx-sec bbx-conband">
-    <div class="bbx-wrap">
+      <!-- the answer desk, beside the headline -->
       <div class="bbx-conwrap">
         <div class="bbx-con" id="bbxCon" role="img" aria-label="Panel showing what this FAQ page covers and how quickly new questions are answered.">
           <div class="bbx-conbar">

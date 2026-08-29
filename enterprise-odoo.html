@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1958,7 +1974,7 @@
   <section id="top" class="bbx-sec bbx-hero bbx-hero-mid bbx-hero-binary">
     <div class="bbx-wrap">
       <div>
-        <span class="bbx-badge-line">// Stop Running Your Business on Spreadsheets<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
+        <span class="bbx-badge-line">// 01. Stop Running Your Business on Spreadsheets<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
         <h1 class="bbx-h1">
           <span class="bbx-ml"><span style="--d:0">Odoo</span> <span style="--d:1">ERP</span> <span style="--d:2">Solutions</span></span>
           <span class="bbx-ml"><span style="--d:3">That</span> <span style="--d:4">Connect</span> <span style="--d:5">Your</span></span>
@@ -1967,7 +1983,7 @@
         <p class="bbx-lede">Tired of jumping between five different tools to run your business? We implement and customize Odoo ERP so your HR, finance, inventory, and sales live on one platform. Real-time data. Fewer errors. Less chaos.</p>
         <div class="bbx-hero-ctas">
           <a class="bbx-btn bbx-amberbtn" href="/contact-us/?service=enterprise-odoo">Get a Free ERP Assessment <span class="bbx-arr" aria-hidden="true">&rarr;</span></a>
-          <a class="bbx-ghost" href="/services/">Explore Our Odoo Services</a>
+          <a class="bbx-ghost" href="/odoo-erp/">Explore Our Odoo Services</a>
         </div>
       </div>
 
@@ -1980,7 +1996,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Why 12 million businesses choose Odoo</span>
+          <span class="bbx-eyebrow bbx-rev">// 02. Why 12 million businesses choose Odoo</span>
           <h2 class="bbx-h2 bbx-wide bbx-rev bbx-d1">The World's Most Flexible Business Platform</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Odoo is open-source. That means no vendor lock-in. You pick the modules you need now. Add more as you grow. Whether you are a startup or a global company, Odoo scales with you.</p>
@@ -2000,7 +2016,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Four modules. One connected system.</span>
+          <span class="bbx-eyebrow bbx-rev">// 03. Four modules. One connected system.</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">The Four Pillars of Enterprise Automation</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">HR, finance, supply chain and CRM, configured around how your business already runs.</p>
@@ -2064,13 +2080,6 @@
           </ul>
         </article>
       </div>
-
-      <div class="bbx-pills bbx-rev" style="margin-top:34px; gap:14px 26px;">
-        <a class="bbx-go" href="/solutions/">Explore HR Solutions &rarr;</a>
-        <a class="bbx-go" href="/solutions/">Explore Finance Solutions &rarr;</a>
-        <a class="bbx-go" href="/solutions/">Explore Inventory Solutions &rarr;</a>
-        <a class="bbx-go" href="/solutions/">Explore CRM Solutions &rarr;</a>
-      </div>
     </div>
   </section>
 
@@ -2079,7 +2088,7 @@
     <div class="bbx-proc-outer" id="bbxProcOuter">
       <div class="bbx-proc-sticky">
         <div class="bbx-proc-head">
-          <span class="bbx-eyebrow">// From idea to live system, without the headaches</span>
+          <span class="bbx-eyebrow">// 04. From idea to live system, without the headaches</span>
           <h2 class="bbx-h2">Your Odoo Implementation Journey</h2>
         </div>
         <div class="bbx-proc-track" id="bbxProcTrack">
@@ -2117,33 +2126,12 @@
     </div>
   </section>
 
-  <!-- ============ WHY US ============ -->
-  <section id="why-us" class="bbx-dark bbx-ondark">
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-sechead">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Not every partner understands your business</span>
-          <h2 class="bbx-h2 bbx-rev bbx-d1">Why Businesses Trust Us With Their ERP</h2>
-        </div>
-        <p class="bbx-lede bbx-rev bbx-d2">Six reasons the ERP still works a year after go-live.</p>
-      </div>
-      <div class="bbx-grid bbx-g3">
-        <article class="bbx-card bbx-rev"><h3>Odoo-Focused Expertise</h3><p>Odoo is a core practice for us, not a sideline. Everything is built on Odoo&rsquo;s own framework so it keeps working when you upgrade.</p></article>
-        <article class="bbx-card bbx-rev bbx-d1"><h3>GCC &amp; MENA Market Knowledge</h3><p>WPS payroll, ZATCA e-invoicing, GOSI and Mudad are configured from day one rather than bolted on after go-live.</p></article>
-        <article class="bbx-card bbx-rev bbx-d2"><h3>End-to-End ERP Delivery</h3><p>One team handles discovery, configuration, data migration, training and support. You are not passed between vendors.</p></article>
-        <article class="bbx-card bbx-rev"><h3>Custom Development Capabilities</h3><p>Where standard Odoo stops short we build the module, properly documented and upgrade safe, on your own instance.</p></article>
-        <article class="bbx-card bbx-rev bbx-d1"><h3>Transparent Implementation Process</h3><p>You get the timeline, the cost and the exact module list before work starts, and you review progress at every step.</p></article>
-        <article class="bbx-card bbx-rev bbx-d2"><h3>Long-Term Support &amp; Maintenance</h3><p>Support retainers, on-demand fixes and role-based training for your finance, sales, HR and warehouse teams, in English or Arabic.</p></article>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ INDUSTRIES ============ -->
   <section id="industries" class="bbx-sec">
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// One platform. Endless industries.</span>
+          <span class="bbx-eyebrow bbx-rev">// 05. One platform. Endless industries.</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Odoo Solutions Built for Your Industry</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Six sectors where the same platform is configured six different ways.</p>
@@ -2163,7 +2151,7 @@
   <section class="bbx-sec" style="padding-top:0;">
     <div class="bbx-wrap bbx-faqgrid">
       <div>
-        <span class="bbx-eyebrow bbx-rev">// Questions? We&rsquo;ve got answers.</span>
+        <span class="bbx-eyebrow bbx-rev">// 06. Questions? We&rsquo;ve got answers.</span>
         <h2 class="bbx-h2 bbx-rev bbx-d1">Frequently Asked Questions About Odoo ERP</h2>
       </div>
       <div class="bbx-faq bbx-rev bbx-d2">
@@ -2204,7 +2192,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Explore what else we can do for you</span>
+          <span class="bbx-eyebrow bbx-rev">// 07. Explore what else we can do for you</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Related Solutions</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Two neighbouring pillars, often delivered alongside an Odoo rollout.</p>
@@ -2223,7 +2211,7 @@
           <span class="bbx-cardgo">Explore Solution <span class="bbx-arr" aria-hidden="true">&rarr;</span></span>
         </a>
       </div>
-      <p style="margin:34px 0 0;"><a class="bbx-go bbx-rev" href="/solutions/">Explore All Solutions &rarr;</a></p>
+      <p style="margin:34px 0 0;"><a class="bbx-go bbx-rev" href="/digital-transformation/">Explore Digital Transformation &rarr;</a></p>
     </div>
   </section>
 

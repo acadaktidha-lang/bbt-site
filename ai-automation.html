@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1958,7 +1974,7 @@
   <section id="top" class="bbx-sec bbx-hero bbx-hero-mid bbx-hero-binary">
     <div class="bbx-wrap">
       <div>
-        <span class="bbx-badge-line">// AI &amp; automation<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
+        <span class="bbx-badge-line">// 01. AI &amp; automation<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
         <h1 class="bbx-h1">
           <span class="bbx-ml"><span style="--d:0">AI</span> <span style="--d:1">Automation</span> <span style="--d:2">&amp;</span> <span style="--d:3">Integration</span></span>
           <span class="bbx-ml"><span style="--d:4">Services</span> <span style="--d:5">That</span> <em><span style="--d:6">Save</span></em></span>
@@ -1980,7 +1996,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// The problems we solve</span>
+          <span class="bbx-eyebrow bbx-rev">// 02. The problems we solve</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Does Any of This Sound Familiar?</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Six ways manual work quietly eats a week every month.</p>
@@ -2002,7 +2018,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// What we offer</span>
+          <span class="bbx-eyebrow bbx-rev">// 03. What we offer</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Custom AI Automation Built Around Your Business</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">We build automation that fits your existing tools, not the other way around. Whether you need to connect your CRM to WhatsApp, automate your finance workflows, or deploy an AI chatbot for customer support, we handle the full build from start to finish. No generic templates. No lock-in. Just automation that works.</p>
@@ -2025,32 +2041,13 @@
     </div>
   </section>
 
-  <!-- ============ GCC ============ -->
-  <section id="gcc" class="bbx-dark bbx-ondark">
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-sechead">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Built for the GCC market</span>
-          <h2 class="bbx-h2 bbx-wide bbx-rev bbx-d1">AI &amp; WhatsApp Automation for UAE and Saudi Arabia</h2>
-        </div>
-        <p class="bbx-lede bbx-rev bbx-d2">With 96% of UAE and 94% of Saudi smartphone users on WhatsApp every day, businesses in this region that do not automate their WhatsApp channel are missing the most important customer touchpoint. We build WhatsApp Business API automations that handle lead replies, order updates, appointment bookings, and customer support, in both Arabic and English, 24 hours a day.</p>
-      </div>
-      <div class="bbx-statg bbx-s3 bbx-rev bbx-d1">
-        <div class="bbx-bigstat"><b><span data-count="96">96</span>%</b><span>of UAE smartphone users are on WhatsApp daily</span></div>
-        <div class="bbx-bigstat"><b><span data-count="84">84</span>%</b><span>of GCC organizations now use AI in operations</span></div>
-        <div class="bbx-bigstat"><b><span data-count="60">60</span>%</b><span>average support cost reduction with chatbots</span></div>
-      </div>
-      <p style="margin:34px 0 0;"><a class="bbx-go bbx-rev" href="/contact-us/?service=ai-automation" style="color:var(--bbx-amber);">Get WhatsApp Automation for Your Business &rarr;</a></p>
-    </div>
-  </section>
-
   <!-- ============ SUB-SERVICES ============ -->
   <section class="bbx-sec">
     <div class="bbx-wrap bbx-splits">
 
       <div class="bbx-split bbx-proseconsole" id="workflow-automation">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Workflow automation</span>
+          <span class="bbx-eyebrow bbx-rev">// 04. Workflow automation</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Workflow Automation</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Stop doing manually what a system can do for you.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We map your current process, find the steps that waste the most time, and build automated workflows that handle them. Using tools like n8n, Make, or custom-built pipelines, we connect your apps so data flows automatically. No copy-pasting, no missed steps, no delays.</p>
@@ -2063,7 +2060,7 @@
 
       <div class="bbx-split bbx-flip bbx-proseconsole" id="ai-integrations">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// AI integrations</span>
+          <span class="bbx-eyebrow bbx-rev">// 05. AI integrations</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">AI Integrations</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Add AI to the tools you already use, without rebuilding anything.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We connect AI models like OpenAI and Claude into your existing business systems: your CRM, ERP, helpdesk, or website. We handle the API connection, the prompts, and the ongoing tuning so the AI gives your team accurate, useful outputs every time.</p>
@@ -2076,7 +2073,7 @@
 
       <div class="bbx-split bbx-proseconsole" id="crm-integrations">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// CRM integrations</span>
+          <span class="bbx-eyebrow bbx-rev">// 06. CRM integrations</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">CRM Integrations</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Every lead, deal, and customer in one place, always up to date.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We connect your CRM to every other tool in your business. When a lead fills in a form, WhatsApp messages them instantly. When a deal closes, your finance tool is updated. No manual data entry. No missed leads.</p>
@@ -2089,7 +2086,7 @@
 
       <div class="bbx-split bbx-flip bbx-proseconsole" id="api-integrations">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// API integrations</span>
+          <span class="bbx-eyebrow bbx-rev">// 07. API integrations</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">API Integrations</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">If two systems need to share data, we build the connection.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build clean, documented API connections between any two platforms: payment gateways, logistics systems, government portals, marketplace feeds, or your own internal tools. We handle the technical side, including authentication, error handling, and ongoing maintenance.</p>
@@ -2102,7 +2099,7 @@
 
       <div class="bbx-split bbx-proseconsole" id="chatbot-automation">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Chatbot automation</span>
+          <span class="bbx-eyebrow bbx-rev">// 08. Chatbot automation</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Chatbot Automation</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Answer customers on WhatsApp, your website, and your portal, even at 2 AM.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build AI chatbots that handle the repetitive questions so your team only deals with the ones that actually need a human. The bot qualifies leads, books appointments, gives order updates, and escalates to a real agent when needed, in English and Arabic.</p>
@@ -2115,7 +2112,7 @@
 
       <div class="bbx-split bbx-flip bbx-proseconsole" id="business-process-automation">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Business process automation</span>
+          <span class="bbx-eyebrow bbx-rev">// 09. Business process automation</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Business Process Automation</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Less time on admin. More time on the work that actually grows your business.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We audit how your team currently works, find the steps that waste the most time, and build automation to replace them. This covers HR workflows, finance approvals, operations, and customer service. Most clients see a 60% to 70% reduction in manual admin time within 90 days.</p>
@@ -2134,7 +2131,7 @@
     <div class="bbx-proc-outer" id="bbxProcOuter">
       <div class="bbx-proc-sticky">
         <div class="bbx-proc-head">
-          <span class="bbx-eyebrow">// How it works</span>
+          <span class="bbx-eyebrow">// 10. How it works</span>
           <h2 class="bbx-h2">How We Build Your Automation: Start to Finish</h2>
         </div>
         <div class="bbx-proc-track" id="bbxProcTrack">
@@ -2152,61 +2149,11 @@
     </div>
   </section>
 
-  <!-- ============ SOCIAL PROOF ============ -->
-  <section class="bbx-voices">
-    <div class="bbx-band-blobs" aria-hidden="true"><i></i><i></i></div>
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-vgrid">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Social proof</span>
-          <h2 class="bbx-h2 bbx-rev bbx-d1">Results Our Clients Have Seen</h2>
-          <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px; max-width:38ch;">Three automations, three markets, three sets of hours saved.</p>
-          <div class="bbx-vctrl bbx-rev bbx-d3">
-            <button type="button" class="bbx-qnav" id="bbxQprev" aria-label="Previous testimonial">&larr;</button>
-            <button type="button" class="bbx-qnav" id="bbxQnext" aria-label="Next testimonial">&rarr;</button>
-            <div class="bbx-qdots" id="bbxQdots">
-              <button type="button" class="bbx-on" aria-label="Testimonial 1"></button>
-              <button type="button" aria-label="Testimonial 2"></button>
-              <button type="button" aria-label="Testimonial 3"></button>
-            </div>
-            <span class="bbx-qcount" id="bbxQcount">01 / 03</span>
-          </div>
-        </div>
-        <div class="bbx-qcard bbx-rev bbx-d1">
-          <span class="bbx-qmark" aria-hidden="true">&rdquo;</span>
-          <div class="bbx-qbox" id="bbxQbox">
-            <figure class="bbx-quote bbx-on">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;BBT built a WhatsApp automation that handles all our lead replies and appointment bookings. Our team went from spending 4 hours a day on manual follow-ups to zero. The bot speaks Arabic and English, which is exactly what our customers need.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Operations lead</span><span class="org">Dubai, UAE</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;The integration between our HubSpot CRM and Odoo ERP works flawlessly. Data syncs in real time, our sales and finance teams are always on the same page, and the support from BBT has been outstanding.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Head of revenue operations</span><span class="org">London, UK</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;We automated our entire HR onboarding and WPS reporting process. What used to take 3 days now happens in under 2 hours. BBT understood UAE compliance requirements from day one.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">HR director</span><span class="org">Riyadh, KSA</span></span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-      <div class="bbx-statg bbx-rev" style="margin-top:clamp(34px,4vw,52px);">
-        <div class="bbx-bigstat"><b><span data-count="70">70</span>%</b><span>average reduction in manual admin time</span></div>
-        <div class="bbx-bigstat"><b>4 weeks</b><span>from first call to live automation</span></div>
-        <div class="bbx-bigstat"><b><span data-count="50">50</span>+</b><span>automations built for GCC, USA and UK</span></div>
-        <div class="bbx-bigstat"><b>24/7</b><span>your automations run even while you sleep</span></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ FAQ ============ -->
   <section class="bbx-sec">
     <div class="bbx-wrap bbx-faqgrid">
       <div>
-        <span class="bbx-eyebrow bbx-rev">// FAQ</span>
+        <span class="bbx-eyebrow bbx-rev">// 11. FAQ</span>
         <h2 class="bbx-h2 bbx-rev bbx-d1">Frequently Asked Questions</h2>
       </div>
       <div class="bbx-faq bbx-rev bbx-d2">

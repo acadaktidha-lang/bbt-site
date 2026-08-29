@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1958,7 +1974,7 @@
   <section id="top" class="bbx-sec bbx-hero bbx-hero-mid bbx-hero-binary">
     <div class="bbx-wrap">
       <div>
-        <span class="bbx-badge-line">// Your brand deserves more than likes<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
+        <span class="bbx-badge-line">// 01. Your brand deserves more than likes<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
         <h1 class="bbx-h1">
           <span class="bbx-ml"><span style="--d:0">Social</span> <span style="--d:1">Media</span> <span style="--d:2">Marketing</span></span>
           <span class="bbx-ml"><span style="--d:3">That</span> <span style="--d:4">Turns</span> <em><span style="--d:5">Followers</span></em></span>
@@ -1980,7 +1996,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Let&rsquo;s be honest. Social media is harder than it looks</span>
+          <span class="bbx-eyebrow bbx-rev">// 02. Let&rsquo;s be honest. Social media is harder than it looks</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Does Any of This Sound Familiar?</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Six symptoms of a channel that is busy but not earning.</p>
@@ -2002,7 +2018,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// We do not chase vanity metrics. We chase revenue.</span>
+          <span class="bbx-eyebrow bbx-rev">// 03. We do not chase vanity metrics. We chase revenue.</span>
           <h2 class="bbx-h2 bbx-wide bbx-rev bbx-d1">Social Media That Grows Your Business, Not Just Your Follower Count</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Social media isn't about posting pretty pictures. It's about building a predictable growth engine. We combine organic content strategy, paid advertising, and data-driven analytics to transform social channels into revenue-generating assets.</p>
@@ -2025,7 +2041,7 @@
 
       <div class="bbx-split bbx-proseconsole" id="social-media-strategy">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Social media strategy &amp; content creation</span>
+          <span class="bbx-eyebrow bbx-rev">// 04. Social media strategy &amp; content creation</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Social Media Strategy &amp; Content Creation</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">A content engine that builds trust and keeps you top-of-mind.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We create social media strategies rooted in business goals rather than vanity metrics. Every post is planned, designed, and written to attract ideal customers and move them closer to purchase.</p>
@@ -2043,7 +2059,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// No guessing. Just clear numbers.</span>
+          <span class="bbx-eyebrow bbx-rev">// 05. No guessing. Just clear numbers.</span>
           <h2 class="bbx-h2 bbx-wide bbx-rev bbx-d1">See Exactly What You're Getting: Real-Time Analytics</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Our dashboards reveal exactly which content drives leads, which campaigns deliver ROI, and where to scale investment.</p>
@@ -2063,7 +2079,7 @@
     <div class="bbx-proc-outer" id="bbxProcOuter">
       <div class="bbx-proc-sticky">
         <div class="bbx-proc-head">
-          <span class="bbx-eyebrow">// A simple path from audit to growth</span>
+          <span class="bbx-eyebrow">// 06. A simple path from audit to growth</span>
           <h2 class="bbx-h2">How We Grow Your Social Media, Start to Finish</h2>
         </div>
         <div class="bbx-proc-track" id="bbxProcTrack">
@@ -2081,61 +2097,11 @@
     </div>
   </section>
 
-  <!-- ============ CLIENT RESULTS ============ -->
-  <section class="bbx-voices">
-    <div class="bbx-band-blobs" aria-hidden="true"><i></i><i></i></div>
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-vgrid">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Real brands. Real growth.</span>
-          <h2 class="bbx-h2 bbx-rev bbx-d1">Results Our Clients Have Seen</h2>
-          <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px; max-width:38ch;">Three markets, three campaigns, three numbers worth quoting.</p>
-          <div class="bbx-vctrl bbx-rev bbx-d3">
-            <button type="button" class="bbx-qnav" id="bbxQprev" aria-label="Previous testimonial">&larr;</button>
-            <button type="button" class="bbx-qnav" id="bbxQnext" aria-label="Next testimonial">&rarr;</button>
-            <div class="bbx-qdots" id="bbxQdots">
-              <button type="button" class="bbx-on" aria-label="Testimonial 1"></button>
-              <button type="button" aria-label="Testimonial 2"></button>
-              <button type="button" aria-label="Testimonial 3"></button>
-            </div>
-            <span class="bbx-qcount" id="bbxQcount">01 / 03</span>
-          </div>
-        </div>
-        <div class="bbx-qcard bbx-rev bbx-d1">
-          <span class="bbx-qmark" aria-hidden="true">&rdquo;</span>
-          <div class="bbx-qbox" id="bbxQbox">
-            <figure class="bbx-quote bbx-on">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;Follower growth tripled and 15+ WhatsApp leads generated weekly.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">GCC client</span><span class="org">Gulf</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;47 qualified B2B leads generated in the first month.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">USA client</span><span class="org">United States</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;30% reduction in ad spend and doubled engagement.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">UK client</span><span class="org">United Kingdom</span></span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-      <div class="bbx-statg bbx-rev" style="margin-top:clamp(34px,4vw,52px);">
-        <div class="bbx-bigstat"><b><span data-count="150">150</span>+</b><span>Campaigns managed</span></div>
-        <div class="bbx-bigstat"><b>3.2x</b><span>Average ROAS</span></div>
-        <div class="bbx-bigstat"><b><span data-count="40">40</span>%</b><span>Average CPL reduction</span></div>
-        <div class="bbx-bigstat"><b>24/7</b><span>Campaign monitoring</span></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ FAQ ============ -->
   <section class="bbx-sec">
     <div class="bbx-wrap bbx-faqgrid">
       <div>
-        <span class="bbx-eyebrow bbx-rev">// Common questions, clear answers</span>
+        <span class="bbx-eyebrow bbx-rev">// 07. Common questions, clear answers</span>
         <h2 class="bbx-h2 bbx-rev bbx-d1">Frequently Asked Questions</h2>
       </div>
       <div class="bbx-faq bbx-rev bbx-d2">
@@ -2180,7 +2146,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Related services</span>
+          <span class="bbx-eyebrow bbx-rev">// 08. Related services</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">You Might Also Need</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Three services that make a social channel worth the traffic it sends.</p>
@@ -2206,7 +2172,6 @@
         </a>
       </div>
       <div class="bbx-pills bbx-rev" style="margin-top:34px; gap:14px 26px;">
-        <a class="bbx-go" href="/services/">Service &rarr;</a>
         <a class="bbx-go" href="/contact-us/?service=social-media-marketing">Current Page &rarr;</a>
       </div>
     </div>

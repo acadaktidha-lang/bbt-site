@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -2221,53 +2237,6 @@
           <summary class="bbx-faqq">What makes Big Binary Tech different from a larger consultancy?<span class="bbx-plus" aria-hidden="true">+</span></summary>
           <p class="bbx-faqa">You work directly with senior engineers rather than account managers, we onboard in weeks rather than months, and we deliver enterprise-quality outcomes at meaningfully lower cost than tier-1 consultancies. Our US registration and enterprise partnerships give you the due-diligence trail procurement needs.</p>
         </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="bbx-voices">
-    <div class="bbx-band-blobs" aria-hidden="true"><i></i><i></i></div>
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-vgrid">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Testimonials</span>
-          <h2 class="bbx-h2 bbx-rev bbx-d1">What our clients say about working with BBT</h2>
-          <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px; max-width:38ch;">Three engagements, three sets of numbers.</p>
-          <div class="bbx-vctrl bbx-rev bbx-d3">
-            <button type="button" class="bbx-qnav" id="bbxQprev" aria-label="Previous testimonial">&larr;</button>
-            <button type="button" class="bbx-qnav" id="bbxQnext" aria-label="Next testimonial">&rarr;</button>
-            <div class="bbx-qdots" id="bbxQdots">
-              <button type="button" class="bbx-on" aria-label="Testimonial 1"></button>
-              <button type="button" aria-label="Testimonial 2"></button>
-              <button type="button" aria-label="Testimonial 3"></button>
-            </div>
-            <span class="bbx-qcount" id="bbxQcount">01 / 03</span>
-          </div>
-        </div>
-        <div class="bbx-qcard bbx-rev bbx-d1">
-          <span class="bbx-qmark" aria-hidden="true">&rdquo;</span>
-          <div class="bbx-qbox" id="bbxQbox">
-            <figure class="bbx-quote bbx-on">
-              <div class="bbx-kicker">CLOUD MIGRATION</div>
-              <blockquote>"Big Binary Tech moved our entire platform to AWS without a single hour of downtime. Infrastructure costs dropped 40% almost immediately."</blockquote>
-              <p class="bbx-kicker" style="margin:14px 0 0; color:var(--bbx-deep);">40% cost reduction &middot; zero downtime</p>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm"><strong>AK</strong>, Operations Director</span><span class="org">E-Commerce, London, UK</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-kicker">BUSINESS DIGITIZATION</div>
-              <blockquote>"Document processing that used to take two weeks now takes two hours. The error rate practically vanished and compliance is automatic."</blockquote>
-              <p class="bbx-kicker" style="margin:14px 0 0; color:var(--bbx-deep);">99% faster &middot; 85% fewer errors</p>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm"><strong>SM</strong>, Managing Partner</span><span class="org">Professional Services</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-kicker">ODOO ERP</div>
-              <blockquote>"Their team integrated Odoo with ZATCA flawlessly. Real-time VAT reporting and faster invoicing transformed our finance operations."</blockquote>
-              <p class="bbx-kicker" style="margin:14px 0 0; color:var(--bbx-deep);">100% compliance &middot; real-time VAT</p>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm"><strong>RF</strong>, Finance Manager</span><span class="org">Manufacturing, Riyadh, KSA</span></span></figcaption>
-            </figure>
-          </div>
-        </div>
       </div>
     </div>
   </section>

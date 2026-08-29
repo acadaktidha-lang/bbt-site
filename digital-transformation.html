@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1958,7 +1974,7 @@
   <section id="top" class="bbx-sec bbx-hero bbx-hero-mid bbx-hero-binary">
     <div class="bbx-wrap">
       <div>
-        <span class="bbx-badge-line">// Enterprise Transformation<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
+        <span class="bbx-badge-line">// 01. Enterprise Transformation<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
         <h1 class="bbx-h1">
           <span class="bbx-ml"><span style="--d:0">Digital</span> <span style="--d:1">Transformation</span></span>
           <span class="bbx-ml"><em><span style="--d:2">Solutions</span></em></span>
@@ -2025,7 +2041,7 @@
 
       <div class="bbx-proseconsole bbx-split">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// 05. Sub-service</span>
+          <span class="bbx-eyebrow bbx-rev">// 04. Sub-service</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Legacy System Modernization</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Your old system rebuilt, re-platformed, or replaced, without losing data, downtime, or your team's sanity.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We modernize legacy software, databases, and infrastructure that are slowing your business down. Whether it's a 15-year-old ERP, a custom-built application no one understands, or a spreadsheet empire that can't scale, we assess, plan, and execute a modernization strategy that fits your risk tolerance, budget, and timeline. We re-platform to cloud-native architectures, refactor critical code, integrate modern APIs, and ensure zero data loss.</p>
@@ -2037,7 +2053,7 @@
 
       <div class="bbx-proseconsole bbx-split bbx-flip">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// 06. Sub-service</span>
+          <span class="bbx-eyebrow bbx-rev">// 05. Sub-service</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Cloud Transformation &amp; Migration</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Your infrastructure in the cloud: scalable, secure, cost-optimized, and ready for AI.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We move your on-premise servers, applications, and data to the cloud with minimal disruption. Our cloud transformation covers assessment, migration planning, execution, and post-migration optimization. We help you choose the right cloud strategy, whether public, private, or hybrid, and ensure your architecture is built for auto-scaling, disaster recovery, and cost efficiency. We also modernize applications during migration so you don't just lift-and-shift. You improve.</p>
@@ -2049,7 +2065,7 @@
 
       <div class="bbx-proseconsole bbx-split">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// 07. Sub-service</span>
+          <span class="bbx-eyebrow bbx-rev">// 06. Sub-service</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">End-to-End Business Digitization</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Every process digitized, every department connected, every decision backed by data.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We digitize your entire business operation, from customer-facing processes to back-office workflows. This isn't about adding software to existing processes. It's about reimagining how work gets done. We map your current state, identify digitization opportunities, build integrated digital workflows, and connect every department through a unified platform. The result: faster operations, fewer errors, real-time visibility, and a foundation for AI-driven automation.</p>
@@ -2062,34 +2078,12 @@
     </div>
   </section>
 
-  <!-- ============ AI & AUTOMATION ============ -->
-  <section id="ai" class="bbx-dark bbx-ondark">
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-sechead">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// 08. AI &amp; automation integration</span>
-          <h2 class="bbx-h2 bbx-wide bbx-rev bbx-d1">AI Isn't the Future: It's Your Next Competitive Advantage</h2>
-        </div>
-        <p class="bbx-lede bbx-rev bbx-d2">Digital transformation creates the data foundation. AI turns that data into decisions. We integrate AI and automation into every transformation program, from intelligent document processing and predictive analytics to chatbots and automated decision systems. You don't need a separate AI project. We build it into your transformation roadmap from day one.</p>
-      </div>
-      <div class="bbx-grid bbx-g3">
-        <article class="bbx-card bbx-rev"><h3>Intelligent Document Processing</h3><p>Extract data from invoices, forms, and contracts automatically, with no more manual data entry.</p></article>
-        <article class="bbx-card bbx-rev bbx-d1"><h3>Predictive Analytics</h3><p>Forecast demand, identify risks, and optimize inventory before problems arise.</p></article>
-        <article class="bbx-card bbx-rev bbx-d2"><h3>Process Automation (RPA)</h3><p>Bots handle repetitive tasks 24/7: data entry, reconciliation, and report generation.</p></article>
-        <article class="bbx-card bbx-rev"><h3>AI Chatbots &amp; Virtual Agents</h3><p>Customer service, internal helpdesk, and sales qualification, automated and scalable.</p></article>
-        <article class="bbx-card bbx-rev bbx-d1"><h3>Smart Decision Support</h3><p>AI-generated recommendations for pricing, procurement, and resource allocation.</p></article>
-        <article class="bbx-card bbx-rev bbx-d2"><h3>Anomaly Detection</h3><p>Catch fraud, errors, and operational issues before they cost you money.</p></article>
-      </div>
-      <p style="margin:34px 0 0;"><a class="bbx-go bbx-rev" href="/contact-us/?service=digital-transformation" style="color:var(--bbx-amber);">Explore AI-Powered Transformation &rarr;</a></p>
-    </div>
-  </section>
-
   <!-- ============ HOW WE WORK (pinned rail) ============ -->
   <section class="bbx-proc bbx-ondark" id="process">
     <div class="bbx-proc-outer" id="bbxProcOuter">
       <div class="bbx-proc-sticky">
         <div class="bbx-proc-head">
-          <span class="bbx-eyebrow">// 09. How we work</span>
+          <span class="bbx-eyebrow">// 07. How we work</span>
           <h2 class="bbx-h2">How We Transform Your Business, Start to Finish</h2>
         </div>
         <div class="bbx-proc-track" id="bbxProcTrack">
@@ -2132,7 +2126,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// 10. Industries we transform</span>
+          <span class="bbx-eyebrow bbx-rev">// 08. Industries we transform</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Digital Transformation by Industry</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Six sectors, six different definitions of what "transformed" means.</p>
@@ -2149,64 +2143,11 @@
     </div>
   </section>
 
-  <!-- ============ SOCIAL PROOF ============ -->
-  <section class="bbx-voices">
-    <div class="bbx-band-blobs" aria-hidden="true"><i></i><i></i></div>
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-vgrid">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// 11. Social proof</span>
-          <h2 class="bbx-h2 bbx-rev bbx-d1">Results That Speak for Themselves</h2>
-          <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px; max-width:38ch;">Three programmes, three markets, three sets of numbers.</p>
-          <div class="bbx-vctrl bbx-rev bbx-d3">
-            <button type="button" class="bbx-qnav" id="bbxQprev" aria-label="Previous testimonial">&larr;</button>
-            <button type="button" class="bbx-qnav" id="bbxQnext" aria-label="Next testimonial">&rarr;</button>
-            <div class="bbx-qdots" id="bbxQdots">
-              <button type="button" class="bbx-on" aria-label="Testimonial 1"></button>
-              <button type="button" aria-label="Testimonial 2"></button>
-              <button type="button" aria-label="Testimonial 3"></button>
-            </div>
-            <span class="bbx-qcount" id="bbxQcount">01 / 03</span>
-          </div>
-        </div>
-        <div class="bbx-qcard bbx-rev bbx-d1">
-          <span class="bbx-qmark" aria-hidden="true">&rdquo;</span>
-          <div class="bbx-qbox" id="bbxQbox">
-            <figure class="bbx-quote bbx-on">
-              <div class="bbx-kicker">Legacy Modernization</div>
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;BBT modernized our 12-year-old inventory system into a cloud-based platform with real-time analytics. We cut reporting time from 3 days to 15 minutes and finally have visibility across all 6 warehouses.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">COO</span><span class="org">Trading Company, Dubai, UAE</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-kicker">Cloud Migration</div>
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;Our cloud migration was seamless, with zero downtime and zero data loss. BBT handled everything from AWS architecture to staff training. We now auto-scale during peak seasons and save 40% on infrastructure costs.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">CTO</span><span class="org">E-commerce Platform, London, UK</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-kicker">Business Digitization</div>
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;The end-to-end digitization transformed how we work. Document processing that took 2 weeks now takes 2 hours. Our team focuses on strategy instead of paperwork.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Managing Director</span><span class="org">Professional Services Firm</span></span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-      <div class="bbx-statg bbx-rev" style="margin-top:clamp(34px,4vw,52px);">
-        <div class="bbx-bigstat"><b><span data-count="60">60</span>+</b><span>Transformation Projects</span></div>
-        <div class="bbx-bigstat"><b><span data-count="40">40</span>%</b><span>Avg. Infrastructure Cost Reduction</span></div>
-        <div class="bbx-bigstat"><b><span data-count="70">70</span>%</b><span>Avg. Process Time Reduction</span></div>
-        <div class="bbx-bigstat"><b>24/7</b><span>Support Available</span></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ FAQ ============ -->
   <section class="bbx-sec">
     <div class="bbx-wrap bbx-faqgrid">
       <div>
-        <span class="bbx-eyebrow bbx-rev">// FAQ</span>
+        <span class="bbx-eyebrow bbx-rev">// 09. FAQ</span>
         <h2 class="bbx-h2 bbx-rev bbx-d1">Digital Transformation: Your Questions Answered</h2>
       </div>
       <div class="bbx-faq bbx-rev bbx-d2">
@@ -2251,7 +2192,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// 12. Related solutions</span>
+          <span class="bbx-eyebrow bbx-rev">// 10. Related solutions</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Explore More Ways We Help You Grow</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Three neighbouring pillars that often run alongside a transformation programme.</p>

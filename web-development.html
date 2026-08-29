@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1958,7 +1974,7 @@
   <section id="top" class="bbx-sec bbx-hero bbx-hero-mid bbx-hero-binary">
     <div class="bbx-wrap">
       <div>
-        <span class="bbx-badge-line">// Web development<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
+        <span class="bbx-badge-line">// 01. Web development<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
         <h1 class="bbx-h1">
           <span class="bbx-ml"><span style="--d:0">Websites</span> <span style="--d:1">Built</span> <span style="--d:2">to</span> <span style="--d:3">Load</span></span>
           <span class="bbx-ml"><span style="--d:4">Fast</span> <span style="--d:5">and</span> <em><span style="--d:6">Turn</span> <span style="--d:7">Visitors</span></em></span>
@@ -1980,7 +1996,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// The problems we solve</span>
+          <span class="bbx-eyebrow bbx-rev">// 02. The problems we solve</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Does Any of This Sound Familiar?</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Six things that quietly cost you leads every week.</p>
@@ -2002,7 +2018,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// What we offer</span>
+          <span class="bbx-eyebrow bbx-rev">// 03. What we offer</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Custom Websites Built Around Your Business</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">We build websites that fit your business, not templates forced onto your brand. Whether you need a corporate site that builds trust, an online store that sells, or a landing page that converts, we handle the full build from design to launch. No hidden costs. No technical jargon. Just a website that works.</p>
@@ -2027,31 +2043,12 @@
     </div>
   </section>
 
-  <!-- ============ GCC ============ -->
-  <section id="gcc" class="bbx-dark bbx-ondark">
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-sechead">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Built for the GCC market</span>
-          <h2 class="bbx-h2 bbx-wide bbx-rev bbx-d1">Arabic-Ready Websites and Local Payment Gateways for UAE and Saudi Arabia</h2>
-        </div>
-        <p class="bbx-lede bbx-rev bbx-d2">Most GCC internet users prefer to browse in Arabic, and businesses in the UAE and Saudi Arabia that skip Arabic-ready websites lose local customers without realizing it. We build right-to-left websites with full Arabic support, local payment gateways like Telr and PayFort, and hosting optimized for GCC visitors. Your customers see Arabic text that reads naturally, layouts that flip correctly, and payment options they already trust.</p>
-      </div>
-      <div class="bbx-statg bbx-s3 bbx-rev bbx-d1">
-        <div class="bbx-bigstat"><b><span data-count="60">60</span>%</b><span>of GCC users prefer Arabic content</span></div>
-        <div class="bbx-bigstat"><b>RTL</b><span>Right-to-left support built in</span></div>
-        <div class="bbx-bigstat"><b>Telr</b><span>Telr, PayFort and Noon Payments ready</span></div>
-      </div>
-      <p style="margin:34px 0 0;"><a class="bbx-go bbx-rev" href="/contact-us/?service=web-development" style="color:var(--bbx-amber);">Get a GCC-Ready Website &rarr;</a></p>
-    </div>
-  </section>
-
   <!-- ============ SUB-SERVICE: CORPORATE ============ -->
   <section id="corporate-websites" class="bbx-sec">
     <div class="bbx-wrap">
       <div class="bbx-proseconsole bbx-split">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Corporate websites</span>
+          <span class="bbx-eyebrow bbx-rev">// 04. Corporate websites</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Corporate Websites</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">A website that builds trust before your sales team even makes a call.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We design corporate websites that present your company as professional, stable, and credible. Clean layouts, strong messaging, and fast performance, so investors, partners, and clients see you as a serious business from the first click.</p>
@@ -2069,7 +2066,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-proseconsole bbx-split bbx-flip">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Business websites</span>
+          <span class="bbx-eyebrow bbx-rev">// 05. Business websites</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Business Websites</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">A website that brings you customers, not just visitors.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build business websites designed to generate leads: clear service pages, strong calls-to-action, contact forms that actually work, and fast loading on every device. Whether you're a consultant, a clinic, or a construction firm, we make sure people who find you online actually contact you.</p>
@@ -2086,7 +2083,7 @@
     <div class="bbx-wrap">
       <div class="bbx-proseconsole bbx-split">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// E-commerce websites</span>
+          <span class="bbx-eyebrow bbx-rev">// 06. E-commerce websites</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">E-commerce Websites</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">An online store that actually sells.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build online stores on Shopify, WooCommerce, or custom platforms, with payment gateways that work in your country, shipping rules that make sense, and a checkout flow that doesn't lose customers. From product pages to order confirmation, every step is designed to turn visitors into buyers.</p>
@@ -2104,7 +2101,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-proseconsole bbx-split bbx-flip">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Landing pages</span>
+          <span class="bbx-eyebrow bbx-rev">// 07. Landing pages</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Landing Pages</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">One page. One goal. More conversions.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We design landing pages for ads, campaigns, and product launches, with a single clear message, one strong call-to-action, and no distractions. Every element is built to convert: headlines that grab attention, forms that are easy to fill, and mobile speed that keeps visitors from leaving.</p>
@@ -2121,7 +2118,7 @@
     <div class="bbx-wrap">
       <div class="bbx-proseconsole bbx-split">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Website redesign</span>
+          <span class="bbx-eyebrow bbx-rev">// 08. Website redesign</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Website Redesign</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Your old website, rebuilt to work in 2026.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We take your existing website and rebuild it with modern design, mobile-first layout, faster loading, and better conversion. We keep what's working, fix what's broken, and add what's missing, so you don't lose your search ranking, but you gain a site that actually performs.</p>
@@ -2139,7 +2136,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-proseconsole bbx-split bbx-flip">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// CMS development</span>
+          <span class="bbx-eyebrow bbx-rev">// 09. CMS development</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">CMS Development</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Update your own website, no coding needed.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build websites on WordPress, Shopify, or a custom CMS, so you can add pages, edit text, and upload images without calling a developer. We train your team, write simple documentation, and make sure you're confident in managing your own site.</p>
@@ -2156,7 +2153,7 @@
     <div class="bbx-wrap">
       <div class="bbx-proseconsole bbx-split">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Website maintenance</span>
+          <span class="bbx-eyebrow bbx-rev">// 10. Website maintenance</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Website Maintenance</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Your website stays fast, secure, and up to date, without you lifting a finger.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We handle updates, security patches, backups, speed optimization, and content changes. If something breaks, we fix it. If your site slows down, we speed it up. You focus on your business, we keep your website running.</p>
@@ -2173,7 +2170,7 @@
     <div class="bbx-proc-outer" id="bbxProcOuter">
       <div class="bbx-proc-sticky">
         <div class="bbx-proc-head">
-          <span class="bbx-eyebrow">// How it works</span>
+          <span class="bbx-eyebrow">// 11. How it works</span>
           <h2 class="bbx-h2">How We Build Your Website, Start to Finish</h2>
           <p>Five stages, with visible progress at every one. You always know what is being built, what is next, and when it ships.</p>
         </div>
@@ -2192,61 +2189,11 @@
     </div>
   </section>
 
-  <!-- ============ SOCIAL PROOF ============ -->
-  <section class="bbx-voices">
-    <div class="bbx-band-blobs" aria-hidden="true"><i></i><i></i></div>
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-vgrid">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Social proof</span>
-          <h2 class="bbx-h2 bbx-rev bbx-d1">Results Our Clients Have Seen</h2>
-          <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px; max-width:38ch;">Three sites, three markets, three sets of numbers.</p>
-          <div class="bbx-vctrl bbx-rev bbx-d3">
-            <button type="button" class="bbx-qnav" id="bbxQprev" aria-label="Previous testimonial">&larr;</button>
-            <button type="button" class="bbx-qnav" id="bbxQnext" aria-label="Next testimonial">&rarr;</button>
-            <div class="bbx-qdots" id="bbxQdots">
-              <button type="button" class="bbx-on" aria-label="Testimonial 1"></button>
-              <button type="button" aria-label="Testimonial 2"></button>
-              <button type="button" aria-label="Testimonial 3"></button>
-            </div>
-            <span class="bbx-qcount" id="bbxQcount">01 / 03</span>
-          </div>
-        </div>
-        <div class="bbx-qcard bbx-rev bbx-d1">
-          <span class="bbx-qmark" aria-hidden="true">&rdquo;</span>
-          <div class="bbx-qbox" id="bbxQbox">
-            <figure class="bbx-quote bbx-on">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;BBT built our Arabic e-commerce site with Telr integration. We went from zero online sales to a steady stream of weekly orders in the first month.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Retail owner</span><span class="org">Dubai, UAE</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;Our corporate website loads in under 2 seconds now. Contact form submissions have gone up noticeably since the redesign.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Marketing lead</span><span class="org">Texas, USA</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;The CMS is so simple our marketing team updates the site daily without any help. It saves us hours every week.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Marketing manager</span><span class="org">London, UK</span></span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-      <div class="bbx-statg bbx-rev" style="margin-top:clamp(34px,4vw,52px);">
-        <div class="bbx-bigstat"><b><span data-count="100">100</span>+</b><span>websites built</span></div>
-        <div class="bbx-bigstat"><b>2.5 weeks</b><span>average launch time</span></div>
-        <div class="bbx-bigstat"><b><span data-count="60">60</span>%</b><span>average load speed improvement</span></div>
-        <div class="bbx-bigstat"><b>24/7</b><span>support available</span></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ FAQ ============ -->
   <section class="bbx-sec">
     <div class="bbx-wrap bbx-faqgrid">
       <div>
-        <span class="bbx-eyebrow bbx-rev">// FAQ</span>
+        <span class="bbx-eyebrow bbx-rev">// 12. FAQ</span>
         <h2 class="bbx-h2 bbx-rev bbx-d1">Frequently Asked Questions</h2>
       </div>
       <div class="bbx-faq bbx-rev bbx-d2">

@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1958,7 +1974,7 @@
   <section id="top" class="bbx-sec bbx-hero bbx-hero-mid bbx-hero-binary">
     <div class="bbx-wrap">
       <div>
-        <span class="bbx-badge-line">// Retail technology<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
+        <span class="bbx-badge-line">// 01. Retail technology<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
         <h1 class="bbx-h1">
           <span class="bbx-ml"><span style="--d:0">Retail</span> <span style="--d:1">&amp;</span> <span style="--d:2">POS</span> <span style="--d:3">Solutions</span></span>
           <span class="bbx-ml"><span style="--d:4">for</span> <em><span style="--d:5">GCC,</span> <span style="--d:6">USA</span> <span style="--d:7">&amp;</span> <span style="--d:8">UK</span></em></span>
@@ -1979,7 +1995,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// The problem</span>
+          <span class="bbx-eyebrow bbx-rev">// 02. The problem</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Does This Sound Familiar?</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Six things retailers tell us before we replace the till.</p>
@@ -2001,7 +2017,7 @@
 
       <div class="bbx-proseconsole bbx-split">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// 05. Omnichannel</span>
+          <span class="bbx-eyebrow bbx-rev">// 03. Omnichannel</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Omnichannel Retail Store Solutions</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">One system that runs your store, online shop, and warehouse in perfect sync.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build unified retail systems that connect your physical store POS with your e-commerce platform, inventory warehouse, and customer database. Whether a customer buys in-store, online, or via WhatsApp, your stock updates in real time, your sales data flows to one dashboard, and your team sees everything in one place.</p>
@@ -2013,7 +2029,7 @@
 
       <div class="bbx-proseconsole bbx-split bbx-flip">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// 06. Restaurant</span>
+          <span class="bbx-eyebrow bbx-rev">// 04. Restaurant</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Restaurant &amp; Cafe POS Systems</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">A kitchen and floor system that keeps up with your rush hour, every single day.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build restaurant POS systems designed for the pace of food service: fast order entry, kitchen display systems (KDS), table management, and split-bill handling. Whether you run a single caf&eacute; or a multi-branch restaurant chain, our POS keeps orders accurate, kitchens organized, and customers satisfied.</p>
@@ -2025,7 +2041,7 @@
 
       <div class="bbx-proseconsole bbx-split">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// 07. Multi-branch</span>
+          <span class="bbx-eyebrow bbx-rev">// 05. Multi-branch</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Multi-Branch &amp; Cloud POS Systems</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Manage every branch from one screen: stock, sales, staff, and performance.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build cloud-based POS systems that connect all your retail locations into one unified management platform. Transfer stock between branches, compare sales performance, manage staff across locations, and see your entire business in real time from anywhere, on any device.</p>
@@ -2037,7 +2053,7 @@
 
       <div class="bbx-proseconsole bbx-split bbx-flip">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// 08. Inventory</span>
+          <span class="bbx-eyebrow bbx-rev">// 06. Inventory</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Billing, Sales &amp; Inventory Tracking Systems</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Know exactly what you have, what's selling, and what to reorder before you run out.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build integrated billing and inventory systems that track every item from purchase to sale. Barcode scanning, automated reorder alerts, supplier management, and detailed sales analytics, so you never lose money to stockouts, overstock, or manual counting errors.</p>
@@ -2050,32 +2066,12 @@
     </div>
   </section>
 
-  <!-- ============ INTEGRATIONS ============ -->
-  <section id="integrations" class="bbx-dark bbx-ondark">
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-sechead">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Integration ecosystem</span>
-          <h2 class="bbx-h2 bbx-wide bbx-rev bbx-d1">Connect Your POS With the Tools You Already Use</h2>
-        </div>
-        <p class="bbx-lede bbx-rev bbx-d2">Your POS shouldn't live in isolation. We build custom integrations that connect your retail system with payment gateways, e-commerce platforms, accounting software, and delivery apps, so data flows automatically and you stop entering the same information twice.</p>
-      </div>
-      <div class="bbx-grid bbx-g4">
-        <article class="bbx-card bbx-rev"><h3>Payment Gateways</h3><ul class="bbx-list bbx-tight" style="margin-top:14px;"><li>Telr &middot; PayFort</li><li>Noon Payments &middot; Stripe</li><li>PayPal &middot; Mastercard</li><li>Cash on Delivery</li></ul></article>
-        <article class="bbx-card bbx-rev bbx-d1"><h3>E-commerce</h3><ul class="bbx-list bbx-tight" style="margin-top:14px;"><li>Shopify &middot; WooCommerce</li><li>Magento &middot; Custom Store</li><li>Social Commerce</li></ul></article>
-        <article class="bbx-card bbx-rev bbx-d2"><h3>Accounting</h3><ul class="bbx-list bbx-tight" style="margin-top:14px;"><li>Odoo Accounting</li><li>QuickBooks &middot; Xero</li><li>Local Bank APIs</li></ul></article>
-        <article class="bbx-card bbx-rev bbx-d3"><h3>Delivery &amp; Logistics</h3><ul class="bbx-list bbx-tight" style="margin-top:14px;"><li>Talabat &middot; Deliveroo</li><li>Careem &middot; Aramex</li><li>FedEx &middot; TCS</li></ul></article>
-      </div>
-      <p style="margin:34px 0 0;"><a class="bbx-go bbx-rev" href="/contact-us/?service=retail-pos" style="color:var(--bbx-amber);">Need a Custom Integration? Let's Talk &rarr;</a></p>
-    </div>
-  </section>
-
   <!-- ============ HOW WE WORK (pinned rail) ============ -->
   <section class="bbx-proc bbx-ondark" id="process">
     <div class="bbx-proc-outer" id="bbxProcOuter">
       <div class="bbx-proc-sticky">
         <div class="bbx-proc-head">
-          <span class="bbx-eyebrow">// How we work</span>
+          <span class="bbx-eyebrow">// 07. How we work</span>
           <h2 class="bbx-h2">How We Build Your POS System: Start to Finish</h2>
         </div>
         <div class="bbx-proc-track" id="bbxProcTrack">
@@ -2093,64 +2089,11 @@
     </div>
   </section>
 
-  <!-- ============ CLIENT RESULTS ============ -->
-  <section class="bbx-voices">
-    <div class="bbx-band-blobs" aria-hidden="true"><i></i><i></i></div>
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-vgrid">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Client results</span>
-          <h2 class="bbx-h2 bbx-rev bbx-d1">Retailers Running Better on Our POS</h2>
-          <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px; max-width:38ch;">Three deployments, three formats, three sets of numbers.</p>
-          <div class="bbx-vctrl bbx-rev bbx-d3">
-            <button type="button" class="bbx-qnav" id="bbxQprev" aria-label="Previous testimonial">&larr;</button>
-            <button type="button" class="bbx-qnav" id="bbxQnext" aria-label="Next testimonial">&rarr;</button>
-            <div class="bbx-qdots" id="bbxQdots">
-              <button type="button" class="bbx-on" aria-label="Testimonial 1"></button>
-              <button type="button" aria-label="Testimonial 2"></button>
-              <button type="button" aria-label="Testimonial 3"></button>
-            </div>
-            <span class="bbx-qcount" id="bbxQcount">01 / 03</span>
-          </div>
-        </div>
-        <div class="bbx-qcard bbx-rev bbx-d1">
-          <span class="bbx-qmark" aria-hidden="true">&rdquo;</span>
-          <div class="bbx-qbox" id="bbxQbox">
-            <figure class="bbx-quote bbx-on">
-              <div class="bbx-kicker">Multi-Branch Retail</div>
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;BBT built our multi-branch POS across 8 locations in Dubai and Sharjah. We can transfer stock, see sales in real time, and manage staff from one dashboard. Month-end reconciliation went from 3 days to 30 minutes.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Operations Director</span><span class="org">Retail Chain, Dubai, UAE</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-kicker">Restaurant POS</div>
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;Our restaurant POS handles 200+ orders per day during rush hour. The kitchen display system eliminated lost tickets, and table turnover improved by 25% in the first month.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">General Manager</span><span class="org">Restaurant Group, Riyadh, KSA</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-kicker">Inventory Tracking</div>
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;The inventory tracking system caught stock discrepancies we didn't know existed. We've reduced overstock by 30% and stopped losing sales to stockouts.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Owner</span><span class="org">Electronics Store</span></span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-      <div class="bbx-statg bbx-rev" style="margin-top:clamp(34px,4vw,52px);">
-        <div class="bbx-bigstat"><b><span data-count="80">80</span>+</b><span>POS systems deployed</span></div>
-        <div class="bbx-bigstat"><b><span data-count="25">25</span>+</b><span>Multi-branch setups</span></div>
-        <div class="bbx-bigstat"><b><span data-count="40">40</span>%</b><span>Avg. stock accuracy improvement</span></div>
-        <div class="bbx-bigstat"><b>24/7</b><span>Support available</span></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ FAQ ============ -->
   <section class="bbx-sec">
     <div class="bbx-wrap bbx-faqgrid">
       <div>
-        <span class="bbx-eyebrow bbx-rev">// FAQ</span>
+        <span class="bbx-eyebrow bbx-rev">// 08. FAQ</span>
         <h2 class="bbx-h2 bbx-rev bbx-d1">Frequently Asked Questions</h2>
       </div>
       <div class="bbx-faq bbx-rev bbx-d2">
@@ -2195,7 +2138,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Related solutions</span>
+          <span class="bbx-eyebrow bbx-rev">// 09. Related solutions</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Explore More Solutions</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Three pillars that pair naturally with a retail rollout.</p>
@@ -2221,8 +2164,8 @@
         </a>
       </div>
       <div class="bbx-pills bbx-rev" style="margin-top:34px; gap:14px 26px;">
-        <a class="bbx-go" href="/solutions/">Explore All Solutions &rarr;</a>
-        <a class="bbx-go" href="/services/">Explore All Services &rarr;</a>
+        <a class="bbx-go" href="/enterprise-odoo/">Explore Enterprise &amp; Odoo &rarr;</a>
+        <a class="bbx-go" href="/odoo-erp/">Odoo &amp; ERP Services &rarr;</a>
       </div>
     </div>
   </section>

@@ -3,7 +3,7 @@
 Source for the pages published at <https://bigbinarytech.com>.
 
 The live site is **WordPress with Elementor**. Nothing in this repository is
-served to visitors directly. The 23 HTML files at the repository root are the
+served to visitors directly. The 21 HTML files at the repository root are the
 source of truth for page content, and they reach the site only when they are
 pushed into Elementor through the WordPress REST API. Editing a file here changes
 nothing until it is published.
@@ -11,8 +11,8 @@ nothing until it is published.
 ## Layout
 
 ```
-*.html                    the 23 page sources, one per published page
-assets/                   image masters (logos)
+*.html                    the 21 page sources, one per published page
+assets/                   image masters (logos, site icon)
 wp-backup/                local REST snapshots, gitignored, not source
 .claude/.wp-credentials   WordPress application password, gitignored
 ```
@@ -47,7 +47,7 @@ design.
 Authenticate with HTTP Basic using the WordPress application password in
 `.claude/.wp-credentials`. That file is gitignored and must stay that way.
 
-## Two things that will catch you out
+## Three things that will catch you out
 
 **The `<title>` and `<meta name="description">` in these files never reach the
 site.** The transform strips both. SEO metadata lives in Yoast, stored separately
@@ -63,8 +63,17 @@ POST /wp-json/yoast/v1/bulk_editor/update_search
 Do not treat the build file tags as a source for those fields. The titles are
 generic placeholders and the descriptions are truncated on seven pages.
 
+**The theme's `reset.css` repaints every bare `<button>`.** Hello Elementor ships
+`[type=button],[type=submit],button{border:1px solid #c36;color:#c36}` and
+`button:focus,button:hover{background-color:#c36}`. Those beat any plain class
+rule on hover, so the nav triggers, the carousel dots and the CTAs all flooded
+magenta on the live site while looking correct locally. Each page now carries a
+guard in the *Elementor host fix* block that neutralises it above the component
+styles; keep the guard ahead of them, and give any new button component an
+explicit `:hover` background so the guard cannot flatten it.
+
 **The host throttles sustained REST traffic.** Around twelve rapid requests in,
-connections begin timing out for minutes at a time. Pace any sweep across all 23
+connections begin timing out for minutes at a time. Pace any sweep across all 21
 pages, roughly three seconds between requests, and retry with backoff. `curl` has
 proven more reliable here than Python's `urllib`.
 
@@ -93,11 +102,25 @@ Each file publishes to the WordPress page ID below. These IDs are what
 | 3 | `privacy-policy.html` | `privacy-policy` |
 | 466 | `resources.html` | `resources` |
 | 467 | `retail-pos.html` | `retail-pos` |
-| 470 | `services.html` | `services` |
 | 468 | `social-media-marketing.html` | `social-media-marketing` |
-| 469 | `solutions.html` | `solutions` |
 | 703 | `terms-of-service.html` | `terms-of-service` |
 | 552 | `web-development.html` | `web-development` |
+
+## Site icon
+
+`assets/bbt-favicon.png` is the 512x512 master for the browser-tab icon: the B
+mark cut from `bbt-logo-web.png` at the gutter that separates it from the
+wordmark, on a transparent ground. It is not referenced by any page. WordPress
+emits the `<link rel="icon">` tags itself from **Appearance > Customize > Site
+Identity > Site Icon**, and it is live as attachment 756. The icon it replaced
+was the same mark flattened onto opaque white, which showed as a white tile in
+the tab.
+
+Keep it the dark mark. A reversed version was tried and looked washed out: it
+needs a dark tab strip to read at all, whereas the dark mark holds on both,
+because the white `0101 10` digits carry the contrast against dark chrome.
+WordPress regenerates the 150x150 and 300x300 crops on upload and preserves the
+alpha, so a transparent master stays transparent.
 
 Six pages were renamed off WordPress attachment collision suffixes
 (`/about-us-2/`, `/ai-automation-2/`, `/digital-transformation-3/`,

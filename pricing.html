@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1958,7 +1974,7 @@
   <section id="top" class="bbx-sec bbx-hero">
     <div class="bbx-wrap bbx-hero-grid">
       <div>
-        <span class="bbx-badge-line">// Transparent pricing<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
+        <span class="bbx-badge-line">// 01. Transparent pricing<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
         <h1 class="bbx-h1">
           <span class="bbx-ml"><span style="--d:0">Transparent</span> <span style="--d:1">Pricing</span> <span style="--d:2">for</span></span>
           <span class="bbx-ml"><span style="--d:3">AI,</span> <span style="--d:4">Odoo,</span> <span style="--d:5">Cloud</span> <span style="--d:6">&amp;</span></span>
@@ -2272,55 +2288,11 @@
     </div>
   </section>
 
-  <!-- ============ SOCIAL PROOF ============ -->
-  <section class="bbx-voices">
-    <div class="bbx-band-blobs" aria-hidden="true"><i></i><i></i></div>
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-vgrid">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// 08. Social proof</span>
-          <h2 class="bbx-h2 bbx-rev bbx-d1">What Clients Say About Working With BBT</h2>
-          <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px; max-width:38ch;">Three clients, three budgets, one thing in common.</p>
-          <div class="bbx-vctrl bbx-rev bbx-d3">
-            <button type="button" class="bbx-qnav" id="bbxQprev" aria-label="Previous testimonial">&larr;</button>
-            <button type="button" class="bbx-qnav" id="bbxQnext" aria-label="Next testimonial">&rarr;</button>
-            <div class="bbx-qdots" id="bbxQdots">
-              <button type="button" class="bbx-on" aria-label="Testimonial 1"></button>
-              <button type="button" aria-label="Testimonial 2"></button>
-              <button type="button" aria-label="Testimonial 3"></button>
-            </div>
-            <span class="bbx-qcount" id="bbxQcount">01 / 03</span>
-          </div>
-        </div>
-        <div class="bbx-qcard bbx-rev bbx-d1">
-          <span class="bbx-qmark" aria-hidden="true">&rdquo;</span>
-          <div class="bbx-qbox" id="bbxQbox">
-            <figure class="bbx-quote bbx-on">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;BBT quoted us $15,000 for a project another firm quoted $45,000 for. Same scope, same timeline, better delivery. The transparency in their pricing was refreshing.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">COO</span><span class="org">Trading Company &middot; Dubai, UAE</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;We started with staff augmentation at $2,500/month. Six months later, we scaled to a dedicated team. The pricing scaled with us, with no penalties and no renegotiation.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">VP Engineering</span><span class="org">SaaS Company &middot; London, UK</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;The fixed-price model meant we knew exactly what we were paying. No surprise invoices. No scope creep. We got what was promised, on time, on budget.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Managing Director</span><span class="org">Professional Services &middot; Riyadh, Saudi Arabia</span></span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ FAQ ============ -->
   <section class="bbx-sec">
     <div class="bbx-wrap bbx-faqgrid">
       <div>
-        <span class="bbx-eyebrow bbx-rev">// 09. Pricing FAQ</span>
+        <span class="bbx-eyebrow bbx-rev">// 08. Pricing FAQ</span>
         <h2 class="bbx-h2 bbx-rev bbx-d1">Pricing Questions</h2>
       </div>
       <div class="bbx-faq bbx-rev bbx-d2">
@@ -2365,17 +2337,17 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// 11. Related pages</span>
+          <span class="bbx-eyebrow bbx-rev">// 09. Related pages</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Explore More</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Three places to look once the numbers make sense.</p>
       </div>
       <div class="bbx-grid bbx-g3">
-        <a class="bbx-card bbx-icard bbx-rev" href="/services/">
+        <a class="bbx-card bbx-icard bbx-rev" href="/industries/">
           <span class="bbx-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
-          <h3>Our Full Service Range</h3>
-          <p>Explore our full range of AI, web, Odoo, custom software, POS, and marketing services.</p>
-          <span class="bbx-cardgo">View Services <span class="bbx-arr" aria-hidden="true">&rarr;</span></span>
+          <h3>Industries We Serve</h3>
+          <p>See how AI, Odoo, custom software, POS and marketing work come together per sector.</p>
+          <span class="bbx-cardgo">View Industries <span class="bbx-arr" aria-hidden="true">&rarr;</span></span>
         </a>
         <a class="bbx-card bbx-icard bbx-rev bbx-d1" href="/outsourcing/">
           <span class="bbx-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 5.5a3 3 0 0 1 0 5.6"/><path d="M18.5 20a5.5 5.5 0 0 0-3-4.9"/></svg></span>
@@ -2391,7 +2363,7 @@
         </a>
       </div>
       <div class="bbx-pills bbx-rev" style="margin-top:34px; gap:14px 26px;">
-        <a class="bbx-go" href="/services/">Services &rarr;</a>
+        <a class="bbx-go" href="/industries/">Industries &rarr;</a>
         <a class="bbx-go" href="/contact-us/?service=pricing&amp;offer=quote">Outsourcing &rarr;</a>
         <a class="bbx-go" href="/case-studies/">Case Studies &rarr;</a>
       </div>

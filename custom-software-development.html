@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1958,7 +1974,7 @@
   <section id="top" class="bbx-sec bbx-hero bbx-hero-mid bbx-hero-binary">
     <div class="bbx-wrap">
       <div>
-        <span class="bbx-badge-line">// Custom software development<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
+        <span class="bbx-badge-line">// 01. Custom software development<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
         <h1 class="bbx-h1">
           <span class="bbx-ml"><span style="--d:0">Software</span> <span style="--d:1">Built</span> <span style="--d:2">Around</span></span>
           <span class="bbx-ml"><span style="--d:3">Your</span> <em><span style="--d:4">Business</span></em><span style="--d:5">,</span> <span style="--d:6">Not</span> <span style="--d:7">the</span></span>
@@ -1980,7 +1996,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// The problems we solve</span>
+          <span class="bbx-eyebrow bbx-rev">// 02. The problems we solve</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Does Any of This Sound Familiar?</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Six reasons teams stop buying software and start building it.</p>
@@ -2002,7 +2018,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// What we offer</span>
+          <span class="bbx-eyebrow bbx-rev">// 03. What we offer</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Custom Software Built Around Your Business</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">We build software that fits your business exactly, instead of forcing your business to fit the software. Whether you need a SaaS platform your customers pay for, a dashboard that gives you real-time control, or APIs that connect your systems, we handle the full build from idea to launch. No templates. No lock-in.</p>
@@ -2023,31 +2039,12 @@
     </div>
   </section>
 
-  <!-- ============ GCC ============ -->
-  <section id="gcc" class="bbx-dark bbx-ondark">
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-sechead">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Built for the GCC market</span>
-          <h2 class="bbx-h2 bbx-wide bbx-rev bbx-d1">Custom Software With Arabic Interfaces and Local Hosting for UAE and Saudi Arabia</h2>
-        </div>
-        <p class="bbx-lede bbx-rev bbx-d2">Data rules in the UAE and Saudi Arabia require sensitive business data to stay in the region. We build custom software with full Arabic right-to-left support, local hosting in the GCC, and compliance features for ZATCA e-invoicing, WPS payroll, and GOSI reporting. Your team works in Arabic. Your data stays in the GCC. Your software meets local rules without you managing the complexity.</p>
-      </div>
-      <div class="bbx-statg bbx-s3 bbx-rev bbx-d1">
-        <div class="bbx-bigstat"><b><span data-count="100">100</span>%</b><span>Arabic RTL support</span></div>
-        <div class="bbx-bigstat"><b>GCC</b><span>Local hosting in UAE and Saudi Arabia</span></div>
-        <div class="bbx-bigstat"><b>Ready</b><span>ZATCA, WPS and GOSI compliance</span></div>
-      </div>
-      <p style="margin:34px 0 0;"><a class="bbx-go bbx-rev" href="/contact-us/?service=custom-software" style="color:var(--bbx-amber);">Get GCC-Ready Software &rarr;</a></p>
-    </div>
-  </section>
-
   <!-- ============ SUB-SERVICE: SAAS ============ -->
   <section id="web-applications-saas" class="bbx-sec">
     <div class="bbx-wrap">
       <div class="bbx-proseconsole bbx-split">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Web applications &amp; SaaS platforms</span>
+          <span class="bbx-eyebrow bbx-rev">// 04. Web applications &amp; SaaS platforms</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Web Applications &amp; SaaS Platforms</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">A web application your customers actually pay to use.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build scalable web applications and SaaS platforms from the ground up: user accounts, subscription billing, admin dashboards, and integrations with the tools you already run. Whether you are launching a new product or turning an internal tool into a revenue stream, we handle the full technical build so you can focus on growth.</p>
@@ -2065,7 +2062,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-proseconsole bbx-split bbx-flip">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Business dashboards &amp; enterprise software</span>
+          <span class="bbx-eyebrow bbx-rev">// 05. Business dashboards &amp; enterprise software</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Business Dashboards &amp; Enterprise Software</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">See your entire business in one screen, and make decisions in real time.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build enterprise software and custom dashboards that pull your data sources into a single, live view. Sales, inventory, finances, and team output, all in one place, updated in real time. No more exporting spreadsheets. No more waiting for the end-of-week report.</p>
@@ -2082,7 +2079,7 @@
     <div class="bbx-wrap">
       <div class="bbx-proseconsole bbx-split">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// API development &amp; cloud solutions</span>
+          <span class="bbx-eyebrow bbx-rev">// 06. API development &amp; cloud solutions</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">API Development &amp; Cloud Solutions</h2>
           <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Your systems talk to each other, and to the world.</p>
           <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build clean, documented APIs that connect your internal systems, power your mobile apps, and open your platform to outside integrations. We also set up cloud infrastructure on AWS, Azure, or Google Cloud, with auto-scaling, security, and cost control built in from day one.</p>
@@ -2099,7 +2096,7 @@
     <div class="bbx-proc-outer" id="bbxProcOuter">
       <div class="bbx-proc-sticky">
         <div class="bbx-proc-head">
-          <span class="bbx-eyebrow">// How it works</span>
+          <span class="bbx-eyebrow">// 07. How it works</span>
           <h2 class="bbx-h2">How We Build Your Custom Software, Start to Finish</h2>
         </div>
         <div class="bbx-proc-track" id="bbxProcTrack">
@@ -2117,61 +2114,11 @@
     </div>
   </section>
 
-  <!-- ============ SOCIAL PROOF ============ -->
-  <section class="bbx-voices">
-    <div class="bbx-band-blobs" aria-hidden="true"><i></i><i></i></div>
-    <div class="bbx-wrap bbx-sec">
-      <div class="bbx-vgrid">
-        <div>
-          <span class="bbx-eyebrow bbx-rev">// Social proof</span>
-          <h2 class="bbx-h2 bbx-rev bbx-d1">Results Our Clients Have Seen</h2>
-          <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px; max-width:38ch;">Three builds, three markets, three outcomes.</p>
-          <div class="bbx-vctrl bbx-rev bbx-d3">
-            <button type="button" class="bbx-qnav" id="bbxQprev" aria-label="Previous testimonial">&larr;</button>
-            <button type="button" class="bbx-qnav" id="bbxQnext" aria-label="Next testimonial">&rarr;</button>
-            <div class="bbx-qdots" id="bbxQdots">
-              <button type="button" class="bbx-on" aria-label="Testimonial 1"></button>
-              <button type="button" aria-label="Testimonial 2"></button>
-              <button type="button" aria-label="Testimonial 3"></button>
-            </div>
-            <span class="bbx-qcount" id="bbxQcount">01 / 03</span>
-          </div>
-        </div>
-        <div class="bbx-qcard bbx-rev bbx-d1">
-          <span class="bbx-qmark" aria-hidden="true">&rdquo;</span>
-          <div class="bbx-qbox" id="bbxQbox">
-            <figure class="bbx-quote bbx-on">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;BBT built our Arabic SaaS platform with local payment integration. We launched in weeks and started signing paying customers right away.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">SaaS founder</span><span class="org">Dubai, UAE</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;The custom dashboard BBT built connects our sales, inventory, and accounting tools into one live view. We save hours every week on reporting.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Operations director</span><span class="org">United States</span></span></figcaption>
-            </figure>
-            <figure class="bbx-quote">
-              <div class="bbx-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <blockquote>&ldquo;BBT's API connects our warehouse system to our online store in real time. Stock levels update instantly and we haven't oversold since.&rdquo;</blockquote>
-              <figcaption><span class="av" aria-hidden="true">&rdquo;</span><span><span class="nm">Ecommerce manager</span><span class="org">United Kingdom</span></span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-      <div class="bbx-statg bbx-rev" style="margin-top:clamp(34px,4vw,52px);">
-        <div class="bbx-bigstat"><b><span data-count="75">75</span>+</b><span>custom builds delivered</span></div>
-        <div class="bbx-bigstat"><b>6 weeks</b><span>average MVP launch</span></div>
-        <div class="bbx-bigstat"><b><span data-count="40">40</span>%</b><span>average admin time saved</span></div>
-        <div class="bbx-bigstat"><b>24/7</b><span>support available</span></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ FAQ ============ -->
   <section class="bbx-sec">
     <div class="bbx-wrap bbx-faqgrid">
       <div>
-        <span class="bbx-eyebrow bbx-rev">// FAQ</span>
+        <span class="bbx-eyebrow bbx-rev">// 08. FAQ</span>
         <h2 class="bbx-h2 bbx-rev bbx-d1">Frequently Asked Questions</h2>
       </div>
       <div class="bbx-faq bbx-rev bbx-d2">

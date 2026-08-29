@@ -61,6 +61,22 @@
      cramped, shifted sections on wide screens. Inert outside WordPress. */
   .elementor-section > .elementor-container{ max-width:100% !important; }
 
+  /* The same host also ships a reset.css that styles every bare <button> as an
+     outlined #c36 pill and floods it #c36 on hover and focus. That is what
+     turns the Services / Solutions / Resources triggers, the carousel dots and
+     the form buttons pink on the live site. Neutralise it here, above the
+     components, so each component still owns its own look. Inert outside
+     WordPress. */
+  button,[type="button"],[type="submit"],[type="reset"]{
+    -webkit-appearance:none; appearance:none; background-color:transparent;
+    border:0; border-radius:0; color:inherit; font:inherit; padding:0;
+    white-space:normal; cursor:pointer; }
+  button:hover,button:focus,button:active,
+  [type="button"]:hover,[type="button"]:focus,
+  [type="submit"]:hover,[type="submit"]:focus,
+  [type="reset"]:hover,[type="reset"]:focus{
+    background-color:transparent; color:inherit; }
+
   /* ============ AMBIENT GROUND ============
      Engineering-paper dot grid plus soft colour fields, fixed behind the page
      so every transparent section is lit by the same light. */
@@ -122,7 +138,7 @@
   .bbx-btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--bbx-mono);
     font-size:14px; font-weight:600; background:var(--bbx-ink); color:#fff;
     padding:15px 28px; border-radius:100px; transition:box-shadow .25s, transform .25s var(--bbx-ease); }
-  .bbx-btn:hover{ color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
+  .bbx-btn:hover{ background:var(--bbx-ink); color:#fff; box-shadow:0 14px 34px rgba(13,27,42,.24); }
   .bbx-btn.bbx-amberbtn{ background:var(--bbx-amber); color:var(--bbx-ink); box-shadow:0 12px 30px rgba(245,166,35,.3); }
   .bbx-btn.bbx-amberbtn:hover{ color:var(--bbx-ink); box-shadow:0 18px 44px rgba(245,166,35,.42); }
   .bbx-btn .bbx-arr{ transition:transform .25s var(--bbx-ease); }
@@ -1958,7 +1974,7 @@
   <section id="top" class="bbx-sec bbx-hero bbx-hero-mid bbx-hero-binary">
     <div class="bbx-wrap">
       <div>
-        <span class="bbx-badge-line">// POS systems<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
+        <span class="bbx-badge-line">// 01. POS systems<span class="bbx-caret" aria-hidden="true">&#9613;</span></span>
         <h1 class="bbx-h1">
           <span class="bbx-ml"><span style="--d:0">Custom</span> <em><span style="--d:1">POS</span> <span style="--d:2">Systems</span></em></span>
         </h1>
@@ -1978,7 +1994,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// The problems we solve</span>
+          <span class="bbx-eyebrow bbx-rev">// 02. The problems we solve</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Does Any of This Sound Familiar?</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Six reasons operators come to us to replace a till.</p>
@@ -2000,7 +2016,7 @@
     <div class="bbx-wrap bbx-sec">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// What we offer</span>
+          <span class="bbx-eyebrow bbx-rev">// 03. What we offer</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">A POS System Built Around Your Business</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">We build POS systems that fit how you actually sell, not the other way round. Whether you run one retail counter, a busy restaurant, or a multi-branch chain, we build the full system, from the till to the backend. No monthly feature fees. No locked-in hardware.</p>
@@ -2028,7 +2044,7 @@
       <div id="retail-pos">
         <div class="bbx-proseconsole bbx-split">
           <div>
-            <span class="bbx-eyebrow bbx-rev">// Retail POS systems</span>
+            <span class="bbx-eyebrow bbx-rev">// 04. Retail POS systems</span>
             <h2 class="bbx-h2 bbx-rev bbx-d1">Retail POS Systems</h2>
             <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">A checkout that keeps up with your floor, your stock, and your customers.</p>
             <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build retail POS systems that connect your checkout, inventory, and customer loyalty in one place. Barcode scanning, multiple payment types, live stock counts, and staff performance tracking, all in one system. Whether you run one shop or a chain of branches, we handle the full build so your team spends less time at the till and more time with customers.</p>
@@ -2042,7 +2058,7 @@
       <div id="restaurant-hospitality-pos">
         <div class="bbx-proseconsole bbx-split bbx-flip">
           <div>
-            <span class="bbx-eyebrow bbx-rev">// Restaurant &amp; hospitality POS</span>
+            <span class="bbx-eyebrow bbx-rev">// 05. Restaurant &amp; hospitality POS</span>
             <h2 class="bbx-h2 bbx-rev bbx-d1">Restaurant &amp; Hospitality POS</h2>
             <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">From table to kitchen to receipt, without a single order lost.</p>
             <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build restaurant and hospitality POS systems that connect your front counter to your kitchen in real time. Table management, kitchen display screens, split billing, and delivery app integration, all synced, so nothing gets shouted across the room or written on a torn ticket.</p>
@@ -2056,7 +2072,7 @@
       <div id="cloud-pos-inventory">
         <div class="bbx-proseconsole bbx-split">
           <div>
-            <span class="bbx-eyebrow bbx-rev">// Cloud-based POS &amp; inventory integration</span>
+            <span class="bbx-eyebrow bbx-rev">// 06. Cloud-based POS &amp; inventory integration</span>
             <h2 class="bbx-h2 bbx-rev bbx-d1">Cloud-Based POS &amp; Inventory Integration</h2>
             <p class="bbx-lede bbx-rev bbx-d2" style="margin-top:18px;">Every location, every terminal, one real-time view, from anywhere.</p>
             <p class="bbx-lede bbx-rev bbx-d3" style="margin-top:16px;">We build cloud-based POS systems that sync sales, stock, and staff across every till and every branch in real time. No end-of-day exports. No manual stock counts. Add a new branch without buying a new licence, because it connects to the same backend from day one, and keeps working offline if the internet drops.</p>
@@ -2075,7 +2091,7 @@
     <div class="bbx-proc-outer" id="bbxProcOuter">
       <div class="bbx-proc-sticky">
         <div class="bbx-proc-head">
-          <span class="bbx-eyebrow">// How we work</span>
+          <span class="bbx-eyebrow">// 07. How we work</span>
           <h2 class="bbx-h2">How We Build Your POS System</h2>
         </div>
         <div class="bbx-proc-track" id="bbxProcTrack">
@@ -2098,7 +2114,7 @@
     <div class="bbx-wrap">
       <div class="bbx-sechead">
         <div>
-          <span class="bbx-eyebrow bbx-rev">// Social proof</span>
+          <span class="bbx-eyebrow bbx-rev">// 08. Social proof</span>
           <h2 class="bbx-h2 bbx-rev bbx-d1">Results Our Clients Have Seen</h2>
         </div>
         <p class="bbx-lede bbx-rev bbx-d2">Client quotes for this page are being collected now. The spec for this page is explicit that a testimonial must carry a real name, so the figures below stand on their own until those arrive.</p>
@@ -2116,7 +2132,7 @@
   <section class="bbx-sec" style="padding-top:0;">
     <div class="bbx-wrap bbx-faqgrid">
       <div>
-        <span class="bbx-eyebrow bbx-rev">// FAQ</span>
+        <span class="bbx-eyebrow bbx-rev">// 09. FAQ</span>
         <h2 class="bbx-h2 bbx-rev bbx-d1">Frequently Asked Questions</h2>
       </div>
       <div class="bbx-faq bbx-rev bbx-d2">
@@ -2357,12 +2373,6 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Services",
-      "item": "https://bigbinarytech.com/services/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
       "name": "POS Systems",
       "item": "https://bigbinarytech.com/pos-systems/"
     }
