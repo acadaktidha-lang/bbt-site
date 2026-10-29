@@ -1610,12 +1610,12 @@
   .bbfoot-brand img{ height:40px; width:auto; display:block; margin-bottom:18px; }
   .bbfoot-brand p{ font-size:14px; line-height:1.7; color:var(--bbx-muted); max-width:32ch; margin:0 0 22px; }
   .bbfoot-socs{ display:flex; gap:10px; }
-  .bbfoot-psrc{ display:inline-flex; align-items:center; gap:10px; margin-top:18px; padding:9px 14px 9px 10px; border-radius:12px;
-    border:1px solid var(--bbx-line); background:rgba(255,255,255,.6); color:var(--bbx-muted); font-size:12px; line-height:1.25;
+  .bbfoot-follow{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+  .bbfoot-psrc{ display:inline-flex; align-items:center; gap:10px; height:40px; padding:0 16px 0 10px; border-radius:12px;
+    border:1px solid #2a3440; background:#161d27; color:#fff; font-size:13px; font-weight:600; line-height:1; white-space:nowrap;
     transition:border-color .2s ease, transform .25s var(--bbx-ease); }
   .bbfoot-psrc:hover{ border-color:var(--bbx-amber); transform:translateY(-2px); }
   .bbfoot-psrc svg{ flex:none; }
-  .bbfoot-psrc b{ display:block; font-weight:600; font-size:13px; color:var(--bbx-ink); }
   .bbfoot-soc{ width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center;
     color:var(--bbx-muted); border:1px solid var(--bbx-line); background:rgba(255,255,255,.6);
     transition:background .2s ease, border-color .2s ease, color .2s ease, transform .25s var(--bbx-ease); }
@@ -2394,15 +2394,17 @@
       <div class="bbfoot-brand">
         <img src="https://bigbinarytech.com/wp-content/uploads/2026/08/bbt-logo-web.png" alt="Big Binary Tech">
         <p>A US registered software house headquartered in Sheridan, Wyoming. We build ERP, AI automation, POS and custom software for businesses around the world.</p>
-        <div class="bbfoot-socs">
+        <div class="bbfoot-follow">
+          <a class="bbfoot-psrc" href="https://www.google.com/preferences/source?q=bigbinarytech.com" rel="noopener" target="_blank" aria-label="Add Big Binary Tech as a preferred source on Google">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.46a5.52 5.52 0 0 1-2.4 3.62v3h3.88c2.27-2.09 3.56-5.17 3.56-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.07.72-2.45 1.15-4.06 1.15-3.12 0-5.77-2.11-6.71-4.95H1.28v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.29 14.29a7.2 7.2 0 0 1 0-4.58v-3.1H1.28a12 12 0 0 0 0 10.78l4.01-3.1z"/><path fill="#EA4335" d="M12 4.76c1.76 0 3.34.61 4.59 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.28 6.61l4.01 3.1C6.23 6.87 8.88 4.76 12 4.76z"/></svg>
+          <span>Preferred source on Google</span>
+        </a>
+          <div class="bbfoot-socs">
           <a class="bbfoot-soc" href="https://www.linkedin.com/company/big-binary-tech" rel="noopener" target="_blank" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9V9z"/></svg></a>
           <a class="bbfoot-soc" href="https://www.instagram.com/bigbinarytech" rel="noopener" target="_blank" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 5.68a4.16 4.16 0 1 0 0 8.32 4.16 4.16 0 0 0 0-8.32zm0 6.86a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4zm5.3-7.02a.97.97 0 1 1-1.94 0 .97.97 0 0 1 1.94 0z"/></svg></a>
           <a class="bbfoot-soc" href="https://github.com/bigbinarytech" rel="noopener" target="_blank" aria-label="GitHub"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
         </div>
-        <a class="bbfoot-psrc" href="https://www.google.com/preferences/source?q=bigbinarytech.com" rel="noopener" target="_blank" aria-label="Add Big Binary Tech as a preferred source on Google">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.46a5.52 5.52 0 0 1-2.4 3.62v3h3.88c2.27-2.09 3.56-5.17 3.56-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.07.72-2.45 1.15-4.06 1.15-3.12 0-5.77-2.11-6.71-4.95H1.28v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.29 14.29a7.2 7.2 0 0 1 0-4.58v-3.1H1.28a12 12 0 0 0 0 10.78l4.01-3.1z"/><path fill="#EA4335" d="M12 4.76c1.76 0 3.34.61 4.59 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.28 6.61l4.01 3.1C6.23 6.87 8.88 4.76 12 4.76z"/></svg>
-          <span><b>Preferred source</b>Add us on Google</span>
-        </a>
+        </div>
       </div>
       <div class="bbfoot-col">
         <h4>Services</h4>
@@ -2904,6 +2906,15 @@
         closeAll(item);
         item.classList.toggle('is-open', !isOpen);
         btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+    /* bbnav-hover-close: a click leaves the button focused, and :focus-within keeps
+       its panel open. Entering another tab drops that focus and the is-open state. */
+    items.forEach(function (item) {
+      item.addEventListener('mouseenter', function () {
+        closeAll(item);
+        var a = document.activeElement;
+        if (a && a.closest && a.closest('.bbnav-item') && !item.contains(a)) a.blur();
       });
     });
     document.addEventListener('click', function (e) {
